@@ -53,7 +53,7 @@ local itemUbertip = function(v)
     return desc
 end
 
--- 组装物品的空冷却
+-- 创建一件物品的冷却技能
 local itemCooldownID = function(v)
     if (v.cooldownID == nil) then
         return "AIat"

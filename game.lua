@@ -5,28 +5,30 @@ console.enable = true
 --加载h-lua
 require "h-lua"
 
---加载本地图的gloabal
+--加载本地图的global
 require "global"
 
 --SLK系统
-local heroNames = {
+local courierNames = {
+    "雪鹰",
+}
+local towersNames = {
     "人类·全能骑士·格雷戈里",
 }
-hslk_global.heroesLen = #heroNames
-for k, hname in ipairs(heroNames) do
-    table.insert(hslk_global.heroes, cj.LoadStr(cg.hash_myslk, cj.StringHash("heros"), cj.StringHash(hname)))
-    table.insert(hslk_global.heroesItems, cj.LoadStr(cg.hash_myslk, cj.StringHash("herosItems"), cj.StringHash(hname)))
+global.towersLen = #towersNames
+for _, name in ipairs(towersNames) do
+    table.insert(global.towers, cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), cj.StringHash(name)))
+    table.insert(global.towersItems, cj.LoadStr(cg.hash_myslk, cj.StringHash("towersItems"), cj.StringHash(name)))
 end
-for k, v in ipairs(hslk_global.heroes) do
+for k, v in ipairs(global.towers) do
     local jv = json.parse(v)
-    hslk_global.heroes[k] = jv
-    hslk_global.heroesKV[jv.heroID] = jv
-    hslk_global.unitsKV[jv.heroID] = jv
+    global.towers[k] = jv
+    global.towersKV[jv.heroID] = jv
 end
-for k, v in ipairs(hslk_global.heroesItems) do
+for k, v in ipairs(global.towersItems) do
     local jv = json.parse(v)
-    hslk_global.heroesItems[k] = jv
-    hslk_global.heroesItemsKV[jv.itemID] = jv
+    global.towersItems[k] = jv
+    global.towersItemsKV[jv.itemID] = jv
 end
 
 --shop
