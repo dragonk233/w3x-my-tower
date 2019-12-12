@@ -9,7 +9,7 @@ towers_e = {
         scale = 1.00,
         movetp = "foot",
         moveHeight = 0.00,
-        armor = "Metal",
+        weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
     },
 }
