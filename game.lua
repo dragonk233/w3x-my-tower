@@ -142,7 +142,7 @@ cj.TriggerAddAction(startTrigger, function()
             function(btnIdx)
                 hmsg.echo("选择了" .. btnIdx)
                 if (btnIdx == "无尽合作模式") then
-                    hmsg.echo("保护好~大精灵~")
+                    hmsg.echo("四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除伟“大精灵”的生命，直至游戏失败")
                     -- 大精灵
                     hunit.create({
                         whichPlayer = ALLY_PLAYER,
@@ -156,12 +156,21 @@ cj.TriggerAddAction(startTrigger, function()
                         whichPlayer = ALLY_PLAYER,
                         unitId = global.shops["猎人之店"].unitID,
                         qty = 1,
-                        x = 0,
-                        y = 0,
+                        x = -256,
+                        y = 256,
                         isInvulnerable = true,
                     })
                 elseif (btnIdx == "个人坑友模式") then
-
+                    hmsg.echo("四个玩家独立出怪，打不过玩家的兵塔会被扣血直至失败，击杀敌人时会在你的下家（顺时针方向）创建新的敌人攻击该玩家,直至其他人全部出局")
+                    -- 商店
+                    hunit.create({
+                        whichPlayer = ALLY_PLAYER,
+                        unitId = global.shops["猎人之店"].unitID,
+                        qty = 1,
+                        x = -256,
+                        y = 256,
+                        isInvulnerable = true,
+                    })
                 end
             end
     )
