@@ -15,18 +15,15 @@ local towersNames = {
     "人类·农民",
 }
 for _, name in ipairs(towersNames) do
-    table.insert(global.towers, cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), cj.StringHash(name)))
-    table.insert(global.towersItems, cj.LoadStr(cg.hash_myslk, cj.StringHash("towersItems"), cj.StringHash(name)))
-end
-for k, v in ipairs(global.towers) do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), cj.StringHash(name))
     local jv = json.parse(v)
-    global.towers[k] = jv
+    global.towers[name] = jv
     global.towersKV[jv.unitID] = jv
     hslk_global.unitsKV[jv.unitID] = jv
-end
-for k, v in ipairs(global.towersItems) do
-    local jv = json.parse(v)
-    global.towersItems[k] = jv
+    --
+    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towersItems"), cj.StringHash(name))
+    jv = json.parse(v)
+    global.towersItems[name] = jv
     global.towersItemsKV[jv.itemID] = jv
 end
 
@@ -130,6 +127,27 @@ cj.TriggerAddAction(startTrigger, function()
     ]]
     -- 第一玩家选择模式
     hmsg.echo("第一个玩家正在选择（游戏模式）", 10)
+    -- 左上第一顺时针设定的
+    local towerPoint = {
+        { -1536, 1536 },
+        { 1536, 1536 },
+        { 1536, -1536 },
+        { -1536, -1536 },
+    }
+    local courierPoint = {
+        { -1280, 1280 },
+        { 1280, 1280 },
+        { 1280, -1280 },
+        { -1280, -1280 },
+    }
+    local pathPoint = {
+        { { -1408, 256 }, { -1408, 1024 }, { -2048, 1024 }, { -2048, 2048 }, { -1024, 2048 }, { -1024, 1408 }, { -256, 1408 }, },
+        { { 256, 1408 }, { 1024, 1408 }, { 1024, 2048 }, { 2048, 2048 }, { 2048, 1024 }, { 1408, 1024 }, { 1408, 128 }, },
+        { { 1408, 384 }, { 1408, -1024 }, { 2048, -1024 }, { 2048, -2048 }, { 1024, -2048 }, { 1024, -1408 }, { 256, -1408 }, },
+        { { -256, -1408 }, { -1024, -1408 }, { -1024, -2048 }, { -2048, -2048 }, { -2048, -1024 }, { -1408, -1024 }, { -1408, -256 }, },
+    }
+    -- 构建出怪区域
+
     hdialog.create(
             nil,
             {
@@ -151,6 +169,7 @@ cj.TriggerAddAction(startTrigger, function()
                         x = 0,
                         y = 0,
                     })
+                    cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
                     -- 商店
                     hunit.create({
                         whichPlayer = ALLY_PLAYER,
@@ -171,6 +190,32 @@ cj.TriggerAddAction(startTrigger, function()
                         y = 256,
                         isInvulnerable = true,
                     })
+                end
+                -- 基本兵塔
+                for k, v in pairs(towerPoint) do
+                    if (his.playing(hplayer.players[k])) then
+                        hunit.create({
+                            whichPlayer = hplayer.players[k],
+                            unitId = global.towers["人类·农民"].unitID,
+                            qty = 1,
+                            x = v[1],
+                            y = v[2],
+                        })
+                        cj.PingMinimapEx(v[1], v[2], 10, 255, 255, 255, true)
+                    end
+                end
+                -- 基本信使
+                for k, v in pairs(courierPoint) do
+                    if (his.playing(hplayer.players[k])) then
+                        hunit.create({
+                            whichPlayer = hplayer.players[k],
+                            unitId = global.courier["雪鹰"].unitID,
+                            qty = 1,
+                            x = v[1],
+                            y = v[2],
+                        })
+                        cj.PanCameraToTimed(v[1], v[2], 0.60)
+                    end
                 end
             end
     )

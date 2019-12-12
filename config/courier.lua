@@ -2,15 +2,15 @@
 couriers = {
     {
         Name = "雪鹰",
-        abilList = "",
+        abilList = "Avul,AInv",
         heroAbilList = "",
         unitSound = "SnowOwl",
         file = "units\\critters\\SnowOwl\\SnowOwl",
-        Art = "ReplaceableTextures\\CommandButtons\\BTNHeroPaladin.blp",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNSnowOwl.blp",
         modelScale = 1.00,
         scale = 1.00,
         movetp = "fly",
-        moveHeight = 150.00,
+        moveHeight = 175.00,
         spd = 250,
         targType = "air",
         armor = "Flesh",

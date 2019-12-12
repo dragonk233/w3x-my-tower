@@ -31,8 +31,8 @@ for _, v in ipairs(couriers) do
     obj.stockMax = 1
     obj.collision = 16 --接触体积
     obj.def = v.def or 0.00 -- 护甲
-    obj.sight = v.sight or 800 -- 白天视野
-    obj.nsight = v.nsight or 800 -- 夜晚视野
+    obj.sight = v.sight or 1000 -- 白天视野
+    obj.nsight = v.nsight or 1000 -- 夜晚视野
     obj.EditorSuffix = v.EditorSuffix or "#h-lua"
     obj.Propernames = v.Propernames or "#h-lua"
     obj.abilList = v.abilList or ""
