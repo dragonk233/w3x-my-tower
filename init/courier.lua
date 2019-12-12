@@ -62,7 +62,7 @@ for _, v in ipairs(couriers) do
     obj.STRplus = v.STRplus
     obj.AGIplus = v.AGIplus
     obj.INTplus = v.INTplus
-    v.courierID = obj:get_id()
+    v.unitID = obj:get_id()
     ?>
     call SaveStr(hash_myslk, StringHash("couriers"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
     <?

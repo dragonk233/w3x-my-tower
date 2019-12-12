@@ -1,10 +1,13 @@
 global = {
-    towersLen = 0,
+
     towers = {},
     towersKV = {},
     towersItems = {},
     towersItemsKV = {},
-    shops = {}
+
+    thisUnits = {},
+    shops = {},
+    courier = {},
 }
 
 --[[

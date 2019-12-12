@@ -9,14 +9,11 @@ require "h-lua"
 require "global"
 
 --SLK系统
-local courierNames = {
-    "雪鹰",
-}
+
+-- tower 兵塔
 local towersNames = {
     "人类·农民",
 }
-
-global.towersLen = #towersNames
 for _, name in ipairs(towersNames) do
     table.insert(global.towers, cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), cj.StringHash(name)))
     table.insert(global.towersItems, cj.LoadStr(cg.hash_myslk, cj.StringHash("towersItems"), cj.StringHash(name)))
@@ -32,21 +29,40 @@ for k, v in ipairs(global.towersItems) do
     global.towersItems[k] = jv
     global.towersItemsKV[jv.itemID] = jv
 end
-print('B')
+
 --shop
 local shopNames = {
-    "店铺1",
+    "猎人之店",
 }
 
 for k, name in ipairs(shopNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("shops"), cj.StringHash(name))
-    print(v)
     local jv = json.parse(v)
     hslk_global.unitsKV[jv.unitID] = jv
     global.shops[name] = jv
 end
 
-hSys.print_r(global.shops)
+-- courier 信使
+local courierNames = {
+    "雪鹰",
+}
+for _, name in ipairs(courierNames) do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriers"), cj.StringHash(name))
+    local jv = json.parse(v)
+    hslk_global.unitsKV[jv.unitID] = jv
+    global.courier[name] = jv
+end
+
+-- unit 其他单位
+local thisUnitNames = {
+    "大精灵",
+}
+for _, name in ipairs(thisUnitNames) do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisunit"), cj.StringHash(name))
+    local jv = json.parse(v)
+    hslk_global.unitsKV[jv.unitID] = jv
+    global.thisUnits[name] = jv
+end
 
 -- 测试的3秒 代码
 htime.setInterval(3.00, nil, function()
@@ -70,7 +86,6 @@ for k, v in ipairs(preload) do
     local u = cj.CreateUnit(hplayer.player_passive, hSys.getObjId(v), 0, 0, 0)
     hattr.registerAll(u)
     hunit.del(u, 0.1)
-    print(hunit.getAvatar(u))
 end
 
 -- 镜头模式
@@ -103,15 +118,53 @@ hemeny.setPlayer(hplayer.players[9])
 hemeny.setPlayer(hplayer.players[10])
 hemeny.setPlayer(hplayer.players[11])
 
--- 商店
-hunit.create({
-    whichPlayer = ALLY_PLAYER,
-    unitId = global.shops["店铺1"].unitID,
-    qty = 1,
-    x = 0,
-    y = 0,
-    isInvulnerable = true,
-})
+-- game start(这里需要用时间事件延时N秒，不然很多动作会在初始化失效)
+local startTrigger = cj.CreateTrigger()
+cj.TriggerRegisterTimerEvent(startTrigger, 1.0, false)
+cj.TriggerAddAction(startTrigger, function()
+    cj.DisableTrigger(cj.GetTriggeringTrigger())
+    cj.DestroyTrigger(cj.GetTriggeringTrigger())
+    --[[
+        这里开始游戏正式开始了
+        发挥你的想象力吧~
+    ]]
+    -- 第一玩家选择模式
+    hmsg.echo("第一个玩家正在选择（游戏模式）", 10)
+    hdialog.create(
+            nil,
+            {
+                title = "选择游戏模式",
+                buttons = {
+                    "无尽合作模式",
+                    "个人坑友模式",
+                }
+            },
+            function(btnIdx)
+                hmsg.echo("选择了" .. btnIdx)
+                if (btnIdx == "无尽合作模式") then
+                    hmsg.echo("保护好~大精灵~")
+                    -- 大精灵
+                    hunit.create({
+                        whichPlayer = ALLY_PLAYER,
+                        unitId = global.thisUnits["大精灵"].unitID,
+                        qty = 1,
+                        x = 0,
+                        y = 0,
+                    })
+                    -- 商店
+                    hunit.create({
+                        whichPlayer = ALLY_PLAYER,
+                        unitId = global.shops["猎人之店"].unitID,
+                        qty = 1,
+                        x = 0,
+                        y = 0,
+                        isInvulnerable = true,
+                    })
+                elseif (btnIdx == "个人坑友模式") then
 
--- 第一玩家选择模式
+                end
+            end
+    )
+
+end)
 

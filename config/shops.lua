@@ -4,7 +4,7 @@ shopsAbility = {
 
 shops = {
     {
-        Name = "店铺1",
+        Name = "猎人之店",
         pathTex = "PathTextures\\8x8SimpleSolid.tga",
         abilList = "",
         file = "buildings\\nightelf\\HuntersHall\\HuntersHall.mdl",
