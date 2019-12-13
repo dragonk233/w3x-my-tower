@@ -306,6 +306,57 @@ cj.TriggerAddAction(startTrigger, function()
                     y = 256,
                     isInvulnerable = true,
                 })
+                -- 构建出怪区域
+                for k, v in ipairs(pathPoint) do
+                    for i, p in ipairs(v) do
+                        local r = hrect.create(p[1], p[2], 100, 100, "rect" .. k .. i)
+                        local tg = cj.CreateTrigger()
+                        bj.TriggerRegisterEnterRectSimple(tg, r)
+                        cj.TriggerAddCondition(tg, cj.Condition(function()
+                            return his.enemy(cj.GetTriggerUnit(), ALLY_PLAYER)
+                        end))
+                        cj.TriggerAddAction(tg, function()
+                            if (i == #v) then
+                                -- 最后一个
+                                local uVal = cj.GetUnitUserData(cj.GetTriggerUnit())
+                                if (uVal > 0) then
+                                    heffect.toUnit(
+                                        "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",
+                                        cj.GetTriggerUnit(),
+                                        1
+                                    )
+                                    heffect.toUnit(
+                                        "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
+                                        bigElf,
+                                        1
+                                    )
+                                    hunit.del(cj.GetTriggerUnit(), 0)
+                                    hmsg.echo(cj.GetUnitName(bigElf))
+                                    hunit.subCurLife(bigElf, global.wave)
+                                    cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
+                                    local ttg = htextTag.create("-" .. global.wave, 10, "e04240", 0, 3)
+                                    htextTag.style(ttg, "scale", 0, 10)
+                                else
+                                    cj.SetUnitUserData(cj.GetTriggerUnit(), uVal + 1)
+                                    heffect.bindUnit(
+                                        "Abilities\\Spells\\Orc\\FeralSpirit\\feralspiritdone.mdl",
+                                        cj.GetTriggerUnit(),
+                                        "origin",
+                                        2
+                                    )
+                                    if (k == 4) then
+                                        cj.SetUnitPosition(cj.GetTriggerUnit(), pathPoint[1][1][1], pathPoint[1][1][2])
+                                    else
+                                        cj.SetUnitPosition(cj.GetTriggerUnit(), pathPoint[k + 1][1][1], pathPoint[k + 1][1][2])
+                                    end
+                                end
+                            else
+                                -- 前段路途
+                                cj.IssuePointOrderById(cj.GetTriggerUnit(), 851986, v[i + 1][1], v[i + 1][2])
+                            end
+                        end)
+                    end
+                end
             end
             -- 基本兵塔
             for k, v in pairs(towerPoint) do
