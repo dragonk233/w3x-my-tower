@@ -1,5 +1,7 @@
 global = {
 
+    wave = 1,
+
     towers = {},
     towersKV = {},
     towersItems = {},
@@ -7,6 +9,7 @@ global = {
 
     thisUnits = {},
     thisEnemys = {},
+    thisEnemysLen = 0,
     shops = {},
     courier = {},
 }

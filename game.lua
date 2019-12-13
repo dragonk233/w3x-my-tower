@@ -65,11 +65,12 @@ end
 local thisEnemyNames = {
     "食尸鬼",
 }
-for _, name in ipairs(thisEnemyNames) do
+global.thisEnemysLen = #thisEnemyNames
+for k, name in ipairs(thisEnemyNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisenemys"), cj.StringHash(name))
     local jv = json.parse(v)
     hslk_global.unitsKV[jv.unitID] = jv
-    global.thisEnemys[name] = jv
+    global.thisEnemys[k] = jv
 end
 
 -- 测试的3秒 代码
@@ -117,6 +118,7 @@ local ALLY_PLAYER = hplayer.players[12]
 
 -- 设定敌军
 hemeny.setName("拆塔小能手")
+hemeny.setShareSight(true)
 hemeny.setColor(cj.ConvertPlayerColor(12)) -- black
 hemeny.setPlayer(hplayer.players[5])
 hemeny.setPlayer(hplayer.players[6])
@@ -126,8 +128,68 @@ hemeny.setPlayer(hplayer.players[9])
 hemeny.setPlayer(hplayer.players[10])
 hemeny.setPlayer(hplayer.players[11])
 
+
+
+
+
+
 -- game start(这里需要用时间事件延时N秒，不然很多动作会在初始化失效)
-local g_wave = 1
+
+
+
+-- 左上第一顺时针设定的
+local towerPoint = {
+    { -1536, 1536 },
+    { 1536, 1536 },
+    { 1536, -1536 },
+    { -1536, -1536 },
+}
+local courierPoint = {
+    { -1280, 1280 },
+    { 1280, 1280 },
+    { 1280, -1280 },
+    { -1280, -1280 },
+}
+local pathPoint = {
+    { { -1408, 256 }, { -1408, 1024 }, { -2048, 1024 }, { -2048, 2048 }, { -1024, 2048 }, { -1024, 1408 }, { -256, 1408 }, },
+    { { 256, 1408 }, { 1024, 1408 }, { 1024, 2048 }, { 2048, 2048 }, { 2048, 1024 }, { 1408, 1024 }, { 1408, 128 }, },
+    { { 1408, -384 }, { 1408, -1024 }, { 2048, -1024 }, { 2048, -2048 }, { 1024, -2048 }, { 1024, -1408 }, { 256, -1408 }, },
+    { { -256, -1408 }, { -1024, -1408 }, { -1024, -2048 }, { -2048, -2048 }, { -2048, -1024 }, { -1408, -1024 }, { -1408, -256 }, },
+}
+
+
+-- 出兵
+enemyGen = function(waiting)
+    htime.setTimeout(waiting, "第" .. global.wave .. "波", function(t, td)
+        htime.delDialog(td)
+        htime.delTimer(t)
+        local count = 20
+        htime.setInterval(2.00, nil, function(t, td)
+            count = count - 1
+            if (count <= 0) then
+                htime.delDialog(td)
+                htime.delTimer(t)
+                global.wave = global.wave + 1
+                enemyGen(10)
+                return
+            end
+            for k, v in pairs(pathPoint) do
+                --if (his.playing(hplayer.players[k])) then
+                local u = hemeny.create({
+                    unitId = global.thisEnemys[cj.GetRandomInt(1, global.thisEnemysLen)].unitID,
+                    qty = 1,
+                    x = v[1][1],
+                    y = v[1][2],
+                })
+                hattr.set(u, 0, {
+                    move = "+200"
+                })
+                --end
+            end
+        end)
+    end)
+end
+
 local startTrigger = cj.CreateTrigger()
 cj.TriggerRegisterTimerEvent(startTrigger, 1.0, false)
 cj.TriggerAddAction(startTrigger, function()
@@ -139,25 +201,6 @@ cj.TriggerAddAction(startTrigger, function()
     ]]
     -- 第一玩家选择模式
     hmsg.echo("第一个玩家正在选择（游戏模式）", 10)
-    -- 左上第一顺时针设定的
-    local towerPoint = {
-        { -1536, 1536 },
-        { 1536, 1536 },
-        { 1536, -1536 },
-        { -1536, -1536 },
-    }
-    local courierPoint = {
-        { -1280, 1280 },
-        { 1280, 1280 },
-        { 1280, -1280 },
-        { -1280, -1280 },
-    }
-    local pathPoint = {
-        { { -1408, 256 }, { -1408, 1024 }, { -2048, 1024 }, { -2048, 2048 }, { -1024, 2048 }, { -1024, 1408 }, { -256, 1408 }, },
-        { { 256, 1408 }, { 1024, 1408 }, { 1024, 2048 }, { 2048, 2048 }, { 2048, 1024 }, { 1408, 1024 }, { 1408, 128 }, },
-        { { 1408, 384 }, { 1408, -1024 }, { 2048, -1024 }, { 2048, -2048 }, { 1024, -2048 }, { 1024, -1408 }, { 256, -1408 }, },
-        { { -256, -1408 }, { -1024, -1408 }, { -1024, -2048 }, { -2048, -2048 }, { -2048, -1024 }, { -1408, -1024 }, { -1408, -256 }, },
-    }
     hdialog.create(
         nil,
         {
@@ -171,6 +214,8 @@ cj.TriggerAddAction(startTrigger, function()
             hmsg.echo("选择了" .. btnIdx)
             if (btnIdx == "无尽合作模式") then
                 hmsg.echo("四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除伟“大精灵”的生命，直至游戏失败")
+                cj.FogEnable(false)
+                cj.FogMaskEnable(false)
                 -- 大精灵
                 local bigElf = hunit.create({
                     whichPlayer = ALLY_PLAYER,
@@ -179,6 +224,14 @@ cj.TriggerAddAction(startTrigger, function()
                     x = 0,
                     y = 0,
                 })
+                hevent.onDead(bigElf, function()
+                    hmsg.echo("不！“大精灵”GG了，结束啦~我们的守护")
+                    htime.setTimeout(5, "退出倒计时", function()
+                        for i = 1, hplayer.qty_max, 1 do
+                            hplayer.defeat(hplayer.players[i], "再见~")
+                        end
+                    end)
+                end)
                 cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
                 -- 商店
                 hunit.create({
@@ -190,43 +243,60 @@ cj.TriggerAddAction(startTrigger, function()
                     isInvulnerable = true,
                 })
                 -- 构建出怪区域
-                for k, v in ipairs(towerPoint) do
+                for k, v in ipairs(pathPoint) do
                     for i, p in ipairs(v) do
-                        local r = hrect.create(p[1], p[2], 20, 20, "rect" .. k .. i)
-                        local tg = CreateTrigger()
-                        cj.TriggerRegisterEnterRectSimple(tg, r)
-                        cj.TriggerAddCondition(tg, Condition(function()
+                        local r = hrect.create(p[1], p[2], 100, 100, "rect" .. k .. i)
+                        local tg = cj.CreateTrigger()
+                        bj.TriggerRegisterEnterRectSimple(tg, r)
+                        cj.TriggerAddCondition(tg, cj.Condition(function()
                             return his.enemy(cj.GetTriggerUnit(), ALLY_PLAYER)
                         end))
                         cj.TriggerAddAction(tg, function()
-                            if (i == #p) then
+                            if (i == #v) then
                                 -- 最后一个
                                 local uVal = cj.GetUnitUserData(cj.GetTriggerUnit())
-                                if (uVal >= 4) then
+                                if (uVal >= 3) then
                                     heffect.toUnit(
                                         "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",
                                         cj.GetTriggerUnit(),
                                         1
                                     )
+                                    heffect.toUnit(
+                                        "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
+                                        bigElf,
+                                        1
+                                    )
                                     hunit.del(cj.GetTriggerUnit(), 0)
-                                    hunit.subLife(bigElf, g_wave)
+                                    hmsg.echo(cj.GetUnitName(bigElf))
+                                    hunit.subCurLife(bigElf, global.wave)
+                                    cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
+                                    local ttg = htextTag.create("-" .. global.wave, 10, "e04240", 0, 3)
+                                    htextTag.style(ttg, "scale", 0, 10)
                                 else
                                     cj.SetUnitUserData(cj.GetTriggerUnit(), uVal + 1)
                                     heffect.bindUnit(
                                         "Abilities\\Spells\\Orc\\FeralSpirit\\feralspiritdone.mdl",
                                         cj.GetTriggerUnit(),
+                                        "origin",
                                         2
                                     )
+                                    if (k == 4) then
+                                        cj.SetUnitPosition(cj.GetTriggerUnit(), pathPoint[1][1][1], pathPoint[1][1][2])
+                                    else
+                                        cj.SetUnitPosition(cj.GetTriggerUnit(), pathPoint[k + 1][1][1], pathPoint[k + 1][1][2])
+                                    end
                                 end
                             else
                                 -- 前段路途
-                                cj.IssuePointOrderById(cj.GetTriggerUnit(), 851986, towerPoint[k + 1][1], towerPoint[k + 1][2])
+                                cj.IssuePointOrderById(cj.GetTriggerUnit(), 851986, v[i + 1][1], v[i + 1][2])
                             end
                         end)
                     end
                 end
             elseif (btnIdx == "个人坑友模式") then
                 hmsg.echo("四个玩家独立出怪，打不过玩家的兵塔会被扣血直至失败，击杀敌人时会在你的下家（顺时针方向）创建新的敌人攻击该玩家,直至其他人全部出局")
+                cj.FogEnable(true)
+                cj.FogMaskEnable(true)
                 -- 商店
                 hunit.create({
                     whichPlayer = ALLY_PLAYER,
@@ -263,14 +333,7 @@ cj.TriggerAddAction(startTrigger, function()
                     cj.PanCameraToTimed(v[1], v[2], 0.60)
                 end
             end
-            -- 出兵
-            htime.setTimeout(10, "敌人准备来了", function(t, td)
-                htime.delDialog(td)
-                htime.delTimer(t)
-                htime.setTimeout(2.00, nil, function()
-
-                end)
-            end)
+            enemyGen(30)
         end
     )
 

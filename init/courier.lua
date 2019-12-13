@@ -39,7 +39,7 @@ for _, v in ipairs(couriers) do
     obj.heroAbilList = ""
     obj.nameCount = v.nameCount or 1
     obj.Tip = "选择 " .. v.Name
-    obj.Name = v.Name
+    obj.Name = "[信使]" .. v.Name
     obj.Awakentip = "复活 " .. v.Name
     obj.Revivetip = "复活 " .. v.Name
     obj.Tip = "召唤 " .. v.Name
@@ -64,6 +64,6 @@ for _, v in ipairs(couriers) do
     obj.INTplus = v.INTplus
     v.unitID = obj:get_id()
     ?>
-    call SaveStr(hash_myslk, StringHash("couriers"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
-    <?
+call SaveStr(hash_myslk, StringHash("couriers"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
+<?
 end

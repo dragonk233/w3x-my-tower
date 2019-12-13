@@ -1,16 +1,18 @@
 -- enemys
 for k, v in ipairs(enemys) do
     local obj = slk.unit.hpea:new("this_enemys_" .. v.Name)
-    obj.Name = v.Name
+    obj.Name = "[劲敌]" .. v.Name
     obj.abilList = ""
     obj.file = v.file
-    obj.Art = v.Art
+    obj.Art = "ReplaceableTextures\\CommandButtons\\BTNShade.blp"
     obj.modelScale = v.modelScale or 1.00
     obj.scale = v.scale or 1.00
     obj.HP = 100
+    obj.spd = 220
     obj.sight = 500
     obj.nsight = 500
     obj.unitSound = v.unitSound or ""
+    obj.weapsOn = v.weapsOn or 0
     v.unitID = obj:get_id()
     ?>
 call SaveStr(hash_myslk, StringHash("thisenemys"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")

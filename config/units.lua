@@ -8,8 +8,10 @@ units = {
         modelScale = 3,
         scale = 4.00,
         HP = 10000,
+        spd = 0,
         sight = 2400,
         nsight = 2400,
-        unitSound = "Wisp"
+        unitSound = "Wisp",
+        weapsOn = 0,
     }
 }

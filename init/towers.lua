@@ -105,33 +105,41 @@ for tlv, tow in pairs(towers) do
             obj.spd = 0
             obj.backSw1 = 0.500
             obj.dmgpt1 = 0.500
-            obj.rangeN1 = 640
+            obj.rangeN1 = 750
             obj.cool1 = 2.00
             obj.armor = "Flesh" -- 被击声音
             obj.targType = "ground" --作为目标类型
             obj.Missileart = v.Missileart -- 箭矢模型
             obj.Missilespeed = 1100 -- 箭矢速度
             obj.Missilearc = 0.05
-            obj.weapTp1 = "normal" --攻击类型
+            obj.weapTp1 = v.weapTp1 or "normal" --攻击类型
             obj.weapType1 = "" --攻击声音
             obj.Primary = "STR"
             local tempPower = 0
             if (tlv == "E") then
                 tempPower = 1
+                obj.dmgplus1 = 25
             elseif (tlv == "D") then
                 tempPower = 2
+                obj.dmgplus1 = 50
             elseif (tlv == "C") then
                 tempPower = 4
+                obj.dmgplus1 = 100
             elseif (tlv == "B") then
                 tempPower = 8
+                obj.dmgplus1 = 200
             elseif (tlv == "A") then
                 tempPower = 16
+                obj.dmgplus1 = 400
             elseif (tlv == "S") then
                 tempPower = 32
+                obj.dmgplus1 = 800
             elseif (tlv == "SS") then
                 tempPower = 64
+                obj.dmgplus1 = 1600
             elseif (tlv == "SSS") then
                 tempPower = 128
+                obj.dmgplus1 = 3200
             end
             obj.STR = tempPower
             obj.AGI = tempPower
