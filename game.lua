@@ -159,18 +159,18 @@ local pathPoint = {
 
 
 -- 出兵
-enemyGen = function(waiting)
-    htime.setTimeout(waiting, "第" .. global.wave .. "波", function(t, td)
+enemyGenHZ = function(waiting)
+    htime.setTimeout(waiting, "下一波", function(t, td)
         htime.delDialog(td)
         htime.delTimer(t)
-        local count = 20
+        local count = 10
         htime.setInterval(2.00, nil, function(t, td)
             count = count - 1
             if (count <= 0) then
                 htime.delDialog(td)
                 htime.delTimer(t)
-                global.wave = global.wave + 1
-                enemyGen(10)
+                enemyGenHZ(10)
+                global.rule.hz.wave = global.rule.hz.wave + 1
                 return
             end
             for k, v in pairs(pathPoint) do
@@ -181,13 +181,31 @@ enemyGen = function(waiting)
                     x = v[1][1],
                     y = v[1][2],
                 })
-                hattr.set(u, 0, {
-                    move = "+200"
-                })
+                cj.SetUnitPathing(u, false)
                 --end
             end
         end)
     end)
+end
+
+local getNextRect = function(current)
+    local next = -1
+    local realEnd = 4
+    for i = 1, hplayer.qty_max, 1 do
+        if (his.playing(hplayer.players[i])) then
+            realEnd = i
+        end
+    end
+    for i = 1, hplayer.qty_max, 1 do
+        if (his.playing(hplayer.players[i])) then
+            if (next == -1) then
+                if (current == realEnd or i > current) then
+                    next = i
+                end
+            end
+        end
+    end
+    return next
 end
 
 local startTrigger = cj.CreateTrigger()
@@ -255,23 +273,24 @@ cj.TriggerAddAction(startTrigger, function()
                             if (i == #v) then
                                 -- 最后一个
                                 local uVal = cj.GetUnitUserData(cj.GetTriggerUnit())
-                                if (uVal >= 3) then
+                                if (uVal >= hplayer.qty_current - 1) then
                                     heffect.toUnit(
                                         "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",
                                         cj.GetTriggerUnit(),
                                         1
                                     )
-                                    heffect.toUnit(
-                                        "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
-                                        bigElf,
-                                        1
-                                    )
                                     hunit.del(cj.GetTriggerUnit(), 0)
-                                    hmsg.echo(cj.GetUnitName(bigElf))
-                                    hunit.subCurLife(bigElf, global.wave)
-                                    cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
-                                    local ttg = htextTag.create("-" .. global.wave, 10, "e04240", 0, 3)
-                                    htextTag.style(ttg, "scale", 0, 10)
+                                    if (his.alive(bigElf)) then
+                                        heffect.toUnit(
+                                            "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
+                                            bigElf,
+                                            1
+                                        )
+                                        hunit.subCurLife(bigElf, global.rule.hz.wave)
+                                        cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
+                                        local ttg = htextTag.create2Unit(bigElf, "-" .. global.rule.hz.wave, 10, "e04240", 0, 3)
+                                        htextTag.style(ttg, "scale", 0, 10)
+                                    end
                                 else
                                     cj.SetUnitUserData(cj.GetTriggerUnit(), uVal + 1)
                                     heffect.bindUnit(
@@ -280,10 +299,9 @@ cj.TriggerAddAction(startTrigger, function()
                                         "origin",
                                         2
                                     )
-                                    if (k == 4) then
-                                        cj.SetUnitPosition(cj.GetTriggerUnit(), pathPoint[1][1][1], pathPoint[1][1][2])
-                                    else
-                                        cj.SetUnitPosition(cj.GetTriggerUnit(), pathPoint[k + 1][1][1], pathPoint[k + 1][1][2])
+                                    local next = getNextRect(k)
+                                    if (next ~= -1) then
+                                        cj.SetUnitPosition(cj.GetTriggerUnit(), pathPoint[next][1][1], pathPoint[next][1][2])
                                     end
                                 end
                             else
@@ -317,39 +335,37 @@ cj.TriggerAddAction(startTrigger, function()
                         end))
                         cj.TriggerAddAction(tg, function()
                             if (i == #v) then
-                                -- 最后一个
-                                local uVal = cj.GetUnitUserData(cj.GetTriggerUnit())
-                                if (uVal > 0) then
+                                -- 最后一格,返回起点
+                                if (his.alive(global.playerTower[k])) then
                                     heffect.toUnit(
                                         "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",
-                                        cj.GetTriggerUnit(),
+                                        global.playerTower[k],
                                         1
                                     )
-                                    heffect.toUnit(
-                                        "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
-                                        bigElf,
-                                        1
+                                    hunit.subCurLife(
+                                        global.playerTower[k],
+                                        global.rule.dk.level[hplayer.index(cj.GetOwningPlayer(cj.GetTriggerUnit()))]
                                     )
-                                    hunit.del(cj.GetTriggerUnit(), 0)
-                                    hmsg.echo(cj.GetUnitName(bigElf))
-                                    hunit.subCurLife(bigElf, global.wave)
                                     cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
-                                    local ttg = htextTag.create("-" .. global.wave, 10, "e04240", 0, 3)
+                                    local ttg = htextTag.create2Unit(global.playerTower[k], "-" .. global.rule.hz.wave, 10, "e04240", 0, 3)
                                     htextTag.style(ttg, "scale", 0, 10)
+                                    cj.SetUnitPosition(cj.GetTriggerUnit(), v[1][1], v[1][2])
                                 else
-                                    cj.SetUnitUserData(cj.GetTriggerUnit(), uVal + 1)
-                                    heffect.bindUnit(
-                                        "Abilities\\Spells\\Orc\\FeralSpirit\\feralspiritdone.mdl",
-                                        cj.GetTriggerUnit(),
-                                        "origin",
-                                        2
-                                    )
-                                    if (k == 4) then
-                                        cj.SetUnitPosition(cj.GetTriggerUnit(), pathPoint[1][1][1], pathPoint[1][1][2])
-                                    else
-                                        cj.SetUnitPosition(cj.GetTriggerUnit(), pathPoint[k + 1][1][1], pathPoint[k + 1][1][2])
-                                    end
+                                    hunit.del(cj.GetTriggerUnit(), 0)
                                 end
+                                --[[
+                                local next = getNextRect(k)
+                                if (next ~= -1) then
+                                    local u = hemeny.create({
+                                        unitId = summonID, -- 这里根据该玩家的兵塔的类型召唤
+                                        qty = 1,
+                                        x = pathPoint[next][1][1],
+                                        y = pathPoint[next][1][2],
+                                    })
+                                    cj.SetUnitUserData(u, 996)
+                                    cj.SetUnitPathing(u, false)
+                                end
+                                ]]
                             else
                                 -- 前段路途
                                 cj.IssuePointOrderById(cj.GetTriggerUnit(), 851986, v[i + 1][1], v[i + 1][2])
@@ -361,13 +377,14 @@ cj.TriggerAddAction(startTrigger, function()
             -- 基本兵塔
             for k, v in pairs(towerPoint) do
                 if (his.playing(hplayer.players[k])) then
-                    hunit.create({
+                    local u = hunit.create({
                         whichPlayer = hplayer.players[k],
                         unitId = global.towers["人类·农民"].unitID,
                         qty = 1,
                         x = v[1],
                         y = v[2],
                     })
+                    global.playerTower[k] = u
                     cj.PingMinimapEx(v[1], v[2], 10, 255, 255, 255, true)
                 end
             end

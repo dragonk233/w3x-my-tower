@@ -1,6 +1,15 @@
 global = {
 
-    wave = 1,
+    rule = {
+        hz = {
+            wave = 1,
+        },
+        dk = {
+            level = {},
+        }
+    },
+
+    playerTower = {},
 
     towers = {},
     towersKV = {},
