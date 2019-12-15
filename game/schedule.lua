@@ -106,8 +106,14 @@ cj.TriggerAddAction(startTrigger, function()
                     end
                 end
                 enemyGenHZ(1)
+                hleaderBoard.create('hz', 1, function(bl, i)
+                    local p = hplayer.players[i]
+                    local v = math.floor(hplayer.getDamage(p) * 0.1)
+                    cj.LeaderboardSetLabel(bl, "无尽合作" .. game.rule.hz.wave .. "波")
+                    cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
+                end)
             elseif (btnIdx == "个人坑友模式") then
-                hmsg.echo("四个玩家独立出怪，打不过玩家的兵塔会被扣血直至失败，击杀敌人时会在你的下家（顺时针方向）创建新的敌人攻击该玩家,直至其他人全部出局")
+                hmsg.echo("四个玩家独立出怪，击杀敌人时会在你的下家（顺时针方向）创建与兵塔和你的等级相关的士兵攻击该玩家，打不过玩家的兵塔会被扣血直至出局")
                 cj.FogEnable(true)
                 cj.FogMaskEnable(true)
                 -- 商店

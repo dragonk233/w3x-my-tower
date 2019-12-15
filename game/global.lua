@@ -4,7 +4,7 @@ game = {
 
     rule = {
         hz = {
-            perWaveQty = 20,
+            perWaveQty = 5,
             wave = 1,
         },
         dk = {

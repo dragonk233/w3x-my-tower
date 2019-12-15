@@ -12,7 +12,7 @@ for k, v in ipairs(enemys) do
     obj.sight = 500
     obj.nsight = 500
     obj.unitSound = v.unitSound or ""
-    obj.weapsOn = v.weapsOn or 0
+    obj.weapsOn = 0
     v.unitID = obj:get_id()
     ?>
 call SaveStr(hash_myslk, StringHash("thisenemys"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")

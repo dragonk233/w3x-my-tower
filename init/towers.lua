@@ -49,7 +49,7 @@ for tlv, tow in pairs(towers) do
             obj.nsight = v.nsight or 1000 -- 夜晚视野
             obj.targs1 = "vulnerable,ground,ward,structure,organic,mechanical,tree,debris,air" --攻击目标
             obj.EditorSuffix = v.EditorSuffix or "#h-lua"
-            obj.Propernames = v.Propernames or "#h-lua"
+            obj.Propernames = tlv .. "级兵塔"
             obj.abilList = v.abilList or ""
             obj.heroAbilList = ""
             obj.nameCount = v.nameCount or 1

@@ -5,6 +5,5 @@ enemys = {
         modelScale = 1.00,
         scale = 1.00,
         unitSound = "Ghoul",
-        weapsOn = 0,
     }
 }

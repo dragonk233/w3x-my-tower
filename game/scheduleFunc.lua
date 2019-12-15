@@ -1,3 +1,9 @@
+-- 敌军死亡
+enemyDeadHZ = function()
+    local u = hevent.getKiller()
+    haward.forGroupExp(u, 5 * game.rule.hz.wave)
+end
+
 -- 出兵
 enemyGenHZ = function(waiting)
     htime.setTimeout(waiting, "第" .. game.rule.hz.wave .. "波", function(t, td)
@@ -9,8 +15,11 @@ enemyGenHZ = function(waiting)
             if (count <= 0) then
                 htime.delDialog(td)
                 htime.delTimer(t)
-                enemyGenHZ(5)
+                local gold = hplayer.qty_current * game.rule.hz.wave * 50
                 game.rule.hz.wave = game.rule.hz.wave + 1
+                haward.forPlayer(gold, 0)
+                hmsg.echo("到达了第" .. game.rule.hz.wave .. "波，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
+                enemyGenHZ(5)
                 return
             end
             for k, v in pairs(game.pathPoint) do
@@ -22,6 +31,10 @@ enemyGenHZ = function(waiting)
                         y = v[1][2],
                     })
                     cj.SetUnitPathing(u, false)
+                    hattr.set(u, 0, {
+                        life = "=" .. (10 * game.rule.hz.wave),
+                    })
+                    hevent.onDead(u, enemyDeadHZ)
                 end
             end
         end)
@@ -115,7 +128,7 @@ createMyTower = function(playerIndex, towerId)
         hattr.set(u, 0, {
             life = "=" .. life,
             mana = "=" .. mana,
-            manaBack  = "=" .. manaBack,
+            manaBack = "=" .. manaBack,
         })
     end
 end
