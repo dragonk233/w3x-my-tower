@@ -11,5 +11,6 @@ towers_e = {
         moveHeight = 0.00,
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
+        abilList = "",
     },
 }

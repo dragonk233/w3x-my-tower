@@ -50,7 +50,7 @@ for tlv, tow in pairs(towers) do
             obj.targs1 = "vulnerable,ground,ward,structure,organic,mechanical,tree,debris,air" --攻击目标
             obj.EditorSuffix = v.EditorSuffix or "#h-lua"
             obj.Propernames = v.Propernames or "#h-lua"
-            obj.abilList = "Avul"
+            obj.abilList = v.abilList or ""
             obj.heroAbilList = ""
             obj.nameCount = v.nameCount or 1
             if (obj.weapTp1 == "msplash" or obj.weapTp1 == "artillery") then
@@ -103,10 +103,10 @@ for tlv, tow in pairs(towers) do
             obj.moveHeight = v.moveHeight --移动高度
             obj.moveFloor = v.moveHeight * 0.25 --最低高度
             obj.spd = 0
-            obj.backSw1 = 0.500
-            obj.dmgpt1 = 0.500
+            obj.backSw1 = v.backSw1 or 0.500
+            obj.dmgpt1 = v.dmgpt1 or 0.500
             obj.rangeN1 = 750
-            obj.cool1 = 2.00
+            obj.cool1 = v.cool1 or 2.00
             obj.armor = "Flesh" -- 被击声音
             obj.targType = "ground" --作为目标类型
             obj.Missileart = v.Missileart -- 箭矢模型
@@ -114,40 +114,37 @@ for tlv, tow in pairs(towers) do
             obj.Missilearc = 0.05
             obj.weapTp1 = v.weapTp1 or "normal" --攻击类型
             obj.weapType1 = "" --攻击声音
-            obj.Primary = "STR"
+            obj.Primary = v.Primary or "STR"
+            obj.dmgplus1 = v.dmgplus1 or 10
+            v.STR = v.STR or 10
+            v.AGI = v.AGI or 10
+            v.INT = v.INT or 10
             local tempPower = 0
             if (tlv == "E") then
                 tempPower = 1
-                obj.dmgplus1 = 25
             elseif (tlv == "D") then
                 tempPower = 2
-                obj.dmgplus1 = 50
             elseif (tlv == "C") then
-                tempPower = 4
-                obj.dmgplus1 = 100
+                tempPower = 3
             elseif (tlv == "B") then
-                tempPower = 8
-                obj.dmgplus1 = 200
+                tempPower = 5
             elseif (tlv == "A") then
-                tempPower = 16
-                obj.dmgplus1 = 400
+                tempPower = 8
             elseif (tlv == "S") then
-                tempPower = 32
-                obj.dmgplus1 = 800
+                tempPower = 12
             elseif (tlv == "SS") then
-                tempPower = 64
-                obj.dmgplus1 = 1600
+                tempPower = 17
             elseif (tlv == "SSS") then
-                tempPower = 128
-                obj.dmgplus1 = 3200
+                tempPower = 24
             end
-            obj.STR = tempPower
-            obj.AGI = tempPower
-            obj.INT = tempPower
-            obj.STRplus = tempPower * 0.1
-            obj.AGIplus = tempPower * 0.1
-            obj.INTplus = tempPower * 0.1
+            obj.STR = v.STR * tempPower
+            obj.AGI = v.AGI * tempPower
+            obj.INT = v.INT * tempPower
+            obj.STRplus = v.STR * 0.1
+            obj.AGIplus = v.AGI * 0.1
+            obj.INTplus = v.INT * 0.1
             v.unitID = obj:get_id()
+            v.towerLevel = tlv
             -- 塔基物品
             local iobj = slk.item.gold:new("towers_items_" .. v.Name)
             iobj.abilList = ""
