@@ -72,9 +72,7 @@ cj.TriggerAddAction(startTrigger, function()
                                         1
                                     )
                                     hunit.del(cj.GetTriggerUnit(), 0)
-                                    hmsg.echo(cj.GetUnitName(bigElf))
                                     if (his.alive(bigElf)) then
-                                        hmsg.echo("bigElf alive")
                                         heffect.toUnit(
                                             "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
                                             bigElf,

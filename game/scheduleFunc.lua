@@ -1,7 +1,9 @@
 -- 敌军死亡
 enemyDeadHZ = function()
     local u = hevent.getKiller()
-    haward.forGroupExp(u, 5 * game.rule.hz.wave)
+    if (u ~= nil) then
+        haward.forGroupExp(u, 10 * game.rule.hz.wave)
+    end
 end
 
 -- 出兵
