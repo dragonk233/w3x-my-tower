@@ -1,8 +1,9 @@
 -- units
 for k, v in ipairs(units) do
-    local obj = slk.unit.hpea:new("this_units_" .. v.Name)
+    local obj = slk.unit.hfoo:new("this_units_" .. v.Name)
     obj.Name = "[其他]" .. v.Name
     obj.abilList = v.abilList or ""
+    obj.upgrades = ""
     obj.file = v.file
     obj.Art = v.Art
     obj.modelScale = v.modelScale or 1.00

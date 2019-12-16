@@ -1,8 +1,9 @@
 -- enemys
 for k, v in ipairs(enemys) do
-    local obj = slk.unit.hpea:new("this_enemys_" .. v.Name)
+    local obj = slk.unit.hfoo:new("this_enemys_" .. v.Name)
     obj.Name = "[劲敌]" .. v.Name
     obj.abilList = ""
+    obj.upgrades = ""
     obj.file = v.file
     obj.Art = "ReplaceableTextures\\CommandButtons\\BTNShade.blp"
     obj.modelScale = v.modelScale or 1.00

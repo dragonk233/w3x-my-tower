@@ -2,8 +2,9 @@
 for _, v in ipairs(couriers) do
     -- 处理信使数据
     local Ubertip = v.Ubertip
-    local obj = slk.unit.hpea:new("couriers_" .. v.Name)
+    local obj = slk.unit.hfoo:new("couriers_" .. v.Name)
     obj.type = "Peon"
+    obj.upgrades = ""
     obj.weapsOn = 0
     obj.Hotkey = ""
     obj.tilesets = 1

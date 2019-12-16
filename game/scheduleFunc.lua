@@ -1,4 +1,25 @@
--- 敌军死亡
+-- 敌军受到攻击
+enemyBeDamage = function()
+    local u = hevent.getTriggerUnit()
+    if (his.alive(u) and cj.GetRandomInt(1, 5) == 3) then
+        htextTag.style(htextTag.create2Unit(
+            u,
+            game.enemyTips[cj.GetRandomInt(1, #game.enemyTips)],
+            10.00,
+            "",
+            1,
+            1.1,
+            11.00
+        ), "scale", cj.GetRandomReal(-0.05, 0.05), 0)
+        heffect.bindUnit("Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl", u, "head", 2.50)
+        heffect.bindUnit("Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl", u, "origin", 2.50)
+        hattr.set(u, 2.50, {
+            move = "+70"
+        })
+    end
+end
+
+-- 敌军死亡HZ
 enemyDeadHZ = function()
     local u = hevent.getKiller()
     if (u ~= nil) then
@@ -6,11 +27,37 @@ enemyDeadHZ = function()
     end
 end
 
+-- 敌军死亡DK
+enemyDeadDK = function()
+    local u = hevent.getKiller()
+    if (u ~= nil) then
+        local pi = hplayer.index(cj.GetOwningPlayer(u))
+        local exp = 25 * game.rule.dk.wave[pi]
+        local gold = 3 * game.rule.dk.wave[pi]
+        haward.forGroup(u, exp, gold, 0)
+        game.rule.dk.playerQty[pi] = game.rule.dk.playerQty[pi] + 1
+        if (game.rule.dk.playerQty[pi] >= game.rule.dk.perWaveQty) then
+            game.rule.dk.playerQty[pi] = 0
+            game.rule.dk.wave[pi] = game.rule.dk.wave[pi] + 1
+            game.rule.dk.mon[pi] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].unitID
+            hmsg.echo(
+                cj.GetPlayerName(hplayer.players[pi])
+                    .. "达到了|cffffff00第"
+                    .. game.rule.dk.wave[pi]
+                    .. "级|r，其他人小心啦~")
+        end
+    end
+    local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex
+    game.rule.dk.monLimit[ui] = game.rule.dk.monLimit[ui] - 1
+end
+
+
 -- 出兵
 enemyGenHZ = function(waiting)
     htime.setTimeout(waiting, "第" .. game.rule.hz.wave .. "波", function(t, td)
         htime.delDialog(td)
         htime.delTimer(t)
+        hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
         local count = game.rule.hz.perWaveQty
         htime.setInterval(2.00, nil, function(t, td)
             count = count - 1
@@ -19,8 +66,14 @@ enemyGenHZ = function(waiting)
                 htime.delTimer(t)
                 local gold = hplayer.qty_current * game.rule.hz.wave * 50
                 haward.forPlayer(gold, 0)
-                hmsg.echo("通过了第" .. game.rule.hz.wave .. "波，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
+                hmsg.echo("通过了|cffffff00第" .. game.rule.hz.wave .. "波|r，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
                 game.rule.hz.wave = game.rule.hz.wave + 1
+                for i = 1, hplayer.qty_max, 1 do
+                    if (his.playing(hplayer.players[i])) then
+                        hsound.sound2Player(cg.gg_snd_coin_1, hplayer.players[i])
+                        hmsg.echo(hplayer.getSelection(hplayer.players[i]))
+                    end
+                end
                 enemyGenHZ(5)
                 return
             end
@@ -35,8 +88,50 @@ enemyGenHZ = function(waiting)
                     cj.SetUnitPathing(u, false)
                     hattr.set(u, 0, {
                         life = "=" .. (10 * game.rule.hz.wave),
+                        move = "=180"
                     })
+                    hevent.onBeDamage(u, enemyBeDamage)
                     hevent.onDead(u, enemyDeadHZ)
+                end
+            end
+        end)
+    end)
+end
+
+enemyGenDK = function(waiting)
+    htime.setTimeout(waiting, "请准备好坑朋友", function(t, td)
+        htime.delDialog(td)
+        htime.delTimer(t)
+        for i = 1, hplayer.qty_max, 1 do
+            if (his.playing(hplayer.players[i])) then
+                game.rule.dk.playerQty[i] = 0
+                game.rule.dk.wave[i] = 1
+                game.rule.dk.mon[i] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].unitID
+                game.rule.dk.monLimit[i] = 0
+            end
+        end
+        htime.setInterval(2.00, nil, function()
+            for k, v in pairs(game.pathPoint) do
+                if (his.playing(hplayer.players[k])) then
+                    if (game.rule.dk.monLimit[k] < game.rule.dk.perWaveQty) then
+                        game.rule.dk.monLimit[k] = game.rule.dk.monLimit[k] + 1
+                        local u = hemeny.create({
+                            unitId = game.rule.dk.mon[k],
+                            qty = 1,
+                            x = v[1][1],
+                            y = v[1][2],
+                        })
+                        cj.SetUnitPathing(u, false)
+                        hattr.set(u, 0, {
+                            life = "=" .. (20 * game.rule.dk.wave[k]),
+                            move = "=160"
+                        })
+                        game.rule.dk.monData[u] = {
+                            pathIndex = k
+                        }
+                        hevent.onBeDamage(u, enemyBeDamage)
+                        hevent.onDead(u, enemyDeadDK)
+                    end
                 end
             end
         end)
@@ -69,7 +164,6 @@ updateMyTower = function()
     local uid = hSys.getObjChar(cj.GetUnitTypeId(u))
     local lv = cj.GetHeroLevel(u)
     local diffLv = cj.I2R(lv - hhero.getPrevLevel(u))
-    hSys.print_r(hslk_global.unitsKV)
     local tlv = hslk_global.unitsKV[uid].towerLevel
     local attackWhite = hslk_global.unitsKV[uid].attackWhite
     local attackGreen = hslk_global.unitsKV[uid].attackGreen
@@ -97,6 +191,16 @@ updateMyTower = function()
         attack_white = "+" .. attackWhite,
         attack_green = "+" .. attackGreen,
     })
+    hsound.sound2Unit(cg.gg_snd_level_up, 100, whichUnit)
+    htextTag.style(htextTag.create2Unit(
+        u,
+        "升级 ↑",
+        13.00,
+        "ffff00",
+        1,
+        2.0,
+        10.00
+    ), "scale", 0, 0.1)
 end
 
 -- 创造兵塔
@@ -133,35 +237,35 @@ createMyTower = function(playerIndex, towerId)
         local mana = 100
         local manaBack = 1
         if (tlv == "E") then
-            life = 1000
+            life = 100
             mana = 100
             manaBack = 2
         elseif (tlv == "D") then
-            life = 2000
+            life = 200
             mana = 200
             manaBack = 3
         elseif (tlv == "C") then
-            life = 3000
+            life = 400
             mana = 300
             manaBack = 4
         elseif (tlv == "B") then
-            life = 4000
+            life = 600
             mana = 400
             manaBack = 5
         elseif (tlv == "A") then
-            life = 5000
+            life = 900
             mana = 500
             manaBack = 6
         elseif (tlv == "S") then
-            life = 10000
+            life = 1500
             mana = 750
             manaBack = 10
         elseif (tlv == "SS") then
-            life = 25000
+            life = 3000
             mana = 1000
             manaBack = 15
         elseif (tlv == "SSS") then
-            life = 50000
+            life = 7500
             mana = 1500
             manaBack = 20
         end

@@ -86,7 +86,7 @@ cj.TriggerAddAction(startTrigger, function()
                                         cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
                                         htextTag.style(htextTag.create2Unit(
                                             bigElf,
-                                            "-" .. game.rule.hz.wave,
+                                            "-" .. game.rule.hz.wave .. " " .. game.bigElfTips[cj.GetRandomInt(1, #game.bigElfTips)],
                                             10.00,
                                             "ff0000",
                                             1,
@@ -118,11 +118,11 @@ cj.TriggerAddAction(startTrigger, function()
                 hleaderBoard.create('hz', 1, function(bl, i)
                     local p = hplayer.players[i]
                     local v = math.floor(hplayer.getDamage(p) * 0.1)
-                    cj.LeaderboardSetLabel(bl, "无尽合作" .. game.rule.hz.wave .. "波")
+                    cj.LeaderboardSetLabel(bl, "无尽合作战力榜(" .. game.rule.hz.wave .. "波)")
                     cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
                 end)
             elseif (btnIdx == "个人坑友模式") then
-                hmsg.echo("|cffffff00四个玩家独立出怪，击杀敌人时会在你的下家（顺时针方向）创建与兵塔和你的等级相关的士兵攻击该玩家，打不过玩家的兵塔会被扣血直至出局|r")
+                hmsg.echo("|cffffff00四个玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局|r")
                 hsound.bgm(cg.gg_snd_bgm_dk, nil)
                 cj.FogEnable(true)
                 cj.FogMaskEnable(true)
@@ -147,36 +147,10 @@ cj.TriggerAddAction(startTrigger, function()
                         cj.TriggerAddAction(tg, function()
                             if (i == #v) then
                                 -- 最后一格,返回起点
-                                if (his.alive(game.playerTower[k])) then
-                                    heffect.toUnit(
-                                        "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",
-                                        game.playerTower[k],
-                                        1
-                                    )
-                                    hunit.subCurLife(
-                                        game.playerTower[k],
-                                        game.rule.dk.level[hplayer.index(cj.GetOwningPlayer(cj.GetTriggerUnit()))]
-                                    )
-                                    cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
-                                    local ttg = htextTag.create2Unit(game.playerTower[k], "-" .. game.rule.hz.wave, 10, "e04240", 1, 3)
-                                    htextTag.style(ttg, "scale", 0, 10)
-                                    cj.SetUnitPosition(cj.GetTriggerUnit(), v[1][1], v[1][2])
-                                else
-                                    hunit.del(cj.GetTriggerUnit(), 0)
-                                end
-                                --[[
                                 local next = getNextRect(k)
                                 if (next ~= -1) then
-                                    local u = hemeny.create({
-                                        unitId = summonID, -- 这里根据该玩家的兵塔的类型召唤
-                                        qty = 1,
-                                        x = game.pathPoint[next][1][1],
-                                        y = game.pathPoint[next][1][2],
-                                    })
-                                    cj.SetUnitUserData(u, 996)
-                                    cj.SetUnitPathing(u, false)
+                                    cj.SetUnitPosition(cj.GetTriggerUnit(), game.pathPoint[next][1][1], game.pathPoint[next][1][2])
                                 end
-                                ]]
                             else
                                 -- 前段路途
                                 cj.IssuePointOrderById(cj.GetTriggerUnit(), 851986, v[i + 1][1], v[i + 1][2])
@@ -185,6 +159,12 @@ cj.TriggerAddAction(startTrigger, function()
                     end
                 end
                 enemyGenDK(30)
+                hleaderBoard.create('dk', 1, function(bl, i)
+                    local p = hplayer.players[i]
+                    local v = game.rule.dk.wave[i]
+                    cj.LeaderboardSetLabel(bl, "个人坑友战绩榜")
+                    cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
+                end)
             end
             -- 基本信使
             for k, v in pairs(game.courierPoint) do
