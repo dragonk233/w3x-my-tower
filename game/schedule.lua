@@ -123,6 +123,7 @@ cj.TriggerAddAction(startTrigger, function()
                 end)
             elseif (btnIdx == "个人坑友模式") then
                 hmsg.echo("|cffffff00四个玩家独立出怪，击杀敌人时会在你的下家（顺时针方向）创建与兵塔和你的等级相关的士兵攻击该玩家，打不过玩家的兵塔会被扣血直至出局|r")
+                hsound.bgm(cg.gg_snd_bgm_dk, nil)
                 cj.FogEnable(true)
                 cj.FogMaskEnable(true)
                 -- 商店
