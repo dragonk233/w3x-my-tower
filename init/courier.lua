@@ -2,7 +2,8 @@
 for _, v in ipairs(couriers) do
     -- 处理信使数据
     local Ubertip = v.Ubertip
-    local obj = slk.unit.Hpal:new("couriers_" .. v.Name)
+    local obj = slk.unit.hpea:new("couriers_" .. v.Name)
+    obj.type = "Peon"
     obj.weapsOn = 0
     obj.Hotkey = ""
     obj.tilesets = 1
@@ -33,10 +34,7 @@ for _, v in ipairs(couriers) do
     obj.def = v.def or 0.00 -- 护甲
     obj.sight = v.sight or 1000 -- 白天视野
     obj.nsight = v.nsight or 1000 -- 夜晚视野
-    obj.EditorSuffix = v.EditorSuffix or "#h-lua"
-    obj.Propernames = v.Propernames or "#h-lua"
     obj.abilList = v.abilList or ""
-    obj.heroAbilList = ""
     obj.nameCount = v.nameCount or 1
     obj.Tip = "选择 " .. v.Name
     obj.Name = "[信使]" .. v.Name
@@ -55,15 +53,31 @@ for _, v in ipairs(couriers) do
     obj.spd = v.spd
     obj.armor = v.armor -- 被击声音
     obj.targType = v.targType --作为目标类型
-    obj.Primary = "STR"
-    obj.STR = v.STR
-    obj.AGI = v.AGI
-    obj.INT = v.INT
-    obj.STRplus = v.STRplus
-    obj.AGIplus = v.AGIplus
-    obj.INTplus = v.INTplus
     v.unitID = obj:get_id()
+    -- 信使物品
+    local iobj = slk.item.gold:new("couriers_items_" .. v.Name)
+    iobj.abilList = ""
+    iobj.Name = "[信使][" .. v.Name .. "]"
+    iobj.Tip = "点击替换信使：[" .. v.Name .. "]"
+    iobj.UberTip = Ubertip
+    iobj.Description = Ubertip
+    iobj.Art = v.Art
+    iobj.scale = 0.1
+    iobj.goldcost = 0
+    iobj.lumbercost = 0
+    iobj.sellable = 1
+    iobj.cooldownID = ""
+    iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
+    local hitem = {
+        Name = v.Name,
+        Art = v.Art,
+        goldcost = 0,
+        lumbercost = 0,
+        itemID = iobj:get_id(),
+        unitID = v.unitID,
+    }
     ?>
 call SaveStr(hash_myslk, StringHash("couriers"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
+call SaveStr(hash_myslk, StringHash("couriersItems"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(hitem))?>")
 <?
 end

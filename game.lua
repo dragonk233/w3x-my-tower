@@ -12,7 +12,7 @@ require "game.global"
 require "game.slk"
 
 --加载本地图的test
-require "game.slk"
+require "game.test"
 
 local preload = {};
 for k, v in pairs(hslk_global.unitsKV) do

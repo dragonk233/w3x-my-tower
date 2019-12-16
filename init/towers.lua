@@ -15,8 +15,53 @@ for tlv, tow in pairs(towers) do
             -- 处理塔基数据
             local Ubertip = v.Ubertip
             local obj = slk.unit.Hpal:new("towers_" .. v.Name)
-            Ubertip = Ubertip .. "|n|cffffff00等级：" .. tlv .. "|r"
-            Ubertip = Ubertip .. "|n|n|cffff8080攻击类型：" .. towersMap.weaponType[v.weapTp1] .. "|r"
+
+            Primary = v.Primary or "STR"
+            v.STR = v.STR or 10
+            v.AGI = v.AGI or 10
+            v.INT = v.INT or 10
+            local tempPower = 0
+            if (tlv == "E") then
+                tempPower = 1
+            elseif (tlv == "D") then
+                tempPower = 2
+            elseif (tlv == "C") then
+                tempPower = 3
+            elseif (tlv == "B") then
+                tempPower = 5
+            elseif (tlv == "A") then
+                tempPower = 8
+            elseif (tlv == "S") then
+                tempPower = 12
+            elseif (tlv == "SS") then
+                tempPower = 17
+            elseif (tlv == "SSS") then
+                tempPower = 30
+            end
+            v.STR = v.STR * tempPower
+            v.AGI = v.AGI * tempPower
+            v.INT = v.INT * tempPower
+            v.STRplus = v.STR * 0.1
+            v.AGIplus = v.AGI * 0.1
+            v.INTplus = v.INT * 0.1
+
+            Ubertip = Ubertip .. "|n|cffccffcc阶级：" .. tlv .. "|r"
+            Ubertip = Ubertip .. "|n|n|cffff8080攻击：" .. towersMap.weaponType[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
+            if (Primary == "STR") then
+                Ubertip = Ubertip .. "|n|cffffff00力量：" .. v.STR .. "(+" .. v.STRplus .. ") *|r"
+            else
+                Ubertip = Ubertip .. "|n|cffffffcc力量：" .. v.STR .. "(+" .. v.STRplus .. ")|r"
+            end
+            if (Primary == "AGI") then
+                Ubertip = Ubertip .. "|n|cffffff00敏捷：" .. v.AGI .. "(+" .. v.AGIplus .. ") *|r"
+            else
+                Ubertip = Ubertip .. "|n|cffffffcc敏捷：" .. v.AGI .. "(+" .. v.AGIplus .. ")|r"
+            end
+            if (Primary == "INT") then
+                Ubertip = Ubertip .. "|n|cffffff00智力：" .. v.INT .. "(+" .. v.INTplus .. ") *|r"
+            else
+                Ubertip = Ubertip .. "|n|cffffffcc智力：" .. v.INT .. "(+" .. v.INTplus .. ")|r"
+            end
             obj.Hotkey = ""
             obj.tilesets = 1
             obj.hostilePal = 0
@@ -114,35 +159,14 @@ for tlv, tow in pairs(towers) do
             obj.Missilearc = 0.05
             obj.weapTp1 = v.weapTp1 or "normal" --攻击类型
             obj.weapType1 = "" --攻击声音
-            obj.Primary = v.Primary or "STR"
-            obj.dmgplus1 = v.dmgplus1 or 10
-            v.STR = v.STR or 10
-            v.AGI = v.AGI or 10
-            v.INT = v.INT or 10
-            local tempPower = 0
-            if (tlv == "E") then
-                tempPower = 1
-            elseif (tlv == "D") then
-                tempPower = 2
-            elseif (tlv == "C") then
-                tempPower = 3
-            elseif (tlv == "B") then
-                tempPower = 5
-            elseif (tlv == "A") then
-                tempPower = 8
-            elseif (tlv == "S") then
-                tempPower = 12
-            elseif (tlv == "SS") then
-                tempPower = 17
-            elseif (tlv == "SSS") then
-                tempPower = 24
-            end
-            obj.STR = v.STR * tempPower
-            obj.AGI = v.AGI * tempPower
-            obj.INT = v.INT * tempPower
-            obj.STRplus = v.STR * 0.1
-            obj.AGIplus = v.AGI * 0.1
-            obj.INTplus = v.INT * 0.1
+            obj.Primary = Primary
+            obj.dmgplus1 = 1
+            obj.STR = v.STR
+            obj.AGI = v.AGI
+            obj.INT = v.INT
+            obj.STRplus = v.STRplus
+            obj.AGIplus = v.AGIplus
+            obj.INTplus = v.INTplus
             v.unitID = obj:get_id()
             v.towerLevel = tlv
             -- 塔基物品

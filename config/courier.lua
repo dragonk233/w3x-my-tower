@@ -1,9 +1,8 @@
 
 couriers = {
     {
-        Name = "雪鹰",
+        Name = "灵动的雪鹰",
         abilList = "Avul,AInv",
-        heroAbilList = "",
         unitSound = "SnowOwl",
         file = "units\\critters\\SnowOwl\\SnowOwl",
         Art = "ReplaceableTextures\\CommandButtons\\BTNSnowOwl.blp",
@@ -14,11 +13,5 @@ couriers = {
         spd = 250,
         targType = "air",
         armor = "Flesh",
-        STR = 1,
-        AGI = 1,
-        INT = 1,
-        STRplus = 0,
-        AGIplus = 0,
-        INTplus = 0,
     },
 }

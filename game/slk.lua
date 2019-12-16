@@ -31,7 +31,7 @@ end
 
 -- courier 信使
 local courierNames = {
-    "雪鹰",
+    "灵动的雪鹰",
 }
 for _, name in ipairs(courierNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriers"), cj.StringHash(name))

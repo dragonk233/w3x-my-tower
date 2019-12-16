@@ -2,7 +2,7 @@
 enemyDeadHZ = function()
     local u = hevent.getKiller()
     if (u ~= nil) then
-        haward.forGroupExp(u, 10 * game.rule.hz.wave)
+        haward.forGroupExp(u, 15 * game.rule.hz.wave)
     end
 end
 
@@ -12,15 +12,15 @@ enemyGenHZ = function(waiting)
         htime.delDialog(td)
         htime.delTimer(t)
         local count = game.rule.hz.perWaveQty
-        htime.setInterval(1.80, nil, function(t, td)
+        htime.setInterval(2.00, nil, function(t, td)
             count = count - 1
             if (count <= 0) then
                 htime.delDialog(td)
                 htime.delTimer(t)
                 local gold = hplayer.qty_current * game.rule.hz.wave * 50
-                game.rule.hz.wave = game.rule.hz.wave + 1
                 haward.forPlayer(gold, 0)
-                hmsg.echo("到达了第" .. game.rule.hz.wave .. "波，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
+                hmsg.echo("通过了第" .. game.rule.hz.wave .. "波，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
+                game.rule.hz.wave = game.rule.hz.wave + 1
                 enemyGenHZ(5)
                 return
             end
@@ -63,6 +63,42 @@ getNextRect = function(current)
     return next
 end
 
+-- 兵塔升级
+updateMyTower = function()
+    local u = hevent.getTriggerUnit()
+    local uid = hSys.getObjChar(cj.GetUnitTypeId(u))
+    local lv = cj.GetHeroLevel(u)
+    local diffLv = cj.I2R(lv - hhero.getPrevLevel(u))
+    hSys.print_r(hslk_global.unitsKV)
+    local tlv = hslk_global.unitsKV[uid].towerLevel
+    local attackWhite = hslk_global.unitsKV[uid].attackWhite
+    local attackGreen = hslk_global.unitsKV[uid].attackGreen
+    local percent = 0
+    if (tlv == "E") then
+        percent = 0.10
+    elseif (tlv == "D") then
+        percent = 0.15
+    elseif (tlv == "C") then
+        percent = 0.20
+    elseif (tlv == "B") then
+        percent = 0.25
+    elseif (tlv == "A") then
+        percent = 0.30
+    elseif (tlv == "S") then
+        percent = 0.40
+    elseif (tlv == "SS") then
+        percent = 0.50
+    elseif (tlv == "SSS") then
+        percent = 0.75
+    end
+    attackWhite = diffLv * attackWhite * percent
+    attackGreen = diffLv * attackGreen * percent
+    hattr.set(u, 0, {
+        attack_white = "+" .. attackWhite,
+        attack_green = "+" .. attackGreen,
+    })
+end
+
 -- 创造兵塔
 createMyTower = function(playerIndex, towerId)
     if (playerIndex == nil or towerId == nil) then
@@ -81,6 +117,8 @@ createMyTower = function(playerIndex, towerId)
             x = game.towerPoint[playerIndex][1],
             y = game.towerPoint[playerIndex][2],
         })
+        hhero.setIsHero(u, true)
+        hevent.onLevelUp(u, updateMyTower)
         -- 如果有上一个单位，把上一个兵塔的物品给予新的兵塔，并删除它
         if (game.playerTower[playerIndex] ~= nil) then
             hitem.copy(game.playerTower[playerIndex], u)
@@ -131,6 +169,8 @@ createMyTower = function(playerIndex, towerId)
             life = "=" .. life,
             mana = "=" .. mana,
             manaBack = "=" .. manaBack,
+            attack_white = "+" .. hslk_global.unitsKV[towerId].attackWhite,
+            attack_green = "+" .. hslk_global.unitsKV[towerId].attackGreen,
         })
     end
 end

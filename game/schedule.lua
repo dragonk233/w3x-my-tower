@@ -9,6 +9,9 @@ cj.TriggerAddAction(startTrigger, function()
         这里开始游戏正式开始了
         发挥你的想象力吧~
     ]]
+
+    hsound.bgmStop(nil)
+
     -- 第一玩家选择模式
     hmsg.echo("第一个玩家正在选择（游戏模式）", 10)
     hdialog.create(
@@ -23,7 +26,8 @@ cj.TriggerAddAction(startTrigger, function()
         function(btnIdx)
             hmsg.echo("选择了" .. btnIdx)
             if (btnIdx == "无尽合作模式") then
-                hmsg.echo("四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除伟“大精灵”的生命，直至游戏失败")
+                hmsg.echo("|cffffff00四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除伟“大精灵”的生命，直至游戏失败|r")
+                hsound.bgm(cg.gg_snd_bgm_hz, nil)
                 cj.FogEnable(false)
                 cj.FogMaskEnable(false)
                 -- 大精灵
@@ -80,8 +84,15 @@ cj.TriggerAddAction(startTrigger, function()
                                         )
                                         hunit.subCurLife(bigElf, game.rule.hz.wave)
                                         cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
-                                        local ttg = htextTag.create2Unit(bigElf, "-" .. game.rule.hz.wave, 10, "e04240", 0, 3)
-                                        htextTag.style(ttg, "scale", 0, 10)
+                                        htextTag.style(htextTag.create2Unit(
+                                            bigElf,
+                                            "-" .. game.rule.hz.wave,
+                                            10.00,
+                                            "ff0000",
+                                            1,
+                                            1.1,
+                                            50.00
+                                        ), "scale", 0, 0.05)
                                     end
                                 else
                                     cj.SetUnitUserData(cj.GetTriggerUnit(), uVal + 1)
@@ -111,7 +122,7 @@ cj.TriggerAddAction(startTrigger, function()
                     cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
                 end)
             elseif (btnIdx == "个人坑友模式") then
-                hmsg.echo("四个玩家独立出怪，击杀敌人时会在你的下家（顺时针方向）创建与兵塔和你的等级相关的士兵攻击该玩家，打不过玩家的兵塔会被扣血直至出局")
+                hmsg.echo("|cffffff00四个玩家独立出怪，击杀敌人时会在你的下家（顺时针方向）创建与兵塔和你的等级相关的士兵攻击该玩家，打不过玩家的兵塔会被扣血直至出局|r")
                 cj.FogEnable(true)
                 cj.FogMaskEnable(true)
                 -- 商店
@@ -146,7 +157,7 @@ cj.TriggerAddAction(startTrigger, function()
                                         game.rule.dk.level[hplayer.index(cj.GetOwningPlayer(cj.GetTriggerUnit()))]
                                     )
                                     cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
-                                    local ttg = htextTag.create2Unit(game.playerTower[k], "-" .. game.rule.hz.wave, 10, "e04240", 0, 3)
+                                    local ttg = htextTag.create2Unit(game.playerTower[k], "-" .. game.rule.hz.wave, 10, "e04240", 1, 3)
                                     htextTag.style(ttg, "scale", 0, 10)
                                     cj.SetUnitPosition(cj.GetTriggerUnit(), v[1][1], v[1][2])
                                 else
@@ -176,7 +187,7 @@ cj.TriggerAddAction(startTrigger, function()
             end
             -- 基本信使
             for k, v in pairs(game.courierPoint) do
-                createMyCourier(k, game.courier["雪鹰"].unitID)
+                createMyCourier(k, game.courier["灵动的雪鹰"].unitID)
             end
             -- 基本兵塔
             for k, v in pairs(game.towerPoint) do
