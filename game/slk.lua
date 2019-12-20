@@ -62,3 +62,25 @@ for k, name in ipairs(thisEnemyNames) do
     hslk_global.unitsKV[jv.unitID] = jv
     game.thisEnemys[k] = jv
 end
+
+-- 兵塔阶级技能
+local thisTowerPowerAbilitiesName = {
+    "SSS", "SS", "S", "A", "B", "C", "D", "E"
+}
+game.thisTowerPowerAbilitiesLen = #thisTowerPowerAbilitiesName
+for _, name in ipairs(thisTowerPowerAbilitiesName) do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_tower_power"), cj.StringHash(name))
+    local jv = json.parse(v)
+    game.thisTowerPowerAbilities[name] = jv
+end
+
+-- 空技能
+local thisEmptyAbilitiesName = {
+    "A", "S", "D", "F", "Z", "X", "C", "V"
+}
+game.thisEmptyAbilitiesLen = #thisEmptyAbilitiesName
+for _, name in ipairs(thisEmptyAbilitiesName) do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_empty"), cj.StringHash(name))
+    local jv = json.parse(v)
+    game.thisEmptyAbilities[name] = jv
+end

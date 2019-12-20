@@ -1,19 +1,19 @@
 local AB_HOTKEY_KV = {
-    Q = { 0, 0 },
-    W = { 1, 0 },
-    E = { 2, 0 },
-    R = { 3, 0 },
-    T = { 0, 1 },
-    Y = { 1, 1 },
-    U = { 2, 1 },
-    I = { 3, 1 },
+    A = { 0, 1 },
+    S = { 1, 1 },
+    D = { 2, 1 },
+    F = { 3, 1 },
+    Z = { 0, 2 },
+    X = { 1, 2 },
+    C = { 2, 2 },
+    V = { 3, 2 },
 }
 
-local red = {
-    "Q", "W", "E", "R",
-}
 local yellow = {
-    "T", "Y", "U", "I",
+    "A", "S", "D", "F",
+}
+local red = {
+    "Z", "X", "C", "V",
 }
 
 -- abilities
@@ -150,4 +150,31 @@ for _, v in ipairs(abilities) do
         <?
         end
     end
+end
+
+local towerPower = {
+    "SSS", "SS", "S", "A", "B", "C", "D", "E"
+}
+for _, v in ipairs(towerPower) do
+    local obj = slk.ability.Aamk:new("abilities_tower_power_" .. v)
+    local Name = "兵塔阶级 - [" .. hColor.yellow(v) .. "]"
+    local Tip = "兵塔阶级 - [" .. hColor.yellow(v) .. "]"
+    obj.Name = Name
+    obj.Tip = Tip
+    obj.Ubertip = "这是一个" .. hColor.yellow(v) .. "级的兵塔"
+    obj.Buttonpos1 = 1
+    obj.Buttonpos2 = 0
+    obj.hero = 0
+    obj.levels = 1
+    obj.DataA1 = 0
+    obj.DataB1 = 0
+    obj.DataC1 = 0
+    obj.Art = "war3mapImported\\icon_pas_Letter_" .. v .. ".blp"
+    local ab = {
+        abilityID = obj:get_id(),
+        abilityST = v,
+    }
+    ?>
+call SaveStr(hash_myslk, StringHash("abilities_tower_power"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
+<?
 end

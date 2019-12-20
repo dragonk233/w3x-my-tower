@@ -296,6 +296,10 @@ createMyTower = function(playerIndex, towerId)
             attack_white = "+" .. hslk_global.unitsKV[towerId].attackWhite,
             attack_green = "+" .. hslk_global.unitsKV[towerId].attackGreen,
         })
+        hskill.add(u, game.thisTowerPowerAbilities[hslk_global.unitsKV[towerId].towerPower].abilityID, 0)
+        for _, v in pairs(game.thisEmptyAbilities) do
+            hskill.add(u, v.abilityID, 0)
+        end
     end
 end
 

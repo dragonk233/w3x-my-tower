@@ -167,8 +167,8 @@ for tlv, tow in pairs(towers) do
             obj.STRplus = v.STRplus
             obj.AGIplus = v.AGIplus
             obj.INTplus = v.INTplus
+            v.towerPower = tlv
             v.unitID = obj:get_id()
-            v.towerLevel = tlv
             -- 塔基物品
             local iobj = slk.item.gold:new("towers_items_" .. v.Name)
             iobj.abilList = ""
