@@ -42,7 +42,7 @@ end
 
 -- unit 其他单位
 local thisUnitNames = {
-    "大精灵",
+    "大精灵", "河草",
 }
 for _, name in ipairs(thisUnitNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisunit"), cj.StringHash(name))

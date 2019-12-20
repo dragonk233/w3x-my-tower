@@ -13,5 +13,19 @@ units = {
         nsight = 2400,
         unitSound = "Wisp",
         weapsOn = 0,
+    },
+    {
+        Name = "河草",
+        abilList = "Avul,Aloc",
+        file = "Doodads\\LordaeronSummer\\Plants\\RiverRushes\\RiverRushes2.mdl",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNHex.blp",
+        modelScale = 1,
+        scale = 1.00,
+        HP = 100,
+        spd = 0,
+        sight = 0,
+        nsight = 0,
+        unitSound = "",
+        weapsOn = 0,
     }
 }

@@ -3,13 +3,13 @@ enemyBeDamage = function()
     local u = hevent.getTriggerUnit()
     if (his.alive(u) and cj.GetRandomInt(1, 5) == 3) then
         htextTag.style(htextTag.create2Unit(
-            u,
-            game.enemyTips[cj.GetRandomInt(1, #game.enemyTips)],
-            10.00,
-            "",
-            1,
-            1.1,
-            11.00
+                u,
+                game.enemyTips[cj.GetRandomInt(1, #game.enemyTips)],
+                10.00,
+                "",
+                1,
+                1.1,
+                11.00
         ), "scale", cj.GetRandomReal(-0.05, 0.05), 0)
         heffect.bindUnit("Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl", u, "head", 2.50)
         heffect.bindUnit("Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl", u, "origin", 2.50)
@@ -19,12 +19,31 @@ enemyBeDamage = function()
     end
 end
 
+-- 坟头草
+enemyGrass = function(triggerUnit)
+    local x = cj.GetUnitX(triggerUnit)
+    local y = cj.GetUnitY(triggerUnit)
+    if (cj.GetRandomInt(1, 15) == 4) then
+        htime.setTimeout(cj.GetRandomReal(8, 25), nil, function()
+            hunit.create({
+                whichPlayer = hplayer.player_passive,
+                unitId = game.thisUnits["河草"].unitID,
+                qty = 1,
+                x = x,
+                y = y,
+                during = cj.GetRandomReal(20, 45)
+            })
+        end)
+    end
+end
+
 -- 敌军死亡HZ
 enemyDeadHZ = function()
     local u = hevent.getKiller()
     if (u ~= nil) then
         haward.forGroupExp(u, 15 * game.rule.hz.wave)
     end
+    enemyGrass(hevent.getTriggerUnit())
 end
 
 -- 敌军死亡DK
@@ -41,14 +60,15 @@ enemyDeadDK = function()
             game.rule.dk.wave[pi] = game.rule.dk.wave[pi] + 1
             game.rule.dk.mon[pi] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].unitID
             hmsg.echo(
-                cj.GetPlayerName(hplayer.players[pi])
-                    .. "达到了|cffffff00第"
-                    .. game.rule.dk.wave[pi]
-                    .. "级|r，其他人小心啦~")
+                    cj.GetPlayerName(hplayer.players[pi])
+                            .. "达到了|cffffff00第"
+                            .. game.rule.dk.wave[pi]
+                            .. "级|r，其他人小心啦~")
         end
     end
     local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex
     game.rule.dk.monLimit[ui] = game.rule.dk.monLimit[ui] - 1
+    enemyGrass()
 end
 
 
@@ -193,13 +213,13 @@ updateMyTower = function()
     })
     hsound.sound2Unit(cg.gg_snd_level_up, 100, whichUnit)
     htextTag.style(htextTag.create2Unit(
-        u,
-        "升级 ↑",
-        13.00,
-        "ffff00",
-        1,
-        2.0,
-        10.00
+            u,
+            "升级 ↑",
+            13.00,
+            "ffff00",
+            1,
+            2.0,
+            10.00
     ), "scale", 0, 0.1)
 end
 
