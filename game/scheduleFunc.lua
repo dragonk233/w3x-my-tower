@@ -20,11 +20,12 @@ enemyBeDamage = function()
 end
 
 -- 坟头草
-enemyGrass = function(triggerUnit)
+deadAward = function(triggerUnit, killer)
     local x = cj.GetUnitX(triggerUnit)
     local y = cj.GetUnitY(triggerUnit)
-    if (cj.GetRandomInt(1, 15) == 4) then
-        htime.setTimeout(cj.GetRandomReal(8, 25), nil, function()
+    -- 坟头草
+    if (cj.GetRandomInt(1, 15) == 13) then
+        htime.setTimeout(cj.GetRandomReal(8, 25), function()
             hunit.create({
                 whichPlayer = hplayer.player_passive,
                 unitId = game.thisUnits["河草"].unitID,
@@ -35,6 +36,41 @@ enemyGrass = function(triggerUnit)
             })
         end)
     end
+    local maxLevel = 0
+    if (game.rule.cur == "hz") then
+        maxLevel = math.floor(game.rule.hz.wave * 0.1)
+    elseif (game.rule.cur == "dk" and killer ~= nil) then
+        maxLevel = math.floor(game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(killer))] * 0.1)
+    end
+    if (maxLevel < 1) then
+        maxLevel = 1
+    elseif (maxLevel > 10) then
+        maxLevel = 10
+    end
+    local level = cj.GetRandomInt(1, maxLevel)
+    -- 掉落红技能书
+    if (cj.GetRandomInt(1, 30) == 13) then
+        if (#game.thisOptionAbilityItem["red"][level] > 0) then
+            local itId = hSys.randTable(game.thisOptionAbilityItem["red"][level]).itemID
+            hitem.create({
+                itemId = itId,
+                x = x,
+                y = y,
+                during = 60,
+            })
+        end
+        -- 掉落黄技能书
+    elseif (cj.GetRandomInt(1, 55) == 17) then
+        if (#game.thisOptionAbilityItem["yellow"][level] > 0) then
+            local itId = hSys.randTable(game.thisOptionAbilityItem["yellow"][level]).itemID
+            hitem.create({
+                itemId = itId,
+                x = x,
+                y = y,
+                during = 60,
+            })
+        end
+    end
 end
 
 -- 敌军死亡HZ
@@ -43,7 +79,7 @@ enemyDeadHZ = function()
     if (u ~= nil) then
         haward.forGroupExp(u, 15 * game.rule.hz.wave)
     end
-    enemyGrass(hevent.getTriggerUnit())
+    deadAward(hevent.getTriggerUnit(), u)
 end
 
 -- 敌军死亡DK
@@ -68,18 +104,18 @@ enemyDeadDK = function()
     end
     local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex
     game.rule.dk.monLimit[ui] = game.rule.dk.monLimit[ui] - 1
-    enemyGrass()
+    deadAward(hevent.getTriggerUnit(), u)
 end
 
 
 -- 出兵
 enemyGenHZ = function(waiting)
-    htime.setTimeout(waiting, "第" .. game.rule.hz.wave .. "波", function(t, td)
+    htime.setTimeout(waiting, function(t, td)
         htime.delDialog(td)
         htime.delTimer(t)
         hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
         local count = game.rule.hz.perWaveQty
-        htime.setInterval(2.00, nil, function(t, td)
+        htime.setInterval(2.00, function(t, td)
             count = count - 1
             if (count <= 0) then
                 htime.delDialog(td)
@@ -115,11 +151,11 @@ enemyGenHZ = function(waiting)
                 end
             end
         end)
-    end)
+    end, "第" .. game.rule.hz.wave .. "波")
 end
 
 enemyGenDK = function(waiting)
-    htime.setTimeout(waiting, "请准备好坑朋友", function(t, td)
+    htime.setTimeout(waiting, function(t, td)
         htime.delDialog(td)
         htime.delTimer(t)
         for i = 1, hplayer.qty_max, 1 do
@@ -130,7 +166,7 @@ enemyGenDK = function(waiting)
                 game.rule.dk.monLimit[i] = 0
             end
         end
-        htime.setInterval(2.00, nil, function()
+        htime.setInterval(2.00, function()
             for k, v in pairs(game.pathPoint) do
                 if (his.playing(hplayer.players[k])) then
                     if (game.rule.dk.monLimit[k] < game.rule.dk.perWaveQty) then
@@ -155,7 +191,7 @@ enemyGenDK = function(waiting)
                 end
             end
         end)
-    end)
+    end, "请准备好与朋友欢乐")
 end
 
 getNextRect = function(current)
@@ -215,7 +251,7 @@ updateMyTower = function()
     htextTag.style(htextTag.create2Unit(
             u,
             "升级 ↑",
-            13.00,
+            12.00,
             "ffff00",
             1,
             2.0,
@@ -326,6 +362,7 @@ createMyCourier = function(playerIndex, courierId)
             hitem.copy(game.playerCourier[playerIndex], u)
             hunit.del(game.playerCourier[playerIndex], 0)
         end
+        hitem.setAllowSeparate(u)
         game.playerCourier[playerIndex] = u
         cj.PanCameraToTimed(game.courierPoint[playerIndex][1], game.courierPoint[playerIndex][2], 0.60)
     end

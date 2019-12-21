@@ -46,7 +46,7 @@ for tlv, tow in pairs(towers) do
             v.INTplus = v.INT * 0.1
 
             Ubertip = Ubertip .. "|n|cffccffcc阶级：" .. tlv .. "|r"
-            Ubertip = Ubertip .. "|n|n|cffff8080攻击：" .. towersMap.weaponType[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
+            Ubertip = Ubertip .. "|n|n|cffff8080攻击：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
             if (Primary == "STR") then
                 Ubertip = Ubertip .. "|n|cffffff00力量：" .. v.STR .. "(+" .. v.STRplus .. ") *|r"
             else
@@ -171,7 +171,6 @@ for tlv, tow in pairs(towers) do
             v.unitID = obj:get_id()
             -- 塔基物品
             local iobj = slk.item.gold:new("towers_items_" .. v.Name)
-            iobj.abilList = ""
             iobj.Name = "[" .. tlv .. "][" .. v.Name .. "]"
             iobj.Tip = "点击替换兵塔：[" .. v.Name .. "]"
             iobj.UberTip = Ubertip
@@ -183,6 +182,7 @@ for tlv, tow in pairs(towers) do
             iobj.sellable = 1
             iobj.cooldownID = ""
             iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
+            iobj.abilList = UsedID.Tower
             local hitem = {
                 Name = v.Name,
                 Art = v.Art,

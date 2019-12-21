@@ -65,10 +65,14 @@ call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<
 <?
 end
 
+local level_limit = 10
+local ab_index = 0
+local ab_item_index = 0
+
 -- 处理技能(书)数据
 for _, v in ipairs(abilities) do
     -- 这一轮是技能等级的
-    for level = 1, 20, 1 do
+    for level = 1, level_limit, 1 do
         -- 这一轮是处理类型的
         local AbSite = red
         if (v.AbSite == "yellow") then
@@ -92,6 +96,7 @@ for _, v in ipairs(abilities) do
             end
         end
         for _, s in ipairs(AbSite) do
+            ab_index = ab_index + 1
             local obj = slk.ability.Aamk:new("abilities_" .. v.Name .. "_" .. level .. "_" .. s)
             local Name = v.Name .. "[Lv" .. level .. "]" .. "[" .. s .. "]"
             local Tip = v.Name .. " - [|cffffcc00等级 " .. level .. "|r]" .. " - [|cffffcc00" .. s .. "|r]"
@@ -108,23 +113,26 @@ for _, v in ipairs(abilities) do
             obj.Art = v.Art
             v.abilityID = obj:get_id()
             v.abilityST = s
+            v.abilityLV = level
             ?>
-        call SaveStr(hash_myslk, StringHash("abilities"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
-        <?
+        call SaveStr(hash_myslk, StringHash("abilities"), <?=ab_index?>, "<?=hSys.addslashes(json.stringify(v))?>")
+            <?
         end
+        -- 物品
         if (v.AbSite ~= "all") then
-            -- 物品
+            ab_item_index = ab_item_index + 1
             local iobj = slk.item.gold:new("abilities_items_" .. v.Name .. "_" .. level)
             local goldcost = level * 100
-            iobj.abilList = ""
             if (v.AbSite == 'red') then
                 iobj.Name = "[技能书·红]《等级" .. level .. "的" .. v.Name .. "》"
                 iobj.Tip = "点击学习红技能书：|cffffcc00《等级" .. level .. "的" .. v.Name .. "》|r"
                 iobj.file = "Objects\\InventoryItems\\tomeRed\\tomeRed.mdl"
+                iobj.abilList = UsedID.BookRed
             elseif (v.AbSite == 'yellow') then
                 iobj.Name = "[技能书·黄]《等级" .. level .. "的" .. v.Name .. "》"
                 iobj.Tip = "点击学习黄技能书：|cffffcc00《等级" .. level .. "的" .. v.Name .. "》|r"
                 iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
+                iobj.abilList = UsedID.BookYellow
             end
             iobj.UberTip = "使用技能书学习技能：|n" .. Ubertip
             iobj.Description = "技能书：" .. Ubertip
@@ -143,11 +151,12 @@ for _, v in ipairs(abilities) do
                 lumbercost = 0,
                 itemID = iobj:get_id(),
                 abilityID = v.abilityID,
+                abilityCOLOR = v.AbSite,
                 abilityLV = level,
             }
             ?>
-        call SaveStr(hash_myslk, StringHash("abilitiesItems"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(hitem))?>")
-        <?
+        call SaveStr(hash_myslk, StringHash("abilitiesItems"), <?=ab_item_index?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
+            <?
         end
     end
 end
@@ -178,3 +187,8 @@ for _, v in ipairs(towerPower) do
 call SaveStr(hash_myslk, StringHash("abilities_tower_power"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
 <?
 end
+
+?>
+call SaveInteger(hash_myslk, StringHash("abilities_qty"), 0, <?=ab_index?>)
+call SaveInteger(hash_myslk, StringHash("abilities_item_qty"), 0, <?=ab_item_index?>)
+<?

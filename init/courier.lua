@@ -57,7 +57,6 @@ for _, v in ipairs(couriers) do
     v.unitID = obj:get_id()
     -- 信使物品
     local iobj = slk.item.gold:new("couriers_items_" .. v.Name)
-    iobj.abilList = ""
     iobj.Name = "[信使][" .. v.Name .. "]"
     iobj.Tip = "点击替换信使：[" .. v.Name .. "]"
     iobj.UberTip = Ubertip
@@ -69,6 +68,7 @@ for _, v in ipairs(couriers) do
     iobj.sellable = 1
     iobj.cooldownID = ""
     iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
+    iobj.abilList = UsedID.Tower
     local hitem = {
         Name = v.Name,
         Art = v.Art,

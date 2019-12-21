@@ -71,6 +71,7 @@ game.thisTowerPowerAbilitiesLen = #thisTowerPowerAbilitiesName
 for _, name in ipairs(thisTowerPowerAbilitiesName) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_tower_power"), cj.StringHash(name))
     local jv = json.parse(v)
+    hslk_global.abilitiesKV[jv.abilityID] = jv
     game.thisTowerPowerAbilities[name] = jv
 end
 
@@ -82,5 +83,31 @@ game.thisEmptyAbilitiesLen = #thisEmptyAbilitiesName
 for _, name in ipairs(thisEmptyAbilitiesName) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_empty"), cj.StringHash(name))
     local jv = json.parse(v)
+    hslk_global.abilitiesKV[jv.abilityID] = jv
     game.thisEmptyAbilities[name] = jv
+end
+
+-- 技能/技能书
+local abilities_qty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilities_qty"), 0)
+local abilities_item_qty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilities_item_qty"), 0)
+for i = 1, abilities_qty, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities"), i)
+    local jv = json.parse(v)
+    hslk_global.itemsKV[jv.abilityID] = jv
+    if (game.thisOptionAbility[jv.abilityST] == nil) then
+        game.thisOptionAbility[jv.abilityST] = {}
+    end
+    table.insert(game.thisOptionAbility[jv.abilityST], jv)
+end
+for i = 1, abilities_item_qty, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiesItems"), i)
+    local jv = json.parse(v)
+    hslk_global.itemsKV[jv.itemID] = jv
+    if (game.thisOptionAbilityItem[jv.abilityCOLOR] == nil) then
+        game.thisOptionAbilityItem[jv.abilityCOLOR] = {}
+    end
+    if (game.thisOptionAbilityItem[jv.abilityCOLOR][jv.abilityLV] == nil) then
+        game.thisOptionAbilityItem[jv.abilityCOLOR][jv.abilityLV] = {}
+    end
+    table.insert(game.thisOptionAbilityItem[jv.abilityCOLOR][jv.abilityLV], jv)
 end

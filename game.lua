@@ -34,7 +34,6 @@ hcamera.setModel("normal")
 -- hattrUnit.punishTtgHeight(250.00)
 
 -- 设定玩家
-hplayerInit()
 hplayer.qty_max = 4 -- 最大玩家数
 hplayer.convert_ratio = 100 -- 换算比率，100金 -> 1木
 

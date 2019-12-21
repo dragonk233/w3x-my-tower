@@ -26,6 +26,7 @@ cj.TriggerAddAction(startTrigger, function()
             function(btnIdx)
                 hmsg.echo("选择了" .. btnIdx)
                 if (btnIdx == "无尽合作模式") then
+                    game.rule.cur = "hz"
                     hmsg.echo("|cffffff00四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除伟“大精灵”的生命，直至游戏失败|r")
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)
                     cj.FogEnable(false)
@@ -40,11 +41,11 @@ cj.TriggerAddAction(startTrigger, function()
                     })
                     hevent.onDead(bigElf, function()
                         hmsg.echo("不！“大精灵”GG了，结束啦~我们的守护")
-                        htime.setTimeout(5, "退出倒计时", function()
+                        htime.setTimeout(5, function()
                             for i = 1, hplayer.qty_max, 1 do
                                 hplayer.defeat(hplayer.players[i], "再见~")
                             end
-                        end)
+                        end, "退出倒计时")
                     end)
                     cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
                     -- 商店
@@ -121,7 +122,7 @@ cj.TriggerAddAction(startTrigger, function()
                         local bigElfTotal = 60
                         local ell = 0
                         if (his.alive(bigElf)) then
-                            ell = math.floor(hunit.getCurLifePercent(bigElf) / (100/bigElfTotal))
+                            ell = math.floor(hunit.getCurLifePercent(bigElf) / (100 / bigElfTotal))
                         end
                         local bigElfLife = ""
                         local bigElfLife1 = ""
@@ -146,6 +147,7 @@ cj.TriggerAddAction(startTrigger, function()
                         cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
                     end)
                 elseif (btnIdx == "个人坑友模式") then
+                    game.rule.cur = "dk"
                     hmsg.echo("|cffffff00四个玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局|r")
                     hsound.bgm(cg.gg_snd_bgm_dk, nil)
                     cj.FogEnable(true)

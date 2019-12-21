@@ -26,7 +26,8 @@ game = {
             mon = {},
             monLimit = {},
             monData = {},
-        }
+        },
+        cur = "hz"
     },
 
     playerTower = {},
@@ -48,6 +49,9 @@ game = {
 
     thisEmptyAbilities = {},
     thisEmptyAbilitiesLen = 0,
+
+    thisOptionAbility = {},
+    thisOptionAbilityItem = {},
 
     -- 左上第一顺时针设定的
     towerPoint = {
