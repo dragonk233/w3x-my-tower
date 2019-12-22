@@ -134,7 +134,7 @@ for _, v in ipairs(abilities) do
                 iobj.file = "Objects\\InventoryItems\\tomeBrown\\tomeBrown.mdl"
                 iobj.abilList = UsedID.BookYellow
             end
-            iobj.UberTip = "使用技能书学习技能：|n" .. Ubertip
+            iobj.UberTip = "能学习到技能：|n" .. Ubertip
             iobj.Description = "技能书：" .. Ubertip
             iobj.Art = v.Art
             iobj.scale = 1.00
