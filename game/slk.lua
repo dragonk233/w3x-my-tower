@@ -8,13 +8,13 @@ for _, name in ipairs(towersNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), cj.StringHash(name))
     local jv = json.parse(v)
     game.towers[name] = jv
-    game.towersKV[jv.unitID] = jv
-    hslk_global.unitsKV[jv.unitID] = jv
+    game.towersKV[jv.UNIT_ID] = jv
+    hRuntime.register.unit(jv)
     --
     v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towersItems"), cj.StringHash(name))
     jv = json.parse(v)
     game.towersItems[name] = jv
-    game.towersItemsKV[jv.itemID] = jv
+    hRuntime.register.item(jv)
 end
 
 --shop
@@ -22,10 +22,10 @@ local shopNames = {
     "猎人之店",
 }
 
-for k, name in ipairs(shopNames) do
+for _, name in ipairs(shopNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("shops"), cj.StringHash(name))
     local jv = json.parse(v)
-    hslk_global.unitsKV[jv.unitID] = jv
+    hRuntime.register.unit(jv)
     game.shops[name] = jv
 end
 
@@ -36,18 +36,18 @@ local courierNames = {
 for _, name in ipairs(courierNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriers"), cj.StringHash(name))
     local jv = json.parse(v)
-    hslk_global.unitsKV[jv.unitID] = jv
+    hRuntime.register.unit(jv)
     game.courier[name] = jv
 end
 
 -- unit 其他单位
 local thisUnitNames = {
-    "大精灵", "河草",
+    "大精灵", "河草", "大树灵"
 }
 for _, name in ipairs(thisUnitNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisunit"), cj.StringHash(name))
     local jv = json.parse(v)
-    hslk_global.unitsKV[jv.unitID] = jv
+    hRuntime.register.unit(jv)
     game.thisUnits[name] = jv
 end
 
@@ -59,7 +59,7 @@ game.thisEnemysLen = #thisEnemyNames
 for k, name in ipairs(thisEnemyNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisenemys"), cj.StringHash(name))
     local jv = json.parse(v)
-    hslk_global.unitsKV[jv.unitID] = jv
+    hRuntime.register.unit(jv)
     game.thisEnemys[k] = jv
 end
 
@@ -71,7 +71,7 @@ game.thisTowerPowerAbilitiesLen = #thisTowerPowerAbilitiesName
 for _, name in ipairs(thisTowerPowerAbilitiesName) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_tower_power"), cj.StringHash(name))
     local jv = json.parse(v)
-    hslk_global.abilitiesKV[jv.abilityID] = jv
+    hRuntime.register.ability(jv)
     game.thisTowerPowerAbilities[name] = jv
 end
 
@@ -83,7 +83,7 @@ game.thisEmptyAbilitiesLen = #thisEmptyAbilitiesName
 for _, name in ipairs(thisEmptyAbilitiesName) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_empty"), cj.StringHash(name))
     local jv = json.parse(v)
-    hslk_global.abilitiesKV[jv.abilityID] = jv
+    hRuntime.register.ability(jv)
     game.thisEmptyAbilities[name] = jv
 end
 
@@ -93,21 +93,21 @@ local abilities_item_qty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilitie
 for i = 1, abilities_qty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities"), i)
     local jv = json.parse(v)
-    hslk_global.itemsKV[jv.abilityID] = jv
-    if (game.thisOptionAbility[jv.abilityST] == nil) then
-        game.thisOptionAbility[jv.abilityST] = {}
+    hRuntime.register.ability(jv)
+    if (game.thisOptionAbility[jv.ABILITY_BTN] == nil) then
+        game.thisOptionAbility[jv.ABILITY_BTN] = {}
     end
-    table.insert(game.thisOptionAbility[jv.abilityST], jv)
+    table.insert(game.thisOptionAbility[jv.ABILITY_BTN], jv)
 end
 for i = 1, abilities_item_qty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiesItems"), i)
     local jv = json.parse(v)
-    hslk_global.itemsKV[jv.itemID] = jv
-    if (game.thisOptionAbilityItem[jv.abilityCOLOR] == nil) then
-        game.thisOptionAbilityItem[jv.abilityCOLOR] = {}
+    hRuntime.register.item(jv)
+    if (game.thisOptionAbilityItem[jv.ABILITY_COLOR] == nil) then
+        game.thisOptionAbilityItem[jv.ABILITY_COLOR] = {}
     end
-    if (game.thisOptionAbilityItem[jv.abilityCOLOR][jv.abilityLV] == nil) then
-        game.thisOptionAbilityItem[jv.abilityCOLOR][jv.abilityLV] = {}
+    if (game.thisOptionAbilityItem[jv.ABILITY_COLOR][jv.ABILITY_LEVEL] == nil) then
+        game.thisOptionAbilityItem[jv.ABILITY_COLOR][jv.ABILITY_LEVEL] = {}
     end
-    table.insert(game.thisOptionAbilityItem[jv.abilityCOLOR][jv.abilityLV], jv)
+    table.insert(game.thisOptionAbilityItem[jv.ABILITY_COLOR][jv.ABILITY_LEVEL], jv)
 end

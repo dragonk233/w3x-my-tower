@@ -9,7 +9,7 @@ if (hSys.getTableLen(shopsAbility) > 0) then
         obj.EditorSuffix = EditorSuffix
         obj.Targs1 = v.Targs1
         obj.Area1 = v.Area1
-        v.abilityID = obj:get_id()
+        v.ABILITY_ID = obj:get_id()
         for _, s in ipairs(v.BelongTo) do
             if (abilityBelongs[s] == nil) then
                 abilityBelongs[s] = {}
@@ -39,7 +39,7 @@ for k, v in ipairs(shops) do
     obj.sight = v.sight
     obj.nsight = v.nsight
     obj.unitSound = ""
-    v.unitID = obj:get_id()
+    v.UNIT_ID = obj:get_id()
     ?>
 call SaveStr(hash_myslk, StringHash("shops"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
 <?

@@ -160,15 +160,15 @@ for tlv, tow in pairs(towers) do
             obj.weapTp1 = v.weapTp1 or "normal" --攻击类型
             obj.weapType1 = "" --攻击声音
             obj.Primary = Primary
-            obj.dmgplus1 = 1
+            obj.dmgplus1 = 1 -- 基础攻击
             obj.STR = v.STR
             obj.AGI = v.AGI
             obj.INT = v.INT
             obj.STRplus = v.STRplus
             obj.AGIplus = v.AGIplus
             obj.INTplus = v.INTplus
-            v.towerPower = tlv
-            v.unitID = obj:get_id()
+            v.TOWER_POWER = tlv
+            v.UNIT_ID = obj:get_id()
             -- 塔基物品
             local iobj = slk.item.gold:new("towers_items_" .. v.Name)
             iobj.Name = "[" .. tlv .. "][" .. v.Name .. "]"
@@ -188,8 +188,8 @@ for tlv, tow in pairs(towers) do
                 Art = v.Art,
                 goldcost = 0,
                 lumbercost = 0,
-                itemID = iobj:get_id(),
-                unitID = v.unitID,
+                ITEM_ID = iobj:get_id(),
+                UNIT_ID = v.unitID,
             }
             ?>
         call SaveStr(hash_myslk, StringHash("towers"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")

@@ -34,8 +34,8 @@ for _, v in ipairs(red) do
     obj.DataC1 = 0
     obj.Art = "war3mapImported\\icon_pas_Skillz.blp"
     local ab = {
-        abilityID = obj:get_id(),
-        abilityST = v,
+        ABILITY_ID = obj:get_id(),
+        ABILITY_BTN = v,
     }
     ?>
 call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
@@ -57,8 +57,8 @@ for _, v in ipairs(yellow) do
     obj.DataC1 = 0
     obj.Art = "ReplaceableTextures\\PassiveButtons\\PASBTNStatUp.blp"
     local ab = {
-        abilityID = obj:get_id(),
-        abilityST = v,
+        ABILITY_ID = obj:get_id(),
+        ABILITY_BTN = v,
     }
     ?>
 call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
@@ -74,11 +74,11 @@ for _, v in ipairs(abilities) do
     -- 这一轮是技能等级的
     for level = 1, level_limit, 1 do
         -- 这一轮是处理类型的
-        local AbSite = red
-        if (v.AbSite == "yellow") then
-            AbSite = yellow
-        elseif (v.AbSite == "all") then
-            AbSite = hSys.mergeTable(red, yellow)
+        local ABILITY_COLOR = red
+        if (v.ABILITY_COLOR == "yellow") then
+            ABILITY_COLOR = yellow
+        elseif (v.ABILITY_COLOR == "all") then
+            ABILITY_COLOR = hSys.mergeTable(red, yellow)
         end
         local Ubertip = v.Ubertip or ""
         v.Val = v.Val or {}
@@ -95,7 +95,7 @@ for _, v in ipairs(abilities) do
                 end
             end
         end
-        for _, s in ipairs(AbSite) do
+        for _, s in ipairs(ABILITY_COLOR) do
             ab_index = ab_index + 1
             local obj = slk.ability.Aamk:new("abilities_" .. v.Name .. "_" .. level .. "_" .. s)
             local Name = v.Name .. "[Lv" .. level .. "]" .. "[" .. s .. "]"
@@ -111,27 +111,27 @@ for _, v in ipairs(abilities) do
             obj.DataB1 = 0
             obj.DataC1 = 0
             obj.Art = v.Art
-            v.abilityID = obj:get_id()
-            v.abilityST = s
+            v.ABILITY_ID = obj:get_id()
+            v.ABILITY_BTN = s
             v.abilityLV = level
             ?>
         call SaveStr(hash_myslk, StringHash("abilities"), <?=ab_index?>, "<?=hSys.addslashes(json.stringify(v))?>")
             <?
         end
         -- 物品
-        if (v.AbSite ~= "all") then
+        if (v.ABILITY_COLOR ~= "all") then
             ab_item_index = ab_item_index + 1
             local iobj = slk.item.gold:new("abilities_items_" .. v.Name .. "_" .. level)
             local goldcost = level * 100
-            if (v.AbSite == 'red') then
-                iobj.Name = "[技能书·红]《等级" .. level .. "的" .. v.Name .. "》"
-                iobj.Tip = "点击学习红技能书：|cffffcc00《等级" .. level .. "的" .. v.Name .. "》|r"
+            if (v.ABILITY_COLOR == 'red') then
+                iobj.Name = "[技能书·红]《" .. level .. "级" .. v.Name .. "》"
+                iobj.Tip = "点击学习红技能书：|cffffcc00《" .. level .. "级" .. v.Name .. "》|r"
                 iobj.file = "Objects\\InventoryItems\\tomeRed\\tomeRed.mdl"
                 iobj.abilList = UsedID.BookRed
-            elseif (v.AbSite == 'yellow') then
-                iobj.Name = "[技能书·黄]《等级" .. level .. "的" .. v.Name .. "》"
-                iobj.Tip = "点击学习黄技能书：|cffffcc00《等级" .. level .. "的" .. v.Name .. "》|r"
-                iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
+            elseif (v.ABILITY_COLOR == 'yellow') then
+                iobj.Name = "[技能书·黄]《" .. level .. "级" .. v.Name .. "》"
+                iobj.Tip = "点击学习黄技能书：|cffffcc00《" .. level .. "级" .. v.Name .. "》|r"
+                iobj.file = "Objects\\InventoryItems\\tomeBrown\\tomeBrown.mdl"
                 iobj.abilList = UsedID.BookYellow
             end
             iobj.UberTip = "使用技能书学习技能：|n" .. Ubertip
@@ -149,10 +149,13 @@ for _, v in ipairs(abilities) do
                 Art = v.Art,
                 goldcost = goldcost,
                 lumbercost = 0,
-                itemID = iobj:get_id(),
-                abilityID = v.abilityID,
-                abilityCOLOR = v.AbSite,
-                abilityLV = level,
+                ITEM_ID = iobj:get_id(),
+                ABILITY_ID = v.ABILITY_ID,
+                ABILITY_COLOR = v.ABILITY_COLOR,
+                ABILITY_LEVEL = level,
+                WEIGHT = v.WEIGHT or 0,
+                OVERLIE = v.OVERLIE or 1,
+                TRIGGER_CALL = v.TRIGGER_CALL or nil,
             }
             ?>
         call SaveStr(hash_myslk, StringHash("abilitiesItems"), <?=ab_item_index?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
@@ -180,8 +183,8 @@ for _, v in ipairs(towerPower) do
     obj.DataC1 = 0
     obj.Art = "war3mapImported\\icon_pas_Letter_" .. v .. ".blp"
     local ab = {
-        abilityID = obj:get_id(),
-        abilityST = v,
+        ABILITY_ID = obj:get_id(),
+        ABILITY_BTN = v,
     }
     ?>
 call SaveStr(hash_myslk, StringHash("abilities_tower_power"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")

@@ -15,12 +15,12 @@ require "game.slk"
 require "game.test"
 
 local preload = {};
-for k, v in pairs(hslk_global.unitsKV) do
+for k, _ in pairs(hslk_global.unitsKV) do
     table.insert(preload, k)
 end
 
 --预读
-for k, v in ipairs(preload) do
+for _, v in ipairs(preload) do
     local u = cj.CreateUnit(hplayer.player_passive, hSys.getObjId(v), 0, 0, 0)
     hattr.registerAll(u)
     hunit.del(u, 0.1)

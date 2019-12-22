@@ -15,6 +15,11 @@ game = {
     },
 
     rule = {
+        yb = {
+            perWaveQty = 10,
+            wave = 1,
+            waveEnd = 100,
+        },
         hz = {
             perWaveQty = 10,
             wave = 1,

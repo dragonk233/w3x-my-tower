@@ -17,8 +17,8 @@ towers_e = {
         AGI = 7,
         INT = 8,
         abilList = "",
-        attackWhite = 20,
-        attackGreen = 0,
+        ATTACK_WHITE = 20,
+        ATTACK_GREEN = 0,
     },
     {
         Name = "兽人·苦力",
@@ -38,7 +38,7 @@ towers_e = {
         AGI = 5,
         INT = 7,
         abilList = "",
-        attackWhite = 22,
-        attackGreen = 0,
+        ATTACK_WHITE = 22,
+        ATTACK_GREEN = 0,
     },
 }

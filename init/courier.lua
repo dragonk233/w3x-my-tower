@@ -54,7 +54,7 @@ for _, v in ipairs(couriers) do
     obj.spd = v.spd
     obj.armor = v.armor -- 被击声音
     obj.targType = v.targType --作为目标类型
-    v.unitID = obj:get_id()
+    v.UNIT_ID = obj:get_id()
     -- 信使物品
     local iobj = slk.item.gold:new("couriers_items_" .. v.Name)
     iobj.Name = "[信使][" .. v.Name .. "]"
@@ -74,8 +74,8 @@ for _, v in ipairs(couriers) do
         Art = v.Art,
         goldcost = 0,
         lumbercost = 0,
-        itemID = iobj:get_id(),
-        unitID = v.unitID,
+        ITEM_ID = iobj:get_id(),
+        UNIT_ID = v.unitID,
     }
     ?>
 call SaveStr(hash_myslk, StringHash("couriers"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
