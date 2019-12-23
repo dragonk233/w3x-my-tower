@@ -122,17 +122,19 @@ for _, v in ipairs(abilities) do
         if (v.ABILITY_COLOR ~= "all") then
             ab_item_index = ab_item_index + 1
             local iobj = slk.item.gold:new("abilities_items_" .. v.Name .. "_" .. level)
-            local goldcost = level * 100
+            local goldcost = 0
             if (v.ABILITY_COLOR == 'red') then
                 iobj.Name = "[技能书·红]《" .. level .. "级" .. v.Name .. "》"
                 iobj.Tip = "点击学习红技能书：|cffffcc00《" .. level .. "级" .. v.Name .. "》|r"
                 iobj.file = "Objects\\InventoryItems\\tomeRed\\tomeRed.mdl"
                 iobj.abilList = UsedID.BookRed
+                goldcost = level * 10
             elseif (v.ABILITY_COLOR == 'yellow') then
                 iobj.Name = "[技能书·黄]《" .. level .. "级" .. v.Name .. "》"
                 iobj.Tip = "点击学习黄技能书：|cffffcc00《" .. level .. "级" .. v.Name .. "》|r"
                 iobj.file = "Objects\\InventoryItems\\tomeBrown\\tomeBrown.mdl"
                 iobj.abilList = UsedID.BookYellow
+                goldcost = level * 20
             end
             iobj.UberTip = "能学习到技能：|n" .. Ubertip
             iobj.Description = "技能书：" .. Ubertip
@@ -153,8 +155,8 @@ for _, v in ipairs(abilities) do
                 ABILITY_ID = v.ABILITY_ID,
                 ABILITY_COLOR = v.ABILITY_COLOR,
                 ABILITY_LEVEL = level,
-                WEIGHT = v.WEIGHT or 0,
-                OVERLIE = v.OVERLIE or 1,
+                WEIGHT = 0.01,
+                OVERLIE = 999,
                 TRIGGER_CALL = v.TRIGGER_CALL or nil,
             }
             ?>

@@ -65,7 +65,7 @@ cj.TriggerAddAction(startTrigger, function()
                             local tg = cj.CreateTrigger()
                             bj.TriggerRegisterEnterRectSimple(tg, r)
                             cj.TriggerAddAction(tg, function()
-                                if (his.enemy(cj.GetTriggerUnit(), bigElf)) then
+                                if (his.enemyPlayer(cj.GetTriggerUnit(), game.ALLY_PLAYER)) then
                                     if (i == #v) then
                                         -- 最后一个
                                         local uVal = cj.GetUnitUserData(cj.GetTriggerUnit())
@@ -119,29 +119,9 @@ cj.TriggerAddAction(startTrigger, function()
                     hleaderBoard.create('yb', 1, function(bl, i)
                         local p = hplayer.players[i]
                         local v = math.floor(hplayer.getDamage(p) * 0.1)
-                        local bigElfTotal = 60
-                        local ell = 0
+                        local bigElfLife = "GG"
                         if (his.alive(bigElf)) then
-                            ell = math.floor(hunit.getCurLifePercent(bigElf) / (100 / bigElfTotal))
-                        end
-                        local bigElfLife = ""
-                        local bigElfLife1 = ""
-                        local bigElfLife2 = ""
-                        for beli = 1, bigElfTotal, 1 do
-                            if (beli <= ell) then
-                                bigElfLife1 = bigElfLife1 .. '|'
-                            else
-                                bigElfLife2 = bigElfLife2 .. '|'
-                            end
-                        end
-                        if (ell <= bigElfTotal / 8) then
-                            bigElfLife = hColor.red(bigElfLife1) .. hColor.grey(bigElfLife2);
-                        elseif (ell <= bigElfTotal / 4) then
-                            bigElfLife = hColor.gold(bigElfLife1) .. hColor.grey(bigElfLife2);
-                        elseif (ell <= bigElfTotal / 2) then
-                            bigElfLife = hColor.yellow(bigElfLife1) .. hColor.grey(bigElfLife2);
-                        else
-                            bigElfLife = hColor.green(bigElfLife1) .. hColor.grey(bigElfLife2);
+                            bigElfLife = math.floor(hunit.getCurLife(bigElf)) .. "/" .. math.floor(hunit.getMaxLife(bigElf))
                         end
                         cj.LeaderboardSetLabel(bl, "百波战力榜[" .. game.rule.yb.wave .. "波][精灵 " .. bigElfLife .. "]")
                         cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
@@ -185,7 +165,7 @@ cj.TriggerAddAction(startTrigger, function()
                             local tg = cj.CreateTrigger()
                             bj.TriggerRegisterEnterRectSimple(tg, r)
                             cj.TriggerAddAction(tg, function()
-                                if (his.enemy(cj.GetTriggerUnit(), bigElf)) then
+                                if (his.enemyPlayer(cj.GetTriggerUnit(), game.ALLY_PLAYER)) then
                                     if (i == #v) then
                                         -- 最后一个
                                         local uVal = cj.GetUnitUserData(cj.GetTriggerUnit())
@@ -239,29 +219,9 @@ cj.TriggerAddAction(startTrigger, function()
                     hleaderBoard.create('hz', 1, function(bl, i)
                         local p = hplayer.players[i]
                         local v = math.floor(hplayer.getDamage(p) * 0.1)
-                        local bigElfTotal = 60
-                        local ell = 0
+                        local bigElfLife = "GG"
                         if (his.alive(bigElf)) then
-                            ell = math.floor(hunit.getCurLifePercent(bigElf) / (100 / bigElfTotal))
-                        end
-                        local bigElfLife = ""
-                        local bigElfLife1 = ""
-                        local bigElfLife2 = ""
-                        for beli = 1, bigElfTotal, 1 do
-                            if (beli <= ell) then
-                                bigElfLife1 = bigElfLife1 .. '|'
-                            else
-                                bigElfLife2 = bigElfLife2 .. '|'
-                            end
-                        end
-                        if (ell <= bigElfTotal / 8) then
-                            bigElfLife = hColor.red(bigElfLife1) .. hColor.grey(bigElfLife2);
-                        elseif (ell <= bigElfTotal / 4) then
-                            bigElfLife = hColor.gold(bigElfLife1) .. hColor.grey(bigElfLife2);
-                        elseif (ell <= bigElfTotal / 2) then
-                            bigElfLife = hColor.yellow(bigElfLife1) .. hColor.grey(bigElfLife2);
-                        else
-                            bigElfLife = hColor.green(bigElfLife1) .. hColor.grey(bigElfLife2);
+                            bigElfLife = math.floor(hunit.getCurLife(bigElf)) .. "/" .. math.floor(hunit.getMaxLife(bigElf))
                         end
                         cj.LeaderboardSetLabel(bl, "合作战力榜[" .. game.rule.hz.wave .. "波][树灵 " .. bigElfLife .. "]")
                         cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
@@ -288,7 +248,7 @@ cj.TriggerAddAction(startTrigger, function()
                             local tg = cj.CreateTrigger()
                             bj.TriggerRegisterEnterRectSimple(tg, r)
                             cj.TriggerAddAction(tg, function()
-                                if (his.enemy(cj.GetTriggerUnit(), bigElf)) then
+                                if (his.enemyPlayer(cj.GetTriggerUnit(), game.ALLY_PLAYER)) then
                                     if (i == #v) then
                                         -- 最后一格,返回起点
                                         local next = getNextRect(k)

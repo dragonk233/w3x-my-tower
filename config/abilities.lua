@@ -5,8 +5,6 @@ abilities = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCriticalStrike.blp",
         Ubertip = "增加物理暴击几率{val#1}%，增加物理暴击伤害50%",
         Val = { 10 },
-        WEIGHT = 0.01,
-        OVERLIE = 99,
     },
     {
         Name = "致命爆击",
@@ -14,8 +12,6 @@ abilities = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCriticalStrike.blp",
         Ubertip = "增加物理暴击几率{val#1}%，增加物理暴击伤害{val#2}%",
         Val = { 5, 10 },
-        WEIGHT = 0.01,
-        OVERLIE = 99,
     },
     {
         Name = "魔法回应",
@@ -23,8 +19,6 @@ abilities = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFeedBack.blp",
         Ubertip = "增加魔法暴击几率{val#1}%，增加魔法暴击伤害50%",
         Val = { 10 },
-        WEIGHT = 0.01,
-        OVERLIE = 99,
     },
     {
         Name = "魔法回爆",
@@ -32,8 +26,6 @@ abilities = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFeedBack.blp",
         Ubertip = "增加魔法暴击几率{val#1}%，增加魔法暴击伤害{val#2}%",
         Val = { 5, 10 },
-        WEIGHT = 0.01,
-        OVERLIE = 99,
     },
     {
         Name = "剑气",
@@ -41,7 +33,5 @@ abilities = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCommand.blp",
         Ubertip = "有10%几率发出一道距离800剑气，令一条直线的敌人受到{val#1}点伤害",
         Val = { 175 },
-        WEIGHT = 0.01,
-        OVERLIE = 99,
     }
 }

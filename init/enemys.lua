@@ -14,6 +14,9 @@ for k, v in ipairs(enemys) do
     obj.nsight = 500
     obj.unitSound = v.unitSound or ""
     obj.weapsOn = 0
+    obj.movetp = v.movetp or "foot"--移动类型
+    obj.moveHeight = v.moveHeight or 0 --移动高度
+    obj.moveFloor = (v.moveHeight or 0) * 0.25 --最低高度
     v.UNIT_ID = obj:get_id()
     ?>
 call SaveStr(hash_myslk, StringHash("thisenemys"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
