@@ -17,8 +17,13 @@ for k, v in ipairs(enemys) do
     obj.movetp = v.movetp or "foot"--移动类型
     obj.moveHeight = v.moveHeight or 0 --移动高度
     obj.moveFloor = (v.moveHeight or 0) * 0.25 --最低高度
+    obj.regenHP = 0
+    obj.regenType = ""
     v.UNIT_ID = obj:get_id()
     ?>
-call SaveStr(hash_myslk, StringHash("thisenemys"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
+call SaveStr(hash_myslk, StringHash("thisenemys"), <?=k?>, "<?=hSys.addslashes(json.stringify(v))?>")
 <?
 end
+?>
+call SaveInteger(hash_myslk, StringHash("thisenemys"), -1, <?=#enemys?>)
+<?

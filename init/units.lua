@@ -14,6 +14,8 @@ for k, v in ipairs(units) do
     obj.nsight = v.nsight
     obj.unitSound = v.unitSound or ""
     obj.weapsOn = v.weapsOn or 0
+    obj.regenHP = 0
+    obj.regenType = ""
     v.UNIT_ID = obj:get_id()
     ?>
 call SaveStr(hash_myslk, StringHash("thisunit"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")

@@ -19,10 +19,12 @@ game = {
             perWaveQty = 10,
             wave = 1,
             waveEnd = 100,
+            mon = nil,
         },
         hz = {
             perWaveQty = 10,
             wave = 1,
+            mon = nil,
         },
         dk = {
             perWaveQty = 20,

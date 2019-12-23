@@ -147,13 +147,6 @@ enemys = {
         unitSound = "PrisonWagon",
     },
     {
-        Name = "囚车",
-        file = "units\\other\\IllidanEvilCaged\\IllidanEvilCaged",
-        modelScale = 1.00,
-        scale = 2.50,
-        unitSound = "PrisonWagon",
-    },
-    {
         Name = "孤胆怪物",
         file = "units\\other\\DalaranReject\\DalaranReject",
         modelScale = 1.15,
@@ -594,7 +587,7 @@ enemys = {
         unitSound = "InfernalMachine",
     },
     {
-        Name = "地狱火机关人",
+        Name = "地狱火机关兵",
         file = "units\\creeps\\InfernalCannonFlame\\InfernalCannonFlame",
         modelScale = 1.50,
         scale = 3.50,
@@ -758,13 +751,6 @@ enemys = {
         Name = "蛛网怪织网者",
         file = "units\\creeps\\NerubianSpiderLord\\NerubianSpiderLord",
         modelScale = 1.00,
-        scale = 2.00,
-        unitSound = "Nerubian",
-    },
-    {
-        Name = "蛛网怪女皇",
-        file = "units\\creeps\\NerubianQueen\\NerubianQueen",
-        modelScale = 1.60,
         scale = 2.00,
         unitSound = "Nerubian",
     },

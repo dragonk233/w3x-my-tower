@@ -20,6 +20,7 @@ for k, _ in pairs(hslk_global.unitsKV) do
 end
 
 --预读
+print_mbr(hslk_global.unitsKV)
 for _, v in ipairs(preload) do
     local u = cj.CreateUnit(hplayer.player_passive, hSys.getObjId(v), 0, 0, 0)
     hattr.registerAll(u)

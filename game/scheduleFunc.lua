@@ -3,13 +3,13 @@ enemyBeDamage = function()
     local u = hevent.getTriggerUnit()
     if (his.alive(u) and cj.GetRandomInt(1, 5) == 3) then
         htextTag.style(htextTag.create2Unit(
-                u,
-                game.enemyTips[cj.GetRandomInt(1, #game.enemyTips)],
-                10.00,
-                "",
-                1,
-                1.1,
-                11.00
+            u,
+            game.enemyTips[cj.GetRandomInt(1, #game.enemyTips)],
+            10.00,
+            "",
+            1,
+            1.1,
+            11.00
         ), "scale", cj.GetRandomReal(-0.05, 0.05), 0)
         heffect.bindUnit("Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl", u, "head", 2.50)
         heffect.bindUnit("Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl", u, "origin", 2.50)
@@ -105,10 +105,10 @@ enemyDeadDK = function()
             game.rule.dk.wave[pi] = game.rule.dk.wave[pi] + 1
             game.rule.dk.mon[pi] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
             hmsg.echo(
-                    cj.GetPlayerName(hplayer.players[pi])
-                            .. "达到了|cffffff00第"
-                            .. game.rule.dk.wave[pi]
-                            .. "级|r，其他人小心啦~")
+                cj.GetPlayerName(hplayer.players[pi])
+                    .. "达到了|cffffff00第"
+                    .. game.rule.dk.wave[pi]
+                    .. "级|r，其他人小心啦~")
         end
     end
     local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex
@@ -124,6 +124,7 @@ enemyGenYB = function(waiting)
         htime.delTimer(t)
         hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
         local count = game.rule.yb.perWaveQty
+        game.rule.yb.mon = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
         htime.setInterval(2.00, function(t2, td2)
             count = count - 1
             if (count <= 0) then
@@ -155,7 +156,7 @@ enemyGenYB = function(waiting)
             for k, v in pairs(game.pathPoint) do
                 if (his.playing(hplayer.players[k])) then
                     local u = hemeny.create({
-                        unitId = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID,
+                        unitId = game.rule.yb.mon,
                         qty = 1,
                         x = v[1][1],
                         y = v[1][2],
@@ -178,6 +179,7 @@ enemyGenHZ = function(waiting)
         htime.delTimer(t)
         hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
         local count = game.rule.hz.perWaveQty
+        game.rule.hz.mon = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
         htime.setInterval(2.00, function(t2, td2)
             count = count - 1
             if (count <= 0) then
@@ -199,7 +201,7 @@ enemyGenHZ = function(waiting)
             for k, v in pairs(game.pathPoint) do
                 if (his.playing(hplayer.players[k])) then
                     local u = hemeny.create({
-                        unitId = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID,
+                        unitId = game.rule.hz.mon,
                         qty = 1,
                         x = v[1][1],
                         y = v[1][2],
@@ -312,13 +314,13 @@ updateMyTower = function()
     })
     hsound.sound2Unit(cg.gg_snd_level_up, 100, whichUnit)
     htextTag.style(htextTag.create2Unit(
-            u,
-            "升级 ↑",
-            12.00,
-            "ffff00",
-            1,
-            2.0,
-            10.00
+        u,
+        "升级 ↑",
+        12.00,
+        "ffff00",
+        1,
+        2.0,
+        10.00
     ), "scale", 0, 0.1)
 end
 

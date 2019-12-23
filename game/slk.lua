@@ -54,12 +54,9 @@ for _, name in ipairs(thisUnitNames) do
 end
 
 -- enemy 敌人单位
-local thisEnemyNames = {
-    "食尸鬼",
-}
-game.thisEnemysLen = #thisEnemyNames
-for k, name in ipairs(thisEnemyNames) do
-    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisenemys"), cj.StringHash(name))
+game.thisEnemysLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("thisenemys"), -1)
+for k = 1, game.thisEnemysLen, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisenemys"), k)
     local jv = json.parse(v)
     hRuntime.register.unit(jv)
     game.thisEnemys[k] = jv
