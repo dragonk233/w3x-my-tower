@@ -31,7 +31,9 @@ end
 
 -- courier 信使
 local courierNames = {
-    "灵动的雪鹰",
+    "呆萌的青蛙", "V5的螃蟹", "友爱的海豹", "狡猾的浣熊",
+    "冷静的绵羊", "卡呐诺企鹅", "兔子兔子", "小饥鸡",
+    "宁静麋鹿", "依诺吸吸", "灵动的雪鹰", "信天！翁",
 }
 for _, name in ipairs(courierNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriers"), cj.StringHash(name))

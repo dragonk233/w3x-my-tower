@@ -273,7 +273,7 @@ cj.TriggerAddAction(startTrigger, function()
                 end
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do
-                    createMyCourier(k, game.courier["灵动的雪鹰"].UNIT_ID)
+                    createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
                 end
                 -- 基本兵塔
                 for k, v in pairs(game.towerPoint) do

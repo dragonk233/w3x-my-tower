@@ -1,7 +1,7 @@
 -- courier
 for _, v in ipairs(couriers) do
     -- 处理信使数据
-    local Ubertip = v.Ubertip
+    local Ubertip = "召唤：" .. v.Name .. "（移动速度：" .. v.spd .. "）"
     local obj = slk.unit.hfoo:new("couriers_" .. v.Name)
     obj.type = "Peon"
     obj.upgrades = ""
@@ -64,9 +64,10 @@ for _, v in ipairs(couriers) do
     iobj.Art = v.Art
     iobj.scale = 0.1
     iobj.goldcost = 0
-    iobj.lumbercost = 0
+    iobj.lumbercost = v.lumbercost or 0
     iobj.sellable = 1
     iobj.cooldownID = ""
+    iobj.stockRegen = 120
     iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
     iobj.abilList = UsedID.Tower
     local hitem = {
@@ -80,5 +81,5 @@ for _, v in ipairs(couriers) do
     ?>
 call SaveStr(hash_myslk, StringHash("couriers"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
 call SaveStr(hash_myslk, StringHash("couriersItems"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(hitem))?>")
-<?
+    <?
 end
