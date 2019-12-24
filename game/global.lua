@@ -70,6 +70,7 @@ game = {
     thisEnemysLen = 0,
     shops = {},
     courier = {},
+    courierLen = 0,
     thisTowerPowerAbilities = {},
     thisTowerPowerAbilitiesLen = 0,
     thisEmptyAbilities = {},

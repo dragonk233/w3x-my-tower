@@ -3,26 +3,28 @@ onUnitItemsUesd = function()
     local u = hevent.getTriggerUnit()
     local it = hevent.getTriggerItem()
     local itId = hitem.getId(it)
-    local slk = hslk_global.itemsKV[itId]
+    local itemSLK = hslk_global.itemsKV[itId]
     local p = cj.GetOwningPlayer(u)
-    if (slk == nil or slk.INDEX == nil) then
+    if (itemSLK == nil or itemSLK.INDEX == nil) then
         hmsg.echo00(p, "slk获取错误")
         return
     end
-    if (slk.I_TYPE == nil) then
+    if (itemSLK.I_TYPE == nil) then
         hmsg.echo00(p, "物品I类型获取错误")
         return
     end
-    if (slk.I_TYPE == "ability") then
-        local abils = game.thisOptionAbility[slk.INDEX]
+    if (itemSLK.I_TYPE == "courier") then
+        print_r(game.courier[itemSLK.INDEX])
+    elseif (itemSLK.I_TYPE == "ability") then
+        local abils = game.thisOptionAbility[itemSLK.INDEX]
         if (abils == nil or hSys.getTableLen(abils) <= 0) then
             hmsg.echo00(p, "技能获取错误")
             return
         end
         local sites = {}
-        if (slk.ABILITY_COLOR == "yellow") then
+        if (itemSLK.ABILITY_COLOR == "yellow") then
             sites = {"A", "S", "D", "F"}
-        elseif (slk.ABILITY_COLOR == "red") then
+        elseif (itemSLK.ABILITY_COLOR == "red") then
             sites = {"Z", "X", "C", "V"}
         end
         local playerIndex = hplayer.index(p)
@@ -51,7 +53,7 @@ onUnitItemsUesd = function()
         hdialog.create(
             p,
             {
-                title = slk.DIALOG_TITLE,
+                title = itemSLK.DIALOG_TITLE,
                 buttons = btns
             },
             function(btnIdx)

@@ -30,25 +30,14 @@ for _, name in ipairs(shopNames) do
 end
 
 -- courier 信使
-local courierNames = {
-    "呆萌的青蛙",
-    "V5的螃蟹",
-    "友爱的海豹",
-    "狡猾的浣熊",
-    "冷静的绵羊",
-    "卡呐诺企鹅",
-    "兔子兔子",
-    "小饥鸡",
-    "宁静麋鹿",
-    "依诺吸吸",
-    "灵动的雪鹰",
-    "信天！翁"
-}
-for _, name in ipairs(courierNames) do
-    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriers"), cj.StringHash(name))
+game.courierLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("couriers"), -1)
+print(game.courierLen)
+for i = 1, game.courierLen, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriers"), i)
     local jv = json.parse(v)
+    jv.I_TYPE = "courier"
     hRuntime.register.unit(jv)
-    game.courier[name] = jv
+    game.courier[jv.INDEX] = jv
 end
 
 -- unit 其他单位
@@ -126,7 +115,7 @@ end
 for i = 1, abilities_item_qty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiesItems"), i)
     local jv = json.parse(v)
-    jv.I_TYPE = 'ability'
+    jv.I_TYPE = "ability"
     hRuntime.register.item(jv)
     if (game.thisOptionAbilityItem[jv.ABILITY_COLOR] == nil) then
         game.thisOptionAbilityItem[jv.ABILITY_COLOR] = {}

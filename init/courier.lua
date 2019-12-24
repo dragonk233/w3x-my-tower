@@ -1,5 +1,5 @@
 -- courier
-for _, v in ipairs(couriers) do
+for i, v in ipairs(couriers) do
     -- 处理信使数据
     local Ubertip = "召唤：" .. v.Name .. "（移动速度：" .. v.spd .. "）"
     local obj = slk.unit.hfoo:new("couriers_" .. v.Name)
@@ -54,6 +54,7 @@ for _, v in ipairs(couriers) do
     obj.spd = v.spd
     obj.armor = v.armor -- 被击声音
     obj.targType = v.targType --作为目标类型
+    v.INDEX = v.Name
     v.UNIT_ID = obj:get_id()
     -- 信使物品
     local iobj = slk.item.gold:new("couriers_items_" .. v.Name)
@@ -72,6 +73,7 @@ for _, v in ipairs(couriers) do
     iobj.abilList = UsedID.Tower
     iobj.perishable = 1
     local hitem = {
+        INDEX = v.Name,
         Name = v.Name,
         Art = v.Art,
         goldcost = 0,
@@ -81,7 +83,10 @@ for _, v in ipairs(couriers) do
         UNIT_ID = v.unitID,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("couriers"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
-call SaveStr(hash_myslk, StringHash("couriersItems"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(hitem))?>")
+call SaveStr(hash_myslk, StringHash("couriers"), <?=i?>, "<?=hSys.addslashes(json.stringify(v))?>")
+call SaveStr(hash_myslk, StringHash("couriersItems"), <?=i?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
     <?
 end
+?>
+call SaveInteger(hash_myslk, StringHash("couriers"), -1, <?=#couriers?>)
+<?
