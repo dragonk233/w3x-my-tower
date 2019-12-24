@@ -118,10 +118,10 @@ for i = 1, abilities_qty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities"), i)
     local jv = json.parse(v)
     hRuntime.register.ability(jv)
-    if (game.thisOptionAbility[jv.ABILITY_BTN] == nil) then
-        game.thisOptionAbility[jv.ABILITY_BTN] = {}
+    if (game.thisOptionAbility[jv.INDEX] == nil) then
+        game.thisOptionAbility[jv.INDEX] = {}
     end
-    table.insert(game.thisOptionAbility[jv.ABILITY_BTN], jv)
+    game.thisOptionAbility[jv.INDEX][jv.ABILITY_BTN] = jv
 end
 for i = 1, abilities_item_qty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiesItems"), i)

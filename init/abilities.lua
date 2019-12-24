@@ -111,9 +111,10 @@ for _, v in ipairs(abilities) do
             obj.DataB1 = 0
             obj.DataC1 = 0
             obj.Art = v.Art
+            v.INDEX = v.Name .."#".. level
             v.ABILITY_ID = obj:get_id()
             v.ABILITY_BTN = s
-            v.abilityLV = level
+            v.ABILITY_LEVEL = level
             ?>
         call SaveStr(hash_myslk, StringHash("abilities"), <?=ab_index?>, "<?=hSys.addslashes(json.stringify(v))?>")
             <?
@@ -146,11 +147,14 @@ for _, v in ipairs(abilities) do
             iobj.cooldownID = ""
             iobj.class = "Charged"
             iobj.powerup = 0
+            iobj.perishable = 1
             local hitem = {
-                Name = v.Name,
+                INDEX = v.Name .."#".. level,
+                DIALOG_TITLE = "请选键位学习:"..v.Name.."[等级"..level.."]",
                 Art = v.Art,
                 goldcost = goldcost,
                 lumbercost = 0,
+                perishable = 1,
                 ITEM_ID = iobj:get_id(),
                 ABILITY_ID = v.ABILITY_ID,
                 ABILITY_COLOR = v.ABILITY_COLOR,

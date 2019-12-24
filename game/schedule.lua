@@ -12,18 +12,24 @@ cj.TriggerAddAction(
         发挥你的想象力吧~
     ]]
         hsound.bgmStop(nil)
-
+        local btns = {
+            "轻松" .. game.rule.yb.waveEnd .. "波",
+            "无尽合作",
+            "有趣坑友"
+        }
+        if (hplayer.qty_current <= 1) then
+            btns = {
+                "轻松" .. game.rule.yb.waveEnd .. "波",
+                "无尽合作"
+            }
+        end
         -- 第一玩家选择模式
         hmsg.echo("第一个玩家正在选择（游戏模式）", 10)
         hdialog.create(
             nil,
             {
                 title = "选择游戏模式",
-                buttons = {
-                    "轻松" .. game.rule.yb.waveEnd .. "波",
-                    "无尽合作",
-                    "有趣坑友"
-                }
+                buttons = btns
             },
             function(btnIdx)
                 hmsg.echo("选择了" .. btnIdx)
@@ -44,22 +50,19 @@ cj.TriggerAddAction(
                             y = 0
                         }
                     )
-                    htime.setTimeout(10,function()
-                        hunit.kill(bigElf)
-                    end)
                     hevent.onDead(
                         bigElf,
                         function()
-                            print("???")
+                            game.runing = false
                             hmsg.echo("不！“大精灵”GG了，结束啦~我们的守护")
                             htime.setTimeout(
                                 5.00,
                                 function(t, td)
+                                    htime.delDialog(td)
+                                    htime.delTimer(t)
                                     for i = 1, hplayer.qty_max, 1 do
                                         hplayer.defeat(hplayer.players[i], "再见~")
                                     end
-                                    htime.delDialog(td)
-                                    htime.delTimer(t)
                                 end,
                                 "退出倒计时"
                             )
@@ -192,15 +195,16 @@ cj.TriggerAddAction(
                     hevent.onDead(
                         bigElf,
                         function()
+                            game.runing = false
                             hmsg.echo("不！“大树灵”GG了，结束啦~我们的守护")
                             htime.setTimeout(
                                 5,
                                 function(t, td)
+                                    htime.delDialog(td)
+                                    htime.delTimer(t)
                                     for i = 1, hplayer.qty_max, 1 do
                                         hplayer.defeat(hplayer.players[i], "再见~")
                                     end
-                                    htime.delDialog(td)
-                                    htime.delTimer(t)
                                 end,
                                 "退出倒计时"
                             )

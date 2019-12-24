@@ -16,6 +16,11 @@ enemyGenYB = function(waiting)
                 2.00,
                 function(t2, td2)
                     count = count - 1
+                    if (game.runing == false) then
+                        htime.delDialog(td2)
+                        htime.delTimer(t2)
+                        return
+                    end
                     if (count <= 0) then
                         htime.delDialog(td2)
                         htime.delTimer(t2)
@@ -93,6 +98,11 @@ enemyGenHZ = function(waiting)
                 2.00,
                 function(t2, td2)
                     count = count - 1
+                    if (game.runing == false) then
+                        htime.delDialog(td2)
+                        htime.delTimer(t2)
+                        return
+                    end
                     if (count <= 0) then
                         htime.delDialog(td2)
                         htime.delTimer(t2)
@@ -262,7 +272,10 @@ createMyTower = function(playerIndex, towerId)
         return
     end
     if (his.playing(hplayer.players[playerIndex])) then
-        -- 如果有上一个单位，把上一个兵塔暂时隐藏，后面取它的物品
+        if (game.towersAbilities[playerIndex] == nil) then
+            game.towersAbilities[playerIndex] = {}
+        end
+        -- 如果有上一个单位，把上一个兵塔暂时隐藏，后面复制技能，取它的物品
         if (game.playerTower[playerIndex] ~= nil) then
             cj.ShowUnit(game.playerTower[playerIndex], false)
         end
@@ -278,6 +291,12 @@ createMyTower = function(playerIndex, towerId)
         )
         hhero.setIsHero(u, true)
         hevent.onLevelUp(u, updateMyTower)
+        -- 如果上一个单位有技能，复制技能
+        if (game.towersAbilities[playerIndex] ~= nil) then
+            for k, v in pairs(game.towersAbilities[playerIndex]) do
+                hskill.add(u, v.ABILITY_ID)
+            end
+        end
         -- 如果有上一个单位，把上一个兵塔的物品给予新的兵塔，并删除它
         if (game.playerTower[playerIndex] ~= nil) then
             hitem.copy(game.playerTower[playerIndex], u)
@@ -337,9 +356,18 @@ createMyTower = function(playerIndex, towerId)
                 attack_green = "+" .. hslk_global.unitsKV[towerId].ATTACK_GREEN
             }
         )
+        hevent.onItemUsed(u, onUnitItemsUesd)
+        --阶级标志
         hskill.add(u, game.thisTowerPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
-        for _, v in pairs(game.thisEmptyAbilities) do
-            hskill.add(u, v.ABILITY_ID, 0)
+        --技能树
+        for k, v in pairs(game.thisEmptyAbilities) do
+            if (game.towersAbilities[playerIndex][k] == nil) then
+                hskill.add(u, v.ABILITY_ID, 0)
+                game.towersAbilities[playerIndex][k] = {
+                    ability_id = v.ABILITY_ID,
+                    name = hColor.grey("空技能槽")
+                }
+            end
         end
     end
 end
@@ -378,6 +406,7 @@ createMyCourier = function(playerIndex, courierId)
                 weight = "=100"
             }
         )
+        hevent.onItemUsed(u, onUnitItemsUesd)
         game.playerCourier[playerIndex] = u
         cj.PanCameraToTimed(game.courierPoint[playerIndex][1], game.courierPoint[playerIndex][2], 0.60)
     end

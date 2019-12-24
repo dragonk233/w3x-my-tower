@@ -183,11 +183,13 @@ for tlv, tow in pairs(towers) do
             iobj.cooldownID = ""
             iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
             iobj.abilList = UsedID.Tower
+            iobj.perishable = 1
             local hitem = {
                 Name = v.Name,
                 Art = v.Art,
                 goldcost = 0,
                 lumbercost = 0,
+                perishable = 1,
                 ITEM_ID = iobj:get_id(),
                 UNIT_ID = v.unitID,
             }
