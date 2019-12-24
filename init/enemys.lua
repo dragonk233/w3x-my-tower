@@ -19,6 +19,7 @@ for k, v in ipairs(enemys) do
     obj.moveFloor = (v.moveHeight or 0) * 0.25 --最低高度
     obj.regenHP = 0
     obj.regenType = ""
+    obj.def = 0
     v.UNIT_ID = obj:get_id()
     ?>
 call SaveStr(hash_myslk, StringHash("thisenemys"), <?=k?>, "<?=hSys.addslashes(json.stringify(v))?>")

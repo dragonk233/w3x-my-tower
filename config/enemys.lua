@@ -610,7 +610,7 @@ enemys = {
     {
         Name = "闪电蜥蜴",
         file = "units\\creeps\\ThunderLizard\\ThunderLizard",
-        modelScale = 1.40,
+        modelScale = 1.10,
         scale = 1.00,
         unitSound = "KotoBeastNoRider",
     },

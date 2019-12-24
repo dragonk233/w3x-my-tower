@@ -4,16 +4,21 @@ deadAward = function(triggerUnit, killer)
     local y = cj.GetUnitY(triggerUnit)
     -- 坟头草
     if (cj.GetRandomInt(1, 15) == 13) then
-        htime.setTimeout(cj.GetRandomReal(8, 25), function()
-            hunit.create({
-                whichPlayer = hplayer.player_passive,
-                unitId = game.thisUnits["河草"].UNIT_ID,
-                qty = 1,
-                x = x,
-                y = y,
-                during = cj.GetRandomReal(20, 45)
-            })
-        end)
+        htime.setTimeout(
+            cj.GetRandomReal(8, 25),
+            function()
+                hunit.create(
+                    {
+                        whichPlayer = hplayer.player_passive,
+                        unitId = game.thisUnits["河草"].UNIT_ID,
+                        qty = 1,
+                        x = x,
+                        y = y,
+                        during = cj.GetRandomReal(20, 45)
+                    }
+                )
+            end
+        )
     end
     local maxLevel = 0
     if (game.rule.cur == "yb" or game.rule.cur == "hz") then
@@ -26,28 +31,33 @@ deadAward = function(triggerUnit, killer)
     elseif (maxLevel > 10) then
         maxLevel = 10
     end
+    print("maxLevel" .. maxLevel)
     local level = cj.GetRandomInt(1, maxLevel)
     -- 掉落红技能书
     --if (cj.GetRandomInt(1, 30) == 13) then
     if (#game.thisOptionAbilityItem["red"][level] > 0) then
         local itId = hSys.randTable(game.thisOptionAbilityItem["red"][level]).ITEM_ID
-        hitem.create({
-            itemId = itId,
-            x = x,
-            y = y,
-            during = 60,
-        })
+        hitem.create(
+            {
+                itemId = itId,
+                x = x,
+                y = y,
+                during = 60
+            }
+        )
     end
     -- 掉落黄技能书
     --elseif (cj.GetRandomInt(1, 55) == 17) then
     if (#game.thisOptionAbilityItem["yellow"][level] > 0) then
         local itId = hSys.randTable(game.thisOptionAbilityItem["yellow"][level]).ITEM_ID
-        hitem.create({
-            itemId = itId,
-            x = x,
-            y = y,
-            during = 60,
-        })
+        hitem.create(
+            {
+                itemId = itId,
+                x = x,
+                y = y,
+                during = 60
+            }
+        )
     end
     --end
 end
@@ -84,10 +94,8 @@ enemyDeadDK = function()
             game.rule.dk.wave[pi] = game.rule.dk.wave[pi] + 1
             game.rule.dk.mon[pi] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
             hmsg.echo(
-                cj.GetPlayerName(hplayer.players[pi])
-                    .. "达到了|cffffff00第"
-                    .. game.rule.dk.wave[pi]
-                    .. "级|r，其他人小心啦~")
+                cj.GetPlayerName(hplayer.players[pi]) .. "达到了|cffffff00第" .. game.rule.dk.wave[pi] .. "级|r，其他人小心啦~"
+            )
         end
     end
     local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex
