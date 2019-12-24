@@ -126,6 +126,7 @@ end
 for i = 1, abilities_item_qty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiesItems"), i)
     local jv = json.parse(v)
+    jv.I_TYPE = 'ability'
     hRuntime.register.item(jv)
     if (game.thisOptionAbilityItem[jv.ABILITY_COLOR] == nil) then
         game.thisOptionAbilityItem[jv.ABILITY_COLOR] = {}

@@ -365,7 +365,7 @@ createMyTower = function(playerIndex, towerId)
                 hskill.add(u, v.ABILITY_ID, 0)
                 game.towersAbilities[playerIndex][k] = {
                     ability_id = v.ABILITY_ID,
-                    name = hColor.grey("空技能槽")
+                    name = "空技能槽"
                 }
             end
         end

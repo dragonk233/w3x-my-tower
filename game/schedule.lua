@@ -14,13 +14,13 @@ cj.TriggerAddAction(
         hsound.bgmStop(nil)
         local btns = {
             "轻松" .. game.rule.yb.waveEnd .. "波",
-            "无尽合作",
+            "无尽挑战",
             "有趣坑友"
         }
         if (hplayer.qty_current <= 1) then
             btns = {
                 "轻松" .. game.rule.yb.waveEnd .. "波",
-                "无尽合作"
+                "无尽挑战"
             }
         end
         -- 第一玩家选择模式
@@ -175,7 +175,7 @@ cj.TriggerAddAction(
                             cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
                         end
                     )
-                elseif (btnIdx == "无尽合作") then
+                elseif (btnIdx == "无尽挑战") then
                     game.rule.cur = "hz"
                     hmsg.echo("|cffffff00四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“大树灵”的生命，直至游戏失败|r")
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)

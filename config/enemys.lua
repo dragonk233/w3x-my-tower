@@ -778,8 +778,8 @@ enemys = {
     {
         Name = "蛛网怪女皇",
         file = "units\\creeps\\NerubianQueen\\NerubianQueen",
-        modelScale = 1.60,
-        scale = 2.00,
+        modelScale = 1.30,
+        scale = 1.90,
         unitSound = "Nerubian",
     },
     {
