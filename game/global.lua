@@ -16,25 +16,25 @@ game = {
 
     rule = {
         yb = {
-            perWaveQty = 10,
+            perWaveQty = 20,
             wave = 1,
             waveEnd = 100,
             mon = nil,
         },
         hz = {
-            perWaveQty = 10,
+            perWaveQty = 20,
             wave = 1,
             mon = nil,
         },
         dk = {
-            perWaveQty = 20,
+            perWaveQty = 16,
             playerQty = {},
             wave = {},
             mon = {},
             monLimit = {},
             monData = {},
         },
-        cur = "hz"
+        cur = "yb"
     },
 
     playerTower = {},
