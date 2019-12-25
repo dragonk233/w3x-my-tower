@@ -32,11 +32,11 @@ for tlv, tow in pairs(towers) do
             elseif (tlv == "B") then
                 tempPower = 5
             elseif (tlv == "A") then
-                tempPower = 8
+                tempPower = 10
             elseif (tlv == "S") then
-                tempPower = 12
+                tempPower = 15
             elseif (tlv == "SS") then
-                tempPower = 17
+                tempPower = 20
             elseif (tlv == "SSS") then
                 tempPower = 30
             end
@@ -48,7 +48,7 @@ for tlv, tow in pairs(towers) do
             v.INTplus = v.INT * 0.1
 
             Ubertip = Ubertip .. "|n|cffccffcc阶级：" .. tlv .. "|r"
-            Ubertip = Ubertip .. "|n|n|cffff8080攻击：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
+            Ubertip = Ubertip .. "|n|cffff8080攻击：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
             if (Primary == "STR") then
                 Ubertip = Ubertip .. "|n|cffffff00力量：" .. v.STR .. "(+" .. v.STRplus .. ") *|r"
             else
@@ -176,12 +176,12 @@ for tlv, tow in pairs(towers) do
             local iobj = slk.item.gold:new("towers_items_" .. v.Name)
             iobj.Name = "[" .. tlv .. "][" .. v.Name .. "]"
             iobj.Tip = "点击替换兵塔：[" .. v.Name .. "]"
-            iobj.UberTip = Ubertip
+            iobj.UberTip = Ubertip .. "|n * 无论兵种是否一致，使用后兵塔会较前提升1级！"
             iobj.Description = Ubertip
             iobj.Art = v.Art
             iobj.scale = 0.80
             iobj.selSize = 80
-            iobj.goldcost = 0
+            iobj.goldcost = tempPower * 2
             iobj.lumbercost = 0
             iobj.sellable = 1
             iobj.cooldownID = UsedID.Tower

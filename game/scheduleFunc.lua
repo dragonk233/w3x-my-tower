@@ -278,7 +278,7 @@ createMyTower = function(playerIndex, towerId)
         -- 如果有上一个单位，把上一个兵塔暂时隐藏，后面复制技能，取它的物品
         local prevHeroLevel = 1
         if (game.playerTower[playerIndex] ~= nil) then
-            prevHeroLevel = cj.GetHeroLevel(game.playerTower[playerIndex])
+            prevHeroLevel = cj.GetHeroLevel(game.playerTower[playerIndex]) + 1
             cj.ShowUnit(game.playerTower[playerIndex], false)
         end
         local u =
@@ -342,9 +342,7 @@ createMyTower = function(playerIndex, towerId)
             }
         )
         hevent.onLevelUp(u, updateMyTower)
-        if (prevHeroLevel > 1) then
-            cj.SetHeroLevel(u, prevHeroLevel, false)
-        end
+        hhero.setCurLevel(u, prevHeroLevel)
         -- 如果上一个单位有技能，复制技能
         if (game.towersAbilities[playerIndex] ~= nil) then
             for k, v in pairs(game.towersAbilities[playerIndex]) do
