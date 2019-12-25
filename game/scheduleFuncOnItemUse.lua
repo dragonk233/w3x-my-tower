@@ -65,7 +65,10 @@ onUnitItemsUesd = function()
                 function(btnIdx)
                     hmsg.echo00(
                         p,
-                        "你选择了[" .. btnIdx .. "]位置，来学习" .. abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name
+                        "你选择了[" ..
+                            hColior.yellow(btnIdx) ..
+                                "]位置，来学习[" ..
+                                    hColior.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
                     )
                     hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
                     hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)
@@ -78,7 +81,12 @@ onUnitItemsUesd = function()
             )
         else
             local btnIdx = emptySite
-            hmsg.echo00(p, "兵塔的[" .. btnIdx .. "]位置，学习了" .. abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name)
+            hmsg.echo00(
+                p,
+                "兵塔的[" ..
+                    hColior.yellow(btnIdx) ..
+                        "]位置，学习了[" .. hColior.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
+            )
             hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
             hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)
             game.towersAbilities[playerIndex][btnIdx] = {
