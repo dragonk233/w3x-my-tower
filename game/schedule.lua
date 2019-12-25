@@ -69,17 +69,6 @@ cj.TriggerAddAction(
                         end
                     )
                     cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
-                    -- 商店
-                    hunit.create(
-                        {
-                            whichPlayer = game.ALLY_PLAYER,
-                            unitId = game.shops["猎人之店"].UNIT_ID,
-                            qty = 1,
-                            x = -256,
-                            y = 256,
-                            isInvulnerable = true
-                        }
-                    )
                     -- 构建出怪区域
                     for k, v in ipairs(game.pathPoint) do
                         for i, p in ipairs(v) do
@@ -211,17 +200,6 @@ cj.TriggerAddAction(
                         end
                     )
                     cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
-                    -- 商店
-                    hunit.create(
-                        {
-                            whichPlayer = game.ALLY_PLAYER,
-                            unitId = game.shops["猎人之店"].UNIT_ID,
-                            qty = 1,
-                            x = -256,
-                            y = 256,
-                            isInvulnerable = true
-                        }
-                    )
                     -- 构建出怪区域
                     for k, v in ipairs(game.pathPoint) do
                         for i, p in ipairs(v) do
@@ -323,17 +301,6 @@ cj.TriggerAddAction(
                     hsound.bgm(cg.gg_snd_bgm_dk, nil)
                     cj.FogEnable(true)
                     cj.FogMaskEnable(true)
-                    -- 商店
-                    hunit.create(
-                        {
-                            whichPlayer = game.ALLY_PLAYER,
-                            unitId = game.shops["猎人之店"].UNIT_ID,
-                            qty = 1,
-                            x = -256,
-                            y = 256,
-                            isInvulnerable = true
-                        }
-                    )
                     -- 构建出怪区域
                     for k, v in ipairs(game.pathPoint) do
                         for i, p in ipairs(v) do
@@ -382,12 +349,39 @@ cj.TriggerAddAction(
                 end
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do
-                    createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
+                    local u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
+                    if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "phoenix") == true) then
+                        hitem.create(
+                            {
+                                itemId = game.courierItem["涅磐火凤凰"].ITEM_ID,
+                                whichUnit = u
+                            }
+                        )
+                    end
                 end
                 -- 基本兵塔
                 for k, v in pairs(game.towerPoint) do
                     createMyTower(k, game.towers["人类·农民"].UNIT_ID)
                 end
+                -- 商店
+                hunit.create(
+                    {
+                        whichPlayer = game.ALLY_PLAYER,
+                        unitId = game.shops["猎人之店"].UNIT_ID,
+                        qty = 1,
+                        x = -256,
+                        y = 256
+                    }
+                )
+                hunit.create(
+                    {
+                        whichPlayer = game.ALLY_PLAYER,
+                        unitId = game.shops["信使之笼"].UNIT_ID,
+                        qty = 1,
+                        x = 256,
+                        y = 256
+                    }
+                )
             end
         )
     end

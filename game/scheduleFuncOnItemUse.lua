@@ -14,7 +14,13 @@ onUnitItemsUesd = function()
         return
     end
     if (itemSLK.I_TYPE == "courier") then
-        print_r(game.courier[itemSLK.INDEX])
+        local playerIndex = hplayer.index(p)
+        local u = createMyCourier(playerIndex, game.courier[itemSLK.INDEX].UNIT_ID)
+        hmsg.echo(cj.GetPlayerName(p) .. "召唤了信使：" .. hColor.yellow(game.courier[itemSLK.INDEX].Name))
+        if (u ~= nil and cj.GetLocalPlayer() == p) then
+            cj.ClearSelection()
+            cj.SelectUnit(u, true)
+        end
     elseif (itemSLK.I_TYPE == "ability") then
         local abils = game.thisOptionAbility[itemSLK.INDEX]
         if (abils == nil or hSys.getTableLen(abils) <= 0) then
@@ -66,9 +72,9 @@ onUnitItemsUesd = function()
                     hmsg.echo00(
                         p,
                         "你选择了[" ..
-                            hColior.yellow(btnIdx) ..
+                            hColor.yellow(btnIdx) ..
                                 "]位置，来学习[" ..
-                                    hColior.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
+                                    hColor.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
                     )
                     hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
                     hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)
@@ -84,8 +90,8 @@ onUnitItemsUesd = function()
             hmsg.echo00(
                 p,
                 "兵塔的[" ..
-                    hColior.yellow(btnIdx) ..
-                        "]位置，学习了[" .. hColior.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
+                    hColor.yellow(btnIdx) ..
+                        "]位置，学习了[" .. hColor.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
             )
             hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
             hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)

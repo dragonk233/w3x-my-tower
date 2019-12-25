@@ -19,7 +19,8 @@ end
 
 --shop
 local shopNames = {
-    "猎人之店"
+    "猎人之店",
+    "信使之笼"
 }
 
 for _, name in ipairs(shopNames) do
@@ -31,13 +32,17 @@ end
 
 -- courier 信使
 game.courierLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("couriers"), -1)
-print(game.courierLen)
 for i = 1, game.courierLen, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriers"), i)
     local jv = json.parse(v)
-    jv.I_TYPE = "courier"
     hRuntime.register.unit(jv)
     game.courier[jv.INDEX] = jv
+    --
+    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriersItems"), i)
+    jv = json.parse(v)
+    jv.I_TYPE = "courier"
+    hRuntime.register.item(jv)
+    game.courierItem[jv.INDEX] = jv
 end
 
 -- unit 其他单位

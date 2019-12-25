@@ -376,12 +376,20 @@ end
 createMyCourier = function(playerIndex, courierId)
     if (playerIndex == nil or courierId == nil) then
         print("createMyCourier wtf")
-        return
+        return nil
     end
     if (his.playing(hplayer.players[playerIndex])) then
         -- 如果有上一个单位，把上一个信使暂时隐藏，后面取它的物品
         if (game.playerCourier[playerIndex] ~= nil) then
             cj.ShowUnit(game.playerCourier[playerIndex], false)
+        end
+        local x, y
+        if (game.playerCourier[playerIndex] ~= nil) then
+            x = cj.GetUnitX(game.playerCourier[playerIndex])
+            y = cj.GetUnitY(game.playerCourier[playerIndex])
+        else
+            x = game.courierPoint[playerIndex][1]
+            y = game.courierPoint[playerIndex][2]
         end
         local u =
             hunit.create(
@@ -389,15 +397,10 @@ createMyCourier = function(playerIndex, courierId)
                 whichPlayer = hplayer.players[playerIndex],
                 unitId = courierId,
                 qty = 1,
-                x = game.courierPoint[playerIndex][1],
-                y = game.courierPoint[playerIndex][2]
+                x = x,
+                y = y
             }
         )
-        -- 如果有上一个单位，把上一个信使的物品给予新的信使，并删除它
-        if (game.playerCourier[playerIndex] ~= nil) then
-            hitem.copy(game.playerCourier[playerIndex], u)
-            hunit.del(game.playerCourier[playerIndex], 0)
-        end
         hitem.setAllowSeparate(u)
         hattr.set(
             u,
@@ -407,7 +410,13 @@ createMyCourier = function(playerIndex, courierId)
             }
         )
         hevent.onItemUsed(u, onUnitItemsUesd)
+        -- 如果有上一个单位，把上一个信使的物品给予新的信使，并删除它
+        if (game.playerCourier[playerIndex] ~= nil) then
+            hitem.copy(game.playerCourier[playerIndex], u)
+            hunit.del(game.playerCourier[playerIndex], 0)
+        end
         game.playerCourier[playerIndex] = u
-        cj.PanCameraToTimed(game.courierPoint[playerIndex][1], game.courierPoint[playerIndex][2], 0.60)
+        cj.PanCameraToTimed(cj.GetUnitX(u), cj.GetUnitY(u), 0.50)
+        return u
     end
 end

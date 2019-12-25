@@ -1,7 +1,8 @@
 -- courier
+local couriersShopIds = {}
 for i, v in ipairs(couriers) do
     -- 处理信使数据
-    local Ubertip = "召唤：" .. v.Name .. "（移动速度：" .. v.spd .. "）"
+    local Ubertip = "召唤：" .. v.Name .. "|n移动速度：" .. hColor.green(v.spd)
     local obj = slk.unit.hfoo:new("couriers_" .. v.Name)
     obj.type = "Peon"
     obj.upgrades = ""
@@ -59,7 +60,7 @@ for i, v in ipairs(couriers) do
     -- 信使物品
     local iobj = slk.item.gold:new("couriers_items_" .. v.Name)
     iobj.Name = "[信使][" .. v.Name .. "]"
-    iobj.Tip = "点击替换信使：[" .. v.Name .. "]"
+    iobj.Tip = "购买信使：[" .. v.Name .. "]"
     iobj.UberTip = Ubertip
     iobj.Description = Ubertip
     iobj.Art = v.Art
@@ -70,8 +71,11 @@ for i, v in ipairs(couriers) do
     iobj.cooldownID = ""
     iobj.stockRegen = 120
     iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
-    iobj.abilList = UsedID.Tower
+    iobj.abilList = UsedID.Courier
     iobj.perishable = 1
+    iobj.powerup = 0
+    iobj.stockMax = 1
+    iobj.stockRegen = 10
     local hitem = {
         INDEX = v.Name,
         Name = v.Name,
@@ -79,14 +83,38 @@ for i, v in ipairs(couriers) do
         goldcost = 0,
         lumbercost = 0,
         perishable = 1,
+        powerup = 0,
         ITEM_ID = iobj:get_id(),
         UNIT_ID = v.unitID,
     }
+    if(#couriersShopIds < 12)then
+        table.insert(couriersShopIds,hitem.ITEM_ID)
+    end
     ?>
-call SaveStr(hash_myslk, StringHash("couriers"), <?=i?>, "<?=hSys.addslashes(json.stringify(v))?>")
-call SaveStr(hash_myslk, StringHash("couriersItems"), <?=i?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
+    call SaveStr(hash_myslk, StringHash("couriers"), <?=i?>, "<?=hSys.addslashes(json.stringify(v))?>")
+    call SaveStr(hash_myslk, StringHash("couriersItems"), <?=i?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
     <?
 end
 ?>
 call SaveInteger(hash_myslk, StringHash("couriers"), -1, <?=#couriers?>)
+<?
+local v = {
+    Name = "信使之笼",
+}
+local obj = slk.unit.ngme:new("shops_" .. v.Name)
+obj.Name = v.Name
+obj.pathTex = "PathTextures\\8x8SimpleSolid.tga"
+obj.abilList = "Aneu,Avul,Apit"
+obj.Sellitems = hSys.implode(',',couriersShopIds)
+obj.file = "buildings\\human\\GryphonAviary\\GryphonAviary"
+obj.Art = "ReplaceableTextures\\CommandButtons\\BTNGryphonAviary.blp"
+obj.modelScale = 0.80
+obj.scale = 4.20
+obj.HP = 99999
+obj.sight = 800
+obj.nsight = 800
+obj.unitSound = "GryphonAviary"
+v.UNIT_ID = obj:get_id()
+?>
+call SaveStr(hash_myslk, StringHash("shops"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
 <?
