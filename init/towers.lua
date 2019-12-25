@@ -1,17 +1,19 @@
 -- towers
 towers = {
     E = towers_e,
-    --D = towers_d,
-    --C = towers_c,
-    --B = towers_b,
-    --A = towers_a,
-    --S = towers_s,
-    --SS = towers_ss,
+    D = towers_d,
+    C = towers_c,
+    B = towers_b,
+    A = towers_a,
+    S = towers_s,
+    SS = towers_ss,
     --SSS = towers_sss
 }
+local towersTi = 0
 for tlv, tow in pairs(towers) do
     if tow ~= nil then
-        for _, v in pairs(tow) do
+        for i, v in pairs(tow) do
+            towersTi = towersTi + 1
             -- 处理塔基数据
             local Ubertip = v.Ubertip
             local obj = slk.unit.Hpal:new("towers_" .. v.Name)
@@ -167,6 +169,7 @@ for tlv, tow in pairs(towers) do
             obj.STRplus = v.STRplus
             obj.AGIplus = v.AGIplus
             obj.INTplus = v.INTplus
+            v.INDEX = v.Name
             v.TOWER_POWER = tlv
             v.UNIT_ID = obj:get_id()
             -- 塔基物品
@@ -176,27 +179,38 @@ for tlv, tow in pairs(towers) do
             iobj.UberTip = Ubertip
             iobj.Description = Ubertip
             iobj.Art = v.Art
-            iobj.scale = 0.1
+            iobj.scale = 0.80
+            iobj.selSize = 80
             iobj.goldcost = 0
             iobj.lumbercost = 0
             iobj.sellable = 1
-            iobj.cooldownID = ""
-            iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
+            iobj.cooldownID = UsedID.Tower
+            iobj.file = "Objects\\InventoryItems\\Glyph\\Glyph.mdl"
             iobj.abilList = UsedID.Tower
             iobj.perishable = 1
+            iobj.powerup = 0
             local hitem = {
+                INDEX = v.Name,
                 Name = v.Name,
                 Art = v.Art,
                 goldcost = 0,
                 lumbercost = 0,
                 perishable = 1,
+                powerup = 0,
+                WEIGHT = 0,
+                OVERLIE = 999,
                 ITEM_ID = iobj:get_id(),
                 UNIT_ID = v.unitID,
+                TOWER_POWER = tlv,
             }
             ?>
-        call SaveStr(hash_myslk, StringHash("towers"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
-        call SaveStr(hash_myslk, StringHash("towersItems"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(hitem))?>")
+            call SaveStr(hash_myslk, StringHash("towers"), <?=towersTi?>, "<?=hSys.addslashes(json.stringify(v))?>")
+            call SaveStr(hash_myslk, StringHash("towersItems"), <?=towersTi?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
             <?
         end
     end
 end
+
+?>
+call SaveInteger(hash_myslk, StringHash("towers"), -1, <?=towersTi?>)
+<?

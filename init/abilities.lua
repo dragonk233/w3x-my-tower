@@ -65,7 +65,7 @@ call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<
 <?
 end
 
-local level_limit = 10
+local level_limit = 9
 local ab_index = 0
 local ab_item_index = 0
 
@@ -129,12 +129,14 @@ for _, v in ipairs(abilities) do
                 iobj.Tip = "点击学习红技能书：|cffffcc00《" .. level .. "级" .. v.Name .. "》|r"
                 iobj.file = "Objects\\InventoryItems\\tomeRed\\tomeRed.mdl"
                 iobj.abilList = UsedID.BookRed
+                iobj.cooldownID = UsedID.BookRed
                 goldcost = level * 10
             elseif (v.ABILITY_COLOR == 'yellow') then
                 iobj.Name = "[技能书·黄]《" .. level .. "级" .. v.Name .. "》"
                 iobj.Tip = "点击学习黄技能书：|cffffcc00《" .. level .. "级" .. v.Name .. "》|r"
                 iobj.file = "Objects\\InventoryItems\\tomeBrown\\tomeBrown.mdl"
                 iobj.abilList = UsedID.BookYellow
+                iobj.cooldownID = UsedID.BookYellow
                 goldcost = level * 20
             end
             iobj.UberTip = "能学习到技能：|n" .. Ubertip
@@ -144,13 +146,12 @@ for _, v in ipairs(abilities) do
             iobj.goldcost = goldcost
             iobj.lumbercost = 0
             iobj.sellable = 1
-            iobj.cooldownID = ""
             iobj.class = "Charged"
             iobj.powerup = 0
             iobj.perishable = 1
             local hitem = {
                 INDEX = v.Name .."#".. level,
-                DIALOG_TITLE = "选位置学习:"..v.Name.."[等级"..level.."]",
+                DIALOG_TITLE = "选位置学习:"..v.Name.."["..level.."级]",
                 Art = v.Art,
                 goldcost = goldcost,
                 lumbercost = 0,
@@ -159,7 +160,7 @@ for _, v in ipairs(abilities) do
                 ABILITY_ID = v.ABILITY_ID,
                 ABILITY_COLOR = v.ABILITY_COLOR,
                 ABILITY_LEVEL = level,
-                WEIGHT = 0.01,
+                WEIGHT = 0,
                 OVERLIE = 999,
                 TRIGGER_CALL = v.TRIGGER_CALL or nil,
             }

@@ -60,8 +60,8 @@ game = {
     },
     playerTower = {},
     playerCourier = {},
+    towersLen = 0,
     towers = {},
-    towersKV = {},
     towersItems = {},
     towersItemsKV = {},
     towersAbilities = {},
@@ -79,6 +79,7 @@ game = {
     thisOptionAbility = {},
     thisOptionAbilityItem = {},
     thisOptionItem2Abli = {},
+    thisOptionTowerPowerItem = {},
     -- 左上第一顺时针设定的
     towerPoint = {
         {-1536, 1536},

@@ -13,10 +13,14 @@ onUnitItemsUesd = function()
         hmsg.echo00(p, "物品I类型获取错误")
         return
     end
-    if (itemSLK.I_TYPE == "courier") then
+    if (itemSLK.I_TYPE == "tower") then
+        local playerIndex = hplayer.index(p)
+        local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)
+        hmsg.echo(cj.GetPlayerName(p) .. "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]")
+    elseif (itemSLK.I_TYPE == "courier") then
         local playerIndex = hplayer.index(p)
         local u = createMyCourier(playerIndex, game.courier[itemSLK.INDEX].UNIT_ID)
-        hmsg.echo(cj.GetPlayerName(p) .. "召唤了信使：" .. hColor.yellow(game.courier[itemSLK.INDEX].Name))
+        hmsg.echo(cj.GetPlayerName(p) .. "召唤了信使：[" .. hColor.yellow(game.courier[itemSLK.INDEX].Name) .. "]")
         if (u ~= nil and cj.GetLocalPlayer() == p) then
             cj.ClearSelection()
             cj.SelectUnit(u, true)
@@ -62,6 +66,13 @@ onUnitItemsUesd = function()
             end
         end
         if (emptySite == nil) then
+            table.insert(
+                btns,
+                {
+                    value = 512,
+                    label = "[ESC][" .. hColor.grey("废弃技能书") .. "]"
+                }
+            )
             hdialog.create(
                 p,
                 {
@@ -69,6 +80,10 @@ onUnitItemsUesd = function()
                     buttons = btns
                 },
                 function(btnIdx)
+                    if (btnIdx == 512) then
+                        hmsg.echo00(p, "技能书被扔了")
+                        return
+                    end
                     hmsg.echo00(
                         p,
                         "你选择了[" ..

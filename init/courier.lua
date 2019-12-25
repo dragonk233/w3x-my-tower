@@ -64,13 +64,14 @@ for i, v in ipairs(couriers) do
     iobj.UberTip = Ubertip
     iobj.Description = Ubertip
     iobj.Art = v.Art
-    iobj.scale = 0.1
+    iobj.scale = 1.00
+    iobj.selSize = 80
     iobj.goldcost = 0
     iobj.lumbercost = v.lumbercost or 0
     iobj.sellable = 1
-    iobj.cooldownID = ""
+    iobj.cooldownID = UsedID.Courier
     iobj.stockRegen = 120
-    iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
+    iobj.file = "Objects\\InventoryItems\\runicobject\\runicobject.mdl"
     iobj.abilList = UsedID.Courier
     iobj.perishable = 1
     iobj.powerup = 0
@@ -84,6 +85,8 @@ for i, v in ipairs(couriers) do
         lumbercost = 0,
         perishable = 1,
         powerup = 0,
+        WEIGHT = 0,
+        OVERLIE = 999,
         ITEM_ID = iobj:get_id(),
         UNIT_ID = v.unitID,
     }

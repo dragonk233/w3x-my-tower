@@ -269,14 +269,16 @@ end
 createMyTower = function(playerIndex, towerId)
     if (playerIndex == nil or towerId == nil) then
         print("createMyTower wtf")
-        return
+        return nil
     end
     if (his.playing(hplayer.players[playerIndex])) then
         if (game.towersAbilities[playerIndex] == nil) then
             game.towersAbilities[playerIndex] = {}
         end
         -- 如果有上一个单位，把上一个兵塔暂时隐藏，后面复制技能，取它的物品
+        local prevHeroLevel = 1
         if (game.playerTower[playerIndex] ~= nil) then
+            prevHeroLevel = cj.GetHeroLevel(game.playerTower[playerIndex])
             cj.ShowUnit(game.playerTower[playerIndex], false)
         end
         local u =
@@ -290,24 +292,7 @@ createMyTower = function(playerIndex, towerId)
             }
         )
         hhero.setIsHero(u, true)
-        hevent.onLevelUp(u, updateMyTower)
-        -- 如果上一个单位有技能，复制技能
-        if (game.towersAbilities[playerIndex] ~= nil) then
-            for k, v in pairs(game.towersAbilities[playerIndex]) do
-                hskill.add(u, v.ABILITY_ID)
-            end
-        end
-        -- 如果有上一个单位，把上一个兵塔的物品给予新的兵塔，并删除它
-        if (game.playerTower[playerIndex] ~= nil) then
-            hitem.copy(game.playerTower[playerIndex], u)
-            hunit.del(game.playerTower[playerIndex], 0)
-        end
-        game.playerTower[playerIndex] = u
-        cj.PingMinimapEx(game.towerPoint[playerIndex][1], game.towerPoint[playerIndex][2], 10, 255, 255, 255, true)
-        hmsg.echo(
-            cj.GetPlayerName(hplayer.players[playerIndex]) .. "召唤了兵塔：[" .. hslk_global.unitsKV[towerId].Name .. "]"
-        )
-        --
+        --属性
         local tlv = hslk_global.unitsKV[towerId].towerLevel
         local life = 100
         local mana = 100
@@ -356,6 +341,23 @@ createMyTower = function(playerIndex, towerId)
                 attack_green = "+" .. hslk_global.unitsKV[towerId].ATTACK_GREEN
             }
         )
+        hevent.onLevelUp(u, updateMyTower)
+        if (prevHeroLevel > 1) then
+            cj.SetHeroLevel(u, prevHeroLevel, false)
+        end
+        -- 如果上一个单位有技能，复制技能
+        if (game.towersAbilities[playerIndex] ~= nil) then
+            for k, v in pairs(game.towersAbilities[playerIndex]) do
+                hskill.add(u, v.ability_id)
+            end
+        end
+        -- 如果有上一个单位，把上一个兵塔的物品给予新的兵塔，并删除它
+        if (game.playerTower[playerIndex] ~= nil) then
+            hitem.copy(game.playerTower[playerIndex], u)
+            hunit.del(game.playerTower[playerIndex], 0)
+        end
+        game.playerTower[playerIndex] = u
+        cj.PingMinimapEx(game.towerPoint[playerIndex][1], game.towerPoint[playerIndex][2], 10, 255, 255, 255, true)
         hevent.onItemUsed(u, onUnitItemsUesd)
         --阶级标志
         hskill.add(u, game.thisTowerPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
@@ -369,6 +371,7 @@ createMyTower = function(playerIndex, towerId)
                 }
             end
         end
+        return u
     end
 end
 

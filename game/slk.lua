@@ -1,20 +1,22 @@
 --SLK系统
 
 -- tower 兵塔
-local towersNames = {
-    "人类·农民"
-}
-for _, name in ipairs(towersNames) do
-    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), cj.StringHash(name))
+game.towersLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("towers"), -1)
+for i = 1, game.towersLen, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), i)
     local jv = json.parse(v)
-    game.towers[name] = jv
-    game.towersKV[jv.UNIT_ID] = jv
+    game.towers[jv.INDEX] = jv
     hRuntime.register.unit(jv)
     --
-    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towersItems"), cj.StringHash(name))
+    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towersItems"), i)
     jv = json.parse(v)
-    game.towersItems[name] = jv
+    jv.I_TYPE = "tower"
     hRuntime.register.item(jv)
+    game.towersItems[jv.INDEX] = jv
+    if (game.thisOptionTowerPowerItem[jv.TOWER_POWER] == nil) then
+        game.thisOptionTowerPowerItem[jv.TOWER_POWER] = {}
+    end
+    table.insert(game.thisOptionTowerPowerItem[jv.TOWER_POWER], jv)
 end
 
 --shop
