@@ -150,7 +150,7 @@ for _, v in ipairs(abilities) do
             iobj.perishable = 1
             local hitem = {
                 INDEX = v.Name .."#".. level,
-                DIALOG_TITLE = "请选键位学习:"..v.Name.."[等级"..level.."]",
+                DIALOG_TITLE = "选位置学习:"..v.Name.."[等级"..level.."]",
                 Art = v.Art,
                 goldcost = goldcost,
                 lumbercost = 0,

@@ -29,8 +29,13 @@ onUnitItemsUesd = function()
         end
         local playerIndex = hplayer.index(p)
         local btns = {}
+        local emptySite = nil
         for k, v in ipairs(sites) do
             if (game.towersAbilities[playerIndex][v].level == nil) then
+                if (emptySite == nil) then
+                    emptySite = v
+                    break
+                end
                 btns[k] = {
                     value = v,
                     label = hColor.yellow(
@@ -50,25 +55,37 @@ onUnitItemsUesd = function()
                 }
             end
         end
-        hdialog.create(
-            p,
-            {
-                title = itemSLK.DIALOG_TITLE,
-                buttons = btns
-            },
-            function(btnIdx)
-                hmsg.echo00(
-                    p,
-                    "你选择了[" .. btnIdx .. "]位置，来学习" .. abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name
-                )
-                hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
-                hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)
-                game.towersAbilities[playerIndex][btnIdx] = {
-                    ability_id = abils[btnIdx].ABILITY_ID,
-                    level = abils[btnIdx].ABILITY_LEVEL,
-                    name = abils[btnIdx].Name
-                }
-            end
-        )
+        if (emptySite == nil) then
+            hdialog.create(
+                p,
+                {
+                    title = itemSLK.DIALOG_TITLE,
+                    buttons = btns
+                },
+                function(btnIdx)
+                    hmsg.echo00(
+                        p,
+                        "你选择了[" .. btnIdx .. "]位置，来学习" .. abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name
+                    )
+                    hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
+                    hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)
+                    game.towersAbilities[playerIndex][btnIdx] = {
+                        ability_id = abils[btnIdx].ABILITY_ID,
+                        level = abils[btnIdx].ABILITY_LEVEL,
+                        name = abils[btnIdx].Name
+                    }
+                end
+            )
+        else
+            local btnIdx = emptySite
+            hmsg.echo00(p, "兵塔的[" .. btnIdx .. "]位置，学习了" .. abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name)
+            hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
+            hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)
+            game.towersAbilities[playerIndex][btnIdx] = {
+                ability_id = abils[btnIdx].ABILITY_ID,
+                level = abils[btnIdx].ABILITY_LEVEL,
+                name = abils[btnIdx].Name
+            }
+        end
     end
 end
