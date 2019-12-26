@@ -62,5 +62,26 @@ towers_c = {
         abilList = "",
         ATTACK_WHITE = 63,
         ATTACK_GREEN = 0
-    }
+    },
+    {
+        Name = "精灵·牧师",
+        Ubertip = "神啊！听我祷告",
+        unitSound = "Priest",
+        file = "units\\human\\Priest\\Priest",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNPriest.blp",
+        modelScale = 2.00,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "Abilities\\Weapons\\PriestMissile\\PriestMissile.mdl",
+        cool1 = 2.10,
+        Primary = "INT",
+        STR = 13,
+        AGI = 10,
+        INT = 22,
+        abilList = "",
+        ATTACK_WHITE = 0,
+        ATTACK_GREEN = 42
+    },
 }
