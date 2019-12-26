@@ -181,13 +181,13 @@ for tlv, tow in pairs(towers) do
             iobj.UberTip = Ubertip .. "|n * 无论兵种是否一致，使用后兵塔会较前提升1级！"
             iobj.Description = Ubertip
             iobj.Art = v.Art
-            iobj.scale = 0.80
+            iobj.scale = 1.00
             iobj.selSize = 80
             iobj.goldcost = tempPower * 2
             iobj.lumbercost = 0
             iobj.sellable = 1
             iobj.cooldownID = UsedID.Tower
-            iobj.file = "Objects\\InventoryItems\\Glyph\\Glyph.mdl"
+            iobj.file = "Objects\\InventoryItems\\runicobject\\runicobject.mdl"
             iobj.abilList = UsedID.Tower
             iobj.perishable = 1
             iobj.powerup = 0

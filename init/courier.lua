@@ -71,7 +71,7 @@ for i, v in ipairs(couriers) do
     iobj.sellable = 1
     iobj.cooldownID = UsedID.Courier
     iobj.stockRegen = 120
-    iobj.file = "Objects\\InventoryItems\\runicobject\\runicobject.mdl"
+    iobj.file = "Objects\\InventoryItems\\Rune\\Rune.mdl"
     iobj.abilList = UsedID.Courier
     iobj.perishable = 1
     iobj.powerup = 0

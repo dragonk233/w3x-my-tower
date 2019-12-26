@@ -84,6 +84,27 @@ towers_e = {
         ATTACK_GREEN = 0
     },
     {
+        Name = "兽人·发狂苦力",
+        Ubertip = "兽人的苦力，由于工资太低而发狂",
+        unitSound = "Peon",
+        file = "units\\demon\\ChaosPeon\\ChaosPeon",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNChaosPeon.blp",
+        modelScale = 2.00,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
+        cool1 = 2.10,
+        Primary = "STR",
+        STR = 18,
+        AGI = 6,
+        INT = 1,
+        abilList = "",
+        ATTACK_WHITE = 24,
+        ATTACK_GREEN = 0
+    },
+    {
         Name = "兽人·豺狼战士",
         Ubertip = "我是豺狼，不是财狼",
         unitSound = "Gnoll",
