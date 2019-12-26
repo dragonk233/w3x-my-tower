@@ -863,7 +863,7 @@ enemys = {
         Name = "小蜥蜴",
         file = "units\\creeps\\ThunderLizardSalamander\\ThunderLizardSalamander",
         modelScale = 0.60,
-        scale = 2.50,
+        scale = 1.50,
         unitSound = "KotoBeastNoRider",
     },
     {

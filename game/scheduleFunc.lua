@@ -359,6 +359,8 @@ createMyTower = function(playerIndex, towerId)
         hevent.onItemUsed(u, onUnitItemsUesd)
         --阶级标志
         hskill.add(u, game.thisTowerPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
+        --兵塔说明标志
+        hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
         --技能树
         for k, v in pairs(game.thisEmptyAbilities) do
             if (game.towersAbilities[playerIndex][k] == nil) then

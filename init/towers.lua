@@ -28,15 +28,15 @@ for tlv, tow in pairs(towers) do
             elseif (tlv == "D") then
                 tempPower = 2
             elseif (tlv == "C") then
-                tempPower = 3
+                tempPower = 4
             elseif (tlv == "B") then
-                tempPower = 5
+                tempPower = 7
             elseif (tlv == "A") then
-                tempPower = 10
+                tempPower = 11
             elseif (tlv == "S") then
-                tempPower = 15
+                tempPower = 16
             elseif (tlv == "SS") then
-                tempPower = 20
+                tempPower = 22
             elseif (tlv == "SSS") then
                 tempPower = 30
             end
@@ -48,7 +48,9 @@ for tlv, tow in pairs(towers) do
             v.INTplus = v.INT * 0.1
 
             Ubertip = Ubertip .. "|n|cffccffcc阶级：" .. tlv .. "|r"
-            Ubertip = Ubertip .. "|n|cffff8080攻击：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
+            Ubertip = Ubertip .. "|n|cffff0000攻击类型：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
+            Ubertip = Ubertip .. "|n|cffff8080物攻点数：" .. v.ATTACK_WHITE.."|r"
+            Ubertip = Ubertip .. "|n|cffccffff魔攻点数：" .. v.ATTACK_GREEN.."|r"
             if (Primary == "STR") then
                 Ubertip = Ubertip .. "|n|cffffff00力量：" .. v.STR .. "(+" .. v.STRplus .. ") *|r"
             else
@@ -206,6 +208,28 @@ for tlv, tow in pairs(towers) do
             ?>
             call SaveStr(hash_myslk, StringHash("towers"), <?=towersTi?>, "<?=hSys.addslashes(json.stringify(v))?>")
             call SaveStr(hash_myslk, StringHash("towersItems"), <?=towersTi?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
+            <?
+            --塔基的属性说明
+            local obj = slk.ability.Aamk:new("towerOriginAbli_" .. v.Name)
+            local Name = "[兵塔参数]" .. v.Name
+            local Tip = v.Name
+            obj.Name = Name
+            obj.Tip = Tip
+            obj.Ubertip = Ubertip
+            obj.Buttonpos1 = 1
+            obj.Buttonpos2 = 0
+            obj.hero = 0
+            obj.levels = 1
+            obj.DataA1 = 0
+            obj.DataB1 = 0
+            obj.DataC1 = 0
+            obj.Art = v.Art
+            local ab = {
+                ABILITY_ID = obj:get_id(),
+                INDEX = v.Name,
+            }
+            ?>
+            call SaveStr(hash_myslk, StringHash("abilitiies_tower_origins"), <?=towersTi?>, "<?=hSys.addslashes(json.stringify(ab))?>")
             <?
         end
     end

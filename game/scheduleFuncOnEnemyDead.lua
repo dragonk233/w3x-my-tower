@@ -33,7 +33,7 @@ deadAward = function(triggerUnit, killer)
     end
     print("maxLevel" .. maxLevel)
     local level = cj.GetRandomInt(1, maxLevel)
-    if (cj.GetRandomInt(1, 30 - maxLevel) == 13) then
+    if (cj.GetRandomInt(1, 25 - maxLevel) == 2) then
         -- 掉落红技能书
         if (#game.thisOptionAbilityItem["red"][level] > 0) then
             local itId = hSys.randTable(game.thisOptionAbilityItem["red"][level]).ITEM_ID
@@ -47,7 +47,7 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    if (cj.GetRandomInt(1, 60 - maxLevel) == 17) then
+    if (cj.GetRandomInt(1, 50 - maxLevel) == 2) then
         -- 掉落黄技能书
         if (#game.thisOptionAbilityItem["yellow"][level] > 0) then
             local itId = hSys.randTable(game.thisOptionAbilityItem["yellow"][level]).ITEM_ID
@@ -61,8 +61,7 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    --if (cj.GetRandomInt(1, 50 - maxLevel) == 19) then
-    if (cj.GetRandomInt(19, 19) == 19) then
+    if (cj.GetRandomInt(1, 30 - maxLevel) == 2) then
         -- 掉落兵塔
         local tpow = {E = 1}
         if (level == 1) then

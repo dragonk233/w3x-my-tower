@@ -181,7 +181,7 @@ for _, v in ipairs(towerPower) do
     obj.Name = Name
     obj.Tip = Tip
     obj.Ubertip = "这是一个" .. hColor.yellow(v) .. "级的兵塔"
-    obj.Buttonpos1 = 1
+    obj.Buttonpos1 = 2
     obj.Buttonpos2 = 0
     obj.hero = 0
     obj.levels = 1

@@ -17,6 +17,10 @@ for i = 1, game.towersLen, 1 do
         game.thisOptionTowerPowerItem[jv.TOWER_POWER] = {}
     end
     table.insert(game.thisOptionTowerPowerItem[jv.TOWER_POWER], jv)
+    --
+    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiies_tower_origins"), i)
+    jv = json.parse(v)
+    game.towersOrigins[jv.INDEX] = jv
 end
 
 --shop

@@ -8,10 +8,28 @@ cj.TriggerAddAction(
         cj.DisableTrigger(cj.GetTriggeringTrigger())
         cj.DestroyTrigger(cj.GetTriggeringTrigger())
         --[[
-        这里开始游戏正式开始了
-        发挥你的想象力吧~
-    ]]
+            这里开始游戏正式开始了
+            发挥你的想象力吧~
+        ]]
         hsound.bgmStop(nil)
+        --设置三围基础
+        hattr.setThreeBuff(
+            {
+                str = {
+                    life = 10,
+                    toughness = 0.3,
+                },
+                agi = {
+                    attack_white = 0.75,
+                    attack_speed = 0.02,
+                    avoid = 0.06,
+                },
+                int = {
+                    attack_green = 0.75,
+                    resistance = 0.10,
+                }
+            }
+        )
         local btns = {
             "轻松" .. game.rule.yb.waveEnd .. "波",
             "无尽挑战",
