@@ -237,19 +237,19 @@ updateMyTower = function()
     if (tlv == "E") then
         percent = 0.10
     elseif (tlv == "D") then
-        percent = 0.15
+        percent = 0.12
     elseif (tlv == "C") then
-        percent = 0.20
+        percent = 0.15
     elseif (tlv == "B") then
-        percent = 0.25
+        percent = 0.19
     elseif (tlv == "A") then
-        percent = 0.30
+        percent = 0.24
     elseif (tlv == "S") then
-        percent = 0.40
+        percent = 0.30
     elseif (tlv == "SS") then
-        percent = 0.50
+        percent = 0.37
     elseif (tlv == "SSS") then
-        percent = 0.75
+        percent = 0.45
     end
     attackWhite = diffLv * attackWhite * percent
     attackGreen = diffLv * attackGreen * percent

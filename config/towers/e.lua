@@ -13,7 +13,7 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 8,
+        STR = 7,
         AGI = 6,
         INT = 7,
         abilList = "",
@@ -105,27 +105,6 @@ towers_e = {
         ATTACK_GREEN = 0
     },
     {
-        Name = "精灵·小精灵",
-        Ubertip = "灵体，空灵有爱",
-        unitSound = "Wisp",
-        file = "units\\nightelf\\Wisp\\Wisp",
-        Art = "ReplaceableTextures\\CommandButtons\\BTNWisp.blp",
-        modelScale = 1.60,
-        scale = 1.60,
-        movetp = "hover",
-        moveHeight = 0.00,
-        weapTp1 = "missile",
-        Missileart = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl",
-        cool1 = 2.10,
-        Primary = "INT",
-        STR = 6,
-        AGI = 4,
-        INT = 14,
-        abilList = "",
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 24
-    },
-    {
         Name = "精灵·血精灵工程师",
         Ubertip = "自称工程师的血精灵",
         unitSound = "Wisp",
@@ -147,7 +126,7 @@ towers_e = {
         ATTACK_GREEN = 23
     },
     {
-        Name = "亡鬼·侍僧",
+        Name = "亡灵·侍僧",
         Ubertip = "从不敲经拜佛的僧侣",
         unitSound = "Acolyte",
         file = "units\\undead\\Acolyte\\Acolyte",
@@ -168,7 +147,7 @@ towers_e = {
         ATTACK_GREEN = 26
     },
     {
-        Name = "亡鬼·食尸鬼",
+        Name = "亡灵·食尸鬼",
         Ubertip = "嚼食腐肉的尸鬼，神奇吧",
         unitSound = "Ghoul",
         file = "units\\undead\\Ghoul\\Ghoul",
@@ -189,7 +168,7 @@ towers_e = {
         ATTACK_GREEN = 0
     },
     {
-        Name = "亡鬼·骷髅战士",
+        Name = "亡灵·骷髅战士",
         Ubertip = "觉得有点饿，虽然没有胃",
         unitSound = "Skeleton",
         file = "units\\undead\\Skeleton\\Skeleton",
@@ -208,6 +187,27 @@ towers_e = {
         abilList = "",
         ATTACK_WHITE = 22,
         ATTACK_GREEN = 0
+    },
+    {
+        Name = "暗夜精灵·小精灵",
+        Ubertip = "灵体，空灵有爱",
+        unitSound = "Wisp",
+        file = "units\\nightelf\\Wisp\\Wisp",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNWisp.blp",
+        modelScale = 1.60,
+        scale = 1.60,
+        movetp = "hover",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl",
+        cool1 = 2.10,
+        Primary = "INT",
+        STR = 6,
+        AGI = 4,
+        INT = 14,
+        abilList = "",
+        ATTACK_WHITE = 0,
+        ATTACK_GREEN = 24
     },
     {
         Name = "娜迦·穆格尔小鱼",

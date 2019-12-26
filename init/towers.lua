@@ -43,9 +43,9 @@ for tlv, tow in pairs(towers) do
             v.STR = v.STR * tempPower
             v.AGI = v.AGI * tempPower
             v.INT = v.INT * tempPower
-            v.STRplus = v.STR * 0.1
-            v.AGIplus = v.AGI * 0.1
-            v.INTplus = v.INT * 0.1
+            v.STRplus = v.STR * 0.30
+            v.AGIplus = v.AGI * 0.30
+            v.INTplus = v.INT * 0.30
 
             Ubertip = Ubertip .. "|n|cffccffcc阶级：" .. tlv .. "|r"
             Ubertip = Ubertip .. "|n|cffff0000攻击类型：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
@@ -160,7 +160,7 @@ for tlv, tow in pairs(towers) do
             obj.targType = "ground" --作为目标类型
             obj.Missileart = v.Missileart -- 箭矢模型
             obj.Missilespeed = 1100 -- 箭矢速度
-            obj.Missilearc = 0.05
+            obj.Missilearc = v.Missilearc or 0.05
             obj.weapTp1 = v.weapTp1 or "normal" --攻击类型
             obj.weapType1 = "" --攻击声音
             obj.Primary = Primary
