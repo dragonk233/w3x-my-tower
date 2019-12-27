@@ -252,6 +252,27 @@ towers_e = {
         ATTACK_GREEN = 0
     },
     {
+        Name = "娜迦·飞蛇",
+        Ubertip = "小鱼人是骑不上这种飞龙的",
+        unitSound = "WindSerpent",
+        file = "units\\naga\\WindSerpent\\WindSerpent",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNWindSerpent.blp",
+        modelScale = 1.10,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "Abilities\\Weapons\\WingedSerpentMissile\\WingedSerpentMissile.mdl",
+        cool1 = 2.10,
+        Primary = "AGI",
+        STR = 12,
+        AGI = 15,
+        INT = 3,
+        abilList = "",
+        ATTACK_WHITE = 28,
+        ATTACK_GREEN = 0
+    },
+    {
         Name = "地精·人工小子",
         Ubertip = "我...是个...机器...人",
         unitSound = "ClockwerkGoblin",
