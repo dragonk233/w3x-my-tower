@@ -2,7 +2,7 @@
 local couriersShopIds = {}
 for i, v in ipairs(couriers) do
     -- 处理信使数据
-    local Ubertip = "召唤：" .. v.Name .. "|n移动速度：" .. hColor.green(v.spd)
+    local Ubertip = "召唤：" .. v.Name .. "|n信使阶级："..hColor.greenLight(v.COURIER_POWER) .. "|n移动速度：" .. hColor.skyLight(v.spd)
     local obj = slk.unit.hfoo:new("couriers_" .. v.Name)
     obj.type = "Peon"
     obj.upgrades = ""
@@ -89,7 +89,8 @@ for i, v in ipairs(couriers) do
         OVERLIE = 999,
         ITEM_ID = iobj:get_id(),
         UNIT_ID = v.unitID,
-    }
+        COURIER_POWER = v.COURIER_POWER or "E",
+        }
     if(#couriersShopIds < 12)then
         table.insert(couriersShopIds,hitem.ITEM_ID)
     end

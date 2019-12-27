@@ -46,7 +46,9 @@ for tlv, tow in pairs(towers) do
             v.STRplus = v.STR * 0.30
             v.AGIplus = v.AGI * 0.30
             v.INTplus = v.INT * 0.30
-
+            local ThreeTotal = v.STR + v.AGI + v.INT
+            local TowerMark = math.floor(ThreeTotal + v.ATTACK_WHITE + v.ATTACK_GREEN) --评定
+            --
             Ubertip = Ubertip .. "|n|cffccffcc阶级：" .. tlv .. "|r"
             Ubertip = Ubertip .. "|n|cffff0000攻击类型：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
             Ubertip = Ubertip .. "|n|cffff8080物攻点数：" .. v.ATTACK_WHITE.."|r"
@@ -66,6 +68,7 @@ for tlv, tow in pairs(towers) do
             else
                 Ubertip = Ubertip .. "|n|cffffffcc智力：" .. v.INT .. "(+" .. v.INTplus .. ")|r"
             end
+            Ubertip = Ubertip .. "|n|cffcc99ff评定："..TowerMark.."分|r"
             obj.Hotkey = ""
             obj.tilesets = 1
             obj.hostilePal = 0
@@ -183,7 +186,7 @@ for tlv, tow in pairs(towers) do
             iobj.Art = v.Art
             iobj.scale = 1.00
             iobj.selSize = 80
-            iobj.goldcost = tempPower * 2
+            iobj.goldcost = math.floor(TowerMark * 0.7)
             iobj.lumbercost = 0
             iobj.sellable = 1
             iobj.cooldownID = UsedID.Tower

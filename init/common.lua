@@ -7,11 +7,11 @@ UsedID = {
 UsedIDConfig = {
     Tower = {
         CasterArt = "Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl",
-        Cool = 5,
+        Cool = 2,
     },
     Courier = {
         CasterArt = "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl",
-        Cool = 5,
+        Cool = 2,
     },
     BookRed = {
         CasterArt = "Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",

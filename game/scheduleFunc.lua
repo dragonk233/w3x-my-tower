@@ -358,7 +358,7 @@ createMyTower = function(playerIndex, towerId)
         cj.PingMinimapEx(game.towerPoint[playerIndex][1], game.towerPoint[playerIndex][2], 10, 255, 255, 255, true)
         hevent.onItemUsed(u, onUnitItemsUesd)
         --阶级标志
-        hskill.add(u, game.thisTowerPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
+        hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
         --兵塔说明标志
         hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
         --技能树
@@ -418,6 +418,8 @@ createMyCourier = function(playerIndex, courierId)
             hitem.copy(game.playerCourier[playerIndex], u)
             hunit.del(game.playerCourier[playerIndex], 0)
         end
+        --阶级标志
+        hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[courierId].COURIER_POWER].ABILITY_ID, 0)
         game.playerCourier[playerIndex] = u
         cj.PanCameraToTimed(cj.GetUnitX(u), cj.GetUnitY(u), 0.50)
         return u

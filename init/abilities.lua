@@ -171,16 +171,16 @@ for _, v in ipairs(abilities) do
     end
 end
 
-local towerPower = {
+local unitPower = {
     "SSS", "SS", "S", "A", "B", "C", "D", "E"
 }
-for _, v in ipairs(towerPower) do
-    local obj = slk.ability.Aamk:new("abilities_tower_power_" .. v)
-    local Name = "兵塔阶级 - [" .. hColor.yellow(v) .. "]"
-    local Tip = "兵塔阶级 - [" .. hColor.yellow(v) .. "]"
+for _, v in ipairs(unitPower) do
+    local obj = slk.ability.Aamk:new("abilities_unit_power_" .. v)
+    local Name = "阶级 - [" .. hColor.yellow(v) .. "]"
+    local Tip = "阶级 - [" .. hColor.yellow(v) .. "]"
     obj.Name = Name
     obj.Tip = Tip
-    obj.Ubertip = "这是一个" .. hColor.yellow(v) .. "级的兵塔"
+    obj.Ubertip = "这是一个" .. hColor.yellow(v) .. "级的单位"
     obj.Buttonpos1 = 2
     obj.Buttonpos2 = 0
     obj.hero = 0
@@ -194,7 +194,7 @@ for _, v in ipairs(towerPower) do
         ABILITY_BTN = v,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("abilities_tower_power"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
+call SaveStr(hash_myslk, StringHash("abilities_unit_power"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
 <?
 end
 

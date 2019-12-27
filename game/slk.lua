@@ -73,8 +73,8 @@ for k = 1, game.thisEnemysLen, 1 do
     game.thisEnemys[k] = jv
 end
 
--- 兵塔阶级技能
-local thisTowerPowerAbilitiesName = {
+-- 阶级技能
+local thisPowerAbilitiesName = {
     "SSS",
     "SS",
     "S",
@@ -84,12 +84,12 @@ local thisTowerPowerAbilitiesName = {
     "D",
     "E"
 }
-game.thisTowerPowerAbilitiesLen = #thisTowerPowerAbilitiesName
-for _, name in ipairs(thisTowerPowerAbilitiesName) do
-    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_tower_power"), cj.StringHash(name))
+game.thisUnitPowerAbilitiesLen = #thisPowerAbilitiesName
+for _, name in ipairs(thisPowerAbilitiesName) do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_unit_power"), cj.StringHash(name))
     local jv = json.parse(v)
     hRuntime.register.ability(jv)
-    game.thisTowerPowerAbilities[name] = jv
+    game.thisUnitPowerAbilities[name] = jv
 end
 
 -- 空技能

@@ -14,6 +14,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 25,
+        COURIER_POWER = "E",
     },
     {
         Name = "V5的螃蟹",
@@ -29,6 +30,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 50,
+        COURIER_POWER = "E",
     },
     {
         Name = "友爱的海豹",
@@ -44,6 +46,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 50,
+        COURIER_POWER = "E",
     },
     {
         Name = "狡猾的浣熊",
@@ -59,6 +62,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 75,
+        COURIER_POWER = "E",
     },
     {
         Name = "冷静的绵羊",
@@ -74,6 +78,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 100,
+        COURIER_POWER = "D",
     },
     {
         Name = "卡呐诺企鹅",
@@ -89,6 +94,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 100,
+        COURIER_POWER = "D",
     },
     {
         Name = "兔子兔子",
@@ -104,6 +110,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 150,
+        COURIER_POWER = "C",
     },
     {
         Name = "小饥鸡",
@@ -119,6 +126,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 150,
+        COURIER_POWER = "C",
     },
     {
         Name = "宁静麋鹿",
@@ -134,6 +142,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 200,
+        COURIER_POWER = "B",
     },
     {
         Name = "依诺吸吸",
@@ -149,6 +158,7 @@ couriers = {
         targType = "ground",
         armor = "Flesh",
         lumbercost = 200,
+        COURIER_POWER = "B",
     },
     {
         Name = "灵动的雪鹰",
@@ -164,6 +174,7 @@ couriers = {
         targType = "air",
         armor = "Flesh",
         lumbercost = 250,
+        COURIER_POWER = "A",
     },
     {
         Name = "信天！翁",
@@ -175,10 +186,11 @@ couriers = {
         scale = 1.20,
         movetp = "fly",
         moveHeight = 225.00,
-        spd = 500,
+        spd = 475,
         targType = "air",
         armor = "Flesh",
         lumbercost = 300,
+        COURIER_POWER = "S",
     },
     {
         Name = "涅磐火凤凰",
@@ -190,9 +202,26 @@ couriers = {
         scale = 1.10,
         movetp = "fly",
         moveHeight = 250.00,
+        spd = 500,
+        targType = "air",
+        armor = "Ethereal",
+        lumbercost = 0,
+        COURIER_POWER = "SS",
+    },
+    {
+        Name = "幻想灵体",
+        abilList = "Avul,AInv",
+        unitSound = "",
+        file = "units\\human\\phoenix\\phoenix",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNMarkOfFire.blp",
+        modelScale = 1.20,
+        scale = 1.10,
+        movetp = "fly",
+        moveHeight = 250.00,
         spd = 522,
         targType = "air",
         armor = "Ethereal",
         lumbercost = 0,
+        COURIER_POWER = "SSS",
     },
 }

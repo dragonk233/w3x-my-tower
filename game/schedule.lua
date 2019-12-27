@@ -17,16 +17,16 @@ cj.TriggerAddAction(
             {
                 str = {
                     life = 10,
-                    toughness = 0.3,
+                    toughness = 0.3
                 },
                 agi = {
                     attack_white = 0.75,
                     attack_speed = 0.02,
-                    avoid = 0.06,
+                    avoid = 0.06
                 },
                 int = {
                     attack_green = 0.75,
-                    resistance = 0.10,
+                    resistance = 0.10
                 }
             }
         )
@@ -176,7 +176,8 @@ cj.TriggerAddAction(
                             local bigElfLife = "GG"
                             if (his.alive(bigElf)) then
                                 bigElfLife =
-                                    math.floor(hunit.getCurLife(bigElf)) .. "/" .. math.floor(hunit.getMaxLife(bigElf))
+                                    hColor.white(math.floor(hunit.getCurLife(bigElf))) ..
+                                    "/" .. math.floor(hunit.getMaxLife(bigElf))
                             end
                             cj.LeaderboardSetLabel(bl, "百波战力榜[" .. game.rule.yb.wave .. "波][精灵 " .. bigElfLife .. "]")
                             cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
@@ -307,7 +308,8 @@ cj.TriggerAddAction(
                             local bigElfLife = "GG"
                             if (his.alive(bigElf)) then
                                 bigElfLife =
-                                    math.floor(hunit.getCurLife(bigElf)) .. "/" .. math.floor(hunit.getMaxLife(bigElf))
+                                    hColor.white(math.floor(hunit.getCurLife(bigElf))) ..
+                                    "/" .. math.floor(hunit.getMaxLife(bigElf))
                             end
                             cj.LeaderboardSetLabel(bl, "合作战力榜[" .. game.rule.hz.wave .. "波][树灵 " .. bigElfLife .. "]")
                             cj.LeaderboardAddItem(bl, cj.GetPlayerName(p), v, p)
