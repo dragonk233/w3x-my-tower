@@ -64,14 +64,14 @@ for i, v in ipairs(couriers) do
     iobj.UberTip = Ubertip
     iobj.Description = Ubertip
     iobj.Art = v.Art
-    iobj.scale = 1.00
+    iobj.scale = 1.10
     iobj.selSize = 80
     iobj.goldcost = 0
     iobj.lumbercost = v.lumbercost or 0
     iobj.sellable = 1
     iobj.cooldownID = UsedID.Courier
     iobj.stockRegen = 120
-    iobj.file = "Objects\\InventoryItems\\Rune\\Rune.mdl"
+    iobj.file = "war3mapImported\\item_ScrollCyan.mdl"
     iobj.abilList = UsedID.Courier
     iobj.perishable = 1
     iobj.powerup = 0

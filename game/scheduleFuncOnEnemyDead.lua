@@ -22,7 +22,7 @@ deadAward = function(triggerUnit, killer)
     end
     local maxLevel = 0
     if (game.rule.cur == "yb" or game.rule.cur == "hz") then
-        maxLevel = math.floor(game.rule.hz.wave * 0.1)
+        maxLevel = math.floor(game.rule.hz.wave * 0.31)
     elseif (game.rule.cur == "dk" and killer ~= nil) then
         maxLevel = math.floor(game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(killer))] * 0.31)
     end
@@ -61,7 +61,7 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    if (cj.GetRandomInt(1, 30 - maxLevel) == 2) then
+    if (cj.GetRandomInt(1, 25 - maxLevel) == 2) then
         -- 掉落兵塔
         local tpow = {E = 1}
         if (level == 1) then

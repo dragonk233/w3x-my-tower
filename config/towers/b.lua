@@ -189,6 +189,27 @@ towers_b = {
         ATTACK_GREEN = 20
     },
     {
+        Name = "暗夜精灵·露娜",
+        Ubertip = "罗马神话中月亮女神！是不可能的",
+        unitSound = "Huntress",
+        file = "units\\nightelf\\Huntress\\Huntress",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNHuntress.blp",
+        modelScale = 1.60,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "mbounce",
+        Missileart = "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
+        cool1 = 1.90,
+        Primary = "AGI",
+        STR = 14,
+        AGI = 18,
+        INT = 8,
+        abilList = "",
+        ATTACK_WHITE = 30,
+        ATTACK_GREEN = 0
+    },
+    {
         Name = "亡灵·石像鬼",
         Ubertip = "当石像鬼石化时，能抵御一切的魔法",
         unitSound = "Gargoyle",

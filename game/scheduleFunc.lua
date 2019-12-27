@@ -72,7 +72,7 @@ enemyGenYB = function(waiting)
                                 0,
                                 {
                                     life = "=" .. (10 * game.rule.yb.wave),
-                                    move = "=200"
+                                    move = "=180"
                                 }
                             )
                             hevent.onBeDamage(u, enemyBeDamage)
@@ -135,7 +135,7 @@ enemyGenHZ = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (10 * game.rule.hz.wave),
+                                    life = "=" .. (15 * game.rule.hz.wave),
                                     move = "=180"
                                 }
                             )
@@ -186,7 +186,7 @@ enemyGenDK = function(waiting)
                                     0,
                                     {
                                         life = "=" .. (20 * game.rule.dk.wave[k]),
-                                        move = "=210"
+                                        move = "=180"
                                     }
                                 )
                                 game.rule.dk.monData[u] = {
