@@ -252,6 +252,27 @@ towers_d = {
         ATTACK_GREEN = 18
     },
     {
+        Name = "亡灵·骷髅魔法师",
+        Ubertip = "我的眼睛是能量体,你信吗？",
+        unitSound = "Skeleton",
+        file = "units\\undead\\SkeletonMage\\SkeletonMage",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNSkeletonMage.blp",
+        modelScale = 2.00,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "Abilities\\Weapons\\SkeletalMageMissile\\SkeletalMageMissile.mdl",
+        cool1 = 2.35,
+        Primary = "INT",
+        STR = 14,
+        AGI = 7,
+        INT = 17,
+        abilList = "",
+        ATTACK_WHITE = 0,
+        ATTACK_GREEN = 42
+    },
+    {
         Name = "娜迦·穆格尔鱼战士",
         Ubertip = "娜迦族的穆格尔大条鱼",
         unitSound = "Murloc",
