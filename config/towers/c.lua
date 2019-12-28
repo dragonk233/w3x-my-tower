@@ -16,7 +16,6 @@ towers_c = {
         STR = 15,
         AGI = 12,
         INT = 9,
-        abilList = "",
         ATTACK_WHITE = 40,
         ATTACK_GREEN = 0
     },
@@ -37,7 +36,6 @@ towers_c = {
         STR = 16,
         AGI = 13,
         INT = 7,
-        abilList = "",
         ATTACK_WHITE = 43,
         ATTACK_GREEN = 0
     },
@@ -59,7 +57,6 @@ towers_c = {
         STR = 30,
         AGI = 4,
         INT = 7,
-        abilList = "",
         ATTACK_WHITE = 63,
         ATTACK_GREEN = 0
     },
@@ -80,7 +77,6 @@ towers_c = {
         STR = 13,
         AGI = 10,
         INT = 15,
-        abilList = "",
         ATTACK_WHITE = 23,
         ATTACK_GREEN = 24
     },
@@ -101,7 +97,6 @@ towers_c = {
         STR = 12,
         AGI = 11,
         INT = 17,
-        abilList = "",
         ATTACK_WHITE = 0,
         ATTACK_GREEN = 43
     },
@@ -122,7 +117,6 @@ towers_c = {
         STR = 13,
         AGI = 10,
         INT = 22,
-        abilList = "",
         ATTACK_WHITE = 0,
         ATTACK_GREEN = 42
     },
@@ -143,7 +137,6 @@ towers_c = {
         STR = 7,
         AGI = 15,
         INT = 18,
-        abilList = "",
         ATTACK_WHITE = 47,
         ATTACK_GREEN = 0
     },
@@ -164,7 +157,6 @@ towers_c = {
         STR = 8,
         AGI = 19,
         INT = 17,
-        abilList = "",
         ATTACK_WHITE = 18,
         ATTACK_GREEN = 25
     },
@@ -185,7 +177,6 @@ towers_c = {
         STR = 7,
         AGI = 11,
         INT = 18,
-        abilList = "",
         ATTACK_WHITE = 0,
         ATTACK_GREEN = 48
     },
@@ -206,7 +197,6 @@ towers_c = {
         STR = 14,
         AGI = 14,
         INT = 14,
-        abilList = "",
         ATTACK_WHITE = 54,
         ATTACK_GREEN = 0
     },
@@ -227,7 +217,6 @@ towers_c = {
         STR = 11,
         AGI = 13,
         INT = 9,
-        abilList = "",
         ATTACK_WHITE = 35,
         ATTACK_GREEN = 0
     },
@@ -248,7 +237,6 @@ towers_c = {
         STR = 13,
         AGI = 13,
         INT = 13,
-        abilList = "",
         ATTACK_WHITE = 0,
         ATTACK_GREEN = 38
     },
@@ -269,7 +257,6 @@ towers_c = {
         STR = 16,
         AGI = 11,
         INT = 13,
-        abilList = "",
         ATTACK_WHITE = 22,
         ATTACK_GREEN = 22
     },

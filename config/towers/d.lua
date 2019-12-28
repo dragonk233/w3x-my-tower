@@ -16,7 +16,6 @@ towers_d = {
         STR = 14,
         AGI = 6,
         INT = 8,
-        abilList = "",
         ATTACK_WHITE = 30,
         ATTACK_GREEN = 0
     },
@@ -37,7 +36,6 @@ towers_d = {
         STR = 11,
         AGI = 7,
         INT = 13,
-        abilList = "",
         ATTACK_WHITE = 0,
         ATTACK_GREEN = 29
     },
@@ -58,7 +56,6 @@ towers_d = {
         STR = 24,
         AGI = 3,
         INT = 3,
-        abilList = "",
         ATTACK_WHITE = 29,
         ATTACK_GREEN = 0
     },
@@ -79,7 +76,6 @@ towers_d = {
         STR = 28,
         AGI = 1,
         INT = 1,
-        abilList = "",
         ATTACK_WHITE = 34,
         ATTACK_GREEN = 0
     },
@@ -100,7 +96,6 @@ towers_d = {
         STR = 10,
         AGI = 14,
         INT = 10,
-        abilList = "",
         ATTACK_WHITE = 29,
         ATTACK_GREEN = 0
     },
@@ -121,7 +116,6 @@ towers_d = {
         STR = 17,
         AGI = 19,
         INT = 1,
-        abilList = "",
         ATTACK_WHITE = 34,
         ATTACK_GREEN = 0
     },
@@ -142,7 +136,6 @@ towers_d = {
         STR = 11,
         AGI = 13,
         INT = 9,
-        abilList = "",
         ATTACK_WHITE = 31,
         ATTACK_GREEN = 0
     },
@@ -163,7 +156,6 @@ towers_d = {
         STR = 10,
         AGI = 12,
         INT = 8,
-        abilList = "",
         ATTACK_WHITE = 28,
         ATTACK_GREEN = 0
     },
@@ -184,7 +176,6 @@ towers_d = {
         STR = 9,
         AGI = 14,
         INT = 10,
-        abilList = "",
         ATTACK_WHITE = 27,
         ATTACK_GREEN = 0
     },
@@ -205,7 +196,6 @@ towers_d = {
         STR = 8,
         AGI = 13,
         INT = 14,
-        abilList = "",
         ATTACK_WHITE = 14,
         ATTACK_GREEN = 17
     },
@@ -226,7 +216,6 @@ towers_d = {
         STR = 9,
         AGI = 16,
         INT = 15,
-        abilList = "",
         ATTACK_WHITE = 19,
         ATTACK_GREEN = 13
     },
@@ -247,7 +236,6 @@ towers_d = {
         STR = 24,
         AGI = 4,
         INT = 5,
-        abilList = "",
         ATTACK_WHITE = 38,
         ATTACK_GREEN = 0
     },
@@ -268,7 +256,6 @@ towers_d = {
         STR = 8,
         AGI = 5,
         INT = 20,
-        abilList = "",
         ATTACK_WHITE = 15,
         ATTACK_GREEN = 18
     },
@@ -289,7 +276,6 @@ towers_d = {
         STR = 14,
         AGI = 7,
         INT = 17,
-        abilList = "",
         ATTACK_WHITE = 0,
         ATTACK_GREEN = 42
     },
@@ -310,7 +296,6 @@ towers_d = {
         STR = 11,
         AGI = 17,
         INT = 5,
-        abilList = "",
         ATTACK_WHITE = 34,
         ATTACK_GREEN = 0
     },
@@ -331,7 +316,6 @@ towers_d = {
         STR = 28,
         AGI = 1,
         INT = 12,
-        abilList = "",
         ATTACK_WHITE = 24,
         ATTACK_GREEN = 0
     },
@@ -352,7 +336,6 @@ towers_d = {
         STR = 7,
         AGI = 12,
         INT = 12,
-        abilList = "",
         ATTACK_WHITE = 16,
         ATTACK_GREEN = 16
     },
@@ -373,7 +356,6 @@ towers_d = {
         STR = 7,
         AGI = 14,
         INT = 11,
-        abilList = "",
         ATTACK_WHITE = 21,
         ATTACK_GREEN = 10
     },
@@ -394,7 +376,6 @@ towers_d = {
         STR = 23,
         AGI = 7,
         INT = 4,
-        abilList = "",
         ATTACK_WHITE = 28,
         ATTACK_GREEN = 0
     }
