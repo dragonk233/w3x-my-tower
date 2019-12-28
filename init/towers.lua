@@ -152,8 +152,12 @@ for tlv, tow in pairs(towers) do
             obj.Art = v.Art --头像
             obj.scale = v.scale or 1.00 --选择圈
             obj.movetp = v.movetp or "" --移动类型
-            obj.moveHeight = v.moveHeight --移动高度
-            obj.moveFloor = v.moveHeight * 0.25 --最低高度
+            local moveHeight = v.moveHeight
+            if(obj.movetp == 'fly')then
+                moveHeight = 225
+            end
+            obj.moveHeight = moveHeight or 0 --移动高度
+            obj.moveFloor = moveHeight * 0.25 --最低高度
             obj.spd = 1
             obj.backSw1 = v.backSw1 or 0.500
             obj.dmgpt1 = v.dmgpt1 or 0.500
