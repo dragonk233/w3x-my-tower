@@ -334,6 +334,7 @@ createMyTower = function(playerIndex, towerId)
             u,
             0,
             {
+                move = "=0",
                 life = "=" .. life,
                 mana = "=" .. mana,
                 manaBack = "=" .. manaBack,

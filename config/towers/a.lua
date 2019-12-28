@@ -419,4 +419,25 @@ towers_a = {
         ATTACK_WHITE = 95,
         ATTACK_GREEN = 0
     },
+    {
+        Name = "恶魔·双匕·尤迪安",
+        Ubertip = "刚刚与黑暗力量立下契约，虽然力量尚未稳定，但仍然可以猎杀恶魔",
+        unitSound = "HeroDemonHunter",
+        file = "war3mapImported\\unit_NigheElfRogue3.mdl",
+        Art = "war3mapImported\\icon_unit_Demon_Hunter.blp",
+        modelScale = 2.00,
+        scale = 2.10,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "",
+        cool1 = 1.90,
+        Primary = "AGI",
+        STR = 10,
+        AGI = 31,
+        INT = 15,
+        abilList = "",
+        ATTACK_WHITE = 95,
+        ATTACK_GREEN = 0
+    },
 }

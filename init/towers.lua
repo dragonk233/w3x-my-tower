@@ -83,7 +83,7 @@ for tlv, tow in pairs(towers) do
             obj.Buttonpos2 = 0
             obj.death = 0.10
             obj.turnRate = 1.00
-            obj.acquire = 1000.00
+            obj.acquire = 749.00
             obj.weapsOn = 1
             obj.race = "human"
             obj.deathType = 0
@@ -107,37 +107,37 @@ for tlv, tow in pairs(towers) do
             obj.nameCount = v.nameCount or 1
             if (obj.weapTp1 == "msplash" or obj.weapTp1 == "artillery") then
                 --溅射/炮火
-                obj.Farea1 = v.Farea1 or 0
-                obj.Qfact1 = v.Qfact1 or 0
-                obj.Qarea1 = v.Qarea1 or 0
-                obj.Hfact1 = v.Hfact1 or 0
-                obj.Harea1 = v.Harea1 or 0
+                obj.Farea1 = v.Farea1 or 1
+                obj.Qfact1 = v.Qfact1 or 0.1
+                obj.Qarea1 = v.Qarea1 or 350
+                obj.Hfact1 = v.Hfact1 or 0.25
+                obj.Harea1 = v.Harea1 or 200
                 obj.splashTargs1 = obj.targs1 .. ",enemies"
             end
             if (obj.weapTp1 == "mbounce") then
                 --弹射
-                obj.Farea1 = v.Farea1 or 0
-                obj.targCount1 = v.targCount1 or 1
-                obj.damageLoss1 = v.damageLoss1 or 0
+                obj.Farea1 = v.Farea1 or 350
+                obj.targCount1 = v.targCount1 or 4
+                obj.damageLoss1 = v.damageLoss1 or 0.10
                 obj.splashTargs1 = obj.targs1 .. ",enemies"
             end
             if (obj.weapTp1 == "mline") then
                 --穿透
-                obj.spillRadius = v.spillRadius or 0
-                obj.spillDist1 = v.spillDist1 or 0
-                obj.damageLoss1 = v.damageLoss1 or 0
+                obj.spillRadius = v.spillRadius or 150
+                obj.spillDist1 = v.spillDist1 or 300
+                obj.damageLoss1 = v.damageLoss1 or 0.10
                 obj.splashTargs1 = obj.targs1 .. ",enemies"
             end
             if (obj.weapTp1 == "aline") then
                 --炮火穿透
-                obj.Farea1 = v.Farea1 or 0
-                obj.Qfact1 = v.Qfact1 or 0
-                obj.Qarea1 = v.Qarea1 or 0
-                obj.Hfact1 = v.Hfact1 or 0
-                obj.Harea1 = v.Harea1 or 0
-                obj.spillRadius = v.spillRadius or 0
-                obj.spillDist1 = v.spillDist1 or 0
-                obj.damageLoss1 = v.damageLoss1 or 0
+                obj.Farea1 = v.Farea1 or 1
+                obj.Qfact1 = v.Qfact1 or 0.1
+                obj.Qarea1 = v.Qarea1 or 350
+                obj.Hfact1 = v.Hfact1 or 0.25
+                obj.Harea1 = v.Harea1 or 200
+                obj.spillRadius = v.spillRadius or 150
+                obj.spillDist1 = v.spillDist1 or 300
+                obj.damageLoss1 = v.damageLoss1 or 0.10
                 obj.splashTargs1 = obj.targs1 .. ",enemies"
             end
             obj.Tip = "选择 " .. v.Name
@@ -154,7 +154,7 @@ for tlv, tow in pairs(towers) do
             obj.movetp = v.movetp or "" --移动类型
             obj.moveHeight = v.moveHeight --移动高度
             obj.moveFloor = v.moveHeight * 0.25 --最低高度
-            obj.spd = 0
+            obj.spd = 1
             obj.backSw1 = v.backSw1 or 0.500
             obj.dmgpt1 = v.dmgpt1 or 0.500
             obj.rangeN1 = 750
