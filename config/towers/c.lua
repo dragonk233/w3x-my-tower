@@ -252,4 +252,25 @@ towers_c = {
         ATTACK_WHITE = 0,
         ATTACK_GREEN = 38
     },
+    {
+        Name = "元素·海人",
+        Ubertip = "可以水一年的家伙",
+        unitSound = "WaterElemental",
+        file = "Units\\Creeps\\SeaElemental\\SeaElemental",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNSeaElemental.blp",
+        modelScale = 1.80,
+        scale = 2.50,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "Abilities\\Weapons\\SeaElementalMissile\\SeaElementalMissile.mdl",
+        cool1 = 2.20,
+        Primary = "STR",
+        STR = 16,
+        AGI = 11,
+        INT = 13,
+        abilList = "",
+        ATTACK_WHITE = 22,
+        ATTACK_GREEN = 22
+    },
 }
