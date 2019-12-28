@@ -252,27 +252,6 @@ towers_a = {
         ATTACK_GREEN = 108
     },
     {
-        Name = "暗夜精灵·利爪德鲁伊",
-        Ubertip = "听说它能变成大雄，不！是大熊",
-        unitSound = "DruidOfTheClaw",
-        file = "units\\nightelf\\DruidoftheClaw\\DruidoftheClaw",
-        Art = "ReplaceableTextures\\CommandButtons\\BTNDruidOfTheClaw.blp",
-        modelScale = 2.00,
-        scale = 2.00,
-        movetp = "foot",
-        moveHeight = 0.00,
-        weapTp1 = "missile",
-        Missileart = "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",
-        cool1 = 2.00,
-        Primary = "STR",
-        STR = 23,
-        AGI = 11,
-        INT = 17,
-        abilList = "",
-        ATTACK_WHITE = 110,
-        ATTACK_GREEN = 0
-    },
-    {
         Name = "暗夜精灵·复仇之魂",
         Ubertip = "害人之心不可有",
         unitSound = "Vengeance",
@@ -292,6 +271,27 @@ towers_a = {
         abilList = "",
         ATTACK_WHITE = 0,
         ATTACK_GREEN = 107
+    },
+    {
+        Name = "德鲁伊·利爪",
+        Ubertip = "听说它能变成大雄，不！是大熊",
+        unitSound = "DruidOfTheClaw",
+        file = "units\\nightelf\\DruidoftheClaw\\DruidoftheClaw",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNDruidOfTheClaw.blp",
+        modelScale = 2.00,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",
+        cool1 = 2.00,
+        Primary = "STR",
+        STR = 23,
+        AGI = 11,
+        INT = 17,
+        abilList = "",
+        ATTACK_WHITE = 110,
+        ATTACK_GREEN = 0
     },
     {
         Name = "亡灵·绞肉车",
@@ -336,7 +336,7 @@ towers_a = {
         ATTACK_GREEN = 75
     },
     {
-        Name = "娜迦·皇家卫兵",
+        Name = "海妖·皇家卫兵",
         Ubertip = "看起来就很叼的样子",
         unitSound = "NagaRoyalGuard",
         file = "units\\naga\\NagaRoyalGuard\\NagaRoyalGuard",

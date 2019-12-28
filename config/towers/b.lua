@@ -210,7 +210,7 @@ towers_b = {
         ATTACK_GREEN = 0
     },
     {
-        Name = "暗夜精灵·猛禽德鲁伊",
+        Name = "德鲁伊·猛禽",
         Ubertip = "听说它能变成小鸡，不！是小鸟",
         unitSound = "DruidOfTheTalon",
         file = "units\nightelf\\DruidoftheTalon\\DruidoftheTalon",
@@ -294,7 +294,7 @@ towers_b = {
         ATTACK_GREEN = 0
     },
     {
-        Name = "娜迦·飞龙",
+        Name = "海妖·飞龙",
         Ubertip = "不会飞的飞龙",
         unitSound = "SnapDragon",
         file = "units\\naga\\SnapDragon\\SnapDragon",
@@ -315,7 +315,7 @@ towers_b = {
         ATTACK_GREEN = 0
     },
     {
-        Name = "娜迦·暴徒",
+        Name = "海妖·暴徒",
         Ubertip = "看起来就很怂的样子",
         unitSound = "NagaMyrmidon",
         file = "units\\naga\\NagaMyrmidon\\NagaMyrmidon",

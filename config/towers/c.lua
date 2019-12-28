@@ -211,7 +211,7 @@ towers_c = {
         ATTACK_GREEN = 0
     },
     {
-        Name = "娜迦·海妖",
+        Name = "海妖·塞壬",
         Ubertip = "听说有的海妖会唱歌",
         unitSound = "NagaSiren",
         file = "Units\\Naga\\NagaSiren\\NagaSiren",
@@ -232,7 +232,7 @@ towers_c = {
         ATTACK_GREEN = 0
     },
     {
-        Name = "娜迦·唱歌的海妖",
+        Name = "海妖·唱歌的塞壬",
         Ubertip = "整天无所事事唱歌的海妖",
         unitSound = "NagaSiren",
         file = "Units\\Naga\\NagaSummoner\\NagaSummoner",

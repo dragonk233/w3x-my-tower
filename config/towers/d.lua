@@ -294,7 +294,7 @@ towers_d = {
         ATTACK_GREEN = 42
     },
     {
-        Name = "娜迦·穆格尔鱼战士",
+        Name = "海妖·穆格尔鱼战士",
         Ubertip = "娜迦族的穆格尔大条鱼",
         unitSound = "Murloc",
         file = "Units\\Creeps\\MurgulReaver\\MurgulReaver",
@@ -315,8 +315,8 @@ towers_d = {
         ATTACK_GREEN = 0
     },
     {
-        Name = "娜迦·龙龟",
-        Ubertip = "娜迦族的大海龟",
+        Name = "海妖·龙龟",
+        Ubertip = "龟壳上全是刺",
         unitSound = "GiantSeaTurtle",
         file = "Units\\Creeps\\DragonSeaTurtleRange\\DragonSeaTurtleRange",
         Art = "ReplaceableTextures\\CommandButtons\\BTNSeaTurtleRed.blp",

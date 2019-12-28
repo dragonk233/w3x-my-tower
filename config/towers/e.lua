@@ -231,7 +231,7 @@ towers_e = {
         ATTACK_GREEN = 24
     },
     {
-        Name = "娜迦·穆格尔小鱼",
+        Name = "海妖·穆格尔小鱼",
         Ubertip = "娜迦族的穆格尔小鱼",
         unitSound = "Murloc",
         file = "units\\creeps\\MurgulSlave\\MurgulSlave",
@@ -252,7 +252,7 @@ towers_e = {
         ATTACK_GREEN = 0
     },
     {
-        Name = "娜迦·飞蛇",
+        Name = "海妖·飞蛇",
         Ubertip = "小鱼人是骑不上这种飞龙的",
         unitSound = "WindSerpent",
         file = "units\\naga\\WindSerpent\\WindSerpent",
