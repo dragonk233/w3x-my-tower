@@ -14,8 +14,8 @@ towers_a = {
         cool1 = 2.75,
         Primary = "STR",
         STR = 28,
-        AGI = 3,
-        INT = 2,
+        AGI = 4,
+        INT = 3,
         ATTACK_WHITE = 115,
         ATTACK_GREEN = 0
     },
@@ -113,7 +113,7 @@ towers_a = {
         Missileart = "abilities\\weapons\\DemolisherMissile\\DemolisherMissile.mdl",
         cool1 = 2.85,
         Primary = "STR",
-        STR = 36,
+        STR = 37,
         AGI = 1,
         INT = 1,
         ATTACK_WHITE = 127,
@@ -197,7 +197,7 @@ towers_a = {
         AGI = 10,
         INT = 21,
         ATTACK_WHITE = 0,
-        ATTACK_GREEN = 105,
+        ATTACK_GREEN = 105
     },
     {
         Name = "暗夜精灵·投刃车",
@@ -390,7 +390,7 @@ towers_a = {
         movetp = "foot",
         moveHeight = 0.00,
         weapTp1 = "missile",
-        Missileart = "Abilities\\Weapons\\LichMissile\\LichMissile.mdl",
+        Missileart = "",
         cool1 = 2.10,
         Primary = "AGI",
         STR = 20,
@@ -418,5 +418,5 @@ towers_a = {
         INT = 15,
         ATTACK_WHITE = 95,
         ATTACK_GREEN = 0
-    },
+    }
 }
