@@ -379,6 +379,14 @@ cj.TriggerAddAction(
                             }
                         )
                     end
+                    if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "icemon") == true) then
+                        hitem.create(
+                            {
+                                itemId = game.courierItem["冰戟魔灵"].ITEM_ID,
+                                whichUnit = u
+                            }
+                        )
+                    end
                 end
                 -- 基本兵塔
                 for k, v in pairs(game.towerPoint) do

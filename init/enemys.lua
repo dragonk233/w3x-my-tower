@@ -20,6 +20,7 @@ for k, v in ipairs(enemys) do
     obj.regenHP = 0
     obj.regenType = ""
     obj.def = 0
+    v.TYPE = "normal"
     v.UNIT_ID = obj:get_id()
     ?>
 call SaveStr(hash_myslk, StringHash("thisenemys"), <?=k?>, "<?=hSys.addslashes(json.stringify(v))?>")

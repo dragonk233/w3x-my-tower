@@ -1,15 +1,15 @@
 -- enemys
-for k, v in ipairs(enemys) do
+for k, v in ipairs(enemysBoss) do
     local obj = slk.unit.hfoo:new("this_enemys_boss_" .. v.Name)
     obj.Name = "[BOSS]" .. v.Name
     obj.abilList = ""
     obj.upgrades = ""
     obj.file = v.file
-    obj.Art = "ReplaceableTextures\\CommandButtons\\BTNShade.blp"
+    obj.Art = "ReplaceableTextures\\CommandButtons\\BTNCarrionScarabs.blp"
     obj.modelScale = v.modelScale or 1.00
     obj.scale = v.scale or 1.00
     obj.HP = 100
-    obj.spd = 150
+    obj.spd = 125
     obj.sight = 500
     obj.nsight = 500
     obj.unitSound = v.unitSound or ""
@@ -20,11 +20,12 @@ for k, v in ipairs(enemys) do
     obj.regenHP = 0
     obj.regenType = ""
     obj.def = 0
+    v.TYPE = "boss"
     v.UNIT_ID = obj:get_id()
     ?>
 call SaveStr(hash_myslk, StringHash("thisenemysboss"), <?=k?>, "<?=hSys.addslashes(json.stringify(v))?>")
 <?
 end
 ?>
-call SaveInteger(hash_myslk, StringHash("thisenemysboss"), -1, <?=#enemys?>)
+call SaveInteger(hash_myslk, StringHash("thisenemysboss"), -1, <?=#enemysBoss?>)
 <?

@@ -124,8 +124,8 @@ enemys = {
     {
         Name = "飞艇",
         file = "units\\undead\\UndeadAirBarge\\UndeadAirBarge",
-        modelScale = 1.00,
-        scale = 2.00,
+        modelScale = 0.80,
+        scale = 1.70,
         unitSound = "",
         movetp = "fly",
         moveHeight = 150,
@@ -610,7 +610,7 @@ enemys = {
     {
         Name = "闪电蜥蜴",
         file = "units\\creeps\\ThunderLizard\\ThunderLizard",
-        modelScale = 1.00,
+        modelScale = 0.80,
         scale = 1.00,
         unitSound = "KotoBeastNoRider",
     },
@@ -778,7 +778,7 @@ enemys = {
     {
         Name = "蛛网怪女皇",
         file = "units\\creeps\\NerubianQueen\\NerubianQueen",
-        modelScale = 1.30,
+        modelScale = 1.10,
         scale = 1.90,
         unitSound = "Nerubian",
     },
@@ -953,8 +953,8 @@ enemys = {
     {
         Name = "龙龟",
         file = "Units\\Creeps\\DragonSeaTurtle\\DragonSeaTurtle",
-        modelScale = 1.00,
-        scale = 3.60,
+        modelScale = 0.70,
+        scale = 3.00,
         unitSound = "GiantSeaTurtle",
     },
     {
@@ -1014,19 +1014,17 @@ enemys = {
         unitSound = "SkeletonArcher",
     },
     {
-        Name = "红牙方舟",
-        file = "war3mapImported\\unit_DemonSpaceShip.01.mdx",
-        modelScale = 1.00,
-        scale = 1.00,
-        unitSound = "MeatWagon",
-        movetp = "fly",
-        moveHeight = 150,
-    },
-    {
         Name = "泥人",
         file = "war3mapImported\\unit_EarthElemental.mdx",
         modelScale = 1.00,
         scale = 1.00,
         unitSound = "RockGolem",
+    },
+    {
+        Name = "火焰之灵",
+        file = "war3mapImported\\unit_FireElementalMan.mdx",
+        modelScale = 1.00,
+        scale = 1.00,
+        unitSound = "InfernalMachine",
     },
 }

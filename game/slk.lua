@@ -73,6 +73,24 @@ for k = 1, game.thisEnemysLen, 1 do
     game.thisEnemys[k] = jv
 end
 
+-- enemy boss 敌人BOSS
+game.thisEnemysBossLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("thisenemysboss"), -1)
+for k = 1, game.thisEnemysBossLen, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisenemysboss"), k)
+    local jv = json.parse(v)
+    hRuntime.register.unit(jv)
+    game.thisEnemysBoss[k] = jv
+end
+
+-- enemy boss 敌人AWRAD
+game.thisEnemysAwardLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("thisenemysaward"), -1)
+for k = 1, game.thisEnemysAwardLen, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisenemysaward"), k)
+    local jv = json.parse(v)
+    hRuntime.register.unit(jv)
+    game.thisEnemysAward[k] = jv
+end
+
 -- 阶级技能
 local thisPowerAbilitiesName = {
     "SSS",
