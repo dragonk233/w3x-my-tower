@@ -7,7 +7,7 @@ towers = {
     A = towers_a,
     S = towers_s,
     SS = towers_ss,
-    --SSS = towers_sss
+    SSS = towers_sss
 }
 local towersTi = 0
 for j=1,3,1 do
@@ -28,30 +28,52 @@ for j=1,3,1 do
                 local tempAttackWhite = 0
                 local tempAttackGreen = 0
                 if (tlv == "E") then
-                    tempPower = 1
+                    tempPower = 20
                 elseif (tlv == "D") then
-                    tempPower = 2
+                    tempPower = 35
                 elseif (tlv == "C") then
-                    tempPower = 4
+                    tempPower = 50
                 elseif (tlv == "B") then
-                    tempPower = 7
+                    tempPower = 70
                 elseif (tlv == "A") then
-                    tempPower = 11
+                    tempPower = 90
                 elseif (tlv == "S") then
-                    tempPower = 16
+                    tempPower = 120
                 elseif (tlv == "SS") then
-                    tempPower = 22
+                    tempPower = 160
                 elseif (tlv == "SSS") then
-                    tempPower = 30
+                    tempPower = 200
                 end
-                v.STR = v.STR * tempPower
-                v.AGI = v.AGI * tempPower
-                v.INT = v.INT * tempPower
+                if(Primary == "STR")then
+                    v.STR = math.floor(tempPower * 0.07 * math.random(7,12))
+                    v.AGI = math.floor(tempPower * 0.02 * math.random(4,9))
+                    v.INT = math.floor(tempPower * 0.022 * math.random(5,10))
+                    tempAttackWhite = tempPower * 0.1 *math.random(7,11) + 10 * math.random()
+                    tempAttackGreen = tempPower - tempAttackWhite + 10 * math.random()
+                elseif(Primary == "AGI")then
+                    v.STR = math.floor(tempPower * 0.03 * math.random(5,9))
+                    v.AGI = math.floor(tempPower * 0.07 * math.random(6,13))
+                    v.INT = math.floor(tempPower * 0.012 * math.random(4,10))
+                    tempAttackWhite = tempPower * 0.1 *math.random(9,12) + 20 * math.random()
+                    tempAttackGreen = tempPower - tempAttackWhite
+                elseif(Primary == "INT")then
+                    v.STR = math.floor(tempPower * 0.03 * math.random(7,10))
+                    v.AGI = math.floor(tempPower * 0.013 * math.random(5,9))
+                    v.INT = math.floor(tempPower * 0.06 * math.random(8,11))
+                    tempAttackGreen = tempPower * 0.1 *math.random(9,13) + 10 * math.random()
+                    tempAttackWhite = tempPower - tempAttackGreen
+                end
+                if(tempAttackWhite < 0)then
+                    tempAttackWhite = 0
+                end
+                if(tempAttackGreen < 0)then
+                    tempAttackGreen = 0
+                end
                 v.STRplus = v.STR * 0.30
                 v.AGIplus = v.AGI * 0.30
                 v.INTplus = v.INT * 0.30
-                v.ATTACK_WHITE = tempAttackWhite
-                v.ATTACK_GREEN = tempAttackGreen
+                v.ATTACK_WHITE = math.floor(tempAttackWhite)
+                v.ATTACK_GREEN = math.floor(tempAttackGreen)
                 local ThreeTotal = v.STR + v.AGI + v.INT
                 local coolMark = math.floor(100 / (v.cool1 or 2.00))
                 local TowerMark = math.floor(
