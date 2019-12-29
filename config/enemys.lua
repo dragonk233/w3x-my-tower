@@ -529,7 +529,7 @@ enemys = {
         file = "units\\creeps\\GolemStatue\\GolemStatue",
         modelScale = 0.80,
         scale = 1.50,
-        unitSound = "",
+        unitSound = "RockGolem",
     },
     {
         Name = "女妖侦察者",
@@ -1012,5 +1012,21 @@ enemys = {
         modelScale = 1.30,
         scale = 1.00,
         unitSound = "SkeletonArcher",
+    },
+    {
+        Name = "红牙方舟",
+        file = "war3mapImported\\unit_DemonSpaceShip.01.mdx",
+        modelScale = 1.00,
+        scale = 1.00,
+        unitSound = "MeatWagon",
+        movetp = "fly",
+        moveHeight = 150,
+    },
+    {
+        Name = "泥人",
+        file = "war3mapImported\\unit_EarthElemental.mdx",
+        modelScale = 1.00,
+        scale = 1.00,
+        unitSound = "RockGolem",
     },
 }

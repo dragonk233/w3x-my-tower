@@ -55,7 +55,7 @@ end
 local thisUnitNames = {
     "大精灵",
     "河草",
-    "大树灵"
+    "光辉城主"
 }
 for _, name in ipairs(thisUnitNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisunit"), cj.StringHash(name))

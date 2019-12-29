@@ -21,17 +21,19 @@ deadAward = function(triggerUnit, killer)
         )
     end
     local maxLevel = 0
-    if (game.rule.cur == "yb" or game.rule.cur == "hz") then
-        maxLevel = math.floor(game.rule.hz.wave * 0.31)
+    if (game.rule.cur == "yb") then
+        maxLevel = math.floor(game.rule.yb.wave * 0.3)
+    elseif (game.rule.cur == "hz") then
+        maxLevel = math.floor(game.rule.hz.wave * 0.1)
     elseif (game.rule.cur == "dk" and killer ~= nil) then
-        maxLevel = math.floor(game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(killer))] * 0.31)
+        maxLevel = math.floor(game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(killer))] * 0.2)
     end
     if (maxLevel < 1) then
         maxLevel = 1
     elseif (maxLevel > 10) then
         maxLevel = 10
     end
-    print("maxLevel" .. maxLevel)
+    print("maxLevel=" .. maxLevel)
     local level = cj.GetRandomInt(1, maxLevel)
     if (cj.GetRandomInt(1, 30 - maxLevel) == 2) then
         -- 掉落红技能书

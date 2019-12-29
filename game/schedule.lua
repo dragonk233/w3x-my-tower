@@ -17,6 +17,8 @@ cj.TriggerAddAction(
             {
                 str = {
                     life = 10,
+                    attack_white = 0.1,
+                    attack_green = 0.1,
                     toughness = 0.25
                 },
                 agi = {
@@ -185,16 +187,15 @@ cj.TriggerAddAction(
                     )
                 elseif (btnIdx == "无尽挑战") then
                     game.rule.cur = "hz"
-                    hmsg.echo("|cffffff00四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“大树灵”的生命，直至游戏失败|r")
+                    hmsg.echo("|cffffff00四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“光辉城主”的生命，直至游戏失败|r")
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)
                     cj.FogEnable(false)
                     cj.FogMaskEnable(false)
-                    -- 大树灵
                     local bigElf =
                         hunit.create(
                         {
                             whichPlayer = game.ALLY_PLAYER,
-                            unitId = game.thisUnits["大树灵"].UNIT_ID,
+                            unitId = game.thisUnits["光辉城主"].UNIT_ID,
                             qty = 1,
                             x = 0,
                             y = 0
@@ -204,7 +205,7 @@ cj.TriggerAddAction(
                         bigElf,
                         function()
                             game.runing = false
-                            hmsg.echo("不！“大树灵”GG了，结束啦~我们的守护")
+                            hmsg.echo("不！“光辉城主”GG了，结束啦~我们的守护")
                             htime.setTimeout(
                                 5,
                                 function(t, td)
@@ -381,7 +382,7 @@ cj.TriggerAddAction(
                 end
                 -- 基本兵塔
                 for k, v in pairs(game.towerPoint) do
-                    createMyTower(k, game.towers["人类·农民"].UNIT_ID)
+                    createMyTower(k, game.towers["人类·农民_1"].UNIT_ID)
                 end
                 -- 商店
                 hunit.create(

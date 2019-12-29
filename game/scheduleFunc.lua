@@ -422,7 +422,7 @@ createMyCourier = function(playerIndex, courierId)
         --阶级标志
         hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[courierId].COURIER_POWER].ABILITY_ID, 0)
         game.playerCourier[playerIndex] = u
-        cj.PanCameraToTimed(cj.GetUnitX(u), cj.GetUnitY(u), 0.50)
+        hcamera.toUnit(hplayer.players[playerIndex], 0.50, u)
         return u
     end
 end
