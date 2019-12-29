@@ -13,11 +13,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 8,
-        AGI = 6,
-        INT = 7,
-        ATTACK_WHITE = 15,
-        ATTACK_GREEN = 0
     },
     {
         Name = "人类·民兵",
@@ -33,11 +28,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 11,
-        AGI = 6,
-        INT = 9,
-        ATTACK_WHITE = 23,
-        ATTACK_GREEN = 0
     },
     {
         Name = "人类·刺客",
@@ -53,11 +43,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 7,
-        AGI = 3,
-        INT = 4,
-        ATTACK_WHITE = 36,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·苦力",
@@ -73,11 +58,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.20,
         Primary = "STR",
-        STR = 15,
-        AGI = 3,
-        INT = 6,
-        ATTACK_WHITE = 22,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·发狂苦力",
@@ -93,11 +73,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 18,
-        AGI = 6,
-        INT = 2,
-        ATTACK_WHITE = 24,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·豺狼战士",
@@ -113,11 +88,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\PoisonArrow\\PoisonArrowMissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 12,
-        AGI = 8,
-        INT = 2,
-        ATTACK_WHITE = 27,
-        ATTACK_GREEN = 0
     },
     {
         Name = "精灵·血精灵工程师",
@@ -133,11 +103,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl",
         cool1 = 2.00,
         Primary = "INT",
-        STR = 10,
-        AGI = 6,
-        INT = 12,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 23
     },
     {
         Name = "亡灵·侍僧",
@@ -153,11 +118,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        STR = 7,
-        AGI = 3,
-        INT = 15,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 26
     },
     {
         Name = "亡灵·食尸鬼",
@@ -173,11 +133,6 @@ towers_e = {
         Missileart = "SharedModels\\Bones1.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 6,
-        AGI = 9,
-        INT = 2,
-        ATTACK_WHITE = 35,
-        ATTACK_GREEN = 0
     },
     {
         Name = "亡灵·骷髅战士",
@@ -193,11 +148,6 @@ towers_e = {
         Missileart = "SharedModels\\Bones1.mdl",
         cool1 = 2.20,
         Primary = "STR",
-        STR = 16,
-        AGI = 5,
-        INT = 1,
-        ATTACK_WHITE = 22,
-        ATTACK_GREEN = 0
     },
     {
         Name = "暗夜精灵·小精灵",
@@ -213,11 +163,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 9,
-        AGI = 4,
-        INT = 14,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 24
     },
     {
         Name = "海妖·穆格尔小鱼",
@@ -233,11 +178,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 10,
-        AGI = 14,
-        INT = 4,
-        ATTACK_WHITE = 25,
-        ATTACK_GREEN = 0
     },
     {
         Name = "海妖·飞蛇",
@@ -253,11 +193,6 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\WingedSerpentMissile\\WingedSerpentMissile.mdl",
         cool1 = 2.10,
         Primary = "AGI",
-        STR = 12,
-        AGI = 15,
-        INT = 3,
-        ATTACK_WHITE = 28,
-        ATTACK_GREEN = 0
     },
     {
         Name = "地精·人工小子",
@@ -273,10 +208,5 @@ towers_e = {
         Missileart = "abilities\\weapons\\WyvernSpear\\WyvernSpearMissile.mdl",
         cool1 = 2.30,
         Primary = "STR",
-        STR = 30,
-        AGI = 1,
-        INT = 1,
-        ATTACK_WHITE = 45,
-        ATTACK_GREEN = 0
     }
 }

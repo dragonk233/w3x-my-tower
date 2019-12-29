@@ -13,11 +13,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\GyroCopter\\GyroCopterMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 14,
-        AGI = 23,
-        INT = 9,
-        ATTACK_WHITE = 55,
-        ATTACK_GREEN = 0
     },
     {
         Name = "精灵·女巫",
@@ -33,11 +28,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\SorceressMissile\\SorceressMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 9,
-        AGI = 13,
-        INT = 24,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 57
     },
     {
         Name = "精灵·龙鹰骑士",
@@ -53,11 +43,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\DragonHawkMissile\\DragonHawkMissile.mdl",
         cool1 = 1.90,
         Primary = "AGI",
-        STR = 10,
-        AGI = 17,
-        INT = 16,
-        ATTACK_WHITE = 20,
-        ATTACK_GREEN = 36
     },
     {
         Name = "兽人·科多兽",
@@ -73,11 +58,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 21,
-        AGI = 8,
-        INT = 9,
-        ATTACK_WHITE = 60,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·发狂科多兽",
@@ -93,11 +73,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 26,
-        AGI = 14,
-        INT = 2,
-        ATTACK_WHITE = 65,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·巫师",
@@ -113,11 +88,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        STR = 10,
-        AGI = 11,
-        INT = 19,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 52
     },
     {
         Name = "兽人·发狂巫师",
@@ -133,11 +103,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 10,
-        AGI = 11,
-        INT = 21,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 56
     },
     {
         Name = "巨魔·蝙蝠骑士",
@@ -153,11 +118,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\BatTrollMissile\\BatTrollMissile.mdl",
         cool1 = 2.05,
         Primary = "AGI",
-        STR = 16,
-        AGI = 22,
-        INT = 9,
-        ATTACK_WHITE = 52,
-        ATTACK_GREEN = 0
     },
     {
         Name = "牛头人·白毛",
@@ -173,11 +133,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\SteamMissile\\SteamMissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 23,
-        AGI = 16,
-        INT = 14,
-        ATTACK_WHITE = 39,
-        ATTACK_GREEN = 20
     },
     {
         Name = "暗夜精灵·露娜",
@@ -193,11 +148,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
         cool1 = 1.90,
         Primary = "AGI",
-        STR = 14,
-        AGI = 18,
-        INT = 8,
-        ATTACK_WHITE = 40,
-        ATTACK_GREEN = 0
     },
     {
         Name = "德鲁伊·猛禽",
@@ -213,11 +163,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\DruidoftheTalonMissile\\DruidoftheTalonMissile.mdl",
         cool1 = 2.00,
         Primary = "INT",
-        STR = 6,
-        AGI = 12,
-        INT = 18,
-        ATTACK_WHITE = 27,
-        ATTACK_GREEN = 27
     },
     {
         Name = "亡灵·石像鬼",
@@ -233,11 +178,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\GargoyleMissile\\GargoyleMissile.mdl",
         cool1 = 1.90,
         Primary = "AGI",
-        STR = 11,
-        AGI = 21,
-        INT = 12,
-        ATTACK_WHITE = 37,
-        ATTACK_GREEN = 18
     },
     {
         Name = "亡灵·女妖",
@@ -253,11 +193,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\BansheeMissile\\BansheeMissile.mdl",
         cool1 = 1.90,
         Primary = "INT",
-        STR = 8,
-        AGI = 16,
-        INT = 22,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 56
     },
     {
         Name = "亡灵·僵尸",
@@ -273,11 +208,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\MeatwagonMissile\\MeatwagonMissile.mdl",
         cool1 = 1.90,
         Primary = "STR",
-        STR = 23,
-        AGI = 4,
-        INT = 15,
-        ATTACK_WHITE = 62,
-        ATTACK_GREEN = 0
     },
     {
         Name = "海妖·飞龙",
@@ -293,11 +223,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\snapMissile\\snapMissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 20,
-        AGI = 19,
-        INT = 3,
-        ATTACK_WHITE = 63,
-        ATTACK_GREEN = 0
     },
     {
         Name = "海妖·暴徒",
@@ -313,10 +238,5 @@ towers_b = {
         Missileart = "abilities\\weapons\\WyvernSpear\\WyvernSpearMissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 23,
-        AGI = 18,
-        INT = 2,
-        ATTACK_WHITE = 69,
-        ATTACK_GREEN = 0
     },
 }

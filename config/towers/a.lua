@@ -13,11 +13,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\SteamTank\\SteamTankImpact.mdl",
         cool1 = 2.75,
         Primary = "STR",
-        STR = 28,
-        AGI = 4,
-        INT = 3,
-        ATTACK_WHITE = 115,
-        ATTACK_GREEN = 0
     },
     {
         Name = "人类·麦迪文",
@@ -33,11 +28,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\DruidoftheTalonMissile\\DruidoftheTalonMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 14,
-        AGI = 7,
-        INT = 29,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 88
     },
     {
         Name = "矮人·狮鹫骑士",
@@ -53,11 +43,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\GryphonRiderMissile\\GryphonRiderMissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 20,
-        AGI = 14,
-        INT = 15,
-        ATTACK_WHITE = 93,
-        ATTACK_GREEN = 0
     },
     {
         Name = "矮人·狮鹫闪电骑士",
@@ -73,11 +58,6 @@ towers_a = {
         Missileart = "Abilities\\Spells\\Human\\StormBolt\\StormBoltMissile.mdl",
         cool1 = 1.90,
         Primary = "AGI",
-        STR = 20,
-        AGI = 24,
-        INT = 15,
-        ATTACK_WHITE = 83,
-        ATTACK_GREEN = 21
     },
     {
         Name = "精灵·魔导师",
@@ -93,11 +73,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\BloodElfSpellThiefMISSILE\\BloodElfSpellThiefMISSILE.mdl",
         cool1 = 1.85,
         Primary = "INT",
-        STR = 12,
-        AGI = 15,
-        INT = 20,
-        ATTACK_WHITE = 40,
-        ATTACK_GREEN = 63
     },
     {
         Name = "兽人·攻城粉碎机",
@@ -113,11 +88,6 @@ towers_a = {
         Missileart = "abilities\\weapons\\DemolisherMissile\\DemolisherMissile.mdl",
         cool1 = 2.85,
         Primary = "STR",
-        STR = 37,
-        AGI = 1,
-        INT = 1,
-        ATTACK_WHITE = 127,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·白毛猛犸",
@@ -133,11 +103,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\LichMissile\\LichMissile.mdl",
         cool1 = 2.20,
         Primary = "STR",
-        STR = 34,
-        AGI = 20,
-        INT = 3,
-        ATTACK_WHITE = 97,
-        ATTACK_GREEN = 0
     },
     {
         Name = "巨魔·巨魔狂战士",
@@ -153,11 +118,6 @@ towers_a = {
         Missileart = "abilities\\weapons\\huntermissile\\huntermissile.mdl",
         cool1 = 1.90,
         Primary = "STR",
-        STR = 25,
-        AGI = 19,
-        INT = 3,
-        ATTACK_WHITE = 90,
-        ATTACK_GREEN = 0
     },
     {
         Name = "牛头人·小牛",
@@ -173,11 +133,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\SteamMissile\\SteamMissile.mdl",
         cool1 = 2.30,
         Primary = "STR",
-        STR = 29,
-        AGI = 16,
-        INT = 9,
-        ATTACK_WHITE = 101,
-        ATTACK_GREEN = 0
     },
     {
         Name = "暗夜精灵·精灵龙",
@@ -193,11 +148,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 15,
-        AGI = 10,
-        INT = 21,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 105
     },
     {
         Name = "暗夜精灵·投刃车",
@@ -213,11 +163,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\GlaiveMissile\\GlaiveMissile.mdl",
         cool1 = 2.55,
         Primary = "AGI",
-        STR = 12,
-        AGI = 14,
-        INT = 14,
-        ATTACK_WHITE = 47,
-        ATTACK_GREEN = 47
     },
     {
         Name = "暗夜精灵·奇美拉",
@@ -233,11 +178,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl",
         cool1 = 2.30,
         Primary = "STR",
-        STR = 20,
-        AGI = 13,
-        INT = 17,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 108
     },
     {
         Name = "暗夜精灵·复仇之魂",
@@ -253,11 +193,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\VengeanceMissile\\VengeanceMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 12,
-        AGI = 24,
-        INT = 16,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 107
     },
     {
         Name = "德鲁伊·利爪",
@@ -273,11 +208,6 @@ towers_a = {
         Missileart = "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 23,
-        AGI = 11,
-        INT = 17,
-        ATTACK_WHITE = 110,
-        ATTACK_GREEN = 0
     },
     {
         Name = "亡灵·绞肉车",
@@ -293,11 +223,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\MeatwagonMissile\\MeatwagonMissile.mdl",
         cool1 = 2.40,
         Primary = "STR",
-        STR = 26,
-        AGI = 11,
-        INT = 9,
-        ATTACK_WHITE = 112,
-        ATTACK_GREEN = 0
     },
     {
         Name = "亡灵·冰霜巨龙",
@@ -313,11 +238,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\FrostWyrmMissile\\FrostWyrmMissile.mdl",
         cool1 = 3.00,
         Primary = "STR",
-        STR = 43,
-        AGI = 6,
-        INT = 8,
-        ATTACK_WHITE = 75,
-        ATTACK_GREEN = 75
     },
     {
         Name = "海妖·皇家卫兵",
@@ -333,11 +253,6 @@ towers_a = {
         Missileart = "abilities\\weapons\\WyvernSpear\\WyvernSpearMissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 31,
-        AGI = 15,
-        INT = 10,
-        ATTACK_WHITE = 100,
-        ATTACK_GREEN = 0
     },
     {
         Name = "元素·山岭巨人",
@@ -353,11 +268,6 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
         cool1 = 2.45,
         Primary = "STR",
-        STR = 22,
-        AGI = 12,
-        INT = 18,
-        ATTACK_WHITE = 110,
-        ATTACK_GREEN = 0
     },
     {
         Name = "元素·撸起战棍的山岭巨人",
@@ -373,11 +283,6 @@ towers_a = {
         Missileart = "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",
         cool1 = 2.55,
         Primary = "STR",
-        STR = 26,
-        AGI = 11,
-        INT = 19,
-        ATTACK_WHITE = 135,
-        ATTACK_GREEN = 0
     },
     {
         Name = "恶魔·守卫将领",
@@ -393,11 +298,6 @@ towers_a = {
         Missileart = "",
         cool1 = 2.10,
         Primary = "AGI",
-        STR = 20,
-        AGI = 30,
-        INT = 6,
-        ATTACK_WHITE = 95,
-        ATTACK_GREEN = 0
     },
     {
         Name = "恶魔·双匕·尤迪安",
@@ -413,10 +313,5 @@ towers_a = {
         Missileart = "",
         cool1 = 1.90,
         Primary = "AGI",
-        STR = 10,
-        AGI = 31,
-        INT = 15,
-        ATTACK_WHITE = 95,
-        ATTACK_GREEN = 0
     }
 }

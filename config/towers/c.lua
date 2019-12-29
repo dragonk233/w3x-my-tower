@@ -174,11 +174,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        STR = 8,
-        AGI = 11,
-        INT = 18,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 48
     },
     {
         Name = "亡灵·飞艇",
@@ -194,11 +189,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\CannonTowerMissile\\CannonTowerMissile.mdl",
         cool1 = 2.30,
         Primary = "AGI",
-        STR = 14,
-        AGI = 14,
-        INT = 14,
-        ATTACK_WHITE = 54,
-        ATTACK_GREEN = 0
     },
     {
         Name = "海妖·塞壬",
@@ -214,11 +204,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 11,
-        AGI = 13,
-        INT = 9,
-        ATTACK_WHITE = 35,
-        ATTACK_GREEN = 0
     },
     {
         Name = "海妖·唱歌的塞壬",
@@ -234,11 +219,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 13,
-        AGI = 13,
-        INT = 13,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 38
     },
     {
         Name = "元素·海人",
@@ -254,10 +234,5 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\SeaElementalMissile\\SeaElementalMissile.mdl",
         cool1 = 2.20,
         Primary = "STR",
-        STR = 16,
-        AGI = 11,
-        INT = 13,
-        ATTACK_WHITE = 22,
-        ATTACK_GREEN = 22
     },
 }

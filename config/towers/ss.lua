@@ -13,11 +13,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.20,
         Primary = "STR",
-        STR = 24,
-        AGI = 24,
-        INT = 24,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 398
     },
     {
         Name = "人类·军团指挥官·查理",
@@ -33,11 +28,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 34,
-        AGI = 23,
-        INT = 14,
-        ATTACK_WHITE = 408,
-        ATTACK_GREEN = 0
     },
     {
         Name = "人类·冰雪之心·莉莉安",
@@ -53,11 +43,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\ZigguratFrostMissile\\ZigguratFrostMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 19,
-        AGI = 18,
-        INT = 39,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 375
     },
     {
         Name = "人类·钢铁女·埃希",
@@ -73,11 +58,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 33,
-        AGI = 14,
-        INT = 26,
-        ATTACK_WHITE = 386,
-        ATTACK_GREEN = 0
     },
     {
         Name = "精灵·影刺客·瞬",
@@ -93,11 +73,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 1.70,
         Primary = "AGI",
-        STR = 11,
-        AGI = 41,
-        INT = 19,
-        ATTACK_WHITE = 411,
-        ATTACK_GREEN = 0
     },
     {
         Name = "精灵·追风者·西瓦娜斯",
@@ -113,11 +88,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\MoonPriestessMissile\\MoonPriestessMissile.mdl",
         cool1 = 1.80,
         Primary = "AGI",
-        STR = 15,
-        AGI = 34,
-        INT = 27,
-        ATTACK_WHITE = 397,
-        ATTACK_GREEN = 0
     },
     {
         Name = "矮人·山羊骑士·穆拉吉",
@@ -133,11 +103,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 2.00,
         Primary = "INT",
-        STR = 24,
-        AGI = 17,
-        INT = 28,
-        ATTACK_WHITE = 397,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·地狱咆哮·格罗姆",
@@ -153,11 +118,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 30,
-        AGI = 23,
-        INT = 12,
-        ATTACK_WHITE = 400,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·邪鬼咆哮·格烈姆",
@@ -175,11 +135,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 35,
-        AGI = 26,
-        INT = 12,
-        ATTACK_WHITE = 425,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·斧王·玛格",
@@ -192,14 +147,9 @@ towers_ss = {
         movetp = "foot",
         moveHeight = 0.00,
         weapTp1 = "missile",
-        Missileart = "",
+        Missileart = "Abilities\\Weapons\\RexxarMissile\\RexxarMissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 27,
-        AGI = 27,
-        INT = 9,
-        ATTACK_WHITE = 410,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·剑圣·赤血",
@@ -215,11 +165,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 32,
-        AGI = 23,
-        INT = 18,
-        ATTACK_WHITE = 408,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·雷神·萨尔",
@@ -235,11 +180,6 @@ towers_ss = {
         Missileart = "Abilities\\Spells\\Human\\StormBolt\\StormBoltMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 21,
-        AGI = 27,
-        INT = 22,
-        ATTACK_WHITE = 382,
-        ATTACK_GREEN = 25
     },
     {
         Name = "巨魔·狂魂猎手·阿拉烈",
@@ -255,11 +195,6 @@ towers_ss = {
         Missileart = "war3mapImported\\unit_WarchiefMissile.mdl",
         cool1 = 2.10,
         Primary = "AGI",
-        STR = 23,
-        AGI = 29,
-        INT = 15,
-        ATTACK_WHITE = 399,
-        ATTACK_GREEN = 0
     },
     {
         Name = "巨魔·邪眼·沃尔京",
@@ -275,11 +210,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\WitchDoctorMissile\\WitchDoctorMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 15,
-        AGI = 18,
-        INT = 33,
-        ATTACK_WHITE = 100,
-        ATTACK_GREEN = 296
     },
     {
         Name = "暗夜精灵·月之女神·泰兰德",
@@ -295,11 +225,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\MoonPriestessMissile\\MoonPriestessMissile.mdl",
         cool1 = 1.90,
         Primary = "AGI",
-        STR = 22,
-        AGI = 29,
-        INT = 18,
-        ATTACK_WHITE = 400,
-        ATTACK_GREEN = 0
     },
     {
         Name = "暗夜精灵·守望者·玛维",
@@ -315,11 +240,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 20,
-        AGI = 28,
-        INT = 19,
-        ATTACK_WHITE = 410,
-        ATTACK_GREEN = 0
     },
     {
         Name = "德鲁伊·先知·玛尔",
@@ -335,11 +255,6 @@ towers_ss = {
         Missileart = "war3mapImported\\unit_CrystalMissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        STR = 26,
-        AGI = 14,
-        INT = 33,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 396
     },
     {
         Name = "亡灵·巫妖·奥丁",
@@ -355,11 +270,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\LichMissile\\LichMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 12,
-        AGI = 13,
-        INT = 36,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 401
     },
     {
         Name = "亡灵·超渡师·克尔苏加德",
@@ -375,11 +285,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
         cool1 = 2.30,
         Primary = "INT",
-        STR = 23,
-        AGI = 10,
-        INT = 35,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 388
     },
     {
         Name = "亡灵·黑夜游侠·鬼歌",
@@ -395,11 +300,6 @@ towers_ss = {
         Missileart = "Abilities\\Spells\\Other\\BlackArrow\\BlackArrowMissile.mdl",
         cool1 = 1.95,
         Primary = "AGI",
-        STR = 21,
-        AGI = 32,
-        INT = 16,
-        ATTACK_WHITE = 390,
-        ATTACK_GREEN = 0
     },
     {
         Name = "亡灵·鬼枪·但丁",
@@ -415,11 +315,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\GyroCopter\\GyroCopterImpact.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 16,
-        AGI = 31,
-        INT = 19,
-        ATTACK_WHITE = 200,
-        ATTACK_GREEN = 200
     },
     {
         Name = "亡灵·火焰剑鬼·K",
@@ -427,28 +322,14 @@ towers_ss = {
         unitSound = "HeroDeathLord",
         file = "war3mapImported\\unit_Wrathincarnation.mdl",
         Art = "war3mapImported\\icon_unit_ShadowInfernal.blp",
-        modelScale = 0.90,
-        scale = 1.20,
+        modelScale = 1.80,
+        scale = 2.20,
         movetp = "foot",
         moveHeight = 0.00,
-        spd = 290,
-        targType = "ground",
-        armor = "Flesh",
-        Missileart = "",
-        Missilespeed = 0,
-        Missilearc = 0.00,
         weapTp1 = "missile",
-        weapType1 = "MetalMediumChop",
-        backSw1 = 0.700,
-        dmgpt1 = 0.300,
-        rangeN1 = 100,
+        Missileart = "",
         cool1 = 2.20,
         Primary = "AGI",
-        STR = 21,
-        AGI = 25,
-        INT = 25,
-        ATTACK_WHITE = 199,
-        ATTACK_GREEN = 199
     },
     {
         Name = "恶魔·觉醒猎手·尤迪安",
@@ -464,11 +345,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 1.70,
         Primary = "AGI",
-        STR = 14,
-        AGI = 35,
-        INT = 19,
-        ATTACK_WHITE = 427,
-        ATTACK_GREEN = 0
     },
     {
         Name = "幽魂·安东尼",
@@ -483,11 +359,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
         cool1 = 2.00,
         Primary = "INT",
-        STR = 23,
-        AGI = 19,
-        INT = 34,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 400
     },
     {
         Name = "幽魂·克尔苏加德",
@@ -503,11 +374,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
         cool1 = 2.30,
         Primary = "INT",
-        STR = 24,
-        AGI = 23,
-        INT = 29,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 406
     },
     {
         Name = "幽魂·赛纳留斯",
@@ -523,11 +389,6 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\SorceressMissile\\SorceressMissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        STR = 19,
-        AGI = 12,
-        INT = 28,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 444
     },
     {
         Name = "昆虫·猩红刀盔·科鲁斯",
@@ -543,11 +404,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 33,
-        AGI = 19,
-        INT = 17,
-        ATTACK_WHITE = 413,
-        ATTACK_GREEN = 0
     },
     {
         Name = "元素·海冰凛魂",
@@ -563,11 +419,6 @@ towers_ss = {
         Missileart = "war3mapImported\\unit_freezingsplinter.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 20,
-        AGI = 28,
-        INT = 28,
-        ATTACK_WHITE = 100,
-        ATTACK_GREEN = 300
     },
     {
         Name = "异兽·索命飞龙",
@@ -583,11 +434,6 @@ towers_ss = {
         Missileart = "war3mapImported\\unit_TC_EnergyBolt.mdl",
         cool1 = 2.00,
         Primary = "INT",
-        STR = 19,
-        AGI = 24,
-        INT = 31,
-        ATTACK_WHITE = 175,
-        ATTACK_GREEN = 233
     },
     {
         Name = "地精·炼金术士·卡奈",
@@ -603,11 +449,6 @@ towers_ss = {
         Missileart = "",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 30,
-        AGI = 19,
-        INT = 26,
-        ATTACK_WHITE = 360,
-        ATTACK_GREEN = 30
     },
     {
         Name = "食人魔·守墓人·阿尔玛",
@@ -623,10 +464,5 @@ towers_ss = {
         Missileart = "",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 28,
-        AGI = 18,
-        INT = 27,
-        ATTACK_WHITE = 401,
-        ATTACK_GREEN = 0
     }
 }

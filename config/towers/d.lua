@@ -13,11 +13,6 @@ towers_d = {
         Missileart = "abilities\\weapons\\TuskarSpear\\TuskarSpear.mdl",
         cool1 = 2.20,
         Primary = "STR",
-        STR = 14,
-        AGI = 6,
-        INT = 8,
-        ATTACK_WHITE = 30,
-        ATTACK_GREEN = 0
     },
     {
         Name = "人类·术士",
@@ -33,11 +28,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\PriestMissile\\PriestMissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        STR = 11,
-        AGI = 7,
-        INT = 13,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 29
     },
     {
         Name = "兽人·步兵",
@@ -53,11 +43,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.30,
         Primary = "STR",
-        STR = 24,
-        AGI = 3,
-        INT = 3,
-        ATTACK_WHITE = 29,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·发狂步兵",
@@ -73,11 +58,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.20,
         Primary = "STR",
-        STR = 28,
-        AGI = 1,
-        INT = 1,
-        ATTACK_WHITE = 34,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·狼骑",
@@ -93,11 +73,6 @@ towers_d = {
         Missileart = "Abilities\\Spells\\Orc\\Ensnare\\EnsnareMissile.mdl",
         cool1 = 2.10,
         Primary = "AGI",
-        STR = 10,
-        AGI = 14,
-        INT = 10,
-        ATTACK_WHITE = 29,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·发狂狼骑",
@@ -113,11 +88,6 @@ towers_d = {
         Missileart = "Abilities\\Spells\\Orc\\Ensnare\\EnsnareMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 17,
-        AGI = 19,
-        INT = 1,
-        ATTACK_WHITE = 34,
-        ATTACK_GREEN = 0
     },
     {
         Name = "兽人·风骑士",
@@ -133,11 +103,6 @@ towers_d = {
         Missileart = "abilities\\weapons\\WyvernSpear\\WyvernSpearMissile.mdl",
         cool1 = 2.00, 
         Primary = "AGI",
-        STR = 11,
-        AGI = 13,
-        INT = 9,
-        ATTACK_WHITE = 31,
-        ATTACK_GREEN = 0
     },
     {
         Name = "精灵·弓箭手",
@@ -153,11 +118,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\Arrow\\ArrowMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 10,
-        AGI = 12,
-        INT = 8,
-        ATTACK_WHITE = 28,
-        ATTACK_GREEN = 0
     },
     {
         Name = "矮人·火枪手",
@@ -173,11 +133,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\Rifle\\RifleImpact.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 9,
-        AGI = 14,
-        INT = 10,
-        ATTACK_WHITE = 27,
-        ATTACK_GREEN = 0
     },
     {
         Name = "暗夜精灵·弓箭手",
@@ -193,11 +148,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\Arrow\\ArrowMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 8,
-        AGI = 13,
-        INT = 14,
-        ATTACK_WHITE = 14,
-        ATTACK_GREEN = 17
     },
     {
         Name = "暗夜精灵·角鹰弓箭手",
@@ -213,11 +163,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\Arrow\\ArrowMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 9,
-        AGI = 16,
-        INT = 15,
-        ATTACK_WHITE = 19,
-        ATTACK_GREEN = 13
     },
     {
         Name = "亡灵·憎恶",
@@ -233,11 +178,6 @@ towers_d = {
         Missileart = "SharedModels\\Bones1.mdl",
         cool1 = 2.40,
         Primary = "STR",
-        STR = 24,
-        AGI = 4,
-        INT = 5,
-        ATTACK_WHITE = 38,
-        ATTACK_GREEN = 0
     },
     {
         Name = "亡灵·十胜石雕像",
@@ -253,11 +193,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 2.40,
         Primary = "INT",
-        STR = 9,
-        AGI = 5,
-        INT = 20,
-        ATTACK_WHITE = 15,
-        ATTACK_GREEN = 18
     },
     {
         Name = "亡灵·骷髅魔法师",
@@ -273,11 +208,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\SkeletalMageMissile\\SkeletalMageMissile.mdl",
         cool1 = 2.35,
         Primary = "INT",
-        STR = 14,
-        AGI = 7,
-        INT = 17,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 42
     },
     {
         Name = "海妖·穆格尔鱼战士",
@@ -293,11 +223,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        STR = 11,
-        AGI = 17,
-        INT = 7,
-        ATTACK_WHITE = 34,
-        ATTACK_GREEN = 0
     },
     {
         Name = "海妖·龙龟",
@@ -313,11 +238,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        STR = 28,
-        AGI = 1,
-        INT = 12,
-        ATTACK_WHITE = 24,
-        ATTACK_GREEN = 0
     },
     {
         Name = "元素·水人",
@@ -333,11 +253,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.10,
         Primary = "AGI",
-        STR = 9,
-        AGI = 12,
-        INT = 12,
-        ATTACK_WHITE = 16,
-        ATTACK_GREEN = 16
     },
     {
         Name = "元素·漆影之狼",
@@ -353,11 +268,6 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl",
         cool1 = 2.10,
         Primary = "AGI",
-        STR = 8,
-        AGI = 14,
-        INT = 11,
-        ATTACK_WHITE = 21,
-        ATTACK_GREEN = 10
     },
     {
         Name = "元素·树精",
@@ -373,10 +283,5 @@ towers_d = {
         Missileart = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        STR = 23,
-        AGI = 7,
-        INT = 4,
-        ATTACK_WHITE = 28,
-        ATTACK_GREEN = 0
     }
 }
