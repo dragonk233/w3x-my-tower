@@ -105,7 +105,7 @@ towers_d = {
         Primary = "AGI",
     },
     {
-        Name = "精灵·弓箭手",
+        Name = "血精灵·弓箭手",
         Ubertip = "拿到弓箭而欢喜的弱弱弓箭手",
         unitSound = "Archer",
         file = "units\\creeps\\HighElfArcher\\HighElfArcher",
@@ -210,7 +210,7 @@ towers_d = {
         Primary = "INT",
     },
     {
-        Name = "海妖·穆格尔鱼战士",
+        Name = "娜迦·穆格尔鱼战士",
         Ubertip = "娜迦族的穆格尔大条鱼",
         unitSound = "Murloc",
         file = "Units\\Creeps\\MurgulReaver\\MurgulReaver",
@@ -225,7 +225,7 @@ towers_d = {
         Primary = "AGI",
     },
     {
-        Name = "海妖·龙龟",
+        Name = "娜迦·龙龟",
         Ubertip = "龟壳上全是刺",
         unitSound = "GiantSeaTurtle",
         file = "Units\\Creeps\\DragonSeaTurtleRange\\DragonSeaTurtleRange",

@@ -60,7 +60,7 @@ towers_a = {
         Primary = "AGI",
     },
     {
-        Name = "精灵·魔导师",
+        Name = "血精灵·魔导师",
         Ubertip = "魔导给予你沉默的机会",
         unitSound = "SpellBreaker",
         file = "units\\human\\BloodElfSpellThief\\BloodElfSpellThief",
@@ -241,7 +241,7 @@ towers_a = {
         Primary = "STR",
     },
     {
-        Name = "海妖·皇家卫兵",
+        Name = "娜迦·皇家卫兵",
         Ubertip = "看起来就很叼的样子",
         unitSound = "NagaRoyalGuard",
         file = "units\\naga\\NagaRoyalGuard\\NagaRoyalGuard",

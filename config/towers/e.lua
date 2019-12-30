@@ -90,7 +90,7 @@ towers_e = {
         Primary = "STR",
     },
     {
-        Name = "精灵·血精灵工程师",
+        Name = "血精灵·工程师",
         Ubertip = "自称工程师的血精灵",
         unitSound = "Wisp",
         file = "units\\critters\\HighElfPeasant\\HighElfPeasant",
@@ -165,7 +165,7 @@ towers_e = {
         Primary = "INT",
     },
     {
-        Name = "海妖·穆格尔小鱼",
+        Name = "娜迦·穆格尔小鱼",
         Ubertip = "娜迦族的穆格尔小鱼",
         unitSound = "Murloc",
         file = "units\\creeps\\MurgulSlave\\MurgulSlave",
@@ -180,7 +180,7 @@ towers_e = {
         Primary = "AGI",
     },
     {
-        Name = "海妖·飞蛇",
+        Name = "娜迦·飞蛇",
         Ubertip = "小鱼人是骑不上这种飞龙的",
         unitSound = "WindSerpent",
         file = "units\\naga\\WindSerpent\\WindSerpent",

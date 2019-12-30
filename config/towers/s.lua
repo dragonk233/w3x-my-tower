@@ -89,7 +89,7 @@ towers_s = {
         Primary = "AGI",
     },
     {
-        Name = "精灵·血魔法师·卡尔",
+        Name = "血精灵·血魔法师·卡尔",
         Ubertip = "偏门精灵族血系魔法师，与凤凰有神奇的联系",
         unitSound = "HeroElfSorceror",
         file = "units\\human\\HeroBloodElf\\HeroBloodElf",
@@ -508,7 +508,7 @@ towers_s = {
         Primary = "AGI",
     },
     {
-        Name = "海妖·蛇发魔女·美杜莎",
+        Name = "娜迦·蛇发魔女·美杜莎",
         Ubertip = "神话中的蛇发女妖，激怒她听说会被残忍的石化",
         unitSound = "SeaWitch",
         file = "units\\naga\\HeroNagaSeawitch\\HeroNagaSeawitch",

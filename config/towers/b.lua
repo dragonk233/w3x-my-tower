@@ -15,7 +15,7 @@ towers_b = {
         Primary = "AGI",
     },
     {
-        Name = "精灵·女巫",
+        Name = "血精灵·女巫",
         Ubertip = "以火鸟神圣之名",
         unitSound = "Sorceress",
         file = "units\\human\\Sorceress\\Sorceress",
@@ -30,7 +30,7 @@ towers_b = {
         Primary = "INT",
     },
     {
-        Name = "精灵·龙鹰骑士",
+        Name = "血精灵·龙鹰骑士",
         Ubertip = "这龙鹰不怎么听话",
         unitSound = "BloodElfDragonHawk",
         file = "units\\human\\BloodElfDragonHawk\\BloodElfDragonHawk",
@@ -210,7 +210,7 @@ towers_b = {
         Primary = "STR",
     },
     {
-        Name = "海妖·飞龙",
+        Name = "娜迦·飞龙",
         Ubertip = "不会飞的飞龙",
         unitSound = "SnapDragon",
         file = "units\\naga\\SnapDragon\\SnapDragon",
@@ -225,7 +225,7 @@ towers_b = {
         Primary = "STR",
     },
     {
-        Name = "海妖·暴徒",
+        Name = "娜迦·暴徒",
         Ubertip = "看起来就很怂的样子",
         unitSound = "NagaMyrmidon",
         file = "units\\naga\\NagaMyrmidon\\NagaMyrmidon",

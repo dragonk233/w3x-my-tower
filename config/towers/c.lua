@@ -101,7 +101,7 @@ towers_c = {
         ATTACK_GREEN = 43
     },
     {
-        Name = "精灵·牧师",
+        Name = "血精灵·牧师",
         Ubertip = "神啊！听我祷告",
         unitSound = "Priest",
         file = "units\\human\\Priest\\Priest",
@@ -191,7 +191,7 @@ towers_c = {
         Primary = "AGI",
     },
     {
-        Name = "海妖·塞壬",
+        Name = "娜迦·塞壬",
         Ubertip = "听说有的海妖会唱歌",
         unitSound = "NagaSiren",
         file = "Units\\Naga\\NagaSiren\\NagaSiren",
@@ -206,7 +206,7 @@ towers_c = {
         Primary = "AGI",
     },
     {
-        Name = "海妖·唱歌的塞壬",
+        Name = "娜迦·唱歌的塞壬",
         Ubertip = "整天无所事事唱歌的海妖",
         unitSound = "NagaSiren",
         file = "Units\\Naga\\NagaSummoner\\NagaSummoner",

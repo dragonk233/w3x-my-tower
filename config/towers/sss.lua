@@ -1,6 +1,6 @@
 towers_sss = {
     {
-        Name = "人类·骑士王·诺克斯",
+        Name = "人王·骑士王·诺克斯",
         Ubertip = "人类的统领，诺克斯，战场上仅仅存在即可令族人士气提升",
         unitSound = "Uther",
         file = "war3mapImported\\unit_ArthasMenethilKingHorseV1.01.mdl",
@@ -30,7 +30,7 @@ towers_sss = {
         Primary = "AGI",
     },
     {
-        Name = "人类·御龙剑神·奥米伽",
+        Name = "人王·御龙剑神·奥米伽",
         Ubertip = "别人都喊我暴龙杀手",
         unitSound = "SpellBreaker",
         file = "war3mapImported\\unit_DullahanOmega.mdl",
@@ -43,6 +43,21 @@ towers_sss = {
         Missileart = "",
         cool1 = 2.00,
         Primary = "STR",
+    },
+    {
+        Name = "血精灵·影刺客·瞬",
+        Ubertip = "别担心我这次用的是刀背",
+        unitSound = "Satyr",
+        file = "war3mapImported\\unit_HeroBEArcaneHuntress.mdl",
+        Art = "war3mapImported\\icon_unit_ArcaneHuntress.blp",
+        modelScale = 2.00,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "",
+        cool1 = 1.60,
+        Primary = "AGI",
     },
     {
         Name = "兽人·狼拳·格格塔诺",
@@ -430,7 +445,7 @@ towers_sss = {
         Primary = "AGI",
     },
     {
-        Name = "海妖·深红守卫·棘龙",
+        Name = "娜迦·深红守卫·棘龙",
         Ubertip = "一身赤血，棘龙，攻守兼备，所向无敌",
         unitSound = "DragonSpawn",
         file = "war3mapImported\\unit_HeroNagaStealthViper.mdl",
@@ -445,7 +460,7 @@ towers_sss = {
         Primary = "STR",
     },
     {
-        Name = "海妖·绀青皇冠·塞壬",
+        Name = "娜迦·绀青皇冠·塞壬",
         Ubertip = "娜迦族的公主，表面上喜欢二哥波塞冬",
         unitSound = "NagaSiren",
         file = "war3mapImported\\unit_HeroNagaEnchantress.mdl",
@@ -460,7 +475,7 @@ towers_sss = {
         Primary = "INT",
     },
     {
-        Name = "海妖·曳蓝王冠·哈迪斯",
+        Name = "娜迦·曳蓝王冠·哈迪斯",
         Ubertip = "娜迦族的第一王子，速度是海妖中最快的，喜爱妹妹塞壬",
         unitSound = "NagaMyrmidon",
         file = "war3mapImported\\unit_NagaDeathKnightFxd.mdl",
@@ -475,7 +490,7 @@ towers_sss = {
         Primary = "AGI",
     },
     {
-        Name = "海妖·曳蓝王冠·波塞冬",
+        Name = "娜迦·曳蓝王冠·波塞冬",
         Ubertip = "娜迦族的第二王子，速度是海妖中最快的，喜爱妹妹塞壬",
         unitSound = "NagaRoyalGuard",
         file = "war3mapImported\\unit_NagaRoyalGuard_V2.mdl",
@@ -490,7 +505,7 @@ towers_sss = {
         Primary = "STR",
     },
     {
-        Name = "海妖·驱逐者·潮汐巨人",
+        Name = "娜迦·驱逐者·潮汐巨人",
         Ubertip = "由于对公主无礼而被哈迪斯驱逐出境",
         unitSound = "SeaGiant",
         file = "war3mapImported\\unit_SeaGiantRed.mdl",
