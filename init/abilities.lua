@@ -10,10 +10,10 @@ local AB_HOTKEY_KV = {
 }
 
 local yellow = {
-    "A", "S", "D", "F",
+    "S", "D", "F",
 }
 local red = {
-    "Z", "X", "C", "V",
+    "X", "C", "V",
 }
 
 -- abilities
@@ -89,7 +89,7 @@ for _, v in ipairs(abilities) do
                     v.Val[vali] = 0
                 end
                 if (string.find(Ubertip, valmatch) ~= nil) then
-                    Ubertip = string.gsub(Ubertip, valmatch, "|cffffcc00" .. v.Val[vali] .. "|r")
+                    Ubertip = string.gsub(Ubertip, valmatch, "|cffffcc00" .. (v.Val[vali]*level) .. "|r")
                 else
                     vali = 99
                 end

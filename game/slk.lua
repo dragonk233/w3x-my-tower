@@ -110,13 +110,29 @@ for _, name in ipairs(thisPowerAbilitiesName) do
     game.thisUnitPowerAbilities[name] = jv
 end
 
+-- 等级技能
+game.thisUnitLevelAbilitiesLen = 9
+for i = 0, game.thisUnitLevelAbilitiesLen, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_unit_level"), i)
+    local jv = json.parse(v)
+    hRuntime.register.ability(jv)
+    game.thisUnitLevelAbilities[i] = jv
+end
+
+-- 种族技能
+game.thisUnitRaceAbilitiesLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilities_unit_race"), -1)
+for i = 1, game.thisUnitRaceAbilitiesLen, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_unit_race"), i)
+    local jv = json.parse(v)
+    hRuntime.register.ability(jv)
+    game.thisUnitRaceAbilities[jv.INDEX] = jv
+end
+
 -- 空技能
 local thisEmptyAbilitiesName = {
-    "A",
     "S",
     "D",
     "F",
-    "Z",
     "X",
     "C",
     "V"

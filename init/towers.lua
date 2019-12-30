@@ -85,6 +85,7 @@ for j=1,1,1 do
                 v.INTplus = v.INT * 0.30
                 v.ATTACK_WHITE = math.floor(tempAttackWhite)
                 v.ATTACK_GREEN = math.floor(tempAttackGreen)
+                v.RACE = hSys.explode("·",v.Name)[1]
                 local ThreeTotal = v.STR + v.AGI + v.INT
                 local coolMark = math.floor(100 / (v.cool1 or 2.00))
                 local TowerMark = math.floor(

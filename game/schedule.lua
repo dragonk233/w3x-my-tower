@@ -1,5 +1,20 @@
 require "game.scheduleFunc"
 
+game.TRIGGER_DEMOVE = cj.CreateTrigger()
+cj.TriggerAddAction(
+    game.TRIGGER_DEMOVE,
+    function()
+        if (cj.GetIssuedOrderId() == 851971 or cj.GetIssuedOrderId() == 851986) then
+            cj.IssuePointOrderById(
+                cj.GetTriggerUnit(),
+                851983,
+                cj.GetUnitX(cj.GetTriggerUnit()),
+                cj.GetUnitY(cj.GetTriggerUnit())
+            )
+        end
+    end
+)
+
 local startTrigger = cj.CreateTrigger()
 cj.TriggerRegisterTimerEvent(startTrigger, 1.0, false)
 cj.TriggerAddAction(
@@ -382,7 +397,7 @@ cj.TriggerAddAction(
                     if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "icemon") == true) then
                         hitem.create(
                             {
-                                itemId = game.courierItem["冰戟魔灵"].ITEM_ID,
+                                itemId = game.courierItem["冰戟剑灵"].ITEM_ID,
                                 whichUnit = u
                             }
                         )

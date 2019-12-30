@@ -209,7 +209,7 @@ couriers = {
         COURIER_POWER = "SS",
     },
     {
-        Name = "冰戟魔灵",
+        Name = "冰戟剑灵",
         abilList = "Avul,AInv",
         unitSound = "ObsidianDestroyer",
         file = "war3mapImported\\unit_Frost_Fury_v1.1.mdx",

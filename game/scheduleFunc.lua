@@ -1,6 +1,7 @@
 require "game.scheduleFuncOnEnemyBeAttack"
 require "game.scheduleFuncOnEnemyDead"
 require "game.scheduleFuncOnItemUse"
+require "game.scheduleFuncTowerLevel"
 
 -- 出兵
 enemyGenYB = function(waiting)
@@ -362,6 +363,11 @@ createMyTower = function(playerIndex, towerId)
         hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
         --兵塔说明标志
         hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
+        --种族
+        print_mb(hslk_global.unitsKV[towerId].RACE)
+        hskill.add(u, game.thisUnitRaceAbilities[hslk_global.unitsKV[towerId].RACE].ABILITY_ID, 0)
+        --天赋等级
+        setTowerLevel(playerIndex)
         --技能树
         for k, v in pairs(game.thisEmptyAbilities) do
             if (game.towersAbilities[playerIndex][k] == nil) then
@@ -372,6 +378,8 @@ createMyTower = function(playerIndex, towerId)
                 }
             end
         end
+        --移动卡的bug
+        cj.TriggerRegisterUnitEvent(game.TRIGGER_DEMOVE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         return u
     end
 end
@@ -423,6 +431,11 @@ createMyCourier = function(playerIndex, courierId)
         hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[courierId].COURIER_POWER].ABILITY_ID, 0)
         game.playerCourier[playerIndex] = u
         hcamera.toUnit(hplayer.players[playerIndex], 0.50, u)
+        heffect.toUnit("war3mapImported\\eff_burst_round.mdl", u, 0)
+        --如果是冰戟剑灵，添加特效
+        if (hslk_global.unitsKV[courierId].Name == "冰戟剑灵") then
+            heffect.bindUnit("war3mapImported\\eff_flying_sword_ice.mdl", u, "origin", -1)
+        end
         return u
     end
 end

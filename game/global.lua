@@ -1,5 +1,6 @@
 game = {
     ALLY_PLAYER = nil,
+    TRIGGER_DEMOVE = nil,
     bigElfTips = {
         "给点力撒~",
         "哎哟好痛~",
@@ -59,6 +60,7 @@ game = {
         cur = "yb"
     },
     playerTower = {},
+    playerTowerLevel = {},
     playerCourier = {},
     towersLen = 0,
     towers = {},
@@ -79,6 +81,10 @@ game = {
     courierItem = {},
     thisUnitPowerAbilities = {},
     thisUnitPowerAbilitiesLen = 0,
+    thisUnitLevelAbilities = {},
+    thisUnitLevelAbilitiesLen = 0,
+    thisUnitRaceAbilities = {},
+    thisUnitRaceAbilitiesLen = 0,
     thisEmptyAbilities = {},
     thisEmptyAbilitiesLen = 0,
     thisOptionAbility = {},
