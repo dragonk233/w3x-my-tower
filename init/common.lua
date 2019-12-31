@@ -1,8 +1,9 @@
 UsedID = {
     Tower = 0, --塔使用技能
     Courier = 0, --信使使用技能
-    BookRed = 0, --红技能书使用技能
+    BookBlue = 0, --蓝技能书使用技能
     BookYellow = 0, --黄技能书使用技能
+    BookPurple = 0, --紫技能书使用技能
 }
 UsedIDConfig = {
     Tower = {
@@ -13,12 +14,16 @@ UsedIDConfig = {
         CasterArt = "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl",
         Cool = 2,
     },
-    BookRed = {
-        CasterArt = "Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",
+    BookBlue = {
+        CasterArt = "war3mapImported\\eff_burst_round.mdl",
         Cool = 0,
     },
     BookYellow = {
-        CasterArt = "Abilities\\Spells\\Items\\AIlm\\AIlmTarget.mdl",
+        CasterArt = "war3mapImported\\eff_burst_round_gold.mdl",
+        Cool = 0,
+    },
+    BookPurple = {
+        CasterArt = "war3mapImported\\eff_burst_round_purple.mdl",
         Cool = 0,
     },
 }

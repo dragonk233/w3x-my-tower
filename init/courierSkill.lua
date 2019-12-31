@@ -43,3 +43,4 @@ obj.SpecialArt = "war3mapImported\\eff_different_liftoff.mdl"
 obj.Areaeffectart = "war3mapImported\\eff_light_eddy.mdl"
 table.insert(couriersSkillsIce,obj:get_id())
 --其他例牌技能
+--ReplaceableTextures\CommandButtons\BTNStone.blp 野兽护肤

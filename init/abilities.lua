@@ -9,22 +9,25 @@ local AB_HOTKEY_KV = {
     V = { 3, 2 },
 }
 
-local yellow = {
-    "S", "D", "F",
-}
-local red = {
+local blue = {
     "X", "C", "V",
+}
+local yellow = {
+    "S", "D",
+}
+local purple = {
+    "F",
 }
 
 -- abilities
 -- 处理空技能槽
-for _, v in ipairs(red) do
+for _, v in ipairs(blue) do
     local obj = slk.ability.Aamk:new("abilities_empty_" .. v)
-    local Name = "红技能槽 - [" .. hColor.red(v) .. "]"
-    local Tip = "红技能槽 - [" .. hColor.red(v) .. "]"
+    local Name = "蓝技能槽 - [" .. hColor.skyLight(v) .. "]"
+    local Tip = "蓝技能槽 - [" .. hColor.skyLight(v) .. "]"
     obj.Name = Name
     obj.Tip = Tip
-    obj.Ubertip = "使用技能书可以习得新的红点技能"
+    obj.Ubertip = "使用技能书可以习得新的蓝点技能"
     obj.Buttonpos1 = AB_HOTKEY_KV[v][1]
     obj.Buttonpos2 = AB_HOTKEY_KV[v][2]
     obj.hero = 0
@@ -32,7 +35,7 @@ for _, v in ipairs(red) do
     obj.DataA1 = 0
     obj.DataB1 = 0
     obj.DataC1 = 0
-    obj.Art = "war3mapImported\\icon_pas_Skillz.blp"
+    obj.Art = "war3mapImported\\icon_pas_Skillz_Blue.blp"
     local ab = {
         ABILITY_ID = obj:get_id(),
         ABILITY_BTN = v,
@@ -74,11 +77,13 @@ for _, v in ipairs(abilities) do
     -- 这一轮是技能等级的
     for level = 1, level_limit, 1 do
         -- 这一轮是处理类型的
-        local ABILITY_COLOR = red
+        local ABILITY_COLOR = blue
         if (v.ABILITY_COLOR == "yellow") then
             ABILITY_COLOR = yellow
+        elseif (v.ABILITY_COLOR == "purple") then
+            ABILITY_COLOR = purple
         elseif (v.ABILITY_COLOR == "all") then
-            ABILITY_COLOR = hSys.mergeTable(red, yellow)
+            ABILITY_COLOR = hSys.mergeTable(blue, yellow, purple)
         end
         local Ubertip = v.Ubertip or ""
         v.Val = v.Val or {}
@@ -124,12 +129,12 @@ for _, v in ipairs(abilities) do
             ab_item_index = ab_item_index + 1
             local iobj = slk.item.gold:new("abilities_items_" .. v.Name .. "_" .. level)
             local goldcost = 0
-            if (v.ABILITY_COLOR == 'red') then
-                iobj.Name = "[技能书·红]《" .. level .. "级" .. v.Name .. "》"
-                iobj.Tip = "点击学习红技能书：|cffffcc00《" .. level .. "级" .. v.Name .. "》|r"
-                iobj.file = "Objects\\InventoryItems\\tomeRed\\tomeRed.mdl"
-                iobj.abilList = UsedID.BookRed
-                iobj.cooldownID = UsedID.BookRed
+            if (v.ABILITY_COLOR == 'blue') then
+                iobj.Name = "[技能书·蓝]《" .. level .. "级" .. v.Name .. "》"
+                iobj.Tip = "点击学习蓝技能书：|cffffcc00《" .. level .. "级" .. v.Name .. "》|r"
+                iobj.file = "Objects\\InventoryItems\\tomeBlue\\tomeBlue.mdl"
+                iobj.abilList = UsedID.BookBlue
+                iobj.cooldownID = UsedID.BookBlue
                 goldcost = level * 10
             elseif (v.ABILITY_COLOR == 'yellow') then
                 iobj.Name = "[技能书·黄]《" .. level .. "级" .. v.Name .. "》"
@@ -138,6 +143,13 @@ for _, v in ipairs(abilities) do
                 iobj.abilList = UsedID.BookYellow
                 iobj.cooldownID = UsedID.BookYellow
                 goldcost = level * 20
+            elseif (v.ABILITY_COLOR == 'purple') then
+                iobj.Name = "[技能书·紫]《" .. level .. "级" .. v.Name .. "》"
+                iobj.Tip = "点击学习紫技能书：|cffffcc00《" .. level .. "级" .. v.Name .. "》|r"
+                iobj.file = "Objects\\InventoryItems\\tome\\tome.mdl"
+                iobj.abilList = UsedID.BookYellow
+                iobj.cooldownID = UsedID.BookYellow
+                goldcost = level * 40
             end
             iobj.UberTip = "能学习到技能：|n" .. Ubertip
             iobj.Description = "技能书：" .. Ubertip

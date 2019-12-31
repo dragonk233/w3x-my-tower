@@ -431,7 +431,6 @@ createMyCourier = function(playerIndex, courierId)
         hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[courierId].COURIER_POWER].ABILITY_ID, 0)
         game.playerCourier[playerIndex] = u
         hcamera.toUnit(hplayer.players[playerIndex], 0.50, u)
-        heffect.toUnit("war3mapImported\\eff_burst_round.mdl", u, 0)
         --如果是冰戟剑灵，添加特效
         if (hslk_global.unitsKV[courierId].Name == "冰戟剑灵") then
             heffect.bindUnit("war3mapImported\\eff_flying_sword_ice.mdl", u, "origin", -1)

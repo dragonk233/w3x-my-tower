@@ -35,10 +35,10 @@ deadAward = function(triggerUnit, killer)
     end
     print("maxLevel=" .. maxLevel)
     local level = cj.GetRandomInt(1, maxLevel)
-    if (cj.GetRandomInt(1, 30 - maxLevel) == 2) then
-        -- 掉落红技能书
-        if (#game.thisOptionAbilityItem["red"][level] > 0) then
-            local itId = hSys.randTable(game.thisOptionAbilityItem["red"][level]).ITEM_ID
+    if (cj.GetRandomInt(1, 45 - maxLevel) == 2) then
+        -- 掉落蓝技能书
+        if (#game.thisOptionAbilityItem["blue"][level] > 0) then
+            local itId = hSys.randTable(game.thisOptionAbilityItem["blue"][level]).ITEM_ID
             hitem.create(
                 {
                     itemId = itId,
@@ -49,10 +49,24 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    if (cj.GetRandomInt(1, 60 - maxLevel) == 2) then
+    if (cj.GetRandomInt(1, 90 - maxLevel) == 2) then
         -- 掉落黄技能书
         if (#game.thisOptionAbilityItem["yellow"][level] > 0) then
             local itId = hSys.randTable(game.thisOptionAbilityItem["yellow"][level]).ITEM_ID
+            hitem.create(
+                {
+                    itemId = itId,
+                    x = x,
+                    y = y,
+                    during = 60
+                }
+            )
+        end
+    end
+    if (cj.GetRandomInt(1, 150 - maxLevel) == 2) then
+        -- 掉落紫技能书
+        if (#game.thisOptionAbilityItem["purple"][level] > 0) then
+            local itId = hSys.randTable(game.thisOptionAbilityItem["purple"][level]).ITEM_ID
             hitem.create(
                 {
                     itemId = itId,

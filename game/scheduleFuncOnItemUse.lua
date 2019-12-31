@@ -82,7 +82,6 @@ onUnitItemsUesd = function()
                 function(btnIdx)
                     if (btnIdx == 512) then
                         hmsg.echo00(p, "技能书被扔了")
-                        heffect.toUnit("war3mapImported\\eff_burst_round_purple.mdl", u, 0)
                         return
                     end
                     hmsg.echo00(
@@ -111,7 +110,6 @@ onUnitItemsUesd = function()
             )
             hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
             hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)
-            heffect.toUnit("war3mapImported\\eff_burst_round_gold.mdl", game.playerTower[playerIndex], 0)
             game.towersAbilities[playerIndex][btnIdx] = {
                 ability_id = abils[btnIdx].ABILITY_ID,
                 level = abils[btnIdx].ABILITY_LEVEL,
