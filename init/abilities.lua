@@ -23,8 +23,8 @@ local purple = {
 -- 处理空技能槽
 for _, v in ipairs(blue) do
     local obj = slk.ability.Aamk:new("abilities_empty_" .. v)
-    local Name = "蓝技能槽 - [" .. hColor.skyLight(v) .. "]"
-    local Tip = "蓝技能槽 - [" .. hColor.skyLight(v) .. "]"
+    local Name = "蓝技能槽 - [" .. hColor.sky(v) .. "]"
+    local Tip = "蓝技能槽 - [" .. hColor.sky(v) .. "]"
     obj.Name = Name
     obj.Tip = Tip
     obj.Ubertip = "使用技能书可以习得新的蓝点技能"
@@ -67,6 +67,29 @@ for _, v in ipairs(yellow) do
 call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
 <?
 end
+for _, v in ipairs(purple) do
+    local obj = slk.ability.Aamk:new("abilities_empty_" .. v)
+    local Name = "紫技能槽 - [" .. hColor.purple(v) .. "]"
+    local Tip = "紫技能槽 - [" .. hColor.purple(v) .. "]"
+    obj.Name = Name
+    obj.Tip = Tip
+    obj.Ubertip = "使用技能书可以习得新的紫点技能"
+    obj.Buttonpos1 = AB_HOTKEY_KV[v][1]
+    obj.Buttonpos2 = AB_HOTKEY_KV[v][2]
+    obj.hero = 0
+    obj.levels = 1
+    obj.DataA1 = 0
+    obj.DataB1 = 0
+    obj.DataC1 = 0
+    obj.Art = "war3mapImported\\icon_pas_Skillz_Purple.blp"
+    local ab = {
+        ABILITY_ID = obj:get_id(),
+        ABILITY_BTN = v,
+    }
+    ?>
+call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
+<?
+end
 
 local level_limit = 9
 local ab_index = 0
@@ -82,8 +105,8 @@ for _, v in ipairs(abilities) do
             ABILITY_COLOR = yellow
         elseif (v.ABILITY_COLOR == "purple") then
             ABILITY_COLOR = purple
-        elseif (v.ABILITY_COLOR == "all") then
-            ABILITY_COLOR = hSys.mergeTable(blue, yellow, purple)
+        elseif (v.ABILITY_COLOR == "blue") then
+            ABILITY_COLOR = blue
         end
         local Ubertip = v.Ubertip or ""
         v.Val = v.Val or {}
@@ -104,7 +127,14 @@ for _, v in ipairs(abilities) do
             ab_index = ab_index + 1
             local obj = slk.ability.Aamk:new("abilities_" .. v.Name .. "_" .. level .. "_" .. s)
             local Name = v.Name .. "[Lv" .. level .. "]" .. "[" .. s .. "]"
-            local Tip = v.Name .. " - [|cffffcc00等级 " .. level .. "|r]" .. " - [|cffffcc00" .. s .. "|r]"
+            local Tip
+            if (v.ABILITY_COLOR == "yellow") then
+                Tip = v.Name .. " - [|cffffcc00等级 " .. level .. "|r]" .. " - [" .. hColor.yellow(s) .. "]"
+            elseif (v.ABILITY_COLOR == "blue") then
+                Tip = v.Name .. " - [|cffffcc00等级 " .. level .. "|r]" .. " - [" .. hColor.sky(s) .. "]"
+            elseif (v.ABILITY_COLOR == "purple") then
+                Tip = v.Name .. " - [|cffffcc00等级 " .. level .. "|r]" .. " - [" .. hColor.purple(s) .. "]"
+            end
             obj.Name = Name
             obj.Tip = Tip
             obj.Ubertip = Ubertip

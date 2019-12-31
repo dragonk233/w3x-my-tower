@@ -38,7 +38,7 @@ obj.DataA1 = 99999
 obj.DataB1 = 0
 obj.Cool1 = 1
 obj.Cost1 = 0
-obj.Art = "war3mapImported\\icon_ability_Shock.blp"
+obj.Art = "war3mapImported\\icon_ability_Atmospheric_shock.blp"
 obj.SpecialArt = "war3mapImported\\eff_different_liftoff.mdl"
 obj.Areaeffectart = "war3mapImported\\eff_light_eddy.mdl"
 table.insert(couriersSkillsIce,obj:get_id())

@@ -15,15 +15,15 @@ UsedIDConfig = {
         Cool = 2,
     },
     BookBlue = {
-        CasterArt = "war3mapImported\\eff_burst_round.mdl",
+        CasterArt = "Abilities\\Spells\\Items\\AIma\\AImaTarget.mdl",
         Cool = 0,
     },
     BookYellow = {
-        CasterArt = "war3mapImported\\eff_burst_round_gold.mdl",
+        CasterArt = "Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",
         Cool = 0,
     },
     BookPurple = {
-        CasterArt = "war3mapImported\\eff_burst_round_purple.mdl",
+        CasterArt = "Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl",
         Cool = 0,
     },
 }

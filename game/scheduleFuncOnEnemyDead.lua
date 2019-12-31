@@ -20,13 +20,14 @@ deadAward = function(triggerUnit, killer)
             end
         )
     end
+    hunit.del(triggerUnit, 10)
     local maxLevel = 0
     if (game.rule.cur == "yb") then
-        maxLevel = math.floor(game.rule.yb.wave * 0.3)
+        maxLevel = math.floor(game.rule.yb.wave * 0.28)
     elseif (game.rule.cur == "hz") then
-        maxLevel = math.floor(game.rule.hz.wave * 0.1)
+        maxLevel = math.floor(game.rule.hz.wave * 0.22)
     elseif (game.rule.cur == "dk" and killer ~= nil) then
-        maxLevel = math.floor(game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(killer))] * 0.2)
+        maxLevel = math.floor(game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(killer))] * 0.16)
     end
     if (maxLevel < 1) then
         maxLevel = 1
@@ -35,7 +36,7 @@ deadAward = function(triggerUnit, killer)
     end
     print("maxLevel=" .. maxLevel)
     local level = cj.GetRandomInt(1, maxLevel)
-    if (cj.GetRandomInt(1, 45 - maxLevel) == 2) then
+    if (cj.GetRandomInt(1, 60) == 7) then
         -- 掉落蓝技能书
         if (#game.thisOptionAbilityItem["blue"][level] > 0) then
             local itId = hSys.randTable(game.thisOptionAbilityItem["blue"][level]).ITEM_ID
@@ -49,7 +50,7 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    if (cj.GetRandomInt(1, 90 - maxLevel) == 2) then
+    if (cj.GetRandomInt(1, 120) == 7) then
         -- 掉落黄技能书
         if (#game.thisOptionAbilityItem["yellow"][level] > 0) then
             local itId = hSys.randTable(game.thisOptionAbilityItem["yellow"][level]).ITEM_ID
@@ -63,7 +64,7 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    if (cj.GetRandomInt(1, 150 - maxLevel) == 2) then
+    if (cj.GetRandomInt(1, 240) == 7) then
         -- 掉落紫技能书
         if (#game.thisOptionAbilityItem["purple"][level] > 0) then
             local itId = hSys.randTable(game.thisOptionAbilityItem["purple"][level]).ITEM_ID

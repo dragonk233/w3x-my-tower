@@ -33,9 +33,11 @@ onUnitItemsUesd = function()
         end
         local sites = {}
         if (itemSLK.ABILITY_COLOR == "yellow") then
-            sites = {"S", "D", "F"}
-        elseif (itemSLK.ABILITY_COLOR == "red") then
+            sites = {"S", "D"}
+        elseif (itemSLK.ABILITY_COLOR == "blue") then
             sites = {"X", "C", "V"}
+        elseif (itemSLK.ABILITY_COLOR == "purple") then
+            sites = {"F"}
         end
         local playerIndex = hplayer.index(p)
         local btns = {}
@@ -98,6 +100,13 @@ onUnitItemsUesd = function()
                         level = abils[btnIdx].ABILITY_LEVEL,
                         name = abils[btnIdx].Name
                     }
+                    if (itemSLK.ABILITY_COLOR == "yellow") then
+                        heffect.toUnit("war3mapImported\\eff_burst_round_gold.mdl", game.playerTower[playerIndex], 0)
+                    elseif (itemSLK.ABILITY_COLOR == "blue") then
+                        heffect.toUnit("war3mapImported\\eff_burst_round.mdl", game.playerTower[playerIndex], 0)
+                    elseif (itemSLK.ABILITY_COLOR == "purple") then
+                        heffect.toUnit("war3mapImported\\eff_burst_round_purple.mdl", game.playerTower[playerIndex], 0)
+                    end
                 end
             )
         else
@@ -115,6 +124,13 @@ onUnitItemsUesd = function()
                 level = abils[btnIdx].ABILITY_LEVEL,
                 name = abils[btnIdx].Name
             }
+            if (itemSLK.ABILITY_COLOR == "yellow") then
+                heffect.toUnit("war3mapImported\\eff_burst_round_gold.mdl", game.playerTower[playerIndex], 0)
+            elseif (itemSLK.ABILITY_COLOR == "blue") then
+                heffect.toUnit("war3mapImported\\eff_burst_round.mdl", game.playerTower[playerIndex], 0)
+            elseif (itemSLK.ABILITY_COLOR == "purple") then
+                heffect.toUnit("war3mapImported\\eff_burst_round_purple.mdl", game.playerTower[playerIndex], 0)
+            end
         end
     end
 end

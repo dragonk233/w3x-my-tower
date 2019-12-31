@@ -35,8 +35,8 @@ setTowerLevel = function(playerIndex)
     hmsg.echo00(hplayer.players[playerIndex], "兵塔得到了" .. hColor.yellow(unitLv) .. "级天赋")
     --计算
     local diff = math.floor(unitLv - oldLevel)
+    local towerId = hunit.getId(game.playerTower[playerIndex])
     if (diff > 0) then
-        local towerId = hunit.getId(game.playerTower[playerIndex])
         hattr.set(
             game.playerTower[playerIndex],
             0,

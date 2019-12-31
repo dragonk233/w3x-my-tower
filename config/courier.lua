@@ -211,7 +211,7 @@ couriers = {
     {
         Name = "冰戟剑灵",
         abilList = "Avul,AInv",
-        unitSound = "ObsidianDestroyer",
+        unitSound = "Gargoyle",
         file = "war3mapImported\\unit_Frost_Fury_v1.1.mdx",
         Art = "war3mapImported\\icon_unit_Hunter_Pet_Moth.blp",
         modelScale = 1.50,
