@@ -36,7 +36,6 @@ for i, v in ipairs(couriers) do
     obj.def = v.def or 0.00 -- 护甲
     obj.sight = v.sight or 1000 -- 白天视野
     obj.nsight = v.nsight or 1000 -- 夜晚视野
-    obj.abilList = v.abilList or ""
     obj.nameCount = v.nameCount or 1
     obj.Tip = "选择 " .. v.Name
     obj.Name = "[信使]" .. v.Name
@@ -55,6 +54,13 @@ for i, v in ipairs(couriers) do
     obj.spd = v.spd
     obj.armor = v.armor -- 被击声音
     obj.targType = v.targType --作为目标类型
+    if(v.Name == "涅磐火凤凰")then
+        obj.abilList = "Avul,AInv," .. hSys.implode(',',couriersSkillsPhoenix)
+    elseif(v.Name == "冰戟剑灵")then
+        obj.abilList = "Avul,AInv," .. hSys.implode(',',couriersSkillsIce)
+    else
+        obj.abilList = "Avul,AInv"
+    end
     v.INDEX = v.Name
     v.UNIT_ID = obj:get_id()
     -- 信使物品

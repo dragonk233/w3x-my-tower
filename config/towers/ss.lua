@@ -40,7 +40,7 @@ towers_ss = {
         movetp = "foot",
         moveHeight = 0.00,
         weapTp1 = "missile",
-        Missileart = "Abilities\\Weapons\\ZigguratFrostMissile\\ZigguratFrostMissile.mdl",
+        Missileart = "war3mapImported\\eff_forst_arrow.mdx",
         cool1 = 2.10,
         Primary = "INT",
     },
