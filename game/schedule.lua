@@ -32,17 +32,17 @@ cj.TriggerAddAction(
             {
                 str = {
                     life = 10,
-                    attack_white = 0.1,
-                    attack_green = 0.1,
+                    attack_white = 0.15,
+                    attack_green = 0.15,
                     toughness = 0.25
                 },
                 agi = {
-                    attack_white = 0.75,
+                    attack_white = 0.6,
                     attack_speed = 0.02,
                     avoid = 0.06
                 },
                 int = {
-                    attack_green = 0.75,
+                    attack_green = 0.6,
                     resistance = 0.07
                 }
             }
