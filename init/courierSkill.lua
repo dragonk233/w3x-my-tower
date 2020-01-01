@@ -4,8 +4,8 @@ local couriersSkillsPhoenix = {}
 local couriersSkillsIce = {}
 --火凤凰闪烁
 local obj = slk.ability.AEbl:new("couriers_sk_blink_phoenix")
-local Name = "闪烁"
-local Tip = "闪烁("..hColor.greenLight("Q")..")"
+local Name = "展翅"
+local Tip = "展翅("..hColor.greenLight("Q")..")"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "Q"
@@ -24,8 +24,8 @@ obj.Areaeffectart = "war3mapImported\\eff_fire_tail.mdx"
 table.insert(couriersSkillsPhoenix,obj:get_id())
 --冰剑闪烁
 local obj = slk.ability.AEbl:new("couriers_sk_blink_icemon")
-local Name = "闪烁"
-local Tip = "闪烁("..hColor.greenLight("Q")..")"
+local Name = "冰洞"
+local Tip = "冰洞("..hColor.greenLight("Q")..")"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "Q"
