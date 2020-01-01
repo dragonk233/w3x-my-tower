@@ -43,8 +43,9 @@ enemyGenYB = function(waiting)
                             )
                             return
                         end
-                        local gold = hplayer.qty_current * game.rule.yb.wave * 50
+                        local gold = hplayer.qty_current * game.rule.yb.wave * 60
                         haward.forPlayer(gold, 0)
+                        hmsg.echo("通过了|cffffff00第" .. game.rule.yb.wave .. "波|r，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
                         game.rule.yb.wave = game.rule.yb.wave + 1
                         hplayer.loop(
                             function(p)
@@ -73,8 +74,8 @@ enemyGenYB = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (30 * game.rule.yb.wave),
-                                    move = "=200"
+                                    life = "=" .. (25 * game.rule.yb.wave),
+                                    move = "=180"
                                 }
                             )
                             hevent.onBeDamage(u, enemyBeDamage)
@@ -137,8 +138,8 @@ enemyGenHZ = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (35 * game.rule.hz.wave),
-                                    move = "=200"
+                                    life = "=" .. (30 * game.rule.hz.wave),
+                                    move = "=190"
                                 }
                             )
                             hevent.onBeDamage(u, enemyBeDamage)
@@ -187,7 +188,7 @@ enemyGenDK = function(waiting)
                                     u,
                                     0,
                                     {
-                                        life = "=" .. (40 * game.rule.dk.wave[k]),
+                                        life = "=" .. (35 * game.rule.dk.wave[k]),
                                         move = "=200"
                                     }
                                 )

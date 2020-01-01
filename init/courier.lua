@@ -59,7 +59,7 @@ for i, v in ipairs(couriers) do
     elseif(v.Name == "冰戟剑灵")then
         obj.abilList = "Avul,AInv," .. hSys.implode(',',couriersSkillsIce)
     else
-        obj.abilList = "Avul,AInv"
+        obj.abilList = "Avul,AInv," .. hSys.implode(',',couriersSkills)
     end
     v.INDEX = v.Name
     v.UNIT_ID = obj:get_id()

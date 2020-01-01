@@ -16,11 +16,13 @@ onUnitItemsUesd = function()
     if (itemSLK.I_TYPE == "tower") then
         local playerIndex = hplayer.index(p)
         local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)
-        hmsg.echo(cj.GetPlayerName(p) .. "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]")
+        hmsg.echo(hColor.sky(cj.GetPlayerName(p)) .. "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]")
     elseif (itemSLK.I_TYPE == "courier") then
         local playerIndex = hplayer.index(p)
         local u = createMyCourier(playerIndex, game.courier[itemSLK.INDEX].UNIT_ID)
-        hmsg.echo(cj.GetPlayerName(p) .. "召唤了信使：[" .. hColor.yellow(game.courier[itemSLK.INDEX].Name) .. "]")
+        hmsg.echo(
+            hColor.sky(cj.GetPlayerName(p)) .. "召唤了信使：[" .. hColor.yellow(game.courier[itemSLK.INDEX].Name) .. "]"
+        )
         if (u ~= nil and cj.GetLocalPlayer() == p) then
             cj.ClearSelection()
             cj.SelectUnit(u, true)
@@ -113,7 +115,7 @@ onUnitItemsUesd = function()
             local btnIdx = emptySite
             hmsg.echo00(
                 p,
-                "兵塔的[" ..
+                "兵塔自动挑选了[" ..
                     hColor.yellow(btnIdx) ..
                         "]位置，学习了[" .. hColor.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
             )

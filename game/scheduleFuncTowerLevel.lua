@@ -2,6 +2,7 @@ subTowerLevel = function(playerIndex)
     local oldLevel = game.playerTowerLevel[playerIndex]
     if (oldLevel ~= nil) then
         hskill.del(game.playerTower[playerIndex], game.thisUnitLevelAbilities[oldLevel].ABILITY_ID, 0)
+        local towerId = hunit.getId(game.playerTower[playerIndex])
         hattr.set(
             game.playerTower[playerIndex],
             0,
@@ -45,7 +46,7 @@ addTowerLevel = function(playerIndex)
         hsound.sound2Player(cg.gg_snd_jsws, hplayer.players[playerIndex])
     end
     game.playerTowerLevel[playerIndex] = unitLv
-    hmsg.echo00(hplayer.players[playerIndex], "兵塔得到了" .. hColor.yellow(unitLv) .. "级天赋")
+    hmsg.echo00(hplayer.players[playerIndex], "经鉴定兵塔天赋是：" .. hColor.yellow(unitLv) .. "级")
     --计算
     local towerId = hunit.getId(game.playerTower[playerIndex])
     hattr.set(

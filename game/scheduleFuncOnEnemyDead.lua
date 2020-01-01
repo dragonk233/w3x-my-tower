@@ -127,7 +127,7 @@ end
 enemyDeadYB = function()
     local u = hevent.getKiller()
     if (u ~= nil) then
-        haward.forGroupExp(u, 20 * game.rule.hz.wave)
+        haward.forGroupExp(u, 25 * game.rule.hz.wave)
     end
     deadAward(hevent.getTriggerUnit(), u)
 end
@@ -136,7 +136,7 @@ end
 enemyDeadHZ = function()
     local u = hevent.getKiller()
     if (u ~= nil) then
-        haward.forGroupExp(u, 15 * game.rule.hz.wave)
+        haward.forGroupExp(u, 20 * game.rule.hz.wave)
     end
     deadAward(hevent.getTriggerUnit(), u)
 end
@@ -146,7 +146,7 @@ enemyDeadDK = function()
     local u = hevent.getKiller()
     if (u ~= nil) then
         local pi = hplayer.index(cj.GetOwningPlayer(u))
-        local exp = 25 * game.rule.dk.wave[pi]
+        local exp = 20 * game.rule.dk.wave[pi]
         local gold = 3 * game.rule.dk.wave[pi]
         haward.forGroup(u, exp, gold, 0)
         game.rule.dk.playerQty[pi] = game.rule.dk.playerQty[pi] + 1
