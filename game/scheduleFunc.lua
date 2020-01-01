@@ -1,6 +1,7 @@
 require "game.scheduleFuncOnEnemyBeAttack"
 require "game.scheduleFuncOnEnemyDead"
 require "game.scheduleFuncOnItemUse"
+require "game.scheduleFuncOnCourierSkillUse"
 require "game.scheduleFuncTowerLevel"
 
 -- 出兵
@@ -72,8 +73,8 @@ enemyGenYB = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (10 * game.rule.yb.wave),
-                                    move = "=180"
+                                    life = "=" .. (30 * game.rule.yb.wave),
+                                    move = "=200"
                                 }
                             )
                             hevent.onBeDamage(u, enemyBeDamage)
@@ -136,8 +137,8 @@ enemyGenHZ = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (15 * game.rule.hz.wave),
-                                    move = "=180"
+                                    life = "=" .. (35 * game.rule.hz.wave),
+                                    move = "=200"
                                 }
                             )
                             hevent.onBeDamage(u, enemyBeDamage)
@@ -186,8 +187,8 @@ enemyGenDK = function(waiting)
                                     u,
                                     0,
                                     {
-                                        life = "=" .. (20 * game.rule.dk.wave[k]),
-                                        move = "=180"
+                                        life = "=" .. (40 * game.rule.dk.wave[k]),
+                                        move = "=200"
                                     }
                                 )
                                 game.rule.dk.monData[u] = {
@@ -353,6 +354,7 @@ createMyTower = function(playerIndex, towerId)
         end
         -- 如果有上一个单位，把上一个兵塔的物品给予新的兵塔，并删除它
         if (game.playerTower[playerIndex] ~= nil) then
+            subTowerLevel(playerIndex)
             hitem.copy(game.playerTower[playerIndex], u)
             hunit.del(game.playerTower[playerIndex], 0)
         end
@@ -367,7 +369,7 @@ createMyTower = function(playerIndex, towerId)
         print_mb(hslk_global.unitsKV[towerId].RACE)
         hskill.add(u, game.thisUnitRaceAbilities[hslk_global.unitsKV[towerId].RACE].ABILITY_ID, 0)
         --天赋等级
-        setTowerLevel(playerIndex)
+        addTowerLevel(playerIndex)
         --技能树
         for k, v in pairs(game.thisEmptyAbilities) do
             if (game.towersAbilities[playerIndex][k] == nil) then
@@ -422,6 +424,7 @@ createMyCourier = function(playerIndex, courierId)
             }
         )
         hevent.onItemUsed(u, onUnitItemsUesd)
+        hevent.onSkillHappen(u, onCourierSkillUesd)
         -- 如果有上一个单位，把上一个信使的物品给予新的信使，并删除它
         if (game.playerCourier[playerIndex] ~= nil) then
             hitem.copy(game.playerCourier[playerIndex], u)

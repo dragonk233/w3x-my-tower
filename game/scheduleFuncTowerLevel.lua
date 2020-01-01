@@ -1,10 +1,23 @@
-setTowerLevel = function(playerIndex)
+subTowerLevel = function(playerIndex)
     local oldLevel = game.playerTowerLevel[playerIndex]
     if (oldLevel ~= nil) then
         hskill.del(game.playerTower[playerIndex], game.thisUnitLevelAbilities[oldLevel].ABILITY_ID, 0)
-    else
-        oldLevel = 0
+        hattr.set(
+            game.playerTower[playerIndex],
+            0,
+            {
+                str_white = "-" .. (oldLevel * 0.15 * hslk_global.unitsKV[towerId].STR),
+                agi_white = "-" .. (oldLevel * 0.15 * hslk_global.unitsKV[towerId].AGI),
+                int_white = "-" .. (oldLevel * 0.15 * hslk_global.unitsKV[towerId].INT),
+                attack_white = "-" .. (oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
+                attack_green = "-" .. (oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
+            }
+        )
+        game.playerTowerLevel[playerIndex] = 0
     end
+end
+
+addTowerLevel = function(playerIndex)
     local unitLv = 0
     if (math.random(1, 6) == 1) then
         unitLv = 0
@@ -34,31 +47,16 @@ setTowerLevel = function(playerIndex)
     game.playerTowerLevel[playerIndex] = unitLv
     hmsg.echo00(hplayer.players[playerIndex], "兵塔得到了" .. hColor.yellow(unitLv) .. "级天赋")
     --计算
-    local diff = math.floor(unitLv - oldLevel)
     local towerId = hunit.getId(game.playerTower[playerIndex])
-    if (diff > 0) then
-        hattr.set(
-            game.playerTower[playerIndex],
-            0,
-            {
-                str_white = "+" .. (diff * 0.15 * hslk_global.unitsKV[towerId].STR),
-                agi_white = "+" .. (diff * 0.15 * hslk_global.unitsKV[towerId].AGI),
-                int_white = "+" .. (diff * 0.15 * hslk_global.unitsKV[towerId].INT),
-                attack_white = "+" .. (diff * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
-                attack_green = "+" .. (diff * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
-            }
-        )
-    elseif (diff < 0) then
-        hattr.set(
-            game.playerTower[playerIndex],
-            0,
-            {
-                str_white = "-" .. (diff * 0.15 * hslk_global.unitsKV[towerId].STR),
-                agi_white = "-" .. (diff * 0.15 * hslk_global.unitsKV[towerId].AGI),
-                int_white = "-" .. (diff * 0.15 * hslk_global.unitsKV[towerId].INT),
-                attack_white = "-" .. (diff * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
-                attack_green = "-" .. (diff * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
-            }
-        )
-    end
+    hattr.set(
+        game.playerTower[playerIndex],
+        0,
+        {
+            str_white = "+" .. (unitLv * 0.15 * hslk_global.unitsKV[towerId].STR),
+            agi_white = "+" .. (unitLv * 0.15 * hslk_global.unitsKV[towerId].AGI),
+            int_white = "+" .. (unitLv * 0.15 * hslk_global.unitsKV[towerId].INT),
+            attack_white = "+" .. (unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
+            attack_green = "+" .. (unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
+        }
+    )
 end

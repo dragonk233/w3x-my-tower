@@ -50,6 +50,13 @@ for i = 1, game.courierLen, 1 do
     hRuntime.register.item(jv)
     game.courierItem[jv.INDEX] = jv
 end
+--信使技能
+local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("couriers_ab"), -1)
+for i = 1, len, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriers_ab"), i)
+    local jv = json.parse(v)
+    hRuntime.register.ability(jv)
+end
 
 -- unit 其他单位
 local thisUnitNames = {

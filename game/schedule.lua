@@ -5,6 +5,8 @@ cj.TriggerAddAction(
     game.TRIGGER_DEMOVE,
     function()
         if (cj.GetIssuedOrderId() == 851971 or cj.GetIssuedOrderId() == 851986) then
+            local index = hplayer.index(cj.GetOwningPlayer(cj.GetTriggerUnit()))
+            cj.SetUnitPosition(cj.GetTriggerUnit(), game.towerPoint[index][1], game.towerPoint[index][2])
             cj.IssuePointOrderById(
                 cj.GetTriggerUnit(),
                 851983,
@@ -32,17 +34,17 @@ cj.TriggerAddAction(
             {
                 str = {
                     life = 10,
-                    attack_white = 0.15,
-                    attack_green = 0.15,
+                    attack_white = 0.13,
+                    attack_green = 0.13,
                     toughness = 0.25
                 },
                 agi = {
-                    attack_white = 0.6,
-                    attack_speed = 0.02,
+                    attack_white = 0.5,
+                    attack_speed = 0.01,
                     avoid = 0.06
                 },
                 int = {
-                    attack_green = 0.6,
+                    attack_green = 0.5,
                     resistance = 0.07
                 }
             }
