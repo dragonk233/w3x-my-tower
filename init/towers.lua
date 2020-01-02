@@ -29,29 +29,29 @@ for j=1,1,1 do
                 local tempAttackWhite = 0
                 local tempAttackGreen = 0
                 if (tlv == "E") then
-                    tempPower = 25 + math.random(-2,3)
+                    tempPower = 20 + math.random(-2,3)
                     tempAttack = 30 + math.random(-1,4)
                 elseif (tlv == "D") then
-                    tempPower = 40 + math.random(-3,4)
-                    tempAttack = 55 + math.random(-2,6)
+                    tempPower = 30 + math.random(-3,4)
+                    tempAttack = 60 + math.random(-2,6)
                 elseif (tlv == "C") then
-                    tempPower = 62 + math.random(-4,6)
-                    tempAttack = 85 + math.random(-4,8)
+                    tempPower = 45 + math.random(-4,6)
+                    tempAttack = 90 + math.random(-4,8)
                 elseif (tlv == "B") then
-                    tempPower = 81 + math.random(-4,6)
-                    tempAttack = 125 + math.random(-6,10)
+                    tempPower = 60 + math.random(-4,6)
+                    tempAttack = 150 + math.random(-6,10)
                 elseif (tlv == "A") then
-                    tempPower = 114 + math.random(-5,8)
-                    tempAttack = 200 + math.random(-8,13)
+                    tempPower = 80 + math.random(-5,8)
+                    tempAttack = 220 + math.random(-8,13)
                 elseif (tlv == "S") then
-                    tempPower = 136 + math.random(-6,9)
+                    tempPower = 100 + math.random(-6,9)
                     tempAttack = 350 + math.random(-10,15)
                 elseif (tlv == "SS") then
-                    tempPower = 167 + math.random(-7,11)
-                    tempAttack = 550 + math.random(-15,20)
+                    tempPower = 140 + math.random(-7,11)
+                    tempAttack = 450 + math.random(-15,20)
                 elseif (tlv == "SSS") then
-                    tempPower = 219 + math.random(-8,15)
-                    tempAttack = 700 + math.random(-25,75)
+                    tempPower = 180 + math.random(-8,15)
+                    tempAttack = 600 + math.random(-25,75)
                 end
                 if(Primary == "STR")then
                     v.STR = math.floor(tempPower * 0.06 * math.random(7,12))

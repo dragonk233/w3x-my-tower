@@ -114,8 +114,8 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.
 --其他例牌技能
 --吞兵塔石
 local obj = slk.ability.ANcl:new("couriers_sk_eat")
-local Name = "塔石吞噬"
-local Tip = "塔石吞噬("..hColor.greenLight("A")..") - "..hColor.sky("免费")
+local Name = "兵塔石吞噬"
+local Tip = "兵塔石吞噬("..hColor.greenLight("A")..") - "..hColor.sky("免费")
 obj.Order = "absorb"
 obj.DataF1 = "absorb"
 obj.Name = Name

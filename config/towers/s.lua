@@ -442,7 +442,7 @@ towers_s = {
         movetp = "foot",
         moveHeight = 0.00,
         weapTp1 = "missile",
-        Missileart = "war3mapImported\\animeslashfinal.mdl",
+        Missileart = "war3mapImported\\eff_animeslashfinal.mdl",
         cool1 = 1.80,
         Primary = "AGI",
     },

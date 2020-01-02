@@ -1,6 +1,6 @@
 --SLK系统
 
--- tower 兵塔
+-- tower 兵塔/兵塔物品
 game.towersLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("towers"), -1)
 for i = 1, game.towersLen, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), i)
@@ -21,6 +21,16 @@ for i = 1, game.towersLen, 1 do
     v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiies_tower_origins"), i)
     jv = json.parse(v)
     game.towersOrigins[jv.INDEX] = jv
+end
+
+for k, v in pairs(game.towersItems) do
+    hitem.create(
+        {
+            itemId = v.ITEM_ID,
+            x = -1603,
+            y = 2655
+        }
+    )
 end
 
 --shop
