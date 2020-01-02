@@ -23,7 +23,7 @@ obj.Cool1 = 8
 obj.Cost1 = 0
 obj.Art = "war3mapImported\\icon_ability_FireResistanceTotem_01.blp"
 obj.SpecialArt = "war3mapImported\\eff_different_liftoff.mdl"
-obj.Areaeffectart = "war3mapImported\\eff_fire_tail.mdx"
+obj.Areaeffectart = "war3mapImported\\eff_fire_tail.mdl"
 table.insert(couriersSkillsPhoenix,obj:get_id())
 --火凤凰-火焰吐息
 local obj = slk.ability.ANcl:new("couriers_sk_extra_phoenix")

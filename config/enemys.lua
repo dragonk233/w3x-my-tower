@@ -1015,14 +1015,14 @@ enemys = {
     },
     {
         Name = "泥人",
-        file = "war3mapImported\\unit_EarthElemental.mdx",
+        file = "war3mapImported\\unit_EarthElemental.mdl",
         modelScale = 1.00,
         scale = 1.00,
         unitSound = "RockGolem",
     },
     {
         Name = "火焰之灵",
-        file = "war3mapImported\\unit_FireElementalMan.mdx",
+        file = "war3mapImported\\unit_FireElementalMan.mdl",
         modelScale = 1.00,
         scale = 1.00,
         unitSound = "InfernalMachine",
