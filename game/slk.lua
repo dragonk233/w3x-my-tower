@@ -30,13 +30,15 @@ for i = 1, len, 1 do
 end
 
 for k, v in pairs(game.towersItems) do
-    hitem.create(
-        {
-            itemId = v.ITEM_ID,
-            x = -1603,
-            y = 2655
-        }
-    )
+    if (hSys.inArray(v.INDEX, {"人类·铁甲剑士_1"})) then
+        hitem.create(
+            {
+                itemId = v.ITEM_ID,
+                x = -1603,
+                y = 2655
+            }
+        )
+    end
 end
 
 --shop

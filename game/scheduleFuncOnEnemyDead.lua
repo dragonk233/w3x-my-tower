@@ -34,7 +34,6 @@ deadAward = function(triggerUnit, killer)
     elseif (maxLevel > 10) then
         maxLevel = 10
     end
-    print("maxLevel=" .. maxLevel)
     local level = cj.GetRandomInt(1, maxLevel)
     if (cj.GetRandomInt(1, 40) == 21) then
         -- 掉落蓝技能书

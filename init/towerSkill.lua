@@ -30,7 +30,7 @@ for k, v in pairs(temp_spx) do
     local obj = slk.ability.Aamk:new("abilities_power_spx_" .. v.Name)
     obj.Name = v.Name
     obj.Tip = v.Name
-    obj.Ubertip = v.Ubertip
+    obj.Ubertip = hColor.yellow(v.Ubertip)
     obj.Buttonpos1 = v.Buttonpos1
     obj.Buttonpos2 = v.Buttonpos2
     obj.hero = 0

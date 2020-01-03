@@ -335,8 +335,8 @@ obj.Ubertip = "花费30木头即可来一次开心抽金箱子哦~"
     .. "|n"..hColor.redLight("特等赏：黄金1888")
     .. "|n"..hColor.yellow("一等赏：黄金888")
     .. "|n"..hColor.yellowLight("二等赏：黄金388")
-    .. "|n"..hColor.sky("三等赏：黄金88")
-    .. "|n"..hColor.sky("安慰奖：谢谢惠顾")
+    .. "|n"..hColor.greenLight("三等赏：黄金88")
+    .. "|n"..hColor.skyLight("安慰奖：谢谢惠顾")
 obj.Buttonpos1 = 2
 obj.Buttonpos2 = 2
 obj.hero = 0

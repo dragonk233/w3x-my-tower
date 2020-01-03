@@ -183,32 +183,40 @@ onCourierSkillUesd = function()
             hplayer.subLumber(p, 30)
             local gold = 0
             local label = "谢谢惠顾"
+            local color = "ffffff"
             local randg = math.random(1, 100)
             if (randg >= 1 and randg < 54) then
                 gold = 88
                 label = "三等赏！"
+                color = "80ffff"
             elseif (randg >= 55 and randg <= 80) then
                 gold = 388
                 label = "二等赏！！"
+                color = "ffffcc"
             elseif (randg >= 80 and randg <= 90) then
                 gold = 888
                 label = "一等赏！！！"
+                color = "ffcc00"
             elseif (randg == 54) then
                 gold = 1888
                 label = "特等赏！！！！"
+                color = "ff3939"
             end
             if (gold > 0) then
                 hsound.sound2Player(cg.gg_snd_coin_1, p)
                 hplayer.addGold(p, gold)
                 htextTag.style(
-                    htextTag.create2Unit(u, label .. "+ " .. gold, 7, "ffcc00", 1, 1.70, 60.00),
+                    htextTag.create2Unit(u, label .. "+ " .. gold, 7, color, 1, 1.70, 60.00),
                     "toggle",
                     0,
                     0.25
                 )
+                if (gold >= 888) then
+                    hmsg.echo(hColor.sky(cj.GetPlayerName(p)) .. "抽到了|cff" .. color .. label .. "|r，大家祝贺TA！")
+                end
             else
                 hsound.sound2Player(cg.gg_snd_sell_item, p)
-                htextTag.style(htextTag.create2Unit(u, label, 7, "ffcc00", 1, 1.70, 60.00), "toggle", 0, 0.25)
+                htextTag.style(htextTag.create2Unit(u, label, 7, color, 1, 1.70, 60.00), "toggle", 0, 0.25)
             end
         end
     elseif (abilitiesSLK.Name == "装备升华") then
