@@ -324,14 +324,19 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.
 <?
 --木换金
 local obj = slk.ability.ANcl:new("couriers_sk_l2g")
-local Name = "木换金"
-local Tip = "木换金("..hColor.greenLight("C")..") - "..hColor.green("10木头")
+local Name = "开心金箱子"
+local Tip = "开心金箱子("..hColor.greenLight("C")..") - "..hColor.green("30木头")
 obj.Order = "ancestralspirittarget"
 obj.DataF1 = "ancestralspirittarget"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "C"
-obj.Ubertip = "以10木头换取300金币"
+obj.Ubertip = "花费30木头即可来一次开心抽金箱子哦~"
+    .. "|n"..hColor.redLight("特等赏：黄金1888")
+    .. "|n"..hColor.yellow("一等赏：黄金888")
+    .. "|n"..hColor.yellowLight("二等赏：黄金388")
+    .. "|n"..hColor.sky("三等赏：黄金88")
+    .. "|n"..hColor.sky("安慰奖：谢谢惠顾")
 obj.Buttonpos1 = 2
 obj.Buttonpos2 = 2
 obj.hero = 0

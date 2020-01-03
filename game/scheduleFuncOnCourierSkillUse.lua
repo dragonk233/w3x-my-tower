@@ -175,14 +175,41 @@ onCourierSkillUesd = function()
             subTowerLevel(playerIndex)
             addTowerLevel(playerIndex)
         end
-    elseif (abilitiesSLK.Name == "木换金") then
-        if (hplayer.getLumber(p) < 10) then
-            htextTag.style(htextTag.create2Unit(u, "不够10木头呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
+    elseif (abilitiesSLK.Name == "开心金箱子") then
+        if (hplayer.getLumber(p) < 30) then
+            htextTag.style(htextTag.create2Unit(u, "不够30木头呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subLumber(p, 10)
-            hplayer.addGold(p, 300)
-            htextTag.style(htextTag.create2Unit(u, "+300 Gold", 7, "ffcc00", 1, 1.70, 60.00), "toggle", 0, 0.25)
+            hplayer.subLumber(p, 30)
+            local gold = 0
+            local label = "谢谢惠顾"
+            local randg = math.random(1, 100)
+            if (randg >= 1 and randg < 54) then
+                gold = 88
+                label = "三等赏！"
+            elseif (randg >= 55 and randg <= 80) then
+                gold = 388
+                label = "二等赏！！"
+            elseif (randg >= 80 and randg <= 90) then
+                gold = 888
+                label = "一等赏！！！"
+            elseif (randg == 54) then
+                gold = 1888
+                label = "特等赏！！！！"
+            end
+            if (gold > 0) then
+                hsound.sound2Player(cg.gg_snd_coin_1, p)
+                hplayer.addGold(p, gold)
+                htextTag.style(
+                    htextTag.create2Unit(u, label .. "+ " .. gold, 7, "ffcc00", 1, 1.70, 60.00),
+                    "toggle",
+                    0,
+                    0.25
+                )
+            else
+                hsound.sound2Player(cg.gg_snd_sell_item, p)
+                htextTag.style(htextTag.create2Unit(u, label, 7, "ffcc00", 1, 1.70, 60.00), "toggle", 0, 0.25)
+            end
         end
     elseif (abilitiesSLK.Name == "装备升华") then
         if (hplayer.getGold(p) < 500) then

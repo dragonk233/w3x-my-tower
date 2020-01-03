@@ -3,6 +3,8 @@ require "game.scheduleFuncOnEnemyDead"
 require "game.scheduleFuncOnItemUse"
 require "game.scheduleFuncOnCourierSkillUse"
 require "game.scheduleFuncTowerLevel"
+require "game.scheduleFuncTowerSkillRace"
+require "game.scheduleFuncTowerSkillx"
 
 -- 出兵
 enemyGenYB = function(waiting)
@@ -367,8 +369,9 @@ createMyTower = function(playerIndex, towerId)
         --兵塔说明标志
         hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
         --种族
-        print_mb(hslk_global.unitsKV[towerId].RACE)
-        hskill.add(u, game.thisUnitRaceAbilities[hslk_global.unitsKV[towerId].RACE].ABILITY_ID, 0)
+        addTowerSkillsRace(u, hslk_global.unitsKV[towerId])
+        --兵塔技能
+        addTowerSkillsx(u)
         --天赋等级
         addTowerLevel(playerIndex)
         --技能树

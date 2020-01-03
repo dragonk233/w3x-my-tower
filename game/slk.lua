@@ -1,6 +1,6 @@
 --SLK系统
 
--- tower 兵塔/兵塔物品
+-- tower 兵塔/兵塔物品/兵塔技能
 game.towersLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("towers"), -1)
 for i = 1, game.towersLen, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), i)
@@ -21,6 +21,12 @@ for i = 1, game.towersLen, 1 do
     v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiies_tower_origins"), i)
     jv = json.parse(v)
     game.towersOrigins[jv.INDEX] = jv
+end
+local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("tower_spx_ab"), -1)
+for i = 1, len, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("tower_spx_ab"), i)
+    local jv = json.parse(v)
+    game.towersSkillKV[jv.Name] = jv.ABILITY_ID
 end
 
 for k, v in pairs(game.towersItems) do
