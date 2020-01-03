@@ -13,6 +13,13 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
+        abilList = hSys.implode(
+            ",",
+            {
+                towerSpxKV["封印枷锁之一"],
+                towerSpxKV["封印枷锁之二"]
+            }
+        )
     },
     {
         Name = "人类·民兵",
@@ -27,7 +34,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.00,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "人类·刺客",
@@ -42,7 +49,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.10,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "兽人·苦力",
@@ -57,7 +64,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.20,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "兽人·发狂苦力",
@@ -72,7 +79,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.10,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "兽人·豺狼战士",
@@ -87,7 +94,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\PoisonArrow\\PoisonArrowMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "血精灵·工程师",
@@ -102,7 +109,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "亡灵·侍僧",
@@ -117,7 +124,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl",
         cool1 = 2.20,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "亡灵·食尸鬼",
@@ -132,7 +139,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "SharedModels\\Bones1.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "亡灵·骷髅战士",
@@ -147,7 +154,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "SharedModels\\Bones1.mdl",
         cool1 = 2.20,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "暗夜精灵·小精灵",
@@ -162,7 +169,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl",
         cool1 = 2.10,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "娜迦·穆格尔小鱼",
@@ -177,7 +184,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "娜迦·飞蛇",
@@ -192,7 +199,7 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WingedSerpentMissile\\WingedSerpentMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "地精·人工小子",
@@ -207,6 +214,6 @@ towers_e = {
         weapTp1 = "missile",
         Missileart = "abilities\\weapons\\WyvernSpear\\WyvernSpearMissile.mdl",
         cool1 = 2.30,
-        Primary = "STR",
+        Primary = "STR"
     }
 }

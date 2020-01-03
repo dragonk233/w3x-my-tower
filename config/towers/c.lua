@@ -17,7 +17,8 @@ towers_c = {
         AGI = 12,
         INT = 9,
         ATTACK_WHITE = 40,
-        ATTACK_GREEN = 0
+        ATTACK_GREEN = 0,
+        abilList = {towerSpxKV["铁壁"]}
     },
     {
         Name = "人类·铁甲骑兵",
@@ -173,7 +174,7 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
         cool1 = 2.20,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "亡灵·飞艇",
@@ -188,7 +189,7 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\CannonTowerMissile\\CannonTowerMissile.mdl",
         cool1 = 2.30,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "娜迦·塞壬",
@@ -203,7 +204,7 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "娜迦·唱歌的塞壬",
@@ -218,7 +219,7 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "元素·海元素",
@@ -233,6 +234,6 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SeaElementalMissile\\SeaElementalMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR",
-    },
+        Primary = "STR"
+    }
 }

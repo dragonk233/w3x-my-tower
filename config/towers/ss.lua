@@ -452,7 +452,7 @@ towers_ss = {
     },
     {
         Name = "元素·霹雳电魔",
-        Ubertip = "于冰封之地从海洋中诞生，一切尽毁于寒",
+        Ubertip = "雷电的化身",
         unitSound = "",
         file = "war3mapImported\\unit_NakedLightning.mdl",
         Art = "war3mapImported\\icon_unit_IcyGhostA.blp",

@@ -40,7 +40,7 @@ cj.TriggerAddAction(
                 },
                 agi = {
                     attack_white = 0.4,
-                    attack_speed = 0.005,
+                    --attack_speed = 0.005,
                     avoid = 0.05
                 },
                 int = {

@@ -55,13 +55,13 @@ towerRaces = {
     },
     {
         Name = "亡灵",
-        Ubertip = "看上去像是死了，其实是被净化了",
+        Ubertip = "亡灵不会死亡，消失的亡灵实际上是被净化了",
         Text = "+1护甲",
         Art = "war3mapImported\\icon_race_undead.blp",
     },
     {
         Name = "娜迦",
-        Ubertip = "一般都长得像条蛇",
+        Ubertip = "一般都长得像条蛇，有的自称为龙",
         Text = "+0.5%水攻击",
         Art = "war3mapImported\\icon_race_naga.blp",
     },

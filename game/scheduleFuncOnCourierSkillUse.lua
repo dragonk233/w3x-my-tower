@@ -75,7 +75,7 @@ onCourierSkillUesd = function()
                 lvUpQty + hhero.getCurLevel(game.playerTower[playerIndex]),
                 false
             )
-            hmsg.echo00(p, hColor.sky(itemSLK.Name) .. "通过吞噬兵塔石提升了" .. hColor.yellow(lvUpQty) .. "级")
+            hmsg.echo00(p, "通过吞噬兵塔石,兵塔提升了" .. hColor.yellow(lvUpQty) .. "级")
         else
             htextTag.style(htextTag.create2Unit(u, "找不到兵塔石~", 7, "ffff00", 1, 1.5, 50), "scale", 0, 0.05)
         end

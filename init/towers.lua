@@ -147,7 +147,23 @@ for j=1,1,1 do
                 obj.targs1 = "vulnerable,ground,ward,structure,organic,mechanical,tree,debris,air" --攻击目标
                 obj.EditorSuffix = "#" .. tlv
                 obj.Propernames = tlv .. "级兵塔"
-                obj.abilList = v.abilList or ""
+                local abl = v.abilList
+                if(abl ~= nil)then
+                    if(type(abl) == "string")then
+                        abl = hSys.explode(',', abl)
+                    elseif(type(abl) ~= "table")then
+                        abl = {}
+                    end
+                end
+                if(abl == nil or #abl ==0)then
+                    abl = {
+                        towerSpxKV["封印枷锁之一"],
+                        towerSpxKV["封印枷锁之二"]
+                    }
+                elseif(#abl == 1)then
+                    table.insert( abl, towerSpxKV["封印枷锁之二"] )
+                end
+                obj.abilList = hSys.implode(",",abl)
                 obj.heroAbilList = ""
                 obj.nameCount = v.nameCount or 1
                 if (v.weapTp1 == "msplash" or v.weapTp1 == "artillery") then
