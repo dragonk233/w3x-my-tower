@@ -17,14 +17,14 @@ abilities = {
         Name = "致命一击",
         ABILITY_COLOR = "blue",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCriticalStrike.blp",
-        Ubertip = "+{val#1}%物理暴击几率|n+50%物理暴击伤害",
+        Ubertip = "+{val#1}%物理暴击几率|n+25%物理暴击伤害",
         Val = {5}
     },
     {
         Name = "魔法回应",
         ABILITY_COLOR = "blue",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFeedBack.blp",
-        Ubertip = "+{val#1}%魔法暴击几率|n+50%魔法暴击伤害",
+        Ubertip = "+{val#1}%魔法暴击几率|n+25%魔法暴击伤害",
         Val = {5}
     },
     {
@@ -83,13 +83,13 @@ abilities = {
         ABILITY_COLOR = "purple",
         Art = "war3mapImported\\icon_pas_Holy_WeaponMastery.blp",
         Ubertip = "+{val#1}点物理攻击，+{val#2}%攻击速度",
-        Val = {100, 15}
+        Val = {50, 15}
     },
     {
         Name = "法术天尊",
         ABILITY_COLOR = "purple",
         Art = "war3mapImported\\icon_pas_Holy_HolyNova.blp",
         Ubertip = "+{val#1}点魔法攻击，+{val#2}%攻击速度",
-        Val = {120, 10}
+        Val = {65, 10}
     }
 }
