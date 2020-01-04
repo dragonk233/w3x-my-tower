@@ -47,7 +47,7 @@ onUnitItemsUesd = function()
         local btns = {}
         local emptySite = nil
         for k, v in ipairs(sites) do
-            if (game.towersAbilities[playerIndex][v].level == nil) then
+            if (game.towersAbilities[playerIndex][v].ABILITY_LEVEL == nil) then
                 if (emptySite == nil) then
                     emptySite = v
                     break
@@ -55,7 +55,7 @@ onUnitItemsUesd = function()
                 btns[k] = {
                     value = v,
                     label = hColor.yellow(
-                        "[" .. v .. "]-[" .. hColor.grey(game.towersAbilities[playerIndex][v].name) .. "]"
+                        "[" .. v .. "]-[" .. hColor.grey(game.towersAbilities[playerIndex][v].Name) .. "]"
                     )
                 }
             else
@@ -65,8 +65,8 @@ onUnitItemsUesd = function()
                         "[" ..
                             v ..
                                 "]-[" ..
-                                    game.towersAbilities[playerIndex][v].name ..
-                                        "][" .. game.towersAbilities[playerIndex][v].level .. "级]"
+                                    game.towersAbilities[playerIndex][v].Name ..
+                                        "][" .. game.towersAbilities[playerIndex][v].ABILITY_LEVEL .. "级]"
                     )
                 }
             end
@@ -97,13 +97,12 @@ onUnitItemsUesd = function()
                                 "]位置，来学习[" ..
                                     hColor.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
                     )
-                    hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
-                    hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)
-                    game.towersAbilities[playerIndex][btnIdx] = {
-                        ability_id = abils[btnIdx].ABILITY_ID,
-                        level = abils[btnIdx].ABILITY_LEVEL,
-                        name = abils[btnIdx].Name
-                    }
+                    delTowerSkillByBook(
+                        game.playerTower[playerIndex],
+                        btnIdx,
+                        game.towersAbilities[playerIndex][btnIdx]
+                    )
+                    addTowerSkillByBook(game.playerTower[playerIndex], btnIdx, abils[btnIdx])
                     if (itemSLK.ABILITY_COLOR == "yellow") then
                         heffect.toUnit("war3mapImported\\eff_burst_round_gold.mdl", game.playerTower[playerIndex], 0)
                     elseif (itemSLK.ABILITY_COLOR == "blue") then
@@ -121,13 +120,8 @@ onUnitItemsUesd = function()
                     hColor.yellow(btnIdx) ..
                         "]位置，学习了[" .. hColor.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
             )
-            hskill.del(game.playerTower[playerIndex], game.towersAbilities[playerIndex][btnIdx].ability_id, 0)
-            hskill.add(game.playerTower[playerIndex], abils[btnIdx].ABILITY_ID)
-            game.towersAbilities[playerIndex][btnIdx] = {
-                ability_id = abils[btnIdx].ABILITY_ID,
-                level = abils[btnIdx].ABILITY_LEVEL,
-                name = abils[btnIdx].Name
-            }
+            delTowerSkillByBook(game.playerTower[playerIndex], btnIdx, game.towersAbilities[playerIndex][btnIdx])
+            addTowerSkillByBook(game.playerTower[playerIndex], btnIdx, abils[btnIdx])
             if (itemSLK.ABILITY_COLOR == "yellow") then
                 heffect.toUnit("war3mapImported\\eff_burst_round_gold.mdl", game.playerTower[playerIndex], 0)
             elseif (itemSLK.ABILITY_COLOR == "blue") then

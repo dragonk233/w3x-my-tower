@@ -2,18 +2,27 @@ subTowerLevel = function(playerIndex)
     local oldLevel = game.playerTowerLevel[playerIndex]
     if (oldLevel ~= nil) then
         hskill.del(game.playerTower[playerIndex], game.thisUnitLevelAbilities[oldLevel].ABILITY_ID, 0)
-        local towerId = hunit.getId(game.playerTower[playerIndex])
-        hattr.set(
-            game.playerTower[playerIndex],
-            0,
-            {
-                str_white = "-" .. (oldLevel * 0.15 * hslk_global.unitsKV[towerId].STR),
-                agi_white = "-" .. (oldLevel * 0.15 * hslk_global.unitsKV[towerId].AGI),
-                int_white = "-" .. (oldLevel * 0.15 * hslk_global.unitsKV[towerId].INT),
-                attack_white = "-" .. (oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
-                attack_green = "-" .. (oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
-            }
-        )
+        if (oldLevel > 0) then
+            local towerId = hunit.getId(game.playerTower[playerIndex])
+            hattr.set(
+                game.playerTower[playerIndex],
+                0,
+                {
+                    str_white = "-" .. math.floor(oldLevel * 0.15 * hslk_global.unitsKV[towerId].STR),
+                    agi_white = "-" .. math.floor(oldLevel * 0.15 * hslk_global.unitsKV[towerId].AGI),
+                    int_white = "-" .. math.floor(oldLevel * 0.15 * hslk_global.unitsKV[towerId].INT),
+                    attack_white = "-" .. math.floor(oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
+                    attack_green = "-" .. math.floor(oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
+                }
+            )
+            print_mbr({
+                str_white = "-" .. math.floor(oldLevel * 0.15 * hslk_global.unitsKV[towerId].STR),
+                agi_white = "-" .. math.floor(oldLevel * 0.15 * hslk_global.unitsKV[towerId].AGI),
+                int_white = "-" .. math.floor(oldLevel * 0.15 * hslk_global.unitsKV[towerId].INT),
+                attack_white = "-" .. math.floor(oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
+                attack_green = "-" .. math.floor(oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
+            })
+        end
         game.playerTowerLevel[playerIndex] = 0
     end
 end
@@ -54,16 +63,25 @@ addTowerLevel = function(playerIndex)
         )
     end
     --计算
-    local towerId = hunit.getId(game.playerTower[playerIndex])
-    hattr.set(
-        game.playerTower[playerIndex],
-        0,
-        {
-            str_white = "+" .. (unitLv * 0.15 * hslk_global.unitsKV[towerId].STR),
-            agi_white = "+" .. (unitLv * 0.15 * hslk_global.unitsKV[towerId].AGI),
-            int_white = "+" .. (unitLv * 0.15 * hslk_global.unitsKV[towerId].INT),
-            attack_white = "+" .. (unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
-            attack_green = "+" .. (unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
-        }
-    )
+    if (unitLv > 0) then
+        local towerId = hunit.getId(game.playerTower[playerIndex])
+        hattr.set(
+            game.playerTower[playerIndex],
+            0,
+            {
+                str_white = "+" .. math.floor(unitLv * 0.15 * hslk_global.unitsKV[towerId].STR),
+                agi_white = "+" .. math.floor(unitLv * 0.15 * hslk_global.unitsKV[towerId].AGI),
+                int_white = "+" .. math.floor(unitLv * 0.15 * hslk_global.unitsKV[towerId].INT),
+                attack_white = "+" .. math.floor(unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
+                attack_green = "+" .. math.floor(unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
+            }
+        )
+        print_mbr({
+            str_white = "+" .. math.floor(unitLv * 0.15 * hslk_global.unitsKV[towerId].STR),
+            agi_white = "+" .. math.floor(unitLv * 0.15 * hslk_global.unitsKV[towerId].AGI),
+            int_white = "+" .. math.floor(unitLv * 0.15 * hslk_global.unitsKV[towerId].INT),
+            attack_white = "+" .. math.floor(unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
+            attack_green = "+" .. math.floor(unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
+        })
+    end
 end

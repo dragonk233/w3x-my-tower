@@ -332,6 +332,7 @@ obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "C"
 obj.Ubertip = "花费30木头即可来一次开心抽金箱子哦~"
+    .. "|n"..hColor.green("**免费木头途径：过1关得1木、地图等级x10**")
     .. "|n"..hColor.redLight("特等赏：黄金1888")
     .. "|n"..hColor.yellow("一等赏：黄金888")
     .. "|n"..hColor.yellowLight("二等赏：黄金388")

@@ -1,5 +1,19 @@
 abilities = {
     {
+        Name = "战斗传统",
+        ABILITY_COLOR = "blue",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCommand.blp",
+        Ubertip = "+{val#1}物理攻击",
+        Val = {25}
+    },
+    {
+        Name = "魔法杖",
+        ABILITY_COLOR = "blue",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBrilliance.blp",
+        Ubertip = "+{val#1}魔法攻击",
+        Val = {25}
+    },
+    {
         Name = "致命一击",
         ABILITY_COLOR = "blue",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCriticalStrike.blp",
