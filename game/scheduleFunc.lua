@@ -352,7 +352,7 @@ createMyTower = function(playerIndex, towerId)
         -- 如果上一个单位有技能，复制技能
         if (game.towersAbilities[playerIndex] ~= nil) then
             for k, v in pairs(game.towersAbilities[playerIndex]) do
-                hskill.add(u, v.ability_id)
+                addTowerSkillByBook(u, v)
             end
         end
         -- 如果有上一个单位，把上一个兵塔的物品给予新的兵塔，并删除它

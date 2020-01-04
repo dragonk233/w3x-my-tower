@@ -1,3 +1,5 @@
+require "game.scheduleFuncTowerSkillBook"
+
 -- 使用物品
 onUnitItemsUesd = function()
     local u = hevent.getTriggerUnit()
