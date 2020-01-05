@@ -77,8 +77,7 @@ cj.TriggerAddAction(
                     cj.FogEnable(false)
                     cj.FogMaskEnable(false)
                     -- 大精灵
-                    local bigElf =
-                        hunit.create(
+                    local bigElf = hunit.create(
                         {
                             whichPlayer = game.ALLY_PLAYER,
                             unitId = game.thisUnits["大精灵"].UNIT_ID,
@@ -139,10 +138,10 @@ cj.TriggerAddAction(
                                                             bigElf,
                                                             "-" ..
                                                                 game.rule.yb.wave ..
-                                                                    " " ..
-                                                                        game.bigElfTips[
-                                                                            cj.GetRandomInt(1, #game.bigElfTips)
-                                                                        ],
+                                                                " " ..
+                                                                game.bigElfTips[
+                                                                cj  .GetRandomInt(1, #game.bigElfTips)
+                                                                ],
                                                             10.00,
                                                             "ff0000",
                                                             1,
@@ -194,8 +193,7 @@ cj.TriggerAddAction(
                             local v = math.floor(hplayer.getDamage(p) * 0.1)
                             local bigElfLife = "GG"
                             if (his.alive(bigElf)) then
-                                bigElfLife =
-                                    hColor.white(math.floor(hunit.getCurLife(bigElf))) ..
+                                bigElfLife = hColor.white(math.floor(hunit.getCurLife(bigElf))) ..
                                     "/" .. math.floor(hunit.getMaxLife(bigElf))
                             end
                             cj.LeaderboardSetLabel(bl, "百波战力榜[" .. game.rule.yb.wave .. "波][精灵 " .. bigElfLife .. "]")
@@ -208,8 +206,7 @@ cj.TriggerAddAction(
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)
                     cj.FogEnable(false)
                     cj.FogMaskEnable(false)
-                    local bigElf =
-                        hunit.create(
+                    local bigElf = hunit.create(
                         {
                             whichPlayer = game.ALLY_PLAYER,
                             unitId = game.thisUnits["光辉城主"].UNIT_ID,
@@ -270,10 +267,10 @@ cj.TriggerAddAction(
                                                             bigElf,
                                                             "-" ..
                                                                 game.rule.hz.wave ..
-                                                                    " " ..
-                                                                        game.bigElfTips[
-                                                                            cj.GetRandomInt(1, #game.bigElfTips)
-                                                                        ],
+                                                                " " ..
+                                                                game.bigElfTips[
+                                                                cj  .GetRandomInt(1, #game.bigElfTips)
+                                                                ],
                                                             10.00,
                                                             "ff0000",
                                                             1,
@@ -325,8 +322,7 @@ cj.TriggerAddAction(
                             local v = math.floor(hplayer.getDamage(p) * 0.1)
                             local bigElfLife = "GG"
                             if (his.alive(bigElf)) then
-                                bigElfLife =
-                                    hColor.white(math.floor(hunit.getCurLife(bigElf))) ..
+                                bigElfLife = hColor.white(math.floor(hunit.getCurLife(bigElf))) ..
                                     "/" .. math.floor(hunit.getMaxLife(bigElf))
                             end
                             cj.LeaderboardSetLabel(bl, "合作战力榜[" .. game.rule.hz.wave .. "波][树灵 " .. bigElfLife .. "]")

@@ -62,8 +62,7 @@ enemyGenYB = function(waiting)
                     end
                     for k, v in pairs(game.pathPoint) do
                         if (his.playing(hplayer.players[k])) then
-                            local u =
-                                hemeny.create(
+                            local u = hemeny.create(
                                 {
                                     unitId = game.rule.yb.mon,
                                     qty = 1,
@@ -126,8 +125,7 @@ enemyGenHZ = function(waiting)
                     end
                     for k, v in pairs(game.pathPoint) do
                         if (his.playing(hplayer.players[k])) then
-                            local u =
-                                hemeny.create(
+                            local u = hemeny.create(
                                 {
                                     unitId = game.rule.hz.mon,
                                     qty = 1,
@@ -176,8 +174,7 @@ enemyGenDK = function(waiting)
                         if (his.playing(hplayer.players[k])) then
                             if (game.rule.dk.monLimit[k] < game.rule.dk.perWaveQty) then
                                 game.rule.dk.monLimit[k] = game.rule.dk.monLimit[k] + 1
-                                local u =
-                                    hemeny.create(
+                                local u = hemeny.create(
                                     {
                                         unitId = game.rule.dk.mon[k],
                                         qty = 1,
@@ -286,8 +283,7 @@ createMyTower = function(playerIndex, towerId)
             prevHeroLevel = cj.GetHeroLevel(game.playerTower[playerIndex]) + 1
             cj.ShowUnit(game.playerTower[playerIndex], false)
         end
-        local u =
-            hunit.create(
+        local u = hunit.create(
             {
                 whichPlayer = hplayer.players[playerIndex],
                 unitId = towerId,
@@ -407,8 +403,7 @@ createMyCourier = function(playerIndex, courierId)
             x = game.courierPoint[playerIndex][1]
             y = game.courierPoint[playerIndex][2]
         end
-        local u =
-            hunit.create(
+        local u = hunit.create(
             {
                 whichPlayer = hplayer.players[playerIndex],
                 unitId = courierId,

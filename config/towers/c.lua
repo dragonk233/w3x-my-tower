@@ -18,7 +18,7 @@ towers_c = {
         INT = 9,
         ATTACK_WHITE = 40,
         ATTACK_GREEN = 0,
-        abilList = {towerSpxKV["铁壁"]}
+        abilList = { towerSpxKV["铁壁"] }
     },
     {
         Name = "人类·铁甲骑兵",

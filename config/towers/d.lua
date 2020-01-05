@@ -101,7 +101,7 @@ towers_d = {
         moveHeight = 225,
         weapTp1 = "missile",
         Missileart = "abilities\\weapons\\WyvernSpear\\WyvernSpearMissile.mdl",
-        cool1 = 2.00, 
+        cool1 = 2.00,
         Primary = "AGI",
     },
     {

@@ -54,7 +54,7 @@ addTowerSkillsRace = function(u, slk)
             {
                 attack_buff = {
                     add = {
-                        {attr = "attack_speed", odds = 100, val = 5, during = 6}
+                        { attr = "attack_speed", odds = 100, val = 5, during = 6 }
                     }
                 }
             }
@@ -170,7 +170,7 @@ addTowerSkillsRace = function(u, slk)
             {
                 attack_effect = {
                     add = {
-                        {attr = "swim", odds = 10, val = 0, during = 1}
+                        { attr = "swim", odds = 10, val = 0, during = 1 }
                     }
                 }
             }

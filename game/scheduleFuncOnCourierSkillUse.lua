@@ -127,27 +127,27 @@ onCourierSkillUesd = function()
             return
         else
             hplayer.subGold(p, 400)
-            local tpow = {E = 1}
+            local tpow = { E = 1 }
             if (level == 1) then
-                tpow = {E = 1}
+                tpow = { E = 1 }
             elseif (level == 2) then
-                tpow = {E = 7, D = 3}
+                tpow = { E = 7, D = 3 }
             elseif (level == 3) then
-                tpow = {E = 4, D = 6, C = 1}
+                tpow = { E = 4, D = 6, C = 1 }
             elseif (level == 4) then
-                tpow = {E = 3, D = 6, C = 2, B = 1}
+                tpow = { E = 3, D = 6, C = 2, B = 1 }
             elseif (level == 5) then
-                tpow = {D = 4, C = 6, B = 1}
+                tpow = { D = 4, C = 6, B = 1 }
             elseif (level == 6) then
-                tpow = {D = 6, C = 16, B = 4, A = 1}
+                tpow = { D = 6, C = 16, B = 4, A = 1 }
             elseif (level == 7) then
-                tpow = {C = 10, B = 10, A = 1}
+                tpow = { C = 10, B = 10, A = 1 }
             elseif (level == 8) then
-                tpow = {C = 9, B = 27, A = 3, S = 1}
+                tpow = { C = 9, B = 27, A = 3, S = 1 }
             elseif (level == 9) then
-                tpow = {B = 10, A = 8, S = 2, SS = 1}
+                tpow = { B = 10, A = 8, S = 2, SS = 1 }
             elseif (level == 10) then
-                tpow = {A = 15, S = 30, SS = 5, SSS = 1}
+                tpow = { A = 15, S = 30, SS = 5, SSS = 1 }
             end
             local targetTPows = {}
             for k, v in pairs(tpow) do

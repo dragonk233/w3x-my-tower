@@ -12,7 +12,7 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = nil,
-        Shop = {"小鬼珍宝市场"}
+        Shop = { "小鬼珍宝市场" }
     },
     {
         Name = "红宝石",
@@ -29,7 +29,7 @@ items_xiaogui = {
             resistance = "+20",
             mana = "+500"
         },
-        Shop = {"小鬼珍宝市场"}
+        Shop = { "小鬼珍宝市场" }
     },
     {
         Name = "绿宝石",
@@ -43,10 +43,10 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = {"wood"},
+            attack_hunt_type = { "wood" },
             avoid = "+15"
         },
-        Shop = {"小鬼珍宝市场"}
+        Shop = { "小鬼珍宝市场" }
     },
     {
         Name = "真眼宝石",
@@ -61,7 +61,7 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = nil,
-        Shop = {"小鬼珍宝市场"}
+        Shop = { "小鬼珍宝市场" }
     },
     {
         Name = "火焰水晶",
@@ -75,11 +75,11 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = {"fire"},
+            attack_hunt_type = { "fire" },
             split = 12,
             split_range = 100
         },
-        Shop = {"小鬼珍宝市场"}
+        Shop = { "小鬼珍宝市场" }
     },
     {
         Name = "闪电水晶",
@@ -93,13 +93,13 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = {"thunder"},
+            attack_hunt_type = { "thunder" },
             attack_speed = 35,
             attack_effect = {
-                lightning_chain = {odds = 15, val = 220, qty = 3, reduce = 15}
+                lightning_chain = { odds = 15, val = 220, qty = 3, reduce = 15 }
             }
         },
-        Shop = {"小鬼珍宝市场"}
+        Shop = { "小鬼珍宝市场" }
     },
     {
         Name = "恶鬼水晶",
@@ -113,14 +113,14 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = {"ghost"},
+            attack_hunt_type = { "ghost" },
             attack_debuff = {
                 add = {
-                    {attr = "defend", odds = 25, val = 2, during = 5, model = nil}
+                    { attr = "defend", odds = 25, val = 2, during = 5, model = nil }
                 }
             }
         },
-        Shop = {"小鬼珍宝市场"}
+        Shop = { "小鬼珍宝市场" }
     },
     {
         Name = "霜冻水晶",
@@ -134,9 +134,9 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = {"ice"},
+            attack_hunt_type = { "ice" },
             defend = 30
         },
-        Shop = {"小鬼珍宝市场"}
+        Shop = { "小鬼珍宝市场" }
     }
 }
