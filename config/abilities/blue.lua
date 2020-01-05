@@ -26,7 +26,7 @@ abilitiesBlue = {
     {
         Name = "强击之箭",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNTrueShot.blp",
-        Ubertip = "+{val#1}物理攻击|n+{val#1}魔法攻击",
+        Ubertip = "+{val#1}物理攻击|n+{val#2}魔法攻击",
         Val = {20, 20}
     },
     {
@@ -50,13 +50,13 @@ abilitiesBlue = {
     {
         Name = "星辰攻击",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNScatterRockets.blp",
-        Ubertip = "+{val#1}%眩晕|n+0.5秒眩晕持续时间",
+        Ubertip = "+{val#1}%眩晕0.5秒",
         Val = {2.5}
     },
     {
         Name = "强烈炮弹",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNHumanArtilleryUpOne.blp",
-        Ubertip = "+{val#1}%眩晕|n无眩晕时间时无效",
+        Ubertip = "+{val#1}%眩晕0.25秒",
         Val = {4.5}
     },
     {

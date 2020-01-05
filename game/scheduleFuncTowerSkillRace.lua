@@ -53,10 +53,8 @@ addTowerSkillsRace = function(u, slk)
             0,
             {
                 attack_buff = {
-                    attack_speed = {
-                        odds = "+100",
-                        val = "+5",
-                        during = "+6"
+                    add = {
+                        {attr = "attack_speed", odds = 100, val = 5, during = 6}
                     }
                 }
             }
@@ -91,11 +89,12 @@ addTowerSkillsRace = function(u, slk)
             0,
             {
                 attack_debuff = {
-                    move = {
-                        odds = "+100",
-                        val = "+45",
-                        during = "+2.2",
-                        model = "+Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
+                    add = {
+                        attr = "move",
+                        odds = 100,
+                        val = 45,
+                        during = 2.2,
+                        model = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
                     }
                 }
             }
@@ -170,7 +169,9 @@ addTowerSkillsRace = function(u, slk)
             0,
             {
                 attack_effect = {
-                    swim = {odds = "+10", val = "+0", during = "+1"}
+                    add = {
+                        {attr = "swim", odds = 10, val = 0, during = 1}
+                    }
                 }
             }
         )

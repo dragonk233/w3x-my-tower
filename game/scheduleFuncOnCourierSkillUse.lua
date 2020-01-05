@@ -47,11 +47,14 @@ onCourierSkillUesd = function()
                 attack_hunt_type = "+ice",
                 natural_ice = "+3.5",
                 attack_debuff = {
-                    move = {
-                        odds = "+50",
-                        val = "+45",
-                        during = "+2.2",
-                        model = "+war3mapImported\\eff_icing.mdl"
+                    add = {
+                        {
+                            attr = "move",
+                            odds = 50,
+                            val = 45,
+                            during = 2.2,
+                            model = "war3mapImported\\eff_icing.mdl"
+                        }
                     }
                 }
             }

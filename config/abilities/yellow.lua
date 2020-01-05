@@ -122,7 +122,7 @@ abilitiesYellow = {
     {
         Name = "重击",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBash.blp",
-        Ubertip = "+{val#1}%眩晕|n+1.0秒眩晕持续时间",
+        Ubertip = "+{val#1}%眩晕1.0秒",
         Val = {3.5}
     },
     {

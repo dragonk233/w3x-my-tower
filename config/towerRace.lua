@@ -98,7 +98,7 @@ towerRaces = {
     {
         Name = "食人魔",
         Ubertip = "丑陋又贪婪的人型生物，天性邪恶",
-        Text = "攻击时，+10%几率眩晕1秒",
+        Text = "攻击时，10%几率眩晕1.0秒",
         Art = "war3mapImported\\icon_race_ogre.blp",
     },
     {
