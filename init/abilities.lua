@@ -94,7 +94,19 @@ end
 local level_limit = 9
 local ab_index = 0
 local ab_item_index = 0
-
+local abilities = {}
+for _,v in ipairs(abilitiesBlue) do
+    v.ABILITY_COLOR = "blue"
+    table.insert(abilities,v)
+end
+for _,v in ipairs(abilitiesYellow) do
+    v.ABILITY_COLOR = "yellow"
+    table.insert(abilities,v)
+end
+for _,v in ipairs(abilitiesPurple) do
+    v.ABILITY_COLOR = "purple"
+    table.insert(abilities,v)
+end
 -- 处理技能(书)数据
 for _, v in ipairs(abilities) do
     -- 这一轮是技能等级的

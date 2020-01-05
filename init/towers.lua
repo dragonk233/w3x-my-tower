@@ -144,7 +144,8 @@ for j=1,1,1 do
                 obj.def = v.def or 0.00 -- 护甲
                 obj.sight = v.sight or 1000 -- 白天视野
                 obj.nsight = v.nsight or 1000 -- 夜晚视野
-                obj.targs1 = "vulnerable,ground,ward,structure,organic,mechanical,tree,debris,air" --攻击目标
+                local targs1 = "vulnerable,ground,ward,structure,organic,mechanical,tree,debris,air" --攻击目标
+                obj.targs1 = targs1
                 obj.EditorSuffix = "#" .. tlv
                 obj.Propernames = tlv .. "级兵塔"
                 local abl = v.abilList
@@ -173,21 +174,21 @@ for j=1,1,1 do
                     obj.Qarea1 = v.Qarea1 or 350
                     obj.Hfact1 = v.Hfact1 or 0.25
                     obj.Harea1 = v.Harea1 or 200
-                    obj.splashTargs1 = obj.targs1 .. ",enemies"
+                    obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 if (v.weapTp1 == "mbounce") then
                     --弹射
                     obj.Farea1 = v.Farea1 or 350
                     obj.targCount1 = v.targCount1 or 4
                     obj.damageLoss1 = v.damageLoss1 or 0.10
-                    obj.splashTargs1 = obj.targs1 .. ",enemies"
+                    obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 if (v.weapTp1 == "mline") then
                     --穿透
                     obj.spillRadius = v.spillRadius or 150
                     obj.spillDist1 = v.spillDist1 or 300
                     obj.damageLoss1 = v.damageLoss1 or 0.10
-                    obj.splashTargs1 = obj.targs1 .. ",enemies"
+                    obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 if (v.weapTp1 == "aline") then
                     --炮火穿透
@@ -199,7 +200,7 @@ for j=1,1,1 do
                     obj.spillRadius = v.spillRadius or 150
                     obj.spillDist1 = v.spillDist1 or 300
                     obj.damageLoss1 = v.damageLoss1 or 0.10
-                    obj.splashTargs1 = obj.targs1 .. ",enemies"
+                    obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 obj.Tip = "选择 " .. v.Name
                 obj.Name = v.Name
