@@ -1,5 +1,23 @@
 abilitiesYellow = {
     {
+        Name = "擎天之柱",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSmash.blp",
+        Ubertip = "+{val#1}点力量",
+        Val = {28}
+    },
+    {
+        Name = "鬼神荒芜",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNRegenerationAura.blp",
+        Ubertip = "+{val#1}点敏捷",
+        Val = {25}
+    },
+    {
+        Name = "艾露尼之优雅",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNElunesBlessing.blp",
+        Ubertip = "+{val#1}点智力",
+        Val = {30}
+    },
+    {
         Name = "机关枪",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFlakCannons.blp",
         Ubertip = "攻击时有20%几率+{val#1}%攻击速度，持续{val#2}秒",
@@ -24,6 +42,12 @@ abilitiesYellow = {
         Val = {23.0}
     },
     {
+        Name = "猛毒试剂",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSlowPoison.blp",
+        Ubertip = "+{val#1}%毒攻击|n无对应攻击特性时无效",
+        Val = {10}
+    },
+    {
         Name = "恶鬼呼声",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNShadeTrueSight.blp",
         Ubertip = "+鬼攻击特性",
@@ -42,15 +66,33 @@ abilitiesYellow = {
         Val = {}
     },
     {
+        Name = "日食",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGenericSpellImmunity.blp",
+        Ubertip = "+{val#1}暗攻击|n无对应攻击特性时无效",
+        Val = {10}
+    },
+    {
         Name = "邪神之手",
         Art = "war3mapImported\\icon_pas_Offhand_Stratholme_A_02.blp",
-        Ubertip = "+{val#1}暗攻击|n无暗攻击特性时无效",
+        Ubertip = "+{val#1}鬼攻击|n无对应攻击特性时无效",
         Val = {11}
     },
     {
         Name = "雷神之手",
         Art = "war3mapImported\\icon_pas_Electrostatic_field2.blp",
         Ubertip = "+雷攻击特性",
+        Val = {}
+    },
+    {
+        Name = "千里冰封",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFreezingBreath.blp",
+        Ubertip = "+{val#1}冰攻击|n无对应攻击特性时无效",
+        Val = {9}
+    },
+    {
+        Name = "冰心",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFrost.blp",
+        Ubertip = "+冰攻击特性",
         Val = {}
     },
     {
@@ -96,10 +138,61 @@ abilitiesYellow = {
         Val = {15, 10}
     },
     {
+        Name = "分裂攻击",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCleavingAttack.blp",
+        Ubertip = "+{val#1}%分裂攻击",
+        Val = {10}
+    },
+    {
+        Name = "践踏",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNWarStomp.blp",
+        Ubertip = "攻击时，有10%几率，震晕附近的敌人，持续{val#1}秒",
+        Val = {0.2}
+    },
+    {
+        Name = "掠夺",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPillage.blp",
+        Ubertip = "攻击时，有{val#1}%几率获得10黄金",
+        Val = {1.5}
+    },
+    {
+        Name = "五行之力",
+        Art = "war3mapImported\\icon_pas_Nature_ElementalPrecision_1.blp",
+        Ubertip = "+{val#1}%金、木、水、火、土攻击",
+        Val = {5}
+    },
+    {
+        Name = "五行相克",
+        Art = "war3mapImported\\icon_pas_Nature_ElementalPrecision_2.blp",
+        Ubertip = "+{val#1}%金、木、水、火、土抵抗",
+        Val = {5}
+    },
+    {
+        Name = "赤血盾牌",
+        Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldMastery.blp",
+        Ubertip = "+{val#1}生命|n+{val#2}护甲",
+        Val = {200, 6},
+        ODK = true
+    },
+    {
         Name = "亢奋战鼓",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDrum.blp",
         Ubertip = "+{val#1}点减伤",
         Val = {20},
+        ODK = true
+    },
+    {
+        Name = "离子雨",
+        Art = "war3mapImported\\icon_pas_Ion_overload.blp",
+        Ubertip = "+{val#1}%闪电链抵抗",
+        Val = {10},
+        ODK = true
+    },
+    {
+        Name = "血球",
+        Art = "war3mapImported\\icon_pas_Shadow_LifeDrain.blp",
+        Ubertip = "+{val#1}%吸血",
+        Val = {0.03},
         ODK = true
     },
     {

@@ -6,16 +6,22 @@ abilitiesBlue = {
         Val = {25}
     },
     {
-        Name = "战争武斗",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGnollCommandAura.blp",
-        Ubertip = "+{val#1}物理攻击",
-        Val = {35}
-    },
-    {
         Name = "魔法杖",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBrilliance.blp",
         Ubertip = "+{val#1}魔法攻击",
         Val = {30}
+    },
+    {
+        Name = "战争武斗",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGnollCommandAura.blp",
+        Ubertip = "+{val#1}物理攻击",
+        Val = {33}
+    },
+    {
+        Name = "智勇双全",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSeaGiantPulverize.blp",
+        Ubertip = "+{val#1}魔法攻击",
+        Val = {36}
     },
     {
         Name = "强击之箭",
@@ -78,6 +84,12 @@ abilitiesBlue = {
         Val = {25}
     },
     {
+        Name = "勇气勋章",
+        Art = "war3mapImported\\icon_pas_MedalionOfCourage.blp",
+        Ubertip = "+{val#1}点力量|n+{val#1}点敏捷|n+{val#1}点智力",
+        Val = {4, 4, 4}
+    },
+    {
         Name = "狂牛身躯",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNReincarnation.blp",
         Ubertip = "+{val#1}点力量",
@@ -115,9 +127,21 @@ abilitiesBlue = {
     },
     {
         Name = "一发长枪",
-        Art = "ReplaceableTextur es\\PassiveButtons\\PASBTNImpalingBolt.blp",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNImpalingBolt.blp",
         Ubertip = "+{val#1}%命中",
         Val = {10}
+    },
+    {
+        Name = "致命抵抗",
+        Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldGuard.blp",
+        Ubertip = "+{val#1}%致命抵抗，可抵抗物理及魔法暴击的几率与伤害",
+        Val = {5}
+    },
+    {
+        Name = "反伤抵抗",
+        Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldReflection.blp",
+        Ubertip = "+{val#1}%反伤抵抗",
+        Val = {5}
     },
     {
         Name = "变相移动",
@@ -131,6 +155,13 @@ abilitiesBlue = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDevotion.blp",
         Ubertip = "+{val#1}护甲",
         Val = {3},
+        ODK = true
+    },
+    {
+        Name = "噩梦移植",
+        Art = "war3mapImported\\icon_pas_Rogue_DeadenedNerves.blp",
+        Ubertip = "+{val#1}生命",
+        Val = {100},
         ODK = true
     },
     {
