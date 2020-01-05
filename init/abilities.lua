@@ -123,6 +123,9 @@ for _, v in ipairs(abilities) do
                 end
             end
         end
+        if(v.ODK ~= nil and v.ODK == true)then
+            Ubertip = Ubertip .. hColor.red("|n！此技能仅在对抗有明显效果")
+        end
         for _, s in ipairs(ABILITY_COLOR) do
             ab_index = ab_index + 1
             local obj = slk.ability.Aamk:new("abilities_" .. v.Name .. "_" .. level .. "_" .. s)

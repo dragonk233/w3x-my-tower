@@ -48,27 +48,21 @@ abilities = {
         Ubertip = "+火攻击特性|n+{val#1}每秒灼烧效果",
         Val = {15.0}
     },
+    {
+        Name = "变相移动",
+        ABILITY_COLOR = "blue",
+        Art = "war3mapImported\\icon_pas_Arcane_PortalDalaran.blp",
+        Ubertip = "+{val#1}移动",
+        Val = {20},
+        ODK = true
+    },
     -- yellow
     {
         Name = "机关枪",
         ABILITY_COLOR = "yellow",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFlakCannons.blp",
-        Ubertip = "攻击时有25%几率+{val#1}%攻击速度，持续{val#2}秒",
+        Ubertip = "攻击时有20%几率+{val#1}%攻击速度，持续{val#2}秒",
         Val = {12.5, 1}
-    },
-    {
-        Name = "致命爆击",
-        ABILITY_COLOR = "yellow",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCriticalStrike.blp",
-        Ubertip = "+{val#1}%物理暴击几率|n+{val#2}%物理暴击伤害",
-        Val = {7.5, 15}
-    },
-    {
-        Name = "魔法回爆",
-        ABILITY_COLOR = "yellow",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFeedBack.blp",
-        Ubertip = "+{val#1}%魔法暴击几率|n+{val#2}%魔法暴击伤害",
-        Val = {7.5, 15}
     },
     {
         Name = "剑气",
@@ -78,6 +72,13 @@ abilities = {
         Val = {255}
     },
     -- purple
+    {
+        Name = "双剑大师",
+        ABILITY_COLOR = "purple",
+        Art = "war3mapImported\\icon_pas_DualWield.blp",
+        Ubertip = "+{val#1}点物理攻击，+{val#2}点魔法攻击，",
+        Val = {45, 45}
+    },
     {
         Name = "武术至尊",
         ABILITY_COLOR = "purple",
@@ -91,5 +92,21 @@ abilities = {
         Art = "war3mapImported\\icon_pas_Holy_HolyNova.blp",
         Ubertip = "+{val#1}点魔法攻击，+{val#2}%攻击速度",
         Val = {65, 10}
+    },
+    {
+        Name = "天神加护",
+        ABILITY_COLOR = "purple",
+        Art = "war3mapImported\\icon_pas_Holy_Fanaticism.blp",
+        Ubertip = "+{val#1}点生命，+{val#2}生命恢复",
+        Val = {500, 0.2},
+        ODK = true
+    },
+    {
+        Name = "圣封护盾",
+        ABILITY_COLOR = "purple",
+        Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
+        Ubertip = "+{val#1}点护甲，+{val#2}%魔抗",
+        Val = {12, 8},
+        ODK = true
     }
 }
