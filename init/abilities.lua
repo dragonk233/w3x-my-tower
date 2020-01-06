@@ -91,7 +91,7 @@ call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<
 <?
 end
 
-local level_limit = 9
+local level_limit = 3
 local ab_index = 0
 local ab_item_index = 0
 local abilities = {}

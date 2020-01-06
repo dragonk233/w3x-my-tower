@@ -1,3 +1,4 @@
+require "game.scheduleFuncGetPow"
 require "game.scheduleFuncOnEnemyBeAttack"
 require "game.scheduleFuncOnEnemyDead"
 require "game.scheduleFuncOnItemUse"

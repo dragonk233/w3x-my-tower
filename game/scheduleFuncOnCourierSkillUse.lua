@@ -11,21 +11,15 @@ onCourierSkillUesd = function()
     if (abilitiesSLK == nil or abilitiesSLK.Name == nil) then
         return
     end
-    --level
-    local maxLevel = 0
+    --curWave
+    local curWave = 1
     if (game.rule.cur == "yb") then
-        maxLevel = math.floor(game.rule.yb.wave * 0.20)
+        curWave = game.rule.yb.wave
     elseif (game.rule.cur == "hz") then
-        maxLevel = math.floor(game.rule.hz.wave * 0.15)
-    elseif (game.rule.cur == "dk" and killer ~= nil) then
-        maxLevel = math.floor(game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(u))] * 0.15)
+        curWave = game.rule.hz.wave
+    elseif (game.rule.cur == "dk") then
+        curWave = game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(u))]
     end
-    if (maxLevel < 1) then
-        maxLevel = 1
-    elseif (maxLevel > 10) then
-        maxLevel = 10
-    end
-    local level = cj.GetRandomInt(1, maxLevel)
     --
     if (abilitiesSLK.Name == "火焰吐息") then
         onCourierSkillUesdTTG(game.playerTower[playerIndex], abilitiesSLK.Name)
@@ -88,9 +82,10 @@ onCourierSkillUesd = function()
             return
         else
             hplayer.subGold(p, 500)
+            local tarBLv = getBookPowLevel(curWave)
             hitem.create(
                 {
-                    itemId = hSys.randTable(game.thisOptionAbilityItem["blue"][level]).ITEM_ID,
+                    itemId = hSys.randTable(game.thisOptionAbilityItem["blue"][tarBLv]).ITEM_ID,
                     whichUnit = u
                 }
             )
@@ -101,9 +96,10 @@ onCourierSkillUesd = function()
             return
         else
             hplayer.subGold(p, 750)
+            local tarBLv = getBookPowLevel(curWave)
             hitem.create(
                 {
-                    itemId = hSys.randTable(game.thisOptionAbilityItem["yellow"][level]).ITEM_ID,
+                    itemId = hSys.randTable(game.thisOptionAbilityItem["yellow"][tarBLv]).ITEM_ID,
                     whichUnit = u
                 }
             )
@@ -114,9 +110,10 @@ onCourierSkillUesd = function()
             return
         else
             hplayer.subGold(p, 1000)
+            local tarBLv = getBookPowLevel(curWave)
             hitem.create(
                 {
-                    itemId = hSys.randTable(game.thisOptionAbilityItem["purple"][level]).ITEM_ID,
+                    itemId = hSys.randTable(game.thisOptionAbilityItem["purple"][tarBLv]).ITEM_ID,
                     whichUnit = u
                 }
             )
@@ -127,43 +124,13 @@ onCourierSkillUesd = function()
             return
         else
             hplayer.subGold(p, 400)
-            local tpow = { E = 1 }
-            if (level == 1) then
-                tpow = { E = 1 }
-            elseif (level == 2) then
-                tpow = { E = 7, D = 3 }
-            elseif (level == 3) then
-                tpow = { E = 4, D = 6, C = 1 }
-            elseif (level == 4) then
-                tpow = { E = 3, D = 6, C = 2, B = 1 }
-            elseif (level == 5) then
-                tpow = { D = 4, C = 6, B = 1 }
-            elseif (level == 6) then
-                tpow = { D = 6, C = 16, B = 4, A = 1 }
-            elseif (level == 7) then
-                tpow = { C = 10, B = 10, A = 1 }
-            elseif (level == 8) then
-                tpow = { C = 9, B = 27, A = 3, S = 1 }
-            elseif (level == 9) then
-                tpow = { B = 10, A = 8, S = 2, SS = 1 }
-            elseif (level == 10) then
-                tpow = { A = 15, S = 30, SS = 5, SSS = 1 }
-            end
-            local targetTPows = {}
-            for k, v in pairs(tpow) do
-                for i = 1, v, 1 do
-                    table.insert(targetTPows, k)
-                end
-            end
-            local targetTPow = targetTPows[cj.GetRandomInt(1, #targetTPows)]
-            if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
-                hitem.create(
-                    {
-                        itemId = hSys.randTable(game.thisOptionTowerPowerItem[targetTPow]).ITEM_ID,
-                        whichUnit = u
-                    }
-                )
-            end
+            local tarBLv = getTowerPowLevel(curWave)
+            hitem.create(
+                {
+                    itemId = hSys.randTable(game.thisOptionTowerPowerItem[tarBLv]).ITEM_ID,
+                    whichUnit = u
+                }
+            )
         end
     elseif (abilitiesSLK.Name == "洗天赋") then
         if (game.playerTowerLevel[playerIndex] >= 9) then
