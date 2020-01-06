@@ -24,11 +24,15 @@ onTowerAttack = function()
                 elseif (Name == "机关枪" and math.random(1, 5) == 3) then
                     hattr.set(
                         u,
-                        1.50 * level,
+                        2.50 * level,
                         {
                             attack_speed = "+" .. 12.5 * level
                         }
                     )
+                elseif (Name == "震晕践踏" and math.random(1, 10) == 5) then
+                    --
+                elseif (Name == "掠夺黄金" and math.random(1, 40) <= level) then
+                    haward.forPlayerGold(10)
                 end
             end
         end
