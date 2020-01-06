@@ -66,8 +66,8 @@ setTowerSkillByBook = function(u, abliOps, opt)
                     [optChar] = {
                         {
                             attr = "life_back",
-                            odds = level * abliOps.Val[1],
-                            val = 0,
+                            odds = 100,
+                            val = level * abliOps.Val[1],
                             during = 4,
                             model = "Abilities\\Spells\\Items\\OrbVenom\\OrbVenomSpecialArt.mdl"
                         }
@@ -84,8 +84,8 @@ setTowerSkillByBook = function(u, abliOps, opt)
                     [optChar] = {
                         {
                             attr = "life_back",
-                            odds = level * abliOps.Val[1],
-                            val = 0,
+                            odds = 100,
+                            val = level * abliOps.Val[1],
                             during = 4,
                             model = "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"
                         }
@@ -102,8 +102,8 @@ setTowerSkillByBook = function(u, abliOps, opt)
                     [optChar] = {
                         {
                             attr = "life_back",
-                            odds = level * abliOps.Val[1],
-                            val = 0,
+                            odds = 100,
+                            val = level * abliOps.Val[1],
                             during = 4.5,
                             model = "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"
                         }
@@ -153,10 +153,12 @@ setTowerSkillByBook = function(u, abliOps, opt)
             {
                 attack_effect = {
                     [optChar] = {
-                        attr = "lightning_chain",
-                        odds = 30,
-                        qty = 3,
-                        val = level * abliOps.Val[1]
+                        {
+                            attr = "lightning_chain",
+                            odds = 30,
+                            qty = 3,
+                            val = level * abliOps.Val[1]
+                        }
                     }
                 }
             }
@@ -169,11 +171,13 @@ setTowerSkillByBook = function(u, abliOps, opt)
             {
                 attack_debuff = {
                     [optChar] = {
-                        attr = "defend",
-                        odds = 100,
-                        during = 3,
-                        val = level * abliOps.Val[1],
-                        model = "Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayTarget.mdl"
+                        {
+                            attr = "defend",
+                            odds = 100,
+                            during = 3,
+                            val = level * abliOps.Val[1],
+                            model = "Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayTarget.mdl"
+                        }
                     }
                 }
             }
@@ -186,11 +190,13 @@ setTowerSkillByBook = function(u, abliOps, opt)
                 attack_hunt_type = opt .. "fire",
                 attack_debuff = {
                     [optChar] = {
-                        attr = "life",
-                        odds = 100,
-                        during = 5.00,
-                        val = level * abliOps.Val[1],
-                        model = "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"
+                        {
+                            attr = "life",
+                            odds = 100,
+                            during = 5.00,
+                            val = level * abliOps.Val[1],
+                            model = "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"
+                        }
                     }
                 }
             }
@@ -203,11 +209,13 @@ setTowerSkillByBook = function(u, abliOps, opt)
                 attack_hunt_type = opt .. "poison",
                 attack_debuff = {
                     [optChar] = {
-                        attr = "life",
-                        odds = 100,
-                        during = 5.00,
-                        val = level * abliOps.Val[1],
-                        model = "Abilities\\Spells\\Other\\AcidBomb\\BottleImpact.mdl"
+                        {
+                            attr = "life",
+                            odds = 100,
+                            during = 5.00,
+                            val = level * abliOps.Val[1],
+                            model = "Abilities\\Spells\\Other\\AcidBomb\\BottleImpact.mdl"
+                        }
                     }
                 }
             }
@@ -312,6 +320,91 @@ setTowerSkillByBook = function(u, abliOps, opt)
                 knocking = opt .. (level * abliOps.Val[2])
             }
         )
+    elseif (abliOps.Name == "双修对剑") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_white = opt .. (level * abliOps.Val[1]),
+                attack_green = opt .. (level * abliOps.Val[2])
+            }
+        )
+    elseif (abliOps.Name == "武术至尊") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_white = opt .. (level * abliOps.Val[1]),
+                attack_speed = opt .. (level * abliOps.Val[2])
+            }
+        )
+    elseif (abliOps.Name == "法术天尊") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_green = opt .. (level * abliOps.Val[1]),
+                attack_speed = opt .. (level * abliOps.Val[2])
+            }
+        )
+    elseif (abliOps.Name == "音速回击") then
+        hattr.set(u, 0, {attack_speed = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "疾风") then
+        hattr.set(u, 0, {attack_hunt_type = opt .. "wind", natural_wind = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "魔神之剑") then
+        hattr.set(u, 0, {hunt_amplitude = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "胆颤心惊") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_debuff = {
+                    [optChar] = {
+                        {
+                            attr = "defend",
+                            odds = 100,
+                            during = 6,
+                            val = level * abliOps.Val[1],
+                            model = "Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayTarget.mdl"
+                        },
+                        {
+                            attr = "life_back",
+                            odds = 100,
+                            val = level * abliOps.Val[1],
+                            during = 6,
+                            model = "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"
+                        }
+                    }
+                }
+            }
+        )
+    elseif (abliOps.Name == "害怕") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_effect = {
+                    [optChar] = {
+                        {
+                            attr = "fetter",
+                            odds = 100,
+                            during = 3,
+                            model = "Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl"
+                        }
+                    }
+                }
+            }
+        )
+    elseif (abliOps.Name == "天神加护") then
+        hattr.set(u, 0, {life = opt .. (level * abliOps.Val[1]), life_back = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "圣封护盾") then
+        hattr.set(u, 0, {defend = opt .. (level * abliOps.Val[1]), resistance = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "极速闪避") then
+        hattr.set(u, 0, {avoid = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "刺痛极限") then
+        hattr.set(u, 0, {toughness = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "刺网") then
+        hattr.set(u, 0, {hunt_rebound = opt .. (level * abliOps.Val[1])})
     end
 end
 

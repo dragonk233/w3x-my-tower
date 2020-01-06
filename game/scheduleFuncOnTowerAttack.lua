@@ -29,10 +29,18 @@ onTowerAttack = function()
                             attack_speed = "+" .. 12.5 * level
                         }
                     )
-                elseif (Name == "震晕践踏" and math.random(1, 10) == 5) then
-                    --
                 elseif (Name == "掠夺黄金" and math.random(1, 40) <= level) then
                     haward.forPlayerGold(10)
+                elseif (Name == "死亡同步" and math.random(1, 500) == 265) then
+                    heffect.bindUnit(
+                        "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",
+                        targetUnit,
+                        "head",
+                        1
+                    )
+                    hunit.kill(targetUnit, 0)
+                elseif (Name == "震晕践踏" and math.random(1, 10) == 5) then
+                elseif (Name == "冰花炸裂" and math.random(1, 7) == 4) then
                 end
             end
         end

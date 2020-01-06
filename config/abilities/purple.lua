@@ -9,7 +9,7 @@ abilitiesPurple = {
         Name = "死亡同步",
         Art = "war3mapImported\\icon_pas_Ability_Creature_Cursed_02.blp",
         Ubertip = "+{val#1}%攻击必死",
-        Val = { 0.1 }
+        Val = { 0.5 }
     },
     {
         Name = "双修对剑",
