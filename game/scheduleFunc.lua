@@ -3,7 +3,8 @@ require "game.scheduleFuncOnEnemyBeAttack"
 require "game.scheduleFuncOnEnemyDead"
 require "game.scheduleFuncOnItemUse"
 require "game.scheduleFuncOnCourierSkillUse"
-require "game.scheduleFuncTowerLevel"
+require "game.scheduleFuncOnTowerAttack"
+require "game.scheduleFuncOnTowerLevelUp"
 require "game.scheduleFuncTowerSkillRace"
 require "game.scheduleFuncTowerSkillx"
 
@@ -345,6 +346,7 @@ createMyTower = function(playerIndex, towerId)
             }
         )
         hevent.onLevelUp(u, updateMyTower)
+        hevent.onAttack(u, onTowerAttack)
         hhero.setCurLevel(u, prevHeroLevel)
         -- 如果上一个单位有技能，复制技能
         if (game.towersAbilities[playerIndex] ~= nil) then

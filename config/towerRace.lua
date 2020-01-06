@@ -14,19 +14,19 @@ towerRaces = {
     {
         Name = "矮人",
         Ubertip = "极具奇妙特色的种族",
-        Text = "+15%命中",
+        Text = "+25%命中",
         Art = "war3mapImported\\icon_race_dwraf.blp",
     },
     {
         Name = "血精灵",
         Ubertip = "为了复兴辛多雷的荣耀而努力",
-        Text = "+10%魔法攻击",
+        Text = "+15%魔法攻击",
         Art = "war3mapImported\\icon_race_elf.blp",
     },
     {
         Name = "兽人",
         Ubertip = "暴躁、野蛮，倾向于先行动再思考",
-        Text = "+10%物理攻击",
+        Text = "+15%物理攻击",
         Art = "war3mapImported\\icon_race_orc.blp",
     },
     {
@@ -38,7 +38,7 @@ towerRaces = {
     {
         Name = "牛头人",
         Ubertip = "以勇猛和骄傲著称,会使用他们巨大的图滕柱将敌人砸成肉泥",
-        Text = "+7%物理暴击几率",
+        Text = "+7%物理暴击几率|n+5%物理暴击伤害",
         Art = "war3mapImported\\icon_race_tauren.blp",
     },
     {
@@ -56,7 +56,7 @@ towerRaces = {
     {
         Name = "亡灵",
         Ubertip = "亡灵不会死亡，消失的亡灵实际上是被净化了",
-        Text = "攻击时，敌军-15点移动速度，持续3秒",
+        Text = "攻击时，敌军-15点移动速度，持续4秒",
         Art = "war3mapImported\\icon_race_undead.blp",
     },
     {
@@ -68,13 +68,13 @@ towerRaces = {
     {
         Name = "元素",
         Ubertip = "自然界中的聚合物，形成了意识的神奇存在",
-        Text = "+5%所有自然抗性",
+        Text = "+8%所有自然抗性",
         Art = "war3mapImported\\icon_race_elemental.blp",
     },
     {
         Name = "恶魔",
         Ubertip = "拥有超自然力量的邪恶存在代表",
-        Text = "+6%伤害增幅|n+6%攻击速度|n-6点护甲",
+        Text = "+6.6%伤害增幅|n+6.6%攻击速度|n-6.6点护甲",
         Art = "war3mapImported\\icon_race_demon.blp",
     },
     {
@@ -86,7 +86,7 @@ towerRaces = {
     {
         Name = "异兽",
         Ubertip = "特别的怪兽，来自未知的领域",
-        Text = "+10%魔抗|n+30点减伤",
+        Text = "+10%魔抗|n+50点减伤",
         Art = "war3mapImported\\icon_race_rareanimals.blp",
     },
     {
@@ -98,13 +98,13 @@ towerRaces = {
     {
         Name = "食人魔",
         Ubertip = "丑陋又贪婪的人型生物，天性邪恶",
-        Text = "攻击时，10%几率眩晕1.0秒",
+        Text = "攻击时，10%几率眩晕0.3秒",
         Art = "war3mapImported\\icon_race_ogre.blp",
     },
     {
         Name = "地精",
         Ubertip = "善于经商贸易的种族",
-        Text = "+10%智力",
+        Text = "+12%智力",
         Art = "war3mapImported\\icon_race_goblin.blp",
     },
     {
@@ -116,7 +116,7 @@ towerRaces = {
     {
         Name = "熊猫",
         Ubertip = "古老国度的神奇生物",
-        Text = "+10%力量",
+        Text = "+0.25生命恢复|n+9%力量",
         Art = "war3mapImported\\icon_race_panda.blp",
     },
 }

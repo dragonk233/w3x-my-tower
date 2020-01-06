@@ -3,19 +3,19 @@ abilitiesYellow = {
         Name = "擎天之柱",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSmash.blp",
         Ubertip = "+{val#1}点力量",
-        Val = { 28 }
+        Val = { 44 }
     },
     {
         Name = "鬼神荒芜",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNRegenerationAura.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = { 25 }
+        Val = { 40 }
     },
     {
         Name = "艾露尼之优雅",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNElunesBlessing.blp",
         Ubertip = "+{val#1}点智力",
-        Val = { 30 }
+        Val = { 48 }
     },
     {
         Name = "机关枪",
@@ -32,13 +32,13 @@ abilitiesYellow = {
     {
         Name = "凤凰烈焰",
         Art = "war3mapImported\\icon_pas_MarkOfFire.blp",
-        Ubertip = "+火攻击特性|n+{val#1}每秒灼烧效果",
+        Ubertip = "+火攻击特性|n+{val#1}每秒灼烧效果，持续5秒",
         Val = { 25.0 }
     },
     {
         Name = "剧毒液体",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCorrosiveBreath.blp",
-        Ubertip = "+毒攻击特性|n+{val#1}每秒中毒效果",
+        Ubertip = "+毒攻击特性|n+{val#1}每秒中毒效果，持续5秒",
         Val = { 23.0 }
     },
     {

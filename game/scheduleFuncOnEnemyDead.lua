@@ -31,7 +31,7 @@ deadAward = function(triggerUnit, killer)
         curWave = game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(killer))]
     end
     --
-    if (cj.GetRandomInt(1, 40) == 21 and curWave >= 3) then
+    if (cj.GetRandomInt(1, 35) == 18 and curWave >= 3) then
         -- 掉落蓝技能书
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["blue"][tarBLv] > 0) then
@@ -46,7 +46,7 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    if (cj.GetRandomInt(1, 80) == 42 and curWave >= 10) then
+    if (cj.GetRandomInt(1, 60) == 33 and curWave >= 10) then
         -- 掉落黄技能书
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["yellow"][tarBLv] > 0) then
@@ -61,7 +61,7 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    if (cj.GetRandomInt(1, 250) == 119 and curWave >= 30) then
+    if (cj.GetRandomInt(1, 150) == 77 and curWave >= 30) then
         -- 掉落紫技能书
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["purple"][tarBLv] > 0) then
@@ -77,7 +77,7 @@ deadAward = function(triggerUnit, killer)
         end
     end
     --
-    if (cj.GetRandomInt(1, 30) == 2) then
+    if (cj.GetRandomInt(1, 30) == 14) then
         -- 掉落兵塔
         local tarBLv = getTowerPowLevel(curWave)
         if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then

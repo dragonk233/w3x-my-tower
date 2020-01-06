@@ -7,9 +7,9 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                str_white = "+" .. (val * slk.STR),
-                agi_white = "+" .. (val * slk.AGI),
-                int_white = "+" .. (val * slk.INT)
+                str_green = "+" .. (val * slk.STR),
+                agi_green = "+" .. (val * slk.AGI),
+                int_green = "+" .. (val * slk.INT)
             }
         )
     elseif (race == "人王") then
@@ -18,9 +18,9 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                str_white = "+" .. (val * slk.STR),
-                agi_white = "+" .. (val * slk.AGI),
-                int_white = "+" .. (val * slk.INT)
+                str_green = "+" .. (val * slk.STR),
+                agi_green = "+" .. (val * slk.AGI),
+                int_green = "+" .. (val * slk.INT)
             }
         )
     elseif (race == "矮人") then
@@ -28,7 +28,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                aim = "+15"
+                aim = "+25"
             }
         )
     elseif (race == "血精灵") then
@@ -36,7 +36,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                attack_green = "+" .. (0.1 * slk.ATTACK_GREEN)
+                attack_green = "+" .. (0.15 * slk.ATTACK_GREEN)
             }
         )
     elseif (race == "兽人") then
@@ -44,7 +44,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                attack_white = "+" .. (0.1 * slk.ATTACK_WHITE)
+                attack_white = "+" .. (0.15 * slk.ATTACK_WHITE)
             }
         )
     elseif (race == "巨魔") then
@@ -54,7 +54,7 @@ addTowerSkillsRace = function(u, slk)
             {
                 attack_buff = {
                     add = {
-                        { attr = "attack_speed", odds = 100, val = 5, during = 6 }
+                        {attr = "attack_speed", odds = 100, val = 5, during = 6}
                     }
                 }
             }
@@ -64,7 +64,8 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                knocking_odds = "+7"
+                knocking_odds = "+7",
+                knocking = "+5"
             }
         )
     elseif (race == "暗夜精灵") then
@@ -92,8 +93,8 @@ addTowerSkillsRace = function(u, slk)
                     add = {
                         attr = "move",
                         odds = 100,
-                        val = 45,
-                        during = 2.2,
+                        val = 15,
+                        during = 4.0,
                         model = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
                     }
                 }
@@ -112,20 +113,20 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                natural_fire_oppose = "+5",
-                natural_soil_oppose = "+5",
-                natural_water_oppose = "+5",
-                natural_ice_oppose = "+5",
-                natural_wind_oppose = "+5",
-                natural_light_oppose = "+5",
-                natural_dark_oppose = "+5",
-                natural_wood_oppose = "+5",
-                natural_thunder_oppose = "+5",
-                natural_poison_oppose = "+5",
-                natural_ghost_oppose = "+5",
-                natural_metal_oppose = "+5",
-                natural_dragon_oppose = "+5",
-                natural_insect_oppose = "+5"
+                natural_fire_oppose = "+8",
+                natural_soil_oppose = "+8",
+                natural_water_oppose = "+8",
+                natural_ice_oppose = "+8",
+                natural_wind_oppose = "+8",
+                natural_light_oppose = "+8",
+                natural_dark_oppose = "+8",
+                natural_wood_oppose = "+8",
+                natural_thunder_oppose = "+8",
+                natural_poison_oppose = "+8",
+                natural_ghost_oppose = "+8",
+                natural_metal_oppose = "+8",
+                natural_dragon_oppose = "+8",
+                natural_insect_oppose = "+8"
             }
         )
     elseif (race == "恶魔") then
@@ -133,9 +134,9 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                hunt_amplitude = "+6",
-                attack_speed = "+6",
-                defend = "-6"
+                hunt_amplitude = "+6.6",
+                attack_speed = "+6.6",
+                defend = "-6.6"
             }
         )
     elseif (race == "昆虫") then
@@ -152,7 +153,7 @@ addTowerSkillsRace = function(u, slk)
             0,
             {
                 resistance = "+10",
-                toughness = "+30"
+                toughness = "+50"
             }
         )
     elseif (race == "幽魂") then
@@ -170,7 +171,7 @@ addTowerSkillsRace = function(u, slk)
             {
                 attack_effect = {
                     add = {
-                        { attr = "swim", odds = 10, val = 0, during = 1 }
+                        {attr = "swim", odds = 10, val = 0, during = 0.3}
                     }
                 }
             }
@@ -180,7 +181,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                int_white = "+" .. (0.10 * slk.INT)
+                int_green = "+" .. (0.12 * slk.INT)
             }
         )
     elseif (race == "龙人") then
@@ -196,7 +197,8 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                str_white = "+" .. (0.1 * slk.STR)
+                life_back = "+0.25",
+                str_green = "+" .. (0.09 * slk.STR)
             }
         )
     end

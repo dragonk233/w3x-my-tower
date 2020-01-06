@@ -129,7 +129,7 @@ for _, v in ipairs(abilities) do
                     v.Val[vali] = 0
                 end
                 if (string.find(Ubertip, valmatch) ~= nil) then
-                    Ubertip = string.gsub(Ubertip, valmatch, "|cffffcc00" .. (v.Val[vali]*level) .. "|r")
+                    Ubertip = string.gsub(Ubertip, valmatch, "|cffffcc00" .. (v.Val[vali]*(level*2-1)) .. "|r")
                 else
                     vali = 99
                 end
