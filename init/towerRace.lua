@@ -19,7 +19,7 @@ for i, v in ipairs(towerRaces) do
         ABILITY_ID = obj:get_id(),
     }
     ?>
-    call SaveStr(hash_myslk, StringHash("abilities_unit_race"), <?=i?>, "<?=hSys.addslashes(json.stringify(ab))?>")
+    call SaveStr(hash_myslk, StringHash("abilities_unit_race"), <?=i?>, "<?=string.addslashes(json.stringify(ab))?>")
     <?
 end
 ?>

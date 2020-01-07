@@ -41,7 +41,7 @@ for _, v in ipairs(blue) do
         ABILITY_BTN = v,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
+call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
 <?
 end
 for _, v in ipairs(yellow) do
@@ -64,7 +64,7 @@ for _, v in ipairs(yellow) do
         ABILITY_BTN = v,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
+call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
 <?
 end
 for _, v in ipairs(purple) do
@@ -87,7 +87,7 @@ for _, v in ipairs(purple) do
         ABILITY_BTN = v,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
+call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
 <?
 end
 
@@ -166,7 +166,7 @@ for _, v in ipairs(abilities) do
             v.ABILITY_BTN = s
             v.ABILITY_LEVEL = level
             ?>
-            call SaveStr(hash_myslk, StringHash("abilities"), <?=ab_index?>, "<?=hSys.addslashes(json.stringify(v))?>")
+            call SaveStr(hash_myslk, StringHash("abilities"), <?=ab_index?>, "<?=string.addslashes(json.stringify(v))?>")
             <?
         end
         -- 物品
@@ -222,7 +222,7 @@ for _, v in ipairs(abilities) do
                 TRIGGER_CALL = v.TRIGGER_CALL or nil,
             }
             ?>
-        call SaveStr(hash_myslk, StringHash("abilitiesItems"), <?=ab_item_index?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
+        call SaveStr(hash_myslk, StringHash("abilitiesItems"), <?=ab_item_index?>, "<?=string.addslashes(json.stringify(hitem))?>")
             <?
         end
     end

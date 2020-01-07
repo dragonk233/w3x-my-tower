@@ -85,7 +85,7 @@ for j=1,1,1 do
                 v.INTplus = v.INT * 0.30
                 v.ATTACK_WHITE = math.floor(tempAttackWhite)
                 v.ATTACK_GREEN = math.floor(tempAttackGreen)
-                v.RACE = hSys.explode("·",v.Name)[1]
+                v.RACE = string.explode("·",v.Name)[1]
                 local ThreeTotal = v.STR + v.AGI + v.INT
                 local coolMark = math.floor(100 / (v.cool1 or 2.00))
                 local TowerMark = math.floor(
@@ -151,7 +151,7 @@ for j=1,1,1 do
                 local abl = v.abilList
                 if(abl ~= nil)then
                     if(type(abl) == "string")then
-                        abl = hSys.explode(',', abl)
+                        abl = string.explode(',', abl)
                     elseif(type(abl) ~= "table")then
                         abl = {}
                     end
@@ -164,7 +164,7 @@ for j=1,1,1 do
                 elseif(#abl == 1)then
                     table.insert( abl, towerSpxKV["封印枷锁之二"] )
                 end
-                obj.abilList = hSys.implode(",",abl)
+                obj.abilList = string.implode(",",abl)
                 obj.heroAbilList = ""
                 obj.nameCount = v.nameCount or 1
                 if (v.weapTp1 == "msplash" or v.weapTp1 == "artillery") then
@@ -278,8 +278,8 @@ for j=1,1,1 do
                     TOWER_POWER = tlv,
                 }
                 ?>
-                call SaveStr(hash_myslk, StringHash("towers"), <?=towersTi?>, "<?=hSys.addslashes(json.stringify(v))?>")
-                call SaveStr(hash_myslk, StringHash("towersItems"), <?=towersTi?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
+                call SaveStr(hash_myslk, StringHash("towers"), <?=towersTi?>, "<?=string.addslashes(json.stringify(v))?>")
+                call SaveStr(hash_myslk, StringHash("towersItems"), <?=towersTi?>, "<?=string.addslashes(json.stringify(hitem))?>")
                 <?
                 --塔基的属性说明
                 local obj = slk.ability.Aamk:new("towerOriginAbli_" .. thisIndex)
@@ -301,7 +301,7 @@ for j=1,1,1 do
                     INDEX = thisIndex,
                 }
                 ?>
-                call SaveStr(hash_myslk, StringHash("abilitiies_tower_origins"), <?=towersTi?>, "<?=hSys.addslashes(json.stringify(ab))?>")
+                call SaveStr(hash_myslk, StringHash("abilitiies_tower_origins"), <?=towersTi?>, "<?=string.addslashes(json.stringify(ab))?>")
                 <?
             end
         end

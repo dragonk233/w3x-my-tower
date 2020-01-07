@@ -46,7 +46,7 @@ for k, v in pairs(temp_spx) do
     towerSpxKV[temp.Name] = temp.ABILITY_ID
     tower_sabi = tower_sabi + 1
     ?>
-    call SaveStr(hash_myslk, StringHash("tower_spx_ab"), <?=tower_sabi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+    call SaveStr(hash_myslk, StringHash("tower_spx_ab"), <?=tower_sabi?>, "<?=string.addslashes(json.stringify(temp))?>")
     <?
 end
 

@@ -85,7 +85,7 @@ onCourierSkillUesd = function()
             local tarBLv = getBookPowLevel(curWave)
             hitem.create(
                 {
-                    itemId = hSys.randTable(game.thisOptionAbilityItem["blue"][tarBLv]).ITEM_ID,
+                    itemId = table.random(game.thisOptionAbilityItem["blue"][tarBLv]).ITEM_ID,
                     whichUnit = u
                 }
             )
@@ -99,7 +99,7 @@ onCourierSkillUesd = function()
             local tarBLv = getBookPowLevel(curWave)
             hitem.create(
                 {
-                    itemId = hSys.randTable(game.thisOptionAbilityItem["yellow"][tarBLv]).ITEM_ID,
+                    itemId = table.random(game.thisOptionAbilityItem["yellow"][tarBLv]).ITEM_ID,
                     whichUnit = u
                 }
             )
@@ -113,7 +113,7 @@ onCourierSkillUesd = function()
             local tarBLv = getBookPowLevel(curWave)
             hitem.create(
                 {
-                    itemId = hSys.randTable(game.thisOptionAbilityItem["purple"][tarBLv]).ITEM_ID,
+                    itemId = table.random(game.thisOptionAbilityItem["purple"][tarBLv]).ITEM_ID,
                     whichUnit = u
                 }
             )
@@ -127,7 +127,7 @@ onCourierSkillUesd = function()
             local tarBLv = getTowerPowLevel(curWave)
             hitem.create(
                 {
-                    itemId = hSys.randTable(game.thisOptionTowerPowerItem[tarBLv]).ITEM_ID,
+                    itemId = table.random(game.thisOptionTowerPowerItem[tarBLv]).ITEM_ID,
                     whichUnit = u
                 }
             )

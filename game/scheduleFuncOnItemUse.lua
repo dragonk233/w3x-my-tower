@@ -31,7 +31,7 @@ onUnitItemsUesd = function()
         end
     elseif (itemSLK.I_TYPE == "ability") then
         local abils = game.thisOptionAbility[itemSLK.INDEX]
-        if (abils == nil or hSys.getTableLen(abils) <= 0) then
+        if (abils == nil or table.len(abils) <= 0) then
             hmsg.echo00(p, "技能获取错误")
             return
         end

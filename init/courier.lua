@@ -55,11 +55,11 @@ for i, v in ipairs(couriers) do
     obj.armor = v.armor -- 被击声音
     obj.targType = v.targType --作为目标类型
     if(v.Name == "涅磐火凤凰")then
-        obj.abilList = "Avul,AInv," .. hSys.implode(',',couriersSkillsPhoenix)
+        obj.abilList = "Avul,AInv," .. string.implode(',',couriersSkillsPhoenix)
     elseif(v.Name == "冰戟剑灵")then
-        obj.abilList = "Avul,AInv," .. hSys.implode(',',couriersSkillsIce)
+        obj.abilList = "Avul,AInv," .. string.implode(',',couriersSkillsIce)
     else
-        obj.abilList = "Avul,AInv," .. hSys.implode(',',couriersSkills)
+        obj.abilList = "Avul,AInv," .. string.implode(',',couriersSkills)
     end
     v.INDEX = v.Name
     v.UNIT_ID = obj:get_id()
@@ -101,8 +101,8 @@ for i, v in ipairs(couriers) do
         table.insert(couriersShopIds,hitem.ITEM_ID)
     end
     ?>
-    call SaveStr(hash_myslk, StringHash("couriers"), <?=i?>, "<?=hSys.addslashes(json.stringify(v))?>")
-    call SaveStr(hash_myslk, StringHash("couriersItems"), <?=i?>, "<?=hSys.addslashes(json.stringify(hitem))?>")
+    call SaveStr(hash_myslk, StringHash("couriers"), <?=i?>, "<?=string.addslashes(json.stringify(v))?>")
+    call SaveStr(hash_myslk, StringHash("couriersItems"), <?=i?>, "<?=string.addslashes(json.stringify(hitem))?>")
     <?
 end
 ?>
@@ -115,7 +115,7 @@ local obj = slk.unit.ngme:new("shops_" .. v.Name)
 obj.Name = v.Name
 obj.pathTex = "PathTextures\\8x8SimpleSolid.tga"
 obj.abilList = "Aneu,Avul,Apit"
-obj.Sellitems = hSys.implode(',',couriersShopIds)
+obj.Sellitems = string.implode(',',couriersShopIds)
 obj.file = "buildings\\human\\GryphonAviary\\GryphonAviary"
 obj.Art = "ReplaceableTextures\\CommandButtons\\BTNGryphonAviary.blp"
 obj.modelScale = 0.80
@@ -126,5 +126,5 @@ obj.nsight = 800
 obj.unitSound = "GryphonAviary"
 v.UNIT_ID = obj:get_id()
 ?>
-call SaveStr(hash_myslk, StringHash("shops"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
+call SaveStr(hash_myslk, StringHash("shops"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
 <?

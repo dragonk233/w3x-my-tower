@@ -23,7 +23,7 @@ for k, v in ipairs(enemysAward) do
     v.TYPE = "award"
     v.UNIT_ID = obj:get_id()
     ?>
-call SaveStr(hash_myslk, StringHash("thisenemysaward"), <?=k?>, "<?=hSys.addslashes(json.stringify(v))?>")
+call SaveStr(hash_myslk, StringHash("thisenemysaward"), <?=k?>, "<?=string.addslashes(json.stringify(v))?>")
 <?
 end
 ?>

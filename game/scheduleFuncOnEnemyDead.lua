@@ -35,7 +35,7 @@ deadAward = function(triggerUnit, killer)
         -- 掉落蓝技能书
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["blue"][tarBLv] > 0) then
-            local itId = hSys.randTable(game.thisOptionAbilityItem["blue"][tarBLv]).ITEM_ID
+            local itId = table.random(game.thisOptionAbilityItem["blue"][tarBLv]).ITEM_ID
             hitem.create(
                 {
                     itemId = itId,
@@ -50,7 +50,7 @@ deadAward = function(triggerUnit, killer)
         -- 掉落黄技能书
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["yellow"][tarBLv] > 0) then
-            local itId = hSys.randTable(game.thisOptionAbilityItem["yellow"][tarBLv]).ITEM_ID
+            local itId = table.random(game.thisOptionAbilityItem["yellow"][tarBLv]).ITEM_ID
             hitem.create(
                 {
                     itemId = itId,
@@ -65,7 +65,7 @@ deadAward = function(triggerUnit, killer)
         -- 掉落紫技能书
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["purple"][tarBLv] > 0) then
-            local itId = hSys.randTable(game.thisOptionAbilityItem["purple"][tarBLv]).ITEM_ID
+            local itId = table.random(game.thisOptionAbilityItem["purple"][tarBLv]).ITEM_ID
             hitem.create(
                 {
                     itemId = itId,
@@ -81,7 +81,7 @@ deadAward = function(triggerUnit, killer)
         -- 掉落兵塔
         local tarBLv = getTowerPowLevel(curWave)
         if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
-            local rand = hSys.randTable(game.thisOptionTowerPowerItem[targetTPow])
+            local rand = table.random(game.thisOptionTowerPowerItem[targetTPow])
             hitem.create(
                 {
                     itemId = rand.ITEM_ID,

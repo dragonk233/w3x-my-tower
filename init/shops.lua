@@ -1,8 +1,8 @@
 -- shopsAbility
 local abilityBelongs = {}
-if (hSys.getTableLen(shopsAbility) > 0) then
+if (table.len(shopsAbility) > 0) then
     for k, v in ipairs(shopsAbility) do
-        local EditorSuffix = hSys.implode(",", v.BelongTo)
+        local EditorSuffix = string.implode(",", v.BelongTo)
         local obj = slk.ability[v.id]:new("shopsSkills_" .. v.Name)
         obj.Name = v.Name
         obj.DataA1 = v.DataA1
@@ -17,15 +17,15 @@ if (hSys.getTableLen(shopsAbility) > 0) then
             table.insert(abilityBelongs[s], v.abilityID)
         end
         ?>
-    call SaveStr(hash_myslk, StringHash("shopsSkills"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
+    call SaveStr(hash_myslk, StringHash("shopsSkills"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
     <?
     end
 end
 
 -- shops
 for k, v in ipairs(shops) do
-    if (abilityBelongs[v.Name] ~= nil and hSys.getTableLen(abilityBelongs[v.Name])) then
-        v.abilList = v.abilList .. "," .. hSys.implode(",", abilityBelongs[v.Name])
+    if (abilityBelongs[v.Name] ~= nil and table.len(abilityBelongs[v.Name])) then
+        v.abilList = v.abilList .. "," .. string.implode(",", abilityBelongs[v.Name])
     end
     local obj = slk.unit.ngme:new("shops_" .. v.Name)
     obj.Name = v.Name
@@ -41,6 +41,6 @@ for k, v in ipairs(shops) do
     obj.unitSound = ""
     v.UNIT_ID = obj:get_id()
     ?>
-call SaveStr(hash_myslk, StringHash("shops"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
+call SaveStr(hash_myslk, StringHash("shops"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
 <?
 end

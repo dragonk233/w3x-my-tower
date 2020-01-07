@@ -56,7 +56,7 @@ local temp = {
 table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --冰剑闪烁
 local obj = slk.ability.AEbl:new("couriers_sk_blink_icemon")
@@ -109,7 +109,7 @@ local temp = {
 table.insert(couriersSkillsIce,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --其他例牌技能
 --吞兵塔石
@@ -145,7 +145,7 @@ table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
 table.insert(couriersSkillsIce,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --技能书·蓝
 local obj = slk.ability.ANcl:new("couriers_sk_book_blue")
@@ -180,7 +180,7 @@ table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
 table.insert(couriersSkillsIce,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --技能书·黄
 local obj = slk.ability.ANcl:new("couriers_sk_book_yellow")
@@ -215,7 +215,7 @@ table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
 table.insert(couriersSkillsIce,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --技能书·紫
 local obj = slk.ability.ANcl:new("couriers_sk_book_purple")
@@ -250,7 +250,7 @@ table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
 table.insert(couriersSkillsIce,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --召唤新兵塔
 local obj = slk.ability.ANcl:new("couriers_sk_new_tower")
@@ -285,7 +285,7 @@ table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
 table.insert(couriersSkillsIce,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --洗天赋
 local obj = slk.ability.ANcl:new("couriers_sk_switch_gift")
@@ -320,7 +320,7 @@ table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
 table.insert(couriersSkillsIce,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --木换金
 local obj = slk.ability.ANcl:new("couriers_sk_l2g")
@@ -361,7 +361,7 @@ table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
 table.insert(couriersSkillsIce,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --装备合并升华
 local obj = slk.ability.ANcl:new("couriers_sk_item_mix")
@@ -396,7 +396,7 @@ table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
 table.insert(couriersSkillsIce,temp.ABILITY_ID)
 couriers_abi = couriers_abi + 1
 ?>
-call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=hSys.addslashes(json.stringify(temp))?>")
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 
 ?>

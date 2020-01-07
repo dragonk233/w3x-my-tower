@@ -18,6 +18,6 @@ for k, v in ipairs(units) do
     obj.regenType = ""
     v.UNIT_ID = obj:get_id()
     ?>
-call SaveStr(hash_myslk, StringHash("thisunit"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
+call SaveStr(hash_myslk, StringHash("thisunit"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
 <?
 end

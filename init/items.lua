@@ -14,7 +14,7 @@ local itemDesc = function(v)
             desc = desc .. "|n"
         end
     end
-    if (v.Attr ~= nil and hSys.getTableLen(v.Attr) >= 1) then
+    if (v.Attr ~= nil and table.len(v.Attr) >= 1) then
         desc = desc .. hColor.yellowLight(const_getItemDesc(v.Attr))
         if ((v.Description ~= nil and v.Description ~= "") or (v.Suffix ~= nil and v.Suffix ~= "")) then
             desc = desc .. "|n"
@@ -35,7 +35,7 @@ end
 -- 组装物品的说明
 local itemUbertip = function(v)
     local desc = ""
-    if (v.Attr ~= nil and hSys.getTableLen(v.Attr) >= 1) then
+    if (v.Attr ~= nil and table.len(v.Attr) >= 1) then
         desc = desc .. const_getItemUbertip(v.Attr)
     end
     if (v.ASDescription ~= nil) then
@@ -120,12 +120,12 @@ for _, item in ipairs(items) do
         obj.droppable = v.dropable
         obj.pickRandom = 1
         obj.uses = 1
-        if (v.Shop ~= nil and hSys.getTableLen(v.Shop) > 0) then
+        if (v.Shop ~= nil and table.len(v.Shop) > 0) then
             for _, s in ipairs(v.Shop) do
                 if (itemsShop[s] == nil) then
                     itemsShop[s] = {}
                 end
-                local len = hSys.getTableLen(itemsShop[s])
+                local len = table.len(itemsShop[s])
                 if (len < 12) then
                     len = len + 1
                     obj.HotKey = CONST_HOTKEY[len].HotKey
@@ -140,13 +140,13 @@ for _, item in ipairs(items) do
             obj.Tip = "获得" .. v.Name
         end
         v.itemID = obj:get_id()
-        if (v.Shop ~= nil and hSys.getTableLen(v.Shop) > 0) then
+        if (v.Shop ~= nil and table.len(v.Shop) > 0) then
             for _, s in ipairs(v.Shop) do
                 table.insert(itemsShop[s], v.itemID)
             end
         end
         ?>
-    call SaveStr(hash_myslk, StringHash("items"), StringHash("<?=v.Name?>"), "<?=hSys.addslashes(json.stringify(v))?>")
+    call SaveStr(hash_myslk, StringHash("items"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
     <?
     end
 end

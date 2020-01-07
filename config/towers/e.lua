@@ -13,7 +13,7 @@ towers_e = {
         Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        abilList = hSys.implode(
+        abilList = string.implode(
             ",",
             {
                 towerSpxKV["封印枷锁之一"],

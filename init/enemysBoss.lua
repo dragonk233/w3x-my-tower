@@ -23,7 +23,7 @@ for k, v in ipairs(enemysBoss) do
     v.TYPE = "boss"
     v.UNIT_ID = obj:get_id()
     ?>
-call SaveStr(hash_myslk, StringHash("thisenemysboss"), <?=k?>, "<?=hSys.addslashes(json.stringify(v))?>")
+call SaveStr(hash_myslk, StringHash("thisenemysboss"), <?=k?>, "<?=string.addslashes(json.stringify(v))?>")
 <?
 end
 ?>

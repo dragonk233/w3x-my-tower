@@ -69,7 +69,7 @@ for _, v in ipairs(unitPower) do
         ABILITY_BTN = v,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("abilities_unit_power"), StringHash("<?=v?>"), "<?=hSys.addslashes(json.stringify(ab))?>")
+call SaveStr(hash_myslk, StringHash("abilities_unit_power"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
 <?
 end
 
@@ -106,6 +106,6 @@ for l=0,9,1 do
         ABILITY_BTN = v,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("abilities_unit_level"), <?=l?>, "<?=hSys.addslashes(json.stringify(ab))?>")
+call SaveStr(hash_myslk, StringHash("abilities_unit_level"), <?=l?>, "<?=string.addslashes(json.stringify(ab))?>")
 <?
 end

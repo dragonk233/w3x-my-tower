@@ -31,7 +31,7 @@ for i = 1, len, 1 do
 end
 
 for k, v in pairs(game.towersItems) do
-    if (hSys.inArray(v.INDEX, {"人类·铁甲剑士_1"})) then
+    if (table.includes(v.INDEX, {"人类·铁甲剑士_1"})) then
         hitem.create(
             {
                 itemId = v.ITEM_ID,
