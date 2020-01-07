@@ -60,6 +60,7 @@ game = {
         cur = "yb"
     },
     playerTower = {},
+    playerTowerPower = {},
     playerTowerLevel = {},
     playerCourier = {},
     towersLen = 0,

@@ -431,16 +431,29 @@ cj.TriggerAddAction(
                 --创建多面板
                 hmultiBoard.create(
                     "player",
-                    2.00,
+                    0.20,
                     function(mb, curPi)
                         --拼凑多面板数据，二维数组，行列模式
                         --开始当然是title了
                         local data = {
                             {
-                                {value = "玩家", icon = nil},
-                                {value = "兵塔", icon = nil},
-                                {value = "等级", icon = nil},
-                                {value = "APM", icon = nil}
+                                {value = "只人", icon = "ReplaceableTextures\\CommandButtons\\BTNRiderlessHorse.blp"},
+                                {value = "兵塔", icon = "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp"},
+                                {value = "等级", icon = "ReplaceableTextures\\CommandButtons\\BTNBlacksmith.blp"},
+                                {value = "阶级", icon = "ReplaceableTextures\\CommandButtons\\BTNAltarOfKings.blp"},
+                                {value = "天赋", icon = "ReplaceableTextures\\CommandButtons\\BTNDivineIntervention.blp"},
+                                {value = "物攻", icon = "ReplaceableTextures\\CommandButtons\\BTNThoriumMelee.blp"},
+                                {value = "魔攻", icon = "ReplaceableTextures\\CommandButtons\\BTNArcaniteMelee.blp"},
+                                {
+                                    value = "攻速",
+                                    icon = "ReplaceableTextures\\CommandButtons\\BTNImprovedUnholyStrength.blp"
+                                },
+                                {
+                                    value = "物爆",
+                                    icon = "ReplaceableTextures\\CommandButtons\\BTNSpiritWalkerMasterTraining.blp"
+                                },
+                                {value = "魔爆", icon = "ReplaceableTextures\\CommandButtons\\BTNPriestAdept.blp"},
+                                {value = "增幅", icon = "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp"}
                             }
                         }
                         --然后是form
@@ -450,13 +463,30 @@ cj.TriggerAddAction(
                                 local tower = game.playerTower[pi]
                                 local avatar = hunit.getAvatar(tower)
                                 local name = hunit.getName(tower)
+                                local attack_white = math.floor(hattr.get(tower, "attack_white"))
+                                local attack_green = math.floor(hattr.get(tower, "attack_green"))
+                                local attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
+                                local knocking =
+                                    math.floor(hattr.get(tower, "knocking_odds")) ..
+                                    "%击出" .. math.floor(hattr.get(tower, "knocking")) .. "%伤害"
+                                local violence =
+                                    math.floor(hattr.get(tower, "violence_odds")) ..
+                                    "%击出" .. math.floor(hattr.get(tower, "violence")) .. "%伤害"
+                                local hunt_amplitude = math.round(hattr.get(tower, "hunt_amplitude")) .. "%"
                                 table.insert(
                                     data,
                                     {
                                         {value = cj.GetPlayerName(p), icon = nil},
                                         {value = name, icon = avatar},
-                                        {value = hhero.getCurLevel(tower), icon = nil},
-                                        {value = hplayer.getApm(p), icon = nil}
+                                        {value = "Lv." .. hhero.getCurLevel(tower), icon = nil},
+                                        {value = game.playerTowerPower[pi], icon = nil},
+                                        {value = game.playerTowerLevel[pi], icon = nil},
+                                        {value = attack_white, icon = nil},
+                                        {value = attack_green, icon = nil},
+                                        {value = attack_speed, icon = nil},
+                                        {value = knocking, icon = nil},
+                                        {value = violence, icon = nil},
+                                        {value = hunt_amplitude, icon = nil}
                                     }
                                 )
                             end

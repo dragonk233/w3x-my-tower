@@ -64,7 +64,8 @@ enemyGenYB = function(waiting)
                     end
                     for k, v in pairs(game.pathPoint) do
                         if (his.playing(hplayer.players[k])) then
-                            local u = hemeny.create(
+                            local u =
+                                hemeny.create(
                                 {
                                     unitId = game.rule.yb.mon,
                                     qty = 1,
@@ -127,7 +128,8 @@ enemyGenHZ = function(waiting)
                     end
                     for k, v in pairs(game.pathPoint) do
                         if (his.playing(hplayer.players[k])) then
-                            local u = hemeny.create(
+                            local u =
+                                hemeny.create(
                                 {
                                     unitId = game.rule.hz.mon,
                                     qty = 1,
@@ -176,7 +178,8 @@ enemyGenDK = function(waiting)
                         if (his.playing(hplayer.players[k])) then
                             if (game.rule.dk.monLimit[k] < game.rule.dk.perWaveQty) then
                                 game.rule.dk.monLimit[k] = game.rule.dk.monLimit[k] + 1
-                                local u = hemeny.create(
+                                local u =
+                                    hemeny.create(
                                     {
                                         unitId = game.rule.dk.mon[k],
                                         qty = 1,
@@ -231,7 +234,7 @@ end
 -- 兵塔升级
 updateMyTower = function()
     local u = hevent.getTriggerUnit()
-    local uid = string.id2charcj.GetUnitTypeId(u))
+    local uid = string.id2char(cj.GetUnitTypeId(u))
     local lv = cj.GetHeroLevel(u)
     local diffLv = cj.I2R(lv - hhero.getPrevLevel(u))
     local tlv = hslk_global.unitsKV[uid].TOWER_POWER
@@ -279,13 +282,18 @@ createMyTower = function(playerIndex, towerId)
         if (game.towersAbilities[playerIndex] == nil) then
             game.towersAbilities[playerIndex] = {}
         end
+        local isFirst = false
+        if (game.playerTower[playerIndex] == nil) then
+            isFirst = true
+        end
         -- 如果有上一个单位，把上一个兵塔暂时隐藏，后面复制技能，取它的物品
         local prevHeroLevel = 1
-        if (game.playerTower[playerIndex] ~= nil) then
+        if (isFirst == false) then
             prevHeroLevel = cj.GetHeroLevel(game.playerTower[playerIndex]) + 1
             cj.ShowUnit(game.playerTower[playerIndex], false)
         end
-        local u = hunit.create(
+        local u =
+            hunit.create(
             {
                 whichPlayer = hplayer.players[playerIndex],
                 unitId = towerId,
@@ -364,6 +372,7 @@ createMyTower = function(playerIndex, towerId)
         cj.PingMinimapEx(game.towerPoint[playerIndex][1], game.towerPoint[playerIndex][2], 10, 255, 255, 255, true)
         hevent.onItemUsed(u, onUnitItemsUesd)
         --阶级标志
+        game.playerTowerPower[playerIndex] = hslk_global.unitsKV[towerId].TOWER_POWER
         hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
         --兵塔说明标志
         hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
@@ -372,7 +381,11 @@ createMyTower = function(playerIndex, towerId)
         --兵塔技能
         addTowerSkillsx(u)
         --天赋等级
-        addTowerLevel(playerIndex)
+        if (isFirst) then
+            addTowerLevel(playerIndex, 0)
+        else
+            addTowerLevel(playerIndex)
+        end
         --技能树
         for k, v in pairs(game.thisEmptyAbilities) do
             if (game.towersAbilities[playerIndex][k] == nil) then
@@ -406,7 +419,8 @@ createMyCourier = function(playerIndex, courierId)
             x = game.courierPoint[playerIndex][1]
             y = game.courierPoint[playerIndex][2]
         end
-        local u = hunit.create(
+        local u =
+            hunit.create(
             {
                 whichPlayer = hplayer.players[playerIndex],
                 unitId = courierId,

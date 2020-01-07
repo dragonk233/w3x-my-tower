@@ -32,13 +32,13 @@ onTowerAttack = function()
                     htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
                     haward.forPlayerGold(10)
                 end
-                if (Name == "震晕践踏") --[[and math.random(1, 10) == 5]] then
+                if (Name == "震晕践踏" and math.random(1, 10) == 5) then
                     htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
                     hskill.swimGroup(
                         {
-                            range = 750,
+                            range = 1000,
                             odds = 100,
-                            during = 0.3 * level,
+                            during = 0.5 * level,
                             whichUnit = u,
                             filter = function()
                                 return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
@@ -46,12 +46,32 @@ onTowerAttack = function()
                         }
                     )
                 end
-                if (Name == "冰花炸裂") --[[and math.random(1, 7) == 4]] then
+                if (Name == "炸裂践踏" and math.random(1, 10) == 5) then
                     htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    hskill.swimGroup(
+                        {
+                            range = 1000,
+                            odds = 100,
+                            during = 1.2 * level,
+                            damage = 50 * level,
+                            whichUnit = u,
+                            sourceUnit = u,
+                            model = "war3mapImported\\eff_shock_explosion.mdl",
+                            filter = function()
+                                return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                            end
+                        }
+                    )
+                end
+                if (Name == "冰花炸裂" and math.random(1, 7) == 4) then
+                    local x = cj.GetUnitX(u)
+                    local y = cj.GetUnitY(u)
+                    htextTag.style(htextTag.create2XY(x, y, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    heffect.toXY("war3mapImported\\eff_FrostNova.mdl", x, y, 0)
                     local g =
                         hgroup.createByUnit(
                         u,
-                        750,
+                        1000,
                         function()
                             return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                         end
@@ -60,8 +80,9 @@ onTowerAttack = function()
                         g,
                         function()
                             local eu = cj.GetEnumUnit()
-                            hattr.set(eu, 3, {move = "-" .. 45 * level})
-                            heffect.bindUnit("war3mapImported\\eff_icing.mdl", eu, "foot", 3)
+                            hattr.set(eu, 7.5, {move = "-" .. 45 * level})
+                            heffect.toUnit("war3mapImported\\eff_frost_burst.mdl", eu, 0)
+                            heffect.bindUnit("war3mapImported\\eff_icing.mdl", eu, "foot", 7.5)
                         end
                     )
                     cj.GroupClear(g)

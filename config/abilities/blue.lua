@@ -45,7 +45,7 @@ abilitiesBlue = {
         Name = "心灵之火",
         Art = "war3mapImported\\icon_pas_InnerFire.blp",
         Ubertip = "+{val#1}%攻击速度",
-        Val = {7}
+        Val = {7.5}
     },
     {
         Name = "星辰攻击",
@@ -132,16 +132,10 @@ abilitiesBlue = {
         Val = {15}
     },
     {
-        Name = "致命抵抗",
-        Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldGuard.blp",
-        Ubertip = "+{val#1}%致命抵抗，可抵抗物理及魔法暴击的几率与伤害",
-        Val = {7}
-    },
-    {
-        Name = "反伤抵抗",
-        Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldReflection.blp",
-        Ubertip = "+{val#1}%反伤抵抗",
-        Val = {7}
+        Name = "雷电之锤",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNStormHammer.blp",
+        Ubertip = "攻击时30%几率发起闪电链，最多打击3个目标，造成{val#1}点伤害",
+        Val = {45}
     },
     {
         Name = "变相移动",
@@ -165,9 +159,17 @@ abilitiesBlue = {
         ODK = true
     },
     {
-        Name = "雷电之锤",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNStormHammer.blp",
-        Ubertip = "攻击时30%几率发起闪电链，最多打击3个目标，造成{val#1}点伤害",
-        Val = {45}
+        Name = "致命抵抗",
+        Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldGuard.blp",
+        Ubertip = "+{val#1}%致命抵抗，可抵抗物理及魔法暴击的几率与伤害",
+        Val = {7},
+        ODK = true
+    },
+    {
+        Name = "反伤抵抗",
+        Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldReflection.blp",
+        Ubertip = "+{val#1}%反伤抵抗",
+        Val = {7},
+        ODK = true
     }
 }
