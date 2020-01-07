@@ -98,7 +98,7 @@ end
 enemyDeadYB = function()
     local u = hevent.getKiller()
     if (u ~= nil) then
-        haward.forGroupExp(u, 35 * game.rule.hz.wave)
+        haward.forGroupExp(u, 35 * game.rule.yb.wave)
     end
     deadAward(hevent.getTriggerUnit(), u)
 end

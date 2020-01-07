@@ -21,7 +21,7 @@ end
 
 --预读
 for _, v in ipairs(preload) do
-    local u = cj.CreateUnit(hplayer.player_passive, hSys.getObjId(v), 0, 0, 0)
+    local u = cj.CreateUnit(hplayer.player_passive, string.char2idv), 0, 0, 0)
     hattr.registerAll(u)
     hunit.del(u, 0.1)
 end

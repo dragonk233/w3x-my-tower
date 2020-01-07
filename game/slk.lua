@@ -26,11 +26,12 @@ local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("tower_spx_ab"), -1)
 for i = 1, len, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("tower_spx_ab"), i)
     local jv = json.parse(v)
+    hRuntime.register.ability(jv)
     game.towersSkillKV[jv.Name] = jv.ABILITY_ID
 end
 
 for k, v in pairs(game.towersItems) do
-    if (hSys.inArray(v.INDEX, { "人类·铁甲剑士_1" })) then
+    if (hSys.inArray(v.INDEX, {"人类·铁甲剑士_1"})) then
         hitem.create(
             {
                 itemId = v.ITEM_ID,

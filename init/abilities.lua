@@ -166,7 +166,7 @@ for _, v in ipairs(abilities) do
             v.ABILITY_BTN = s
             v.ABILITY_LEVEL = level
             ?>
-        call SaveStr(hash_myslk, StringHash("abilities"), <?=ab_index?>, "<?=hSys.addslashes(json.stringify(v))?>")
+            call SaveStr(hash_myslk, StringHash("abilities"), <?=ab_index?>, "<?=hSys.addslashes(json.stringify(v))?>")
             <?
         end
         -- 物品

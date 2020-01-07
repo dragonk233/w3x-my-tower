@@ -3,7 +3,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
     if (opt == "-") then
         optChar = "sub"
     end
-    local level = abliOps.ABILITY_LEVEL * 2 - 1
+    local level = (abliOps.ABILITY_LEVEL or 1) * 2 - 1
     if (abliOps.Name == "战斗传统") then
         hattr.set(u, 0, {attack_white = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "魔法杖") then
@@ -387,7 +387,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                     [optChar] = {
                         {
                             attr = "fetter",
-                            odds = 100,
+                            odds = 45,
                             during = 3,
                             model = "Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl"
                         }

@@ -68,13 +68,13 @@ abilitiesYellow = {
     {
         Name = "日食",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGenericSpellImmunity.blp",
-        Ubertip = "+{val#1}暗攻击|n无对应攻击特性时无效",
+        Ubertip = "+{val#1}%暗攻击|n无对应攻击特性时无效",
         Val = { 11 }
     },
     {
         Name = "邪神之手",
         Art = "war3mapImported\\icon_pas_Offhand_Stratholme_A_02.blp",
-        Ubertip = "+{val#1}鬼攻击|n无对应攻击特性时无效",
+        Ubertip = "+{val#1}%鬼攻击|n无对应攻击特性时无效",
         Val = { 12 }
     },
     {

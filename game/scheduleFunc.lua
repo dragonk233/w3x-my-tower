@@ -231,7 +231,7 @@ end
 -- 兵塔升级
 updateMyTower = function()
     local u = hevent.getTriggerUnit()
-    local uid = hSys.getObjChar(cj.GetUnitTypeId(u))
+    local uid = string.id2charcj.GetUnitTypeId(u))
     local lv = cj.GetHeroLevel(u)
     local diffLv = cj.I2R(lv - hhero.getPrevLevel(u))
     local tlv = hslk_global.unitsKV[uid].TOWER_POWER
