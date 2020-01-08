@@ -148,6 +148,7 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
         cool1 = 1.90,
         Primary = "AGI",
+        abilList = {towerSpxKV["月刃弹射"]}
     },
     {
         Name = "德鲁伊·猛禽",

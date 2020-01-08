@@ -13,6 +13,9 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\SteamTank\\SteamTankImpact.mdl",
         cool1 = 2.75,
         Primary = "STR",
+        rangeN1 = 1050,
+        acquire = 1049,
+        abilList = {towerSpxKV["超远程火炮"]}
     },
     {
         Name = "人类·麦迪文",
@@ -27,7 +30,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\DruidoftheTalonMissile\\DruidoftheTalonMissile.mdl",
         cool1 = 2.10,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "矮人·狮鹫骑士",
@@ -42,7 +45,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\GryphonRiderMissile\\GryphonRiderMissile.mdl",
         cool1 = 2.00,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "矮人·狮鹫闪电骑士",
@@ -54,10 +57,10 @@ towers_a = {
         scale = 2.00,
         movetp = "fly",
         moveHeight = 225,
-        weapTp1 = "mline",
+        weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Human\\StormBolt\\StormBoltMissile.mdl",
         cool1 = 1.90,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "血精灵·魔导师",
@@ -72,7 +75,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\BloodElfSpellThiefMISSILE\\BloodElfSpellThiefMISSILE.mdl",
         cool1 = 1.85,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "兽人·攻城粉碎机",
@@ -88,6 +91,7 @@ towers_a = {
         Missileart = "abilities\\weapons\\DemolisherMissile\\DemolisherMissile.mdl",
         cool1 = 2.85,
         Primary = "STR",
+        abilList = {towerSpxKV["溅射攻击"]}
     },
     {
         Name = "兽人·白毛猛犸",
@@ -102,7 +106,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\LichMissile\\LichMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "巨魔·巨魔狂战士",
@@ -117,7 +121,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "abilities\\weapons\\huntermissile\\huntermissile.mdl",
         cool1 = 1.90,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "牛头人·小牛",
@@ -132,7 +136,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
         cool1 = 2.30,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "暗夜精灵·精灵龙",
@@ -147,7 +151,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl",
         cool1 = 2.10,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "暗夜精灵·投刃车",
@@ -164,6 +168,7 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\GlaiveMissile\\GlaiveMissile.mdl",
         cool1 = 2.55,
         Primary = "AGI",
+        abilList = {towerSpxKV["投刃弹射"]}
     },
     {
         Name = "暗夜精灵·奇美拉",
@@ -178,7 +183,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl",
         cool1 = 2.30,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "暗夜精灵·复仇之魂",
@@ -193,7 +198,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\VengeanceMissile\\VengeanceMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "德鲁伊·利爪",
@@ -208,7 +213,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",
         cool1 = 2.00,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "亡灵·绞肉车",
@@ -224,6 +229,7 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\MeatwagonMissile\\MeatwagonMissile.mdl",
         cool1 = 2.40,
         Primary = "STR",
+        abilList = {towerSpxKV["溅射攻击"]}
     },
     {
         Name = "亡灵·冰霜巨龙",
@@ -239,6 +245,7 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\FrostWyrmMissile\\FrostWyrmMissile.mdl",
         cool1 = 3.00,
         Primary = "STR",
+        abilList = {towerSpxKV["溅射攻击"]}
     },
     {
         Name = "娜迦·皇家卫兵",
@@ -253,7 +260,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "abilities\\weapons\\WyvernSpear\\WyvernSpearMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "元素·山岭巨人",
@@ -269,6 +276,7 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
         cool1 = 2.45,
         Primary = "STR",
+        abilList = {towerSpxKV["溅射攻击"]}
     },
     {
         Name = "元素·撸起战棍的山岭巨人",
@@ -283,7 +291,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",
         cool1 = 2.55,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "恶魔·守卫将领",
@@ -298,7 +306,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Culling_Cleave_Silver.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "恶魔·双匕·尤迪安",
@@ -313,7 +321,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_animeslashfinal.mdl",
         cool1 = 1.90,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "食人魔·黑暗舞者",
@@ -328,7 +336,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WingedSerpentMissile\\WingedSerpentMissile.mdl",
         cool1 = 1.95,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "异兽·索命飞龙",
@@ -343,6 +351,6 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_void_Arrow.mdl",
         cool1 = 2.00,
-        Primary = "INT",
-    },
+        Primary = "INT"
+    }
 }

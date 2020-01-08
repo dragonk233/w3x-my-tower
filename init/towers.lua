@@ -1,4 +1,56 @@
 -- towers
+
+--兵塔变敌军单位
+local createTowerShadowUnit = function(v,towersTi,tlv)
+    local obj = slk.unit.hfoo:new("this_tower_shadow_" .. v.Name)
+    obj.Name = "[影子兵塔]["..tlv.."阶]" .. v.Name
+    obj.upgrades = ""
+    obj.file = v.file
+    obj.Art = v.Art
+    obj.modelScale = v.modelScale or 1.00
+    obj.scale = v.scale or 1.00
+    obj.HP = 100
+    obj.spd = 100
+    obj.sight = 500
+    obj.nsight = 500
+    obj.unitSound = v.unitSound or ""
+    obj.weapsOn = 0
+    local movetp = v.movetp or "foot"
+    local moveHeight = v.moveHeight or 0
+    if(movetp == 'fly')then
+        moveHeight = 250
+    end
+    obj.movetp = movetp --移动类型
+    obj.moveHeight = moveHeight --移动高度
+    obj.moveFloor = moveHeight * 0.25 --最低高度
+    obj.regenHP = 0
+    obj.regenType = ""
+    obj.def = 0
+    local abl = v.abilList
+    if(abl ~= nil)then
+        if(type(abl) == "string")then
+            abl = string.explode(',', abl)
+        elseif(type(abl) ~= "table")then
+            abl = {}
+        end
+    end
+    if(abl == nil or #abl ==0)then
+        abl = {
+            towerSpxKV["封印枷锁之一"],
+            towerSpxKV["封印枷锁之二"]
+        }
+    elseif(#abl == 1)then
+        table.insert( abl, towerSpxKV["封印枷锁之二"] )
+    end
+    obj.abilList = string.implode(",",abl)
+    v.TYPE = "tower_shadow"
+    v.UNIT_ID = obj:get_id()
+    ?>
+    call SaveStr(hash_myslk, StringHash("towers_shadow"), <?=towersTi?>, "<?=string.addslashes(json.stringify(v))?>")
+    <?
+end
+
+--
 towers = {
     E = towers_e,
     D = towers_d,
@@ -128,7 +180,7 @@ for j=1,1,1 do
                 obj.Buttonpos2 = 0
                 obj.death = 0.10
                 obj.turnRate = 1.00
-                obj.acquire = 749.00
+                obj.acquire = v.acquire or 749.00
                 obj.weapsOn = 1
                 obj.race = "human"
                 obj.deathType = 0
@@ -225,7 +277,7 @@ for j=1,1,1 do
                 obj.spd = 100
                 obj.backSw1 = v.backSw1 or 0.500
                 obj.dmgpt1 = v.dmgpt1 or 0.500
-                obj.rangeN1 = 750
+                obj.rangeN1 = v.rangeN1 or 750
                 obj.cool1 = v.cool1 or 2.00
                 obj.armor = "Flesh" -- 被击声音
                 obj.targType = "ground" --作为目标类型
@@ -281,6 +333,8 @@ for j=1,1,1 do
                 call SaveStr(hash_myslk, StringHash("towers"), <?=towersTi?>, "<?=string.addslashes(json.stringify(v))?>")
                 call SaveStr(hash_myslk, StringHash("towersItems"), <?=towersTi?>, "<?=string.addslashes(json.stringify(hitem))?>")
                 <?
+                --shadow
+                createTowerShadowUnit(v,towersTi,tlv)
                 --塔基的属性说明
                 local obj = slk.ability.Aamk:new("towerOriginAbli_" .. thisIndex)
                 local Name = "[兵塔参数]" .. v.Name

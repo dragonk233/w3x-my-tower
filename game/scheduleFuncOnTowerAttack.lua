@@ -11,10 +11,10 @@ onTowerAttack = function()
                     htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
                     hattr.set(
                         u,
-                        2.00,
+                        5.00,
                         {
                             attack_hunt_type = "+poison",
-                            attack_speed = "+" .. 25 * level
+                            attack_speed = "+" .. 10 * level
                         }
                     )
                 end

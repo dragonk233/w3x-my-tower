@@ -132,9 +132,12 @@ enemyDeadDK = function()
                 cj.GetPlayerName(hplayer.players[pi]) ..
                     "达到了|cffffff00第" .. game.rule.dk.wave[pi] .. "级|r，TA的兵塔开始进攻其他人，小心啦~"
             )
+            --奖励的东东
             if (math.fmod(game.rule.dk.wave[pi], 10) == 0) then
                 awardGenForOne(game.rule.dk.wave[pi], pi)
             end
+            --我的兵塔，进攻！
+            
         end
     end
     local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex

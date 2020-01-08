@@ -496,6 +496,7 @@ towers_ss = {
         weapTp1 = "msplash",
         cool1 = 2.00,
         Primary = "STR",
+        abilList = {towerSpxKV["溅射攻击"]}
     },
     {
         Name = "地精·炼金术士·卡奈",

@@ -80,8 +80,8 @@ abilitiesBlue = {
     {
         Name = "侵毒连击",
         Art = "war3mapImported\\icon_pas_Rogue_Disembowel.blp",
-        Ubertip = "攻击时有10%几率获得毒攻击特性，同时+{val#1}%攻击速度，持续2秒",
-        Val = {25}
+        Ubertip = "攻击时有10%几率获得毒攻击特性，同时+{val#1}%攻击速度，持续5秒",
+        Val = {10}
     },
     {
         Name = "勇气勋章",

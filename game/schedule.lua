@@ -28,6 +28,8 @@ cj.TriggerAddAction(
             这里开始游戏正式开始了
             发挥你的想象力吧~
         ]]
+        cj.FogEnable(false)
+        cj.FogMaskEnable(false)
         hsound.bgmStop(nil)
         --设置三围基础
         hattr.setThreeBuff(
@@ -72,8 +74,6 @@ cj.TriggerAddAction(
                     game.rule.cur = "yb"
                     hmsg.echo("|cffffff00各玩家合力打怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“大精灵”的生命，坚持100波胜利|r")
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)
-                    cj.FogEnable(false)
-                    cj.FogMaskEnable(false)
                     -- 大精灵
                     local bigElf =
                         hunit.create(
@@ -204,8 +204,6 @@ cj.TriggerAddAction(
                     game.rule.cur = "hz"
                     hmsg.echo("|cffffff00各玩家合力打怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“光辉城主”的生命，玩到死机为止！|r")
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)
-                    cj.FogEnable(false)
-                    cj.FogMaskEnable(false)
                     local bigElf =
                         hunit.create(
                         {
@@ -340,8 +338,6 @@ cj.TriggerAddAction(
                         hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局|r")
                     end
                     hsound.bgm(cg.gg_snd_bgm_dk, nil)
-                    cj.FogEnable(true)
-                    cj.FogMaskEnable(true)
                     -- 构建出怪区域
                     for k, v in ipairs(game.pathPoint) do
                         for i, p in ipairs(v) do
@@ -353,7 +349,7 @@ cj.TriggerAddAction(
                                 function()
                                     if (his.enemyPlayer(cj.GetTriggerUnit(), game.ALLY_PLAYER)) then
                                         if (i == #v) then
-                                            -- 最后一格,返回起点
+                                            -- 最后一格,前往下一区域
                                             local next = getNextRect(k)
                                             if (next ~= -1) then
                                                 cj.SetUnitPosition(
@@ -391,7 +387,7 @@ cj.TriggerAddAction(
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do
                     local u
-                    if (game.rule.dk.ai == true and his.computer(hplayer.players[k])) then
+                    if (game.rule.dk.ai == true and his.playing(hplayer.players[k]) == false) then
                         u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
                     else
                         u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
@@ -468,7 +464,7 @@ cj.TriggerAddAction(
                         --然后是form
                         for pi = 1, hplayer.qty_max, 1 do
                             local p = hplayer.players[pi]
-                            if (his.playing(p)) then
+                            if (his.playing(p) or game.rule.dk.ai == true) then
                                 local tower = game.playerTower[pi]
                                 local avatar = hunit.getAvatar(tower)
                                 local name = hunit.getName(tower)

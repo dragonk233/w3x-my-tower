@@ -24,7 +24,15 @@ awardGenForOne = function(curWave, pi, awardMon)
             resistance = "=" .. curWave * 0.8
         }
     )
-    hunit.setPeriod(u, 30)
+    if (game.rule.cur == "dk") then
+        if (game.rule.dk.ai == true) then
+            hunit.setPeriod(u, 120)
+        else
+            hunit.setPeriod(u, 30 * hplayer.qty_current)
+        end
+    else
+        hunit.setPeriod(u, 30)
+    end
     game.currentMon = game.currentMon + 1
     hevent.onBeDamage(u, awardBeDamage)
     if (awardMon.Name == "大金币") then

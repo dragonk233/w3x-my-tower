@@ -1,36 +1,28 @@
--- towerSkill
 towerSpxKV = {}
-
 local tower_sabi = 0
-
-local temp_spx = {
-    {
-        Name = "封印枷锁之一",
-        Ubertip = "中阶兵塔，通常能得到解锁",
-        Art = "war3mapImported\\icon_pas_Slow_Grey.blp",
-        Buttonpos1 = 0,
-        Buttonpos2 = 1
-    },
-    {
-        Name = "封印枷锁之二",
-        Ubertip = "高阶兵塔，通常能得到解锁",
-        Art = "war3mapImported\\icon_pas_Slow_Grey.blp",
-        Buttonpos1 = 0,
-        Buttonpos2 = 2
-    },
-    {
-        Name = "铁壁",
-        Ubertip = "+10护甲",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThickFur.blp",
-        Buttonpos1 = 0,
-        Buttonpos2 = 1
-    }
-}
-for k, v in pairs(temp_spx) do
+for k, v in pairs(TOWER_ABLI_SPX) do
+    local Ubertip = v.Ubertip or ""
+    v.Val = v.Val or {}
+    if (Ubertip ~= "") then
+        for vali = 1, 5, 1 do
+            local valmatch = "{val#" .. vali .. "}"
+            if (v.Val[vali] == nil) then
+                v.Val[vali] = 0
+            end
+            if (string.find(Ubertip, valmatch) ~= nil) then
+                Ubertip = string.gsub(Ubertip, valmatch, "|cffffcc00" .. v.Val[vali] .. "|r")
+            else
+                vali = 99
+            end
+        end
+    end
+    if(v.ODK ~= nil and v.ODK == true)then
+        Ubertip = Ubertip .. hColor.red("|n！此技能仅在对抗有明显效果")
+    end
     local obj = slk.ability.Aamk:new("abilities_power_spx_" .. v.Name)
     obj.Name = v.Name
     obj.Tip = v.Name
-    obj.Ubertip = hColor.yellow(v.Ubertip)
+    obj.Ubertip = Ubertip
     obj.Buttonpos1 = v.Buttonpos1
     obj.Buttonpos2 = v.Buttonpos2
     obj.hero = 0
@@ -49,9 +41,6 @@ for k, v in pairs(temp_spx) do
     call SaveStr(hash_myslk, StringHash("tower_spx_ab"), <?=tower_sabi?>, "<?=string.addslashes(json.stringify(temp))?>")
     <?
 end
-
-
-
 ?>
 call SaveInteger(hash_myslk, StringHash("tower_spx_ab"), -1, <?=tower_sabi?>)
 <?

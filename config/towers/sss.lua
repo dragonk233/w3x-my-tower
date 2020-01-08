@@ -118,6 +118,7 @@ towers_sss = {
         Missileart = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
+        abilList = {towerSpxKV["溅射攻击"]}
     },
     {
         Name = "恶魔·基尔加丹",
@@ -133,6 +134,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_DarkSoul.mdl",
         cool1 = 2.00,
         Primary = "STR",
+        abilList = {towerSpxKV["溅射攻击"]}
     },
     {
         Name = "恶魔·究极猎手·尤迪安",
