@@ -1,215 +1,11 @@
 require "game.scheduleFuncGetPow"
-require "game.scheduleFuncOnEnemyBeAttack"
-require "game.scheduleFuncOnEnemyDead"
 require "game.scheduleFuncOnItemUse"
 require "game.scheduleFuncOnCourierSkillUse"
 require "game.scheduleFuncOnTowerAttack"
 require "game.scheduleFuncOnTowerLevelUp"
 require "game.scheduleFuncTowerSkillRace"
 require "game.scheduleFuncTowerSkillx"
-
--- 出兵
-enemyGenYB = function(waiting)
-    htime.setTimeout(
-        waiting,
-        function(t, td)
-            htime.delDialog(td)
-            htime.delTimer(t)
-            hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
-            local count = game.rule.yb.perWaveQty
-            game.rule.yb.mon = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
-            htime.setInterval(
-                2.00,
-                function(t2, td2)
-                    count = count - 1
-                    if (game.runing == false) then
-                        htime.delDialog(td2)
-                        htime.delTimer(t2)
-                        return
-                    end
-                    if (count <= 0) then
-                        htime.delDialog(td2)
-                        htime.delTimer(t2)
-                        if (game.rule.yb.wave >= game.rule.yb.waveEnd) then
-                            hmsg.echo("通过了100波!|cffffff00恭喜！快乐！|r，10秒后会结束游戏")
-                            htime.setTimeout(
-                                10,
-                                function(t, td)
-                                    htime.delDialog(td)
-                                    htime.delTimer(t)
-                                    hplayer.loop(
-                                        function(p)
-                                            hplayer.victory(p)
-                                        end
-                                    )
-                                end,
-                                "祝贺你~准备离开~"
-                            )
-                            return
-                        end
-                        local gold = hplayer.qty_current * game.rule.yb.wave * 60
-                        haward.forPlayer(gold, 0)
-                        hmsg.echo("通过了|cffffff00第" .. game.rule.yb.wave .. "波|r，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
-                        game.rule.yb.wave = game.rule.yb.wave + 1
-                        hplayer.loop(
-                            function(p)
-                                if (his.playing(p)) then
-                                    hsound.sound2Player(cg.gg_snd_coin_1, p)
-                                    hmsg.echo(hplayer.getSelection(p))
-                                end
-                            end
-                        )
-                        enemyGenYB(5)
-                        return
-                    end
-                    for k, v in pairs(game.pathPoint) do
-                        if (his.playing(hplayer.players[k])) then
-                            local u =
-                                hemeny.create(
-                                {
-                                    unitId = game.rule.yb.mon,
-                                    qty = 1,
-                                    x = v[1][1],
-                                    y = v[1][2]
-                                }
-                            )
-                            cj.SetUnitPathing(u, false)
-                            hattr.set(
-                                u,
-                                0,
-                                {
-                                    life = "=" .. (25 * game.rule.yb.wave),
-                                    move = "=180"
-                                }
-                            )
-                            hevent.onBeDamage(u, enemyBeDamage)
-                            hevent.onDead(u, enemyDeadYB)
-                        end
-                    end
-                end
-            )
-        end,
-        "第" .. game.rule.yb.wave .. "波"
-    )
-end
-enemyGenHZ = function(waiting)
-    htime.setTimeout(
-        waiting,
-        function(t, td)
-            htime.delDialog(td)
-            htime.delTimer(t)
-            hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
-            local count = game.rule.hz.perWaveQty
-            game.rule.hz.mon = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
-            htime.setInterval(
-                2.00,
-                function(t2, td2)
-                    count = count - 1
-                    if (game.runing == false) then
-                        htime.delDialog(td2)
-                        htime.delTimer(t2)
-                        return
-                    end
-                    if (count <= 0) then
-                        htime.delDialog(td2)
-                        htime.delTimer(t2)
-                        local gold = hplayer.qty_current * game.rule.hz.wave * 50
-                        haward.forPlayer(gold, 0)
-                        hmsg.echo("通过了|cffffff00第" .. game.rule.hz.wave .. "波|r，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
-                        game.rule.hz.wave = game.rule.hz.wave + 1
-                        for i = 1, hplayer.qty_max, 1 do
-                            if (his.playing(hplayer.players[i])) then
-                                hsound.sound2Player(cg.gg_snd_coin_1, hplayer.players[i])
-                                hmsg.echo(hplayer.getSelection(hplayer.players[i]))
-                            end
-                        end
-                        enemyGenHZ(5)
-                        return
-                    end
-                    for k, v in pairs(game.pathPoint) do
-                        if (his.playing(hplayer.players[k])) then
-                            local u =
-                                hemeny.create(
-                                {
-                                    unitId = game.rule.hz.mon,
-                                    qty = 1,
-                                    x = v[1][1],
-                                    y = v[1][2]
-                                }
-                            )
-                            cj.SetUnitPathing(u, false)
-                            hattr.set(
-                                u,
-                                0,
-                                {
-                                    life = "=" .. (30 * game.rule.hz.wave),
-                                    move = "=190"
-                                }
-                            )
-                            hevent.onBeDamage(u, enemyBeDamage)
-                            hevent.onDead(u, enemyDeadHZ)
-                        end
-                    end
-                end
-            )
-        end,
-        "第" .. game.rule.hz.wave .. "波"
-    )
-end
-
-enemyGenDK = function(waiting)
-    htime.setTimeout(
-        waiting,
-        function(t, td)
-            htime.delDialog(td)
-            htime.delTimer(t)
-            for i = 1, hplayer.qty_max, 1 do
-                if (his.playing(hplayer.players[i])) then
-                    game.rule.dk.playerQty[i] = 0
-                    game.rule.dk.wave[i] = 1
-                    game.rule.dk.mon[i] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
-                    game.rule.dk.monLimit[i] = 0
-                end
-            end
-            htime.setInterval(
-                2.00,
-                function()
-                    for k, v in pairs(game.pathPoint) do
-                        if (his.playing(hplayer.players[k])) then
-                            if (game.rule.dk.monLimit[k] < game.rule.dk.perWaveQty) then
-                                game.rule.dk.monLimit[k] = game.rule.dk.monLimit[k] + 1
-                                local u =
-                                    hemeny.create(
-                                    {
-                                        unitId = game.rule.dk.mon[k],
-                                        qty = 1,
-                                        x = v[1][1],
-                                        y = v[1][2]
-                                    }
-                                )
-                                cj.SetUnitPathing(u, false)
-                                hattr.set(
-                                    u,
-                                    0,
-                                    {
-                                        life = "=" .. (35 * game.rule.dk.wave[k]),
-                                        move = "=200"
-                                    }
-                                )
-                                game.rule.dk.monData[u] = {
-                                    pathIndex = k
-                                }
-                                hevent.onBeDamage(u, enemyBeDamage)
-                                hevent.onDead(u, enemyDeadDK)
-                            end
-                        end
-                    end
-                end
-            )
-        end,
-        "请准备好与朋友欢乐"
-    )
-end
+require "game.scheduleFuncEnemyGenNormal"
 
 getNextRect = function(current)
     local next = -1
@@ -278,7 +74,7 @@ createMyTower = function(playerIndex, towerId)
         print("createMyTower wtf")
         return nil
     end
-    if (his.playing(hplayer.players[playerIndex])) then
+    if (his.playing(hplayer.players[playerIndex]) or game.rule.dk.ai == true) then
         if (game.towersAbilities[playerIndex] == nil) then
             game.towersAbilities[playerIndex] = {}
         end
@@ -406,7 +202,7 @@ createMyCourier = function(playerIndex, courierId)
         print("createMyCourier wtf")
         return nil
     end
-    if (his.playing(hplayer.players[playerIndex])) then
+    if (his.playing(hplayer.players[playerIndex]) or game.rule.dk.ai == true) then
         -- 如果有上一个单位，把上一个信使暂时隐藏，后面取它的物品
         if (game.playerCourier[playerIndex] ~= nil) then
             cj.ShowUnit(game.playerCourier[playerIndex], false)

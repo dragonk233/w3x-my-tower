@@ -51,14 +51,12 @@ cj.TriggerAddAction(
         )
         local btns = {
             "轻松" .. game.rule.yb.waveEnd .. "波",
-            "无尽挑战",
-            "有趣坑友"
+            "死机挑战"
         }
         if (hplayer.qty_current <= 1) then
-            btns = {
-                "轻松" .. game.rule.yb.waveEnd .. "波",
-                "无尽挑战"
-            }
+            table.insert(btns, "有趣对抗(AI模式)")
+        else
+            table.insert(btns, "有趣对抗")
         end
         -- 第一玩家选择模式
         hmsg.echo("第一个玩家正在选择（游戏模式）", 10)
@@ -72,7 +70,7 @@ cj.TriggerAddAction(
                 hmsg.echo("选择了" .. btnIdx)
                 if (btnIdx == "轻松" .. game.rule.yb.waveEnd .. "波") then
                     game.rule.cur = "yb"
-                    hmsg.echo("|cffffff00四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“大精灵”的生命，坚持100波胜利|r")
+                    hmsg.echo("|cffffff00各玩家合力打怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“大精灵”的生命，坚持100波胜利|r")
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)
                     cj.FogEnable(false)
                     cj.FogMaskEnable(false)
@@ -202,9 +200,9 @@ cj.TriggerAddAction(
                             hleaderBoard.setPlayerData(bl, p, v)
                         end
                     )
-                elseif (btnIdx == "无尽挑战") then
+                elseif (btnIdx == "死机挑战") then
                     game.rule.cur = "hz"
-                    hmsg.echo("|cffffff00四个玩家独立出怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“光辉城主”的生命，直至游戏失败|r")
+                    hmsg.echo("|cffffff00各玩家合力打怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“光辉城主”的生命，玩到死机为止！|r")
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)
                     cj.FogEnable(false)
                     cj.FogMaskEnable(false)
@@ -222,7 +220,7 @@ cj.TriggerAddAction(
                         bigElf,
                         function()
                             game.runing = false
-                            hmsg.echo("不！“光辉城主”GG了，结束啦~我们的守护")
+                            hmsg.echo("不！“光辉城主”GG了，还没死机就结束啦~我们的守护")
                             htime.setTimeout(
                                 5,
                                 function(t, td)
@@ -333,9 +331,14 @@ cj.TriggerAddAction(
                             hleaderBoard.setPlayerData(bl, p, v)
                         end
                     )
-                elseif (btnIdx == "个人坑友模式") then
+                elseif (btnIdx == "有趣对抗" or "有趣对抗(AI模式)") then
                     game.rule.cur = "dk"
-                    hmsg.echo("|cffffff00四个玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局|r")
+                    if (btnIdx == "有趣对抗(AI模式)") then
+                        game.rule.dk.ai = true
+                        hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局[AI模式]|r")
+                    else
+                        hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局|r")
+                    end
                     hsound.bgm(cg.gg_snd_bgm_dk, nil)
                     cj.FogEnable(true)
                     cj.FogMaskEnable(true)
@@ -380,29 +383,34 @@ cj.TriggerAddAction(
                         function(bl, i)
                             local p = hplayer.players[i]
                             local v = game.rule.dk.wave[i]
-                            hleaderBoard.setTitle(bl, "个人坑友战绩榜")
+                            hleaderBoard.setTitle(bl, "有趣对抗战绩榜")
                             hleaderBoard.setPlayerData(bl, p, v)
                         end
                     )
                 end
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do
-                    local u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
-                    if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "phoenix") == true) then
-                        hitem.create(
-                            {
-                                itemId = game.courierItem["涅磐火凤凰"].ITEM_ID,
-                                whichUnit = u
-                            }
-                        )
-                    end
-                    if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "icemon") == true) then
-                        hitem.create(
-                            {
-                                itemId = game.courierItem["冰戟剑灵"].ITEM_ID,
-                                whichUnit = u
-                            }
-                        )
+                    local u
+                    if (game.rule.dk.ai == true and his.computer(hplayer.players[k])) then
+                        u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
+                    else
+                        u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
+                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "phoenix") == true) then
+                            hitem.create(
+                                {
+                                    itemId = game.courierItem["涅磐火凤凰"].ITEM_ID,
+                                    whichUnit = u
+                                }
+                            )
+                        end
+                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "icemon") == true) then
+                            hitem.create(
+                                {
+                                    itemId = game.courierItem["冰戟剑灵"].ITEM_ID,
+                                    whichUnit = u
+                                }
+                            )
+                        end
                     end
                 end
                 -- 基本兵塔
@@ -431,13 +439,14 @@ cj.TriggerAddAction(
                 --创建多面板
                 hmultiBoard.create(
                     "player",
-                    0.20,
+                    0.75,
                     function(mb, curPi)
                         --拼凑多面板数据，二维数组，行列模式
+                        hmultiBoard.setTitle(mb, "玩家兵塔属性列表，地上怪物：" .. game.currentMon .. "只")
                         --开始当然是title了
                         local data = {
                             {
-                                {value = "只人", icon = "ReplaceableTextures\\CommandButtons\\BTNRiderlessHorse.blp"},
+                                {value = "狼人", icon = "ReplaceableTextures\\CommandButtons\\BTNRiderlessHorse.blp"},
                                 {value = "兵塔", icon = "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp"},
                                 {value = "等级", icon = "ReplaceableTextures\\CommandButtons\\BTNBlacksmith.blp"},
                                 {value = "阶级", icon = "ReplaceableTextures\\CommandButtons\\BTNAltarOfKings.blp"},
@@ -468,10 +477,10 @@ cj.TriggerAddAction(
                                 local attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
                                 local knocking =
                                     math.floor(hattr.get(tower, "knocking_odds")) ..
-                                    "%击出" .. math.floor(hattr.get(tower, "knocking")) .. "%伤害"
+                                    "%击出" .. math.floor(100 + hattr.get(tower, "knocking")) .. "%伤害"
                                 local violence =
                                     math.floor(hattr.get(tower, "violence_odds")) ..
-                                    "%击出" .. math.floor(hattr.get(tower, "violence")) .. "%伤害"
+                                    "%击出" .. math.floor(100 + hattr.get(tower, "violence")) .. "%伤害"
                                 local hunt_amplitude = math.round(hattr.get(tower, "hunt_amplitude")) .. "%"
                                 table.insert(
                                     data,

@@ -1,5 +1,5 @@
 -- 死亡的触发奖励
-deadAward = function(triggerUnit, killer)
+enemyDeadAward = function(triggerUnit, killer)
     local x = cj.GetUnitX(triggerUnit)
     local y = cj.GetUnitY(triggerUnit)
     -- 坟头草
@@ -31,7 +31,7 @@ deadAward = function(triggerUnit, killer)
         curWave = game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(killer))]
     end
     --
-    if (cj.GetRandomInt(1, 35) == 18 and curWave >= 3) then
+    if (cj.GetRandomInt(1, 25) == 13 and curWave >= 2) then
         -- 掉落蓝技能书
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["blue"][tarBLv] > 0) then
@@ -46,7 +46,7 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    if (cj.GetRandomInt(1, 60) == 33 and curWave >= 10) then
+    if (cj.GetRandomInt(1, 45) == 27 and curWave >= 7) then
         -- 掉落黄技能书
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["yellow"][tarBLv] > 0) then
@@ -61,7 +61,7 @@ deadAward = function(triggerUnit, killer)
             )
         end
     end
-    if (cj.GetRandomInt(1, 150) == 77 and curWave >= 30) then
+    if (cj.GetRandomInt(1, 90) == 46 and curWave >= 19) then
         -- 掉落紫技能书
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["purple"][tarBLv] > 0) then
@@ -77,7 +77,7 @@ deadAward = function(triggerUnit, killer)
         end
     end
     --
-    if (cj.GetRandomInt(1, 30) == 14) then
+    if (cj.GetRandomInt(1, 20) == 9) then
         -- 掉落兵塔
         local tarBLv = getTowerPowLevel(curWave)
         if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
@@ -96,24 +96,27 @@ end
 
 -- 敌军死亡YB
 enemyDeadYB = function()
+    game.currentMon = game.currentMon - 1
     local u = hevent.getKiller()
     if (u ~= nil) then
         haward.forGroupExp(u, 35 * game.rule.yb.wave)
     end
-    deadAward(hevent.getTriggerUnit(), u)
+    enemyDeadAward(hevent.getTriggerUnit(), u)
 end
 
 -- 敌军死亡HZ
 enemyDeadHZ = function()
+    game.currentMon = game.currentMon - 1
     local u = hevent.getKiller()
     if (u ~= nil) then
         haward.forGroupExp(u, 30 * game.rule.hz.wave)
     end
-    deadAward(hevent.getTriggerUnit(), u)
+    enemyDeadAward(hevent.getTriggerUnit(), u)
 end
 
 -- 敌军死亡DK
 enemyDeadDK = function()
+    game.currentMon = game.currentMon - 1
     local u = hevent.getKiller()
     if (u ~= nil) then
         local pi = hplayer.index(cj.GetOwningPlayer(u))
@@ -126,11 +129,15 @@ enemyDeadDK = function()
             game.rule.dk.wave[pi] = game.rule.dk.wave[pi] + 1
             game.rule.dk.mon[pi] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
             hmsg.echo(
-                cj.GetPlayerName(hplayer.players[pi]) .. "达到了|cffffff00第" .. game.rule.dk.wave[pi] .. "级|r，其他人小心啦~"
+                cj.GetPlayerName(hplayer.players[pi]) ..
+                    "达到了|cffffff00第" .. game.rule.dk.wave[pi] .. "级|r，TA的兵塔开始进攻其他人，小心啦~"
             )
+            if (math.fmod(game.rule.dk.wave[pi], 10) == 0) then
+                awardGenForOne(game.rule.dk.wave[pi], pi)
+            end
         end
     end
     local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex
     game.rule.dk.monLimit[ui] = game.rule.dk.monLimit[ui] - 1
-    deadAward(hevent.getTriggerUnit(), u)
+    enemyDeadAward(hevent.getTriggerUnit(), u)
 end

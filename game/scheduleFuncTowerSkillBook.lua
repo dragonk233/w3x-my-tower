@@ -388,7 +388,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                         {
                             attr = "fetter",
                             odds = 45,
-                            during = 3,
+                            during = 4,
                             model = "Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl"
                         }
                     }
