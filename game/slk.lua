@@ -79,9 +79,11 @@ for i = 1, len, 1 do
     local jv = json.parse(v)
     hRuntime.register.ability(jv)
     game.effectModel[jv.INDEX] = jv
-    --
-    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("tower_shadow_effect_item"), i)
-    jv = json.parse(v)
+end
+len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("tower_shadow_effect_item"), -1)
+for i = 1, len, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("tower_shadow_effect_item"), i)
+    local jv = json.parse(v)
     jv.I_TYPE = "effect_model"
     hRuntime.register.item(jv)
     game.effectModelItem[jv.INDEX] = jv

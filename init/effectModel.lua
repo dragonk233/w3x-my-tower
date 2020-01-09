@@ -9,8 +9,9 @@ local abEffects = {
         Targetattach="chest",
     },
     {
-        Name = "金耀虚空特效", 
-        TargetArt = "war3mapImported\\eff_Void_Rift_Orange.mdl",
+        Name = "金耀公正特效", 
+        TargetArt = "war3mapImported\\eff_holy_light.mdl",
+        Targetattach="chest",
     },
     {
         Name = "幻紫翅膀特效", 
@@ -19,33 +20,42 @@ local abEffects = {
     },
     {
         Name = "幻紫虚空特效", 
-        TargetArt = "war3mapImported\\eff_Void_Rift_II_Purple.mdl",
+        TargetArt = "war3mapImported\\eff_Void_Teleport_To.mdl",
     },
     {
-        Name = "祝福星光特效", 
-        TargetArt = "war3mapImported\\eff_HolyBlessing.mdl",
+        Name = "青翼翅膀特效", 
+        TargetArt = "war3mapImported\\eff_Cosmic_Wings_Borderless.mdl",
+        Targetattach="chest",
+    },
+    {
+        Name = "青龙升天特效", 
+        TargetArt = "war3mapImported\\eff_cloud_dragon_aura.mdl",
     },
     {
         Name = "邪鬼怨灵特效", 
         TargetArt = "war3mapImported\\eff_wraith.mdl",
     },
+    {
+        Name = "邪鬼阵法特效", 
+        TargetArt = "war3mapImported\\eff_GatherSouls.mdl",
+    },
 }
 
 local abEffectsItem = {
     {
-        Name = "金耀虚空翅膀套装", 
+        Name = "金碧辉煌套装", 
         Art = "war3mapImported\\icon_item_Holiday_Christmas_Present_01",
     },
     {
-        Name = "幻紫虚空翅膀套装", 
+        Name = "迷幻黑紫套装", 
         Art = "war3mapImported\\icon_item_Holiday_Christmas_Present_01",
     },
     {
-        Name = "祝福星光特效", 
+        Name = "青龙碧翼套装", 
         Art = "war3mapImported\\icon_item_Holiday_Christmas_Present_01",
     },
     {
-        Name = "邪鬼怨灵特效", 
+        Name = "邪鬼怨灵套装", 
         Art = "war3mapImported\\icon_item_Holiday_Christmas_Present_01",
     },
 }

@@ -19,6 +19,11 @@ onUnitItemsUesd = function()
         local playerIndex = hplayer.index(p)
         local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)
         hmsg.echo(hColor.sky(cj.GetPlayerName(p)) .. "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]")
+        if (#game.playerTowerEffectModel > 0) then
+            for _, v in ipairs(game.playerTowerEffectModel) do
+                hskill.add(u, v, 0)
+            end
+        end
     elseif (itemSLK.I_TYPE == "courier") then
         local playerIndex = hplayer.index(p)
         local u = createMyCourier(playerIndex, game.courier[itemSLK.INDEX].UNIT_ID)
@@ -37,11 +42,11 @@ onUnitItemsUesd = function()
         end
         local sites = {}
         if (itemSLK.ABILITY_COLOR == "yellow") then
-            sites = { "S", "D" }
+            sites = {"S", "D"}
         elseif (itemSLK.ABILITY_COLOR == "blue") then
-            sites = { "X", "C", "V" }
+            sites = {"X", "C", "V"}
         elseif (itemSLK.ABILITY_COLOR == "purple") then
-            sites = { "F" }
+            sites = {"F"}
         end
         local playerIndex = hplayer.index(p)
         local btns = {}
@@ -64,9 +69,9 @@ onUnitItemsUesd = function()
                     label = hColor.yellow(
                         "[" ..
                             v ..
-                            "]-[" ..
-                            game.towersAbilities[playerIndex][v].Name ..
-                            "][" .. game.towersAbilities[playerIndex][v].ABILITY_LEVEL .. "级]"
+                                "]-[" ..
+                                    game.towersAbilities[playerIndex][v].Name ..
+                                        "][" .. game.towersAbilities[playerIndex][v].ABILITY_LEVEL .. "级]"
                     )
                 }
             end
@@ -94,8 +99,8 @@ onUnitItemsUesd = function()
                         p,
                         "你选择了[" ..
                             hColor.yellow(btnIdx) ..
-                            "]位置，来学习[" ..
-                            hColor.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
+                                "]位置，来学习[" ..
+                                    hColor.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
                     )
                     delTowerSkillByBook(
                         game.playerTower[playerIndex],
@@ -118,7 +123,7 @@ onUnitItemsUesd = function()
                 p,
                 "兵塔自动挑选了[" ..
                     hColor.yellow(btnIdx) ..
-                    "]位置，学习了[" .. hColor.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
+                        "]位置，学习了[" .. hColor.yellow(abils[btnIdx].ABILITY_LEVEL .. "级" .. abils[btnIdx].Name) .. "]"
             )
             delTowerSkillByBook(game.playerTower[playerIndex], btnIdx, game.towersAbilities[playerIndex][btnIdx])
             addTowerSkillByBook(game.playerTower[playerIndex], btnIdx, abils[btnIdx])
@@ -128,6 +133,33 @@ onUnitItemsUesd = function()
                 heffect.toUnit("war3mapImported\\eff_burst_round.mdl", game.playerTower[playerIndex], 0)
             elseif (itemSLK.ABILITY_COLOR == "purple") then
                 heffect.toUnit("war3mapImported\\eff_burst_round_purple.mdl", game.playerTower[playerIndex], 0)
+            end
+        end
+    elseif (itemSLK.I_TYPE == "effect_model") then
+        --清空之前的装扮
+        local playerIndex = hplayer.index(p)
+        if (#game.playerTowerEffectModel > 0) then
+            for _, v in ipairs(game.playerTowerEffectModel) do
+                hskill.del(game.playerTower[playerIndex], v, 0)
+            end
+            game.playerTowerEffectModel = {}
+        end
+        if (itemSLK.INDEX == "金碧辉煌套装") then
+            table.insert(game.playerTowerEffectModel, game.effectModel["金耀翅膀特效"].ABILITY_ID)
+            table.insert(game.playerTowerEffectModel, game.effectModel["金耀公正特效"].ABILITY_ID)
+        elseif (itemSLK.INDEX == "迷幻黑紫套装") then
+            table.insert(game.playerTowerEffectModel, game.effectModel["幻紫翅膀特效"].ABILITY_ID)
+            table.insert(game.playerTowerEffectModel, game.effectModel["幻紫虚空特效"].ABILITY_ID)
+        elseif (itemSLK.INDEX == "青龙碧翼套装") then
+            table.insert(game.playerTowerEffectModel, game.effectModel["青翼翅膀特效"].ABILITY_ID)
+            table.insert(game.playerTowerEffectModel, game.effectModel["青龙升天特效"].ABILITY_ID)
+        elseif (itemSLK.INDEX == "邪鬼怨灵套装") then
+            table.insert(game.playerTowerEffectModel, game.effectModel["邪鬼怨灵特效"].ABILITY_ID)
+            table.insert(game.playerTowerEffectModel, game.effectModel["邪鬼阵法特效"].ABILITY_ID)
+        end
+        if (#game.playerTowerEffectModel > 0) then
+            for _, v in ipairs(game.playerTowerEffectModel) do
+                hskill.add(game.playerTower[playerIndex], v, 0)
             end
         end
     end
