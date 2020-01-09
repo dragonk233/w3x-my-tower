@@ -1,4 +1,22 @@
 -- 兵塔攻击到了
+onTowerAttackTtgCount = 1
+onTowerAttackTtg = function(u, string)
+    htextTag.style(
+        htextTag.create2Unit(u, string, 6.9 + onTowerAttackTtgCount * 0.1, "FFFF00", 2, 2, 10),
+        "scale",
+        0,
+        onTowerAttackTtgCount * 0.15
+    )
+    onTowerAttackTtgCount = onTowerAttackTtgCount + 1
+    htime.setTimeout(
+        2,
+        function(t, td)
+            htime.delDialog(td)
+            htime.delTimer(t)
+            onTowerAttackTtgCount = onTowerAttackTtgCount - 1
+        end
+    )
+end
 onTowerAttack = function()
     local u = hevent.getAttacker()
     local targetUnit = hevent.getTargetUnit()
@@ -9,7 +27,7 @@ onTowerAttack = function()
             level = level * 2 - 1
             if (Name ~= nil) then
                 if (Name == "侵毒连击" and math.random(1, 10) == 5) then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    onTowerAttackTtg(u, Name)
                     hattr.set(
                         u,
                         5.00,
@@ -20,7 +38,7 @@ onTowerAttack = function()
                     )
                 end
                 if (Name == "机关枪" and math.random(1, 5) == 3) then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    onTowerAttackTtg(u, Name)
                     hattr.set(
                         u,
                         2.50 * level,
@@ -30,11 +48,11 @@ onTowerAttack = function()
                     )
                 end
                 if (Name == "掠夺黄金" and math.random(1, 40) <= level) then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    onTowerAttackTtg(u, Name)
                     haward.forPlayerGold(10)
                 end
                 if (Name == "震晕践踏" and math.random(1, 10) == 5) then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    onTowerAttackTtg(u, Name)
                     hskill.swimGroup(
                         {
                             range = 1000,
@@ -48,7 +66,7 @@ onTowerAttack = function()
                     )
                 end
                 if (Name == "炸裂践踏" and math.random(1, 10) == 5) then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    onTowerAttackTtg(u, Name)
                     hskill.swimGroup(
                         {
                             range = 1000,
@@ -65,9 +83,9 @@ onTowerAttack = function()
                     )
                 end
                 if (Name == "冰花炸裂" and math.random(1, 7) == 4) then
+                    onTowerAttackTtg(u, Name)
                     local x = cj.GetUnitX(u)
                     local y = cj.GetUnitY(u)
-                    htextTag.style(htextTag.create2XY(x, y, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
                     heffect.toXY("war3mapImported\\eff_FrostNova.mdl", x, y, 0)
                     local g =
                         hgroup.createByUnit(
@@ -90,7 +108,7 @@ onTowerAttack = function()
                     cj.DestroyGroup(g)
                 end
                 if (Name == "死亡同步" and math.random(1, 500) == 265 and his.alive(targetUnit)) then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    onTowerAttackTtg(u, Name)
                     heffect.bindUnit(
                         "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",
                         targetUnit,

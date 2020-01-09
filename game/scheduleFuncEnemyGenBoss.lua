@@ -12,7 +12,7 @@ bossGen = function(curWave)
                     qty = 1,
                     x = v[1][1],
                     y = v[1][2],
-                    facing = k * -90 + 180,
+                    facing = k * -90 + 180
                 }
             )
             cj.SetUnitPathing(u, false)
@@ -27,6 +27,7 @@ bossGen = function(curWave)
             game.currentMon = game.currentMon + 1
             hevent.onBeDamage(u, bossBeDamage)
             hevent.onDead(u, bossDead)
+            hskill.add(u, game.effectModels["影子兵塔特效"].ABILITY_ID, 0)
         end
     end
     hmark.create("war3mapImported\\mark_boss_coming.blp", 4.00)

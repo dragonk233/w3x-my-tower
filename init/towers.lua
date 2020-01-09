@@ -3,7 +3,7 @@
 --兵塔变敌军单位
 local createTowerShadowUnit = function(v,towersTi,tlv)
     local obj = slk.unit.hfoo:new("this_tower_shadow_" .. v.Name)
-    obj.Name = "[影子兵塔]["..tlv.."阶]" .. v.Name
+    obj.Name = "[影兵塔]["..tlv.."阶]" .. v.Name
     obj.upgrades = ""
     obj.file = v.file
     obj.Art = v.Art

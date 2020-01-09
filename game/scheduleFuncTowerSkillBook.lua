@@ -140,8 +140,6 @@ setTowerSkillByBook = function(u, abliOps, opt)
         )
     elseif (abliOps.Name == "反伤抵抗") then
         hattr.set(u, 0, {hunt_rebound_oppose = opt .. level * abliOps.Val[1]})
-    elseif (abliOps.Name == "变相移动") then
-        hattr.set(u, 0, {move = opt .. level * abliOps.Val[1]})
     elseif (abliOps.Name == "专注护身") then
         hattr.set(u, 0, {defend = opt .. level * abliOps.Val[1]})
     elseif (abliOps.Name == "噩梦移植") then

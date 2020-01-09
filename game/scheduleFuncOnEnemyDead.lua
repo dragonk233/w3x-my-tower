@@ -79,9 +79,9 @@ enemyDeadAward = function(triggerUnit, killer)
         end
     end
     --
-    --if (cj.GetRandomInt(1, 20) == 9) then
+    if (cj.GetRandomInt(1, 20) == 9) then
         -- 掉落兵塔
-        local tarBLv = getTowerPowLevel(curWave)
+        local targetTPow = getTowerPowLevel(curWave)
         if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
             local rand = table.random(game.thisOptionTowerPowerItem[targetTPow])
             hitem.create(
@@ -93,7 +93,7 @@ enemyDeadAward = function(triggerUnit, killer)
                 }
             )
         end
-   --end
+   end
 end
 
 -- 敌军死亡YB

@@ -31,14 +31,11 @@ for k, v in pairs(TOWER_ABLI_SPX) do
     obj.DataB1 = 0
     obj.DataC1 = 0
     obj.Art = v.Art
-    local temp = {
-        Name = v.Name,
-        ABILITY_ID = obj:get_id()
-    }
-    towerSpxKV[temp.Name] = temp.ABILITY_ID
+    v.ABILITY_ID = obj:get_id()
+    towerSpxKV[v.Name] = v.ABILITY_ID
     tower_sabi = tower_sabi + 1
     ?>
-    call SaveStr(hash_myslk, StringHash("tower_spx_ab"), <?=tower_sabi?>, "<?=string.addslashes(json.stringify(temp))?>")
+    call SaveStr(hash_myslk, StringHash("tower_spx_ab"), <?=tower_sabi?>, "<?=string.addslashes(json.stringify(v))?>")
     <?
 end
 ?>

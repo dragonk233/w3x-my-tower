@@ -34,7 +34,7 @@ for i = 1, len, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("tower_spx_ab"), i)
     local jv = json.parse(v)
     hRuntime.register.ability(jv)
-    game.towersSkillKV[jv.Name] = jv.ABILITY_ID
+    table.insert(game.towersOriginSkill, jv)
 end
 
 --shop
@@ -70,6 +70,21 @@ for i = 1, len, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriers_ab"), i)
     local jv = json.parse(v)
     hRuntime.register.ability(jv)
+end
+
+--特效s
+local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("tower_shadow_effect"), -1)
+for i = 1, len, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("tower_shadow_effect"), i)
+    local jv = json.parse(v)
+    hRuntime.register.ability(jv)
+    game.effectModel[jv.INDEX] = jv
+    --
+    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("tower_shadow_effect_item"), i)
+    jv = json.parse(v)
+    jv.I_TYPE = "effect_model"
+    hRuntime.register.item(jv)
+    game.effectModelItem[jv.INDEX] = jv
 end
 
 -- unit 其他单位

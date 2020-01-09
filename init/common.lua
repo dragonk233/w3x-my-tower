@@ -4,6 +4,7 @@ UsedID = {
     BookBlue = 0, --蓝技能书使用技能
     BookYellow = 0, --黄技能书使用技能
     BookPurple = 0, --紫技能书使用技能
+    EffectModel = 0, --特效使用技能
 }
 UsedIDConfig = {
     Tower = {
@@ -24,6 +25,10 @@ UsedIDConfig = {
     },
     BookPurple = {
         CasterArt = "Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl",
+        Cool = 0,
+    },
+    EffectModel = {
+        CasterArt = "war3mapImported\\eff_black_chain_flash.mdl",
         Cool = 0,
     },
 }
@@ -69,8 +74,8 @@ for _, v in ipairs(unitPower) do
         ABILITY_BTN = v,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("abilities_unit_power"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
-<?
+    call SaveStr(hash_myslk, StringHash("abilities_unit_power"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
+    <?
 end
 
 --等级技能
@@ -106,6 +111,6 @@ for l=0,9,1 do
         ABILITY_BTN = v,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("abilities_unit_level"), <?=l?>, "<?=string.addslashes(json.stringify(ab))?>")
-<?
+    call SaveStr(hash_myslk, StringHash("abilities_unit_level"), <?=l?>, "<?=string.addslashes(json.stringify(ab))?>")
+    <?
 end

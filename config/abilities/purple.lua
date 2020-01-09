@@ -109,7 +109,7 @@ abilitiesPurple = {
     {
         Name = "变相移动",
         Art = "war3mapImported\\icon_pas_Rogue_FleetFooted.blp",
-        Ubertip = "被攻击时，+{val#1}点移动力，持续8秒",
+        Ubertip = "被攻击时，+{val#1}点移动力，持续4秒",
         Val = {30},
         ODK = true
     },
@@ -131,7 +131,7 @@ abilitiesPurple = {
         Name = "寂静督视",
         Art = "war3mapImported\\icon_pas_Ability_Creature_Cursed_05.blp",
         Ubertip = "被攻击时，有20%几率令攻击者缴械{val#1}秒",
-        Val = {1.3},
+        Val = {3.5},
         ODK = true
     }
 }

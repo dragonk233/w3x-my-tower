@@ -1,4 +1,22 @@
 -- 受到伤害
+towerShadowTtgCount = 1
+towerShadowTtg = function(u, string)
+    htextTag.style(
+        htextTag.create2Unit(u, string, 6.9 + onTowerAttackTtgCount * 0.1, "FFFF00", 1, 2, 10),
+        "scale",
+        0,
+        towerShadowTtgCount * 0.15
+    )
+    towerShadowTtgCount = towerShadowTtgCount + 1
+    htime.setTimeout(
+        2,
+        function(t, td)
+            htime.delDialog(td)
+            htime.delTimer(t)
+            towerShadowTtgCount = towerShadowTtgCount - 1
+        end
+    )
+end
 towerShadowBeDamage = function()
     local u = hevent.getTriggerUnit()
     local sourceUnit = hevent.getSourceUnit()
@@ -21,7 +39,7 @@ towerShadowBeDamage = function()
                     )
                 end
                 if (Name == "降智打击") then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    towerShadowTtg(u, Name)
                     hattr.set(
                         sourceUnit,
                         6,
@@ -31,17 +49,17 @@ towerShadowBeDamage = function()
                     )
                 end
                 if (Name == "变相移动") then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    towerShadowTtg(u, Name)
                     hattr.set(
                         u,
-                        8,
+                        4,
                         {
                             move = "+" .. 30 * level
                         }
                     )
                 end
                 if (Name == "钢铁身躯") then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    towerShadowTtg(u, Name)
                     hattr.set(
                         u,
                         8,
@@ -51,7 +69,7 @@ towerShadowBeDamage = function()
                     )
                 end
                 if (Name == "回音击" and math.random(1, 5) == 3) then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    towerShadowTtg(u, Name)
                     hskill.swim(
                         {
                             odds = 100,
@@ -61,12 +79,12 @@ towerShadowBeDamage = function()
                     )
                 end
                 if (Name == "寂静督视" and math.random(1, 5) == 3) then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    towerShadowTtg(u, Name)
                     hskill.unarm(
                         {
                             odds = 100,
                             whichUnit = sourceUnit,
-                            during = level * 1.3
+                            during = level * 3.5
                         }
                     )
                 end

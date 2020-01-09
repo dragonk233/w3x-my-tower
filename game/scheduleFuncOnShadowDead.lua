@@ -1,6 +1,5 @@
 -- 死亡
 towerShadowDead = function()
-    game.currentMon = game.currentMon - 1
     local shadow = hevent.getTriggerUnit()
     local u = hevent.getKiller()
     local shadowName = hunit.getName(shadow)
@@ -13,5 +12,5 @@ towerShadowDead = function()
     else
         hmsg.echo(hColor.sky(shadowPName) .. "的" .. hColor.yellow(shadowName) .. "被干掉了~")
     end
-    hunit.del(triggerUnit, 3)
+    hunit.del(shadow, 3)
 end

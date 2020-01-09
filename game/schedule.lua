@@ -357,11 +357,13 @@ cj.TriggerAddAction(
                                             local next = getNextRect(k)
                                             if (next ~= -1) then
                                                 if (type == "tower_shadow") then
-                                                    print("next=" .. next)
-                                                    print("next=" .. k)
-                                                    if (next == k) then
-                                                        hunit.del(u, 0)
-                                                        hmsg.echo00(hplayer.players[playerIndex], "你的兵塔这一轮进攻完成")
+                                                    if (next == playerIndex) then
+                                                        hunit.del(u, 2)
+                                                        hsound.sound(cg.gg_snd_jsws)
+                                                        hmsg.echo(
+                                                            hColor.green(cj.GetPlayerName(hplayer.players[playerIndex])) ..
+                                                                hColor.yellow("实现了一轮完美进攻！！牛逼！！！")
+                                                        )
                                                     else
                                                         cj.SetUnitPosition(
                                                             u,
@@ -473,6 +475,38 @@ cj.TriggerAddAction(
                             hitem.create(
                                 {
                                     itemId = game.courierItem["冰戟剑灵"].ITEM_ID,
+                                    whichUnit = u
+                                }
+                            )
+                        end
+                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "tzgold") == true) then
+                            hitem.create(
+                                {
+                                    itemId = game.effectModelItem["金耀虚空翅膀套装"].ITEM_ID,
+                                    whichUnit = u
+                                }
+                            )
+                        end
+                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "tzdark") == true) then
+                            hitem.create(
+                                {
+                                    itemId = game.effectModelItem["幻紫虚空翅膀套装"].ITEM_ID,
+                                    whichUnit = u
+                                }
+                            )
+                        end
+                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "txbless") == true) then
+                            hitem.create(
+                                {
+                                    itemId = game.effectModelItem["祝福星光特效"].ITEM_ID,
+                                    whichUnit = u
+                                }
+                            )
+                        end
+                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "txghost") == true) then
+                            hitem.create(
+                                {
+                                    itemId = game.effectModelItem["邪鬼怨灵特效"].ITEM_ID,
                                     whichUnit = u
                                 }
                             )

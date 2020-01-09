@@ -31,6 +31,7 @@ towerShadowGen = function(playerIndex)
         }
     )
     cj.SetUnitPathing(u, false)
+    hskill.add(u, game.effectModels["影子兵塔特效"].ABILITY_ID, 0)
     hattr.set(
         u,
         0,
