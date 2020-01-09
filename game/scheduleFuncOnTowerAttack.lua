@@ -6,6 +6,7 @@ onTowerAttack = function()
         if (hskill.has(u, ABILITY_ID)) then
             local Name = v.Name
             local level = v.ABILITY_LEVEL or 1
+            level = level * 2 - 1
             if (Name ~= nil) then
                 if (Name == "侵毒连击" and math.random(1, 10) == 5) then
                     htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)

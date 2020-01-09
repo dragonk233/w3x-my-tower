@@ -210,9 +210,16 @@ abilitiesYellow = {
         ODK = true
     },
     {
+        Name = "恶心粘液",
+        Art = "war3mapImported\\icon_pas_Creature_Poison_06.blp",
+        Ubertip = "受到攻击时，降低攻击者{val#1}%攻击速度，持续5秒",
+        Val = {5},
+        ODK = true
+    },
+    {
         Name = "降智打击",
         Art = "war3mapImported\\icon_pas_Arcane_ManaTap.blp",
-        Ubertip = "受到攻击时，降低攻击者{val#1}点智力，持续4秒",
+        Ubertip = "受到攻击时，降低攻击者{val#1}点智力，持续6秒",
         Val = {3},
         ODK = true
     }

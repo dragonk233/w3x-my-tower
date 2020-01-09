@@ -138,13 +138,6 @@ abilitiesBlue = {
         Val = {45}
     },
     {
-        Name = "变相移动",
-        Art = "war3mapImported\\icon_pas_Rogue_FleetFooted.blp",
-        Ubertip = "+{val#1}移动",
-        Val = {25},
-        ODK = true
-    },
-    {
         Name = "专注护身",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDevotion.blp",
         Ubertip = "+{val#1}护甲",

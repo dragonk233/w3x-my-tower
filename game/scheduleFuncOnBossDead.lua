@@ -11,4 +11,5 @@ bossDead = function()
             haward.forUnitExp(u, 500)
         end
     end
+    hunit.del(triggerUnit, 3)
 end

@@ -157,7 +157,10 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             attr = "lightning_chain",
                             odds = 30,
                             qty = 3,
-                            val = level * abliOps.Val[1]
+                            range = 600,
+                            val = level * abliOps.Val[1],
+                            change = -0.25,
+                            model = "Abilities\\Weapons\\Bolt\\BoltImpact.mdl"
                         }
                     }
                 }

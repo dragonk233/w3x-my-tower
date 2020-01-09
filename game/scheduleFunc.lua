@@ -11,12 +11,12 @@ getNextRect = function(current)
     local next = -1
     local realEnd = 4
     for i = 1, hplayer.qty_max, 1 do
-        if (his.playing(hplayer.players[i])) then
+        if (his.playing(hplayer.players[i]) or game.rule.dk.ai == true) then
             realEnd = i
         end
     end
     for i = 1, hplayer.qty_max, 1 do
-        if (his.playing(hplayer.players[i])) then
+        if (his.playing(hplayer.players[i]) or game.rule.dk.ai == true) then
             if (next == -1) then
                 if (current == realEnd or i > current) then
                     next = i
@@ -105,35 +105,35 @@ createMyTower = function(playerIndex, towerId)
         local mana = 100
         local manaBack = 1
         if (tlv == "E") then
-            life = 100
+            life = 250
             mana = 100
             manaBack = 2
         elseif (tlv == "D") then
-            life = 200
+            life = 300
             mana = 200
             manaBack = 3
         elseif (tlv == "C") then
-            life = 400
+            life = 350
             mana = 300
             manaBack = 4
         elseif (tlv == "B") then
-            life = 600
+            life = 400
             mana = 400
             manaBack = 5
         elseif (tlv == "A") then
-            life = 900
+            life = 500
             mana = 500
             manaBack = 6
         elseif (tlv == "S") then
-            life = 1500
+            life = 600
             mana = 750
             manaBack = 10
         elseif (tlv == "SS") then
-            life = 3000
+            life = 750
             mana = 1000
             manaBack = 15
         elseif (tlv == "SSS") then
-            life = 7500
+            life = 1000
             mana = 1500
             manaBack = 20
         end

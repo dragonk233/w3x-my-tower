@@ -1,13 +1,14 @@
 --SLK系统
 
--- tower 兵塔/兵塔物品/兵塔技能
+-- tower 兵塔/兵塔物品/兵塔技能/shadow
 game.towersLen = cj.LoadInteger(cg.hash_myslk, cj.StringHash("towers"), -1)
 for i = 1, game.towersLen, 1 do
+    --tower
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers"), i)
     local jv = json.parse(v)
     game.towers[jv.INDEX] = jv
     hRuntime.register.unit(jv)
-    --
+    --item
     v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towersItems"), i)
     jv = json.parse(v)
     jv.I_TYPE = "tower"
@@ -17,29 +18,23 @@ for i = 1, game.towersLen, 1 do
         game.thisOptionTowerPowerItem[jv.TOWER_POWER] = {}
     end
     table.insert(game.thisOptionTowerPowerItem[jv.TOWER_POWER], jv)
-    --
+    --属性说明的那个技能
     v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiies_tower_origins"), i)
     jv = json.parse(v)
     game.towersOrigins[jv.INDEX] = jv
+    --shadow
+    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers_shadow"), i)
+    jv = json.parse(v)
+    game.towersShadow[jv.TOWER_ID] = jv
+    hRuntime.register.unit(jv)
 end
+--tower abli
 local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("tower_spx_ab"), -1)
 for i = 1, len, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("tower_spx_ab"), i)
     local jv = json.parse(v)
     hRuntime.register.ability(jv)
     game.towersSkillKV[jv.Name] = jv.ABILITY_ID
-end
-
-for k, v in pairs(game.towersItems) do
-    if (table.includes(v.INDEX, {"人类·铁甲剑士_1"})) then
-        hitem.create(
-            {
-                itemId = v.ITEM_ID,
-                x = -1603,
-                y = 2655
-            }
-        )
-    end
 end
 
 --shop

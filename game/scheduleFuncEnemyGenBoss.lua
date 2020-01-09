@@ -11,7 +11,8 @@ bossGen = function(curWave)
                     unitId = boss,
                     qty = 1,
                     x = v[1][1],
-                    y = v[1][2]
+                    y = v[1][2],
+                    facing = k * -90 + 180,
                 }
             )
             cj.SetUnitPathing(u, false)
@@ -20,7 +21,7 @@ bossGen = function(curWave)
                 0,
                 {
                     life = "=" .. (300 * curWave),
-                    move = "=100"
+                    move = "=120"
                 }
             )
             game.currentMon = game.currentMon + 1

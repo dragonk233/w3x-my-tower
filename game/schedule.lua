@@ -183,7 +183,7 @@ cj.TriggerAddAction(
                             )
                         end
                     end
-                    enemyGenYB(1)
+                    enemyGenYB(10)
                     hleaderBoard.create(
                         "yb",
                         1,
@@ -312,7 +312,7 @@ cj.TriggerAddAction(
                             )
                         end
                     end
-                    enemyGenHZ(1)
+                    enemyGenHZ(10)
                     hleaderBoard.create(
                         "hz",
                         1,
@@ -347,16 +347,85 @@ cj.TriggerAddAction(
                             cj.TriggerAddAction(
                                 tg,
                                 function()
-                                    if (his.enemyPlayer(cj.GetTriggerUnit(), game.ALLY_PLAYER)) then
+                                    local u = cj.GetTriggerUnit()
+                                    if (his.enemyPlayer(u, game.ALLY_PLAYER)) then
+                                        local playerIndex = hunit.getUserData(u)
                                         if (i == #v) then
+                                            local slk = hunit.getSlk(u)
+                                            local type = slk.TYPE
                                             -- 最后一格,前往下一区域
                                             local next = getNextRect(k)
                                             if (next ~= -1) then
-                                                cj.SetUnitPosition(
-                                                    cj.GetTriggerUnit(),
-                                                    game.pathPoint[next][1][1],
-                                                    game.pathPoint[next][1][2]
-                                                )
+                                                if (type == "tower_shadow") then
+                                                    print("next=" .. next)
+                                                    print("next=" .. k)
+                                                    if (next == k) then
+                                                        hunit.del(u, 0)
+                                                        hmsg.echo00(hplayer.players[playerIndex], "你的兵塔这一轮进攻完成")
+                                                    else
+                                                        cj.SetUnitPosition(
+                                                            u,
+                                                            game.pathPoint[next][1][1],
+                                                            game.pathPoint[next][1][2]
+                                                        )
+                                                        local hunt = game.rule.dk.wave[playerIndex]
+                                                        if (hunt >= hunit.getCurLife(game.playerTower[k])) then
+                                                            hunit.kill(game.playerTower[k], 0)
+                                                            hmsg.echo(
+                                                                hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
+                                                                    "被" ..
+                                                                        hColor.sky(
+                                                                            cj.GetPlayerName(
+                                                                                hplayer.players[playerIndex]
+                                                                            )
+                                                                        ) ..
+                                                                            "的" ..
+                                                                                hColor.yellow(slk.Name) .. "进攻，直接干翻了~"
+                                                            )
+                                                            game.playerTower[k] = nil
+                                                            hplayer.defeat(hplayer.players[k], "战败~")
+                                                        else
+                                                            hunit.subCurLife(game.playerTower[k], hunt)
+                                                            hmsg.echo(
+                                                                hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
+                                                                    "被" ..
+                                                                        hColor.sky(
+                                                                            cj.GetPlayerName(
+                                                                                hplayer.players[playerIndex]
+                                                                            )
+                                                                        ) ..
+                                                                            "的" ..
+                                                                                hColor.yellow(slk.Name) ..
+                                                                                    "进攻，扣了" .. hColor.red(hunt) .. "血"
+                                                            )
+                                                            heffect.toUnit(
+                                                                "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
+                                                                game.playerTower[k],
+                                                                1
+                                                            )
+                                                            htextTag.style(
+                                                                htextTag.create2Unit(
+                                                                    game.playerTower[k],
+                                                                    "-" .. hunt,
+                                                                    10.00,
+                                                                    "ff0000",
+                                                                    1,
+                                                                    1.1,
+                                                                    50.00
+                                                                ),
+                                                                "scale",
+                                                                0,
+                                                                0.05
+                                                            )
+                                                        end
+                                                    end
+                                                else
+                                                    cj.SetUnitPosition(
+                                                        u,
+                                                        game.pathPoint[next][1][1],
+                                                        game.pathPoint[next][1][2]
+                                                    )
+                                                end
                                             end
                                         else
                                             -- 前段路途
@@ -389,6 +458,7 @@ cj.TriggerAddAction(
                     local u
                     if (game.rule.dk.ai == true and his.playing(hplayer.players[k]) == false) then
                         u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
+                        cj.SetPlayerName(hplayer.players[k], "AI#" .. k)
                     else
                         u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
                         if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "phoenix") == true) then
@@ -444,8 +514,7 @@ cj.TriggerAddAction(
                             {
                                 {value = "狼人", icon = "ReplaceableTextures\\CommandButtons\\BTNRiderlessHorse.blp"},
                                 {value = "兵塔", icon = "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp"},
-                                {value = "等级", icon = "ReplaceableTextures\\CommandButtons\\BTNBlacksmith.blp"},
-                                {value = "阶级", icon = "ReplaceableTextures\\CommandButtons\\BTNAltarOfKings.blp"},
+                                {value = "等级", icon = "ReplaceableTextures\\CommandButtons\\BTNAltarOfKings.blp"},
                                 {value = "天赋", icon = "ReplaceableTextures\\CommandButtons\\BTNDivineIntervention.blp"},
                                 {value = "物攻", icon = "ReplaceableTextures\\CommandButtons\\BTNThoriumMelee.blp"},
                                 {value = "魔攻", icon = "ReplaceableTextures\\CommandButtons\\BTNArcaniteMelee.blp"},
@@ -467,7 +536,7 @@ cj.TriggerAddAction(
                             if (his.playing(p) or game.rule.dk.ai == true) then
                                 local tower = game.playerTower[pi]
                                 local avatar = hunit.getAvatar(tower)
-                                local name = hunit.getName(tower)
+                                local name = "[" .. game.playerTowerPower[pi] .. "]" .. hunit.getName(tower)
                                 local attack_white = math.floor(hattr.get(tower, "attack_white"))
                                 local attack_green = math.floor(hattr.get(tower, "attack_green"))
                                 local attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
@@ -484,7 +553,6 @@ cj.TriggerAddAction(
                                         {value = cj.GetPlayerName(p), icon = nil},
                                         {value = name, icon = avatar},
                                         {value = "Lv." .. hhero.getCurLevel(tower), icon = nil},
-                                        {value = game.playerTowerPower[pi], icon = nil},
                                         {value = game.playerTowerLevel[pi], icon = nil},
                                         {value = attack_white, icon = nil},
                                         {value = attack_green, icon = nil},

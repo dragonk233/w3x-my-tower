@@ -107,8 +107,8 @@ abilitiesPurple = {
         ODK = true
     },
     {
-        Name = "幽兰铁马",
-        Art = "war3mapImported\\icon_pas_AnimalWarTraining.blp",
+        Name = "变相移动",
+        Art = "war3mapImported\\icon_pas_Rogue_FleetFooted.blp",
         Ubertip = "被攻击时，+{val#1}点移动力，持续8秒",
         Val = {30},
         ODK = true
@@ -117,7 +117,7 @@ abilitiesPurple = {
         Name = "钢铁身躯",
         Art = "war3mapImported\\icon_pas_Aftershock2.blp",
         Ubertip = "被攻击时，+{val#1}点护甲，持续10秒",
-        Val = {3},
+        Val = {2},
         ODK = true
     },
     {

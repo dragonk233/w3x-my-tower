@@ -1,3 +1,5 @@
+require "game.scheduleFuncEnemyGenShadow"
+
 -- 死亡的触发奖励
 enemyDeadAward = function(triggerUnit, killer)
     local x = cj.GetUnitX(triggerUnit)
@@ -77,7 +79,7 @@ enemyDeadAward = function(triggerUnit, killer)
         end
     end
     --
-    if (cj.GetRandomInt(1, 20) == 9) then
+    --if (cj.GetRandomInt(1, 20) == 9) then
         -- 掉落兵塔
         local tarBLv = getTowerPowLevel(curWave)
         if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
@@ -91,7 +93,7 @@ enemyDeadAward = function(triggerUnit, killer)
                 }
             )
         end
-    end
+   --end
 end
 
 -- 敌军死亡YB
@@ -128,16 +130,12 @@ enemyDeadDK = function()
             game.rule.dk.playerQty[pi] = 0
             game.rule.dk.wave[pi] = game.rule.dk.wave[pi] + 1
             game.rule.dk.mon[pi] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
-            hmsg.echo(
-                cj.GetPlayerName(hplayer.players[pi]) ..
-                    "达到了|cffffff00第" .. game.rule.dk.wave[pi] .. "级|r，TA的兵塔开始进攻其他人，小心啦~"
-            )
             --奖励的东东
             if (math.fmod(game.rule.dk.wave[pi], 10) == 0) then
                 awardGenForOne(game.rule.dk.wave[pi], pi)
             end
             --我的兵塔，进攻！
-            
+            towerShadowGen(pi)
         end
     end
     local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex

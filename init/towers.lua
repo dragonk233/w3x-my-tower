@@ -42,6 +42,7 @@ local createTowerShadowUnit = function(v,towersTi,tlv)
     elseif(#abl == 1)then
         table.insert( abl, towerSpxKV["封印枷锁之二"] )
     end
+    v.TOWER_ID = v.UNIT_ID --这里赋值塔的ID
     obj.abilList = string.implode(",",abl)
     v.TYPE = "tower_shadow"
     v.UNIT_ID = obj:get_id()
@@ -222,36 +223,36 @@ for j=1,1,1 do
                 if (v.weapTp1 == "msplash" or v.weapTp1 == "artillery") then
                     --溅射/炮火
                     obj.Farea1 = v.Farea1 or 1
-                    obj.Qfact1 = v.Qfact1 or 0.1
-                    obj.Qarea1 = v.Qarea1 or 350
-                    obj.Hfact1 = v.Hfact1 or 0.25
-                    obj.Harea1 = v.Harea1 or 200
+                    obj.Qfact1 = v.Qfact1 or 0.05
+                    obj.Qarea1 = v.Qarea1 or 500
+                    obj.Hfact1 = v.Hfact1 or 0.15
+                    obj.Harea1 = v.Harea1 or 350
                     obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 if (v.weapTp1 == "mbounce") then
                     --弹射
-                    obj.Farea1 = v.Farea1 or 350
+                    obj.Farea1 = v.Farea1 or 450
                     obj.targCount1 = v.targCount1 or 4
-                    obj.damageLoss1 = v.damageLoss1 or 0.10
+                    obj.damageLoss1 = v.damageLoss1 or 0.3
                     obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 if (v.weapTp1 == "mline") then
                     --穿透
-                    obj.spillRadius = v.spillRadius or 150
-                    obj.spillDist1 = v.spillDist1 or 300
-                    obj.damageLoss1 = v.damageLoss1 or 0.10
+                    obj.spillRadius = v.spillRadius or 200
+                    obj.spillDist1 = v.spillDist1 or 450
+                    obj.damageLoss1 = v.damageLoss1 or 0.3
                     obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 if (v.weapTp1 == "aline") then
                     --炮火穿透
                     obj.Farea1 = v.Farea1 or 1
-                    obj.Qfact1 = v.Qfact1 or 0.1
-                    obj.Qarea1 = v.Qarea1 or 350
-                    obj.Hfact1 = v.Hfact1 or 0.25
-                    obj.Harea1 = v.Harea1 or 200
-                    obj.spillRadius = v.spillRadius or 150
-                    obj.spillDist1 = v.spillDist1 or 300
-                    obj.damageLoss1 = v.damageLoss1 or 0.10
+                    obj.Qfact1 = v.Qfact1 or 0.05
+                    obj.Qarea1 = v.Qarea1 or 500
+                    obj.Hfact1 = v.Hfact1 or 0.15
+                    obj.Harea1 = v.Harea1 or 350
+                    obj.spillRadius = v.spillRadius or 200
+                    obj.spillDist1 = v.spillDist1 or 450
+                    obj.damageLoss1 = v.damageLoss1 or 0.3
                     obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 obj.Tip = "选择 " .. v.Name

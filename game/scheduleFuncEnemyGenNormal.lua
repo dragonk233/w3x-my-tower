@@ -79,7 +79,8 @@ enemyGenYB = function(waiting)
                                     unitId = game.rule.yb.mon,
                                     qty = 1,
                                     x = v[1][1],
-                                    y = v[1][2]
+                                    y = v[1][2],
+                                    facing = k * -90 + 180,
                                 }
                             )
                             cj.SetUnitPathing(u, false)
@@ -154,7 +155,8 @@ enemyGenHZ = function(waiting)
                                     unitId = game.rule.hz.mon,
                                     qty = 1,
                                     x = v[1][1],
-                                    y = v[1][2]
+                                    y = v[1][2],
+                                    facing = k * -90 + 180,
                                 }
                             )
                             cj.SetUnitPathing(u, false)
@@ -183,6 +185,7 @@ enemyGenDK = function(waiting)
         function(t, td)
             htime.delDialog(td)
             htime.delTimer(t)
+            hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
             for i = 1, hplayer.qty_max, 1 do
                 if (his.playing(hplayer.players[i]) or game.rule.dk.ai == true) then
                     game.rule.dk.playerQty[i] = 0
@@ -204,7 +207,8 @@ enemyGenDK = function(waiting)
                                         unitId = game.rule.dk.mon[k],
                                         qty = 1,
                                         x = v[1][1],
-                                        y = v[1][2]
+                                        y = v[1][2],
+                                        facing = k * -90 + 180,
                                     }
                                 )
                                 cj.SetUnitPathing(u, false)
