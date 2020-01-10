@@ -59,15 +59,16 @@ enemyGenYB = function(waiting)
                         local gold = hplayer.qty_current * game.rule.yb.wave * 60
                         haward.forPlayer(gold, 0)
                         hmsg.echo("通过了|cffffff00第" .. game.rule.yb.wave .. "波|r，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
-                        game.rule.yb.wave = game.rule.yb.wave + 1
                         hplayer.loop(
                             function(p)
                                 if (his.playing(p)) then
                                     hsound.sound2Player(cg.gg_snd_coin_1, p)
                                     hmsg.echo(hplayer.getSelection(p))
+                                    dzSetLumber(p, game.rule.yb.wave)
                                 end
                             end
                         )
+                        game.rule.yb.wave = game.rule.yb.wave + 1
                         enemyGenYB(nextWaitTime)
                         return
                     end
@@ -80,7 +81,7 @@ enemyGenYB = function(waiting)
                                     qty = 1,
                                     x = v[1][1],
                                     y = v[1][2],
-                                    facing = k * -90 + 180,
+                                    facing = k * -90 + 180
                                 }
                             )
                             cj.SetUnitPathing(u, false)
@@ -138,12 +139,15 @@ enemyGenHZ = function(waiting)
                         haward.forPlayer(gold, 0)
                         hmsg.echo("通过了|cffffff00第" .. game.rule.hz.wave .. "波|r，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
                         game.rule.hz.wave = game.rule.hz.wave + 1
-                        for i = 1, hplayer.qty_max, 1 do
-                            if (his.playing(hplayer.players[i])) then
-                                hsound.sound2Player(cg.gg_snd_coin_1, hplayer.players[i])
-                                hmsg.echo(hplayer.getSelection(hplayer.players[i]))
+                        hplayer.loop(
+                            function(p)
+                                if (his.playing(p)) then
+                                    hsound.sound2Player(cg.gg_snd_coin_1, p)
+                                    hmsg.echo(hplayer.getSelection(p))
+                                    dzSetLumber(p, game.rule.hz.wave)
+                                end
                             end
-                        end
+                        )
                         enemyGenHZ(nextWaitTime)
                         return
                     end
@@ -156,7 +160,7 @@ enemyGenHZ = function(waiting)
                                     qty = 1,
                                     x = v[1][1],
                                     y = v[1][2],
-                                    facing = k * -90 + 180,
+                                    facing = k * -90 + 180
                                 }
                             )
                             cj.SetUnitPathing(u, false)
@@ -199,7 +203,7 @@ enemyGenDK = function(waiting)
                 function()
                     for k, v in pairs(game.pathPoint) do
                         if (his.playing(hplayer.players[k]) or game.rule.dk.ai == true) then
-                            if (game.rule.dk.monLimit[k] < game.rule.dk.perWaveQty) then
+                            if (game.rule.dk.monLimit[k] < 1.5 * game.rule.dk.perWaveQty) then
                                 game.rule.dk.monLimit[k] = game.rule.dk.monLimit[k] + 1
                                 local u =
                                     hemeny.create(
@@ -208,7 +212,7 @@ enemyGenDK = function(waiting)
                                         qty = 1,
                                         x = v[1][1],
                                         y = v[1][2],
-                                        facing = k * -90 + 180,
+                                        facing = k * -90 + 180
                                     }
                                 )
                                 cj.SetUnitPathing(u, false)

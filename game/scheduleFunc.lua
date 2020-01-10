@@ -11,12 +11,12 @@ getNextRect = function(current)
     local next = -1
     local realEnd = 4
     for i = 1, hplayer.qty_max, 1 do
-        if (his.playing(hplayer.players[i]) or game.rule.dk.ai == true) then
+        if (his.playing(hplayer.players[i]) or (game.playerTower[i] ~= nil and game.rule.dk.ai == true)) then
             realEnd = i
         end
     end
     for i = 1, hplayer.qty_max, 1 do
-        if (his.playing(hplayer.players[i]) or game.rule.dk.ai == true) then
+        if (his.playing(hplayer.players[i]) or (game.playerTower[i] ~= nil and game.rule.dk.ai == true)) then
             if (next == -1) then
                 if (current == realEnd or i > current) then
                     next = i

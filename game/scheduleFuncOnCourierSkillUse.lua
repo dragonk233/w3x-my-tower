@@ -31,7 +31,12 @@ onCourierSkillUesd = function()
                 natural_fire = "+2.5"
             }
         )
-        heffect.bindUnit("war3mapImported\\eff_demonfire.mdl", game.playerTower[playerIndex], "origin", 45)
+        heffect.bindUnit(
+            "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl",
+            game.playerTower[playerIndex],
+            "weapon",
+            45
+        )
     elseif (abilitiesSLK.Name == "霜寒脚步") then
         onCourierSkillUesdTTG(game.playerTower[playerIndex], abilitiesSLK.Name)
         hattr.set(
@@ -53,7 +58,12 @@ onCourierSkillUesd = function()
                 }
             }
         )
-        heffect.bindUnit("war3mapImported\\eff_mirage.mdl", game.playerTower[playerIndex], "origin", 45)
+        heffect.bindUnit(
+            "Abilities\\Spells\\Items\\AIob\\AIobTarget.mdl",
+            game.playerTower[playerIndex],
+            "weapon",
+            45
+        )
     elseif (abilitiesSLK.Name == "兵塔石吞噬") then
         local lvUpQty = 0
         for ti = 0, 5, 1 do

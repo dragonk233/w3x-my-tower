@@ -1,4 +1,5 @@
 getBookPowLevel = function(curWave)
+    curWave = curWave or 1
     local bpow = {19, 1, 0}
     if (curWave <= 9) then
         bpow = {9, 1, 0}
@@ -23,6 +24,7 @@ getBookPowLevel = function(curWave)
 end
 
 getTowerPowLevel = function(curWave)
+    curWave = curWave or 1
     local tpow = {E = 1}
     if (curWave <= 3) then
         tpow = {E = 1}

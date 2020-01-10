@@ -191,7 +191,7 @@ onUnitItemsUesd = function()
                     table.insert(game.playerTowerEffectModel, game.effectModel["血色翅膀特效"].ABILITY_ID)
                     table.insert(game.playerTowerEffectModel, game.effectModel["血色漩涡特效"].ABILITY_ID)
                     table.insert(game.playerTowerEffectModel, game.effectModel["血色符文特效"].ABILITY_ID)
-                    tips = "血色翅膀、赤红漩涡、祭奠符文、血色地狱"
+                    tips = "血色翅膀、赤红漩涡、祭奠符文"
                 elseif (btnIdx == "青龙碧翼套装") then
                     table.insert(game.playerTowerEffectModel, game.effectModel["青空之翼特效"].ABILITY_ID)
                     table.insert(game.playerTowerEffectModel, game.effectModel["游龙欢悦特效"].ABILITY_ID)

@@ -17,6 +17,10 @@ cj.TriggerAddAction(
     end
 )
 
+dzSetLumber = function(p, curWave)
+    hdzapi.server.set.int(p, "lumber", hplayer.getLumber(p) + curWave)
+end
+
 local startTrigger = cj.CreateTrigger()
 cj.TriggerRegisterTimerEvent(startTrigger, 1.0, false)
 cj.TriggerAddAction(
@@ -31,6 +35,35 @@ cj.TriggerAddAction(
         cj.FogEnable(false)
         cj.FogMaskEnable(false)
         hsound.bgmStop(nil)
+        --
+        for i = 1, hplayer.qty_max, 1 do
+            local l = hdzapi.server.get.int(hplayer.players[i], "lumber")
+            if (l == nil) then
+                l = 0
+            end
+            game.playerOriginLumber[i] = l
+            hplayer.setLumber(hplayer.players[i], l)
+            hmsg.echo00(hplayer.players[i], "根据你的游玩通关程度，你得到了" .. hColor.green(l) .. "个木头")
+        end
+        htime.setInterval(
+            5,
+            function()
+                for i = 1, hplayer.qty_max, 1 do
+                    if
+                        (his.playing(hplayer.players[i]) == true and his.playerSite(hplayer.players[i]) == true and
+                            hplayer.getLumber(hplayer.players[i]) > game.playerOriginLumber[i])
+                     then
+                        hplayer.defeat(hplayer.players[i], "网络不稳定")
+                        htime.setTimeout(
+                            5.00,
+                            function()
+                                hmsg.echo(cj.GetPlayerName(hplayer.players[i]) .. "作弊了哦~系统干掉它了~")
+                            end
+                        )
+                    end
+                end
+            end
+        )
         --设置三围基础
         hattr.setThreeBuff(
             {
@@ -187,9 +220,7 @@ cj.TriggerAddAction(
                     hleaderBoard.create(
                         "yb",
                         1,
-                        function(bl, i)
-                            local p = hplayer.players[i]
-                            local v = math.floor(hplayer.getDamage(p) * 0.1)
+                        function(bl)
                             local bigElfLife = "GG"
                             if (his.alive(bigElf)) then
                                 bigElfLife =
@@ -197,7 +228,13 @@ cj.TriggerAddAction(
                                     "/" .. math.floor(hunit.getMaxLife(bigElf))
                             end
                             hleaderBoard.setTitle(bl, "百波战力榜[" .. game.rule.yb.wave .. "波][精灵 " .. bigElfLife .. "]")
-                            hleaderBoard.setPlayerData(bl, p, v)
+                            local data = {}
+                            hplayer.loop(
+                                function(p, pi)
+                                    data[pi] = math.floor(hplayer.getDamage(p) * 0.1)
+                                end
+                            )
+                            return data
                         end
                     )
                 elseif (btnIdx == "死机挑战") then
@@ -316,9 +353,7 @@ cj.TriggerAddAction(
                     hleaderBoard.create(
                         "hz",
                         1,
-                        function(bl, i)
-                            local p = hplayer.players[i]
-                            local v = math.floor(hplayer.getDamage(p) * 0.1)
+                        function(bl)
                             local bigElfLife = "GG"
                             if (his.alive(bigElf)) then
                                 bigElfLife =
@@ -326,7 +361,13 @@ cj.TriggerAddAction(
                                     "/" .. math.floor(hunit.getMaxLife(bigElf))
                             end
                             hleaderBoard.setTitle(bl, "无尽战力榜[" .. game.rule.hz.wave .. "波][城主 " .. bigElfLife .. "]")
-                            hleaderBoard.setPlayerData(bl, p, v)
+                            local data = {}
+                            hplayer.loop(
+                                function(p, pi)
+                                    data[pi] = math.floor(hplayer.getDamage(p) * 0.1)
+                                end
+                            )
+                            return data
                         end
                     )
                 elseif (btnIdx == "有趣对抗" or "有趣对抗(AI模式)") then
@@ -359,10 +400,10 @@ cj.TriggerAddAction(
                                                 if (type == "tower_shadow") then
                                                     if (next == playerIndex) then
                                                         hunit.del(u, 2)
-                                                        hsound.sound(cg.gg_snd_jsws)
+                                                        hsound.sound(cg.gg_snd_wb)
                                                         hmsg.echo(
                                                             hColor.green(cj.GetPlayerName(hplayer.players[playerIndex])) ..
-                                                                hColor.yellow("实现了一轮完美进攻！！牛逼！！！")
+                                                                hColor.yellow("实现了一轮完美进攻！！完爆其他玩家！！牛逼！！！")
                                                         )
                                                     else
                                                         cj.SetUnitPosition(
@@ -382,9 +423,9 @@ cj.TriggerAddAction(
                                                                             )
                                                                         ) ..
                                                                             "的" ..
-                                                                                hColor.yellow(slk.Name) .. "进攻，直接干翻了~"
+                                                                                hColor.yellow(slk.Name) .. "进攻，直接战败了~"
                                                             )
-                                                            game.playerTower[k] = nil
+                                                            hplayer.setStatus(hplayer.players[k], "战败")
                                                             hplayer.defeat(hplayer.players[k], "战败~")
                                                         else
                                                             hunit.subCurLife(game.playerTower[k], hunt)
@@ -444,16 +485,21 @@ cj.TriggerAddAction(
                         end
                     end
                     enemyGenDK(30)
-                    hleaderBoard.create(
+                    local bldk =
+                        hleaderBoard.create(
                         "dk",
                         1,
-                        function(bl, i)
-                            local p = hplayer.players[i]
-                            local v = game.rule.dk.wave[i]
-                            hleaderBoard.setTitle(bl, "有趣对抗战绩榜")
-                            hleaderBoard.setPlayerData(bl, p, v)
+                        function(bl)
+                            local data = {}
+                            hplayer.loop(
+                                function(p, pi)
+                                    data[pi] = game.rule.dk.wave[pi] or 0
+                                end
+                            )
+                            return data
                         end
                     )
+                    hleaderBoard.setTitle(bldk, "有趣对抗战绩榜")
                 end
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do
@@ -501,6 +547,17 @@ cj.TriggerAddAction(
                     createMyTower(k, game.towers["人类·农民_1"].UNIT_ID)
                 end
                 -- 商店
+                for _, v in pairs(game.medicineShopPoint) do
+                    hunit.create(
+                        {
+                            whichPlayer = game.ALLY_PLAYER,
+                            unitId = game.shops["药商"].UNIT_ID,
+                            qty = 1,
+                            x = v[1],
+                            y = v[2]
+                        }
+                    )
+                end
                 hunit.create(
                     {
                         whichPlayer = game.ALLY_PLAYER,
@@ -527,26 +584,49 @@ cj.TriggerAddAction(
                         --拼凑多面板数据，二维数组，行列模式
                         hmultiBoard.setTitle(mb, "玩家兵塔属性列表，地上怪物：" .. game.currentMon .. "只")
                         --开始当然是title了
-                        local data = {
+                        local data = {}
+                        local titData = {
+                            {value = "只人", icon = "ReplaceableTextures\\CommandButtons\\BTNRiderlessHorse.blp"},
+                            {value = "状态", icon = "ReplaceableTextures\\CommandButtons\\BTNWellSpring.blp"},
+                            {value = "兵塔", icon = "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp"},
+                            {value = "等级", icon = "ReplaceableTextures\\CommandButtons\\BTNAltarOfKings.blp"},
+                            {value = "天赋", icon = "ReplaceableTextures\\CommandButtons\\BTNDivineIntervention.blp"},
+                            {value = "物攻", icon = "ReplaceableTextures\\CommandButtons\\BTNThoriumMelee.blp"},
+                            {value = "魔攻", icon = "ReplaceableTextures\\CommandButtons\\BTNArcaniteMelee.blp"},
                             {
-                                {value = "狼人", icon = "ReplaceableTextures\\CommandButtons\\BTNRiderlessHorse.blp"},
-                                {value = "兵塔", icon = "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp"},
-                                {value = "等级", icon = "ReplaceableTextures\\CommandButtons\\BTNAltarOfKings.blp"},
-                                {value = "天赋", icon = "ReplaceableTextures\\CommandButtons\\BTNDivineIntervention.blp"},
-                                {value = "物攻", icon = "ReplaceableTextures\\CommandButtons\\BTNThoriumMelee.blp"},
-                                {value = "魔攻", icon = "ReplaceableTextures\\CommandButtons\\BTNArcaniteMelee.blp"},
-                                {
-                                    value = "攻速",
-                                    icon = "ReplaceableTextures\\CommandButtons\\BTNImprovedUnholyStrength.blp"
-                                },
-                                {
-                                    value = "物爆",
-                                    icon = "ReplaceableTextures\\CommandButtons\\BTNSpiritWalkerMasterTraining.blp"
-                                },
-                                {value = "魔爆", icon = "ReplaceableTextures\\CommandButtons\\BTNPriestAdept.blp"},
-                                {value = "增幅", icon = "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp"}
-                            }
+                                value = "攻速",
+                                icon = "ReplaceableTextures\\CommandButtons\\BTNImprovedUnholyStrength.blp"
+                            },
+                            {
+                                value = "物爆",
+                                icon = "ReplaceableTextures\\CommandButtons\\BTNSpiritWalkerMasterTraining.blp"
+                            },
+                            {value = "魔爆", icon = "ReplaceableTextures\\CommandButtons\\BTNPriestAdept.blp"},
+                            {value = "增幅", icon = "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp"}
                         }
+                        if (game.rule.cur == "dk") then
+                            titData =
+                                table.merge(
+                                titData,
+                                {
+                                    {value = "护甲", icon = "ReplaceableTextures\\CommandButtons\\BTNHumanArmorUpOne.blp"},
+                                    {
+                                        value = "减伤",
+                                        icon = "ReplaceableTextures\\CommandButtons\\BTNStoneArchitecture.blp"
+                                    },
+                                    {
+                                        value = "魔抗",
+                                        icon = "ReplaceableTextures\\CommandButtons\\BTNSorceressMaster.blp"
+                                    },
+                                    {
+                                        value = "反伤",
+                                        icon = "ReplaceableTextures\\CommandButtons\\BTNDefend.blp"
+                                    },
+                                    {value = "回避", icon = "ReplaceableTextures\\CommandButtons\\BTNEnchantedCrows.blp"}
+                                }
+                            )
+                        end
+                        table.insert(data, titData)
                         --然后是form
                         for pi = 1, hplayer.qty_max, 1 do
                             local p = hplayer.players[pi]
@@ -564,21 +644,38 @@ cj.TriggerAddAction(
                                     math.floor(hattr.get(tower, "violence_odds")) ..
                                     "%击出" .. math.floor(100 + hattr.get(tower, "violence")) .. "%伤害"
                                 local hunt_amplitude = math.round(hattr.get(tower, "hunt_amplitude")) .. "%"
-                                table.insert(
-                                    data,
-                                    {
-                                        {value = cj.GetPlayerName(p), icon = nil},
-                                        {value = name, icon = avatar},
-                                        {value = "Lv." .. hhero.getCurLevel(tower), icon = nil},
-                                        {value = game.playerTowerLevel[pi], icon = nil},
-                                        {value = attack_white, icon = nil},
-                                        {value = attack_green, icon = nil},
-                                        {value = attack_speed, icon = nil},
-                                        {value = knocking, icon = nil},
-                                        {value = violence, icon = nil},
-                                        {value = hunt_amplitude, icon = nil}
-                                    }
-                                )
+                                local tempData = {
+                                    {value = cj.GetPlayerName(p), icon = nil},
+                                    {value = hplayer.getStatus(p), icon = nil},
+                                    {value = name, icon = avatar},
+                                    {value = "Lv." .. hhero.getCurLevel(tower), icon = nil},
+                                    {value = game.playerTowerLevel[pi], icon = nil},
+                                    {value = attack_white, icon = nil},
+                                    {value = attack_green, icon = nil},
+                                    {value = attack_speed, icon = nil},
+                                    {value = knocking, icon = nil},
+                                    {value = violence, icon = nil},
+                                    {value = hunt_amplitude, icon = nil}
+                                }
+                                if (game.rule.cur == "dk") then
+                                    local defend = math.floor(hattr.get(tower, "defend"))
+                                    local toughness = math.round(hattr.get(tower, "toughness"))
+                                    local resistance = math.round(hattr.get(tower, "resistance")) .. "%"
+                                    local hunt_rebound = math.round(hattr.get(tower, "hunt_rebound")) .. "%"
+                                    local avoid = math.round(hattr.get(tower, "avoid")) .. "%"
+                                    tempData =
+                                        table.merge(
+                                        tempData,
+                                        {
+                                            {value = defend, icon = nil},
+                                            {value = toughness, icon = nil},
+                                            {value = resistance, icon = nil},
+                                            {value = hunt_rebound, icon = nil},
+                                            {value = avoid, icon = nil}
+                                        }
+                                    )
+                                end
+                                table.insert(data, tempData)
                             end
                         end
                         return data

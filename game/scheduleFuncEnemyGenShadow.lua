@@ -4,22 +4,7 @@ require "game.scheduleFuncOnShadowDead"
 towerShadowGen = function(playerIndex)
     local tower = game.playerTower[playerIndex]
     local tid = hunit.getId(tower)
-    local next = -1
-    local realEnd = 4
-    for i = 1, hplayer.qty_max, 1 do
-        if (his.playing(hplayer.players[i]) or game.rule.dk.ai == true) then
-            realEnd = i
-        end
-    end
-    for i = 1, hplayer.qty_max, 1 do
-        if (his.playing(hplayer.players[i]) or game.rule.dk.ai == true) then
-            if (next == -1) then
-                if (playerIndex == realEnd or i > playerIndex) then
-                    next = i
-                end
-            end
-        end
-    end
+    local next = getNextRect(playerIndex)
     local u =
         hemeny.create(
         {
@@ -82,4 +67,5 @@ towerShadowGen = function(playerIndex)
             "达到了|cffffff00第" ..
                 game.rule.dk.wave[playerIndex] .. "级|r，TA的兵塔" .. hColor.red(towerName) .. "开始进攻！其他人注意防守！"
     )
+    dzSetLumber(hplayer.players[playerIndex], game.rule.yb.wave)
 end
