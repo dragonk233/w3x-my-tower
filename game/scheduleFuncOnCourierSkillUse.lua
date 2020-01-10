@@ -2,9 +2,9 @@
 onCourierSkillUesdTTG = function(u, text)
     htextTag.style(htextTag.create2Unit(u, text, 8, "ccffff", 1, 1.5, 50), "scale", 0, 0.05)
 end
-onCourierSkillUesd = function()
-    local u = hevent.getTriggerUnit()
-    local skillid = hevent.getTriggerSkill()
+onCourierSkillUesd = function(evtData)
+    local u = evtData.triggerUnit
+    local skillid = hevent.triggerSkill
     local abilitiesSLK = hslk_global.abilitiesKV[skillid]
     local p = cj.GetOwningPlayer(u)
     local playerIndex = hplayer.index(p)
@@ -58,12 +58,7 @@ onCourierSkillUesd = function()
                 }
             }
         )
-        heffect.bindUnit(
-            "Abilities\\Spells\\Items\\AIob\\AIobTarget.mdl",
-            game.playerTower[playerIndex],
-            "weapon",
-            45
-        )
+        heffect.bindUnit("Abilities\\Spells\\Items\\AIob\\AIobTarget.mdl", game.playerTower[playerIndex], "weapon", 45)
     elseif (abilitiesSLK.Name == "兵塔石吞噬") then
         local lvUpQty = 0
         for ti = 0, 5, 1 do

@@ -1,9 +1,9 @@
 require "game.scheduleFuncTowerSkillBook"
 
 -- 使用物品
-onUnitItemsUesd = function()
-    local u = hevent.getTriggerUnit()
-    local it = hevent.getTriggerItem()
+onUnitItemsUesd = function(evtData)
+    local u = evtData.triggerUnit
+    local it = evtData.triggerItem
     local itId = hitem.getId(it)
     local itemSLK = hslk_global.itemsKV[itId]
     local p = cj.GetOwningPlayer(u)

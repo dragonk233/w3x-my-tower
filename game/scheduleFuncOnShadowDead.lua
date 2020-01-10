@@ -1,7 +1,7 @@
 -- 死亡
-towerShadowDead = function()
-    local shadow = hevent.getTriggerUnit()
-    local u = hevent.getKiller()
+towerShadowDead = function(evtData)
+    local shadow = evtData.triggerUnit
+    local u = evtData.killer
     local shadowName = hunit.getName(shadow)
     local shadowPName = cj.GetPlayerName(hplayer.players[hunit.getUserData(shadow)])
     if (u ~= nil) then

@@ -93,33 +93,31 @@ enemyDeadAward = function(triggerUnit, killer)
                 }
             )
         end
-   end
+    end
 end
 
 -- 敌军死亡YB
-enemyDeadYB = function()
+enemyDeadYB = function(evtData)
     game.currentMon = game.currentMon - 1
-    local u = hevent.getKiller()
-    if (u ~= nil) then
-        haward.forGroupExp(u, 35 * game.rule.yb.wave)
+    if (evtData.killer ~= nil) then
+        haward.forGroupExp(evtData.killer, 35 * game.rule.yb.wave)
     end
-    enemyDeadAward(hevent.getTriggerUnit(), u)
+    enemyDeadAward(evtData.triggerUnit, evtData.killer)
 end
 
 -- 敌军死亡HZ
-enemyDeadHZ = function()
+enemyDeadHZ = function(evtData)
     game.currentMon = game.currentMon - 1
-    local u = hevent.getKiller()
-    if (u ~= nil) then
-        haward.forGroupExp(u, 30 * game.rule.hz.wave)
+    if (evtData.killer ~= nil) then
+        haward.forGroupExp(evtData.killer, 30 * game.rule.hz.wave)
     end
-    enemyDeadAward(hevent.getTriggerUnit(), u)
+    enemyDeadAward(evtData.triggerUnit, evtData.killer)
 end
 
 -- 敌军死亡DK
-enemyDeadDK = function()
+enemyDeadDK = function(evtData)
     game.currentMon = game.currentMon - 1
-    local u = hevent.getKiller()
+    local u = evtData.killer
     if (u ~= nil) then
         local pi = hplayer.index(cj.GetOwningPlayer(u))
         local exp = 30 * game.rule.dk.wave[pi]
@@ -140,5 +138,5 @@ enemyDeadDK = function()
     end
     local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex
     game.rule.dk.monLimit[ui] = game.rule.dk.monLimit[ui] - 1
-    enemyDeadAward(hevent.getTriggerUnit(), u)
+    enemyDeadAward(evtData.triggerUnit, u)
 end

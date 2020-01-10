@@ -17,9 +17,9 @@ onTowerAttackTtg = function(u, string)
         end
     )
 end
-onTowerAttack = function()
-    local u = hevent.getAttacker()
-    local targetUnit = hevent.getTargetUnit()
+onTowerAttack = function(evtData)
+    local u = evtData.attacker
+    local targetUnit = evtData.targetUnit
     for ABILITY_ID, v in pairs(hslk_global.abilitiesKV) do
         if (hskill.has(u, ABILITY_ID)) then
             local Name = v.Name

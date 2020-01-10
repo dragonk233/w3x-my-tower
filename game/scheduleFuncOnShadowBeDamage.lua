@@ -17,9 +17,9 @@ towerShadowTtg = function(u, string)
         end
     )
 end
-towerShadowBeDamage = function()
-    local u = hevent.getTriggerUnit()
-    local sourceUnit = hevent.getSourceUnit()
+towerShadowBeDamage = function(evtData)
+    local u = evtData.triggerUnit
+    local sourceUnit = evtData.sourceUnit
     local playerIndex = hunit.getUserData(u)
     local shadow = game.playerTower[playerIndex]
     for ABILITY_ID, v in pairs(hslk_global.abilitiesKV) do

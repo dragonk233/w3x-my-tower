@@ -1,7 +1,7 @@
 -- boss死亡
-bossDead = function()
+bossDead = function(evtData)
     game.currentMon = game.currentMon - 1
-    local u = hevent.getKiller()
+    local u = evtData.killer
     if (u ~= nil) then
         if (game.rule.cur == "yb") then
             haward.forUnitExp(u, 200 * game.rule.yb.wave)

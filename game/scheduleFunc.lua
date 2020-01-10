@@ -28,8 +28,8 @@ getNextRect = function(current)
 end
 
 -- 兵塔升级
-updateMyTower = function()
-    local u = hevent.getTriggerUnit()
+updateMyTower = function(evtData)
+    local u = evtData.triggerUnit
     local uid = string.id2char(cj.GetUnitTypeId(u))
     local lv = cj.GetHeroLevel(u)
     local diffLv = cj.I2R(lv - hhero.getPrevLevel(u))
