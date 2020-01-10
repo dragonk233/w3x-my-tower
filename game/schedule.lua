@@ -411,62 +411,60 @@ cj.TriggerAddAction(
                                                             game.pathPoint[next][1][1],
                                                             game.pathPoint[next][1][2]
                                                         )
-                                                        if
-                                                            (hplayer.getStatus(hplayer.players[k]) ==
-                                                                hplayer.player_status.gaming)
-                                                         then
-                                                            local hunt = game.rule.dk.wave[playerIndex]
-                                                            if (hunt >= hunit.getCurLife(game.playerTower[k])) then
-                                                                hunit.kill(game.playerTower[k], 0)
-                                                                hmsg.echo(
-                                                                    hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
-                                                                        "被" ..
-                                                                            hColor.sky(
-                                                                                cj.GetPlayerName(
-                                                                                    hplayer.players[playerIndex]
-                                                                                )
-                                                                            ) ..
-                                                                                "的" ..
-                                                                                    hColor.yellow(slk.Name) ..
-                                                                                        "进攻，直接战败了~"
-                                                                )
-                                                                hplayer.setStatus(hplayer.players[k], "战败")
-                                                                hplayer.defeat(hplayer.players[k], "战败~")
-                                                            else
-                                                                hunit.subCurLife(game.playerTower[k], hunt)
-                                                                hmsg.echo(
-                                                                    hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
-                                                                        "被" ..
-                                                                            hColor.sky(
-                                                                                cj.GetPlayerName(
-                                                                                    hplayer.players[playerIndex]
-                                                                                )
-                                                                            ) ..
-                                                                                "的" ..
-                                                                                    hColor.yellow(slk.Name) ..
-                                                                                        "进攻，扣了" ..
-                                                                                            hColor.red(hunt) .. "血"
-                                                                )
-                                                                heffect.toUnit(
-                                                                    "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
+                                                    end
+                                                    if
+                                                        (hplayer.getStatus(hplayer.players[k]) ==
+                                                            hplayer.player_status.gaming)
+                                                     then
+                                                        local hunt = game.rule.dk.wave[playerIndex]
+                                                        if (hunt >= hunit.getCurLife(game.playerTower[k])) then
+                                                            hunit.kill(game.playerTower[k], 0)
+                                                            hmsg.echo(
+                                                                hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
+                                                                    "被" ..
+                                                                        hColor.sky(
+                                                                            cj.GetPlayerName(
+                                                                                hplayer.players[playerIndex]
+                                                                            )
+                                                                        ) ..
+                                                                            "的" ..
+                                                                                hColor.yellow(slk.Name) .. "进攻，直接战败了~"
+                                                            )
+                                                            hplayer.setStatus(hplayer.players[k], "战败")
+                                                            hplayer.defeat(hplayer.players[k], "战败~")
+                                                        else
+                                                            hunit.subCurLife(game.playerTower[k], hunt)
+                                                            hmsg.echo(
+                                                                hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
+                                                                    "被" ..
+                                                                        hColor.sky(
+                                                                            cj.GetPlayerName(
+                                                                                hplayer.players[playerIndex]
+                                                                            )
+                                                                        ) ..
+                                                                            "的" ..
+                                                                                hColor.yellow(slk.Name) ..
+                                                                                    "进攻，扣了" .. hColor.red(hunt) .. "血"
+                                                            )
+                                                            heffect.toUnit(
+                                                                "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
+                                                                game.playerTower[k],
+                                                                1
+                                                            )
+                                                            htextTag.style(
+                                                                htextTag.create2Unit(
                                                                     game.playerTower[k],
-                                                                    1
-                                                                )
-                                                                htextTag.style(
-                                                                    htextTag.create2Unit(
-                                                                        game.playerTower[k],
-                                                                        "-" .. hunt,
-                                                                        10.00,
-                                                                        "ff0000",
-                                                                        1,
-                                                                        1.1,
-                                                                        50.00
-                                                                    ),
-                                                                    "scale",
-                                                                    0,
-                                                                    0.05
-                                                                )
-                                                            end
+                                                                    "-" .. hunt,
+                                                                    10.00,
+                                                                    "ff0000",
+                                                                    1,
+                                                                    1.1,
+                                                                    50.00
+                                                                ),
+                                                                "scale",
+                                                                0,
+                                                                0.05
+                                                            )
                                                         end
                                                     end
                                                 else
