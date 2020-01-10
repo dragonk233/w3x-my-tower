@@ -551,7 +551,6 @@ cj.TriggerAddAction(
                         end
                     end
                 end
-                print_mbr(hRuntime.player)
                 -- 基本兵塔
                 for k, v in pairs(game.towerPoint) do
                     createMyTower(k, game.towers["人类·农民_1"].UNIT_ID)

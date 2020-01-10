@@ -191,7 +191,7 @@ enemyGenDK = function(waiting)
             htime.delTimer(t)
             hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
             for i = 1, hplayer.qty_max, 1 do
-                if (hplayer.getStatus(hplayer.players[k]) == hplayer.player_status.gaming) then
+                if (hplayer.getStatus(hplayer.players[i]) == hplayer.player_status.gaming) then
                     game.rule.dk.playerQty[i] = 0
                     game.rule.dk.wave[i] = 1
                     game.rule.dk.mon[i] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
