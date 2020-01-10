@@ -192,7 +192,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                 attack_debuff = {
                     [optChar] = {
                         {
-                            attr = "life",
+                            attr = "life_back",
                             odds = 100,
                             during = 5.00,
                             val = level * abliOps.Val[1],
@@ -211,7 +211,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                 attack_debuff = {
                     [optChar] = {
                         {
-                            attr = "life",
+                            attr = "life_back",
                             odds = 100,
                             during = 5.00,
                             val = level * abliOps.Val[1],

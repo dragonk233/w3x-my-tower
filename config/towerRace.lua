@@ -56,7 +56,7 @@ towerRaces = {
     {
         Name = "亡灵",
         Ubertip = "亡灵不会死亡，消失的亡灵实际上是被净化了",
-        Text = "攻击时，敌军-15点移动速度，持续4秒",
+        Text = "攻击时，敌军减少25点移动速度，持续3秒",
         Art = "war3mapImported\\icon_race_undead.blp",
     },
     {

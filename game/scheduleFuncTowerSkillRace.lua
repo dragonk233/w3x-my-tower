@@ -91,11 +91,13 @@ addTowerSkillsRace = function(u, slk)
             {
                 attack_debuff = {
                     add = {
-                        attr = "move",
-                        odds = 100,
-                        val = 15,
-                        during = 4.0,
-                        model = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
+                        {
+                            attr = "move",
+                            odds = 100,
+                            val = 25,
+                            during = 3.0,
+                            model = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
+                        }
                     }
                 }
             }

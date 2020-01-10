@@ -27,11 +27,12 @@ towerShadowGen = function(playerIndex)
             qty = 1,
             x = game.pathPoint[next][1][1],
             y = game.pathPoint[next][1][2],
-            facing = playerIndex * -90 + 180,
+            facing = playerIndex * -90 + 180
         }
     )
     cj.SetUnitPathing(u, false)
     hskill.add(u, game.effectModel["影子兵塔特效"].ABILITY_ID, 0)
+    hunit.setColor(u, playerIndex)
     hattr.set(
         u,
         0,

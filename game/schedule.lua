@@ -479,34 +479,17 @@ cj.TriggerAddAction(
                                 }
                             )
                         end
-                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "tzgold") == true) then
+                        if
+                            (u ~= nil and
+                                (hdzapi.hasMallItem(hplayer.players[k], "tzgold") == true or
+                                    hdzapi.hasMallItem(hplayer.players[k], "tzdark") == true or
+                                    hdzapi.hasMallItem(hplayer.players[k], "tzboold") == true or
+                                    hdzapi.hasMallItem(hplayer.players[k], "tzdragon") == true or
+                                    hdzapi.hasMallItem(hplayer.players[k], "tzghost") == true))
+                         then
                             hitem.create(
                                 {
-                                    itemId = game.effectModelItem["金碧辉煌套装"].ITEM_ID,
-                                    whichUnit = u
-                                }
-                            )
-                        end
-                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "tzdark") == true) then
-                            hitem.create(
-                                {
-                                    itemId = game.effectModelItem["迷幻黑紫套装"].ITEM_ID,
-                                    whichUnit = u
-                                }
-                            )
-                        end
-                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "tzdragon") == true) then
-                            hitem.create(
-                                {
-                                    itemId = game.effectModelItem["青龙碧翼套装"].ITEM_ID,
-                                    whichUnit = u
-                                }
-                            )
-                        end
-                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "tzghost") == true) then
-                            hitem.create(
-                                {
-                                    itemId = game.effectModelItem["邪鬼怨灵套装"].ITEM_ID,
+                                    itemId = game.effectModelItem["超次元套装礼包"].ITEM_ID,
                                     whichUnit = u
                                 }
                             )
