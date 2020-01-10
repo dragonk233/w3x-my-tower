@@ -11,12 +11,12 @@ getNextRect = function(current)
     local next = -1
     local realEnd = 4
     for i = 1, hplayer.qty_max, 1 do
-        if (his.playing(hplayer.players[i]) or (game.playerTower[i] ~= nil and game.rule.dk.ai == true)) then
+        if (hplayer.player_status.gaming == hplayer.getStatus(hplayer.players[i])) then
             realEnd = i
         end
     end
     for i = 1, hplayer.qty_max, 1 do
-        if (his.playing(hplayer.players[i]) or (game.playerTower[i] ~= nil and game.rule.dk.ai == true)) then
+        if (hplayer.player_status.gaming == hplayer.getStatus(hplayer.players[i])) then
             if (next == -1) then
                 if (current == realEnd or i > current) then
                     next = i
@@ -74,7 +74,7 @@ createMyTower = function(playerIndex, towerId)
         print("createMyTower wtf")
         return nil
     end
-    if (his.playing(hplayer.players[playerIndex]) or game.rule.dk.ai == true) then
+    if (hplayer.getStatus(hplayer.players[playerIndex]) == hplayer.player_status.gaming) then
         if (game.towersAbilities[playerIndex] == nil) then
             game.towersAbilities[playerIndex] = {}
         end
@@ -202,7 +202,7 @@ createMyCourier = function(playerIndex, courierId)
         print("createMyCourier wtf")
         return nil
     end
-    if (his.playing(hplayer.players[playerIndex]) or game.rule.dk.ai == true) then
+    if (hplayer.getStatus(hplayer.players[playerIndex]) == hplayer.player_status.gaming) then
         -- 如果有上一个单位，把上一个信使暂时隐藏，后面取它的物品
         if (game.playerCourier[playerIndex] ~= nil) then
             cj.ShowUnit(game.playerCourier[playerIndex], false)

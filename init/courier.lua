@@ -1,5 +1,5 @@
 -- courier
-local couriersShopIds = {}
+couriersShopIds = {}
 for i, v in ipairs(couriers) do
     -- 处理信使数据
     local Ubertip = "召唤：" .. v.Name .. "|n信使阶级："..hColor.greenLight(v.COURIER_POWER) .. "|n移动速度：" .. hColor.skyLight(v.spd)
@@ -107,24 +107,4 @@ for i, v in ipairs(couriers) do
 end
 ?>
 call SaveInteger(hash_myslk, StringHash("couriers"), -1, <?=#couriers?>)
-<?
-local v = {
-    Name = "信使之笼",
-}
-local obj = slk.unit.ngme:new("shops_" .. v.Name)
-obj.Name = v.Name
-obj.pathTex = "PathTextures\\8x8SimpleSolid.tga"
-obj.abilList = "Aneu,Avul,Apit"
-obj.Sellitems = string.implode(',',couriersShopIds)
-obj.file = "buildings\\human\\GryphonAviary\\GryphonAviary"
-obj.Art = "ReplaceableTextures\\CommandButtons\\BTNGryphonAviary.blp"
-obj.modelScale = 0.80
-obj.scale = 4.20
-obj.HP = 99999
-obj.sight = 800
-obj.nsight = 800
-obj.unitSound = "GryphonAviary"
-v.UNIT_ID = obj:get_id()
-?>
-call SaveStr(hash_myslk, StringHash("shops"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
 <?

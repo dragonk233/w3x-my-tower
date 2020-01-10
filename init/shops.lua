@@ -17,8 +17,8 @@ if (table.len(shopsAbility) > 0) then
             table.insert(abilityBelongs[s], v.abilityID)
         end
         ?>
-    call SaveStr(hash_myslk, StringHash("shopsSkills"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
-    <?
+        call SaveStr(hash_myslk, StringHash("shopsSkills"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
+        <?
     end
 end
 
@@ -38,9 +38,14 @@ for k, v in ipairs(shops) do
     obj.HP = v.HP
     obj.sight = v.sight
     obj.nsight = v.nsight
-    obj.unitSound = ""
+    obj.unitSound = v.unitSound or ""
+    obj.Sellitems = v.Sellitems or ""
+    obj.UberSplat = ""
     v.UNIT_ID = obj:get_id()
     ?>
-call SaveStr(hash_myslk, StringHash("shops"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
-<?
+    call SaveStr(hash_myslk, StringHash("shops"), <?=k?>, "<?=string.addslashes(json.stringify(v))?>")
+    <?
 end
+?>
+call SaveInteger(hash_myslk, StringHash("shops"), -1, <?=#shops?>)
+<?

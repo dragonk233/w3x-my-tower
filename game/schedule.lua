@@ -411,55 +411,62 @@ cj.TriggerAddAction(
                                                             game.pathPoint[next][1][1],
                                                             game.pathPoint[next][1][2]
                                                         )
-                                                        local hunt = game.rule.dk.wave[playerIndex]
-                                                        if (hunt >= hunit.getCurLife(game.playerTower[k])) then
-                                                            hunit.kill(game.playerTower[k], 0)
-                                                            hmsg.echo(
-                                                                hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
-                                                                    "被" ..
-                                                                        hColor.sky(
-                                                                            cj.GetPlayerName(
-                                                                                hplayer.players[playerIndex]
-                                                                            )
-                                                                        ) ..
-                                                                            "的" ..
-                                                                                hColor.yellow(slk.Name) .. "进攻，直接战败了~"
-                                                            )
-                                                            hplayer.setStatus(hplayer.players[k], "战败")
-                                                            hplayer.defeat(hplayer.players[k], "战败~")
-                                                        else
-                                                            hunit.subCurLife(game.playerTower[k], hunt)
-                                                            hmsg.echo(
-                                                                hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
-                                                                    "被" ..
-                                                                        hColor.sky(
-                                                                            cj.GetPlayerName(
-                                                                                hplayer.players[playerIndex]
-                                                                            )
-                                                                        ) ..
-                                                                            "的" ..
-                                                                                hColor.yellow(slk.Name) ..
-                                                                                    "进攻，扣了" .. hColor.red(hunt) .. "血"
-                                                            )
-                                                            heffect.toUnit(
-                                                                "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
-                                                                game.playerTower[k],
-                                                                1
-                                                            )
-                                                            htextTag.style(
-                                                                htextTag.create2Unit(
+                                                        if
+                                                            (hplayer.getStatus(hplayer.players[k]) ==
+                                                                hplayer.player_status.gaming)
+                                                         then
+                                                            local hunt = game.rule.dk.wave[playerIndex]
+                                                            if (hunt >= hunit.getCurLife(game.playerTower[k])) then
+                                                                hunit.kill(game.playerTower[k], 0)
+                                                                hmsg.echo(
+                                                                    hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
+                                                                        "被" ..
+                                                                            hColor.sky(
+                                                                                cj.GetPlayerName(
+                                                                                    hplayer.players[playerIndex]
+                                                                                )
+                                                                            ) ..
+                                                                                "的" ..
+                                                                                    hColor.yellow(slk.Name) ..
+                                                                                        "进攻，直接战败了~"
+                                                                )
+                                                                hplayer.setStatus(hplayer.players[k], "战败")
+                                                                hplayer.defeat(hplayer.players[k], "战败~")
+                                                            else
+                                                                hunit.subCurLife(game.playerTower[k], hunt)
+                                                                hmsg.echo(
+                                                                    hColor.sky(cj.GetPlayerName(hplayer.players[k])) ..
+                                                                        "被" ..
+                                                                            hColor.sky(
+                                                                                cj.GetPlayerName(
+                                                                                    hplayer.players[playerIndex]
+                                                                                )
+                                                                            ) ..
+                                                                                "的" ..
+                                                                                    hColor.yellow(slk.Name) ..
+                                                                                        "进攻，扣了" ..
+                                                                                            hColor.red(hunt) .. "血"
+                                                                )
+                                                                heffect.toUnit(
+                                                                    "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
                                                                     game.playerTower[k],
-                                                                    "-" .. hunt,
-                                                                    10.00,
-                                                                    "ff0000",
-                                                                    1,
-                                                                    1.1,
-                                                                    50.00
-                                                                ),
-                                                                "scale",
-                                                                0,
-                                                                0.05
-                                                            )
+                                                                    1
+                                                                )
+                                                                htextTag.style(
+                                                                    htextTag.create2Unit(
+                                                                        game.playerTower[k],
+                                                                        "-" .. hunt,
+                                                                        10.00,
+                                                                        "ff0000",
+                                                                        1,
+                                                                        1.1,
+                                                                        50.00
+                                                                    ),
+                                                                    "scale",
+                                                                    0,
+                                                                    0.05
+                                                                )
+                                                            end
                                                         end
                                                     end
                                                 else
@@ -507,6 +514,7 @@ cj.TriggerAddAction(
                     if (game.rule.dk.ai == true and his.playing(hplayer.players[k]) == false) then
                         u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
                         cj.SetPlayerName(hplayer.players[k], "AI#" .. k)
+                        hplayer.setStatus(hplayer.players[k], hplayer.player_status.gaming)
                     else
                         u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
                         if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "phoenix") == true) then
@@ -531,6 +539,7 @@ cj.TriggerAddAction(
                                     hdzapi.hasMallItem(hplayer.players[k], "tzdark") == true or
                                     hdzapi.hasMallItem(hplayer.players[k], "tzboold") == true or
                                     hdzapi.hasMallItem(hplayer.players[k], "tzdragon") == true or
+                                    hdzapi.hasMallItem(hplayer.players[k], "tzfire") == true or
                                     hdzapi.hasMallItem(hplayer.players[k], "tzghost") == true))
                          then
                             hitem.create(
@@ -542,6 +551,7 @@ cj.TriggerAddAction(
                         end
                     end
                 end
+                print_mbr(hRuntime.player)
                 -- 基本兵塔
                 for k, v in pairs(game.towerPoint) do
                     createMyTower(k, game.towers["人类·农民_1"].UNIT_ID)

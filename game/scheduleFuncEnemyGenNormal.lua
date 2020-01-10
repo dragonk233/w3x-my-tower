@@ -191,7 +191,7 @@ enemyGenDK = function(waiting)
             htime.delTimer(t)
             hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
             for i = 1, hplayer.qty_max, 1 do
-                if (his.playing(hplayer.players[i]) or game.rule.dk.ai == true) then
+                if (hplayer.getStatus(hplayer.players[k]) == hplayer.player_status.gaming) then
                     game.rule.dk.playerQty[i] = 0
                     game.rule.dk.wave[i] = 1
                     game.rule.dk.mon[i] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
@@ -202,8 +202,8 @@ enemyGenDK = function(waiting)
                 game.rule.dk.fresh,
                 function()
                     for k, v in pairs(game.pathPoint) do
-                        if (his.playing(hplayer.players[k]) or game.rule.dk.ai == true) then
-                            if (game.rule.dk.monLimit[k] < 1.5 * game.rule.dk.perWaveQty) then
+                        if (hplayer.getStatus(hplayer.players[k]) == hplayer.player_status.gaming) then
+                            if (game.rule.dk.monLimit[k] < game.rule.dk.perWaveQty) then
                                 game.rule.dk.monLimit[k] = game.rule.dk.monLimit[k] + 1
                                 local u =
                                     hemeny.create(

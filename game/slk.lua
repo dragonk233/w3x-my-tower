@@ -38,16 +38,12 @@ for i = 1, len, 1 do
 end
 
 --shop
-local shopNames = {
-    "猎人之店",
-    "信使之笼"
-}
-
-for _, name in ipairs(shopNames) do
-    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("shops"), cj.StringHash(name))
+local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("shops"), -1)
+for i = 1, len, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("shops"),i)
     local jv = json.parse(v)
     hRuntime.register.unit(jv)
-    game.shops[name] = jv
+    game.shops[jv.Name] = jv
 end
 
 -- courier 信使

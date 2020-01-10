@@ -12,7 +12,7 @@ awardGenForOne = function(curWave, pi, awardMon)
             qty = 1,
             x = game.pathPoint[pi][1][1],
             y = game.pathPoint[pi][1][2],
-            facing = pi * -90 + 180,
+            facing = pi * -90 + 180
         }
     )
     cj.SetUnitPathing(u, false)
@@ -47,7 +47,7 @@ end
 awardGen = function(curWave)
     local awardMon = game.thisEnemysAward[cj.GetRandomInt(1, game.thisEnemysAwardLen)]
     for k, v in pairs(game.pathPoint) do
-        if (his.playing(hplayer.players[k]) or game.rule.dk.ai == true) then
+        if (hplayer.getStatus(hplayer.players[playerIndex]) == hplayer.player_status.gaming) then
             awardGenForOne(curWave, k, awardMon)
         end
     end
