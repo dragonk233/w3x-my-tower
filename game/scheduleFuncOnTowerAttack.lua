@@ -26,6 +26,7 @@ onTowerAttack = function(evtData)
             local level = v.ABILITY_LEVEL or 1
             level = level * 2 - 1
             if (Name ~= nil) then
+                --ability
                 if (Name == "侵毒连击" and math.random(1, 10) == 5) then
                     onTowerAttackTtg(u, Name)
                     hattr.set(

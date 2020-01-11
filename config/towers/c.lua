@@ -81,7 +81,8 @@ towers_c = {
         AGI = 10,
         INT = 15,
         ATTACK_WHITE = 23,
-        ATTACK_GREEN = 24
+        ATTACK_GREEN = 24,
+        abilList = {towerSpxKV["净化"]}
     },
     {
         Name = "巨魔·巫医",
@@ -101,7 +102,8 @@ towers_c = {
         AGI = 11,
         INT = 17,
         ATTACK_WHITE = 0,
-        ATTACK_GREEN = 43
+        ATTACK_GREEN = 43,
+        abilList = {towerSpxKV["蛊毒"]}
     },
     {
         Name = "血精灵·牧师",
@@ -121,7 +123,8 @@ towers_c = {
         AGI = 10,
         INT = 22,
         ATTACK_WHITE = 0,
-        ATTACK_GREEN = 42
+        ATTACK_GREEN = 42,
+        abilList = {towerSpxKV["治疗"]}
     },
     {
         Name = "暗夜精灵·树妖",
@@ -141,7 +144,8 @@ towers_c = {
         AGI = 15,
         INT = 18,
         ATTACK_WHITE = 47,
-        ATTACK_GREEN = 0
+        ATTACK_GREEN = 0,
+        abilList = {towerSpxKV["树木之妖"]}
     },
     {
         Name = "亡灵·地穴恶魔",
@@ -161,7 +165,8 @@ towers_c = {
         AGI = 19,
         INT = 17,
         ATTACK_WHITE = 18,
-        ATTACK_GREEN = 25
+        ATTACK_GREEN = 25,
+        abilList = {towerSpxKV["树木之妖"]}
     },
     {
         Name = "亡灵·不死巫师",
@@ -176,7 +181,8 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
         cool1 = 2.20,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["悲鸣"]}
     },
     {
         Name = "亡灵·飞艇",
@@ -191,7 +197,10 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\CannonTowerMissile\\CannonTowerMissile.mdl",
         cool1 = 2.30,
-        Primary = "AGI"
+        Primary = "AGI",
+        rangeN1 = 850,
+        acquire = 849,
+        abilList = {towerSpxKV["黑管火炮"]}
     },
     {
         Name = "娜迦·塞壬",
@@ -206,7 +215,8 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["海洋之心"]}
     },
     {
         Name = "娜迦·唱歌的塞壬",
@@ -221,7 +231,8 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["塞壬之歌"]}
     },
     {
         Name = "元素·海元素",
@@ -236,6 +247,7 @@ towers_c = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SeaElementalMissile\\SeaElementalMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["海洋之心"]}
     }
 }

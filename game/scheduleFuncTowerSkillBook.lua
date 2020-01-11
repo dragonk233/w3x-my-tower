@@ -222,13 +222,45 @@ setTowerSkillByBook = function(u, abliOps, opt)
             }
         )
     elseif (abliOps.Name == "猛毒试剂") then
-        hattr.set(u, 0, {natural_poison = opt .. (level * abliOps.Val[1])})
-    elseif (abliOps.Name == "日食") then
-        hattr.set(u, 0, {natural_dark = opt .. (level * abliOps.Val[1])})
-    elseif (abliOps.Name == "邪神之手") then
-        hattr.set(u, 0, {natural_ghost = opt .. (level * abliOps.Val[1])})
+        hattr.set(
+            u,
+            0,
+            {
+                attack_debuff = {
+                    [optChar] = {
+                        {
+                            attr = "resistance",
+                            odds = 100,
+                            during = 3,
+                            val = level * abliOps.Val[1],
+                            model = "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"
+                        }
+                    }
+                }
+            }
+        )
     elseif (abliOps.Name == "千里冰封") then
-        hattr.set(u, 0, {natural_ice = opt .. (level * abliOps.Val[1])})
+        hattr.set(
+            u,
+            0,
+            {
+                attack_debuff = {
+                    [optChar] = {
+                        {
+                            attr = "move",
+                            odds = 55,
+                            during = 4,
+                            val = level * abliOps.Val[1],
+                            model = "Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt.mdl"
+                        }
+                    }
+                }
+            }
+        )
+    elseif (abliOps.Name == "日食") then
+        hattr.set(u, 0, {attack_hunt_type = opt .. "dark", natural_dark = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "邪神之手") then
+        hattr.set(u, 0, {attack_hunt_type = opt .. "ghost", natural_ghost = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "恶鬼呼声") then
         hattr.set(u, 0, {attack_hunt_type = opt .. "ghost"})
     elseif (abliOps.Name == "光导使者") then

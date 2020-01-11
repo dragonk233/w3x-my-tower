@@ -12,7 +12,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_spur_arrow2.mdl",
         cool1 = 1.90,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "人类·流浪人·风",
@@ -27,7 +27,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\IllidanMissile\\IllidanMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "人王·御龙剑神·奥米伽",
@@ -42,7 +42,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Firebolt_Rough_Major.mdl",
         cool1 = 2.00,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "血精灵·影刺客·瞬",
@@ -58,6 +58,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_EnergyBlade.mdl",
         cool1 = 1.60,
         Primary = "AGI",
+        abilList = {towerSpxKV["刺客信条"], towerSpxKV["影子替身"]}
     },
     {
         Name = "兽人·狼拳·格格塔诺",
@@ -72,7 +73,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\unit_WolfHeadProjectile109.mdl",
         cool1 = 1.90,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "亡灵·黑狱游侠·鬼歌",
@@ -87,7 +88,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Other\\BlackArrow\\BlackArrowMissile.mdl",
         cool1 = 1.85,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "亡灵·冰骨龙魂·弗里萨",
@@ -102,7 +103,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_FrostOrb.mdl",
         cool1 = 2.00,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "恶魔·阿克蒙德",
@@ -149,7 +150,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_animeslashfinal.mdl",
         cool1 = 1.65,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "恶魔·深渊魔王·麦哥瑟里登",
@@ -164,7 +165,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Voidbolt_Rough_Medium.mdl",
         cool1 = 2.15,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "熊猫·酒仙",
@@ -179,7 +180,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Other\\StrongDrink\\BrewmasterMissile.mdl",
         cool1 = 1.85,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "熊猫·滚滚",
@@ -194,7 +195,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "熊猫·霹雳",
@@ -210,7 +211,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 1.90,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "熊猫·无双",
@@ -225,7 +226,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Firebolt_Minor.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "恶魔·灭地·格朗",
@@ -240,7 +241,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_violet_arrow.mdl",
         cool1 = 2.00,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "恶魔·焚天·罗明",
@@ -255,7 +256,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Firebolt_Rough_Minor.mdl",
         cool1 = 2.00,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "龙人·青蓝巨兽·凯",
@@ -270,7 +271,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_forst_arrow.mdl",
         cool1 = 1.90,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "龙人·炼气大师·李",
@@ -285,7 +286,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FrostWyrmMissile\\FrostWyrmMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "人类·绘彩笔仙·素素",
@@ -300,7 +301,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Dustshot.mdl",
         cool1 = 2.10,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "巨魔·剑圣·噬魂",
@@ -315,7 +316,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Culling_Cleave_Silver.mdl",
         cool1 = 1.90,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "恶魔·地狱魔爪·维尔",
@@ -330,7 +331,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_DarknessBomb.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "恶魔·毁灭之神·撒旦",
@@ -345,7 +346,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Voidball_Major.mdl",
         cool1 = 1.50,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "地精·能面鬼·卜",
@@ -360,7 +361,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_OrbOfCorruption.mdl",
         cool1 = 1.90,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "暗夜精灵·丛林守卫者·小鹿",
@@ -375,7 +376,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_BlessingArrowMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "矮人·熊骑士·穆拉丁",
@@ -390,7 +391,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Heart_of_the_Storm_Missile5.mdl",
         cool1 = 2.20,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "亡灵·死神·歹",
@@ -405,7 +406,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_swing_knife.mdl",
         cool1 = 2.20,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "亡灵·冥魂大帝·钢克",
@@ -420,7 +421,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_LifeWave.mdl",
         cool1 = 2.20,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "昆虫·皮皮虾·皮",
@@ -435,7 +436,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Piercing_Thrust_Purple.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "娜迦·深红守卫·棘龙",
@@ -450,11 +451,11 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_FireBolt_Rough_Medium.mdl",
         cool1 = 2.10,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
-        Name = "娜迦·绀青皇冠·塞壬",
-        Ubertip = "娜迦族的公主，表面上喜欢二哥波塞冬",
+        Name = "娜迦·绀青皇冠·赛壬",
+        Ubertip = "娜迦族的公主，表面上喜欢二哥波塞冬，但谁知道呢？",
         unitSound = "NagaSiren",
         file = "war3mapImported\\unit_HeroNagaEnchantress.mdl",
         Art = "war3mapImported\\icon_unit_Enchantress.blp",
@@ -466,10 +467,11 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_Spirit_Orb.mdl",
         cool1 = 2.00,
         Primary = "INT",
+        abilList = {towerSpxKV["深海之心"]}
     },
     {
         Name = "娜迦·曳蓝王冠·哈迪斯",
-        Ubertip = "娜迦族的第一王子，速度是海妖中最快的，喜爱妹妹塞壬",
+        Ubertip = "娜迦族的第一王子，速度是海妖中最快的，喜爱妹妹赛壬",
         unitSound = "NagaMyrmidon",
         file = "war3mapImported\\unit_NagaDeathKnightFxd.mdl",
         Art = "war3mapImported\\icon_unit_FireDragonElemental.blp",
@@ -480,11 +482,11 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_WaterHands.mdl",
         cool1 = 1.80,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "娜迦·曳蓝王冠·波塞冬",
-        Ubertip = "娜迦族的第二王子，速度是海妖中最快的，喜爱妹妹塞壬",
+        Ubertip = "娜迦族的第二王子，力量是海妖中最大的，喜爱妹妹赛壬",
         unitSound = "NagaRoyalGuard",
         file = "war3mapImported\\unit_NagaRoyalGuard_V2.mdl",
         Art = "war3mapImported\\icon_unit_Hunter_Pet_Ravager.blp",
@@ -495,7 +497,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_FireBoltMissile.mdl",
         cool1 = 1.80,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "娜迦·驱逐者·潮汐巨人",
@@ -511,6 +513,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_fire_tail.mdl",
         cool1 = 1.90,
         Primary = "STR",
+        abilList = {towerSpxKV["深海之心"]}
     },
     {
         Name = "昆虫·隐术蜘蛛·库莫",
@@ -525,7 +528,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_GaussGun.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "兽人·狮王拳·布布鲁",
@@ -540,7 +543,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_BlackDragonMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "恶魔·鸟面人·伯迪",
@@ -555,7 +558,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_PoisonSpit.mdl",
         cool1 = 2.00,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "巨魔·狂魂骑手·阿拉烈",
@@ -570,7 +573,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_WarchiefMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "巨魔·狂战士·牙狼",
@@ -585,7 +588,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Ember_Shield_II_FX_3.mdl",
         cool1 = 1.90,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "牛头人·小牛·弹弹",
@@ -600,7 +603,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Dustshot.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "亡灵·墓坟孤王·嬴",
@@ -615,7 +618,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_NimbusBlade.mdl",
         cool1 = 2.00,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "矮人·剑圣·极乐",
@@ -630,7 +633,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_IceboundSting.mdl",
         cool1 = 1.90,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "食人魔·神侍奉·阿尔法",
@@ -645,7 +648,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_ice_cone_arrow.mdl",
         cool1 = 2.10,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "元素·幽鬼灯妖",
@@ -660,7 +663,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_DeathMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "元素·虚空谜团",
@@ -675,7 +678,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SpiritOfVengeanceMissile\\SpiritOfVengeanceMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "元素·异性毒虫",
@@ -690,7 +693,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "亡灵·勾魂使者·戴泽",
@@ -705,7 +708,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_NewSoulArmor.mdl",
         cool1 = 2.10,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "异兽·猴王·悟空",
@@ -720,6 +723,6 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Culling_Cleave_Purple.mdl",
         cool1 = 1.90,
-        Primary = "AGI",
-    },
+        Primary = "AGI"
+    }
 }

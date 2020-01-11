@@ -70,7 +70,8 @@ for j=1,1,1 do
                 towersTi = towersTi + 1
                 local thisIndex = v.Name .. '_' .. j
                 -- 处理塔基数据
-                local Ubertip = v.Ubertip
+                local UberDesc = v.Ubertip
+                local Ubertip = ""
                 local obj = slk.unit.Hpal:new("towers_" .. thisIndex)
     
                 Primary = v.Primary or "STR"
@@ -147,7 +148,7 @@ for j=1,1,1 do
                     + coolMark
                 ) --评定
                 --
-                Ubertip = Ubertip .. "|n|cffccffcc阶级：" .. tlv .. "|r"
+                Ubertip = Ubertip .. "|cffccffcc阶级：" .. tlv .. "|r"
                 Ubertip = Ubertip .. "|n|cffff0000攻击类型：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
                 Ubertip = Ubertip .. "|n|cffff8080物攻点数：" .. v.ATTACK_WHITE.."|r"
                 Ubertip = Ubertip .. "|n|cffccffff魔攻点数：" .. v.ATTACK_GREEN.."|r"
@@ -167,6 +168,7 @@ for j=1,1,1 do
                     Ubertip = Ubertip .. "|n|cffffffcc智力：" .. v.INT .. "(+" .. v.INTplus .. ")|r"
                 end
                 Ubertip = Ubertip .. "|n|cffcc99ff评定："..TowerMark.."分|r"
+                Ubertip = Ubertip .. "|n|n" .. hColor.grey(UberDesc)
                 obj.Hotkey = ""
                 obj.tilesets = 1
                 obj.hostilePal = 0

@@ -30,7 +30,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SorceressMissile\\SorceressMissile.mdl",
         cool1 = 2.10,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["火球术"]}
     },
     {
         Name = "血精灵·龙鹰骑士",
@@ -45,7 +46,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\DragonHawkMissile\\DragonHawkMissile.mdl",
         cool1 = 1.90,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["震荡光弹"]}
     },
     {
         Name = "兽人·科多兽",
@@ -60,7 +62,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["皮糙"]}
     },
     {
         Name = "兽人·发狂科多兽",
@@ -75,7 +78,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["肉燥"]}
     },
     {
         Name = "兽人·巫师",
@@ -90,7 +94,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
         cool1 = 2.20,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["诡异闪电"]}
     },
     {
         Name = "兽人·发狂巫师",
@@ -105,7 +110,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
         cool1 = 2.10,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["狂异闪电"]}
     },
     {
         Name = "巨魔·蝙蝠骑士",
@@ -120,7 +126,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\BatTrollMissile\\BatTrollMissile.mdl",
         cool1 = 2.05,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["燃油烧弹"]}
     },
     {
         Name = "牛头人·白毛",
@@ -135,7 +142,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SteamMissile\\SteamMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["灵魂净化"]}
     },
     {
         Name = "暗夜精灵·露娜",
@@ -166,7 +174,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\DruidoftheTalonMissile\\DruidoftheTalonMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["旋风"]}
     },
     {
         Name = "亡灵·石像鬼",
@@ -181,7 +190,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\GargoyleMissile\\GargoyleMissile.mdl",
         cool1 = 1.90,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["石像化"]}
     },
     {
         Name = "亡灵·女妖",
@@ -196,7 +206,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\BansheeMissile\\BansheeMissile.mdl",
         cool1 = 1.90,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["魅惑"]}
     },
     {
         Name = "亡灵·僵尸",
@@ -211,7 +222,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\MeatwagonMissile\\MeatwagonMissile.mdl",
         cool1 = 1.90,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["腐尸毒"]}
     },
     {
         Name = "娜迦·飞龙",
@@ -226,7 +238,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\snapMissile\\snapMissile.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["蛇皮"]}
     },
     {
         Name = "娜迦·暴徒",
@@ -241,7 +254,8 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SeaElementalMissile\\SeaElementalMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["暴力倾向"]}
     },
     {
         Name = "元素·海人",
@@ -256,6 +270,7 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SeaElementalMissile\\SeaElementalMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["海洋之心"]}
     }
 }

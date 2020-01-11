@@ -44,8 +44,8 @@ abilitiesYellow = {
     {
         Name = "猛毒试剂",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSlowPoison.blp",
-        Ubertip = "+{val#1}%毒攻击|n无对应攻击特性时无效",
-        Val = {13}
+        Ubertip = "攻击敌人减少它{val#1}%魔抗，持续3秒",
+        Val = {6}
     },
     {
         Name = "恶鬼呼声",
@@ -68,14 +68,14 @@ abilitiesYellow = {
     {
         Name = "日食",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGenericSpellImmunity.blp",
-        Ubertip = "+{val#1}%暗攻击|n无对应攻击特性时无效",
-        Val = {11}
+        Ubertip = "+暗攻击特性|n+{val#1}%暗攻击",
+        Val = {3}
     },
     {
         Name = "邪神之手",
         Art = "war3mapImported\\icon_pas_Offhand_Stratholme_A_02.blp",
-        Ubertip = "+{val#1}%鬼攻击|n无对应攻击特性时无效",
-        Val = {12}
+        Ubertip = "+鬼攻击特性|n+{val#1}%鬼攻击",
+        Val = {3}
     },
     {
         Name = "雷神之手",
@@ -86,8 +86,8 @@ abilitiesYellow = {
     {
         Name = "千里冰封",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFreezingBreath.blp",
-        Ubertip = "+{val#1}冰攻击|n无对应攻击特性时无效",
-        Val = {11}
+        Ubertip = "攻击敌人55%几率减少它{val#1}点移动，持续4秒",
+        Val = {70}
     },
     {
         Name = "冰心",

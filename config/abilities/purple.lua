@@ -39,13 +39,13 @@ abilitiesPurple = {
         Name = "疾风",
         Art = "war3mapImported\\icon_pas_Cyclone.blp",
         Ubertip = "+风特性攻击|n+{val#1}%风攻击",
-        Val = {13}
+        Val = {8}
     },
     {
         Name = "魔神之剑",
         Art = "war3mapImported\\icon_pas_Holy_SealOfValor.blp",
         Ubertip = "+{val#1}%伤害增幅",
-        Val = {9}
+        Val = {11}
     },
     {
         Name = "胆颤心惊",
