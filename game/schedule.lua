@@ -43,7 +43,10 @@ cj.TriggerAddAction(
             end
             game.playerOriginLumber[i] = l
             hplayer.setLumber(hplayer.players[i], l)
-            hmsg.echo00(hplayer.players[i], "根据你的游玩通关程度，你得到了" .. hColor.green(l) .. "个木头")
+            hmsg.echo00(hplayer.players[i], " *** 根据你的游玩通关程度，你得到了" .. hColor.green(l) .. "个木头")
+            if (openDebug == true) then
+                hplayer.addGold(hplayer.players[i], 100000)
+            end
         end
         htime.setInterval(
             5,

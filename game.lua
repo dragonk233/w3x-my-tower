@@ -1,6 +1,7 @@
 --调试
 console = require "jass.console"
-console.enable = true
+openDebug = true
+console.enable = openDebug
 
 --加载h-lua
 require "h-lua"
@@ -14,7 +15,7 @@ require "game.slk"
 --加载本地图的test
 require "game.test"
 
-local preload = {};
+local preload = {}
 for k, _ in pairs(hslk_global.unitsKV) do
     table.insert(preload, k)
 end
@@ -55,4 +56,3 @@ hemeny.setPlayer(hplayer.players[11])
 -- game start(这里需要用时间事件延时N秒，不然很多动作会在初始化失效)
 --加载本地图的test
 require "game.schedule"
-

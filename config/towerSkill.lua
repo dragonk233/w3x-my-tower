@@ -42,6 +42,13 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 1,
     },
     {
+        Name = "窥视镜",
+        Ubertip = "+200攻击距离",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGyroCopterTrueSight.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+    },
+    {
         Name = "铁壁",
         Ubertip = "+{val#1}护甲",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThickFur.blp",

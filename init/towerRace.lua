@@ -5,7 +5,7 @@ for i, v in ipairs(towerRaces) do
     local Tip = "种族 - [" .. hColor.green(v.Name) .. "]"
     obj.Name = Name
     obj.Tip = Tip
-    obj.Ubertip = v.Ubertip .. "|n|n".. hColor.yellow(v.Text)
+    obj.Ubertip = hColor.yellow(v.Text) .. "|n|n" .. hColor.grey(v.Ubertip)
     obj.Buttonpos1 = 1
     obj.Buttonpos2 = 0
     obj.hero = 0
