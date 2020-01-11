@@ -12,7 +12,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\GryphonRiderMissile\\GryphonRiderMissile.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["骑士精神"], towerSpxKV["全能守护"]}
     },
     {
         Name = "人类·捍卫骑士·阿尔萨斯",
@@ -27,7 +28,8 @@ towers_s = {
         Missileart = "Abilities\\Weapons\\GryphonRiderMissile\\GryphonRiderMissile.mdl",
         weapTp1 = "missile",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["骑士精神"], towerSpxKV["捍卫守护"]}
     },
     {
         Name = "人类·大法师·安东尼",
@@ -41,7 +43,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["水之元素"], towerSpxKV["魔力之源"]}
     },
     {
         Name = "人类·战争暴君·马索格",

@@ -6,13 +6,15 @@ addTowerSkillsx = function(u)
             if (hskill.has(u, abid)) then
                 if (v.Name == "突击匕首" or v.Name == "月神强击") then
                     hattr.set(u, 0, {attack_white = "+" .. Val[1]})
+                elseif (v.Name == "魔力之源") then
+                    hattr.set(u, 0, {attack_green = "+" .. Val[1]})
                 elseif (v.Name == "皮糙" or v.Name == "肉燥") then
                     hattr.set(u, 0, {life = "+" .. Val[1]})
                 elseif (v.Name == "治疗") then
                     hattr.set(u, 0, {life_back = "+" .. Val[1]})
-                elseif (v.Name == "铁壁" or v.Name == "金盾") then
+                elseif (v.Name == "铁壁" or v.Name == "捍卫守护") then
                     hattr.set(u, 0, {defend = "+" .. Val[1]})
-                elseif (v.Name == "远古身躯" or v.Name == "重拳出击") then
+                elseif (v.Name == "远古身躯" or v.Name == "重拳出击" or v.Name == "骑士精神") then
                     hattr.set(u, 0, {str_green = "+" .. Val[1]})
                 elseif (v.Name == "蛇皮") then
                     hattr.set(u, 0, {agi_green = "+" .. Val[1]})
@@ -38,6 +40,8 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_hunt_type = "+wood"})
                 elseif (v.Name == "山岭之灵") then
                     hattr.set(u, 0, {attack_hunt_type = "+soil"})
+                elseif (v.Name == "水之元素") then
+                    hattr.set(u, 0, {attack_hunt_type = "+water"})
                 elseif (v.Name == "海洋之心" or v.Name == "深海之心") then
                     hattr.set(u, 0, {natural_water = "+" .. Val[1]})
                 elseif (v.Name == "火球术") then

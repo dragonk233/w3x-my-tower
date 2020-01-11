@@ -72,6 +72,14 @@ TOWER_ABLI_SPX = {
         Val = {275}
     },
     {
+        Name = "魔力之源",
+        Ubertip = "+{val#1}魔法攻击",
+        Art = "war3mapImported\\icon_pas_ManaRecharge.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {185}
+    },
+    {
         Name = "治疗",
         Ubertip = "+{val#1}生命恢复",
         Art = "war3mapImported\\icon_pas_Heal.blp",
@@ -101,7 +109,15 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_AdvancedUnholyStrength.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {80}
+        Val = {55}
+    },
+    {
+        Name = "骑士精神",
+        Ubertip = "+{val#1}力量",
+        Art = "war3mapImported\\icon_pas_Holy_GreaterBlessingofKings.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {75}
     },
     {
         Name = "蛇皮",
@@ -179,6 +195,14 @@ TOWER_ABLI_SPX = {
         Name = "树木之妖",
         Ubertip = "+木攻击特性",
         Art = "war3mapImported\\icon_pas_EatTree.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {}
+    },
+    {
+        Name = "水之元素",
+        Ubertip = "+水攻击特性",
+        Art = "war3mapImported\\icon_pas_Elemental_Mote_Water01.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {}
@@ -378,6 +402,15 @@ TOWER_ABLI_SPX = {
         ODK = true
     },
     {
+        Name = "全能守护",
+        Ubertip = "+{val#1}生命",
+        Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {600},
+        ODK = true
+    },
+    {
         Name = "铁壁",
         Ubertip = "+{val#1}护甲",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThickFur.blp",
@@ -387,12 +420,12 @@ TOWER_ABLI_SPX = {
         ODK = true
     },
     {
-        Name = "金盾",
+        Name = "捍卫守护",
         Ubertip = "+{val#1}护甲",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThickFur.blp",
+        Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Buttonpos1 = 0,
-        Buttonpos2 = 1,
-        Val = {50},
+        Buttonpos2 = 2,
+        Val = {30},
         ODK = true
     },
     {
