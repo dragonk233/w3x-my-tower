@@ -127,7 +127,7 @@ towers_a = {
         Missileart = "abilities\\weapons\\huntermissile\\huntermissile.mdl",
         cool1 = 1.90,
         Primary = "STR",
-        abilList = {towerSpxKV["丧心病狂"]}
+        abilList = {towerSpxKV["狂战士之血"]}
     },
     {
         Name = "牛头人·小牛",
@@ -159,7 +159,7 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\FaerieDragonMissile\\FaerieDragonMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        abilList = {towerSpxKV["野外龙种"]}
+        abilList = {towerSpxKV["野生龙种"]}
     },
     {
         Name = "暗夜精灵·投刃车",
@@ -251,11 +251,11 @@ towers_a = {
         scale = 2.00,
         movetp = "fly",
         moveHeight = 225,
-        weapTp1 = "msplash",
+        weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FrostWyrmMissile\\FrostWyrmMissile.mdl",
         cool1 = 3.00,
         Primary = "STR",
-        abilList = {towerSpxKV["溅射攻击"]}
+        abilList = {towerSpxKV["野生龙种"]}
     },
     {
         Name = "娜迦·皇家卫兵",
@@ -366,6 +366,7 @@ towers_a = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_void_Arrow.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["野生龙种"]}
     }
 }

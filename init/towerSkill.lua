@@ -31,6 +31,7 @@ for k, v in pairs(TOWER_ABLI_SPX) do
     obj.DataB1 = 0
     obj.DataC1 = 0
     obj.Art = v.Art
+    v.ABILITY_LEVEL = 1
     v.ABILITY_ID = obj:get_id()
     towerSpxKV[v.Name] = v.ABILITY_ID
     tower_sabi = tower_sabi + 1

@@ -47,7 +47,7 @@ end
 awardGen = function(curWave)
     local awardMon = game.thisEnemysAward[cj.GetRandomInt(1, game.thisEnemysAwardLen)]
     for k, v in pairs(game.pathPoint) do
-        if (hplayer.getStatus(hplayer.players[playerIndex]) == hplayer.player_status.gaming) then
+        if (hplayer.getStatus(hplayer.players[k]) == hplayer.player_status.gaming) then
             awardGenForOne(curWave, k, awardMon)
         end
     end

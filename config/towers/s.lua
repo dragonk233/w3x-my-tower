@@ -59,7 +59,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Fire_Crescent_Tailed.mdl",
         cool1 = 2.30,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["威武体魄"], towerSpxKV["马索格爆锤"]}
     },
     {
         Name = "人类·战场女武神·加瑟",
@@ -74,7 +75,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Items\\WandOfNeutralization\\NeutralizationMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["威武体魄"], towerSpxKV["巾帼"]}
     },
     {
         Name = "人类·武道家·霍元戌",
@@ -89,7 +91,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SteamMissile\\SteamMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["修仙之体"], towerSpxKV["腰马合一"]}
     },
     {
         Name = "血精灵·血魔法师·卡尔",
@@ -103,7 +106,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\BloodElfMissile\\BloodElfMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["火球术"], towerSpxKV["烈焰风暴"]}
     },
     {
         Name = "矮人·山丘之王·波尔",
@@ -147,7 +151,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["冥想"], towerSpxKV["闪电雷霆"]}
     },
     {
         Name = "兽人·巫师·古尔丹",
@@ -330,8 +335,8 @@ towers_s = {
         Primary = "STR"
     },
     {
-        Name = "亡灵·脚镣使者·刹麽",
-        Ubertip = "有人问我脚镣动起来重吗？我不知不动",
+        Name = "亡灵·半吊子·脚镣刹麽",
+        Ubertip = "别人打我，我就动一下，毕竟那么重的脚镣",
         unitSound = "Shaman",
         file = "war3mapImported\\unit_Shame.mbl",
         Art = "war3mapImported\\icon_unit_Shame.blp",

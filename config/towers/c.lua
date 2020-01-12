@@ -166,7 +166,7 @@ towers_c = {
         INT = 17,
         ATTACK_WHITE = 18,
         ATTACK_GREEN = 25,
-        abilList = {towerSpxKV["树木之妖"]}
+        abilList = {towerSpxKV["蛛毒"]}
     },
     {
         Name = "亡灵·不死巫师",
@@ -248,6 +248,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\SeaElementalMissile\\SeaElementalMissile.mdl",
         cool1 = 2.20,
         Primary = "STR",
-        abilList = {towerSpxKV["海洋之心"]}
+        abilList = {towerSpxKV["水之元素"]}
     }
 }

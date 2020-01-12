@@ -54,7 +54,7 @@ onTowerAttack = function(evtData)
                 end
                 if (Name == "震晕践踏" and math.random(1, 10) == 5) then
                     onTowerAttackTtg(u, Name)
-                    hskill.swimGroup(
+                    hskill.rangeSwim(
                         {
                             range = 1000,
                             odds = 100,
@@ -68,7 +68,7 @@ onTowerAttack = function(evtData)
                 end
                 if (Name == "炸裂践踏" and math.random(1, 10) == 5) then
                     onTowerAttackTtg(u, Name)
-                    hskill.swimGroup(
+                    hskill.rangeSwim(
                         {
                             range = 1000,
                             odds = 100,
@@ -117,6 +117,28 @@ onTowerAttack = function(evtData)
                         1
                     )
                     hunit.kill(targetUnit, 0)
+                end
+                if (Name == "烈焰风暴") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, Name)
+                        hskill.rangeDamage(
+                            {
+                                sourceUnit = u,
+                                whichUnit = targetUnit,
+                                range = v.Val[2],
+                                frequency = v.Val[3],
+                                damage = v.Val[4],
+                                times = v.Val[5],
+                                effect = v.Val[6],
+                                effectSingle = v.Val[7],
+                                damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.fire},
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end
+                            }
+                        )
+                    end
                 end
             end
         end

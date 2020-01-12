@@ -10,6 +10,11 @@ bossDead = function(evtData)
         else
             haward.forUnitExp(u, 500)
         end
+        local killerName = cj.GetPlayerName(cj.GetOwningPlayer(u))
+        local bossName = hunit.getName(evtData.triggerUnit)
+        if (killerName ~= nil) then
+            hmsg.echo(hColor.sky(killerName) .. "干掉了BOSS[" .. hColor.yellow(bossName) .. "]")
+        end
     end
-    hunit.del(triggerUnit, 3)
+    hunit.del(evtData.triggerUnit, 3)
 end

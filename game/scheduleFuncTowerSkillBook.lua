@@ -306,7 +306,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
             }
         )
     elseif (abliOps.Name == "分裂") then
-        hattr.set(u, 0, {split = opt .. (level * abliOps.Val[1]), split_range = opt .. 300})
+        hattr.set(u, 0, {split = opt .. (level * abliOps.Val[1]), split_range = "=500"})
     elseif (abliOps.Name == "五行之力") then
         hattr.set(
             u,

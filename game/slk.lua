@@ -23,10 +23,10 @@ for i = 1, game.towersLen, 1 do
     jv = json.parse(v)
     game.towersOrigins[jv.INDEX] = jv
     --shadow
-    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers_shadow"), i)
-    jv = json.parse(v)
-    game.towersShadow[jv.TOWER_ID] = jv
-    hRuntime.register.unit(jv)
+    -- v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers_shadow"), i)
+    -- jv = json.parse(v)
+    -- game.towersShadow[jv.TOWER_ID] = jv
+    -- hRuntime.register.unit(jv)
 end
 --tower abli
 local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("tower_spx_ab"), -1)

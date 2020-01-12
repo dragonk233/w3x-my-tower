@@ -336,8 +336,6 @@ for j=1,1,1 do
                 call SaveStr(hash_myslk, StringHash("towers"), <?=towersTi?>, "<?=string.addslashes(json.stringify(v))?>")
                 call SaveStr(hash_myslk, StringHash("towersItems"), <?=towersTi?>, "<?=string.addslashes(json.stringify(hitem))?>")
                 <?
-                --shadow
-                createTowerShadowUnit(v,towersTi,tlv)
                 --塔基的属性说明
                 local obj = slk.ability.Aamk:new("towerOriginAbli_" .. thisIndex)
                 local Name = "[兵塔参数]" .. v.Name
@@ -360,6 +358,8 @@ for j=1,1,1 do
                 ?>
                 call SaveStr(hash_myslk, StringHash("abilitiies_tower_origins"), <?=towersTi?>, "<?=string.addslashes(json.stringify(ab))?>")
                 <?
+                --shadow
+                --createTowerShadowUnit(v,towersTi,tlv)
             end
         end
     end

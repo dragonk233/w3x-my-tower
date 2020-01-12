@@ -65,7 +65,7 @@ updateMyTower = function(evtData)
         }
     )
     hsound.sound2Unit(cg.gg_snd_level_up, 100, whichUnit)
-    htextTag.style(htextTag.create2Unit(u, "升级 ↑", 12.00, "ffff00", 1, 2.0, 10.00), "scale", 0, 0.1)
+    htextTag.style(htextTag.create2Unit(u, "升级 ↑" .. diffLv, 12.00, "ffff00", 1, 2.0, 10.00), "scale", 0, 0.1)
 end
 
 -- 创造兵塔

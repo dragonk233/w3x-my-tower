@@ -9,6 +9,7 @@ onCourierSkillUesd = function(evtData)
     local p = cj.GetOwningPlayer(u)
     local playerIndex = hplayer.index(p)
     if (abilitiesSLK == nil or abilitiesSLK.Name == nil) then
+        print_err("abilitiesSLK == nil or abilitiesSLK.Name == nil")
         return
     end
     --curWave

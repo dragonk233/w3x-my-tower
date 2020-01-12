@@ -89,7 +89,7 @@ enemyGenYB = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (25 * game.rule.yb.wave),
+                                    life = "=" .. (500+25 * game.rule.yb.wave),
                                     move = "=180"
                                 }
                             )

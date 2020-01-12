@@ -79,7 +79,7 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        abilList = {towerSpxKV["肉燥"]}
+        abilList = {towerSpxKV["肉厚"]}
     },
     {
         Name = "兽人·巫师",
@@ -271,6 +271,6 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\SeaElementalMissile\\SeaElementalMissile.mdl",
         cool1 = 2.20,
         Primary = "STR",
-        abilList = {towerSpxKV["海洋之心"]}
+        abilList = {towerSpxKV["水之元素"]}
     }
 }
