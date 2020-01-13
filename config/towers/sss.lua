@@ -406,7 +406,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_swing_knife.mdl",
         cool1 = 2.20,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV[""], towerSpxKV["必死宣言"]}
     },
     {
         Name = "亡灵·冥魂大帝·钢克",
@@ -708,7 +709,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_NewSoulArmor.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV[""], towerSpxKV["必死宣言"]}
     },
     {
         Name = "异兽·猴王·悟空",

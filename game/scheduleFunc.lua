@@ -42,17 +42,17 @@ updateMyTower = function(evtData)
     elseif (tlv == "D") then
         percent = 0.12
     elseif (tlv == "C") then
-        percent = 0.15
+        percent = 0.14
     elseif (tlv == "B") then
-        percent = 0.19
+        percent = 0.16
     elseif (tlv == "A") then
-        percent = 0.24
+        percent = 0.19
     elseif (tlv == "S") then
-        percent = 0.30
+        percent = 0.22
     elseif (tlv == "SS") then
-        percent = 0.37
+        percent = 0.26
     elseif (tlv == "SSS") then
-        percent = 0.45
+        percent = 0.30
     end
     attackWhite = diffLv * attackWhite * percent
     attackGreen = diffLv * attackGreen * percent

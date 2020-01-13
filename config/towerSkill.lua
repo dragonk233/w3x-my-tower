@@ -410,7 +410,7 @@ TOWER_ABLI_SPX = {
     {
         Name = "诡异闪电",
         Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点雷伤害",
-        Art = "war3mapImported\\icon_pas_Glyph.blp",
+        Art = "war3mapImported\\icon_pas_ChainLightning_red.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {25, 180}
@@ -418,7 +418,7 @@ TOWER_ABLI_SPX = {
     {
         Name = "狂异闪电",
         Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点雷伤害",
-        Art = "war3mapImported\\icon_pas_Glyph.blp",
+        Art = "war3mapImported\\icon_pas_ChainLightning_red.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {25, 235}
@@ -442,7 +442,7 @@ TOWER_ABLI_SPX = {
     {
         Name = "闪电雷霆",
         Ubertip = "{val#1}%几率击出一道闪电对{val#2}个敌人造成{val#3}点雷伤害",
-        Art = "war3mapImported\\icon_pas_Stimulate_lightning.blp",
+        Art = "war3mapImported\\icon_pas_ChainLightning.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {25, 3, 220}
@@ -462,6 +462,36 @@ TOWER_ABLI_SPX = {
             "war3mapImported\\eff_FireTornado.mdl",
             "Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdl"
         }
+    },
+    {
+        Name = "雷霆一击",
+        Ubertip = "{val#1}%几率打击地面对敌人造成{val#2}伤害，同时减少{val#3}点移动力",
+        Art = "war3mapImported\\icon_pas_ThunderClap.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            18,
+            200,
+            100,
+            "move",
+            "war3mapImported\\eff_FireTornado.mdl"
+        }
+    },
+    {
+        Name = "同葬",
+        Ubertip = "+{val#1}%攻击必死",
+        Art = "war3mapImported\\icon_pas_Ability_Creature_Cursed_05.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {2}
+    },
+    {
+        Name = "必死宣言",
+        Ubertip = "+{val#1}%攻击必死",
+        Art = "war3mapImported\\icon_pas_Holy_SymbolOfHope.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {4}
     },
     {
         Name = "皮糙",
@@ -497,6 +527,15 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {11},
+        ODK = true
+    },
+    {
+        Name = "矮人之盾",
+        Ubertip = "+{val#1}护甲",
+        Art = "war3mapImported\\icon_pas_Holy_GreaterBlessingofWisdom.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {33},
         ODK = true
     },
     {

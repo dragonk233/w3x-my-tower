@@ -110,13 +110,17 @@ onTowerAttack = function(evtData)
                 end
                 if (Name == "死亡同步" and math.random(1, 200) <= level and his.alive(targetUnit)) then
                     onTowerAttackTtg(u, Name)
-                    heffect.bindUnit(
-                        "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",
-                        targetUnit,
-                        "head",
-                        1
-                    )
+                    heffect.bindUnit("Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl", targetUnit, "origin", 1)
                     hunit.kill(targetUnit, 0)
+                end
+                --
+                if (his.alive(targetUnit) and (Name == "必死宣言" or Name == "同葬")) then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, Name)
+                        heffect.bindUnit("Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl", targetUnit, "origin", 1)
+                        hunit.kill(targetUnit, 0)
+                    end
                 end
                 if (Name == "烈焰风暴") then
                     local val = v.Val or {0}

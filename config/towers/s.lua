@@ -121,7 +121,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Human\\StormBolt\\StormBoltMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["矮人之盾"], towerSpxKV["雷霆一击"]}
     },
     {
         Name = "兽人·剑圣·逸风",
@@ -152,7 +153,7 @@ towers_s = {
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 2.00,
         Primary = "INT",
-        abilList = {towerSpxKV["冥想"], towerSpxKV["闪电雷霆"]}
+        abilList = {towerSpxKV["净化"], towerSpxKV["闪电雷霆"]}
     },
     {
         Name = "兽人·巫师·古尔丹",
@@ -167,7 +168,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SerpentWardMissile\\SerpentWardMissile.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["狂异闪电"], towerSpxKV["同葬"]}
     },
     {
         Name = "巨魔·暗影猎手·洛克汉",
