@@ -144,6 +144,63 @@ onTowerAttack = function(evtData)
                         )
                     end
                 end
+                if (Name == "雷霆一击") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, Name)
+                        local x = cj.GetUnitX(u)
+                        local y = cj.GetUnitY(u)
+                        heffect.toXY(val[6], x, y, 0)
+                        local g =
+                            hgroup.createByUnit(
+                            u,
+                            1000,
+                            function()
+                                return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                            end
+                        )
+                        cj.ForGroup(
+                            g,
+                            function()
+                                local eu = cj.GetEnumUnit()
+                                hattr.set(eu, val[4], {[val[5]] = "-" .. val[3]})
+                                heffect.bindUnit(val[7], eu, "origin", val[4])
+                                hskill.damage(
+                                    {
+                                        sourceUnit = u,
+                                        targetUnit = eu,
+                                        damage = val[2],
+                                        damageKind = CONST_DAMAGE_KIND.skill,
+                                        damagetYPE = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.thunder}
+                                    }
+                                )
+                            end
+                        )
+                        cj.GroupClear(g)
+                        cj.DestroyGroup(g)
+                    end
+                end
+                if (Name == "剑刃风暴" and his.get(u, "isWhirlwind") == false) then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, Name)
+                        hskill.whirlwind(
+                            {
+                                range = 1000,
+                                frequency = val[2],
+                                during = val[4],
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                damage = val[3],
+                                sourceUnit = u,
+                                animation = "spin",
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.physical}
+                            }
+                        )
+                    end
+                end
             end
         end
     end

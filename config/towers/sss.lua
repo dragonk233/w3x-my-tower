@@ -211,7 +211,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 1.90,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["霹雳化身"]}
     },
     {
         Name = "熊猫·无双",
@@ -226,7 +227,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Firebolt_Minor.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["火之元素"]}
     },
     {
         Name = "恶魔·灭地·格朗",
@@ -316,7 +318,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Culling_Cleave_Silver.mdl",
         cool1 = 1.90,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["剑圣"]}
     },
     {
         Name = "恶魔·地狱魔爪·维尔",
@@ -634,7 +637,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_IceboundSting.mdl",
         cool1 = 1.90,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["剑圣"]}
     },
     {
         Name = "食人魔·神侍奉·阿尔法",

@@ -179,7 +179,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_bloodthirsty.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["剑圣"]}
     },
     {
         Name = "兽人·雷神·萨尔",

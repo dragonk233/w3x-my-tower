@@ -107,7 +107,7 @@ towers_s = {
         Missileart = "Abilities\\Weapons\\BloodElfMissile\\BloodElfMissile.mdl",
         cool1 = 2.00,
         Primary = "INT",
-        abilList = {towerSpxKV["火球术"], towerSpxKV["烈焰风暴"]}
+        abilList = {towerSpxKV["火之元素"], towerSpxKV["烈焰风暴"]}
     },
     {
         Name = "矮人·山丘之王·波尔",
@@ -137,7 +137,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Culling_Cleave.mdl",
         cool1 = 1.80,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["剑圣"], towerSpxKV["剑刃风暴"]}
     },
     {
         Name = "兽人·先知·德雷克",
@@ -169,7 +170,7 @@ towers_s = {
         Missileart = "Abilities\\Weapons\\SerpentWardMissile\\SerpentWardMissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        abilList = {towerSpxKV["狂异闪电"], towerSpxKV["同葬"]}
+        abilList = {towerSpxKV["狂徒闪电"], towerSpxKV["同葬"]}
     },
     {
         Name = "巨魔·暗影猎手·洛克汉",

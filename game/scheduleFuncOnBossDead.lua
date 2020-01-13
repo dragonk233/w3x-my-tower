@@ -13,7 +13,7 @@ bossDead = function(evtData)
         local killerName = cj.GetPlayerName(cj.GetOwningPlayer(u))
         local bossName = hunit.getName(evtData.triggerUnit)
         if (killerName ~= nil) then
-            hmsg.echo(hColor.sky(killerName) .. "干掉了BOSS[" .. hColor.yellow(bossName) .. "]")
+            hmsg.echo(hColor.sky(killerName) .. "干掉了" .. hColor.yellow(bossName))
         end
     end
     hunit.del(evtData.triggerUnit, 3)

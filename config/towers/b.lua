@@ -31,7 +31,7 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\SorceressMissile\\SorceressMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        abilList = {towerSpxKV["火球术"]}
+        abilList = {towerSpxKV["火之元素"]}
     },
     {
         Name = "血精灵·龙鹰骑士",

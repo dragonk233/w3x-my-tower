@@ -160,6 +160,14 @@ TOWER_ABLI_SPX = {
         Val = {30}
     },
     {
+        Name = "剑圣",
+        Ubertip = "+{val#1}%攻击速度",
+        Art = "war3mapImported\\icon_pas_Warrior_WeaponMastery.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {35}
+    },
+    {
         Name = "气定神闲",
         Ubertip = "+{val#1}%攻击速度",
         Art = "war3mapImported\\icon_pas_Holy_BlessedRecovery.blp",
@@ -232,7 +240,7 @@ TOWER_ABLI_SPX = {
         Val = {17, 10}
     },
     {
-        Name = "火球术",
+        Name = "火之元素",
         Ubertip = "+火攻击特性",
         Art = "war3mapImported\\icon_pas_Fire.blp",
         Buttonpos1 = 0,
@@ -270,6 +278,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {}
+    },
+    {
+        Name = "霹雳化身",
+        Ubertip = "+{val#1}攻击速度|n+雷攻击特性",
+        Art = "war3mapImported\\icon_pas_lighting_overload.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {40}
     },
     {
         Name = "海洋之心",
@@ -424,6 +440,14 @@ TOWER_ABLI_SPX = {
         Val = {25, 235}
     },
     {
+        Name = "狂徒闪电",
+        Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点雷伤害",
+        Art = "war3mapImported\\icon_pas_ChainLightning_red.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {30, 345}
+    },
+    {
         Name = "风暴之锤",
         Ubertip = "{val#1}%几率击出一道闪电对{val#2}个敌人造成{val#3}点雷伤害",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNStormHammer.blp",
@@ -437,7 +461,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Stimulate_lightning.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {24, 3, 175}
+        Val = {25, 3, 175}
     },
     {
         Name = "闪电雷霆",
@@ -445,16 +469,16 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_ChainLightning.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {25, 3, 220}
+        Val = {40, 3, 220}
     },
     {
         Name = "烈焰风暴",
-        Ubertip = "{val#1}%几率召唤{val#2}范围烈焰风暴持续每{val#3}对敌人造成{val#4}火焰伤害{val#5}次",
+        Ubertip = "{val#1}%几率召唤{val#2}范围烈焰风暴持续每{val#3}秒对敌人造成{val#4}火焰伤害{val#5}次",
         Art = "war3mapImported\\icon_pas_Fire_PlayingWithFire.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
-            15,
+            20,
             300,
             0.3,
             55,
@@ -465,16 +489,32 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "雷霆一击",
-        Ubertip = "{val#1}%几率打击地面对敌人造成{val#2}伤害，同时减少{val#3}点移动力",
+        Ubertip = "{val#1}%几率打击地面对敌人造成{val#2}伤害，同时减少{val#3}点移动力{val#4}秒",
         Art = "war3mapImported\\icon_pas_ThunderClap.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
-            18,
+            25,
             200,
             100,
+            3,
             "move",
-            "war3mapImported\\eff_FireTornado.mdl"
+            "Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster.mdl",
+            "war3mapImported\\eff_thunderstorm2.mdl"
+        }
+    },
+    {
+        Name = "剑刃风暴",
+        Ubertip = "{val#1}%几率发起剑刃风暴对每{val#2}秒敌人造成{val#3}伤害，持续{val#4}秒",
+        Art = "war3mapImported\\icon_pas_Whirlwind.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            15,
+            0.5,
+            75,
+            2.5,
+            "Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster.mdl"
         }
     },
     {
@@ -483,7 +523,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ability_Creature_Cursed_05.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {2}
+        Val = {3}
     },
     {
         Name = "必死宣言",
@@ -491,7 +531,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_SymbolOfHope.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {4}
+        Val = {5}
     },
     {
         Name = "皮糙",
