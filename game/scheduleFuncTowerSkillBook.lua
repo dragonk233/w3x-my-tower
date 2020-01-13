@@ -69,7 +69,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             odds = 100,
                             val = level * abliOps.Val[1],
                             during = 4,
-                            model = "Abilities\\Spells\\Items\\OrbVenom\\OrbVenomSpecialArt.mdl"
+                            effect = "Abilities\\Spells\\Items\\OrbVenom\\OrbVenomSpecialArt.mdl"
                         }
                     }
                 }
@@ -87,7 +87,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             odds = 100,
                             val = level * abliOps.Val[1],
                             during = 4,
-                            model = "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"
+                            effect = "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"
                         }
                     }
                 }
@@ -105,7 +105,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             odds = 100,
                             val = level * abliOps.Val[1],
                             during = 4.5,
-                            model = "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"
+                            effect = "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"
                         }
                     }
                 }
@@ -158,7 +158,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             range = 600,
                             val = level * abliOps.Val[1],
                             change = -0.25,
-                            model = "Abilities\\Weapons\\Bolt\\BoltImpact.mdl"
+                            effect = "Abilities\\Weapons\\Bolt\\BoltImpact.mdl"
                         }
                     }
                 }
@@ -177,7 +177,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             odds = 100,
                             during = 3,
                             val = level * abliOps.Val[1],
-                            model = "Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayTarget.mdl"
+                            effect = "Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayTarget.mdl"
                         }
                     }
                 }
@@ -196,7 +196,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             odds = 100,
                             during = 5.00,
                             val = level * abliOps.Val[1],
-                            model = "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"
+                            effect = "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"
                         }
                     }
                 }
@@ -215,7 +215,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             odds = 100,
                             during = 5.00,
                             val = level * abliOps.Val[1],
-                            model = "Abilities\\Spells\\Other\\AcidBomb\\BottleImpact.mdl"
+                            effect = "Abilities\\Spells\\Other\\AcidBomb\\BottleImpact.mdl"
                         }
                     }
                 }
@@ -233,7 +233,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             odds = 100,
                             during = 3,
                             val = level * abliOps.Val[1],
-                            model = "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"
+                            effect = "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"
                         }
                     }
                 }
@@ -251,7 +251,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             odds = 55,
                             during = 4,
                             val = level * abliOps.Val[1],
-                            model = "Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt.mdl"
+                            effect = "Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt.mdl"
                         }
                     }
                 }
@@ -398,14 +398,14 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             odds = 100,
                             during = 6,
                             val = level * abliOps.Val[1],
-                            model = "Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayTarget.mdl"
+                            effect = "Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayTarget.mdl"
                         },
                         {
                             attr = "life_back",
                             odds = 100,
                             val = level * abliOps.Val[1],
                             during = 6,
-                            model = "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"
+                            effect = "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"
                         }
                     }
                 }
@@ -422,7 +422,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                             attr = "fetter",
                             odds = 45,
                             during = 4,
-                            model = "Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl"
+                            effect = "Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl"
                         }
                     }
                 }

@@ -139,11 +139,11 @@ onUnitItemsUesd = function(evtData)
         local playerIndex = hplayer.index(p)
         --选择套装
         local tz = {}
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzfire") == true) then
+            table.insert(tz, "炎炎焚烧套装")
+        end
         if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzgold") == true) then
             table.insert(tz, "金碧辉煌套装")
-        end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzdark") == true) then
-            table.insert(tz, "迷幻黑紫套装")
         end
         if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzboold") == true) then
             table.insert(tz, "血色炽热套装")
@@ -151,11 +151,14 @@ onUnitItemsUesd = function(evtData)
         if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzdragon") == true) then
             table.insert(tz, "青龙碧翼套装")
         end
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzdark") == true) then
+            table.insert(tz, "迷幻黑紫套装")
+        end
         if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzghost") == true) then
             table.insert(tz, "邪鬼怨灵套装")
         end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzfire") == true) then
-            table.insert(tz, "炎炎焚烧套装")
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzsword") == true) then
+            table.insert(tz, "出云剑仙套装")
         end
         if (#tz <= 0) then
             hmsg.echo00(hplayer.players[playerIndex], "您尚未拥有任何套装~")
@@ -209,6 +212,10 @@ onUnitItemsUesd = function(evtData)
                     table.insert(game.playerTowerEffectModel, game.effectModel["炎炎燃烧特效"].ABILITY_ID)
                     table.insert(game.playerTowerEffectModel, game.effectModel["炎炎三球特效"].ABILITY_ID)
                     tips = "炎炎旋风、烧灼圈圈、焚烧之火、鬼马火球"
+                elseif (btnIdx == "出云剑仙套装") then
+                    table.insert(game.playerTowerEffectModel, game.effectModel["出云飞剑特效"].ABILITY_ID)
+                    table.insert(game.playerTowerEffectModel, game.effectModel["出云气场特效"].ABILITY_ID)
+                    tips = "盘旋飞剑、灵剑气场"
                 end
                 if (#game.playerTowerEffectModel > 0) then
                     for _, v in ipairs(game.playerTowerEffectModel) do

@@ -76,7 +76,7 @@ onTowerAttack = function(evtData)
                             damage = 50 * level,
                             whichUnit = u,
                             sourceUnit = u,
-                            model = "war3mapImported\\eff_shock_explosion.mdl",
+                            effect = "war3mapImported\\eff_shock_explosion.mdl",
                             filter = function()
                                 return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                             end
@@ -108,7 +108,7 @@ onTowerAttack = function(evtData)
                     cj.GroupClear(g)
                     cj.DestroyGroup(g)
                 end
-                if (Name == "死亡同步" and math.random(1, 500) == 265 and his.alive(targetUnit)) then
+                if (Name == "死亡同步" and math.random(1, 200) <= level and his.alive(targetUnit)) then
                     onTowerAttackTtg(u, Name)
                     heffect.bindUnit(
                         "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",

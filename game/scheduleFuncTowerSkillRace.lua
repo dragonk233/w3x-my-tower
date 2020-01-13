@@ -96,7 +96,7 @@ addTowerSkillsRace = function(u, slk)
                             odds = 100,
                             val = 25,
                             during = 3.0,
-                            model = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
+                            effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
                         }
                     }
                 }

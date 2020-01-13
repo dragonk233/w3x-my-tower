@@ -53,7 +53,7 @@ onCourierSkillUesd = function(evtData)
                             odds = 50,
                             val = 45,
                             during = 2.2,
-                            model = "war3mapImported\\eff_icing.mdl"
+                            effect = "war3mapImported\\eff_icing.mdl"
                         }
                     }
                 }

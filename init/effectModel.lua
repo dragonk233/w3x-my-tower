@@ -99,6 +99,16 @@ local abEffects = {
         Name = "炎炎三球特效", 
         TargetArt = "war3mapImported\\eff_three_fireballs.mdl",
     },
+    ------------------------------------------------------------------
+    {
+        Name = "出云飞剑特效", 
+        TargetArt = "war3mapImported\\eff_flying_sword_light.mdl",
+    },
+    {
+        Name = "出云气场特效", 
+        TargetArt = "war3mapImported\\eff_PrismBeam_Initiate.mdl",
+        Targetattach="chest",
+    },
 }
 
 local abEffectsItem = {

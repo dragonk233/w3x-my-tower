@@ -89,7 +89,7 @@ enemyGenYB = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (500+25 * game.rule.yb.wave),
+                                    life = "=" .. (500 + 25 * game.rule.yb.wave),
                                     move = "=180"
                                 }
                             )
@@ -200,7 +200,12 @@ enemyGenDK = function(waiting)
             end
             htime.setInterval(
                 game.rule.dk.fresh,
-                function()
+                function(t2, td2)
+                    if (game.runing == false) then
+                        htime.delDialog(td2)
+                        htime.delTimer(t2)
+                        return
+                    end
                     for k, v in pairs(game.pathPoint) do
                         if (hplayer.getStatus(hplayer.players[k]) == hplayer.player_status.gaming) then
                             if (game.rule.dk.monLimit[k] < game.rule.dk.perWaveQty) then

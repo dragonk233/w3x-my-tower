@@ -21,6 +21,59 @@ dzSetLumber = function(p, curWave)
     hdzapi.server.set.int(p, "lumber", hplayer.getLumber(p) + curWave)
 end
 
+dzSetPrestige = function(p, iscs, isss)
+    local cs = hdzapi.server.get.int(p, "prestigecs")
+    local ss = hdzapi.server.get.int(p, "prestigess")
+    if (iscs) then
+        cs = cs + 1
+        hdzapi.server.set.int(p, "prestigecs", cs)
+        hdzapi.setRoomStat(p, "prestigecs", cs)
+    end
+    if (isss) then
+        ss = ss + 1
+        hdzapi.server.set.int(p, "prestigess", cs)
+        hdzapi.setRoomStat(p, "prestigess", ss)
+    end
+    local prestige
+    if (cs >= 500 and ss >= 100) then
+        prestige = "九天至尊"
+    elseif (cs >= 300 and ss >= 75) then
+        prestige = "六道大仙"
+    elseif (cs >= 200 and ss >= 50) then
+        prestige = "神游三界"
+    elseif (cs >= 150 and ss >= 25) then
+        prestige = "灭劫星窍"
+    elseif (cs >= 125 and ss >= 15) then
+        prestige = "灵通三魂"
+    elseif (cs >= 100 and ss >= 13) then
+        prestige = "身越七魄"
+    elseif (cs >= 90 and ss >= 11) then
+        prestige = "超凡入圣"
+    elseif (cs >= 80 and ss >= 9) then
+        prestige = "超然世外"
+    elseif (cs >= 70 and ss >= 7) then
+        prestige = "猎尽天下"
+    elseif (cs >= 60 and ss >= 5) then
+        prestige = "登峰造极"
+    elseif (cs >= 50 and ss >= 3) then
+        prestige = "当世雄豪"
+    elseif (cs >= 40 and ss >= 2) then
+        prestige = "名扬四方"
+    elseif (cs >= 30 and ss >= 1) then
+        prestige = "一战成名"
+    elseif (cs >= 20 and ss >= 0) then
+        prestige = "游刃有余"
+    elseif (cs >= 10 and ss >= 0) then
+        prestige = "初露锋芒"
+    elseif (cs >= 5 and ss >= 0) then
+        prestige = "略有小成"
+    else
+        prestige = "初出茅庐"
+    end
+    hplayer.setPrestige(p, prestige)
+    hdzapi.setRoomStat(p, "prestige", prestige)
+end
+
 local startTrigger = cj.CreateTrigger()
 cj.TriggerRegisterTimerEvent(startTrigger, 1.0, false)
 cj.TriggerAddAction(
@@ -44,6 +97,7 @@ cj.TriggerAddAction(
             game.playerOriginLumber[i] = l
             hplayer.setLumber(hplayer.players[i], l)
             hmsg.echo00(hplayer.players[i], " *** 根据你的游玩通关程度，你得到了" .. hColor.green(l) .. "个木头")
+            dzSetPrestige(hplayer.players[i], true, false)
             if (openDebug == true) then
                 hplayer.addGold(hplayer.players[i], 100000)
             end
@@ -433,8 +487,52 @@ cj.TriggerAddAction(
                                                                             "的" ..
                                                                                 hColor.yellow(slk.Name) .. "进攻，直接战败了~"
                                                             )
+                                                            hmark.create(
+                                                                "war3mapImported\\mark_defeat.blp",
+                                                                4.00,
+                                                                hplayer.players[k]
+                                                            )
                                                             hplayer.setStatus(hplayer.players[k], "战败")
-                                                            hplayer.defeat(hplayer.players[k], "战败~")
+                                                            htime.setTimeout(
+                                                                5.00,
+                                                                function(t, td)
+                                                                    htime.delDialog(td)
+                                                                    htime.delTimer(t)
+                                                                    hplayer.defeat(hplayer.players[k], "战败~")
+                                                                end
+                                                            )
+                                                            --检查是否胜利
+                                                            hplayer.loop(
+                                                                function(p, pi)
+                                                                    local isWin = 0
+                                                                    local winner
+                                                                    if
+                                                                        (hplayer.getStatus(p) ==
+                                                                            hplayer.player_status.gaming)
+                                                                     then
+                                                                        isWin = isWin + 1
+                                                                        winner = p
+                                                                    end
+                                                                    if (isWin == 1) then
+                                                                        game.runing = false
+                                                                        dzSetPrestige(winner, false, true)
+                                                                        hmark.create(
+                                                                            "war3mapImported\\mark_win.blp",
+                                                                            4.00,
+                                                                            hplayer.players[k]
+                                                                        )
+                                                                        hplayer.setStatus(hplayer.players[k], "胜利")
+                                                                        htime.setTimeout(
+                                                                            5.00,
+                                                                            function(t, td)
+                                                                                htime.delDialog(td)
+                                                                                htime.delTimer(t)
+                                                                                hplayer.victory(hplayer.players[k])
+                                                                            end
+                                                                        )
+                                                                    end
+                                                                end
+                                                            )
                                                         else
                                                             hunit.subCurLife(game.playerTower[k], hunt)
                                                             hmsg.echo(
@@ -541,7 +639,8 @@ cj.TriggerAddAction(
                                     hdzapi.hasMallItem(hplayer.players[k], "tzboold") == true or
                                     hdzapi.hasMallItem(hplayer.players[k], "tzdragon") == true or
                                     hdzapi.hasMallItem(hplayer.players[k], "tzfire") == true or
-                                    hdzapi.hasMallItem(hplayer.players[k], "tzghost") == true))
+                                    hdzapi.hasMallItem(hplayer.players[k], "tzghost") == true or
+                                    hdzapi.hasMallItem(hplayer.players[k], "tzsword") == true))
                          then
                             hitem.create(
                                 {
@@ -596,7 +695,8 @@ cj.TriggerAddAction(
                         --开始当然是title了
                         local data = {}
                         local titData = {
-                            {value = "只人", icon = "ReplaceableTextures\\CommandButtons\\BTNRiderlessHorse.blp"},
+                            {value = "大佬", icon = "ReplaceableTextures\\CommandButtons\\BTNRiderlessHorse.blp"},
+                            {value = "称号", icon = "ReplaceableTextures\\CommandButtons\\BTNDivineIntervention.blp"},
                             {value = "状态", icon = "ReplaceableTextures\\CommandButtons\\BTNWellSpring.blp"},
                             {value = "兵塔", icon = "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp"},
                             {value = "等级", icon = "ReplaceableTextures\\CommandButtons\\BTNAltarOfKings.blp"},
@@ -656,6 +756,7 @@ cj.TriggerAddAction(
                                 local hunt_amplitude = math.round(hattr.get(tower, "hunt_amplitude")) .. "%"
                                 local tempData = {
                                     {value = cj.GetPlayerName(p), icon = nil},
+                                    {value = hplayer.getPrestige(p), icon = nil},
                                     {value = hplayer.getStatus(p), icon = nil},
                                     {value = name, icon = avatar},
                                     {value = "Lv." .. hhero.getCurLevel(tower), icon = nil},
