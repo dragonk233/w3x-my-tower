@@ -66,6 +66,25 @@ addTowerSkillsx = function(u)
                 elseif (name == "巫术") then
                     hattr.set(u, 0, {natural_poison_oppose = "+" .. Val[1]})
                 end
+                if (name == "黑暗之箭" or name == "黑夜之箭" or name == "黑狱之箭") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            attack_hunt_type = "+dark",
+                            attack_debuff = {
+                                add = {
+                                    {
+                                        attr = "defend",
+                                        odds = 100,
+                                        val = Val[1],
+                                        during = Val[2]
+                                    }
+                                }
+                            }
+                        }
+                    )
+                end
                 if
                     (table.includes(
                         name,
@@ -118,7 +137,9 @@ addTowerSkillsx = function(u)
                             "奇美拉毒液",
                             "蛙毒",
                             --toughness
-                            "悲鸣"
+                            "悲鸣",
+                            --defend
+                            "鬼歌"
                         }
                     ))
                  then
@@ -132,6 +153,8 @@ addTowerSkillsx = function(u)
                         a = "life_back"
                     elseif (name == "悲鸣") then
                         a = "toughness"
+                    elseif (name == "鬼歌") then
+                        a = "defend"
                     end
                     if (name == "蛙毒") then
                         hattr.set(u, 0, {attack_hunt_type = "+poison"})

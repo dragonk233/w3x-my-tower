@@ -56,6 +56,14 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 1
     },
     {
+        Name = "重生",
+        Ubertip = "进攻时死亡可以复活1次",
+        Art = "war3mapImported\\icon_pas_Ankh.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        ODK = true
+    },
+    {
         Name = "突击匕首",
         Ubertip = "+{val#1}物理攻击",
         Art = "war3mapImported\\icon_pas_Ability_Rogue_BladeTwisting.blp",
@@ -101,7 +109,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_AdvancedUnholyStrength.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {60}
+        Val = {91}
     },
     {
         Name = "骑士精神",
@@ -296,6 +304,30 @@ TOWER_ABLI_SPX = {
         Val = {}
     },
     {
+        Name = "黑暗之箭",
+        Ubertip = "+暗攻击特性|n+减少敌人护甲{val#1}点持续{val#2}秒",
+        Art = "war3mapImported\\icon_pas_Weapon_Shortblade_53.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {5, 3}
+    },
+    {
+        Name = "黑夜之箭",
+        Ubertip = "+暗攻击特性|n+减少敌人护甲{val#1}点持续{val#2}秒",
+        Art = "war3mapImported\\icon_pas_Weapon_Shortblade_53.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {6, 4}
+    },
+    {
+        Name = "黑狱之箭",
+        Ubertip = "+暗攻击特性|n+减少敌人护甲{val#1}点持续{val#2}秒",
+        Art = "war3mapImported\\icon_pas_Weapon_Shortblade_53.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {8, 5}
+    },
+    {
         Name = "霹雳化身",
         Ubertip = "+{val#1}攻击速度|n+雷攻击特性",
         Art = "war3mapImported\\icon_pas_lighting_overload.blp",
@@ -414,6 +446,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {100, 20, 30, "Abilities\\Spells\\Undead\\ReplenishHealth\\ReplenishHealthCaster.mdl"}
+    },
+    {
+        Name = "鬼歌",
+        Ubertip = "{val#1}%几率减少敌人{val#2}点护甲，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Shadow_ConeOfSilence.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {50, 5, 7, "Objects\\Spawnmodels\\Undead\\UndeadDissipate\\UndeadDissipate.mdl"}
     },
     {
         Name = "震荡光弹",
@@ -628,10 +668,23 @@ TOWER_ABLI_SPX = {
         Val = {
             60,
             3,
-            170,
+            275,
             7,
             6,
             "war3mapImported\\eff_bladewave.mdl"
+        }
+    },
+    {
+        Name = "爆骨火弹",
+        Ubertip = "{val#1}%几率发起火焰爆弹对敌人爆炸，造成{val#2}范围的{val#3}点伤害",
+        Art = "war3mapImported\\icon_pas_SummerFest_FireSpirit.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {
+            35,
+            500,
+            200,
+            "war3mapImported\\eff_Firebolt_Major.mdl"
         }
     },
     {
@@ -650,7 +703,7 @@ TOWER_ABLI_SPX = {
     {
         Name = "骷髅兵",
         Ubertip = "{val#1}%几率召唤不可控的{val#2}协助作战{val#3}秒，攻击力相当于本体的{val#4}%",
-        Art = "war3mapImported\\icon_pas_Weapon_Shortblade_37.blp",
+        Art = "war3mapImported\\icon_pas_WandSkull.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {
@@ -800,6 +853,15 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {2},
+        ODK = true
+    },
+    {
+        Name = "回光返照",
+        Ubertip = "当被攻击时生命低于50%，增加{val#1}点生命恢复，持续4秒",
+        Art = "war3mapImported\\icon_pas_Holy_SummonChampion.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {15},
         ODK = true
     }
 }

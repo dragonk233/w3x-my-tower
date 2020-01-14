@@ -312,7 +312,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Other\\BlackArrow\\BlackArrowMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["鬼歌"], towerSpxKV["黑暗之箭"]}
     },
     {
         Name = "亡灵·骷髅王·奥斯达",
@@ -327,7 +328,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilMissile.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["爆骨火弹"], towerSpxKV["重生"]}
     },
     {
         Name = "亡灵·三昧真火·嘞扎",
@@ -357,7 +359,7 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl",
         cool1 = 2.30,
-        Primary = "INT"
+        Primary = "INT",
     },
     {
         Name = "亡灵·阴曹指路人·小灯",
@@ -372,7 +374,7 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Void_Spear.mdl",
         cool1 = 2.20,
-        Primary = "INT"
+        Primary = "INT",
     },
     {
         Name = "昆虫·地穴领主·阿努比",

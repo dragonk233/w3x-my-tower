@@ -251,8 +251,7 @@ onTowerAttack = function(evtData)
                             )
                         end
                     end
-                end
-                if (name == "剑气") then
+                elseif (name == "剑气") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
@@ -295,8 +294,35 @@ onTowerAttack = function(evtData)
                             }
                         )
                     end
-                end
-                if (name == "蛇棒" or name == "骷髅兵") then
+                elseif (name == "爆骨火弹") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        hskill.leap(
+                            {
+                                sourceUnit = u,
+                                targetUnit = targetUnit,
+                                speed = 16,
+                                acceleration = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = val[4],
+                                tokenArrowScale = 1.00,
+                                tokenArrowOpacity = 1,
+                                damageMovement = 0,
+                                damageMovementRange = 100,
+                                damageEnd = val[3],
+                                damageEndRange = val[2],
+                                effectEnd = "war3mapImported\\eff_FireStomp.mdl",
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire},
+                                damageString = "火",
+                                damageEffect = "Abilities\\Spells\\Other\\Incinerate\\FireLordDeathExplode.mdl"
+                            }
+                        )
+                    end
+                elseif (name == "蛇棒" or name == "骷髅兵") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)

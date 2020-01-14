@@ -318,7 +318,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Other\\BlackArrow\\BlackArrowMissile.mdl",
         cool1 = 1.95,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["鬼歌"], towerSpxKV["黑夜之箭"]}
     },
     {
         Name = "亡灵·鬼枪·但丁",

@@ -95,6 +95,13 @@ towerShadowBeDamage = function(evtData)
                         hskill.invulnerable(u, val[3], "Abilities\\Spells\\Orc\\Voodoo\\VoodooAura.mdl")
                     end
                 end
+                if (Name == "回光返照") then
+                    local val = v.Val
+                    if (hunit.getCurLifePercent(u) < 50) then
+                        towerShadowTtg(u, Name)
+                        hattr.set(u, 4, {life_back = val[1]})
+                    end
+                end
             end
         end
     end
