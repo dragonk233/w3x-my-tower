@@ -186,7 +186,7 @@ towers_s = {
         Missileart = "Abilities\\Weapons\\ShadowHunterMissile\\ShadowHunterMissile.mdl",
         cool1 = 2.00,
         Primary = "INT",
-        abilList = {towerSpxKV["巫术"], towerSpxKV["蛙毒"]}
+        abilList = {towerSpxKV["巫术"], towerSpxKV["蛇棒"]}
     },
     {
         Name = "巨魔·追魂猎手·阿拉烈",
@@ -233,7 +233,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SpiritOfVengeanceMissile\\SpiritOfVengeanceMissile.mdl",
         cool1 = 1.90,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["暗神之魂"], towerSpxKV["复仇"]}
     },
     {
         Name = "德鲁伊·丛林守卫者·赛纳留斯",
@@ -248,7 +249,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\KeeperGroveMissile\\KeeperGroveMissile.mdl",
         cool1 = 2.20,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["大地种子"], towerSpxKV["缠绕"]}
     },
     {
         Name = "德鲁伊·旅人·法里奥",
@@ -263,7 +265,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\DemonHunterMissile\\DemonHunterMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["大地种子"], towerSpxKV["随风"]}
     },
     {
         Name = "亡灵·死亡骑士·泽尔",
@@ -278,7 +281,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["骷髅兵"], towerSpxKV["回光返照"]}
     },
     {
         Name = "亡灵·恐惧魔王·巴纳泽尔",

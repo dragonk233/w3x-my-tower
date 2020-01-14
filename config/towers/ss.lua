@@ -227,7 +227,7 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\WitchDoctorMissile\\WitchDoctorMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        abilList = {towerSpxKV["巫术"], towerSpxKV["邪眼"]}
+        abilList = {towerSpxKV["巫术"], towerSpxKV["蛙毒"]}
     },
     {
         Name = "暗夜精灵·月之女神·泰兰德",

@@ -288,6 +288,14 @@ TOWER_ABLI_SPX = {
         Val = {}
     },
     {
+        Name = "随风",
+        Ubertip = "+风攻击特性",
+        Art = "war3mapImported\\icon_pas_Ability_Druid_TreeofLife.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {}
+    },
+    {
         Name = "霹雳化身",
         Ubertip = "+{val#1}攻击速度|n+雷攻击特性",
         Art = "war3mapImported\\icon_pas_lighting_overload.blp",
@@ -312,12 +320,28 @@ TOWER_ABLI_SPX = {
         Val = {7}
     },
     {
+        Name = "大地种子",
+        Ubertip = "+{val#1}%木攻击",
+        Art = "war3mapImported\\icon_pas_Forest_seed.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {6}
+    },
+    {
         Name = "暗夜之魂",
         Ubertip = "+{val#1}%暗攻击",
         Art = "war3mapImported\\icon_pas_Holy_ElunesGrace.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {5}
+    },
+    {
+        Name = "暗神之魂",
+        Ubertip = "+{val#1}%暗攻击",
+        Art = "war3mapImported\\icon_pas_Holy_ElunesGrace.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {9}
     },
     {
         Name = "净化",
@@ -373,7 +397,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Forg.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {80, 65, 3, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
+        Val = {80, 80, 3, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
     },
     {
         Name = "燃油烧弹",
@@ -552,6 +576,22 @@ TOWER_ABLI_SPX = {
         }
     },
     {
+        Name = "缠绕",
+        Ubertip = "{val#1}%几率缠绕附近敌人造成{val#2}伤害，同时减少{val#3}点移动力{val#4}秒",
+        Art = "war3mapImported\\icon_pas_Ability_Druid_EmpoweredRejuvination.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            25,
+            50,
+            140,
+            4,
+            "move",
+            "war3mapImported\\eff_EarthNova.mdl",
+            "Abilities\\Spells\\NightElf\\EntanglingRoots\\EntanglingRootsTarget.mdl"
+        }
+    },
+    {
         Name = "剑刃风暴",
         Ubertip = "{val#1}%几率发起剑刃风暴对每{val#2}秒敌人造成{val#3}伤害，持续{val#4}秒",
         Art = "war3mapImported\\icon_pas_Whirlwind.blp",
@@ -592,6 +632,32 @@ TOWER_ABLI_SPX = {
             7,
             6,
             "war3mapImported\\eff_bladewave.mdl"
+        }
+    },
+    {
+        Name = "蛇棒",
+        Ubertip = "{val#1}%几率召唤不可控的{val#2}协助作战{val#3}秒，攻击力相当于本体的{val#4}%",
+        Art = "war3mapImported\\icon_pas_Hunter_SerpentSwiftness.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            30,
+            "蛇棒",
+            7,
+            35
+        }
+    },
+    {
+        Name = "骷髅兵",
+        Ubertip = "{val#1}%几率召唤不可控的{val#2}协助作战{val#3}秒，攻击力相当于本体的{val#4}%",
+        Art = "war3mapImported\\icon_pas_Weapon_Shortblade_37.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {
+            40,
+            "骷髅兵",
+            10,
+            30
         }
     },
     {
@@ -725,6 +791,15 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {20, 10, 2},
+        ODK = true
+    },
+    {
+        Name = "复仇",
+        Ubertip = "杀死天神的敌人依然会受到{val#1}点伤害",
+        Art = "war3mapImported\\icon_pas_Helmet_73.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {2},
         ODK = true
     }
 }

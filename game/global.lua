@@ -76,6 +76,7 @@ game = {
     towersItems = {},
     towersItemsKV = {},
     towersAbilities = {},
+    towersSummon = {},
     towersOrigins = {},
     towersOriginSkill = {},
     thisUnits = {},

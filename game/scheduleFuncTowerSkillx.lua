@@ -51,12 +51,16 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_hunt_type = "+water"})
                 elseif (name == "火之元素") then
                     hattr.set(u, 0, {attack_hunt_type = "+fire"})
+                elseif (name == "随风") then
+                    hattr.set(u, 0, {attack_hunt_type = "+wind"})
                 elseif (name == "霹雳化身") then
                     hattr.set(u, 0, {attack_hunt_type = "+thunder", attack_speed = "+" .. Val[1]})
                 elseif (name == "海洋之心" or name == "深海之心") then
                     hattr.set(u, 0, {natural_water = "+" .. Val[1]})
-                elseif (name == "暗夜之魂") then
+                elseif (name == "暗夜之魂" or name == "暗神之魂") then
                     hattr.set(u, 0, {natural_dark = "+" .. Val[1]})
+                elseif (name == "大地种子") then
+                    hattr.set(u, 0, {natural_wood = "+" .. Val[1]})
                 elseif (name == "海妖特质") then
                     hattr.set(u, 0, {natural_water_oppose = "+" .. Val[1]})
                 elseif (name == "巫术") then

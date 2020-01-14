@@ -22,13 +22,13 @@ onTowerAttack = function(evtData)
     local targetUnit = evtData.targetUnit
     for ABILITY_ID, v in pairs(hslk_global.abilitiesKV) do
         if (hskill.has(u, ABILITY_ID)) then
-            local Name = v.Name
+            local name = v.Name
             local level = v.ABILITY_LEVEL or 1
             level = level * 2 - 1
-            if (Name ~= nil) then
+            if (name ~= nil) then
                 --ability
-                if (Name == "侵毒连击" and math.random(1, 10) == 5) then
-                    onTowerAttackTtg(u, Name)
+                if (name == "侵毒连击" and math.random(1, 10) == 5) then
+                    onTowerAttackTtg(u, name)
                     hattr.set(
                         u,
                         5.00,
@@ -38,8 +38,8 @@ onTowerAttack = function(evtData)
                         }
                     )
                 end
-                if (Name == "机关枪" and math.random(1, 5) == 3) then
-                    onTowerAttackTtg(u, Name)
+                if (name == "机关枪" and math.random(1, 5) == 3) then
+                    onTowerAttackTtg(u, name)
                     hattr.set(
                         u,
                         2.50 * level,
@@ -48,12 +48,12 @@ onTowerAttack = function(evtData)
                         }
                     )
                 end
-                if (Name == "掠夺黄金" and math.random(1, 40) <= level) then
-                    onTowerAttackTtg(u, Name)
+                if (name == "掠夺黄金" and math.random(1, 40) <= level) then
+                    onTowerAttackTtg(u, name)
                     haward.forPlayerGold(10)
                 end
-                if (Name == "震晕践踏" and math.random(1, 10) == 5) then
-                    onTowerAttackTtg(u, Name)
+                if (name == "震晕践踏" and math.random(1, 10) == 5) then
+                    onTowerAttackTtg(u, name)
                     hskill.rangeSwim(
                         {
                             range = 1000,
@@ -66,8 +66,8 @@ onTowerAttack = function(evtData)
                         }
                     )
                 end
-                if (Name == "炸裂践踏" and math.random(1, 10) == 5) then
-                    onTowerAttackTtg(u, Name)
+                if (name == "炸裂践踏" and math.random(1, 10) == 5) then
+                    onTowerAttackTtg(u, name)
                     hskill.rangeSwim(
                         {
                             range = 1000,
@@ -83,8 +83,8 @@ onTowerAttack = function(evtData)
                         }
                     )
                 end
-                if (Name == "冰花炸裂" and math.random(1, 7) == 4) then
-                    onTowerAttackTtg(u, Name)
+                if (name == "冰花炸裂" and math.random(1, 7) == 4) then
+                    onTowerAttackTtg(u, name)
                     local x = cj.GetUnitX(u)
                     local y = cj.GetUnitY(u)
                     heffect.toXY("war3mapImported\\eff_FrostNova.mdl", x, y, 0)
@@ -108,24 +108,24 @@ onTowerAttack = function(evtData)
                     cj.GroupClear(g)
                     cj.DestroyGroup(g)
                 end
-                if (Name == "死亡同步" and math.random(1, 200) <= level and his.alive(targetUnit)) then
-                    onTowerAttackTtg(u, Name)
+                if (name == "死亡同步" and math.random(1, 200) <= level and his.alive(targetUnit)) then
+                    onTowerAttackTtg(u, name)
                     heffect.bindUnit("Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl", targetUnit, "origin", 1)
                     hunit.kill(targetUnit, 0)
                 end
                 --
-                if (his.alive(targetUnit) and (Name == "必死宣言" or Name == "同葬")) then
+                if (his.alive(targetUnit) and (name == "必死宣言" or name == "同葬")) then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
-                        onTowerAttackTtg(u, Name)
+                        onTowerAttackTtg(u, name)
                         heffect.bindUnit("Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl", targetUnit, "origin", 1)
                         hunit.kill(targetUnit, 0)
                     end
                 end
-                if (Name == "烈焰风暴") then
+                if (name == "烈焰风暴") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
-                        onTowerAttackTtg(u, Name)
+                        onTowerAttackTtg(u, name)
                         hskill.rangeDamage(
                             {
                                 sourceUnit = u,
@@ -144,10 +144,10 @@ onTowerAttack = function(evtData)
                         )
                     end
                 end
-                if (Name == "雷霆一击") then
+                if (name == "雷霆一击" or name == "缠绕") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
-                        onTowerAttackTtg(u, Name)
+                        onTowerAttackTtg(u, name)
                         local x = cj.GetUnitX(u)
                         local y = cj.GetUnitY(u)
                         heffect.toXY(val[6], x, y, 0)
@@ -180,10 +180,10 @@ onTowerAttack = function(evtData)
                         cj.DestroyGroup(g)
                     end
                 end
-                if (Name == "剑刃风暴" and his.get(u, "isWhirlwind") == false) then
+                if (name == "剑刃风暴" and his.get(u, "isWhirlwind") == false) then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
-                        onTowerAttackTtg(u, Name)
+                        onTowerAttackTtg(u, name)
                         hskill.whirlwind(
                             {
                                 range = 1000,
@@ -201,10 +201,10 @@ onTowerAttack = function(evtData)
                         )
                     end
                 end
-                if (Name == "震荡波") then
+                if (name == "震荡波") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
-                        onTowerAttackTtg(u, Name)
+                        onTowerAttackTtg(u, name)
                         local txy =
                             math.polarProjection(
                             cj.GetUnitX(u),
@@ -252,10 +252,10 @@ onTowerAttack = function(evtData)
                         end
                     end
                 end
-                if (Name == "剑气") then
+                if (name == "剑气") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
-                        onTowerAttackTtg(u, Name)
+                        onTowerAttackTtg(u, name)
                         local txy =
                             math.polarProjection(
                             cj.GetUnitX(u),
@@ -292,6 +292,35 @@ onTowerAttack = function(evtData)
                                         }
                                     )
                                 end
+                            }
+                        )
+                    end
+                end
+                if (name == "蛇棒" or name == "骷髅兵") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        local summon = game.towersSummon[val[2]]
+                        if (summon == nil) then
+                            return
+                        end
+                        local su =
+                            hunit.create(
+                            {
+                                whichPlayer = cj.GetOwningPlayer(u),
+                                unitId = summon.UNIT_ID,
+                                qty = 1,
+                                life = val[3],
+                                x = cj.GetUnitX(targetUnit),
+                                y = cj.GetUnitY(targetUnit)
+                            }
+                        )
+                        hattr.set(
+                            su,
+                            0,
+                            {
+                                attack_white = "=" .. val[4] * 0.01 * hattr.get(u, "attack_white"),
+                                attack_green = "=" .. val[4] * 0.01 * hattr.get(u, "attack_green")
                             }
                         )
                     end

@@ -487,52 +487,6 @@ cj.TriggerAddAction(
                                                                             "的" ..
                                                                                 hColor.yellow(slk.Name) .. "进攻，直接战败了~"
                                                             )
-                                                            hmark.create(
-                                                                "war3mapImported\\mark_defeat.blp",
-                                                                4.00,
-                                                                hplayer.players[k]
-                                                            )
-                                                            hplayer.setStatus(hplayer.players[k], "战败")
-                                                            htime.setTimeout(
-                                                                5.00,
-                                                                function(t, td)
-                                                                    htime.delDialog(td)
-                                                                    htime.delTimer(t)
-                                                                    hplayer.defeat(hplayer.players[k], "战败~")
-                                                                end
-                                                            )
-                                                            --检查是否胜利
-                                                            hplayer.loop(
-                                                                function(p, pi)
-                                                                    local isWin = 0
-                                                                    local winner
-                                                                    if
-                                                                        (hplayer.getStatus(p) ==
-                                                                            hplayer.player_status.gaming)
-                                                                     then
-                                                                        isWin = isWin + 1
-                                                                        winner = p
-                                                                    end
-                                                                    if (isWin == 1) then
-                                                                        game.runing = false
-                                                                        dzSetPrestige(winner, false, true)
-                                                                        hmark.create(
-                                                                            "war3mapImported\\mark_win.blp",
-                                                                            4.00,
-                                                                            hplayer.players[k]
-                                                                        )
-                                                                        hplayer.setStatus(hplayer.players[k], "胜利")
-                                                                        htime.setTimeout(
-                                                                            5.00,
-                                                                            function(t, td)
-                                                                                htime.delDialog(td)
-                                                                                htime.delTimer(t)
-                                                                                hplayer.victory(hplayer.players[k])
-                                                                            end
-                                                                        )
-                                                                    end
-                                                                end
-                                                            )
                                                         else
                                                             hunit.subCurLife(game.playerTower[k], hunt)
                                                             hmsg.echo(
