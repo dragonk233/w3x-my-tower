@@ -577,7 +577,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_WarchiefMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["捕猎者"], towerSpxKV["狂魂骑猎"]}
     },
     {
         Name = "巨魔·狂战士·牙狼",

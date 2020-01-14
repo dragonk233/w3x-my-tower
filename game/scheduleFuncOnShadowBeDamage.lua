@@ -88,6 +88,13 @@ towerShadowBeDamage = function(evtData)
                         }
                     )
                 end
+                if (Name == "巫术") then
+                    local val = v.Val
+                    if (math.random(1, 100) <= val[2]) then
+                        towerShadowTtg(u, Name)
+                        hskill.invulnerable(u, val[3], "Abilities\\Spells\\Orc\\Voodoo\\VoodooAura.mdl")
+                    end
+                end
             end
         end
     end

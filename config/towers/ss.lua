@@ -210,7 +210,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_WarchiefMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["捕猎者"], towerSpxKV["狂魂狩猎"]}
     },
     {
         Name = "巨魔·邪眼·沃尔京",
@@ -225,7 +226,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WitchDoctorMissile\\WitchDoctorMissile.mdl",
         cool1 = 2.10,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["巫术"], towerSpxKV["邪眼"]}
     },
     {
         Name = "暗夜精灵·月之女神·泰兰德",

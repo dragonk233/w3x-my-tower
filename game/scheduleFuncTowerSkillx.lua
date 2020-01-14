@@ -31,7 +31,7 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {toughness = "+" .. Val[1]})
                 elseif (name == "黑暗舞步" or name == "影子替身") then
                     hattr.set(u, 0, {avoid = "+" .. Val[1]})
-                elseif (name == "猫头鹰怒视") then
+                elseif (name == "猫头鹰怒视" or name == "捕猎者") then
                     hattr.set(u, 0, {aim = "+" .. Val[1]})
                 elseif (name == "小牛粉碎" or name == "分裂大刀") then
                     hattr.set(u, 0, {split = "+" .. Val[1], split_range = "=500"})
@@ -57,18 +57,24 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {natural_dark = "+" .. Val[1]})
                 elseif (name == "海妖特质") then
                     hattr.set(u, 0, {natural_water_oppose = "+" .. Val[1]})
+                elseif (name == "巫术") then
+                    hattr.set(u, 0, {natural_poison_oppose = "+" .. Val[1]})
                 end
                 if
                     (table.includes(
                         name,
                         {
+                            --attack_white
+                            "追魂狩猎",
                             --attack_speed
                             "狂战士之血"
                         }
                     ))
                  then
                     local a
-                    if (name == "狂战士之血") then
+                    if (name == "追魂狩猎" or name == "狂魂狩猎" or name == "狂魂骑猎") then
+                        a = "attack_white"
+                    elseif (name == "狂战士之血") then
                         a = "attack_speed"
                     end
                     if (a ~= nil) then
@@ -104,6 +110,7 @@ addTowerSkillsx = function(u)
                             "腐尸毒",
                             "燃油烧弹",
                             "奇美拉毒液",
+                            "蛙毒",
                             --toughness
                             "悲鸣"
                         }
@@ -112,10 +119,16 @@ addTowerSkillsx = function(u)
                     local a
                     if (name == "净化" or name == "灵魂净化") then
                         a = "move"
-                    elseif (name == "蛊毒" or name == "蛛毒" or name == "腐尸毒" or name == "燃油烧弹" or name == "奇美拉毒液") then
+                    elseif
+                        (name == "蛊毒" or name == "蛛毒" or name == "腐尸毒" or name == "燃油烧弹" or name == "奇美拉毒液" or
+                            name == "蛙毒")
+                     then
                         a = "life_back"
                     elseif (name == "悲鸣") then
                         a = "toughness"
+                    end
+                    if (name == "蛙毒") then
+                        hattr.set(u, 0, {attack_hunt_type = "+poison"})
                     end
                     if (a ~= nil) then
                         hattr.set(

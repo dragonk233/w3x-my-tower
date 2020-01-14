@@ -185,7 +185,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\ShadowHunterMissile\\ShadowHunterMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["巫术"], towerSpxKV["蛙毒"]}
     },
     {
         Name = "巨魔·追魂猎手·阿拉烈",
@@ -200,7 +201,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_WarchiefMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["捕猎者"], towerSpxKV["追魂狩猎"]}
     },
     {
         Name = "牛头人·撼地蛮牛·卡林",

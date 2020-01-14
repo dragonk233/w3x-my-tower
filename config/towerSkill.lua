@@ -88,14 +88,6 @@ TOWER_ABLI_SPX = {
         Val = {0.04}
     },
     {
-        Name = "狂战士之血",
-        Ubertip = "攻击时有{val#1}%几率增加{val#2}%攻击速度，持续{val#3}秒",
-        Art = "war3mapImported\\icon_pas_Berserker_Blood.blp",
-        Buttonpos1 = 0,
-        Buttonpos2 = 1,
-        Val = {15, 45, 4.5, "war3mapImported\\eff_flame_burning.mdl"}
-    },
-    {
         Name = "远古身躯",
         Ubertip = "+{val#1}力量",
         Art = "war3mapImported\\icon_pas_FireDragonElemental.blp",
@@ -206,6 +198,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {40}
+    },
+    {
+        Name = "捕猎者",
+        Ubertip = "+{val#1}%命中",
+        Art = "war3mapImported\\icon_pas_Ability_Druid_PredatoryInstincts.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {75}
     },
     {
         Name = "熊掌战意",
@@ -360,6 +360,14 @@ TOWER_ABLI_SPX = {
         Val = {75, 50, 3, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
     },
     {
+        Name = "蛙毒",
+        Ubertip = "有{val#1}%几率中毒每秒扣血{val#2}点，持续{val#3}秒|n+毒攻击特性",
+        Art = "war3mapImported\\icon_pas_Spell_Forg.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {80, 65, 3, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
+    },
+    {
         Name = "燃油烧弹",
         Ubertip = "有{val#1}%几率灼烧每秒扣血{val#2}点，持续{val#3}秒",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNLiquidFire.blp",
@@ -470,6 +478,38 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {40, 3, 220}
+    },
+    {
+        Name = "狂战士之血",
+        Ubertip = "攻击时有{val#1}%几率增加{val#2}%攻击速度，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Berserker_Blood.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {15, 45, 4.5, "war3mapImported\\eff_flame_burning.mdl"}
+    },
+    {
+        Name = "追魂狩猎",
+        Ubertip = "攻击时有{val#1}%几率增加{val#2}点物理攻击，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {20, 15, 10, "war3mapImported\\eff_flame_burning.mdl"}
+    },
+    {
+        Name = "狂魂狩猎",
+        Ubertip = "攻击时有{val#1}%几率增加{val#2}点物理攻击，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {25, 20, 10, "war3mapImported\\eff_flame_burning.mdl"}
+    },
+    {
+        Name = "狂魂骑猎",
+        Ubertip = "攻击时有{val#1}%几率增加{val#2}点物理攻击，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {30, 25, 10, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "烈焰风暴",
@@ -639,6 +679,15 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {35},
+        ODK = true
+    },
+    {
+        Name = "巫术",
+        Ubertip = "+{val#1}%毒抗性|n+被攻击时有{val#2}%几率进入无敌，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Spell_Shadow_ImprovedVampiricEmbrace.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {20, 10, 2},
         ODK = true
     }
 }
