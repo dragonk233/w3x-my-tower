@@ -608,7 +608,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Dustshot.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["牛头人"], towerSpxKV["弹刃之剑"]}
     },
     {
         Name = "亡灵·墓坟孤王·嬴",
@@ -628,7 +629,7 @@ towers_sss = {
     {
         Name = "矮人·剑圣·极乐",
         Ubertip = "人称极乐老人，剑技非常人能及，超凡入圣",
-        unitSound = "Gyrocopter",
+        unitSound = "Medivh",
         file = "war3mapImported\\unit_UjimasaHojoV1.07.mdl",
         Art = "war3mapImported\\icon_unit_Bone_Helmet.blp",
         modelScale = 2.00,
@@ -639,7 +640,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_IceboundSting.mdl",
         cool1 = 1.90,
         Primary = "AGI",
-        abilList = {towerSpxKV["剑圣"]}
+        abilList = {towerSpxKV["剑圣"], towerSpxKV["剑气"]}
     },
     {
         Name = "食人魔·神侍奉·阿尔法",

@@ -217,7 +217,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Orc\\Shockwave\\ShockwaveMissile.mdl",
         cool1 = 2.30,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["牛头人"], towerSpxKV["震荡波"]}
     },
     {
         Name = "暗夜精灵·复仇天神",

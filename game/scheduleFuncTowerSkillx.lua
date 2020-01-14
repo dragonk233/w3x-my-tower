@@ -19,6 +19,8 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {defend = "+" .. Val[1]})
                 elseif (name == "远古身躯" or name == "重拳出击" or name == "骑士精神" or name == "威武体魄") then
                     hattr.set(u, 0, {str_green = "+" .. Val[1]})
+                elseif (name == "牛头人") then
+                    hattr.set(u, 0, {str_green = "+" .. Val[1], knocking_odds = "+" .. Val[2]})
                 elseif (name == "蛇皮" or name == "修仙之体") then
                     hattr.set(u, 0, {agi_green = "+" .. Val[1]})
                 elseif (name == "冥想") then

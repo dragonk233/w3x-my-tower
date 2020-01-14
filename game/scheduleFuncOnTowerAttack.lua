@@ -201,6 +201,101 @@ onTowerAttack = function(evtData)
                         )
                     end
                 end
+                if (Name == "震荡波") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, Name)
+                        local txy =
+                            math.polarProjection(
+                            cj.GetUnitX(u),
+                            cj.GetUnitY(u),
+                            1200,
+                            math.getDegBetweenUnit(u, targetUnit)
+                        )
+                        for q = 1, val[2], 1 do
+                            htime.setTimeout(
+                                (q - 1) * 0.55,
+                                function(t, td)
+                                    htime.delDialog(td)
+                                    htime.delDialog(t)
+                                    hskill.leap(
+                                        {
+                                            sourceUnit = u,
+                                            x = txy.x,
+                                            y = txy.y,
+                                            speed = 10,
+                                            acceleration = 1,
+                                            filter = function()
+                                                return his.alive(cj.GetFilterUnit()) and
+                                                    his.enemy(cj.GetFilterUnit(), u)
+                                            end,
+                                            tokenArrow = val[5],
+                                            tokenArrowScale = 2.00,
+                                            tokenArrowOpacity = 1,
+                                            damageMovement = val[3],
+                                            damageMovementRange = 125,
+                                            damageKind = CONST_DAMAGE_KIND.skill,
+                                            damageType = {CONST_DAMAGE_TYPE.physical},
+                                            extraInfluence = function(eu)
+                                                hskill.swim(
+                                                    {
+                                                        odds = 100,
+                                                        whichUnit = eu,
+                                                        during = val[4]
+                                                    }
+                                                )
+                                            end
+                                        }
+                                    )
+                                end
+                            )
+                        end
+                    end
+                end
+                if (Name == "剑气") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, Name)
+                        local txy =
+                            math.polarProjection(
+                            cj.GetUnitX(u),
+                            cj.GetUnitY(u),
+                            1200,
+                            math.getDegBetweenUnit(u, targetUnit)
+                        )
+                        hskill.leapPow(
+                            {
+                                qty = val[2],
+                                deg = 26,
+                                sourceUnit = u,
+                                x = txy.x,
+                                y = txy.y,
+                                speed = 20,
+                                acceleration = -0.15,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = val[6],
+                                tokenArrowScale = 1.00,
+                                tokenArrowOpacity = 1,
+                                damageMovement = val[3],
+                                damageMovementRange = 100,
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.physical},
+                                damageEffect = "war3mapImported\\eff_speed_slash2.mdl",
+                                extraInfluence = function(eu)
+                                    hattr.set(
+                                        eu,
+                                        val[5],
+                                        {
+                                            defend = "-" .. val[4]
+                                        }
+                                    )
+                                end
+                            }
+                        )
+                    end
+                end
             end
         end
     end

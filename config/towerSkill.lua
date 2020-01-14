@@ -120,6 +120,14 @@ TOWER_ABLI_SPX = {
         Val = {115}
     },
     {
+        Name = "牛头人",
+        Ubertip = "+{val#1}力量|n+{val#2}%物理暴击几率",
+        Art = "war3mapImported\\icon_pas_BullRush.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {160, 20}
+    },
+    {
         Name = "蛇皮",
         Ubertip = "+{val#1}敏捷",
         Art = "war3mapImported\\icon_pas_FireDragonElemental.blp",
@@ -555,6 +563,35 @@ TOWER_ABLI_SPX = {
             75,
             2.5,
             "Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster.mdl"
+        }
+    },
+    {
+        Name = "震荡波",
+        Ubertip = "{val#1}%几率发起{val#2}个冲击波对直线敌人造成{val#3}伤害，并眩晕{val#4}秒",
+        Art = "war3mapImported\\icon_pas_ShockWave.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            40,
+            2,
+            110,
+            2.5,
+            "Abilities\\Spells\\Orc\\Shockwave\\ShockwaveMissile.mdl"
+        }
+    },
+    {
+        Name = "剑气",
+        Ubertip = "{val#1}%几率发起{val#2}道剑气爪对直线敌人造成{val#3}伤害，并减少{val#4}点护甲{val#5}秒",
+        Art = "war3mapImported\\icon_pas_Weapon_Shortblade_37.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            60,
+            3,
+            170,
+            7,
+            6,
+            "war3mapImported\\eff_bladewave.mdl"
         }
     },
     {
