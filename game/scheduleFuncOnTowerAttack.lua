@@ -180,6 +180,40 @@ onTowerAttack = function(evtData)
                         cj.DestroyGroup(g)
                     end
                 end
+                if (name == "石化凝视") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        local x = cj.GetUnitX(u)
+                        local y = cj.GetUnitY(u)
+                        heffect.toXY("war3mapImported\\eff_DarkLightningNova.mdl", x, y, 0)
+                        local g =
+                            hgroup.createByUnit(
+                            u,
+                            1000,
+                            function()
+                                return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                            end
+                        )
+                        cj.ForGroup(
+                            g,
+                            function()
+                                local eu = cj.GetEnumUnit()
+                                hattr.set(
+                                    eu,
+                                    val[3],
+                                    {
+                                        move = "-522",
+                                        defend = "-" .. val[2]
+                                    }
+                                )
+                                heffect.bindUnit("war3mapImported\\eff_DarkVoid.mdl", eu, "origin", val[3])
+                            end
+                        )
+                        cj.GroupClear(g)
+                        cj.DestroyGroup(g)
+                    end
+                end
                 if (name == "剑刃风暴" and his.get(u, "isWhirlwind") == false) then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then

@@ -359,7 +359,7 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl",
         cool1 = 2.30,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "亡灵·阴曹指路人·小灯",
@@ -374,7 +374,7 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Void_Spear.mdl",
         cool1 = 2.20,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "昆虫·地穴领主·阿努比",
@@ -540,6 +540,7 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\NagaArrowMissile\\NagaArrowMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["石化凝视"], towerSpxKV["海之牙"]}
     }
 }

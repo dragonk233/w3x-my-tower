@@ -56,12 +56,23 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 1
     },
     {
+        Name = "海之牙",
+        Ubertip = "+2个可攻击目标",
+        Art = "war3mapImported\\icon_pas_Arrow_of_division.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        qty = 3,
+        Missileart = "Abilities\\Weapons\\NagaArrowMissile\\NagaArrowMissile.mdl",
+        TYPE = "multiattack"
+    },
+    {
         Name = "重生",
         Ubertip = "进攻时死亡可以复活1次",
         Art = "war3mapImported\\icon_pas_Ankh.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        ODK = true
+        ODK = true,
+        TYPE = "reborn"
     },
     {
         Name = "突击匕首",
@@ -629,6 +640,18 @@ TOWER_ABLI_SPX = {
             "move",
             "war3mapImported\\eff_EarthNova.mdl",
             "Abilities\\Spells\\NightElf\\EntanglingRoots\\EntanglingRootsTarget.mdl"
+        }
+    },
+    {
+        Name = "石化凝视",
+        Ubertip = "{val#1}%几率凝视并石化敌人使其无法移动，并减少{val#2}点护甲，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_ThunderClap.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {
+            20,
+            5,
+            2.5,
         }
     },
     {
