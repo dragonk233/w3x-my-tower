@@ -43,7 +43,7 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = { "wood" },
+            attack_damage_type = { "wood" },
             avoid = "+15"
         },
         Shop = { "小鬼珍宝市场" }
@@ -75,7 +75,7 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = { "fire" },
+            attack_damage_type = { "fire" },
             split = 12,
             split_range = 100
         },
@@ -93,7 +93,7 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = { "thunder" },
+            attack_damage_type = { "thunder" },
             attack_speed = 35,
             attack_effect = {
                 lightning_chain = { odds = 15, val = 220, qty = 3, reduce = 15 }
@@ -113,7 +113,7 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = { "ghost" },
+            attack_damage_type = { "ghost" },
             attack_debuff = {
                 add = {
                     { attr = "defend", odds = 25, val = 2, during = 5, model = nil }
@@ -134,7 +134,7 @@ items_xiaogui = {
         pawnable = 1,
         droppable = 1,
         Attr = {
-            attack_hunt_type = { "ice" },
+            attack_damage_type = { "ice" },
             defend = 30
         },
         Shop = { "小鬼珍宝市场" }

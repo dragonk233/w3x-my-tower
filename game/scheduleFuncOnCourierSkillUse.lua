@@ -27,7 +27,7 @@ onCourierSkillUesd = function(evtData)
             game.playerTower[playerIndex],
             45,
             {
-                attack_hunt_type = "+fire",
+                attack_damage_type = "+fire",
                 natural_fire = "+2.5"
             }
         )
@@ -43,7 +43,7 @@ onCourierSkillUesd = function(evtData)
             game.playerTower[playerIndex],
             45,
             {
-                attack_hunt_type = "+ice",
+                attack_damage_type = "+ice",
                 natural_ice = "+3.5",
                 attack_debuff = {
                     add = {

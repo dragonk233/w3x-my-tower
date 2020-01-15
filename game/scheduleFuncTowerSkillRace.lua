@@ -73,7 +73,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                attack_hunt_type = "+dark"
+                attack_damage_type = "+dark"
             }
         )
     elseif (race == "德鲁伊") then
@@ -81,7 +81,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                attack_hunt_type = "+wood"
+                attack_damage_type = "+wood"
             }
         )
     elseif (race == "亡灵") then
@@ -107,7 +107,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                attack_hunt_type = "+water"
+                attack_damage_type = "+water"
             }
         )
     elseif (race == "元素") then
@@ -136,7 +136,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                hunt_amplitude = "+6.6",
+                damage_amplitude = "+6.6",
                 attack_speed = "+6.6",
                 defend = "-6.6"
             }
@@ -146,7 +146,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                attack_hunt_type = "+insect"
+                attack_damage_type = "+insect"
             }
         )
     elseif (race == "异兽") then
@@ -191,7 +191,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                attack_hunt_type = "+dragon"
+                attack_damage_type = "+dragon"
             }
         )
     elseif (race == "熊猫") then

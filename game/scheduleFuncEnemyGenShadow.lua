@@ -29,7 +29,7 @@ towerShadowGen = function(playerIndex)
             resistance = "=" .. hattr.get(tower, "resistance"),
             toughness = "=" .. hattr.get(tower, "toughness"),
             avoid = "=" .. hattr.get(tower, "avoid"),
-            hunt_rebound = "=" .. hattr.get(tower, "hunt_rebound"),
+            damage_rebound = "=" .. hattr.get(tower, "damage_rebound"),
             knocking_oppose = "=" .. hattr.get(tower, "knocking_oppose"),
             violence_oppose = "=" .. hattr.get(tower, "violence_oppose"),
             hemophagia_oppose = "=" .. hattr.get(tower, "hemophagia_oppose"),

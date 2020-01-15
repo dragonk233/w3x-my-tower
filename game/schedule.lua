@@ -707,7 +707,7 @@ cj.TriggerAddAction(
                                 local violence =
                                     math.floor(hattr.get(tower, "violence_odds")) ..
                                     "%击出" .. math.floor(100 + hattr.get(tower, "violence")) .. "%伤害"
-                                local hunt_amplitude = math.round(hattr.get(tower, "hunt_amplitude")) .. "%"
+                                local damage_amplitude = math.round(hattr.get(tower, "damage_amplitude")) .. "%"
                                 local tempData = {
                                     {value = cj.GetPlayerName(p), icon = nil},
                                     {value = hplayer.getPrestige(p), icon = nil},
@@ -720,13 +720,13 @@ cj.TriggerAddAction(
                                     {value = attack_speed, icon = nil},
                                     {value = knocking, icon = nil},
                                     {value = violence, icon = nil},
-                                    {value = hunt_amplitude, icon = nil}
+                                    {value = damage_amplitude, icon = nil}
                                 }
                                 if (game.rule.cur == "dk") then
                                     local defend = math.floor(hattr.get(tower, "defend"))
                                     local toughness = math.round(hattr.get(tower, "toughness"))
                                     local resistance = math.round(hattr.get(tower, "resistance")) .. "%"
-                                    local hunt_rebound = math.round(hattr.get(tower, "hunt_rebound")) .. "%"
+                                    local damage_rebound = math.round(hattr.get(tower, "damage_rebound")) .. "%"
                                     local avoid = math.round(hattr.get(tower, "avoid")) .. "%"
                                     tempData =
                                         table.merge(
@@ -735,7 +735,7 @@ cj.TriggerAddAction(
                                             {value = defend, icon = nil},
                                             {value = toughness, icon = nil},
                                             {value = resistance, icon = nil},
-                                            {value = hunt_rebound, icon = nil},
+                                            {value = damage_rebound, icon = nil},
                                             {value = avoid, icon = nil}
                                         }
                                     )

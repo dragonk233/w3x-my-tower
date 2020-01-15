@@ -33,7 +33,7 @@ onTowerAttack = function(evtData)
                         u,
                         5.00,
                         {
-                            attack_hunt_type = "+poison",
+                            attack_damage_type = "+poison",
                             attack_speed = "+" .. 10 * level
                         }
                     )

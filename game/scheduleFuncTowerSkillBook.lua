@@ -139,7 +139,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
             }
         )
     elseif (abliOps.Name == "反伤抵抗") then
-        hattr.set(u, 0, {hunt_rebound_oppose = opt .. level * abliOps.Val[1]})
+        hattr.set(u, 0, {damage_rebound_oppose = opt .. level * abliOps.Val[1]})
     elseif (abliOps.Name == "专注护身") then
         hattr.set(u, 0, {defend = opt .. level * abliOps.Val[1]})
     elseif (abliOps.Name == "噩梦移植") then
@@ -188,7 +188,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
             u,
             0,
             {
-                attack_hunt_type = opt .. "fire",
+                attack_damage_type = opt .. "fire",
                 attack_debuff = {
                     [optChar] = {
                         {
@@ -207,7 +207,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
             u,
             0,
             {
-                attack_hunt_type = opt .. "poison",
+                attack_damage_type = opt .. "poison",
                 attack_debuff = {
                     [optChar] = {
                         {
@@ -258,23 +258,23 @@ setTowerSkillByBook = function(u, abliOps, opt)
             }
         )
     elseif (abliOps.Name == "日食") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "dark", natural_dark = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {attack_damage_type = opt .. "dark", natural_dark = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "邪神之手") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "ghost", natural_ghost = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {attack_damage_type = opt .. "ghost", natural_ghost = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "恶鬼呼声") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "ghost"})
+        hattr.set(u, 0, {attack_damage_type = opt .. "ghost"})
     elseif (abliOps.Name == "光导使者") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "light"})
+        hattr.set(u, 0, {attack_damage_type = opt .. "light"})
     elseif (abliOps.Name == "暗夜对剑") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "dark"})
+        hattr.set(u, 0, {attack_damage_type = opt .. "dark"})
     elseif (abliOps.Name == "雷神之手") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "thunder"})
+        hattr.set(u, 0, {attack_damage_type = opt .. "thunder"})
     elseif (abliOps.Name == "冰心") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "ice"})
+        hattr.set(u, 0, {attack_damage_type = opt .. "ice"})
     elseif (abliOps.Name == "邪魅之虫") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "insect"})
+        hattr.set(u, 0, {attack_damage_type = opt .. "insect"})
     elseif (abliOps.Name == "德鲁伊叶子") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "wood", life_back = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {attack_damage_type = opt .. "wood", life_back = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "战熊咆哮") then
         hattr.set(u, 0, {knocking_odds = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "魔导灵眼") then
@@ -342,7 +342,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
     elseif (abliOps.Name == "抗性神经") then
         hattr.set(u, 0, {resistance = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "荆棘") then
-        hattr.set(u, 0, {hunt_rebound = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {damage_rebound = opt .. (level * abliOps.Val[1])})
     end
     if (abliOps.Name == "暗杀巅峰") then
         hattr.set(
@@ -383,9 +383,9 @@ setTowerSkillByBook = function(u, abliOps, opt)
     elseif (abliOps.Name == "音速回击") then
         hattr.set(u, 0, {attack_speed = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "疾风") then
-        hattr.set(u, 0, {attack_hunt_type = opt .. "wind", natural_wind = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {attack_damage_type = opt .. "wind", natural_wind = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "魔神之剑") then
-        hattr.set(u, 0, {hunt_amplitude = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {damage_amplitude = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "胆颤心惊") then
         hattr.set(
             u,
@@ -437,7 +437,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
     elseif (abliOps.Name == "刺痛极限") then
         hattr.set(u, 0, {toughness = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "刺网") then
-        hattr.set(u, 0, {hunt_rebound = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {damage_rebound = opt .. (level * abliOps.Val[1])})
     end
 end
 

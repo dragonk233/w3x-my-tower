@@ -42,21 +42,21 @@ addTowerSkillsx = function(u)
                 elseif (name == "法术研究") then
                     hattr.set(u, 0, {violence_odds = "+" .. Val[1], violence = "+" .. Val[2]})
                 elseif (name == "野生龙种") then
-                    hattr.set(u, 0, {attack_hunt_type = "+dragon"})
+                    hattr.set(u, 0, {attack_damage_type = "+dragon"})
                 elseif (name == "树木之妖") then
-                    hattr.set(u, 0, {attack_hunt_type = "+wood"})
+                    hattr.set(u, 0, {attack_damage_type = "+wood"})
                 elseif (name == "山岭之灵") then
-                    hattr.set(u, 0, {attack_hunt_type = "+soil"})
+                    hattr.set(u, 0, {attack_damage_type = "+soil"})
                 elseif (name == "水之元素") then
-                    hattr.set(u, 0, {attack_hunt_type = "+water"})
+                    hattr.set(u, 0, {attack_damage_type = "+water"})
                 elseif (name == "火之元素") then
-                    hattr.set(u, 0, {attack_hunt_type = "+fire"})
+                    hattr.set(u, 0, {attack_damage_type = "+fire"})
                 elseif (name == "随风") then
-                    hattr.set(u, 0, {attack_hunt_type = "+wind"})
+                    hattr.set(u, 0, {attack_damage_type = "+wind"})
                 elseif (name == "毒龙液") then
-                    hattr.set(u, 0, {attack_hunt_type = "+poison"})
+                    hattr.set(u, 0, {attack_damage_type = "+poison"})
                 elseif (name == "霹雳化身") then
-                    hattr.set(u, 0, {attack_hunt_type = "+thunder", attack_speed = "+" .. Val[1]})
+                    hattr.set(u, 0, {attack_damage_type = "+thunder", attack_speed = "+" .. Val[1]})
                 elseif (name == "海洋之心" or name == "深海之心") then
                     hattr.set(u, 0, {natural_water = "+" .. Val[1]})
                 elseif (name == "暗夜之魂" or name == "暗神之魂") then
@@ -68,7 +68,7 @@ addTowerSkillsx = function(u)
                 elseif (name == "巫术") then
                     hattr.set(u, 0, {natural_poison_oppose = "+" .. Val[1]})
                 elseif (name == "针刺外壳") then
-                    hattr.set(u, 0, {hunt_rebound = "+" .. Val[1]})
+                    hattr.set(u, 0, {damage_rebound = "+" .. Val[1]})
                 elseif (name == "机械之心") then
                     hattr.set(u, 0, {str_green = "+" .. Val[1], agi_green = "+" .. Val[2], defend = "+" .. Val[3]})
                 end
@@ -77,7 +77,7 @@ addTowerSkillsx = function(u)
                         u,
                         0,
                         {
-                            attack_hunt_type = "+dark",
+                            attack_damage_type = "+dark",
                             attack_debuff = {
                                 add = {
                                     {
@@ -165,7 +165,7 @@ addTowerSkillsx = function(u)
                         a = "defend"
                     end
                     if (name == "蛙毒") then
-                        hattr.set(u, 0, {attack_hunt_type = "+poison"})
+                        hattr.set(u, 0, {attack_damage_type = "+poison"})
                     end
                     if (a ~= nil) then
                         hattr.set(
