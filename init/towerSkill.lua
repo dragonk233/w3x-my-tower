@@ -28,6 +28,7 @@ for k, v in pairs(TOWER_ABLI_SPX) do
         obj.levels = 1
         obj.DataA1 = 0
         obj.DataB1 = 0
+        obj.Requires = ""
         obj.DataC1 = math.floor((v.qty or 3) -2)
         obj.Missileart = v.Missileart
         obj.Missilearc = v.Missilearc or 0.05

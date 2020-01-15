@@ -356,6 +356,43 @@ onTowerAttack = function(evtData)
                             }
                         )
                     end
+                elseif (name == "恐惧蝠群") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        hskill.leapRange(
+                            {
+                                targetRange = 700,
+                                sourceUnit = u,
+                                targetUnit = targetUnit,
+                                speed = 15,
+                                acceleration = 1,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = val[6],
+                                tokenArrowScale = 1.00,
+                                tokenArrowOpacity = 1,
+                                damageMovement = 0,
+                                damageMovementRange = 0,
+                                damageEnd = val[3],
+                                damageEndRange = 0,
+                                effectEnd = "war3mapImported\\eff_Call_of_Dread_Green.mdl",
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.dark},
+                                extraInfluence = function(eu)
+                                    hattr.set(
+                                        eu,
+                                        0,
+                                        {
+                                            defend = "-" .. val[4],
+                                            move = "-" .. val[5]
+                                        }
+                                    )
+                                end
+                            }
+                        )
+                    end
                 elseif (name == "蛇棒" or name == "骷髅兵") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then

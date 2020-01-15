@@ -160,7 +160,15 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ability_Druid_LunarGuidance.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {70}
+        Val = {65}
+    },
+    {
+        Name = "恶魔之躯",
+        Ubertip = "+{val#1}敏捷",
+        Art = "war3mapImported\\icon_pas_Ability_Rogue_SinisterCalling.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {66}
     },
     {
         Name = "冥想",
@@ -645,13 +653,13 @@ TOWER_ABLI_SPX = {
     {
         Name = "石化凝视",
         Ubertip = "{val#1}%几率凝视并石化敌人使其无法移动，并减少{val#2}点护甲，持续{val#3}秒",
-        Art = "war3mapImported\\icon_pas_ThunderClap.blp",
+        Art = "war3mapImported\\icon_pas_Ability_Creature_Cursed_05.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {
             20,
             5,
-            2.5,
+            2.5
         }
     },
     {
@@ -708,6 +716,21 @@ TOWER_ABLI_SPX = {
             500,
             200,
             "war3mapImported\\eff_Firebolt_Major.mdl"
+        }
+    },
+    {
+        Name = "恐惧蝠群",
+        Ubertip = "{val#1}%几率召唤大片蝙蝠对{val#2}范围敌人攻击，造成{val#3}点伤害，敌人永久降低{val#4}点护甲和{val#5}点移动",
+        Art = "war3mapImported\\icon_pas_AuraOfDarkness.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            10,
+            700,
+            236,
+            5,
+            10,
+            "Abilities\\Spells\\Undead\\CarrionSwarm\\CarrionSwarmMissile.mdl"
         }
     },
     {

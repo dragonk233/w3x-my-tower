@@ -297,7 +297,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Undead\\CarrionSwarm\\CarrionSwarmMissile.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["恶魔之躯"], towerSpxKV["恐惧蝠群"]}
     },
     {
         Name = "亡灵·黑暗游侠·鬼歌",
