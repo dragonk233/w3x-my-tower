@@ -57,13 +57,13 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "海之牙",
-        Ubertip = "+2个可攻击目标",
+        Ubertip = "+可攻击{val#1}个目标",
         Art = "war3mapImported\\icon_pas_Arrow_of_division.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        qty = 3,
         Missileart = "Abilities\\Weapons\\NagaArrowMissile\\NagaArrowMissile.mdl",
-        TYPE = "multiattack"
+        TYPE = "multiattack",
+        Val = {3}
     },
     {
         Name = "重生",
@@ -80,7 +80,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ability_Rogue_BladeTwisting.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {145}
+        Val = {175}
     },
     {
         Name = "月神强击",
@@ -112,15 +112,15 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_FireDragonElemental.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {36}
+        Val = {50}
     },
     {
         Name = "重拳出击",
         Ubertip = "+{val#1}力量",
         Art = "war3mapImported\\icon_pas_AdvancedUnholyStrength.blp",
         Buttonpos1 = 0,
-        Buttonpos2 = 1,
-        Val = {91}
+        Buttonpos2 = 2,
+        Val = {118}
     },
     {
         Name = "骑士精神",
@@ -128,7 +128,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_GreaterBlessingofKings.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {100}
+        Val = {120}
     },
     {
         Name = "威武体魄",
@@ -136,7 +136,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Holy_Vindication.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {115}
+        Val = {145}
     },
     {
         Name = "牛头人",
@@ -144,7 +144,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_BullRush.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {160, 20}
+        Val = {180, 15}
     },
     {
         Name = "蛇皮",
@@ -152,7 +152,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_FireDragonElemental.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {35}
+        Val = {40}
     },
     {
         Name = "修仙之体",
@@ -160,7 +160,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ability_Druid_LunarGuidance.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {65}
+        Val = {70}
     },
     {
         Name = "恶魔之躯",
@@ -168,7 +168,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ability_Rogue_SinisterCalling.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {66}
+        Val = {99}
     },
     {
         Name = "冥想",
@@ -176,7 +176,23 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Arcane_MindMastery.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {50}
+        Val = {70}
+    },
+    {
+        Name = "机械之心",
+        Ubertip = "+{val#1}力量|n+{val#2}智力|n+{val#3}护甲",
+        Art = "war3mapImported\\icon_pas_Tempered_gear.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {30, 30, 30}
+    },
+    {
+        Name = "恶魔巫术",
+        Ubertip = "+{val#1}%伤害增幅",
+        Art = "war3mapImported\\icon_pas_Druid_ForceofNature.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {7.7}
     },
     {
         Name = "巾帼",
@@ -225,6 +241,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {25}
+    },
+    {
+        Name = "分裂狂刀",
+        Ubertip = "+{val#1}%分裂",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCleavingAttack.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {35}
     },
     {
         Name = "猫头鹰怒视",
@@ -291,6 +315,14 @@ TOWER_ABLI_SPX = {
         Val = {}
     },
     {
+        Name = "毒龙液",
+        Ubertip = "+毒攻击特性",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCorrosiveBreath.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {}
+    },
+    {
         Name = "树木之妖",
         Ubertip = "+木攻击特性",
         Art = "war3mapImported\\icon_pas_EatTree.blp",
@@ -328,7 +360,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Weapon_Shortblade_53.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {5, 3}
+        Val = {6, 3}
     },
     {
         Name = "黑夜之箭",
@@ -395,6 +427,14 @@ TOWER_ABLI_SPX = {
         Val = {9}
     },
     {
+        Name = "偷窃",
+        Ubertip = "有{val#1}%几率获得{val#2}黄金",
+        Art = "war3mapImported\\icon_pas_Holy_BlindingHeal.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {10, 25}
+    },
+    {
         Name = "净化",
         Ubertip = "有{val#1}%几率净化敌人，减少{val#2}点移动力{val#3}秒",
         Art = "war3mapImported\\icon_pas_Purge.blp",
@@ -459,6 +499,14 @@ TOWER_ABLI_SPX = {
         Val = {75, 60, 4, "Abilities\\Spells\\Orc\\LiquidFire\\Liquidfire.mdl"}
     },
     {
+        Name = "三昧真火",
+        Ubertip = "有{val#1}%几率灼烧每秒扣血{val#2}点，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_SummerFest_FireSpirit.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {75, 100, 10, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
+    },
+    {
         Name = "悲鸣",
         Ubertip = "减少敌人{val#2}点减伤，持续{val#3}秒",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNShadeTrueSight.blp",
@@ -515,16 +563,24 @@ TOWER_ABLI_SPX = {
         Val = {35, 110, 2.2, "war3mapImported\\eff_DustWindCirclefaster.mdl"}
     },
     {
+        Name = "恍惚灯路",
+        Ubertip = "{val#1}%几率令敌人恍惚造成{val#2}伤害并眩晕{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Stimulate_lightning.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {35, 250, 2.5, "war3mapImported\\eff_LifeAura.mdl"}
+    },
+    {
         Name = "晴天霹雳",
         Ubertip = "{val#1}%几率晴空落下霹雳造成{val#2}伤害",
         Art = "war3mapImported\\icon_pas_Stimulate_lightning.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {35, 240, 0.3, "war3mapImported\\eff_empty_thunder.mdl"}
+        Val = {35, 300, 0.5, "war3mapImported\\eff_empty_thunder.mdl"}
     },
     {
         Name = "诡异闪电",
-        Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点雷伤害",
+        Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点伤害",
         Art = "war3mapImported\\icon_pas_ChainLightning_red.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
@@ -532,7 +588,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "狂异闪电",
-        Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点雷伤害",
+        Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点伤害",
         Art = "war3mapImported\\icon_pas_ChainLightning_red.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
@@ -540,15 +596,23 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "狂徒闪电",
-        Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点雷伤害",
+        Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点伤害",
         Art = "war3mapImported\\icon_pas_ChainLightning_red.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {30, 345}
+        Val = {33, 345}
+    },
+    {
+        Name = "痛苦链",
+        Ubertip = "{val#1}%几率击出一道红色闪电造成{val#2}点伤害",
+        Art = "war3mapImported\\icon_pas_CorpseExplode.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {20, 444}
     },
     {
         Name = "风暴之锤",
-        Ubertip = "{val#1}%几率击出一道闪电对{val#2}个敌人造成{val#3}点雷伤害",
+        Ubertip = "{val#1}%几率击出一道闪电对{val#2}个敌人造成{val#3}点伤害",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNStormHammer.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
@@ -556,7 +620,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "离火之锤",
-        Ubertip = "{val#1}%几率击出一道闪电对{val#2}个敌人造成{val#3}点雷伤害",
+        Ubertip = "{val#1}%几率击出一道闪电对{val#2}个敌人造成{val#3}点伤害",
         Art = "war3mapImported\\icon_pas_Stimulate_lightning.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
@@ -564,7 +628,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "闪电雷霆",
-        Ubertip = "{val#1}%几率击出一道闪电对{val#2}个敌人造成{val#3}点雷伤害",
+        Ubertip = "{val#1}%几率击出一道闪电对{val#2}个敌人造成{val#3}点伤害",
         Art = "war3mapImported\\icon_pas_ChainLightning.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -576,7 +640,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Berserker_Blood.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {15, 45, 4.5, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {20, 50, 4.5, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "追魂狩猎",
@@ -584,7 +648,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {20, 15, 10, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {25, 30, 10, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "狂魂狩猎",
@@ -592,7 +656,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {25, 20, 10, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {30, 40, 12, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "狂魂骑猎",
@@ -600,7 +664,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {30, 25, 10, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {35, 50, 14, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "烈焰风暴",
@@ -611,7 +675,7 @@ TOWER_ABLI_SPX = {
         Val = {
             20,
             300,
-            0.3,
+            0.25,
             55,
             20,
             "war3mapImported\\eff_FireTornado.mdl",
@@ -653,14 +717,46 @@ TOWER_ABLI_SPX = {
     {
         Name = "石化凝视",
         Ubertip = "{val#1}%几率凝视并石化敌人使其无法移动，并减少{val#2}点护甲，持续{val#3}秒",
-        Art = "war3mapImported\\icon_pas_Ability_Creature_Cursed_05.blp",
+        Art = "war3mapImported\\icon_pas_Shadow_Possession.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {
             20,
-            5,
+            7,
             2.5
         }
+    },
+    {
+        Name = "灼烧大地",
+        Ubertip = "攻击时能灼烧附近的敌人，造成{val#1}点伤害",
+        Art = "war3mapImported\\icon_pas_ImmolationOn.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {150}
+    },
+    {
+        Name = "猎手幻刀",
+        Ubertip = "攻击时能切割附近的敌人，造成{val#1}点攻击伤害",
+        Art = "war3mapImported\\icon_pas_ThrowingKnife_06.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {155}
+    },
+    {
+        Name = "觉醒幻刀",
+        Ubertip = "攻击时能切割附近的敌人，造成{val#1}点攻击伤害",
+        Art = "war3mapImported\\icon_pas_ThrowingKnife_06.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {275}
+    },
+    {
+        Name = "究极幻刀",
+        Ubertip = "攻击时能切割附近的敌人，造成{val#1}点攻击伤害",
+        Art = "war3mapImported\\icon_pas_ThrowingKnife_06.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {396}
     },
     {
         Name = "剑刃风暴",
@@ -685,7 +781,7 @@ TOWER_ABLI_SPX = {
         Val = {
             40,
             2,
-            110,
+            120,
             2.5,
             "Abilities\\Spells\\Orc\\Shockwave\\ShockwaveMissile.mdl"
         }
@@ -699,7 +795,7 @@ TOWER_ABLI_SPX = {
         Val = {
             60,
             3,
-            275,
+            575,
             7,
             6,
             "war3mapImported\\eff_bladewave.mdl"
@@ -714,8 +810,30 @@ TOWER_ABLI_SPX = {
         Val = {
             35,
             500,
-            200,
-            "war3mapImported\\eff_Firebolt_Major.mdl"
+            350
+        }
+    },
+    {
+        Name = "火爆山岩",
+        Ubertip = "{val#1}%几率发起火爆山岩对敌人爆炸，造成{val#3}点伤害",
+        Art = "war3mapImported\\icon_pas_SummerFest_FireSpirit.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            30,
+            1000,
+            245
+        }
+    },
+    {
+        Name = "导弹降日",
+        Ubertip = "{val#1}%几率发射导弹爆炸敌人，造成{val#2}点伤害",
+        Art = "war3mapImported\\icon_pas_Misc_MissileLarge_Red.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            55,
+            220
         }
     },
     {
@@ -725,9 +843,9 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
-            10,
+            15,
             700,
-            236,
+            366,
             5,
             10,
             "Abilities\\Spells\\Undead\\CarrionSwarm\\CarrionSwarmMissile.mdl"
@@ -766,6 +884,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {3}
+    },
+    {
+        Name = "引路人",
+        Ubertip = "+{val#1}%攻击必死",
+        Art = "war3mapImported\\icon_pas_Spell_Holy_Stoicism.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {3.5}
     },
     {
         Name = "必死宣言",
@@ -826,7 +952,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {40},
+        Val = {38},
         ODK = true
     },
     {
@@ -836,6 +962,15 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {25},
+        ODK = true
+    },
+    {
+        Name = "甲虫之盔",
+        Ubertip = "+{val#1}%魔抗",
+        Art = "war3mapImported\\icon_pas_Elemental_Crystal_Shadow.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {40},
         ODK = true
     },
     {
@@ -857,6 +992,15 @@ TOWER_ABLI_SPX = {
         ODK = true
     },
     {
+        Name = "针刺外壳",
+        Ubertip = "+{val#1}%反伤",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThornShield.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {2},
+        ODK = true
+    },
+    {
         Name = "黑暗舞步",
         Ubertip = "+{val#1}%回避",
         Art = "war3mapImported\\icon_pas_Shadow_Riki.blp",
@@ -866,12 +1010,30 @@ TOWER_ABLI_SPX = {
         ODK = true
     },
     {
+        Name = "恶灵披风",
+        Ubertip = "+{val#1}%回避",
+        Art = "war3mapImported\\icon_pas_Shame.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {30},
+        ODK = true
+    },
+    {
+        Name = "猎影",
+        Ubertip = "+{val#1}%回避",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNEvasion.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {35},
+        ODK = true
+    },
+    {
         Name = "影子替身",
         Ubertip = "+{val#1}%回避",
         Art = "war3mapImported\\icon_pas_Undercurrent_white_light.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {35},
+        Val = {40},
         ODK = true
     },
     {
@@ -885,11 +1047,20 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "巫术",
-        Ubertip = "+{val#1}%毒抗性|n+被攻击时有{val#2}%几率进入无敌，持续{val#3}秒",
+        Ubertip = "+{val#1}%毒抗性|n被攻击时有{val#2}%几率进入无敌，持续{val#3}秒",
         Art = "war3mapImported\\icon_pas_Spell_Shadow_ImprovedVampiricEmbrace.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {20, 10, 2},
+        ODK = true
+    },
+    {
+        Name = "逃命",
+        Ubertip = "被攻击时有{val#1}%几率移动增加{val#2}，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Shadow_ShadowEmbrace.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {35, 65, 2.5},
         ODK = true
     },
     {
@@ -898,7 +1069,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Helmet_73.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {2},
+        Val = {10},
         ODK = true
     },
     {
@@ -907,7 +1078,16 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_SummonChampion.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {15},
+        Val = {20},
+        ODK = true
+    },
+    {
+        Name = "潜行",
+        Ubertip = "被攻击时有{val#1}%几率隐身{val#2}秒",
+        Art = "war3mapImported\\icon_pas_Inextricable.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {20, 3.5},
         ODK = true
     }
 }

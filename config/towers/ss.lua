@@ -195,7 +195,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Human\\StormBolt\\StormBoltMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["晴天霹雳"], towerSpxKV["雷暴"]}
     },
     {
         Name = "巨魔·狂魂猎手·阿拉烈",
@@ -379,7 +380,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_animeslashfinal.mdl",
         cool1 = 1.70,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["猎影"], towerSpxKV["觉醒幻刀"]}
     },
     {
         Name = "幽魂·安东尼",

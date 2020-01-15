@@ -345,7 +345,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Fireball.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["恶魔之躯"], towerSpxKV["三昧真火"]}
     },
     {
         Name = "亡灵·半吊子·脚镣刹麽",
@@ -360,7 +361,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl",
         cool1 = 2.30,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["恶灵披风"], towerSpxKV["逃命"]}
     },
     {
         Name = "亡灵·阴曹指路人·小灯",
@@ -375,11 +377,12 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Void_Spear.mdl",
         cool1 = 2.20,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["恍惚灯路"], towerSpxKV["引路人"]}
     },
     {
         Name = "昆虫·地穴领主·阿努比",
-        Ubertip = "昆虫族领主，擅长于控制昆虫进行攻击",
+        Ubertip = "昆虫族领主，俗称打不死的小强",
         unitSound = "HeroCryptLord",
         file = "units\\undead\\HeroCryptLord\\HeroCryptLord",
         Art = "ReplaceableTextures\\CommandButtons\\BTNHeroCryptLord.blp",
@@ -390,7 +393,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\CryptFiendMissile\\CryptFiendMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["甲虫之盔"], towerSpxKV["针刺外壳"]}
     },
     {
         Name = "元素·地狱火",
@@ -405,7 +409,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\DemonHunterMissile\\DemonHunterMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["火之元素"], towerSpxKV["灼烧大地"]}
     },
     {
         Name = "元素·火焰巨魔",
@@ -420,7 +425,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl",
         cool1 = 1.90,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["火之元素"], towerSpxKV["火爆山岩"]}
     },
     {
         Name = "恶魔·狂暴的守卫将领",
@@ -435,7 +441,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Culling_Cleave_Red.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["分裂狂刀"], towerSpxKV["重拳出击"]}
     },
     {
         Name = "恶魔·毁灭守卫",
@@ -451,7 +458,7 @@ towers_s = {
         Missileart = "Abilities\\Weapons\\DemonHunterMissile\\DemonHunterMissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        abilList = {towerSpxKV["分裂大刀"], abilList = {towerSpxKV["重拳出击"]}}
+        abilList = {towerSpxKV["恶魔之躯"], towerSpxKV["重拳出击"]}
     },
     {
         Name = "恶魔·猎手·尤迪安",
@@ -466,7 +473,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_animeslashfinal.mdl",
         cool1 = 1.80,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["猎影"], towerSpxKV["猎手幻刀"]}
     },
     {
         Name = "恶魔·巫神·卞",
@@ -481,7 +489,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Voidball_Minor.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["恶魔巫术"], towerSpxKV["痛苦链"]}
     },
     {
         Name = "地精·机械家·汀克",
@@ -496,7 +505,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_TC_EnergyBolt.mdl",
         cool1 = 2.10,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["机械之心"], towerSpxKV["导弹降日"]}
     },
     {
         Name = "异兽·蚀龙",
@@ -511,7 +521,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["野生龙种"], towerSpxKV["毒龙液"]}
     },
     {
         Name = "食人魔·盗贼·阿卡玛",
@@ -526,7 +537,8 @@ towers_s = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
         cool1 = 1.85,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["偷窃"], towerSpxKV["潜行"]}
     },
     {
         Name = "娜迦·蛇发魔女·美杜莎",
@@ -540,7 +552,7 @@ towers_s = {
         moveHeight = 0,
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\NagaArrowMissile\\NagaArrowMissile.mdl",
-        cool1 = 2.10,
+        cool1 = 2.50,
         Primary = "AGI",
         abilList = {towerSpxKV["石化凝视"], towerSpxKV["海之牙"]}
     }

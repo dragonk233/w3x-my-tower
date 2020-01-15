@@ -27,11 +27,11 @@ enemyGenYB = function(waiting)
                         --5波一个boss,7波一个奖励
                         if (math.fmod(game.rule.yb.wave, 5) == 0) then
                             bossGen(game.rule.yb.wave)
-                            nextWaitTime = 30
+                            nextWaitTime = 20
                         end
                         if (game.rule.yb.wave > 2 and math.fmod((game.rule.yb.wave - 2), 5) == 0) then
                             awardGen(game.rule.yb.wave)
-                            nextWaitTime = 30
+                            nextWaitTime = 20
                         end
                         if (game.rule.yb.wave >= game.rule.yb.waveEnd) then
                             if (game.currentMon <= 0) then
@@ -89,7 +89,7 @@ enemyGenYB = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (500 + 25 * game.rule.yb.wave),
+                                    life = "=" .. (2000 + 25 * game.rule.yb.wave),
                                     move = "=180"
                                 }
                             )
@@ -127,11 +127,11 @@ enemyGenHZ = function(waiting)
                         --10波一个boss,13波一个奖励
                         if (math.fmod(game.rule.hz.wave, 10) == 0) then
                             bossGen(game.rule.hz.wave)
-                            nextWaitTime = 30
+                            nextWaitTime = 20
                         end
                         if (game.rule.hz.wave > 3 and math.fmod((game.rule.hz.wave - 3), 10) == 0) then
                             awardGen(game.rule.hz.wave)
-                            nextWaitTime = 30
+                            nextWaitTime = 20
                         end
                         htime.delDialog(td2)
                         htime.delTimer(t2)

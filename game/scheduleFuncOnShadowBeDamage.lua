@@ -102,6 +102,31 @@ towerShadowBeDamage = function(evtData)
                         hattr.set(u, 4, {life_back = val[1]})
                     end
                 end
+                if (Name == "逃命") then
+                    local val = v.Val
+                    if (math.random(1, 100) <= val[1]) then
+                        towerShadowTtg(u, Name)
+                        hattr.set(
+                            u,
+                            val[3],
+                            {
+                                move = "+" .. val[2]
+                            }
+                        )
+                    end
+                end
+                if (Name == "逃命") then
+                    local val = v.Val
+                    if (math.random(1, 100) <= val[1]) then
+                        towerShadowTtg(u, Name)
+                        hskill.invisible(
+                            u,
+                            val[2],
+                            0.25,
+                            "Abilities\\Spells\\NightElf\\FaerieDragonInvis\\FaerieDragon_Invis.mdl"
+                        )
+                    end
+                end
             end
         end
     end

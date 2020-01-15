@@ -109,6 +109,10 @@ local abEffects = {
         TargetArt = "war3mapImported\\eff_PrismBeam_Initiate.mdl",
         Targetattach="chest",
     },
+    {
+        Name = "出云飞龙特效", 
+        TargetArt = "war3mapImported\\eff_white_dragon.mdl",
+    },
 }
 
 local abEffectsItem = {

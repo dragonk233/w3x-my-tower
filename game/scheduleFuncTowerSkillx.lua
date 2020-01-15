@@ -27,15 +27,15 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {int_green = "+" .. Val[1]})
                 elseif (name == "六刃智慧") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1], attack_green = "+" .. Val[2]})
-                elseif (name == "塞壬之歌") then
+                elseif (name == "塞壬之歌" or name == "甲虫之盔") then
                     hattr.set(u, 0, {resistance = "+" .. Val[1]})
                 elseif (name == "石像化" or name == "腰马合一") then
                     hattr.set(u, 0, {toughness = "+" .. Val[1]})
-                elseif (name == "黑暗舞步" or name == "影子替身") then
+                elseif (name == "黑暗舞步" or name == "恶灵披风" or name == "影子替身") then
                     hattr.set(u, 0, {avoid = "+" .. Val[1]})
                 elseif (name == "猫头鹰怒视" or name == "捕猎者") then
                     hattr.set(u, 0, {aim = "+" .. Val[1]})
-                elseif (name == "小牛粉碎" or name == "分裂大刀") then
+                elseif (name == "小牛粉碎" or name == "分裂大刀" or name == "分裂狂刀") then
                     hattr.set(u, 0, {split = "+" .. Val[1], split_range = "=500"})
                 elseif (name == "熊掌战意" or name == "马索格爆锤" or name == "刺客信条") then
                     hattr.set(u, 0, {knocking_odds = "+" .. Val[1], knocking = "+" .. Val[2]})
@@ -53,6 +53,8 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_hunt_type = "+fire"})
                 elseif (name == "随风") then
                     hattr.set(u, 0, {attack_hunt_type = "+wind"})
+                elseif (name == "毒龙液") then
+                    hattr.set(u, 0, {attack_hunt_type = "+poison"})
                 elseif (name == "霹雳化身") then
                     hattr.set(u, 0, {attack_hunt_type = "+thunder", attack_speed = "+" .. Val[1]})
                 elseif (name == "海洋之心" or name == "深海之心") then
@@ -65,6 +67,10 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {natural_water_oppose = "+" .. Val[1]})
                 elseif (name == "巫术") then
                     hattr.set(u, 0, {natural_poison_oppose = "+" .. Val[1]})
+                elseif (name == "针刺外壳") then
+                    hattr.set(u, 0, {hunt_rebound = "+" .. Val[1]})
+                elseif (name == "机械之心") then
+                    hattr.set(u, 0, {str_green = "+" .. Val[1], agi_green = "+" .. Val[2], defend = "+" .. Val[3]})
                 end
                 if (name == "黑暗之箭" or name == "黑夜之箭" or name == "黑狱之箭") then
                     hattr.set(
@@ -136,6 +142,7 @@ addTowerSkillsx = function(u)
                             "燃油烧弹",
                             "奇美拉毒液",
                             "蛙毒",
+                            "三昧真火",
                             --toughness
                             "悲鸣",
                             --defend
@@ -148,7 +155,8 @@ addTowerSkillsx = function(u)
                         a = "move"
                     elseif
                         (name == "蛊毒" or name == "蛛毒" or name == "腐尸毒" or name == "燃油烧弹" or name == "奇美拉毒液" or
-                            name == "蛙毒")
+                            name == "蛙毒" or
+                            name == "三昧真火")
                      then
                         a = "life_back"
                     elseif (name == "悲鸣") then
@@ -179,7 +187,10 @@ addTowerSkillsx = function(u)
                         )
                     end
                 end
-                if (name == "震荡光弹" or name == "暴力倾向" or name == "旋风" or name == "魅惑" or name == "撸战棍") then
+                if
+                    (name == "震荡光弹" or name == "暴力倾向" or name == "旋风" or name == "魅惑" or name == "撸战棍" or name == "恍惚灯路" or
+                        name == "晴天霹雳")
+                 then
                     hattr.set(
                         u,
                         0,
@@ -198,7 +209,7 @@ addTowerSkillsx = function(u)
                         }
                     )
                 end
-                if (name == "诡异闪电" or name == "狂异闪电" or name == "狂徒闪电") then
+                if (name == "诡异闪电" or name == "狂异闪电" or name == "狂徒闪电" or name == "痛苦链") then
                     hattr.set(
                         u,
                         0,

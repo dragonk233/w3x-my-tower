@@ -18,7 +18,9 @@ for k, v in pairs(TOWER_ABLI_SPX) do
         end
     end
     if(v.ODK ~= nil and v.ODK == true)then
-        Ubertip = Ubertip .. hColor.red("|n！此技能仅在对抗有明显效果")
+        Ubertip = Ubertip .. hColor.red("|n * 此技能仅在对抗有明显效果")
+    elseif(v.ODD ~= nil and v.ODD == true)then
+        Ubertip = Ubertip .. hColor.red("|n * 此技能仅在防守时有效")
     end
     local type = v.TYPE or "common"
     local obj
@@ -29,7 +31,7 @@ for k, v in pairs(TOWER_ABLI_SPX) do
         obj.DataA1 = 0
         obj.DataB1 = 0
         obj.Requires = ""
-        obj.DataC1 = math.floor((v.qty or 3) -2)
+        obj.DataC1 = math.floor((v.Val[1] or 3) -2)
         obj.Missileart = v.Missileart
         obj.Missilearc = v.Missilearc or 0.05
         obj.Missilespeed = 1100

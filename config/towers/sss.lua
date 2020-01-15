@@ -118,7 +118,7 @@ towers_sss = {
         moveHeight = 0,
         weapTp1 = "msplash",
         Missileart = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilMissile.mdl",
-        cool1 = 2.00,
+        cool1 = 2.10,
         Primary = "AGI",
         abilList = {towerSpxKV["溅射攻击"]}
     },
@@ -134,8 +134,8 @@ towers_sss = {
         moveHeight = 0,
         weapTp1 = "msplash",
         Missileart = "war3mapImported\\eff_DarkSoul.mdl",
-        cool1 = 2.00,
-        Primary = "STR",
+        cool1 = 2.10,
+        Primary = "INT",
         abilList = {towerSpxKV["溅射攻击"]}
     },
     {
@@ -151,7 +151,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_animeslashfinal.mdl",
         cool1 = 1.65,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["猎影"], towerSpxKV["究极幻刀"]}
     },
     {
         Name = "恶魔·深渊魔王·麦哥瑟里登",

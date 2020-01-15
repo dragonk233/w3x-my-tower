@@ -114,7 +114,15 @@ onTowerAttack = function(evtData)
                     hunit.kill(targetUnit, 0)
                 end
                 --
-                if (his.alive(targetUnit) and (name == "必死宣言" or name == "同葬")) then
+                if (name == "偷窃") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        haward.forPlayerGold(val[2])
+                        heffect.toUnit("Abilities\\Spells\\Other\\Transmute\\PileofGold.mdl", u, 0)
+                    end
+                end
+                if (his.alive(targetUnit) and (name == "必死宣言" or name == "同葬" or name == "引路人")) then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
@@ -159,6 +167,12 @@ onTowerAttack = function(evtData)
                                 return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                             end
                         )
+                        local damageType = {}
+                        if (name == "雷霆一击") then
+                            damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.thunder}
+                        elseif (name == "缠绕") then
+                            damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.wood}
+                        end
                         cj.ForGroup(
                             g,
                             function()
@@ -171,7 +185,7 @@ onTowerAttack = function(evtData)
                                         targetUnit = eu,
                                         damage = val[2],
                                         damageKind = CONST_DAMAGE_KIND.skill,
-                                        damagetYPE = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.thunder}
+                                        damageType = damageType
                                     }
                                 )
                             end
@@ -207,12 +221,71 @@ onTowerAttack = function(evtData)
                                         defend = "-" .. val[2]
                                     }
                                 )
-                                heffect.bindUnit("war3mapImported\\eff_DarkVoid.mdl", eu, "origin", val[3])
                             end
                         )
                         cj.GroupClear(g)
                         cj.DestroyGroup(g)
                     end
+                end
+                if (name == "灼烧大地") then
+                    onTowerAttackTtg(u, name)
+                    local val = v.Val or {0}
+                    local g =
+                        hgroup.createByUnit(
+                        u,
+                        1000,
+                        function()
+                            return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                        end
+                    )
+                    cj.ForGroup(
+                        g,
+                        function()
+                            local eu = cj.GetEnumUnit()
+                            hskill.damage(
+                                {
+                                    sourceUnit = u,
+                                    targetUnit = eu,
+                                    damage = val[1],
+                                    damageKind = CONST_DAMAGE_KIND.skill,
+                                    damageType = {CONST_DAMAGE_TYPE.fire}
+                                }
+                            )
+                        end
+                    )
+                    cj.GroupClear(g)
+                    cj.DestroyGroup(g)
+                end
+                if (name == "猎手幻刀" or name == "觉醒幻刀" or name == "究极幻刀") then
+                    onTowerAttackTtg(u, name)
+                    local val = v.Val or {0}
+                    heffect.toUnit("war3mapImported\\eff_x_round_dance.mdl", u, 0.8)
+                    local g =
+                        hgroup.createByUnit(
+                        u,
+                        1000,
+                        function()
+                            return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                        end
+                    )
+                    cj.ForGroup(
+                        g,
+                        function()
+                            local eu = cj.GetEnumUnit()
+                            hskill.damage(
+                                {
+                                    sourceUnit = u,
+                                    targetUnit = eu,
+                                    damage = val[1],
+                                    damageKind = CONST_DAMAGE_KIND.skill,
+                                    damageType = {CONST_DAMAGE_TYPE.physical},
+                                    effect = "war3mapImported\\eff_Culling_Slash_Silver.mdl"
+                                }
+                            )
+                        end
+                    )
+                    cj.GroupClear(g)
+                    cj.DestroyGroup(g)
                 end
                 if (name == "剑刃风暴" and his.get(u, "isWhirlwind") == false) then
                     local val = v.Val or {0}
@@ -341,7 +414,7 @@ onTowerAttack = function(evtData)
                                 filter = function()
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
-                                tokenArrow = val[4],
+                                tokenArrow = "war3mapImported\\eff_Firebolt_Major.mdl",
                                 tokenArrowScale = 1.00,
                                 tokenArrowOpacity = 1,
                                 damageMovement = 0,
@@ -390,6 +463,61 @@ onTowerAttack = function(evtData)
                                         }
                                     )
                                 end
+                            }
+                        )
+                    end
+                elseif (name == "导弹降日") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        heffect.toUnit("war3mapImported\\eff_RocketRainBirth.mdl", u, 0)
+                        hskill.leapRange(
+                            {
+                                targetRange = 1000,
+                                sourceUnit = u,
+                                targetUnit = targetUnit,
+                                speed = 8,
+                                acceleration = 1.5,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = "Abilities\\Spells\\Other\\TinkerRocket\\TinkerRocketMissile.mdl",
+                                tokenArrowScale = 1.60,
+                                tokenArrowOpacity = 1,
+                                damageMovement = 0,
+                                damageMovementRange = 0,
+                                damageEnd = val[2],
+                                damageEndRange = 150,
+                                effectEnd = "war3mapImported\\eff_ExplosionBig.mdl",
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire}
+                            }
+                        )
+                    end
+                elseif (name == "火爆山岩") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        hskill.leapRange(
+                            {
+                                targetRange = val[2],
+                                sourceUnit = u,
+                                targetUnit = u,
+                                speed = 18,
+                                acceleration = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = "Abilities\\Spells\\Other\\Volcano\\VolcanoMissile.mdl",
+                                tokenArrowScale = 1.00,
+                                tokenArrowOpacity = 1,
+                                damageMovement = 0,
+                                damageMovementRange = 0,
+                                damageEnd = val[3],
+                                damageEndRange = 0,
+                                effectEnd = "Abilities\\Spells\\Other\\Volcano\\VolcanoDeath.mdl",
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire}
                             }
                         )
                     end

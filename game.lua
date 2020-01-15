@@ -29,10 +29,6 @@ end
 
 -- 镜头模式
 hcamera.setModel("normal")
--- 属性 - 硬直条
--- hattrUnit.punishTtgIsOpen(false)
--- hattrUnit.punishTtgIsOnlyHero(false)
--- hattrUnit.punishTtgHeight(250.00)
 
 -- 设定玩家
 hplayer.qty_max = 4 -- 最大玩家数
@@ -43,7 +39,7 @@ game.ALLY_PLAYER = hplayer.players[12]
 
 -- 设定敌军
 hemeny.setName("拆塔小能手")
-hemeny.setShareSight(true)
+-- hemeny.setShareSight(true)
 hemeny.setColor(cj.ConvertPlayerColor(12)) -- black
 hemeny.setPlayer(hplayer.players[5])
 hemeny.setPlayer(hplayer.players[6])

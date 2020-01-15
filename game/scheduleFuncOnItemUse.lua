@@ -215,7 +215,8 @@ onUnitItemsUesd = function(evtData)
                 elseif (btnIdx == "出云剑仙套装") then
                     table.insert(game.playerTowerEffectModel, game.effectModel["出云飞剑特效"].ABILITY_ID)
                     table.insert(game.playerTowerEffectModel, game.effectModel["出云气场特效"].ABILITY_ID)
-                    tips = "盘旋飞剑、灵剑气场"
+                    table.insert(game.playerTowerEffectModel, game.effectModel["出云飞龙特效"].ABILITY_ID)
+                    tips = "盘旋飞剑、灵剑气场、飞龙在天"
                 end
                 if (#game.playerTowerEffectModel > 0) then
                     for _, v in ipairs(game.playerTowerEffectModel) do
