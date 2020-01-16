@@ -586,16 +586,7 @@ cj.TriggerAddAction(
                                 }
                             )
                         end
-                        if
-                            (u ~= nil and
-                                (hdzapi.hasMallItem(hplayer.players[k], "tzgold") == true or
-                                    hdzapi.hasMallItem(hplayer.players[k], "tzdark") == true or
-                                    hdzapi.hasMallItem(hplayer.players[k], "tzboold") == true or
-                                    hdzapi.hasMallItem(hplayer.players[k], "tzdragon") == true or
-                                    hdzapi.hasMallItem(hplayer.players[k], "tzfire") == true or
-                                    hdzapi.hasMallItem(hplayer.players[k], "tzghost") == true or
-                                    hdzapi.hasMallItem(hplayer.players[k], "tzsword") == true))
-                         then
+                        if (u ~= nil) then
                             hitem.create(
                                 {
                                     itemId = game.effectModelItem["超次元套装礼包"].ITEM_ID,
