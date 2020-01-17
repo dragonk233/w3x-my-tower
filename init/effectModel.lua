@@ -71,7 +71,7 @@ local abEffects = {
     },
     {
         Name = "邪鬼阵法特效", 
-        TargetArt = "war3mapImported\\eff_VoidSkullAura.mdl",
+        TargetArt = "war3mapImported\\eff_Soul_Armor_Void.mdl",
     },
     {
         Name = "邪鬼符文特效", 
