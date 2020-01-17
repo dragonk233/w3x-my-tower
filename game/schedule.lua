@@ -6,7 +6,6 @@ cj.TriggerAddAction(
     function()
         if (cj.GetIssuedOrderId() == 851971 or cj.GetIssuedOrderId() == 851986) then
             local index = hplayer.index(cj.GetOwningPlayer(cj.GetTriggerUnit()))
-            cj.SetUnitPosition(cj.GetTriggerUnit(), game.towerPoint[index][1], game.towerPoint[index][2])
             cj.IssuePointOrderById(
                 cj.GetTriggerUnit(),
                 851983,

@@ -1,4 +1,109 @@
 -- towers
+--兵塔变敌军单位
+local createTowerShadowUnit = function(v,towersTi,tlv)
+    local sobj = slk.unit.opeo:new("this_tower_shadow_" .. v.Name)
+    sobj.Name = "["..tlv.."阶]" .. v.Name
+    sobj.upgrades = ""
+    sobj.file = v.file
+    sobj.Art = v.Art
+    sobj.modelScale = 1.00
+    sobj.scale = v.scale or 1.00
+    sobj.HP = 100
+    sobj.spd = 100
+    sobj.sight = 1200
+    sobj.nsight = 1200
+    sobj.unitSound = v.unitSound or ""
+    sobj.weapsOn = 1
+    sobj.dmgplus1 = 1 -- 基础攻击
+    sobj.showUI1 = 0 -- 不显示攻击按钮
+    local targs1 = "vulnerable,ground,ward,structure,organic,mechanical,tree,debris,air" --攻击目标
+    sobj.targs1 = targs1
+    if (v.weapTp1 == "msplash" or v.weapTp1 == "artillery") then
+        --溅射/炮火
+        sobj.Farea1 = v.Farea1 or 1
+        sobj.Qfact1 = v.Qfact1 or 0.05
+        sobj.Qarea1 = v.Qarea1 or 500
+        sobj.Hfact1 = v.Hfact1 or 0.15
+        sobj.Harea1 = v.Harea1 or 350
+        sobj.splashTargs1 = targs1 .. ",enemies"
+    end
+    if (v.weapTp1 == "mbounce") then
+        --弹射
+        sobj.Farea1 = v.Farea1 or 450
+        sobj.targCount1 = v.targCount1 or 4
+        sobj.damageLoss1 = v.damageLoss1 or 0.3
+        sobj.splashTargs1 = targs1 .. ",enemies"
+    end
+    if (v.weapTp1 == "mline") then
+        --穿透
+        sobj.spillRadius = v.spillRadius or 200
+        sobj.spillDist1 = v.spillDist1 or 450
+        sobj.damageLoss1 = v.damageLoss1 or 0.3
+        sobj.splashTargs1 = targs1 .. ",enemies"
+    end
+    if (v.weapTp1 == "aline") then
+        --炮火穿透
+        sobj.Farea1 = v.Farea1 or 1
+        sobj.Qfact1 = v.Qfact1 or 0.05
+        sobj.Qarea1 = v.Qarea1 or 500
+        sobj.Hfact1 = v.Hfact1 or 0.15
+        sobj.Harea1 = v.Harea1 or 350
+        sobj.spillRadius = v.spillRadius or 200
+        sobj.spillDist1 = v.spillDist1 or 450
+        sobj.damageLoss1 = v.damageLoss1 or 0.3
+        sobj.splashTargs1 = targs1 .. ",enemies"
+    end
+    sobj.acquire = v.acquire or 749.00
+    sobj.backSw1 = v.backSw1 or 0.500
+    sobj.dmgpt1 = v.dmgpt1 or 0.500
+    sobj.rangeN1 = v.rangeN1 or 750
+    sobj.cool1 = v.cool1 or 2.00
+    sobj.armor = "Flesh" -- 被击声音
+    sobj.targType = "ground" --作为目标类型
+    sobj.Missileart = v.Missileart -- 箭矢模型
+    sobj.Missilespeed = 1100 -- 箭矢速度
+    sobj.Missilearc = v.Missilearc or 0.05
+    sobj.weapTp1 = v.weapTp1 or "normal" --攻击类型
+    sobj.weapType1 = "" --攻击声音
+    sobj.upgrades = ""
+    sobj.Builds = ""
+    local movetp = v.movetp or "foot"
+    local moveHeight = v.moveHeight or 0
+    if(movetp == 'fly')then
+        moveHeight = 250
+    end
+    sobj.movetp = movetp --移动类型
+    sobj.moveHeight = moveHeight --移动高度
+    sobj.moveFloor = moveHeight * 0.25 --最低高度
+    sobj.regenHP = 0
+    sobj.regenType = ""
+    sobj.def = 0
+    local abl = v.abilList
+    if(abl ~= nil)then
+        if(type(abl) == "string")then
+            abl = string.explode(',', abl)
+        elseif(type(abl) ~= "table")then
+            abl = {}
+        end
+    end
+    if(abl == nil or #abl ==0)then
+        abl = {
+            towerSpxKV["封印枷锁之一"],
+            towerSpxKV["封印枷锁之二"]
+        }
+    elseif(#abl == 1)then
+        table.insert( abl, towerSpxKV["封印枷锁之二"] )
+    end
+    sobj.abilList = string.implode(",",abl)
+    v.TOWER_ID = v.UNIT_ID --这里赋值塔的ID
+    v.TYPE = "tower_shadow"
+    v.UNIT_ID = sobj:get_id()
+    ?>
+    call SaveStr(hash_myslk, StringHash("towers_shadow"), <?=towersTi?>, "<?=string.addslashes(json.stringify(v))?>")
+    <?
+end
+
+
 towers = {
     E = towers_e,
     D = towers_d,
@@ -155,6 +260,7 @@ for j=1,1,1 do
                 elseif(#abl == 1)then
                     table.insert( abl, towerSpxKV["封印枷锁之二"] )
                 end
+                table.insert( abl, "AInv" )
                 obj.abilList = string.implode(",",abl)
                 obj.heroAbilList = ""
                 obj.nameCount = v.nameCount or 1
@@ -295,56 +401,7 @@ for j=1,1,1 do
                 call SaveStr(hash_myslk, StringHash("abilitiies_tower_origins"), <?=towersTi?>, "<?=string.addslashes(json.stringify(ab))?>")
                 <?
                 --shadow
-                local sobj = slk.unit.opeo:new("this_tower_shadow_" .. v.Name)
-                sobj.Name = "[核心]["..tlv.."阶]" .. v.Name
-                sobj.upgrades = ""
-                sobj.file = v.file
-                sobj.Art = v.Art
-                sobj.modelScale = 1.00
-                sobj.scale = v.scale or 1.00
-                sobj.HP = 100
-                sobj.spd = 100
-                sobj.sight = 500
-                sobj.nsight = 500
-                sobj.unitSound = v.unitSound or ""
-                sobj.weapsOn = 1
-                sobj.upgrades = ""
-                sobj.Builds = ""
-                local movetp = v.movetp or "foot"
-                local moveHeight = v.moveHeight or 0
-                if(movetp == 'fly')then
-                    moveHeight = 250
-                end
-                sobj.movetp = movetp --移动类型
-                sobj.moveHeight = moveHeight --移动高度
-                sobj.moveFloor = moveHeight * 0.25 --最低高度
-                sobj.regenHP = 0
-                sobj.regenType = ""
-                sobj.def = 0
-                local abl = v.abilList
-                if(abl ~= nil)then
-                    if(type(abl) == "string")then
-                        abl = string.explode(',', abl)
-                    elseif(type(abl) ~= "table")then
-                        abl = {}
-                    end
-                end
-                if(abl == nil or #abl ==0)then
-                    abl = {
-                        towerSpxKV["封印枷锁之一"],
-                        towerSpxKV["封印枷锁之二"]
-                    }
-                elseif(#abl == 1)then
-                    table.insert( abl, towerSpxKV["封印枷锁之二"] )
-                end
-                table.insert( abl, "AInv" )
-                v.TOWER_ID = v.UNIT_ID --这里赋值塔的ID
-                sobj.abilList = string.implode(",",abl)
-                v.TYPE = "tower_shadow"
-                v.UNIT_ID = sobj:get_id()
-                ?>
-                call SaveStr(hash_myslk, StringHash("towers_shadow"), <?=towersTi?>, "<?=string.addslashes(json.stringify(v))?>")
-                <?
+                createTowerShadowUnit(v,towersTi,tlv)
             end
         end
     end

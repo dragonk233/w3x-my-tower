@@ -26,7 +26,7 @@ for _, v in ipairs({"X","C","V","S","D"}) do
     local Tip = "封锁 - [" .. hColor.sky(v) .. "]"
     obj.Name = Name
     obj.Tip = Tip
-    obj.Ubertip = "技能已被封印，按F换TA上场"
+    obj.Ubertip = "处于核心状态的兵塔技能会被封印，按F换他上场解封"
     obj.Buttonpos1 = AB_HOTKEY_KV[v][1]
     obj.Buttonpos2 = AB_HOTKEY_KV[v][2]
     obj.hero = 0

@@ -147,7 +147,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 x = game.towerPoint[playerIndex][1] + game.towerLinkOffset[linkIndex][1],
                 y = game.towerPoint[playerIndex][2] + game.towerLinkOffset[linkIndex][2],
                 opacity = 0.4,
-                modelScale = 0.9,
+                modelScale = 1.0,
                 isInvulnerable = true,
                 isUnSelectable = isUnSelectable
             }
@@ -213,6 +213,8 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             for k, v in pairs(game.thisEmptyLink) do
                 hskill.add(u, v.ABILITY_ID, 0)
             end
+            --移动卡的bug
+            cj.TriggerRegisterUnitEvent(game.TRIGGER_DEMOVE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         end
         return u
     end
