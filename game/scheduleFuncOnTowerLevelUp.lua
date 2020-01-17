@@ -12,7 +12,6 @@ subTowerLevel = function(playerIndex)
                     agi_white = "-" .. math.floor(oldLevel * 0.15 * hslk_global.unitsKV[towerId].AGI),
                     int_white = "-" .. math.floor(oldLevel * 0.15 * hslk_global.unitsKV[towerId].INT),
                     attack_white = "-" .. math.floor(oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
-                    attack_green = "-" .. math.floor(oldLevel * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
                 }
             )
         end
@@ -70,7 +69,6 @@ addTowerLevel = function(playerIndex, lockLv)
                 agi_white = "+" .. math.floor(unitLv * 0.15 * hslk_global.unitsKV[towerId].AGI),
                 int_white = "+" .. math.floor(unitLv * 0.15 * hslk_global.unitsKV[towerId].INT),
                 attack_white = "+" .. math.floor(unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE),
-                attack_green = "+" .. math.floor(unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_GREEN)
             }
         )
     end

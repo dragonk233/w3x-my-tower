@@ -2,19 +2,20 @@ towerRaces = {
     {
         Name = "人类",
         Ubertip = "平凡而多彩的种族",
-        Text = "+7%力量|n+7%敏捷|n+7%智力",
+        Text = "+3%力量|n+3%敏捷|n+3%智力",
+        Link = "",
         Art = "war3mapImported\\icon_race_human.blp"
     },
     {
         Name = "人王",
         Ubertip = "成就巅峰的人们",
-        Text = "+15%力量|n+15%敏捷|n+15%智力",
+        Text = "+5%力量|n+5%敏捷|n+5%智力",
         Art = "war3mapImported\\icon_race_human2.blp"
     },
     {
         Name = "矮人",
         Ubertip = "极具奇妙特色的种族",
-        Text = "+25%命中",
+        Text = "+35%命中",
         Art = "war3mapImported\\icon_race_dwraf.blp"
     },
     {
@@ -26,7 +27,7 @@ towerRaces = {
     {
         Name = "兽人",
         Ubertip = "暴躁、野蛮，倾向于先行动再思考",
-        Text = "+15%攻击力",
+        Text = "+7.5%攻击力",
         Art = "war3mapImported\\icon_race_orc.blp"
     },
     {
@@ -56,7 +57,7 @@ towerRaces = {
     {
         Name = "亡灵",
         Ubertip = "亡灵不会死亡，消失的亡灵实际上是被净化了",
-        Text = "攻击时，敌军减少25点移动速度，持续3秒",
+        Text = "攻击时，敌军减少35点移动速度，持续3秒",
         Art = "war3mapImported\\icon_race_undead.blp"
     },
     {
@@ -74,7 +75,7 @@ towerRaces = {
     {
         Name = "恶魔",
         Ubertip = "拥有超自然力量的邪恶存在代表",
-        Text = "+6.6%伤害增幅|n+6.6%攻击速度|n-6.6点护甲",
+        Text = "+6.66%伤害增幅|n+6.66%攻击速度|n-6.66点护甲",
         Art = "war3mapImported\\icon_race_demon.blp"
     },
     {
@@ -86,13 +87,13 @@ towerRaces = {
     {
         Name = "异兽",
         Ubertip = "特别的怪兽，来自未知的领域",
-        Text = "+10%魔抗|n+50点减伤",
+        Text = "+10%魔抗|n+100点减伤",
         Art = "war3mapImported\\icon_race_rareanimals.blp"
     },
     {
         Name = "幽魂",
         Ubertip = "不肯承认自己已死去的灵魂",
-        Text = "+10%回避",
+        Text = "+13%回避",
         Art = "war3mapImported\\icon_race_ghost.blp"
     },
     {
@@ -116,7 +117,7 @@ towerRaces = {
     {
         Name = "熊猫",
         Ubertip = "古老国度的神奇生物",
-        Text = "+0.25生命恢复|n+9%力量",
+        Text = "+0.05生命恢复|n+8%力量",
         Art = "war3mapImported\\icon_race_panda.blp"
     }
 }

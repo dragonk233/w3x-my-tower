@@ -34,37 +34,83 @@ updateMyTower = function(evtData)
     local uid = string.id2char(cj.GetUnitTypeId(u))
     local lv = cj.GetHeroLevel(u)
     local diffLv = cj.I2R(lv - hhero.getPrevLevel(u))
-    local tlv = hslk_global.unitsKV[uid].TOWER_POWER
-    local attackWhite = hslk_global.unitsKV[uid].ATTACK_WHITE
-    local attackGreen = hslk_global.unitsKV[uid].ATTACK_GREEN
+    local slk = hslk_global.unitsKV[uid]
+    local tlv = slk.TOWER_POWER
+    local attackWhite = slk.ATTACK_WHITE
+    local race = slk.RACE
     local percent = 0
     if (tlv == "E") then
         percent = 0.10
     elseif (tlv == "D") then
-        percent = 0.12
+        percent = 0.11
     elseif (tlv == "C") then
-        percent = 0.14
+        percent = 0.12
     elseif (tlv == "B") then
-        percent = 0.16
+        percent = 0.14
     elseif (tlv == "A") then
-        percent = 0.19
+        percent = 0.16
     elseif (tlv == "S") then
-        percent = 0.22
+        percent = 0.19
     elseif (tlv == "SS") then
-        percent = 0.26
+        percent = 0.22
     elseif (tlv == "SSS") then
-        percent = 0.30
+        percent = 0.25
     end
     attackWhite = diffLv * attackWhite * percent
-    attackGreen = diffLv * attackGreen * percent
     hattr.set(
         u,
         0,
         {
-            attack_white = "+" .. attackWhite,
-            attack_green = "+" .. attackGreen
+            attack_white = "+" .. attackWhite
         }
     )
+    if (race == "人类") then
+        local val = 0.03
+        hattr.set(
+            u,
+            0,
+            {
+                str_green = "+" .. (val * slk.STR * diffLv),
+                agi_green = "+" .. (val * slk.AGI * diffLv),
+                int_green = "+" .. (val * slk.INT * diffLv)
+            }
+        )
+    elseif (race == "人王") then
+        local val = 0.05
+        hattr.set(
+            u,
+            0,
+            {
+                str_green = "+" .. (val * slk.STR * diffLv),
+                agi_green = "+" .. (val * slk.AGI * diffLv),
+                int_green = "+" .. (val * slk.INT * diffLv)
+            }
+        )
+    elseif (race == "兽人") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_white = "+" .. (0.075 * slk.ATTACK_WHITE * diffLv)
+            }
+        )
+    elseif (race == "地精") then
+        hattr.set(
+            u,
+            0,
+            {
+                int_green = "+" .. (0.12 * slk.INT * diffLv)
+            }
+        )
+    elseif (race == "熊猫") then
+        hattr.set(
+            u,
+            0,
+            {
+                str_green = "+" .. (0.08 * slk.STR * diffLv)
+            }
+        )
+    end
     hsound.sound2Unit(cg.gg_snd_level_up, 100, whichUnit)
     htextTag.style(htextTag.create2Unit(u, "升级 ↑" .. cj.R2I(diffLv), 12.00, "ffff00", 1, 2.0, 10.00), "scale", 0, 0.1)
 end
@@ -146,8 +192,7 @@ createMyTower = function(playerIndex, towerId)
                 life = "=" .. life,
                 mana = "=" .. mana,
                 manaBack = "=" .. manaBack,
-                attack_white = "+" .. hslk_global.unitsKV[towerId].ATTACK_WHITE,
-                attack_green = "+" .. hslk_global.unitsKV[towerId].ATTACK_GREEN
+                attack_white = "+" .. hslk_global.unitsKV[towerId].ATTACK_WHITE
             }
         )
         hevent.onLevelUp(u, updateMyTower)

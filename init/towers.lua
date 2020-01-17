@@ -80,8 +80,6 @@ for j=1,1,1 do
                 v.INT = v.INT or 1
                 local tempPower = 0
                 local tempAttack = 0
-                local tempAttackWhite = 0
-                local tempAttackGreen = 0
                 if (tlv == "E") then
                     tempPower = 20 + math.random(-2,3)
                     tempAttack = 30 + math.random(-1,4)
@@ -111,47 +109,38 @@ for j=1,1,1 do
                     v.STR = math.floor(tempPower * 0.06 * math.random(7,12))
                     v.AGI = math.floor(tempPower * 0.025 * math.random(5,9))
                     v.INT = math.floor(tempPower * 0.025 * math.random(5,9))
-                    tempAttackWhite = tempPower * 0.1 *math.random(7,11) + 10 * math.random()
-                    tempAttackGreen = tempPower - tempAttackWhite + 10 * math.random()
+                    tempAttack = tempAttack + 25 * math.random()
                 elseif(Primary == "AGI")then
                     v.STR = math.floor(tempPower * 0.035 * math.random(5,8))
-                    v.AGI = math.floor(tempPower * 0.06 * math.random(7,11))
+                    v.AGI = math.floor(tempPower * 0.06 * math.random(6,10))
                     v.INT = math.floor(tempPower * 0.025 * math.random(3,8))
-                    tempAttackWhite = tempPower * 0.1 *math.random(9,12) + 20 * math.random()
-                    tempAttackGreen = tempPower - tempAttackWhite
+                    tempAttack = tempAttack + 20 * math.random()
                 elseif(Primary == "INT")then
                     v.STR = math.floor(tempPower * 0.03 * math.random(7,10))
                     v.AGI = math.floor(tempPower * 0.02 * math.random(5,9))
                     v.INT = math.floor(tempPower * 0.06 * math.random(8,12))
-                    tempAttackGreen = tempPower * 0.1 *math.random(9,13) + 10 * math.random()
-                    tempAttackWhite = tempPower - tempAttackGreen
+                    tempAttack = tempAttack + 20 * math.random()
                 end
-                tempAttackWhite = tempAttackWhite * 1.1 * ((v.cool1 or 2.00) / (1.30+math.random()))
-                tempAttackGreen = tempAttackGreen * 1.1 * ((v.cool1 or 2.00) / (1.30+math.random()))
-                if(tempAttackWhite < 0)then
-                    tempAttackWhite = 0
-                end
-                if(tempAttackGreen < 0)then
-                    tempAttackGreen = 0
+                tempAttack = tempAttack * ((v.cool1 or 2.00) / (1.30+math.random()))
+                if(tempAttack < 0)then
+                    tempAttack = 0
                 end
                 v.STRplus = v.STR * 0.30
                 v.AGIplus = v.AGI * 0.30
                 v.INTplus = v.INT * 0.30
-                v.ATTACK_WHITE = math.floor(tempAttackWhite)
-                v.ATTACK_GREEN = math.floor(tempAttackGreen)
+                v.ATTACK_WHITE = math.floor(tempAttack)
                 v.RACE = string.explode("·",v.Name)[1]
                 local ThreeTotal = v.STR + v.AGI + v.INT
                 local coolMark = math.floor(100 / (v.cool1 or 2.00))
                 local TowerMark = math.floor(
                     v.STR + v.AGI + v.INT 
-                    + v.ATTACK_WHITE + v.ATTACK_GREEN 
+                    + v.ATTACK_WHITE
                     + coolMark
                 ) --评定
                 --
                 Ubertip = Ubertip .. "|cffccffcc阶级：" .. tlv .. "|r"
                 Ubertip = Ubertip .. "|n|cffff0000攻击类型：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
-                Ubertip = Ubertip .. "|n|cffff8080物攻点数：" .. v.ATTACK_WHITE.."|r"
-                Ubertip = Ubertip .. "|n|cffccffff魔攻点数：" .. v.ATTACK_GREEN.."|r"
+                Ubertip = Ubertip .. "|n|cffff8080攻击能力：" .. v.ATTACK_WHITE.."|r"
                 if (Primary == "STR") then
                     Ubertip = Ubertip .. "|n|cffffff00力量：" .. v.STR .. "(+" .. v.STRplus .. ") *|r"
                 else

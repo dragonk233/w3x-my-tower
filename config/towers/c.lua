@@ -16,8 +16,6 @@ towers_c = {
         STR = 15,
         AGI = 12,
         INT = 9,
-        ATTACK_WHITE = 40,
-        ATTACK_GREEN = 0,
         abilList = {towerSpxKV["铁壁"]}
     },
     {
@@ -37,8 +35,6 @@ towers_c = {
         STR = 16,
         AGI = 13,
         INT = 7,
-        ATTACK_WHITE = 43,
-        ATTACK_GREEN = 0,
         abilList = {towerSpxKV["铁壁"]}
     },
     {
@@ -59,8 +55,6 @@ towers_c = {
         STR = 30,
         AGI = 4,
         INT = 7,
-        ATTACK_WHITE = 63,
-        ATTACK_GREEN = 0,
         abilList = {towerSpxKV["溅射攻击"]}
     },
     {
@@ -80,8 +74,6 @@ towers_c = {
         STR = 13,
         AGI = 10,
         INT = 15,
-        ATTACK_WHITE = 23,
-        ATTACK_GREEN = 24,
         abilList = {towerSpxKV["净化"]}
     },
     {
@@ -101,8 +93,6 @@ towers_c = {
         STR = 12,
         AGI = 11,
         INT = 17,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 43,
         abilList = {towerSpxKV["蛊毒"]}
     },
     {
@@ -122,8 +112,6 @@ towers_c = {
         STR = 13,
         AGI = 10,
         INT = 22,
-        ATTACK_WHITE = 0,
-        ATTACK_GREEN = 42,
         abilList = {towerSpxKV["治疗"]}
     },
     {
@@ -143,8 +131,6 @@ towers_c = {
         STR = 10,
         AGI = 15,
         INT = 18,
-        ATTACK_WHITE = 47,
-        ATTACK_GREEN = 0,
         abilList = {towerSpxKV["树木之妖"]}
     },
     {
@@ -164,8 +150,6 @@ towers_c = {
         STR = 9,
         AGI = 19,
         INT = 17,
-        ATTACK_WHITE = 18,
-        ATTACK_GREEN = 25,
         abilList = {towerSpxKV["蛛毒"]}
     },
     {

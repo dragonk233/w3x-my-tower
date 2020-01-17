@@ -2,7 +2,7 @@ addTowerSkillsRace = function(u, slk)
     local race = slk.RACE
     hskill.add(u, game.thisUnitRaceAbilities[race].ABILITY_ID, 0)
     if (race == "人类") then
-        local val = 0.07
+        local val = 0.03
         hattr.set(
             u,
             0,
@@ -13,7 +13,7 @@ addTowerSkillsRace = function(u, slk)
             }
         )
     elseif (race == "人王") then
-        local val = 0.15
+        local val = 0.05
         hattr.set(
             u,
             0,
@@ -28,7 +28,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                aim = "+25"
+                aim = "+35"
             }
         )
     elseif (race == "血精灵") then
@@ -52,7 +52,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                attack_white = "+" .. (0.15 * slk.ATTACK_WHITE)
+                attack_white = "+" .. (0.075 * slk.ATTACK_WHITE)
             }
         )
     elseif (race == "巨魔") then
@@ -109,7 +109,7 @@ addTowerSkillsRace = function(u, slk)
                         {
                             attr = "move",
                             odds = 100,
-                            val = 25,
+                            val = 35,
                             during = 3.0,
                             effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
                         }
@@ -151,9 +151,9 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                damage_amplitude = "+6.6",
-                attack_speed = "+6.6",
-                defend = "-6.6"
+                damage_amplitude = "+6.66",
+                attack_speed = "+6.66",
+                defend = "-6.66"
             }
         )
     elseif (race == "昆虫") then
@@ -170,7 +170,7 @@ addTowerSkillsRace = function(u, slk)
             0,
             {
                 resistance = "+10",
-                toughness = "+50"
+                toughness = "+100"
             }
         )
     elseif (race == "幽魂") then
@@ -178,7 +178,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                avoid = "+10"
+                avoid = "+13"
             }
         )
     elseif (race == "食人魔") then
@@ -214,8 +214,8 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                life_back = "+0.25",
-                str_green = "+" .. (0.09 * slk.STR)
+                life_back = "+0.05",
+                str_green = "+" .. (0.08 * slk.STR)
             }
         )
     end

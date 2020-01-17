@@ -318,7 +318,7 @@ towers_s = {
     },
     {
         Name = "亡灵·骷髅王·奥斯达",
-        Ubertip = "",
+        Ubertip = "只剩骸骨的王者",
         unitSound = "Skeleton",
         file = "war3mapImported\\unit_HeroOstarion_optimized.mdl",
         Art = "war3mapImported\\icon_unit_Ostarion.blp",
@@ -334,7 +334,7 @@ towers_s = {
     },
     {
         Name = "亡灵·三昧真火·嘞扎",
-        Ubertip = "",
+        Ubertip = "地狱看门人",
         unitSound = "Skeleton",
         file = "war3mapImported\\unit_InfernoKnight.mdl",
         Art = "war3mapImported\\icon_unit_MagmaElemental.blp",
