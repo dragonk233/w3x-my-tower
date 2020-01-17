@@ -76,7 +76,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "突击匕首",
-        Ubertip = "+{val#1}物理攻击",
+        Ubertip = "+{val#1}攻击力",
         Art = "war3mapImported\\icon_pas_Ability_Rogue_BladeTwisting.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -84,7 +84,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "月神强击",
-        Ubertip = "+{val#1}物理攻击",
+        Ubertip = "+{val#1}攻击力",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNTrueShot.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -92,7 +92,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "魔力之源",
-        Ubertip = "+{val#1}魔法攻击",
+        Ubertip = "+{val#1}攻击力",
         Art = "war3mapImported\\icon_pas_ManaRecharge.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -140,11 +140,11 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "牛头人",
-        Ubertip = "+{val#1}力量|n+{val#2}%物理暴击几率",
+        Ubertip = "+{val#1}力量",
         Art = "war3mapImported\\icon_pas_BullRush.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {180, 15}
+        Val = {180}
     },
     {
         Name = "蛇皮",
@@ -220,7 +220,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "六刃智慧",
-        Ubertip = "+{val#1}智力|n+{val#2}魔法攻击",
+        Ubertip = "+{val#1}智力|n+{val#2}攻击力",
         Art = "war3mapImported\\icon_pas_Gold_Six_Blades.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
@@ -228,27 +228,27 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "小牛粉碎",
-        Ubertip = "+{val#1}%分裂",
+        Ubertip = "{val#1}范围的{val#2}%分裂",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSmash.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {20}
+        Val = {500, 20}
     },
     {
         Name = "分裂大刀",
-        Ubertip = "+{val#1}%分裂",
+        Ubertip = "{val#1}范围的{val#2}%分裂",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCleavingAttack.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {25}
+        Val = {500, 25}
     },
     {
         Name = "分裂狂刀",
-        Ubertip = "+{val#1}%分裂",
+        Ubertip = "{val#1}范围的{val#2}%分裂",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCleavingAttack.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {35}
+        Val = {600, 25}
     },
     {
         Name = "猫头鹰怒视",
@@ -268,31 +268,31 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "熊掌战意",
-        Ubertip = "+{val#1}物理暴击几率|n+{val#2}物理暴击伤害",
+        Ubertip = "{val#1}%几率击出额外{val#2}%伤害的物理暴击",
         Art = "war3mapImported\\icon_pas_Regeneration.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {15, 10}
+        Val = {15, 20}
     },
     {
         Name = "马索格爆锤",
-        Ubertip = "+{val#1}物理暴击几率|n+{val#2}物理暴击伤害",
+        Ubertip = "{val#1}%几率击出额外{val#2}%伤害的物理暴击",
         Art = "war3mapImported\\icon_pas_Hammer_to_the_past.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {12, 50}
+        Val = {9, 65}
     },
     {
         Name = "刺客信条",
-        Ubertip = "+{val#1}物理暴击几率|n+{val#2}物理暴击伤害",
+        Ubertip = "{val#1}%几率击出额外{val#2}%伤害的物理暴击",
         Art = "war3mapImported\\icon_pas_Spell_Holy_EyeforanEye.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {50, 20}
+        Val = {35, 45}
     },
     {
         Name = "法术研究",
-        Ubertip = "+{val#1}魔法暴击几率|n+{val#2}魔法暴击伤害",
+        Ubertip = "{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
         Art = "war3mapImported\\icon_pas_WitchDoctorAdept.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
@@ -644,7 +644,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "追魂狩猎",
-        Ubertip = "攻击时有{val#1}%几率增加{val#2}点物理攻击，持续{val#3}秒",
+        Ubertip = "攻击时有{val#1}%几率增加{val#2}点攻击力，持续{val#3}秒",
         Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -652,7 +652,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "狂魂狩猎",
-        Ubertip = "攻击时有{val#1}%几率增加{val#2}点物理攻击，持续{val#3}秒",
+        Ubertip = "攻击时有{val#1}%几率增加{val#2}点攻击力，持续{val#3}秒",
         Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -660,7 +660,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "狂魂骑猎",
-        Ubertip = "攻击时有{val#1}%几率增加{val#2}点物理攻击，持续{val#3}秒",
+        Ubertip = "攻击时有{val#1}%几率增加{val#2}点攻击力，持续{val#3}秒",
         Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,

@@ -2,44 +2,44 @@ abilitiesBlue = {
     {
         Name = "战斗传统",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCommand.blp",
-        Ubertip = "+{val#1}物理攻击",
-        Val = {30}
+        Ubertip = "+{val#1}攻击力",
+        Val = {45}
     },
     {
         Name = "魔法杖",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBrilliance.blp",
-        Ubertip = "+{val#1}魔法攻击",
-        Val = {35}
+        Ubertip = "+{val#1}攻击力|n+{val#2}智力",
+        Val = {28, 30}
     },
     {
         Name = "战争武斗",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGnollCommandAura.blp",
-        Ubertip = "+{val#1}物理攻击",
-        Val = {38}
+        Ubertip = "+{val#1}攻击力|n+{val#2}敏捷",
+        Val = {33, 26}
     },
     {
         Name = "智勇双全",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSeaGiantPulverize.blp",
-        Ubertip = "+{val#1}魔法攻击",
-        Val = {40}
+        Ubertip = "+{val#1}攻击力|n+{val#2}力量|n+{val#3}智力",
+        Val = {24, 15, 15}
     },
     {
         Name = "强击之箭",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNTrueShot.blp",
-        Ubertip = "+{val#1}物理攻击|n+{val#2}魔法攻击",
-        Val = {27, 27}
+        Ubertip = "+{val#1}攻击力|n+{val#2}攻击速度",
+        Val = {37, 7.5}
     },
     {
         Name = "致命一击",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCriticalStrike.blp",
-        Ubertip = "+{val#1}%物理暴击几率|n+15%物理暴击伤害",
-        Val = {6.5}
+        Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
+        Val = {5.5, 14.5}
     },
     {
         Name = "魔法回应",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFeedBack.blp",
-        Ubertip = "+{val#1}%魔法暴击几率|n+15%魔法暴击伤害",
-        Val = {6.5}
+        Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
+        Val = {5.5, 16}
     },
     {
         Name = "心灵之火",

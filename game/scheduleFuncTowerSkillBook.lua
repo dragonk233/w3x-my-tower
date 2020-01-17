@@ -5,24 +5,88 @@ setTowerSkillByBook = function(u, abliOps, opt)
     end
     local level = (abliOps.ABILITY_LEVEL or 1) * 2 - 1
     if (abliOps.Name == "战斗传统") then
-        hattr.set(u, 0, {attack_white = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {attack_green = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "魔法杖") then
         hattr.set(u, 0, {attack_green = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {int_green = opt .. (level * abliOps.Val[2])})
     elseif (abliOps.Name == "战争武斗") then
-        hattr.set(u, 0, {attack_white = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {attack_green = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {agi_green = opt .. (level * abliOps.Val[2])})
     elseif (abliOps.Name == "智勇双全") then
         hattr.set(u, 0, {attack_green = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {str_green = opt .. (level * abliOps.Val[2])})
+        hattr.set(u, 0, {int_green = opt .. (level * abliOps.Val[3])})
     elseif (abliOps.Name == "强击之箭") then
-        hattr.set(u, 0, {attack_white = opt .. (level * abliOps.Val[1])})
-        hattr.set(u, 0, {attack_green = opt .. (level * abliOps.Val[2])})
-    elseif (abliOps.Name == "致命一击") then
-        hattr.set(u, 0, {knocking_odds = opt .. (level * abliOps.Val[1])})
-        hattr.set(u, 0, {knocking = opt .. "15"})
-    elseif (abliOps.Name == "魔法回应") then
-        hattr.set(u, 0, {violence_odds = opt .. (level * abliOps.Val[1])})
-        hattr.set(u, 0, {violence = opt .. "15"})
+        hattr.set(u, 0, {attack_green = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {attack_speed = opt .. (level * abliOps.Val[2])})
     elseif (abliOps.Name == "心灵之火") then
         hattr.set(u, 0, {attack_speed = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "致命一击" or abliOps.Name == "战熊咆哮" or abliOps.Name == "暗杀巅峰") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_effect = {
+                    [optChar] = {
+                        {
+                            attr = "knocking",
+                            odds = level * abliOps.Val[1],
+                            percent = level * abliOps.Val[2]
+                        }
+                    }
+                }
+            }
+        )
+    elseif (abliOps.Name == "魔法回应" or abliOps.Name == "魔导灵眼") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_effect = {
+                    [optChar] = {
+                        {
+                            attr = "violence",
+                            odds = level * abliOps.Val[1],
+                            percent = level * abliOps.Val[2]
+                        }
+                    }
+                }
+            }
+        )
+    elseif (abliOps.Name == "瞄准") then
+        hattr.set(
+            u,
+            0,
+            {
+                aim = opt .. (level * abliOps.Val[1]),
+                attack_effect = {
+                    [optChar] = {
+                        {
+                            attr = "knocking",
+                            odds = level * abliOps.Val[2],
+                            percent = level * abliOps.Val[3]
+                        }
+                    }
+                }
+            }
+        )
+    elseif (abliOps.Name == "分裂攻击") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_effect = {
+                    [optChar] = {
+                        {
+                            attr = "split",
+                            range = 500,
+                            odds = 100,
+                            percent = level * abliOps.Val[1]
+                        }
+                    }
+                }
+            }
+        )
     elseif (abliOps.Name == "星辰攻击") then
         hattr.set(
             u,
@@ -275,10 +339,6 @@ setTowerSkillByBook = function(u, abliOps, opt)
         hattr.set(u, 0, {attack_damage_type = opt .. "insect"})
     elseif (abliOps.Name == "德鲁伊叶子") then
         hattr.set(u, 0, {attack_damage_type = opt .. "wood", life_back = opt .. (level * abliOps.Val[1])})
-    elseif (abliOps.Name == "战熊咆哮") then
-        hattr.set(u, 0, {knocking_odds = opt .. (level * abliOps.Val[1])})
-    elseif (abliOps.Name == "魔导灵眼") then
-        hattr.set(u, 0, {violence_odds = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "重击") then
         hattr.set(
             u,
@@ -296,17 +356,6 @@ setTowerSkillByBook = function(u, abliOps, opt)
                 }
             }
         )
-    elseif (abliOps.Name == "瞄准") then
-        hattr.set(
-            u,
-            0,
-            {
-                aim = opt .. (level * abliOps.Val[1]),
-                knocking = opt .. (level * abliOps.Val[2])
-            }
-        )
-    elseif (abliOps.Name == "分裂") then
-        hattr.set(u, 0, {split = opt .. (level * abliOps.Val[1]), split_range = "=500"})
     elseif (abliOps.Name == "五行之力") then
         hattr.set(
             u,
@@ -344,22 +393,14 @@ setTowerSkillByBook = function(u, abliOps, opt)
     elseif (abliOps.Name == "荆棘") then
         hattr.set(u, 0, {damage_rebound = opt .. (level * abliOps.Val[1])})
     end
-    if (abliOps.Name == "暗杀巅峰") then
+    if (abliOps.Name == "双修对剑") then
         hattr.set(
             u,
             0,
             {
-                knocking_odds = opt .. (level * abliOps.Val[1]),
-                knocking = opt .. (level * abliOps.Val[2])
-            }
-        )
-    elseif (abliOps.Name == "双修对剑") then
-        hattr.set(
-            u,
-            0,
-            {
-                attack_white = opt .. (level * abliOps.Val[1]),
-                attack_green = opt .. (level * abliOps.Val[2])
+                attack_green = opt .. (level * abliOps.Val[1]),
+                str_green = opt .. (level * abliOps.Val[2]),
+                agi_green = opt .. (level * abliOps.Val[3])
             }
         )
     elseif (abliOps.Name == "武术至尊") then
@@ -377,7 +418,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
             0,
             {
                 attack_green = opt .. (level * abliOps.Val[1]),
-                attack_speed = opt .. (level * abliOps.Val[2])
+                int_green = opt .. (level * abliOps.Val[2])
             }
         )
     elseif (abliOps.Name == "音速回击") then

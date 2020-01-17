@@ -36,7 +36,15 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                attack_green = "+" .. (0.15 * slk.ATTACK_GREEN)
+                attack_effect = {
+                    add = {
+                        {
+                            attr = "violence",
+                            odds = 15,
+                            percent = 12
+                        }
+                    }
+                }
             }
         )
     elseif (race == "兽人") then
@@ -64,8 +72,15 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                knocking_odds = "+7",
-                knocking = "+5"
+                attack_effect = {
+                    add = {
+                        {
+                            attr = "knocking",
+                            odds = 10,
+                            percent = 25
+                        }
+                    }
+                }
             }
         )
     elseif (race == "暗夜精灵") then

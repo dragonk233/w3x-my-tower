@@ -134,7 +134,7 @@ onTowerAttack = function(evtData)
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
-                        hskill.rangeDamage(
+                        hskill.damageRange(
                             {
                                 sourceUnit = u,
                                 whichUnit = targetUnit,

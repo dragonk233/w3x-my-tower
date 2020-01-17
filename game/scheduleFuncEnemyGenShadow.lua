@@ -6,7 +6,7 @@ towerShadowGen = function(playerIndex)
     local tid = hunit.getId(tower)
     local next = getNextRect(playerIndex)
     local u =
-        hemeny.create(
+        henemy.create(
         {
             unitId = game.towersShadow[tid].UNIT_ID,
             qty = 1,

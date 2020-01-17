@@ -6,7 +6,7 @@ bossGen = function(curWave)
     for k, v in pairs(game.pathPoint) do
         if (his.playing(hplayer.players[k])) then
             local u =
-                hemeny.create(
+                henemy.create(
                 {
                     unitId = boss,
                     qty = 1,

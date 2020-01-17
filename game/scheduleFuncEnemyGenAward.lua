@@ -6,7 +6,7 @@ awardGenForOne = function(curWave, pi, awardMon)
         awardMon = game.thisEnemysAward[cj.GetRandomInt(1, game.thisEnemysAwardLen)]
     end
     local u =
-        hemeny.create(
+        henemy.create(
         {
             unitId = awardMon.UNIT_ID,
             qty = 1,

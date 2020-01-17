@@ -126,17 +126,16 @@ cj.TriggerAddAction(
             {
                 str = {
                     life = 10,
-                    attack_white = 0.11,
-                    attack_green = 0.11,
+                    attack_white = 0.2,
                     toughness = 0.20
                 },
                 agi = {
-                    attack_white = 0.4,
+                    attack_white = 0.3,
                     attack_speed = 0.05,
                     avoid = 0.05
                 },
                 int = {
-                    attack_green = 0.4,
+                    attack_white = 0.3,
                     resistance = 0.05
                 }
             }
@@ -652,11 +651,6 @@ cj.TriggerAddAction(
                                 value = "攻速",
                                 icon = "ReplaceableTextures\\CommandButtons\\BTNImprovedUnholyStrength.blp"
                             },
-                            {
-                                value = "物爆",
-                                icon = "ReplaceableTextures\\CommandButtons\\BTNSpiritWalkerMasterTraining.blp"
-                            },
-                            {value = "魔爆", icon = "ReplaceableTextures\\CommandButtons\\BTNPriestAdept.blp"},
                             {value = "增幅", icon = "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp"}
                         }
                         if (game.rule.cur == "dk") then
@@ -692,12 +686,6 @@ cj.TriggerAddAction(
                                 local attack_white = math.floor(hattr.get(tower, "attack_white"))
                                 local attack_green = math.floor(hattr.get(tower, "attack_green"))
                                 local attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
-                                local knocking =
-                                    math.floor(hattr.get(tower, "knocking_odds")) ..
-                                    "%击出" .. math.floor(100 + hattr.get(tower, "knocking")) .. "%伤害"
-                                local violence =
-                                    math.floor(hattr.get(tower, "violence_odds")) ..
-                                    "%击出" .. math.floor(100 + hattr.get(tower, "violence")) .. "%伤害"
                                 local damage_amplitude = math.round(hattr.get(tower, "damage_amplitude")) .. "%"
                                 local tempData = {
                                     {value = cj.GetPlayerName(p), icon = nil},
@@ -709,8 +697,6 @@ cj.TriggerAddAction(
                                     {value = attack_white, icon = nil},
                                     {value = attack_green, icon = nil},
                                     {value = attack_speed, icon = nil},
-                                    {value = knocking, icon = nil},
-                                    {value = violence, icon = nil},
                                     {value = damage_amplitude, icon = nil}
                                 }
                                 if (game.rule.cur == "dk") then

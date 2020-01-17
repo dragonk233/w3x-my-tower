@@ -110,14 +110,14 @@ abilitiesYellow = {
     {
         Name = "战熊咆哮",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBattleRoar.blp",
-        Ubertip = "+{val#1}%物理暴击几率",
-        Val = {20}
+        Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
+        Val = {7.5, 16.5}
     },
     {
         Name = "魔导灵眼",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNMagicalSentry.blp",
-        Ubertip = "+{val#1}%魔法暴击几率",
-        Val = {20}
+        Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
+        Val = {7.5, 18.5}
     },
     {
         Name = "重击",
@@ -134,13 +134,13 @@ abilitiesYellow = {
     {
         Name = "瞄准",
         Art = "war3mapImported\\icon_pas_Ability_Hunter_SniperShot.blp",
-        Ubertip = "+{val#1}%命中|n+{val#2}%物理暴击伤害",
-        Val = {20, 10}
+        Ubertip = "+{val#1}%命中|n+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
+        Val = {20, 6.0, 17.5}
     },
     {
         Name = "分裂攻击",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCleavingAttack.blp",
-        Ubertip = "+{val#1}%分裂攻击",
+        Ubertip = "500范围分裂{val#1}%",
         Val = {20}
     },
     {

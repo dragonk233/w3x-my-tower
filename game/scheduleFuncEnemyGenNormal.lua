@@ -75,7 +75,7 @@ enemyGenYB = function(waiting)
                     for k, v in pairs(game.pathPoint) do
                         if (his.playing(hplayer.players[k])) then
                             local u =
-                                hemeny.create(
+                                henemy.create(
                                 {
                                     unitId = game.rule.yb.mon,
                                     qty = 1,
@@ -154,7 +154,7 @@ enemyGenHZ = function(waiting)
                     for k, v in pairs(game.pathPoint) do
                         if (his.playing(hplayer.players[k])) then
                             local u =
-                                hemeny.create(
+                                henemy.create(
                                 {
                                     unitId = game.rule.hz.mon,
                                     qty = 1,
@@ -211,7 +211,7 @@ enemyGenDK = function(waiting)
                             if (game.rule.dk.monLimit[k] < game.rule.dk.perWaveQty) then
                                 game.rule.dk.monLimit[k] = game.rule.dk.monLimit[k] + 1
                                 local u =
-                                    hemeny.create(
+                                    henemy.create(
                                     {
                                         unitId = game.rule.dk.mon[k],
                                         qty = 1,

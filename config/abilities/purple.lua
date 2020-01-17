@@ -2,8 +2,8 @@ abilitiesPurple = {
     {
         Name = "暗杀巅峰",
         Art = "war3mapImported\\icon_pas_Spell_Holy_EyeforanEye.blp",
-        Ubertip = "+{val#1}%物理暴击几率|n+{val#2}%物理暴击伤害",
-        Val = {15, 25}
+        Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
+        Val = {12.5, 25}
     },
     {
         Name = "死亡同步",
@@ -14,20 +14,20 @@ abilitiesPurple = {
     {
         Name = "双修对剑",
         Art = "war3mapImported\\icon_pas_DualWield.blp",
-        Ubertip = "+{val#1}点物理攻击，+{val#2}点魔法攻击",
-        Val = {120, 120}
+        Ubertip = "+{val#1}点攻击力|n+{val#2}点力量|n+{val#3}点敏捷",
+        Val = {120, 50, 50}
     },
     {
         Name = "武术至尊",
         Art = "war3mapImported\\icon_pas_Holy_WeaponMastery.blp",
-        Ubertip = "+{val#1}点物理攻击，+{val#2}%攻击速度",
-        Val = {135, 17.5}
+        Ubertip = "+{val#1}点攻击力|n+{val#2}%攻击速度",
+        Val = {140, 17.5}
     },
     {
         Name = "法术天尊",
         Art = "war3mapImported\\icon_pas_Holy_HolyNova.blp",
-        Ubertip = "+{val#1}点魔法攻击，+{val#2}%攻击速度",
-        Val = {150, 15.5}
+        Ubertip = "+{val#1}点攻击力|n+{val#2}点智力",
+        Val = {138, 60}
     },
     {
         Name = "音速回击",

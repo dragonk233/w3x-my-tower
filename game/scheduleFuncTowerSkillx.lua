@@ -5,10 +5,8 @@ addTowerSkillsx = function(u)
             local Val = v.Val
             if (hskill.has(u, abid)) then
                 local name = v.Name
-                if (name == "突击匕首" or name == "月神强击") then
+                if (name == "突击匕首" or name == "月神强击" or name == "魔力之源") then
                     hattr.set(u, 0, {attack_white = "+" .. Val[1]})
-                elseif (name == "魔力之源") then
-                    hattr.set(u, 0, {attack_green = "+" .. Val[1]})
                 elseif (name == "巾帼" or name == "剑圣" or name == "气定神闲") then
                     hattr.set(u, 0, {attack_speed = "+" .. Val[1]})
                 elseif (name == "皮糙" or name == "肉厚") then
@@ -17,16 +15,14 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {life_back = "+" .. Val[1]})
                 elseif (name == "铁壁" or name == "矮人之盾" or name == "捍卫守护") then
                     hattr.set(u, 0, {defend = "+" .. Val[1]})
-                elseif (name == "远古身躯" or name == "重拳出击" or name == "骑士精神" or name == "威武体魄") then
+                elseif (name == "远古身躯" or name == "牛头人" or name == "重拳出击" or name == "骑士精神" or name == "威武体魄") then
                     hattr.set(u, 0, {str_green = "+" .. Val[1]})
-                elseif (name == "牛头人") then
-                    hattr.set(u, 0, {str_green = "+" .. Val[1], knocking_odds = "+" .. Val[2]})
                 elseif (name == "蛇皮" or name == "修仙之体" or name == "恶魔之躯") then
                     hattr.set(u, 0, {agi_green = "+" .. Val[1]})
                 elseif (name == "冥想") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1]})
                 elseif (name == "六刃智慧") then
-                    hattr.set(u, 0, {int_green = "+" .. Val[1], attack_green = "+" .. Val[2]})
+                    hattr.set(u, 0, {int_green = "+" .. Val[1], attack_white = "+" .. Val[2]})
                 elseif (name == "塞壬之歌" or name == "甲虫之盔") then
                     hattr.set(u, 0, {resistance = "+" .. Val[1]})
                 elseif (name == "石像化" or name == "腰马合一") then
@@ -35,12 +31,6 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {avoid = "+" .. Val[1]})
                 elseif (name == "猫头鹰怒视" or name == "捕猎者") then
                     hattr.set(u, 0, {aim = "+" .. Val[1]})
-                elseif (name == "小牛粉碎" or name == "分裂大刀" or name == "分裂狂刀") then
-                    hattr.set(u, 0, {split = "+" .. Val[1], split_range = "=500"})
-                elseif (name == "熊掌战意" or name == "马索格爆锤" or name == "刺客信条") then
-                    hattr.set(u, 0, {knocking_odds = "+" .. Val[1], knocking = "+" .. Val[2]})
-                elseif (name == "法术研究") then
-                    hattr.set(u, 0, {violence_odds = "+" .. Val[1], violence = "+" .. Val[2]})
                 elseif (name == "野生龙种") then
                     hattr.set(u, 0, {attack_damage_type = "+dragon"})
                 elseif (name == "树木之妖") then
@@ -72,6 +62,56 @@ addTowerSkillsx = function(u)
                 elseif (name == "机械之心") then
                     hattr.set(u, 0, {str_green = "+" .. Val[1], agi_green = "+" .. Val[2], defend = "+" .. Val[3]})
                 end
+                if (name == "小牛粉碎" or name == "分裂大刀" or name == "分裂狂刀") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            attack_effect = {
+                                add = {
+                                    {
+                                        attr = "split",
+                                        odds = 100,
+                                        range = Val[1],
+                                        percent = Val[2]
+                                    }
+                                }
+                            }
+                        }
+                    )
+                elseif (name == "熊掌战意" or name == "马索格爆锤" or name == "刺客信条") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            attack_effect = {
+                                add = {
+                                    {
+                                        attr = "knocking",
+                                        odds = Val[1],
+                                        percent = Val[2]
+                                    }
+                                }
+                            }
+                        }
+                    )
+                elseif (name == "法术研究") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            attack_effect = {
+                                add = {
+                                    {
+                                        attr = "violence",
+                                        odds = Val[1],
+                                        percent = Val[2]
+                                    }
+                                }
+                            }
+                        }
+                    )
+                end
                 if (name == "黑暗之箭" or name == "黑夜之箭" or name == "黑狱之箭") then
                     hattr.set(
                         u,
@@ -95,7 +135,7 @@ addTowerSkillsx = function(u)
                     (table.includes(
                         name,
                         {
-                            --attack_white
+                            --attack_green
                             "追魂狩猎",
                             --attack_speed
                             "狂战士之血"
@@ -104,7 +144,7 @@ addTowerSkillsx = function(u)
                  then
                     local a
                     if (name == "追魂狩猎" or name == "狂魂狩猎" or name == "狂魂骑猎") then
-                        a = "attack_white"
+                        a = "attack_green"
                     elseif (name == "狂战士之血") then
                         a = "attack_speed"
                     end
