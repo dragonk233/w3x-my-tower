@@ -3,7 +3,7 @@ couriersShopIds = {}
 for i, v in ipairs(couriers) do
     -- 处理信使数据
     local Ubertip = "召唤：" .. v.Name .. "|n信使阶级："..hColor.greenLight(v.COURIER_POWER) .. "|n移动速度：" .. hColor.skyLight(v.spd)
-    local obj = slk.unit.hfoo:new("couriers_" .. v.Name)
+    local obj = slk.unit.opeo:new("couriers_" .. v.Name)
     obj.type = "Peon"
     obj.upgrades = ""
     obj.weapsOn = 0
@@ -54,6 +54,8 @@ for i, v in ipairs(couriers) do
     obj.spd = v.spd
     obj.armor = v.armor -- 被击声音
     obj.targType = v.targType --作为目标类型
+    obj.upgrades = ""
+    obj.Builds = ""
     if(v.Name == "涅磐火凤凰")then
         obj.abilList = "Avul,AInv," .. string.implode(',',couriersSkillsPhoenix)
     elseif(v.Name == "冰戟剑灵")then

@@ -4,6 +4,7 @@ require "game.scheduleFuncOnCourierSkillUse"
 require "game.scheduleFuncOnTowerAttack"
 require "game.scheduleFuncOnTowerLevelUp"
 require "game.scheduleFuncOnTowerDead"
+require "game.scheduleFuncOnTowerLinkSkillUse"
 require "game.scheduleFuncTowerSkillRace"
 require "game.scheduleFuncTowerSkillx"
 require "game.scheduleFuncEnemyGenNormal"
@@ -111,8 +112,110 @@ updateMyTower = function(evtData)
             }
         )
     end
-    hsound.sound2Unit(cg.gg_snd_level_up, 100, whichUnit)
+    hsound.sound2Unit(cg.gg_snd_level_up, 100, u)
     htextTag.style(htextTag.create2Unit(u, "升级 ↑" .. cj.R2I(diffLv), 12.00, "ffff00", 1, 2.0, 10.00), "scale", 0, 0.1)
+end
+
+-- 创建link圈
+createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
+    if (playerIndex == nil or linkIndex == nil) then
+        print("createMyTowerLink wtf")
+        return nil
+    end
+    if (hplayer.getStatus(hplayer.players[playerIndex]) == hplayer.player_status.gaming) then
+        if (game.playerTowerLink[playerIndex] == nil) then
+            game.playerTowerLink[playerIndex] = {}
+        end
+        if (game.playerTowerLink[playerIndex][linkIndex] == nil) then
+            game.playerTowerLink[playerIndex][linkIndex] = {}
+        end
+        local linkId = game.thisUnits["塔圈"].UNIT_ID
+        if (towerId ~= nil) then
+            linkId = game.towersShadow[towerId].UNIT_ID
+        end
+        -- 如果有上一个单位，把上一个删除
+        if (game.playerTowerLink[playerIndex][linkIndex] ~= nil) then
+            hunit.del(game.playerTowerLink[playerIndex][linkIndex].unit, 0)
+        end
+        local isUnSelectable = (linkId == game.thisUnits["塔圈"].UNIT_ID)
+        local u =
+            hunit.create(
+            {
+                whichPlayer = hplayer.players[playerIndex],
+                unitId = linkId,
+                qty = 1,
+                x = game.towerPoint[playerIndex][1] + game.towerLinkOffset[linkIndex][1],
+                y = game.towerPoint[playerIndex][2] + game.towerLinkOffset[linkIndex][2],
+                opacity = 0.4,
+                modelScale = 0.9,
+                isInvulnerable = true,
+                isUnSelectable = isUnSelectable
+            }
+        )
+        game.playerTowerLink[playerIndex][linkIndex].unit = u
+        if (towerId ~= nil) then
+            --属性
+            local tlv = hslk_global.unitsKV[towerId].towerLevel
+            hattr.set(
+                u,
+                0,
+                {
+                    move = "=0"
+                }
+            )
+            hevent.onSkillHappen(u, onTowerLinkSkillUesd)
+            --阶级标志
+            game.playerTowerPower[playerIndex] = hslk_global.unitsKV[towerId].TOWER_POWER
+            hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
+            --兵塔说明标志
+            hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
+            --种族
+            addTowerSkillsRace(u, hslk_global.unitsKV[towerId])
+            --兵塔技能
+            addTowerSkillsx(u)
+            --天赋等级
+            if (unitLv == nil) then
+                if (math.random(1, 6) == 1) then
+                    unitLv = 0
+                elseif (math.random(1, 5) == 1) then
+                    unitLv = 1
+                elseif (math.random(1, 4) == 1) then
+                    unitLv = 2
+                elseif (math.random(1, 3) == 1) then
+                    unitLv = 3
+                elseif (math.random(1, 2) == 1) then
+                    unitLv = 4
+                elseif (math.random(1, 2) == 1) then
+                    unitLv = 5
+                elseif (math.random(1, 2) == 1) then
+                    unitLv = 6
+                elseif (math.random(1, 2) == 1) then
+                    unitLv = 7
+                elseif (math.random(1, 2) == 1) then
+                    unitLv = 8
+                else
+                    unitLv = 9
+                end
+            end
+            game.playerTowerLink[playerIndex][linkIndex].tower_level = unitLv
+            hskill.add(u, game.thisUnitLevelAbilities[unitLv].ABILITY_ID, 0)
+            --计算
+            if (unitLv > 0) then
+                hattr.set(
+                    u,
+                    0,
+                    {
+                        attack_white = "+" .. math.floor(unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE)
+                    }
+                )
+            end
+            --锁技能树
+            for k, v in pairs(game.thisEmptyLink) do
+                hskill.add(u, v.ABILITY_ID, 0)
+            end
+        end
+        return u
+    end
 end
 
 -- 创造兵塔

@@ -23,10 +23,10 @@ for i = 1, game.towersLen, 1 do
     jv = json.parse(v)
     game.towersOrigins[jv.INDEX] = jv
     --shadow
-    -- v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers_shadow"), i)
-    -- jv = json.parse(v)
-    -- game.towersShadow[jv.TOWER_ID] = jv
-    -- hRuntime.register.unit(jv)
+    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers_shadow"), i)
+    jv = json.parse(v)
+    game.towersShadow[jv.TOWER_ID] = jv
+    hRuntime.register.unit(jv)
 end
 --tower abli
 local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("tower_spx_ab"), -1)
@@ -97,7 +97,8 @@ end
 local thisUnitNames = {
     "大精灵",
     "河草",
-    "光辉城主"
+    "光辉城主",
+    "塔圈",
 }
 for _, name in ipairs(thisUnitNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisunit"), cj.StringHash(name))
@@ -186,6 +187,18 @@ for _, name in ipairs(thisEmptyAbilitiesName) do
     hRuntime.register.ability(jv)
     game.thisEmptyAbilities[name] = jv
 end
+
+--link锁
+for _, name in ipairs({"X", "C", "V", "S", "D"}) do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("link_empty"), cj.StringHash(name))
+    local jv = json.parse(v)
+    hRuntime.register.ability(jv)
+    game.thisEmptyLink[name] = jv
+end
+local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("link_change"), 0)
+local jv = json.parse(v)
+hRuntime.register.ability(jv)
+game.thisEmptyLink["F"] = jv
 
 -- 技能/技能书
 local abilities_qty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilities_qty"), 0)

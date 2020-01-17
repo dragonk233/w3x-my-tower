@@ -19,6 +19,63 @@ local purple = {
     "F",
 }
 
+--link单位的封锁技能
+for _, v in ipairs({"X","C","V","S","D"}) do
+    local obj = slk.ability.Aamk:new("link_empty_" .. v)
+    local Name = "封锁 - [" .. hColor.sky(v) .. "]"
+    local Tip = "封锁 - [" .. hColor.sky(v) .. "]"
+    obj.Name = Name
+    obj.Tip = Tip
+    obj.Ubertip = "技能已被封印，按F换TA上场"
+    obj.Buttonpos1 = AB_HOTKEY_KV[v][1]
+    obj.Buttonpos2 = AB_HOTKEY_KV[v][2]
+    obj.hero = 0
+    obj.levels = 1
+    obj.DataA1 = 0
+    obj.DataB1 = 0
+    obj.DataC1 = 0
+    obj.Art = "war3mapImported\\icon_pas_Slow_Grey.blp"
+    local ab = {
+        ABILITY_ID = obj:get_id(),
+        ABILITY_BTN = v,
+    }
+    ?>
+    call SaveStr(hash_myslk, StringHash("link_empty"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
+    <?
+end
+
+--上场
+local obj = slk.ability.ANcl:new("link_change")
+local Name = "上场"
+local Tip = "上场("..hColor.yellow("F")..")"
+obj.Order = "webon"
+obj.DataF1 = "webon"
+obj.Name = Name
+obj.Tip = Tip
+obj.Hotkey = "F"
+obj.Ubertip = "上场打怪!"
+obj.Buttonpos1 = 3
+obj.Buttonpos2 = 1
+obj.hero = 0
+obj.levels = 1
+obj.DataA1 = 0
+obj.DataB1 = 0
+obj.DataC1 = 1
+obj.DataD1 = 0.01
+obj.Cool1 = 0
+obj.Cost1 = 0
+obj.Art = "ReplaceableTextures\\CommandButtons\\BTNLoadDwarf.blp"
+obj.CasterArt = ""
+obj.EffectArt = ""
+obj.TargetArt = ""
+local temp = {
+    Name = Name,
+    ABILITY_ID = obj:get_id(),
+}
+?>
+call SaveStr(hash_myslk, StringHash("link_change"), 0, "<?=string.addslashes(json.stringify(temp))?>")
+<?
+
 -- abilities
 -- 处理空技能槽
 for _, v in ipairs(blue) do
@@ -41,8 +98,8 @@ for _, v in ipairs(blue) do
         ABILITY_BTN = v,
     }
     ?>
-call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
-<?
+    call SaveStr(hash_myslk, StringHash("abilities_empty"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
+    <?
 end
 for _, v in ipairs(yellow) do
     local obj = slk.ability.Aamk:new("abilities_empty_" .. v)

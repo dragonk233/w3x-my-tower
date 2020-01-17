@@ -40,5 +40,19 @@ units = {
         nsight = 0,
         unitSound = "",
         weapsOn = 0,
+    },
+    {
+        Name = "塔圈",
+        abilList = "Avul,Aloc",
+        file = "Abilities\\Spells\\NightElf\\TrueshotAura\\TrueshotAura.mdl",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNSpellStealOn.blp",
+        modelScale = 1,
+        scale = 1.60,
+        HP = 100,
+        spd = 0,
+        sight = 0,
+        nsight = 0,
+        unitSound = "",
+        weapsOn = 0,
     }
 }

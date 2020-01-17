@@ -61,12 +61,13 @@ game = {
             monData = {},
             ai = false
         },
-        cur = "yb",
+        cur = "yb"
     },
     currentMon = 0,
     playerOriginLumber = {},
     playerTower = {},
     playerTowerPower = {},
+    playerTowerLink = {},
     playerTowerLevel = {},
     playerTowerEffectModel = {},
     playerCourier = {},
@@ -98,6 +99,7 @@ game = {
     thisUnitLevelAbilitiesLen = 0,
     thisUnitRaceAbilities = {},
     thisUnitRaceAbilitiesLen = 0,
+    thisEmptyLink = {},
     thisEmptyAbilities = {},
     thisEmptyAbilitiesLen = 0,
     thisOptionAbility = {},
@@ -110,6 +112,12 @@ game = {
         {1536, 1536},
         {1536, -1536},
         {-1536, -1536}
+    },
+    towerLinkOffset = {
+        {-192, -192},
+        {-192, 192},
+        {192, 192},
+        {192, -192}
     },
     courierPoint = {
         {-1280, 1280},
@@ -128,5 +136,5 @@ game = {
         {700, 1728},
         {700, -1728},
         {-700, -1728}
-    },
+    }
 }

@@ -1,57 +1,4 @@
 -- towers
-
---兵塔变敌军单位
-local createTowerShadowUnit = function(v,towersTi,tlv)
-    local obj = slk.unit.hfoo:new("this_tower_shadow_" .. v.Name)
-    obj.Name = "[影兵塔]["..tlv.."阶]" .. v.Name
-    obj.upgrades = ""
-    obj.file = v.file
-    obj.Art = v.Art
-    obj.modelScale = v.modelScale or 1.00
-    obj.scale = v.scale or 1.00
-    obj.HP = 100
-    obj.spd = 100
-    obj.sight = 500
-    obj.nsight = 500
-    obj.unitSound = v.unitSound or ""
-    obj.weapsOn = 0
-    local movetp = v.movetp or "foot"
-    local moveHeight = v.moveHeight or 0
-    if(movetp == 'fly')then
-        moveHeight = 250
-    end
-    obj.movetp = movetp --移动类型
-    obj.moveHeight = moveHeight --移动高度
-    obj.moveFloor = moveHeight * 0.25 --最低高度
-    obj.regenHP = 0
-    obj.regenType = ""
-    obj.def = 0
-    local abl = v.abilList
-    if(abl ~= nil)then
-        if(type(abl) == "string")then
-            abl = string.explode(',', abl)
-        elseif(type(abl) ~= "table")then
-            abl = {}
-        end
-    end
-    if(abl == nil or #abl ==0)then
-        abl = {
-            towerSpxKV["封印枷锁之一"],
-            towerSpxKV["封印枷锁之二"]
-        }
-    elseif(#abl == 1)then
-        table.insert( abl, towerSpxKV["封印枷锁之二"] )
-    end
-    v.TOWER_ID = v.UNIT_ID --这里赋值塔的ID
-    obj.abilList = string.implode(",",abl)
-    v.TYPE = "tower_shadow"
-    v.UNIT_ID = obj:get_id()
-    ?>
-    call SaveStr(hash_myslk, StringHash("towers_shadow"), <?=towersTi?>, "<?=string.addslashes(json.stringify(v))?>")
-    <?
-end
-
---
 towers = {
     E = towers_e,
     D = towers_d,
@@ -106,8 +53,8 @@ for j=1,1,1 do
                     tempAttack = 600 + math.random(-25,75)
                 end
                 if(Primary == "STR")then
-                    v.STR = math.floor(tempPower * 0.06 * math.random(7,12))
-                    v.AGI = math.floor(tempPower * 0.025 * math.random(5,9))
+                    v.STR = math.floor(tempPower * 0.06 * math.random(7,11))
+                    v.AGI = math.floor(tempPower * 0.025 * math.random(5,8))
                     v.INT = math.floor(tempPower * 0.025 * math.random(5,9))
                     tempAttack = tempAttack + 25 * math.random()
                 elseif(Primary == "AGI")then
@@ -116,9 +63,9 @@ for j=1,1,1 do
                     v.INT = math.floor(tempPower * 0.025 * math.random(3,8))
                     tempAttack = tempAttack + 20 * math.random()
                 elseif(Primary == "INT")then
-                    v.STR = math.floor(tempPower * 0.03 * math.random(7,10))
-                    v.AGI = math.floor(tempPower * 0.02 * math.random(5,9))
-                    v.INT = math.floor(tempPower * 0.06 * math.random(8,12))
+                    v.STR = math.floor(tempPower * 0.03 * math.random(7,9))
+                    v.AGI = math.floor(tempPower * 0.02 * math.random(5,8))
+                    v.INT = math.floor(tempPower * 0.06 * math.random(8,11))
                     tempAttack = tempAttack + 20 * math.random()
                 end
                 tempAttack = tempAttack * ((v.cool1 or 2.00) / (1.30+math.random()))
@@ -293,8 +240,8 @@ for j=1,1,1 do
                 -- 塔基物品
                 local iobj = slk.item.gold:new("towers_items_" .. thisIndex)
                 iobj.Name = "[" .. tlv .. "][" .. v.Name .. "]"
-                iobj.Tip = "点击替换兵塔：[" .. v.Name .. "]"
-                iobj.UberTip = Ubertip .. "|n * 无论兵种是否一致，使用后兵塔会较前提升1级！"
+                iobj.Tip = "点击召唤兵塔：[" .. v.Name .. "]"
+                iobj.UberTip = Ubertip
                 iobj.Description = Ubertip
                 iobj.Art = v.Art
                 iobj.scale = 1.10
@@ -348,7 +295,56 @@ for j=1,1,1 do
                 call SaveStr(hash_myslk, StringHash("abilitiies_tower_origins"), <?=towersTi?>, "<?=string.addslashes(json.stringify(ab))?>")
                 <?
                 --shadow
-                --createTowerShadowUnit(v,towersTi,tlv)
+                local sobj = slk.unit.opeo:new("this_tower_shadow_" .. v.Name)
+                sobj.Name = "[核心]["..tlv.."阶]" .. v.Name
+                sobj.upgrades = ""
+                sobj.file = v.file
+                sobj.Art = v.Art
+                sobj.modelScale = 1.00
+                sobj.scale = v.scale or 1.00
+                sobj.HP = 100
+                sobj.spd = 100
+                sobj.sight = 500
+                sobj.nsight = 500
+                sobj.unitSound = v.unitSound or ""
+                sobj.weapsOn = 1
+                sobj.upgrades = ""
+                sobj.Builds = ""
+                local movetp = v.movetp or "foot"
+                local moveHeight = v.moveHeight or 0
+                if(movetp == 'fly')then
+                    moveHeight = 250
+                end
+                sobj.movetp = movetp --移动类型
+                sobj.moveHeight = moveHeight --移动高度
+                sobj.moveFloor = moveHeight * 0.25 --最低高度
+                sobj.regenHP = 0
+                sobj.regenType = ""
+                sobj.def = 0
+                local abl = v.abilList
+                if(abl ~= nil)then
+                    if(type(abl) == "string")then
+                        abl = string.explode(',', abl)
+                    elseif(type(abl) ~= "table")then
+                        abl = {}
+                    end
+                end
+                if(abl == nil or #abl ==0)then
+                    abl = {
+                        towerSpxKV["封印枷锁之一"],
+                        towerSpxKV["封印枷锁之二"]
+                    }
+                elseif(#abl == 1)then
+                    table.insert( abl, towerSpxKV["封印枷锁之二"] )
+                end
+                table.insert( abl, "AInv" )
+                v.TOWER_ID = v.UNIT_ID --这里赋值塔的ID
+                sobj.abilList = string.implode(",",abl)
+                v.TYPE = "tower_shadow"
+                v.UNIT_ID = sobj:get_id()
+                ?>
+                call SaveStr(hash_myslk, StringHash("towers_shadow"), <?=towersTi?>, "<?=string.addslashes(json.stringify(v))?>")
+                <?
             end
         end
     end

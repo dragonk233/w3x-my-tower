@@ -599,6 +599,12 @@ cj.TriggerAddAction(
                 for k, v in pairs(game.towerPoint) do
                     createMyTower(k, game.towers["人类·农民_1"].UNIT_ID)
                 end
+                -- 兵塔连接
+                for k, v in pairs(game.towerLinkOffset) do
+                    for i = 1, 4 do
+                        createMyTowerLink(k, i)
+                    end
+                end
                 -- 商店
                 for _, v in pairs(game.medicineShopPoint) do
                     hunit.create(

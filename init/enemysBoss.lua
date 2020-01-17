@@ -1,9 +1,8 @@
 -- enemys
 for k, v in ipairs(enemysBoss) do
-    local obj = slk.unit.hfoo:new("this_enemys_boss_" .. v.Name)
+    local obj = slk.unit.opeo:new("this_enemys_boss_" .. v.Name)
     obj.Name = "[BOSS]" .. v.Name
     obj.abilList = ""
-    obj.upgrades = ""
     obj.file = v.file
     obj.Art = "ReplaceableTextures\\CommandButtons\\BTNCarrionScarabs.blp"
     obj.modelScale = v.modelScale or 1.00
@@ -20,6 +19,8 @@ for k, v in ipairs(enemysBoss) do
     obj.regenHP = 0
     obj.regenType = ""
     obj.def = 0
+    obj.upgrades = ""
+    obj.Builds = ""
     v.TYPE = "boss"
     v.UNIT_ID = obj:get_id()
     ?>

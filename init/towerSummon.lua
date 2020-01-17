@@ -1,6 +1,6 @@
 -- TOWER_SUMMON
 for k, v in ipairs(TOWER_SUMMON) do
-    local obj = slk.unit.hfoo:new("tower_summon_" .. v.Name)
+    local obj = slk.unit.opeo:new("tower_summon_" .. v.Name)
     obj.Name = "[召唤]" .. v.Name
     obj.abilList = "Avul,Aloc"
     obj.upgrades = ""

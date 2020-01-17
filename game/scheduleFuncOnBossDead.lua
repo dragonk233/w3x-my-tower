@@ -4,11 +4,11 @@ bossDead = function(evtData)
     local u = evtData.killer
     if (u ~= nil) then
         if (game.rule.cur == "yb") then
-            haward.forUnitExp(u, 200 * game.rule.yb.wave)
+            haward.forGroupExp(u, 200 * game.rule.yb.wave)
         elseif (game.rule.cur == "hz") then
-            haward.forUnitExp(u, 150 * game.rule.hz.wave)
+            haward.forGroupExp(u, 150 * game.rule.hz.wave)
         else
-            haward.forUnitExp(u, 500)
+            haward.forGroupExp(u, 500)
         end
         local killerName = cj.GetPlayerName(cj.GetOwningPlayer(u))
         local bossName = hunit.getName(evtData.triggerUnit)

@@ -1,6 +1,6 @@
 -- units
 for k, v in ipairs(units) do
-    local obj = slk.unit.hfoo:new("this_units_" .. v.Name)
+    local obj = slk.unit.opeo:new("this_units_" .. v.Name)
     obj.Name = "[其他]" .. v.Name
     obj.abilList = v.abilList or ""
     obj.upgrades = ""

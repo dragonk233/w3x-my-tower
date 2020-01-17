@@ -16,15 +16,68 @@ onUnitItemsUesd = function(evtData)
         return
     end
     if (itemSLK.I_TYPE == "tower") then
+        --tower
         local playerIndex = hplayer.index(p)
-        local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)
-        hmsg.echo(hColor.sky(cj.GetPlayerName(p)) .. "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]")
-        if (#game.playerTowerEffectModel > 0) then
-            for _, v in ipairs(game.playerTowerEffectModel) do
-                hskill.add(u, v, 0)
-            end
+        local btns = {
+            {
+                value = 0,
+                label = "[战塔][" .. hColor.yellow(hunit.getName(game.playerTower[playerIndex])) .. "]"
+            }
+        }
+        for i = 1, 4, 1 do
+            table.insert(
+                btns,
+                {
+                    value = i,
+                    label = "[核心][" .. hColor.sky(hunit.getName(game.playerTowerLink[playerIndex][i].unit)) .. "]"
+                }
+            )
         end
+        table.insert(
+            btns,
+            {
+                value = 512,
+                label = "[ESC][" .. hColor.grey("废弃兵塔石") .. "]"
+            }
+        )
+        hdialog.create(
+            p,
+            {
+                title = "调度兵塔",
+                buttons = btns
+            },
+            function(btnIdx)
+                if (btnIdx == 512) then
+                    hmsg.echo00(p, "兵塔石被胡乱操作废弃了")
+                    return
+                elseif (btnIdx == 0) then
+                    local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)
+                    hmsg.echo(
+                        hColor.sky(cj.GetPlayerName(p)) ..
+                            "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
+                    )
+                    if (#game.playerTowerEffectModel > 0) then
+                        for _, v in ipairs(game.playerTowerEffectModel) do
+                            hskill.add(u, v, 0)
+                        end
+                    end
+                else
+                    local u =
+                        createMyTowerLink(
+                        playerIndex,
+                        btnIdx,
+                        game.towers[itemSLK.INDEX].UNIT_ID,
+                        game.playerTowerLink[playerIndex][btnIdx].tower_level
+                    )
+                    hmsg.echo(
+                        hColor.sky(cj.GetPlayerName(p)) ..
+                            "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
+                    )
+                end
+            end
+        )
     elseif (itemSLK.I_TYPE == "courier") then
+        --信使
         local playerIndex = hplayer.index(p)
         local u = createMyCourier(playerIndex, game.courier[itemSLK.INDEX].UNIT_ID)
         hmsg.echo(
