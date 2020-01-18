@@ -19,61 +19,93 @@ local purple = {
     "F",
 }
 
---link单位的封锁技能
-for _, v in ipairs({"X","C","V","S","D"}) do
-    local obj = slk.ability.Aamk:new("link_empty_" .. v)
-    local Name = "封锁 - [" .. hColor.sky(v) .. "]"
-    local Tip = "封锁 - [" .. hColor.sky(v) .. "]"
-    obj.Name = Name
-    obj.Tip = Tip
-    obj.Ubertip = "处于核心状态的兵塔技能会被封印，按F换他上场解封"
-    obj.Buttonpos1 = AB_HOTKEY_KV[v][1]
-    obj.Buttonpos2 = AB_HOTKEY_KV[v][2]
-    obj.hero = 0
-    obj.levels = 1
-    obj.DataA1 = 0
-    obj.DataB1 = 0
-    obj.DataC1 = 0
-    obj.Art = "war3mapImported\\icon_pas_Slow_Grey.blp"
-    local ab = {
-        ABILITY_ID = obj:get_id(),
-        ABILITY_BTN = v,
-    }
+--link单位的技能
+LINK_ABILITY_STACK = {}
+local LINK_ABILITY = {
+    {
+        Name = "核心",
+        Ubertip = "这是一个核心兵塔，协助C位塔作战",
+        Art = "war3mapImported\\icon_pas_Enchant_EssenceArcaneLarge.blp",
+        BUTTON = { 1, 1 },
+        TYPE = "desc",
+    },
+    {
+        Name = "等级说明",
+        Ubertip = "核心没有提升等级的收益，只有基础攻击和天赋加成",
+        Art = "war3mapImported\\icon_pas_MedalionOfCourage.blp",
+        BUTTON = { 2, 1 },
+        TYPE = "desc",
+    },
+    {
+        Name = "上场",
+        Ubertip = hColor.yellow("换他上场！"),
+        Art = "war3mapImported\\icon_ability_Holy_SealOfFury.blp",
+        BUTTON = { 3, 1 },
+        TYPE = "action",
+        ORDER = "webon",
+    },
+    {
+        Name = "天赋说明",
+        Ubertip = "核心的天赋影响核心的攻击力，越高越给力",
+        Art = "war3mapImported\\icon_pas_Holy_HolyNova.blp",
+        BUTTON = { 1, 2 },
+        TYPE = "desc",
+    },
+    {
+        Name = "技能说明",
+        Ubertip = "核心不能共享技能书的效果，但拥有完整的自身技能",
+        Art = "war3mapImported\\icon_pas_Holy_PrayerOfMendingtga.blp",
+        BUTTON = { 2, 2 },
+        TYPE = "desc",
+    },
+    {
+        Name = "进攻说明",
+        Ubertip = "核心不会在对战时进攻，只会在主区域作战",
+        Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
+        BUTTON = { 3, 2 },
+        TYPE = "desc",
+    },
+}
+for k, v in ipairs(LINK_ABILITY) do
+    local obj
+    if(v.TYPE == "desc")then
+        obj = slk.ability.Aamk:new("link_ability_" .. v.Name)
+        obj.hero = 0
+        obj.levels = 1
+        obj.DataA1 = 0
+        obj.DataB1 = 0
+        obj.DataC1 = 0
+    elseif(v.TYPE == "action")then
+        obj = slk.ability.ANcl:new("link_ability_" .. v.Name)
+        obj.Order = v.ORDER
+        obj.DataF1 = v.ORDER
+        obj.Hotkey = ""
+        obj.hero = 0
+        obj.levels = 1
+        obj.DataA1 = 0
+        obj.DataB1 = 0
+        obj.DataC1 = 1
+        obj.DataD1 = 0.01
+        obj.Cool1 = 0
+        obj.Cost1 = 0
+        obj.CasterArt = ""
+        obj.EffectArt = ""
+        obj.TargetArt = ""  
+    end
+    obj.Name = v.Name
+    obj.Tip = v.Name
+    obj.Ubertip = v.Ubertip
+    obj.Art = v.Art
+    obj.Buttonpos1 = v.BUTTON[1]
+    obj.Buttonpos2 = v.BUTTON[2]
+    v.ABILITY_ID = obj:get_id()
+    table.insert(LINK_ABILITY_STACK,v.ABILITY_ID)
     ?>
-    call SaveStr(hash_myslk, StringHash("link_empty"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
+    call SaveStr(hash_myslk, StringHash("link_ability"), <?=k?>, "<?=string.addslashes(json.stringify(v))?>")
     <?
 end
-
---上场
-local obj = slk.ability.ANcl:new("link_change")
-local Name = "上场"
-local Tip = "上场("..hColor.yellow("F")..")"
-obj.Order = "webon"
-obj.DataF1 = "webon"
-obj.Name = Name
-obj.Tip = Tip
-obj.Hotkey = "F"
-obj.Ubertip = "上场打怪!"
-obj.Buttonpos1 = 3
-obj.Buttonpos2 = 1
-obj.hero = 0
-obj.levels = 1
-obj.DataA1 = 0
-obj.DataB1 = 0
-obj.DataC1 = 1
-obj.DataD1 = 0.01
-obj.Cool1 = 0
-obj.Cost1 = 0
-obj.Art = "ReplaceableTextures\\CommandButtons\\BTNLoadDwarf.blp"
-obj.CasterArt = ""
-obj.EffectArt = ""
-obj.TargetArt = ""
-local temp = {
-    Name = Name,
-    ABILITY_ID = obj:get_id(),
-}
 ?>
-call SaveStr(hash_myslk, StringHash("link_change"), 0, "<?=string.addslashes(json.stringify(temp))?>")
+call SaveInteger(hash_myslk, StringHash("link_ability"), -1, <?=#LINK_ABILITY?>)
 <?
 
 -- abilities

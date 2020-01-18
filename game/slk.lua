@@ -98,7 +98,7 @@ local thisUnitNames = {
     "大精灵",
     "河草",
     "光辉城主",
-    "塔圈",
+    "空位"
 }
 for _, name in ipairs(thisUnitNames) do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("thisunit"), cj.StringHash(name))
@@ -188,17 +188,13 @@ for _, name in ipairs(thisEmptyAbilitiesName) do
     game.thisEmptyAbilities[name] = jv
 end
 
---link锁
-for _, name in ipairs({"X", "C", "V", "S", "D"}) do
-    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("link_empty"), cj.StringHash(name))
+--link技能
+local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("link_ability"), -1)
+for i = 1, len, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("link_ability"), i)
     local jv = json.parse(v)
     hRuntime.register.ability(jv)
-    game.thisEmptyLink[name] = jv
 end
-local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("link_change"), 0)
-local jv = json.parse(v)
-hRuntime.register.ability(jv)
-game.thisEmptyLink["F"] = jv
 
 -- 技能/技能书
 local abilities_qty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilities_qty"), 0)

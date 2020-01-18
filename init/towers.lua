@@ -2,7 +2,7 @@
 --兵塔变敌军单位
 local createTowerShadowUnit = function(v,towersTi,tlv)
     local sobj = slk.unit.ogru:new("this_tower_shadow_" .. v.Name)
-    sobj.Name = "["..tlv.."阶]" .. v.Name
+    sobj.Name = "[核心]["..tlv.."阶]" .. v.Name
     sobj.upgrades = ""
     sobj.file = v.file
     sobj.Art = v.Art
@@ -55,10 +55,10 @@ local createTowerShadowUnit = function(v,towersTi,tlv)
         sobj.damageLoss1 = v.damageLoss1 or 0.3
         sobj.splashTargs1 = targs1 .. ",enemies"
     end
-    sobj.acquire = v.acquire or 749.00
+    sobj.acquire = 649 + (v.RangeInc or 0)
     sobj.backSw1 = v.backSw1 or 0.500
     sobj.dmgpt1 = v.dmgpt1 or 0.500
-    sobj.rangeN1 = v.rangeN1 or 750
+    sobj.rangeN1 = 650 + (v.RangeInc or 0)
     sobj.cool1 = v.cool1 or 2.00
     sobj.armor = "Flesh" -- 被击声音
     sobj.targType = "ground" --作为目标类型
@@ -96,8 +96,8 @@ local createTowerShadowUnit = function(v,towersTi,tlv)
     elseif(#abl == 1)then
         table.insert( abl, towerSpxKV["封印枷锁之二"] )
     end
-    sobj.abilList = string.implode(",",abl)
-    v.TOWER_ID = v.UNIT_ID --这里赋值塔的ID
+    sobj.abilList = string.implode(",",abl) .. "," .. string.implode(",",LINK_ABILITY_STACK)
+    v.TOWER_ID = v.UNIT_ID
     v.TYPE = "tower_shadow"
     v.UNIT_ID = sobj:get_id()
     ?>
@@ -191,6 +191,7 @@ for j=1,1,1 do
                     + v.ATTACK_WHITE
                     + coolMark
                 ) --评定
+                v.MARK = TowerMark
                 --
                 Ubertip = Ubertip .. "|cffccffcc阶级：" .. tlv .. "|r"
                 Ubertip = Ubertip .. "|n|cffff0000攻击类型：" .. CONST_WEAPON_TYPE[v.weapTp1] .. "(" .. v.cool1 .. "秒/击)|r"
@@ -226,7 +227,7 @@ for j=1,1,1 do
                 obj.Buttonpos2 = 0
                 obj.death = 0.10
                 obj.turnRate = 1.00
-                obj.acquire = v.acquire or 749.00
+                obj.acquire = 649 + (v.RangeInc or 0)
                 obj.weapsOn = 1
                 obj.race = "human"
                 obj.deathType = 0
@@ -302,7 +303,7 @@ for j=1,1,1 do
                     obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 obj.Tip = "选择 " .. v.Name
-                obj.Name = v.Name
+                obj.Name = "[兵塔]["..tlv.."阶]" .. v.Name
                 obj.Awakentip = "复活 " .. v.Name
                 obj.Revivetip = "复活 " .. v.Name
                 obj.Tip = "召唤 " .. v.Name
@@ -324,7 +325,7 @@ for j=1,1,1 do
                 obj.spd = 100
                 obj.backSw1 = v.backSw1 or 0.500
                 obj.dmgpt1 = v.dmgpt1 or 0.500
-                obj.rangeN1 = v.rangeN1 or 750
+                obj.rangeN1 = 750 + (v.RangeInc or 0)
                 obj.cool1 = v.cool1 or 2.00
                 obj.armor = "Flesh" -- 被击声音
                 obj.targType = "ground" --作为目标类型

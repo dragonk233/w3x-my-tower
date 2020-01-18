@@ -1,7 +1,7 @@
 -- units
 for k, v in ipairs(units) do
     local obj = slk.unit.ogru:new("this_units_" .. v.Name)
-    obj.Name = "[其他]" .. v.Name
+    obj.Name = v.Name
     obj.abilList = v.abilList or ""
     obj.upgrades = ""
     obj.file = v.file

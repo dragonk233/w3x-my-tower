@@ -13,8 +13,7 @@ towers_a = {
         Missileart = "Abilities\\Weapons\\SteamTank\\SteamTankImpact.mdl",
         cool1 = 2.75,
         Primary = "STR",
-        rangeN1 = 1050,
-        acquire = 1049,
+        RangeInc = 300,
         abilList = {towerSpxKV["超远程火炮"]}
     },
     {

@@ -42,7 +42,7 @@ units = {
         weapsOn = 0,
     },
     {
-        Name = "塔圈",
+        Name = "空位",
         abilList = "Avul,Aloc",
         file = "Abilities\\Spells\\NightElf\\TrueshotAura\\TrueshotAura.mdl",
         Art = "ReplaceableTextures\\CommandButtons\\BTNSpellStealOn.blp",

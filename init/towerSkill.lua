@@ -35,7 +35,7 @@ for k, v in pairs(TOWER_ABLI_SPX) do
         obj.Missileart = v.Missileart
         obj.Missilearc = v.Missilearc or 0.05
         obj.Missilespeed = 1100
-        obj.Area1 = 750
+        obj.Area1 = 650
         obj.targs1 = "vulnerable,ground,ward,structure,organic,mechanical,tree,debris,air,enemies"
     else
         obj = slk.ability.Aamk:new("abilities_power_spx_" .. v.Name)

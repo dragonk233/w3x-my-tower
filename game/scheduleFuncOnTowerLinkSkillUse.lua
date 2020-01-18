@@ -1,13 +1,10 @@
 onTowerLinkSkillUesd = function(evtData)
-    print("xxxx")
     local u = evtData.triggerUnit
     local skillid = evtData.triggerSkill
     local abilitiesSLK = hslk_global.abilitiesKV[skillid]
     local p = cj.GetOwningPlayer(u)
     local playerIndex = hplayer.index(p)
-    print_mbr(abilitiesSLK)
     if (abilitiesSLK.Name == "上场") then
-        print("上场了！")
         local linkIndex = hunit.getUserData(u)
         local linkTowerId = game.playerTowerLink[playerIndex][linkIndex].tower_id
         local linkTowerLevel = game.playerTowerLink[playerIndex][linkIndex].tower_level

@@ -13,8 +13,7 @@ towers_b = {
         Missileart = "Abilities\\Weapons\\GyroCopter\\GyroCopterMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        rangeN1 = 950,
-        acquire = 949,
+        RangeInc = 200,
         abilList = {towerSpxKV["窥视镜"]}
     },
     {

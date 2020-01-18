@@ -129,7 +129,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
         if (game.playerTowerLink[playerIndex][linkIndex] == nil) then
             game.playerTowerLink[playerIndex][linkIndex] = {}
         end
-        local linkId = game.thisUnits["塔圈"].UNIT_ID
+        local linkId = game.thisUnits["空位"].UNIT_ID
         if (towerId ~= nil) then
             linkId = game.towersShadow[towerId].UNIT_ID
         end
@@ -137,7 +137,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
         if (game.playerTowerLink[playerIndex][linkIndex] ~= nil) then
             hunit.del(game.playerTowerLink[playerIndex][linkIndex].unit, 0)
         end
-        local isUnSelectable = (linkId == game.thisUnits["塔圈"].UNIT_ID)
+        local isUnSelectable = (linkId == game.thisUnits["空位"].UNIT_ID)
         local u =
             hunit.create(
             {
@@ -201,6 +201,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 end
             end
             game.playerTowerLink[playerIndex][linkIndex].tower_level = unitLv
+            game.playerTowerLink[playerIndex][linkIndex].mark = hslk_global.unitsKV[towerId].MARK
             hskill.add(u, game.thisUnitLevelAbilities[unitLv].ABILITY_ID, 0)
             --计算
             hattr.set(
@@ -214,10 +215,6 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                         )
                 }
             )
-            --锁技能树
-            for k, v in pairs(game.thisEmptyLink) do
-                hskill.add(u, v.ABILITY_ID, 0)
-            end
             --移动卡的bug
             cj.TriggerRegisterUnitEvent(game.TRIGGER_DEMOVE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         end

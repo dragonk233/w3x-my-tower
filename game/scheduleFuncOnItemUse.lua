@@ -18,10 +18,63 @@ onUnitItemsUesd = function(evtData)
     if (itemSLK.I_TYPE == "tower") then
         --tower
         local playerIndex = hplayer.index(p)
+        local marks = {
+            hunit.getSlk(game.playerTower[playerIndex]).MARK or 0
+        }
+        local names = {
+            hunit.getName(game.playerTower[playerIndex])
+        }
+        local dots = {
+            string.findCount(names[1], "·")
+        }
+        local nls = {
+            string.mb_len(names[1]) - dots[1]
+        }
+        local bigMark = marks[1]
+        local bigNameLen = string.mb_len(names[1])
+        local bigDotLen = dots[1]
+        for i = 1, 4, 1 do
+            marks[i + 1] = game.playerTowerLink[playerIndex][i].mark or 0
+            if (marks[i + 1] > bigMark) then
+                bigMark = marks[i + 1]
+            end
+            names[i + 1] = hunit.getName(game.playerTowerLink[playerIndex][i].unit)
+            if (names[i + 1] == "空位") then
+                names[i + 1] = "[核心][N阶]空位"
+            end
+            dots[i + 1] = string.findCount(names[i + 1], "·")
+            nls[i + 1] = string.mb_len(names[i + 1]) - dots[i + 1]
+            if (nls[i + 1] > bigNameLen) then
+                bigNameLen = nls[i + 1]
+            end
+            if (dots[i + 1] > bigDotLen) then
+                bigDotLen = dots[i + 1]
+            end
+        end
+        local bigMarkLen = string.len(tostring(bigMark))
+        for i, v in ipairs(marks) do
+            local vlen = string.len(tostring(v))
+            if (vlen < bigMarkLen) then
+                marks[i] = string.rep("_", bigMarkLen - vlen) .. v
+            end
+        end
+        for i, v in ipairs(names) do
+            if (nls[i] < bigNameLen) then
+                names[i] = v .. string.rep("　", bigNameLen - nls[i])
+            end
+            if (bigDotLen > dots[i]) then
+                names[i] = names[i] .. string.rep(" ", bigDotLen - dots[i])
+            end
+        end
+
         local btns = {
             {
+                value = 512,
+                label = "[ESC][" .. hColor.grey("吞噬升1级") .. "]"
+            },
+            {
                 value = 0,
-                label = "[战塔][" .. hColor.yellow(hunit.getName(game.playerTower[playerIndex])) .. "]"
+                label = hColor.yellow(marks[1] .. "分" .. "-" .. names[1])
             }
         }
         for i = 1, 4, 1 do
@@ -29,26 +82,25 @@ onUnitItemsUesd = function(evtData)
                 btns,
                 {
                     value = i,
-                    label = "[核心][" .. hColor.sky(hunit.getName(game.playerTowerLink[playerIndex][i].unit)) .. "]"
+                    label = hColor.sky(marks[i + 1] .. "分" .. "-" .. names[i + 1])
                 }
             )
         end
-        table.insert(
-            btns,
-            {
-                value = 512,
-                label = "[ESC][" .. hColor.grey("废弃兵塔石") .. "]"
-            }
-        )
+        local title = "兵塔石：" .. game.towers[itemSLK.INDEX].MARK .. "分" .. game.towers[itemSLK.INDEX].Name
         hdialog.create(
             p,
             {
-                title = "调度兵塔",
+                title = title,
                 buttons = btns
             },
             function(btnIdx)
                 if (btnIdx == 512) then
-                    hmsg.echo00(p, "兵塔石被胡乱操作废弃了")
+                    hhero.setCurLevel(
+                        game.playerTower[playerIndex],
+                        1 + hhero.getCurLevel(game.playerTower[playerIndex]),
+                        false
+                    )
+                    hmsg.echo00(p, "通过吞噬兵塔石,兵塔提升了" .. hColor.yellow(1) .. "级")
                     return
                 elseif (btnIdx == 0) then
                     local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)

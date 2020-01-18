@@ -182,8 +182,7 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\CannonTowerMissile\\CannonTowerMissile.mdl",
         cool1 = 2.30,
         Primary = "AGI",
-        rangeN1 = 850,
-        acquire = 849,
+        RangeInc = 100,
         abilList = {towerSpxKV["黑管火炮"]}
     },
     {
