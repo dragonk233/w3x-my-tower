@@ -36,25 +36,25 @@ updateMyTower = function(evtData)
     local lv = cj.GetHeroLevel(u)
     local diffLv = cj.I2R(lv - hhero.getPrevLevel(u))
     local slk = hslk_global.unitsKV[uid]
-    local tlv = slk.TOWER_POWER
+    local tpv = slk.TOWER_POWER
     local attackWhite = slk.ATTACK_WHITE
     local race = slk.RACE
     local percent = 0
-    if (tlv == "E") then
+    if (tpv == "E") then
         percent = 0.10
-    elseif (tlv == "D") then
+    elseif (tpv == "D") then
         percent = 0.11
-    elseif (tlv == "C") then
+    elseif (tpv == "C") then
         percent = 0.12
-    elseif (tlv == "B") then
+    elseif (tpv == "B") then
         percent = 0.14
-    elseif (tlv == "A") then
+    elseif (tpv == "A") then
         percent = 0.16
-    elseif (tlv == "S") then
+    elseif (tpv == "S") then
         percent = 0.19
-    elseif (tlv == "SS") then
+    elseif (tpv == "SS") then
         percent = 0.22
-    elseif (tlv == "SSS") then
+    elseif (tpv == "SSS") then
         percent = 0.25
     end
     attackWhite = diffLv * attackWhite * percent
@@ -153,9 +153,11 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             }
         )
         game.playerTowerLink[playerIndex][linkIndex].unit = u
+        hunit.setUserData(u, linkIndex)
         if (towerId ~= nil) then
+            game.playerTowerLink[playerIndex][linkIndex].tower_id = towerId
             --属性
-            local tlv = hslk_global.unitsKV[towerId].towerLevel
+            local tpv = hslk_global.unitsKV[towerId].towerLevel
             hattr.set(
                 u,
                 0,
@@ -163,6 +165,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                     move = "=0"
                 }
             )
+            hevent.onAttack(u, onTowerAttack)
             hevent.onSkillHappen(u, onTowerLinkSkillUesd)
             --阶级标志
             game.playerTowerPower[playerIndex] = hslk_global.unitsKV[towerId].TOWER_POWER
@@ -200,15 +203,17 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             game.playerTowerLink[playerIndex][linkIndex].tower_level = unitLv
             hskill.add(u, game.thisUnitLevelAbilities[unitLv].ABILITY_ID, 0)
             --计算
-            if (unitLv > 0) then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_white = "+" .. math.floor(unitLv * 0.06 * hslk_global.unitsKV[towerId].ATTACK_WHITE)
-                    }
-                )
-            end
+            hattr.set(
+                u,
+                0,
+                {
+                    attack_white = "+" ..
+                        math.floor(
+                            unitLv * 0.15 * hslk_global.unitsKV[towerId].ATTACK_WHITE +
+                                hslk_global.unitsKV[towerId].ATTACK_WHITE
+                        )
+                }
+            )
             --锁技能树
             for k, v in pairs(game.thisEmptyLink) do
                 hskill.add(u, v.ABILITY_ID, 0)
@@ -221,7 +226,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
 end
 
 -- 创造兵塔
-createMyTower = function(playerIndex, towerId)
+createMyTower = function(playerIndex, towerId, towerLevel)
     if (playerIndex == nil or towerId == nil) then
         print("createMyTower wtf")
         return nil
@@ -237,7 +242,7 @@ createMyTower = function(playerIndex, towerId)
         -- 如果有上一个单位，把上一个兵塔暂时隐藏，后面复制技能，取它的物品
         local prevHeroLevel = 1
         if (isFirst == false) then
-            prevHeroLevel = cj.GetHeroLevel(game.playerTower[playerIndex]) + 1
+            prevHeroLevel = cj.GetHeroLevel(game.playerTower[playerIndex])
             cj.ShowUnit(game.playerTower[playerIndex], false)
         end
         local u =
@@ -252,39 +257,39 @@ createMyTower = function(playerIndex, towerId)
         )
         hhero.setIsHero(u, true)
         --属性
-        local tlv = hslk_global.unitsKV[towerId].towerLevel
+        local tpv = hslk_global.unitsKV[towerId].towerLevel
         local life = 100
         local mana = 100
         local manaBack = 1
-        if (tlv == "E") then
+        if (tpv == "E") then
             life = 250
             mana = 100
             manaBack = 2
-        elseif (tlv == "D") then
+        elseif (tpv == "D") then
             life = 300
             mana = 200
             manaBack = 3
-        elseif (tlv == "C") then
+        elseif (tpv == "C") then
             life = 350
             mana = 300
             manaBack = 4
-        elseif (tlv == "B") then
+        elseif (tpv == "B") then
             life = 400
             mana = 400
             manaBack = 5
-        elseif (tlv == "A") then
+        elseif (tpv == "A") then
             life = 500
             mana = 500
             manaBack = 6
-        elseif (tlv == "S") then
+        elseif (tpv == "S") then
             life = 600
             mana = 750
             manaBack = 10
-        elseif (tlv == "SS") then
+        elseif (tpv == "SS") then
             life = 750
             mana = 1000
             manaBack = 15
-        elseif (tlv == "SSS") then
+        elseif (tpv == "SSS") then
             life = 1000
             mana = 1500
             manaBack = 20
@@ -332,7 +337,7 @@ createMyTower = function(playerIndex, towerId)
         if (isFirst) then
             addTowerLevel(playerIndex, 0)
         else
-            addTowerLevel(playerIndex)
+            addTowerLevel(playerIndex, towerLevel)
         end
         --技能树
         for k, v in pairs(game.thisEmptyAbilities) do

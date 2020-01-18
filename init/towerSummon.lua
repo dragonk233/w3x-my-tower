@@ -1,6 +1,6 @@
 -- TOWER_SUMMON
 for k, v in ipairs(TOWER_SUMMON) do
-    local obj = slk.unit.opeo:new("tower_summon_" .. v.Name)
+    local obj = slk.unit.ogru:new("tower_summon_" .. v.Name)
     obj.Name = "[召唤]" .. v.Name
     obj.abilList = "Avul,Aloc"
     obj.upgrades = ""
@@ -21,6 +21,7 @@ for k, v in ipairs(TOWER_SUMMON) do
     obj.regenType = ""
     obj.def = 0
     obj.cool1 = 1.50
+    obj.fused = 0
     obj.weapTp1 = v.weapTp1 or "normal" --攻击类型
     if(v.weapTp1 == "normal")then
         obj.weapType1 = v.weapType1 --攻击声音

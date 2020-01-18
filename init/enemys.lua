@@ -1,6 +1,6 @@
 -- enemys
 for k, v in ipairs(enemys) do
-    local obj = slk.unit.opeo:new("this_enemys_" .. v.Name)
+    local obj = slk.unit.ogru:new("this_enemys_" .. v.Name)
     obj.Name = "[劲敌]" .. v.Name
     obj.abilList = ""
     obj.file = v.file
@@ -21,6 +21,7 @@ for k, v in ipairs(enemys) do
     obj.def = 0
     obj.upgrades = ""
     obj.Builds = ""
+    obj.fused = 0
     v.TYPE = "normal"
     v.UNIT_ID = obj:get_id()
     ?>

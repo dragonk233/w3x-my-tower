@@ -1,13 +1,13 @@
 -- towers
 --兵塔变敌军单位
 local createTowerShadowUnit = function(v,towersTi,tlv)
-    local sobj = slk.unit.opeo:new("this_tower_shadow_" .. v.Name)
+    local sobj = slk.unit.ogru:new("this_tower_shadow_" .. v.Name)
     sobj.Name = "["..tlv.."阶]" .. v.Name
     sobj.upgrades = ""
     sobj.file = v.file
     sobj.Art = v.Art
     sobj.modelScale = 1.00
-    sobj.scale = v.scale or 1.00
+    sobj.scale = 1.20
     sobj.HP = 100
     sobj.spd = 100
     sobj.sight = 1200
@@ -16,6 +16,8 @@ local createTowerShadowUnit = function(v,towersTi,tlv)
     sobj.weapsOn = 1
     sobj.dmgplus1 = 1 -- 基础攻击
     sobj.showUI1 = 0 -- 不显示攻击按钮
+    sobj.fused = 0
+    sobj.canFlee = 0
     local targs1 = "vulnerable,ground,ward,structure,organic,mechanical,tree,debris,air" --攻击目标
     sobj.targs1 = targs1
     if (v.weapTp1 == "msplash" or v.weapTp1 == "artillery") then
