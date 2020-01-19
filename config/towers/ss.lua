@@ -12,7 +12,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["水刀"], towerSpxKV["乘风破浪"]}
     },
     {
         Name = "人类·军团指挥官·查理",
@@ -27,7 +28,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["落难领袖"], towerSpxKV["沉痛打击"]}
     },
     {
         Name = "人类·冰雪之心·莉莉安",
@@ -42,7 +44,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_freezingsplinter.mdl",
         cool1 = 2.10,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["冰雪之殇"], towerSpxKV["冰矢"]}
     },
     {
         Name = "人类·烈焰之爱·莉莉丝",
@@ -455,7 +458,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_forst_arrow.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["冰魂"], towerSpxKV["破冰碎片"]}
     },
     {
         Name = "元素·霹雳电魔",

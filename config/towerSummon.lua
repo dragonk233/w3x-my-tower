@@ -19,4 +19,14 @@ TOWER_SUMMON = {
         weapTp1 = "normal",
         weapType1 = "MetalHeavySlice"
     },
+    {
+        Name = "炎魔",
+        file = "Units\\Creeps\\LavaSpawn\\LavaSpawn",
+        modelScale = 1.00,
+        scale = 1.00,
+        unitSound = "LavaSpawn",
+        spd = 250,
+        weapTp1 = "missile",
+        Missileart = "Abilities\\Weapons\\LavaSpawnMissile\\LavaSpawnMissile.mdl"
+    },
 }

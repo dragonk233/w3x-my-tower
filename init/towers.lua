@@ -2,7 +2,7 @@
 --兵塔变敌军单位
 local createTowerShadowUnit = function(v,towersTi,tlv)
     local sobj = slk.unit.ogru:new("this_tower_shadow_" .. v.Name)
-    sobj.Name = "[核心]["..tlv.."阶]" .. v.Name
+    sobj.Name = "["..tlv.."阶]" .. v.Name
     sobj.upgrades = ""
     sobj.file = v.file
     sobj.Art = v.Art
@@ -303,7 +303,7 @@ for j=1,1,1 do
                     obj.splashTargs1 = targs1 .. ",enemies"
                 end
                 obj.Tip = "选择 " .. v.Name
-                obj.Name = "[兵塔]["..tlv.."阶]" .. v.Name
+                obj.Name = "["..tlv.."阶]" .. v.Name
                 obj.Awakentip = "复活 " .. v.Name
                 obj.Revivetip = "复活 " .. v.Name
                 obj.Tip = "召唤 " .. v.Name

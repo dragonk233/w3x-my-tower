@@ -29,6 +29,7 @@ for k, v in ipairs(TOWER_SUMMON) do
         obj.Missileart = v.Missileart -- 箭矢模型
         obj.Missilespeed = 900 -- 箭矢速度
         obj.Missilearc = 0.05
+        obj.RangeN1 = 500
     end
     v.TYPE = "summon"
     v.UNIT_ID = obj:get_id()

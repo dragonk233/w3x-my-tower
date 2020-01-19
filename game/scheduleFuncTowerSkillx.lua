@@ -15,7 +15,10 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {life_back = "+" .. Val[1]})
                 elseif (name == "铁壁" or name == "矮人之盾" or name == "捍卫守护") then
                     hattr.set(u, 0, {defend = "+" .. Val[1]})
-                elseif (name == "远古身躯" or name == "牛头人" or name == "重拳出击" or name == "骑士精神" or name == "威武体魄") then
+                elseif
+                    (name == "远古身躯" or name == "牛头人" or name == "重拳出击" or name == "骑士精神" or name == "威武体魄" or
+                        name == "落难领袖")
+                 then
                     hattr.set(u, 0, {str_green = "+" .. Val[1]})
                 elseif (name == "蛇皮" or name == "修仙之体" or name == "恶魔之躯") then
                     hattr.set(u, 0, {agi_green = "+" .. Val[1]})
@@ -47,6 +50,43 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_damage_type = "+poison"})
                 elseif (name == "霹雳化身") then
                     hattr.set(u, 0, {attack_damage_type = "+thunder", attack_speed = "+" .. Val[1]})
+                elseif (name == "冰雪之殇") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            attack_damage_type = "+ice",
+                            attack_debuff = {
+                                add = {
+                                    {
+                                        attr = "move",
+                                        odds = 100,
+                                        val = Val[1],
+                                        during = Val[2]
+                                    }
+                                }
+                            }
+                        }
+                    )
+                elseif (name == "水刀") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            attack_damage_type = "+water",
+                            attack_effect = {
+                                add = {
+                                    {
+                                        attr = "split",
+                                        odds = 100,
+                                        range = Val[1],
+                                        percent = Val[2],
+                                        effect = "war3mapImported\\eff_WaterBlast.mdl"
+                                    }
+                                }
+                            }
+                        }
+                    )
                 elseif (name == "海洋之心" or name == "深海之心") then
                     hattr.set(u, 0, {natural_water = "+" .. Val[1]})
                 elseif (name == "暗夜之魂" or name == "暗神之魂") then
@@ -229,7 +269,8 @@ addTowerSkillsx = function(u)
                 end
                 if
                     (name == "震荡光弹" or name == "暴力倾向" or name == "旋风" or name == "魅惑" or name == "撸战棍" or name == "恍惚灯路" or
-                        name == "晴天霹雳")
+                        name == "晴天霹雳" or
+                        name == "沉痛打击")
                  then
                     hattr.set(
                         u,

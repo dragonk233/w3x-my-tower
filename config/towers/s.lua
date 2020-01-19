@@ -426,7 +426,7 @@ towers_s = {
         Missileart = "Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl",
         cool1 = 1.90,
         Primary = "STR",
-        abilList = {towerSpxKV["火之元素"], towerSpxKV["火爆山岩"]}
+        abilList = {towerSpxKV["火之元素"], towerSpxKV["炎魔"]}
     },
     {
         Name = "恶魔·狂暴的守卫将领",

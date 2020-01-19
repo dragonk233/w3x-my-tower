@@ -66,6 +66,16 @@ TOWER_ABLI_SPX = {
         Val = {3}
     },
     {
+        Name = "冰矢",
+        Ubertip = "+可攻击{val#1}个目标",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFrost.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Missileart = "war3mapImported\\eff_freezingsplinter.mdl",
+        TYPE = "multiattack",
+        Val = {4}
+    },
+    {
         Name = "重生",
         Ubertip = "进攻时死亡可以复活1次",
         Art = "war3mapImported\\icon_pas_Ankh.blp",
@@ -145,6 +155,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {180}
+    },
+    {
+        Name = "落难领袖",
+        Ubertip = "+{val#1}力量",
+        Art = "war3mapImported\\icon_pas_Holy_DivineIllumination.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {200}
     },
     {
         Name = "蛇皮",
@@ -339,6 +357,14 @@ TOWER_ABLI_SPX = {
         Val = {}
     },
     {
+        Name = "水刀",
+        Ubertip = "+水攻击特性|n{val#1}范围的{val#2}%分裂",
+        Art = "war3mapImported\\icon_pas_Weapon_Shortblade_37.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {600, 30}
+    },
+    {
         Name = "山岭之灵",
         Ubertip = "+土攻击特性",
         Art = "war3mapImported\\icon_pas_Taunt.blp",
@@ -377,6 +403,22 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {8, 5}
+    },
+    {
+        Name = "冰魂",
+        Ubertip = "+冰攻击特性",
+        Art = "war3mapImported\\icon_pas_MageArmor.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {}
+    },
+    {
+        Name = "冰雪之殇",
+        Ubertip = "+冰攻击特性|n+减少敌人{val#1}点移动持续{val#2}秒",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFreezingBreath.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {30, 3.8}
     },
     {
         Name = "霹雳化身",
@@ -545,6 +587,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {16, 0, 3.5, "Abilities\\Spells\\NightElf\\Barkskin\\BarkSkinTarget.mdl"}
+    },
+    {
+        Name = "沉痛打击",
+        Ubertip = "{val#1}%几率眩晕{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Spell_Holy_Vindication.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {23, 0, 4.5, "Abilities\\Spells\\Orc\\StasisTrap\\StasisTotemTarget.mdl"}
     },
     {
         Name = "旋风",
@@ -787,6 +837,20 @@ TOWER_ABLI_SPX = {
         }
     },
     {
+        Name = "乘风破浪",
+        Ubertip = "{val#1}%几率召唤大船冲撞敌人造成{val#3}伤害，并眩晕{val#4}秒",
+        Art = "war3mapImported\\icon_pas_ShockWave.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            30,
+            1,
+            300,
+            3.5,
+            "Units\\Critters\\OrcJuggernaught\\OrcJuggernaught.mdl"
+        }
+    },
+    {
         Name = "剑气",
         Ubertip = "{val#1}%几率发起{val#2}道剑气爪对直线敌人造成{val#3}伤害，并减少{val#4}点护甲{val#5}秒",
         Art = "war3mapImported\\icon_pas_Weapon_Shortblade_37.blp",
@@ -814,15 +878,15 @@ TOWER_ABLI_SPX = {
         }
     },
     {
-        Name = "火爆山岩",
-        Ubertip = "{val#1}%几率发起火爆山岩对敌人爆炸，造成{val#3}点伤害",
+        Name = "破冰碎片",
+        Ubertip = "{val#1}%几率发起破冰碎片对敌人爆炸，造成{val#3}点伤害",
         Art = "war3mapImported\\icon_pas_SummerFest_FireSpirit.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
             30,
             1000,
-            245
+            345
         }
     },
     {
@@ -861,7 +925,7 @@ TOWER_ABLI_SPX = {
             30,
             "蛇棒",
             7,
-            35
+            18
         }
     },
     {
@@ -874,7 +938,20 @@ TOWER_ABLI_SPX = {
             40,
             "骷髅兵",
             10,
-            30
+            16
+        }
+    },
+    {
+        Name = "炎魔",
+        Ubertip = "{val#1}%几率召唤不可控的{val#2}协助作战{val#3}秒，攻击力相当于本体的{val#4}%",
+        Art = "war3mapImported\\icon_pas_WandSkull.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            40,
+            "炎魔",
+            5,
+            24
         }
     },
     {

@@ -56,7 +56,7 @@ onTowerAttack = function(evtData)
                     onTowerAttackTtg(u, name)
                     hskill.rangeSwim(
                         {
-                            range = 1000,
+                            range = 895,
                             odds = 100,
                             during = 0.5 * level,
                             whichUnit = u,
@@ -70,7 +70,7 @@ onTowerAttack = function(evtData)
                     onTowerAttackTtg(u, name)
                     hskill.rangeSwim(
                         {
-                            range = 1000,
+                            range = 895,
                             odds = 100,
                             during = 1.2 * level,
                             damage = 50 * level,
@@ -91,7 +91,7 @@ onTowerAttack = function(evtData)
                     local g =
                         hgroup.createByUnit(
                         u,
-                        1000,
+                        895,
                         function()
                             return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                         end
@@ -162,7 +162,7 @@ onTowerAttack = function(evtData)
                         local g =
                             hgroup.createByUnit(
                             u,
-                            1000,
+                            895,
                             function()
                                 return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                             end
@@ -204,7 +204,7 @@ onTowerAttack = function(evtData)
                         local g =
                             hgroup.createByUnit(
                             u,
-                            1000,
+                            895,
                             function()
                                 return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                             end
@@ -233,7 +233,7 @@ onTowerAttack = function(evtData)
                     local g =
                         hgroup.createByUnit(
                         u,
-                        1000,
+                        895,
                         function()
                             return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                         end
@@ -263,7 +263,7 @@ onTowerAttack = function(evtData)
                     local g =
                         hgroup.createByUnit(
                         u,
-                        1000,
+                        895,
                         function()
                             return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                         end
@@ -293,7 +293,7 @@ onTowerAttack = function(evtData)
                         onTowerAttackTtg(u, name)
                         hskill.whirlwind(
                             {
-                                range = 1000,
+                                range = 895,
                                 frequency = val[2],
                                 during = val[4],
                                 filter = function()
@@ -341,6 +341,48 @@ onTowerAttack = function(evtData)
                                             tokenArrowOpacity = 1,
                                             damageMovement = val[3],
                                             damageMovementRange = 125,
+                                            damageKind = CONST_DAMAGE_KIND.skill,
+                                            damageType = {CONST_DAMAGE_TYPE.physical},
+                                            extraInfluence = function(eu)
+                                                hskill.swim(
+                                                    {
+                                                        odds = 100,
+                                                        whichUnit = eu,
+                                                        during = val[4]
+                                                    }
+                                                )
+                                            end
+                                        }
+                                    )
+                                end
+                            )
+                        end
+                    end
+                elseif (name == "乘风破浪") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        for q = 1, val[2], 1 do
+                            htime.setTimeout(
+                                (q - 1) * 0.55,
+                                function(t, td)
+                                    htime.delDialog(td)
+                                    htime.delDialog(t)
+                                    hskill.leap(
+                                        {
+                                            sourceUnit = u,
+                                            targetUnit = targetUnit,
+                                            speed = 8,
+                                            acceleration = 0,
+                                            filter = function()
+                                                return his.alive(cj.GetFilterUnit()) and
+                                                    his.enemy(cj.GetFilterUnit(), u)
+                                            end,
+                                            tokenArrow = val[5],
+                                            tokenArrowScale = 1.20,
+                                            tokenArrowOpacity = 1,
+                                            damageMovement = val[3],
+                                            damageMovementRange = 250,
                                             damageKind = CONST_DAMAGE_KIND.skill,
                                             damageType = {CONST_DAMAGE_TYPE.physical},
                                             extraInfluence = function(eu)
@@ -475,7 +517,7 @@ onTowerAttack = function(evtData)
                         heffect.toUnit("war3mapImported\\eff_RocketRainBirth.mdl", u, 0)
                         hskill.leapRange(
                             {
-                                targetRange = 1000,
+                                targetRange = 895,
                                 sourceUnit = u,
                                 targetUnit = targetUnit,
                                 speed = 8,
@@ -497,7 +539,7 @@ onTowerAttack = function(evtData)
                             }
                         )
                     end
-                elseif (name == "火爆山岩") then
+                elseif (name == "破冰碎片") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
@@ -511,7 +553,7 @@ onTowerAttack = function(evtData)
                                 filter = function()
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
-                                tokenArrow = "Abilities\\Spells\\Other\\Volcano\\VolcanoMissile.mdl",
+                                tokenArrow = "ar3mapImported\\eff_forst_arrow.mdl",
                                 tokenArrowScale = 1.00,
                                 tokenArrowOpacity = 1,
                                 tokenArrowHeight = 100,
@@ -519,13 +561,13 @@ onTowerAttack = function(evtData)
                                 damageMovementRange = 0,
                                 damageEnd = val[3],
                                 damageEndRange = 0,
-                                effectEnd = "Abilities\\Spells\\Other\\Volcano\\VolcanoDeath.mdl",
+                                effectEnd = "Abilities\\Spells\\Undead\\FrostNova\\FrostNovaTarget.mdl",
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire}
                             }
                         )
                     end
-                elseif (name == "蛇棒" or name == "骷髅兵") then
+                elseif (name == "蛇棒" or name == "骷髅兵" or name == "炎魔") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)

@@ -22,7 +22,7 @@ onUnitItemsUesd = function(evtData)
             hunit.getSlk(game.playerTower[playerIndex]).MARK or 0
         }
         local names = {
-            hunit.getName(game.playerTower[playerIndex])
+            "[主兵]" .. hunit.getName(game.playerTower[playerIndex])
         }
         local dots = {
             string.findCount(names[1], "·")
@@ -40,8 +40,9 @@ onUnitItemsUesd = function(evtData)
             end
             names[i + 1] = hunit.getName(game.playerTowerLink[playerIndex][i].unit)
             if (names[i + 1] == "空位") then
-                names[i + 1] = "[核心][N阶]空位"
+                names[i + 1] = "[N阶]空位"
             end
+            names[i + 1] = "[辅兵]" .. names[i + 1]
             dots[i + 1] = string.findCount(names[i + 1], "·")
             nls[i + 1] = string.mb_len(names[i + 1]) - dots[i + 1]
             if (nls[i + 1] > bigNameLen) then
