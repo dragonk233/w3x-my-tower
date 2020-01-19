@@ -20,6 +20,16 @@ TOWER_SUMMON = {
         weapType1 = "MetalHeavySlice"
     },
     {
+        Name = "灰熊",
+        file = "units\\creeps\\GrizzlyBear\\GrizzlyBear",
+        modelScale = 0.90,
+        scale = 1.10,
+        unitSound = "GrizzlyBear",
+        spd = 250,
+        weapTp1 = "normal",
+        weapType1 = "WoodMediumBash"
+    },
+    {
         Name = "炎魔",
         file = "Units\\Creeps\\LavaSpawn\\LavaSpawn",
         modelScale = 1.00,

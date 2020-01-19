@@ -42,7 +42,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Firebolt_Rough_Major.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["屠龙勇士"], towerSpxKV["神剑一闪"]}
     },
     {
         Name = "血精灵·影刺客·瞬",

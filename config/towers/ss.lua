@@ -60,7 +60,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_FireArrow.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["爱的火种"], towerSpxKV["神灭斩"]}
     },
     {
         Name = "人类·钢铁女·埃希",
@@ -75,7 +76,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_speed_slash4.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["铁石心肠"], towerSpxKV["金属元素"]}
     },
     {
         Name = "人类·屠龙女手·琳达恩",
@@ -90,7 +92,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_spur_arrow.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["屠龙勇士"], towerSpxKV["屠龙刀"]}
     },
     {
         Name = "血精灵·追风者·西瓦娜斯",
@@ -105,7 +108,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\MoonPriestessMissile\\MoonPriestessMissile.mdl",
         cool1 = 1.80,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["追风"], towerSpxKV["激灵一箭"]}
     },
     {
         Name = "矮人·山羊骑士·穆拉吉",
@@ -120,7 +124,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["无欲无求"], towerSpxKV["羊蹄子"]}
     },
     {
         Name = "兽人·地狱咆哮·格罗姆",
@@ -135,7 +140,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Coup_de_Grace_Green.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "AGI",
+        abilList = {towerSpxKV["战鬼"], towerSpxKV["地狱战吼"]}
     },
     {
         Name = "兽人·邪鬼咆哮·格烈姆",
@@ -152,7 +158,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Coup_de_Grace.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["战鬼"], towerSpxKV["邪鬼战吼"]}
     },
     {
         Name = "兽人·斧王·玛格",
@@ -167,7 +174,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\RexxarMissile\\RexxarMissile.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["灰熊"], towerSpxKV["交叉战斧"]}
     },
     {
         Name = "兽人·剑圣·赤血",
@@ -183,7 +191,7 @@ towers_ss = {
         Missileart = "war3mapImported\\eff_bloodthirsty.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        abilList = {towerSpxKV["剑圣"]}
+        abilList = {towerSpxKV["剑圣"], towerSpxKV["致命剑术"]}
     },
     {
         Name = "兽人·雷神·萨尔",
@@ -199,7 +207,7 @@ towers_ss = {
         Missileart = "Abilities\\Spells\\Human\\StormBolt\\StormBoltMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        abilList = {towerSpxKV["晴天霹雳"], towerSpxKV["雷暴"]}
+        abilList = {towerSpxKV["晴天霹雳"], towerSpxKV["闪电连链"]}
     },
     {
         Name = "巨魔·狂魂猎手·阿拉烈",
@@ -262,7 +270,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WardenMissile\\WardenMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["恩赐解脱"], towerSpxKV["九道镖"]}
     },
     {
         Name = "德鲁伊·先知·玛尔",
@@ -307,7 +316,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
         cool1 = 2.30,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["超度"], towerSpxKV["同葬"]}
     },
     {
         Name = "亡灵·黑夜游侠·鬼歌",

@@ -122,7 +122,7 @@ onTowerAttack = function(evtData)
                         heffect.toUnit("Abilities\\Spells\\Other\\Transmute\\PileofGold.mdl", u, 0)
                     end
                 end
-                if (his.alive(targetUnit) and (name == "必死宣言" or name == "同葬" or name == "引路人")) then
+                if (his.alive(targetUnit) and (name == "必死宣言" or name == "羊蹄子" or name == "同葬" or name == "引路人")) then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
@@ -400,6 +400,83 @@ onTowerAttack = function(evtData)
                             )
                         end
                     end
+                elseif (name == "交叉战斧") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        local txy =
+                            math.polarProjection(
+                            cj.GetUnitX(u),
+                            cj.GetUnitY(u),
+                            900,
+                            math.getDegBetweenUnit(u, targetUnit)
+                        )
+                        hskill.leapPow(
+                            {
+                                qty = val[2],
+                                deg = 15,
+                                sourceUnit = u,
+                                x = txy.x,
+                                y = txy.y,
+                                speed = 17,
+                                acceleration = -0.1,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = val[6],
+                                tokenArrowScale = 1.00,
+                                tokenArrowOpacity = 1,
+                                damageMovement = val[3],
+                                damageMovementRange = 100,
+                                damageKind = CONST_DAMAGE_KIND.special,
+                                damageType = {CONST_DAMAGE_TYPE.physical},
+                                damageEffect = "Objects\\Spawnmodels\\Critters\\Albatross\\CritterBloodAlbatross.mdl"
+                            }
+                        )
+                    end
+                elseif (name == "九道镖") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        local txy =
+                            math.polarProjection(
+                            cj.GetUnitX(u),
+                            cj.GetUnitY(u),
+                            800,
+                            math.getDegBetweenUnit(u, targetUnit)
+                        )
+                        hskill.leapPow(
+                            {
+                                qty = val[2],
+                                deg = 12.5,
+                                sourceUnit = u,
+                                x = txy.x,
+                                y = txy.y,
+                                speed = 15,
+                                acceleration = 0.2,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = val[6],
+                                tokenArrowScale = 1.00,
+                                tokenArrowOpacity = 1,
+                                damageMovement = val[3],
+                                damageMovementRange = 75,
+                                damageKind = CONST_DAMAGE_KIND.special,
+                                damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.poison},
+                                damageEffect = "Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl",
+                                extraInfluence = function(eu)
+                                    hattr.set(
+                                        eu,
+                                        val[5],
+                                        {
+                                            life_back = "-" .. val[4]
+                                        }
+                                    )
+                                end
+                            }
+                        )
+                    end
                 elseif (name == "剑气") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
@@ -427,7 +504,7 @@ onTowerAttack = function(evtData)
                                 tokenArrowScale = 1.00,
                                 tokenArrowOpacity = 1,
                                 damageMovement = val[3],
-                                damageMovementRange = 100,
+                                damageMovementRange = 75,
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.physical},
                                 damageEffect = "war3mapImported\\eff_speed_slash2.mdl",
@@ -567,7 +644,7 @@ onTowerAttack = function(evtData)
                             }
                         )
                     end
-                elseif (name == "蛇棒" or name == "骷髅兵" or name == "炎魔") then
+                elseif (name == "蛇棒" or name == "骷髅兵" or name == "炎魔" or name == "灰熊") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
@@ -594,6 +671,30 @@ onTowerAttack = function(evtData)
                                 attack_green = "=" .. val[4] * 0.01 * hattr.get(u, "attack_green")
                             }
                         )
+                    end
+                end
+                if (name == "地狱战吼" or name == "邪鬼战吼") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        heffect.toUnit(val[3], u, 0)
+                        local playerIndex = hplayer.index(cj.GetOwningPlayer(u))
+                        hattr.set(
+                            u,
+                            val[2],
+                            {
+                                [val[4]] = "+" .. val[2]
+                            }
+                        )
+                        for i = 1, 4, 1 do
+                            hattr.set(
+                                game.playerTowerLink[playerIndex][i].unit,
+                                val[2],
+                                {
+                                    [val[4]] = "+" .. val[2]
+                                }
+                            )
+                        end
                     end
                 end
             end
