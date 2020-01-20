@@ -22,7 +22,7 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {str_green = "+" .. Val[1]})
                 elseif (name == "蛇皮" or name == "修仙之体" or name == "恶魔之躯") then
                     hattr.set(u, 0, {agi_green = "+" .. Val[1]})
-                elseif (name == "冥想") then
+                elseif (name == "冥想" or name == "大智慧") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1]})
                 elseif (name == "六刃智慧") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1], attack_white = "+" .. Val[2]})
@@ -52,7 +52,7 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_damage_type = "+poison"})
                 elseif (name == "金属元素") then
                     hattr.set(u, 0, {attack_damage_type = "+metal"})
-                elseif (name == "战鬼") then
+                elseif (name == "战鬼" or name == "魂鬼") then
                     hattr.set(u, 0, {attack_damage_type = "+ghost"})
                 elseif (name == "霹雳化身") then
                     hattr.set(u, 0, {attack_damage_type = "+thunder", attack_speed = "+" .. Val[1]})

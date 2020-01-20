@@ -696,6 +696,20 @@ onTowerAttack = function(evtData)
                             )
                         end
                     end
+                    if (name == "固化时空") then
+                        local val = v.Val or {0}
+                        if (math.random(1, 100) <= val[1]) then
+                            onTowerAttackTtg(u, name)
+                            hunit.setAnimateSpeed(u, 0, val[2])
+                            hattr.set(
+                                targetUnit,
+                                val[2],
+                                {
+                                    move = "-522"
+                                }
+                            )
+                        end
+                    end
                 end
             end
         end

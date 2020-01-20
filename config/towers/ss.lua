@@ -286,7 +286,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_CrystalMissile.mdl",
         cool1 = 2.20,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["大智慧"], towerSpxKV["固化时空"]}
     },
     {
         Name = "亡灵·巫妖·奥丁",
@@ -301,7 +302,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\LichMissile\\LichMissile.mdl",
         cool1 = 2.10,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["巫妖族"], towerSpxKV["霜冻新星"]}
     },
     {
         Name = "亡灵·超渡师·克尔苏加德",
@@ -408,7 +410,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["魂鬼"], towerSpxKV["固化时空"]}
     },
     {
         Name = "幽魂·克尔苏加德",
@@ -423,7 +426,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
         cool1 = 2.30,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["魂鬼"], towerSpxKV["固化时空"]}
     },
     {
         Name = "幽魂·赛纳留斯",
@@ -438,7 +442,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SorceressMissile\\SorceressMissile.mdl",
         cool1 = 2.20,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["魂鬼"], towerSpxKV["固化时空"]}
     },
     {
         Name = "昆虫·猩红刀盔·科鲁斯",

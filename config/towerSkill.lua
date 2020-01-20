@@ -205,6 +205,14 @@ TOWER_ABLI_SPX = {
         Val = {70}
     },
     {
+        Name = "大智慧",
+        Ubertip = "+{val#1}智力",
+        Art = "war3mapImported\\icon_pas_AbsorbMagic.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {120}
+    },
+    {
         Name = "机械之心",
         Ubertip = "+{val#1}力量|n+{val#2}智力|n+{val#3}护甲",
         Art = "war3mapImported\\icon_pas_Tempered_gear.blp",
@@ -392,6 +400,14 @@ TOWER_ABLI_SPX = {
         Name = "战鬼",
         Ubertip = "+鬼攻击特性",
         Art = "war3mapImported\\icon_pas_Ability_Warlock_ImprovedDemonicTactics.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {}
+    },
+    {
+        Name = "魂鬼",
+        Ubertip = "+鬼攻击特性",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNShadeTrueSight.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {}
@@ -691,6 +707,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {35, 300, 0.5, "war3mapImported\\eff_empty_thunder.mdl"}
+    },
+    {
+        Name = "固化时空",
+        Ubertip = "{val#1}%几率令目标时空固化{val#2}秒",
+        Art = "war3mapImported\\icon_pas_Stimulate_lightning.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {30, 5}
     },
     {
         Name = "诡异闪电",
