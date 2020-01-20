@@ -152,7 +152,7 @@ onTowerAttack = function(evtData)
                         )
                     end
                 end
-                if (name == "雷霆一击" or name == "缠绕") then
+                if (name == "雷霆一击" or name == "缠绕" or name == "霜冻新星") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)

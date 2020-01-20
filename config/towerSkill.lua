@@ -454,7 +454,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "黑暗之箭",
-        Ubertip = "+暗攻击特性|n+减少敌人护甲{val#1}点持续{val#2}秒",
+        Ubertip = "+暗攻击特性|n减少敌人护甲{val#1}点持续{val#2}秒",
         Art = "war3mapImported\\icon_pas_Weapon_Shortblade_53.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -462,7 +462,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "黑夜之箭",
-        Ubertip = "+暗攻击特性|n+减少敌人护甲{val#1}点持续{val#2}秒",
+        Ubertip = "+暗攻击特性|n减少敌人护甲{val#1}点持续{val#2}秒",
         Art = "war3mapImported\\icon_pas_Weapon_Shortblade_53.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -470,11 +470,19 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "黑狱之箭",
-        Ubertip = "+暗攻击特性|n+减少敌人护甲{val#1}点持续{val#2}秒",
+        Ubertip = "+暗攻击特性|n减少敌人护甲{val#1}点持续{val#2}秒",
         Art = "war3mapImported\\icon_pas_Weapon_Shortblade_53.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {8, 5}
+    },
+    {
+        Name = "透彻寒骨",
+        Ubertip = "+冰攻击特性|n减少敌人护甲{val#1}点持续{val#2}秒",
+        Art = "war3mapImported\\icon_pas_DarkRitual.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {10, 5.5}
     },
     {
         Name = "冰魂",
@@ -866,6 +874,22 @@ TOWER_ABLI_SPX = {
             "move",
             "war3mapImported\\eff_EarthNova.mdl",
             "Abilities\\Spells\\NightElf\\EntanglingRoots\\EntanglingRootsTarget.mdl"
+        }
+    },
+    {
+        Name = "霜冻新星",
+        Ubertip = "{val#1}%几率发动冰爆攻击附近敌人造成{val#2}伤害，同时减少{val#3}点移动力{val#4}秒",
+        Art = "war3mapImported\\icon_pas_Ability_Druid_EmpoweredRejuvination.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            25,
+            475,
+            50,
+            3,
+            "move",
+            "war3mapImported\\eff_IceStomp.mdl",
+            "Abilities\\Spells\\Undead\\FrostNova\\FrostNovaTarget.mdl"
         }
     },
     {

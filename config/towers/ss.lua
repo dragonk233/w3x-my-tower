@@ -303,7 +303,7 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\LichMissile\\LichMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        abilList = {towerSpxKV["巫妖族"], towerSpxKV["霜冻新星"]}
+        abilList = {towerSpxKV["透彻寒骨"], towerSpxKV["霜冻新星"]}
     },
     {
         Name = "亡灵·超渡师·克尔苏加德",

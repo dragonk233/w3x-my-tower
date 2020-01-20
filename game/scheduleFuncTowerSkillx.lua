@@ -198,6 +198,25 @@ addTowerSkillsx = function(u)
                         }
                     )
                 end
+                if (name == "透彻寒骨") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            attack_damage_type = "+ice",
+                            attack_debuff = {
+                                add = {
+                                    {
+                                        attr = "defend",
+                                        odds = 100,
+                                        val = Val[1],
+                                        during = Val[2]
+                                    }
+                                }
+                            }
+                        }
+                    )
+                end
                 if
                     (table.includes(
                         name,
