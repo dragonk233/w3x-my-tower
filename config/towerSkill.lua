@@ -1150,6 +1150,19 @@ TOWER_ABLI_SPX = {
         }
     },
     {
+        Name = "炫力炸弹",
+        Ubertip = "{val#1}%几率发起摇摇乐爆炸，造成{val#2}范围的{val#3}点伤害，敌人还会被眩晕{val#4}秒",
+        Art = "war3mapImported\\icon_pas_Hunter_MasterTactitian.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            40,
+            600,
+            450,
+            3
+        }
+    },
+    {
         Name = "破冰碎片",
         Ubertip = "{val#1}%几率发起破冰碎片对敌人爆炸，造成{val#3}点伤害",
         Art = "war3mapImported\\icon_pas_SummerFest_FireSpirit.blp",

@@ -544,7 +544,7 @@ towers_ss = {
         Missileart = "Abilities\\Spells\\Other\\Transmute\\GoldBottleMissile.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        abilList = {towerSpxKV["炼金"], towerSpxKV["炫力化学"]}
+        abilList = {towerSpxKV["炼金"], towerSpxKV["炫力炸弹"]}
     },
     {
         Name = "食人魔·守墓人·阿尔玛",

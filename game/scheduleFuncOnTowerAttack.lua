@@ -526,8 +526,35 @@ onTowerAttack = function(evtData)
                                 effectEnd = "war3mapImported\\eff_FireStomp.mdl",
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire},
-                                damageString = "火",
                                 damageEffect = "Abilities\\Spells\\Other\\Incinerate\\FireLordDeathExplode.mdl"
+                            }
+                        )
+                    end
+                elseif (name == "炫力炸弹") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        hskill.leap(
+                            {
+                                sourceUnit = u,
+                                targetUnit = targetUnit,
+                                speed = 11,
+                                acceleration = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = "Abilities\\Spells\\Other\\AcidBomb\\BottleMissile.mdl",
+                                tokenArrowScale = 1.50,
+                                tokenArrowOpacity = 1,
+                                tokenArrowHeight = 75,
+                                damageMovement = 0,
+                                damageMovementRange = 0,
+                                damageEnd = val[3],
+                                damageEndRange = val[2],
+                                effectEnd = "war3mapImported\\eff_BombBlast.mdl",
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.poison},
+                                damageEffect = "war3mapImported\\eff_brilliant_sparkle.mdl"
                             }
                         )
                     end
