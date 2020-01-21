@@ -350,7 +350,8 @@ towers_ss = {
         weapTp1 = "instant",
         Missileart = "Abilities\\Weapons\\GyroCopter\\GyroCopterImpact.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["爆头"], towerSpxKV["鬼枪术"]}
     },
     {
         Name = "亡灵·火焰剑鬼·K",

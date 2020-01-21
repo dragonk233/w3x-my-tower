@@ -338,7 +338,15 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_BlessedResillience.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {4, 155}
+        Val = {3, 155}
+    },
+    {
+        Name = "爆头",
+        Ubertip = "{val#1}%几率击出额外{val#2}%伤害的物理暴击",
+        Art = "war3mapImported\\icon_pas_HumanMissileUpTwo.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {40, 40}
     },
     {
         Name = "刺客信条",
@@ -346,7 +354,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Holy_EyeforanEye.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {35, 60}
+        Val = {35, 75}
     },
     {
         Name = "法术研究",
@@ -803,6 +811,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {20, 50, 4.5, "war3mapImported\\eff_flame_burning.mdl"}
+    },
+    {
+        Name = "鬼枪术",
+        Ubertip = "攻击时有{val#1}%几率增加{val#2}%攻击速度，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_DwarvenLongRifle.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {27, 47, 5.5, "Abilities\\Spells\\Other\\HowlOfTerror\\HowlTarget.mdl"}
     },
     {
         Name = "追魂狩猎",

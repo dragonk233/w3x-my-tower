@@ -146,7 +146,10 @@ addTowerSkillsx = function(u)
                             }
                         }
                     )
-                elseif (name == "熊掌战意" or name == "马索格爆锤" or name == "致命剑术" or name == "恩赐解脱" or name == "刺客信条") then
+                elseif
+                    (name == "熊掌战意" or name == "马索格爆锤" or name == "致命剑术" or name == "恩赐解脱" or name == "爆头" or
+                        name == "刺客信条")
+                 then
                     hattr.set(
                         u,
                         0,
@@ -231,7 +234,7 @@ addTowerSkillsx = function(u)
                     local a
                     if (name == "追魂狩猎" or name == "狂魂狩猎" or name == "狂魂骑猎") then
                         a = "attack_green"
-                    elseif (name == "狂战士之血") then
+                    elseif (name == "狂战士之血" or name == "鬼枪术") then
                         a = "attack_speed"
                     end
                     if (a ~= nil) then
