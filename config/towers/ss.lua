@@ -366,7 +366,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Fireball_Minor.mdl",
         cool1 = 2.20,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["火焰之剑"], towerSpxKV["炎杀鬼球"]}
     },
     {
         Name = "娜迦·海龙骑士·艾萨拉",
@@ -381,7 +382,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Azul_Arrow.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["龙骑士"], towerSpxKV["大海浪涛"]}
     },
     {
         Name = "恶魔·觉醒猎手·尤迪安",
@@ -428,7 +430,7 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
         cool1 = 2.30,
         Primary = "INT",
-        abilList = {towerSpxKV["魂鬼"], towerSpxKV["固化时空"]}
+        abilList = {towerSpxKV["魂鬼"], towerSpxKV["虚幻"]}
     },
     {
         Name = "幽魂·赛纳留斯",
@@ -444,7 +446,7 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\SorceressMissile\\SorceressMissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        abilList = {towerSpxKV["魂鬼"], towerSpxKV["固化时空"]}
+        abilList = {towerSpxKV["魂鬼"], towerSpxKV["折磨耐性"]}
     },
     {
         Name = "昆虫·猩红刀盔·科鲁斯",
@@ -459,7 +461,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Coup_de_Grace.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["血性"], towerSpxKV["金属元素"]}
     },
     {
         Name = "元素·海冰凛魂",
@@ -491,7 +494,8 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 1.65,
         Primary = "AGI",
-        abilList = "Alit"
+        abilList = "Alit",
+        abilList = {towerSpxKV["电离之子"], towerSpxKV["誓神劈愿"]}
     },
     {
         Name = "元素·暗无天日",
@@ -506,7 +510,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl",
         cool1 = 1.80,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["噬日"], towerSpxKV["吞光"]}
     },
     {
         Name = "异兽·朱雀",
@@ -523,7 +528,7 @@ towers_ss = {
         weapTp1 = "msplash",
         cool1 = 2.00,
         Primary = "STR",
-        abilList = {towerSpxKV["溅射攻击"]}
+        abilList = {towerSpxKV["溅射攻击"], towerSpxKV["涅磐"]}
     },
     {
         Name = "地精·炼金术士·卡奈",
@@ -538,7 +543,8 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Other\\Transmute\\GoldBottleMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["炼金"], towerSpxKV["炫力化学"]}
     },
     {
         Name = "食人魔·守墓人·阿尔玛",
@@ -553,6 +559,7 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\HarpyMissile\\HarpyMissile.mdl",
         cool1 = 2.10,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["盗墓"], towerSpxKV["着草"]}
     }
 }

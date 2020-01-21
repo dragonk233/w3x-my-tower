@@ -15,21 +15,6 @@ towers_sss = {
         Primary = "STR"
     },
     {
-        Name = "人类·流浪人·风",
-        Ubertip = "我的人虽然在这里，但我的心一直在放浪～",
-        unitSound = "SpellBreaker",
-        file = "war3mapImported\\unit_Necromancer.mdl",
-        Art = "war3mapImported\\icon_unit_Mage_StudentOfTheMind.blp",
-        modelScale = 2.00,
-        scale = 2.20,
-        movetp = "foot",
-        moveHeight = 0.00,
-        weapTp1 = "missile",
-        Missileart = "Abilities\\Weapons\\IllidanMissile\\IllidanMissile.mdl",
-        cool1 = 2.00,
-        Primary = "AGI"
-    },
-    {
         Name = "人王·御龙剑神·奥米伽",
         Ubertip = "别人都喊我暴龙杀手",
         unitSound = "SpellBreaker",
@@ -44,6 +29,22 @@ towers_sss = {
         cool1 = 2.00,
         Primary = "STR",
         abilList = {towerSpxKV["屠龙勇士"], towerSpxKV["神剑一闪"]}
+    },
+    {
+        Name = "人类·流浪人·风",
+        Ubertip = "我的人虽然在这里，但我的心一直在放浪～",
+        unitSound = "SpellBreaker",
+        file = "war3mapImported\\unit_Necromancer.mdl",
+        Art = "war3mapImported\\icon_unit_Mage_StudentOfTheMind.blp",
+        modelScale = 2.00,
+        scale = 2.20,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "Abilities\\Weapons\\IllidanMissile\\IllidanMissile.mdl",
+        cool1 = 2.00,
+        Primary = "AGI",
+        abilList = {towerSpxKV["屠龙勇士"], towerSpxKV["气定神闲"]}
     },
     {
         Name = "血精灵·影刺客·瞬",
