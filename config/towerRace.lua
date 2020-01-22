@@ -3,14 +3,22 @@ towerRaces = {
         Name = "人类",
         Ubertip = "平凡而多彩的种族",
         Text = "+3%力量|n+3%敏捷|n+3%智力",
-        Link = "",
-        Art = "war3mapImported\\icon_race_human.blp"
+        Art = "war3mapImported\\icon_race_human.blp",
+        Link = {
+            {qty = 3, text = "+15力量|n+15敏捷|n+15智力"},
+            {qty = 4, text = "+25力量|n+25敏捷|n+25智力"},
+            {qty = 5, text = "+35力量|n+35敏捷|n+35智力"}
+        }
     },
     {
         Name = "人王",
         Ubertip = "成就巅峰的人们",
         Text = "+5%力量|n+5%敏捷|n+5%智力",
-        Art = "war3mapImported\\icon_race_human2.blp"
+        Art = "war3mapImported\\icon_race_human2.blp",
+        Link = {
+            {qty = 1, text = "+15力量|n+15敏捷|n+15智力"},
+            {qty = 2, text = "+25力量|n+25敏捷|n+25智力"},
+        }
     },
     {
         Name = "矮人",
@@ -75,14 +83,20 @@ towerRaces = {
     {
         Name = "恶魔",
         Ubertip = "拥有超自然力量的邪恶存在代表",
-        Text = "+6.66%伤害增幅|n+6.66%攻击速度|n-6.66点护甲",
+        Text = "+6.66%伤害增幅|n+6.66%攻击速度|n-6.66%神抗性",
         Art = "war3mapImported\\icon_race_demon.blp"
+    },
+    {
+        Name = "神族",
+        Ubertip = "一般都视为超越世界规则力量的奇妙种族",
+        Text = "+神攻击特性",
+        Art = "war3mapImported\\icon_race_god.blp"
     },
     {
         Name = "昆虫",
         Ubertip = "一般都长得很吓人或很丑",
         Text = "+虫攻击特性",
-        Art = "war3mapImported\\icon_race_insect.blp"
+        Art = "war3mapImported\\icon_race_insect2.blp"
     },
     {
         Name = "异兽",

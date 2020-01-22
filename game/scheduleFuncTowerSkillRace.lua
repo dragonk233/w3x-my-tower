@@ -143,7 +143,8 @@ addTowerSkillsRace = function(u, slk)
                 natural_ghost_oppose = "+8",
                 natural_metal_oppose = "+8",
                 natural_dragon_oppose = "+8",
-                natural_insect_oppose = "+8"
+                natural_insect_oppose = "+8",
+                natural_god_oppose = "+8"
             }
         )
     elseif (race == "恶魔") then
@@ -153,7 +154,15 @@ addTowerSkillsRace = function(u, slk)
             {
                 damage_amplitude = "+6.66",
                 attack_speed = "+6.66",
-                defend = "-6.66"
+                natural_god_oppose = "-6.66"
+            }
+        )
+    elseif (race == "神族") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = "+god"
             }
         )
     elseif (race == "昆虫") then

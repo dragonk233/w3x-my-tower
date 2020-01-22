@@ -54,7 +54,8 @@ towerShadowGen = function(playerIndex)
             natural_ghost_oppose = "=" .. hattr.get(tower, "natural_ghost_oppose"),
             natural_metal_oppose = "=" .. hattr.get(tower, "natural_metal_oppose"),
             natural_dragon_oppose = "=" .. hattr.get(tower, "natural_dragon_oppose"),
-            natural_insect_oppose = "=" .. hattr.get(tower, "natural_insect_oppose")
+            natural_insect_oppose = "=" .. hattr.get(tower, "natural_insect_oppose"),
+            natural_god_oppose = "=" .. hattr.get(tower, "natural_god_oppose")
         }
     )
     hunit.setUserData(u, playerIndex)
