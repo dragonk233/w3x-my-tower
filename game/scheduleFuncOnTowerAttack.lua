@@ -406,7 +406,7 @@ onTowerAttack = function(evtData)
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
                                 tokenArrow = val[6],
-                                tokenArrowScale = 1.00,
+                                tokenArrowScale = 1.60,
                                 tokenArrowOpacity = 1,
                                 damageMovement = val[3],
                                 damageMovementRange = 100,
@@ -440,7 +440,7 @@ onTowerAttack = function(evtData)
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
                                 tokenArrow = val[6],
-                                tokenArrowScale = 1.00,
+                                tokenArrowScale = 1.50,
                                 tokenArrowOpacity = 1,
                                 damageMovement = val[3],
                                 damageMovementRange = 75,
@@ -502,6 +502,83 @@ onTowerAttack = function(evtData)
                             }
                         )
                     end
+                elseif (name == "神剑七闪") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        local txy =
+                            math.polarProjection(
+                            cj.GetUnitX(u),
+                            cj.GetUnitY(u),
+                            1200,
+                            math.getDegBetweenUnit(u, targetUnit)
+                        )
+                        hskill.leapPow(
+                            {
+                                qty = val[2],
+                                deg = 17,
+                                sourceUnit = u,
+                                x = txy.x,
+                                y = txy.y,
+                                speed = 12,
+                                acceleration = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = val[6],
+                                tokenArrowScale = 1.00,
+                                tokenArrowOpacity = 1,
+                                damageMovement = val[3],
+                                damageMovementRange = 100,
+                                damageMovementRepeat = true,
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire},
+                                damageEffect = "war3mapImported\\eff_shooting.mdl",
+                                extraInfluence = function(eu)
+                                    hattr.set(
+                                        eu,
+                                        val[5],
+                                        {
+                                            move = "-" .. val[4]
+                                        }
+                                    )
+                                end
+                            }
+                        )
+                    end
+                elseif (name == "陨石星") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        local txy =
+                            math.polarProjection(
+                            cj.GetUnitX(u),
+                            cj.GetUnitY(u),
+                            1200,
+                            math.getDegBetweenUnit(u, targetUnit)
+                        )
+                        hskill.leap(
+                            {
+                                sourceUnit = u,
+                                x = txy.x,
+                                y = txy.y,
+                                speed = 8,
+                                acceleration = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = val[6],
+                                tokenArrowScale = 1.30,
+                                tokenArrowOpacity = 1,
+                                damageMovement = val[3],
+                                damageMovementRange = 150,
+                                damageMovementRepeat = true,
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire},
+                                damageEffect = "war3mapImported\\eff_flame_flash2.mdl"
+                            }
+                        )
+                    end
                 elseif (name == "爆骨火弹" or name == "炎杀鬼球") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
@@ -554,7 +631,16 @@ onTowerAttack = function(evtData)
                                 effectEnd = "war3mapImported\\eff_BombBlast.mdl",
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.poison},
-                                damageEffect = "war3mapImported\\eff_brilliant_sparkle.mdl"
+                                damageEffect = "war3mapImported\\eff_brilliant_sparkle.mdl",
+                                extraInfluence = function(eu)
+                                    hskill.swim(
+                                        {
+                                            odds = 100,
+                                            whichUnit = eu,
+                                            during = val[4]
+                                        }
+                                    )
+                                end
                             }
                         )
                     end
@@ -639,8 +725,8 @@ onTowerAttack = function(evtData)
                                 filter = function()
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
-                                tokenArrow = "ar3mapImported\\eff_forst_arrow.mdl",
-                                tokenArrowScale = 1.00,
+                                tokenArrow = "war3mapImported\\eff_forst_arrow.mdl",
+                                tokenArrowScale = 1.10,
                                 tokenArrowOpacity = 1,
                                 tokenArrowHeight = 100,
                                 damageMovement = 0,
@@ -649,7 +735,7 @@ onTowerAttack = function(evtData)
                                 damageEndRange = 0,
                                 effectEnd = "Abilities\\Spells\\Undead\\FrostNova\\FrostNovaTarget.mdl",
                                 damageKind = CONST_DAMAGE_KIND.skill,
-                                damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire}
+                                damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.ice}
                             }
                         )
                     end
@@ -686,61 +772,60 @@ onTowerAttack = function(evtData)
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
-                        heffect.toUnit(val[3], u, 0)
+                        heffect.toUnit(val[4], u, 0)
                         local playerIndex = hplayer.index(cj.GetOwningPlayer(u))
                         hattr.set(
                             u,
-                            val[2],
+                            val[3],
                             {
-                                [val[4]] = "+" .. val[2]
+                                [val[5]] = "+" .. val[2]
                             }
                         )
                         for i = 1, 4, 1 do
                             hattr.set(
                                 game.playerTowerLink[playerIndex][i].unit,
-                                val[2],
+                                val[3],
                                 {
-                                    [val[4]] = "+" .. val[2]
+                                    [val[5]] = "+" .. val[2]
                                 }
                             )
                         end
                     end
-                    if (name == "固化时空") then
-                        local val = v.Val or {0}
-                        if (math.random(1, 100) <= val[1]) then
-                            onTowerAttackTtg(u, name)
-                            hunit.setAnimateSpeed(u, 0, val[2])
-                            hattr.set(
-                                targetUnit,
-                                val[2],
-                                {
-                                    move = "-522"
-                                }
-                            )
-                        end
+                end
+                if (name == "固化时空") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        hunit.setAnimateSpeed(targetUnit, 0, val[2])
+                        hattr.set(
+                            targetUnit,
+                            val[2],
+                            {
+                                move = "-522"
+                            }
+                        )
                     end
-                    if (name == "血性") then
-                        local val = v.Val or {0}
-                        if (math.random(1, 100) <= val[1]) then
-                            onTowerAttackTtg(u, name)
-                            hattr.set(
-                                u,
-                                0,
-                                {
-                                    attack_effect = {
-                                        add = {
-                                            {
-                                                attr = "knocking",
-                                                odds = val[2],
-                                                percent = val[3],
-                                                during = val[4],
-                                                effect = val[5]
-                                            }
+                end
+                if (name == "血性") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        hattr.set(
+                            u,
+                            val[4],
+                            {
+                                attack_effect = {
+                                    add = {
+                                        {
+                                            attr = "knocking",
+                                            odds = val[2],
+                                            percent = val[3],
+                                            effect = val[5]
                                         }
                                     }
                                 }
-                            )
-                        end
+                            }
+                        )
                     end
                 end
             end

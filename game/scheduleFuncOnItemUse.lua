@@ -56,7 +56,7 @@ onUnitItemsUesd = function(evtData)
         for i, v in ipairs(marks) do
             local vlen = string.len(tostring(v))
             if (vlen < bigMarkLen) then
-                marks[i] = string.rep("_", bigMarkLen - vlen) .. v
+                marks[i] = string.rep(" ", bigMarkLen - vlen) .. v
             end
         end
         for i, v in ipairs(names) do

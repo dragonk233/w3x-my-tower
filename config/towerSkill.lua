@@ -339,7 +339,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCriticalStrike.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {15, 45}
+        Val = {25, 50}
     },
     {
         Name = "恩赐解脱",
@@ -779,12 +779,12 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Stimulate_lightning.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {35, 300, 0.5, "war3mapImported\\eff_empty_thunder.mdl"}
+        Val = {35, 275, 0.5, "war3mapImported\\eff_empty_thunder.mdl"}
     },
     {
         Name = "固化时空",
         Ubertip = "{val#1}%几率令目标时空固化{val#2}秒",
-        Art = "war3mapImported\\icon_pas_Stimulate_lightning.blp",
+        Art = "war3mapImported\\icon_pas_Time_crack.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {30, 5}
@@ -859,7 +859,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_ChainLightning.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {45, 4, 330}
+        Val = {45, 4, 290}
     },
     {
         Name = "誓神劈愿",
@@ -915,7 +915,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Shadow_LifeDrain.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {25, 15, 30, 3.5, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {35, 75, 30, 3.0, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "烈焰风暴",
@@ -1098,11 +1098,11 @@ TOWER_ABLI_SPX = {
     {
         Name = "九道镖",
         Ubertip = "{val#1}%几率投掷{val#2}把飞刀对直线敌人造成{val#3}伤害，并中毒扣{val#4}血{val#5}秒",
-        Art = "war3mapImported\\icon_pas_Cross_back_axe.blp",
+        Art = "war3mapImported\\icon_pas_TheBlackArrow.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
-            12.5,
+            15,
             9,
             290,
             35,
@@ -1123,6 +1123,33 @@ TOWER_ABLI_SPX = {
             7,
             6,
             "war3mapImported\\eff_bladewave.mdl"
+        }
+    },
+    {
+        Name = "神剑七闪",
+        Ubertip = "{val#1}%几率发起{val#2}道剑气撕裂大地敌人造成持续{val#3}伤害，并减少{val#4}点移动{val#5}秒",
+        Art = "war3mapImported\\icon_pas_Spell_Nature_UnleashedRage.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            50,
+            7,
+            100,
+            50,
+            3,
+            "war3mapImported\\eff_cracked_ground.mdl"
+        }
+    },
+    {
+        Name = "陨石星",
+        Ubertip = "{val#1}%几率发动陨石攻击敌人造成持续{val#2}点伤害",
+        Art = "war3mapImported\\icon_pas_Spell_Nature_UnleashedRage.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            50,
+            115,
+            "war3mapImported\\eff_fireball_impact_gun.mdl"
         }
     },
     {
@@ -1165,7 +1192,7 @@ TOWER_ABLI_SPX = {
     {
         Name = "破冰碎片",
         Ubertip = "{val#1}%几率发起破冰碎片对敌人爆炸，造成{val#3}点伤害",
-        Art = "war3mapImported\\icon_pas_SummerFest_FireSpirit.blp",
+        Art = "war3mapImported\\icon_pas_Ore_Cobalt.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
@@ -1202,26 +1229,28 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "地狱战吼",
-        Ubertip = "{val#1}%几率发起战吼，友军增加{val#2}%攻速",
+        Ubertip = "{val#1}%几率发起战吼，友军增加{val#2}%攻速{val#3}秒",
         Art = "war3mapImported\\icon_pas_Warrior_EndlessRage.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
             15,
             30,
+            5,
             "Abilities\\Spells\\NightElf\\Taunt\\TauntCaster.mdl",
             "attack_speed"
         }
     },
     {
         Name = "邪鬼战吼",
-        Ubertip = "{val#1}%几率发起战吼，友军增加{val#2}点攻击",
+        Ubertip = "{val#1}%几率发起战吼，友军增加{val#2}点攻击{val#3}秒",
         Art = "war3mapImported\\icon_pas_Warrior_EndlessRage.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
             15,
             125,
+            5,
             "Abilities\\Spells\\NightElf\\BattleRoar\\RoarCaster.mdl",
             "attack_green"
         }
@@ -1268,7 +1297,7 @@ TOWER_ABLI_SPX = {
     {
         Name = "灰熊",
         Ubertip = "{val#1}%几率召唤不可控的{val#2}协助作战{val#3}秒，攻击力相当于本体的{val#4}%",
-        Art = "war3mapImported\\PASBTNBattleRoar.blp",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBattleRoar.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {
@@ -1379,6 +1408,15 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {60},
+        ODK = true
+    },
+    {
+        Name = "国王",
+        Ubertip = "+{val#1}护甲|n+{val#2}%魔抗",
+        Art = "war3mapImported\\icon_pas_Spell_Holy_Power.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {50, 50},
         ODK = true
     },
     {
@@ -1523,6 +1561,15 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {20, 10, 2},
+        ODK = true
+    },
+    {
+        Name = "不朽传说",
+        Ubertip = "被攻击时有{val#2}%几率进入无敌，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Spell_Holy_UnyieldingFaith.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {20, 2.5},
         ODK = true
     },
     {

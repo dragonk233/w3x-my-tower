@@ -12,7 +12,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_spur_arrow2.mdl",
         cool1 = 1.90,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["国王"], towerSpxKV["不朽传说"]}
     },
     {
         Name = "人王·御龙剑神·奥米伽",
@@ -122,7 +123,7 @@ towers_sss = {
         Missileart = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilMissile.mdl",
         cool1 = 2.10,
         Primary = "AGI",
-        abilList = {towerSpxKV["溅射攻击"]}
+        abilList = {towerSpxKV["溅射攻击"], towerSpxKV["陨石星"]}
     },
     {
         Name = "恶魔·基尔加丹",
@@ -138,7 +139,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_DarkSoul.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        abilList = {towerSpxKV["溅射攻击"]}
+        abilList = {towerSpxKV["溅射攻击"], towerSpxKV["陨石星"]}
     },
     {
         Name = "恶魔·究极猎手·尤迪安",
@@ -204,7 +205,6 @@ towers_sss = {
     {
         Name = "熊猫·霹雳",
         Ubertip = "嘿～雷电的化身，霹雳来啦",
-        abilList = "Alit",
         unitSound = "StormPandarenBrewmaster",
         file = "Units\\Creeps\\StormPandarenBrewmaster\\StormPandarenBrewmaster",
         Art = "ReplaceableTextures\\CommandButtons\\BTNStormBrewmaster.blp",
@@ -216,7 +216,7 @@ towers_sss = {
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 1.90,
         Primary = "INT",
-        abilList = {towerSpxKV["霹雳化身"]}
+        abilList = {"Alit", towerSpxKV["霹雳化身"]}
     },
     {
         Name = "熊猫·无双",

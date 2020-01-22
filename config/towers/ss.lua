@@ -494,8 +494,7 @@ towers_ss = {
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 1.65,
         Primary = "AGI",
-        abilList = "Alit",
-        abilList = {towerSpxKV["电离之子"], towerSpxKV["誓神劈愿"]}
+        abilList = {"Alit", towerSpxKV["电离之子"], towerSpxKV["誓神劈愿"]}
     },
     {
         Name = "元素·暗无天日",

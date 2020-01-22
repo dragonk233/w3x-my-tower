@@ -4,15 +4,15 @@ getBookPowLevel = function(curWave)
     if (curWave <= 9) then
         bpow = {9, 1, 0}
     elseif (curWave <= 18) then
-        bpow = {9, 2, 0}
+        bpow = {12, 8, 1}
     elseif (curWave <= 27) then
-        bpow = {19, 3, 1}
+        bpow = {8, 5, 1}
     elseif (curWave <= 45) then
-        bpow = {5, 19, 1}
+        bpow = {6, 7, 1}
     elseif (curWave <= 75) then
-        bpow = {3, 15, 1}
+        bpow = {5, 6, 2}
     else
-        bpow = {0, 9, 1}
+        bpow = {0, 5, 1}
     end
     local tarBPows = {}
     for k, v in ipairs(bpow) do

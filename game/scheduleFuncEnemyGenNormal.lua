@@ -28,6 +28,7 @@ enemyGenYB = function(waiting)
                         if (math.fmod(game.rule.yb.wave, 5) == 0) then
                             bossGen(game.rule.yb.wave)
                             nextWaitTime = 20
+                            game.rule.yb.monLife = game.rule.yb.monLife + 5
                         end
                         if (game.rule.yb.wave > 2 and math.fmod((game.rule.yb.wave - 2), 5) == 0) then
                             awardGen(game.rule.yb.wave)
@@ -89,7 +90,7 @@ enemyGenYB = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (2000 + 25 * game.rule.yb.wave),
+                                    life = "=" .. (game.rule.yb.monLife * game.rule.yb.wave),
                                     move = "=180"
                                 }
                             )
@@ -128,6 +129,7 @@ enemyGenHZ = function(waiting)
                         if (math.fmod(game.rule.hz.wave, 10) == 0) then
                             bossGen(game.rule.hz.wave)
                             nextWaitTime = 20
+                            game.rule.hz.monLife = game.rule.hz.monLife + 5
                         end
                         if (game.rule.hz.wave > 3 and math.fmod((game.rule.hz.wave - 3), 10) == 0) then
                             awardGen(game.rule.hz.wave)
@@ -168,7 +170,7 @@ enemyGenHZ = function(waiting)
                                 u,
                                 0,
                                 {
-                                    life = "=" .. (30 * game.rule.hz.wave),
+                                    life = "=" .. (game.rule.hz.monLife * game.rule.hz.wave),
                                     move = "=190"
                                 }
                             )
@@ -225,7 +227,7 @@ enemyGenDK = function(waiting)
                                     u,
                                     0,
                                     {
-                                        life = "=" .. (35 * game.rule.dk.wave[k]),
+                                        life = "=" .. (game.rule.dk.monLife[k] * game.rule.dk.wave[k]),
                                         move = "=200"
                                     }
                                 )

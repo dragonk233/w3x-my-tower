@@ -127,6 +127,7 @@ enemyDeadDK = function(evtData)
         if (game.rule.dk.playerQty[pi] >= game.rule.dk.perWaveQty) then
             game.rule.dk.playerQty[pi] = 0
             game.rule.dk.wave[pi] = game.rule.dk.wave[pi] + 1
+            game.rule.dk.monLife[pi] = game.rule.dk.monLife[pi] + 3
             game.rule.dk.mon[pi] = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
             --奖励的东东
             if (math.fmod(game.rule.dk.wave[pi], 10) == 0) then

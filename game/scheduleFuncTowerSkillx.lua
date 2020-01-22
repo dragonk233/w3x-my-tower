@@ -5,16 +5,18 @@ addTowerSkillsx = function(u)
             local Val = v.Val
             if (hskill.has(u, abid)) then
                 local name = v.Name
-                if (name == "突击匕首" or name == "月神强击" or name == "魔力之源") then
-                    hattr.set(u, 0, {attack_white = "+" .. Val[1]})
+                if (name == "突击匕首" or name == "月神强击" or name == "魔力之源" or name == "屠龙刀") then
+                    hattr.set(u, 0, {attack_green = "+" .. Val[1]})
                 elseif (name == "巾帼" or name == "剑圣" or name == "气定神闲") then
                     hattr.set(u, 0, {attack_speed = "+" .. Val[1]})
                 elseif (name == "皮糙" or name == "肉厚") then
                     hattr.set(u, 0, {life = "+" .. Val[1]})
                 elseif (name == "治疗") then
                     hattr.set(u, 0, {life_back = "+" .. Val[1]})
-                elseif (name == "铁壁" or name == "矮人之盾" or name == "捍卫守护") then
+                elseif (name == "铁壁" or name == "矮人之盾" or name == "捍卫守护" or name == "铁石心肠") then
                     hattr.set(u, 0, {defend = "+" .. Val[1]})
+                elseif (name == "国王") then
+                    hattr.set(u, 0, {defend = "+" .. Val[1], resistance = "+" .. Val[2]})
                 elseif
                     (name == "远古身躯" or name == "牛头人" or name == "重拳出击" or name == "骑士精神" or name == "威武体魄" or
                         name == "落难领袖")
@@ -25,7 +27,7 @@ addTowerSkillsx = function(u)
                 elseif (name == "冥想" or name == "大智慧") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1]})
                 elseif (name == "六刃智慧") then
-                    hattr.set(u, 0, {int_green = "+" .. Val[1], attack_white = "+" .. Val[2]})
+                    hattr.set(u, 0, {int_green = "+" .. Val[1], attack_green = "+" .. Val[2]})
                 elseif (name == "塞壬之歌" or name == "甲虫之盔") then
                     hattr.set(u, 0, {resistance = "+" .. Val[1]})
                 elseif (name == "石像化" or name == "腰马合一" or name == "折磨耐性") then
@@ -38,7 +40,7 @@ addTowerSkillsx = function(u)
                 elseif (name == "猫头鹰怒视" or name == "捕猎者") then
                     hattr.set(u, 0, {aim = "+" .. Val[1]})
                 elseif (name == "激灵一箭") then
-                    hattr.set(u, 0, {aim = "+" .. Val[1], attack_white = "+" .. Val[2]})
+                    hattr.set(u, 0, {aim = "+" .. Val[1], attack_green = "+" .. Val[2]})
                 elseif (name == "野生龙种" or name == "龙骑士") then
                     hattr.set(u, 0, {attack_damage_type = "+dragon"})
                 elseif (name == "树木之妖") then
@@ -49,7 +51,7 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_damage_type = "+water"})
                 elseif (name == "火之元素") then
                     hattr.set(u, 0, {attack_damage_type = "+fire"})
-                elseif (name == "随风") then
+                elseif (name == "随风" or name == "追风") then
                     hattr.set(u, 0, {attack_damage_type = "+wind"})
                 elseif (name == "毒龙液") then
                     hattr.set(u, 0, {attack_damage_type = "+poison"})
@@ -57,6 +59,8 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_damage_type = "+metal"})
                 elseif (name == "战鬼" or name == "魂鬼") then
                     hattr.set(u, 0, {attack_damage_type = "+ghost"})
+                elseif (name == "冰魂") then
+                    hattr.set(u, 0, {attack_damage_type = "+ice"})
                 elseif (name == "霹雳化身" or name == "电离之子") then
                     hattr.set(u, 0, {attack_damage_type = "+thunder", attack_speed = "+" .. Val[1]})
                 elseif (name == "噬日") then

@@ -41,21 +41,21 @@ updateMyTower = function(evtData)
     local race = slk.RACE
     local percent = 0
     if (tpv == "E") then
-        percent = 0.10
+        percent = 0.07
     elseif (tpv == "D") then
-        percent = 0.11
+        percent = 0.08
     elseif (tpv == "C") then
-        percent = 0.12
+        percent = 0.09
     elseif (tpv == "B") then
-        percent = 0.14
+        percent = 0.10
     elseif (tpv == "A") then
-        percent = 0.16
+        percent = 0.12
     elseif (tpv == "S") then
-        percent = 0.19
+        percent = 0.14
     elseif (tpv == "SS") then
-        percent = 0.22
+        percent = 0.17
     elseif (tpv == "SSS") then
-        percent = 0.25
+        percent = 0.20
     end
     attackWhite = diffLv * attackWhite * percent
     hattr.set(
@@ -158,10 +158,16 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             game.playerTowerLink[playerIndex][linkIndex].tower_id = towerId
             --属性
             local tpv = hslk_global.unitsKV[towerId].towerLevel
+            local Primary = hslk_global.unitsKV[towerId].Primary
+            local attack_damage_type = "physical"
+            if (Primary == "INT") then
+                attack_damage_type = "magic"
+            end
             hattr.set(
                 u,
                 0,
                 {
+                    attack_damage_type = "=" .. attack_damage_type,
                     move = "=0"
                 }
             )

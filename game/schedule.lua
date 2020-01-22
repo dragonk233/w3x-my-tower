@@ -125,17 +125,17 @@ cj.TriggerAddAction(
             {
                 str = {
                     life = 10,
-                    attack_white = 0.2,
-                    toughness = 0.20
+                    attack_white = 0.08,
+                    toughness = 0.05
                 },
                 agi = {
-                    attack_white = 0.3,
-                    attack_speed = 0.05,
-                    avoid = 0.05
+                    attack_white = 0.13,
+                    attack_speed = 0.03,
+                    avoid = 0.03
                 },
                 int = {
-                    attack_white = 0.3,
-                    resistance = 0.05
+                    attack_white = 0.11,
+                    resistance = 0.03
                 }
             }
         )
@@ -211,35 +211,49 @@ cj.TriggerAddAction(
                                                     cj.GetTriggerUnit(),
                                                     1
                                                 )
-                                                hunit.del(cj.GetTriggerUnit(), 0)
                                                 if (his.alive(bigElf)) then
-                                                    heffect.toUnit(
-                                                        "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
-                                                        bigElf,
-                                                        1
-                                                    )
-                                                    hunit.subCurLife(bigElf, game.rule.yb.wave)
-                                                    cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
-                                                    htextTag.style(
-                                                        htextTag.create2Unit(
+                                                    local slk = hunit.getSlk(cj.GetTriggerUnit())
+                                                    local type = slk.TYPE
+                                                    local huntDmg = 0
+                                                    if (type == "boss") then
+                                                        huntDmg = 3 * game.rule.yb.wave
+                                                    elseif (type == "normal") then
+                                                        huntDmg = game.rule.yb.wave
+                                                    end
+                                                    if (huntDmg > 0) then
+                                                        hmsg.echo(
+                                                            hColor.yellow(hunit.getName(cj.GetTriggerUnit())) ..
+                                                                "造成了" .. hColor.red(huntDmg) .. "伤害"
+                                                        )
+                                                        heffect.toUnit(
+                                                            "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
                                                             bigElf,
-                                                            "-" ..
-                                                                game.rule.yb.wave ..
-                                                                    " " ..
-                                                                        game.bigElfTips[
-                                                                            cj.GetRandomInt(1, #game.bigElfTips)
-                                                                        ],
-                                                            10.00,
-                                                            "ff0000",
-                                                            1,
-                                                            1.1,
-                                                            50.00
-                                                        ),
-                                                        "scale",
-                                                        0,
-                                                        0.05
-                                                    )
+                                                            1
+                                                        )
+                                                        hunit.subCurLife(bigElf, huntDmg)
+                                                        cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
+                                                        htextTag.style(
+                                                            htextTag.create2Unit(
+                                                                bigElf,
+                                                                "-" ..
+                                                                    huntDmg ..
+                                                                        " " ..
+                                                                            game.bigElfTips[
+                                                                                cj.GetRandomInt(1, #game.bigElfTips)
+                                                                            ],
+                                                                10.00,
+                                                                "ff0000",
+                                                                1,
+                                                                1.1,
+                                                                50.00
+                                                            ),
+                                                            "scale",
+                                                            0,
+                                                            0.05
+                                                        )
+                                                    end
                                                 end
+                                                hunit.del(cj.GetTriggerUnit(), 0)
                                             else
                                                 cj.SetUnitUserData(cj.GetTriggerUnit(), uVal + 1)
                                                 heffect.bindUnit(
@@ -344,35 +358,49 @@ cj.TriggerAddAction(
                                                     cj.GetTriggerUnit(),
                                                     1
                                                 )
-                                                hunit.del(cj.GetTriggerUnit(), 0)
                                                 if (his.alive(bigElf)) then
-                                                    heffect.toUnit(
-                                                        "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
-                                                        bigElf,
-                                                        1
-                                                    )
-                                                    hunit.subCurLife(bigElf, game.rule.hz.wave)
-                                                    cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
-                                                    htextTag.style(
-                                                        htextTag.create2Unit(
+                                                    local slk = hunit.getSlk(cj.GetTriggerUnit())
+                                                    local type = slk.TYPE
+                                                    local huntDmg = 0
+                                                    if (type == "boss") then
+                                                        huntDmg = 3 * game.rule.hz.wave
+                                                    elseif (type == "normal") then
+                                                        huntDmg = game.rule.hz.wave
+                                                    end
+                                                    if (huntDmg > 0) then
+                                                        hmsg.echo(
+                                                            hColor.yellow(hunit.getName(cj.GetTriggerUnit())) ..
+                                                                "造成了" .. hColor.red(huntDmg) .. "伤害"
+                                                        )
+                                                        heffect.toUnit(
+                                                            "Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",
                                                             bigElf,
-                                                            "-" ..
-                                                                game.rule.hz.wave ..
-                                                                    " " ..
-                                                                        game.bigElfTips[
-                                                                            cj.GetRandomInt(1, #game.bigElfTips)
-                                                                        ],
-                                                            10.00,
-                                                            "ff0000",
-                                                            1,
-                                                            1.1,
-                                                            50.00
-                                                        ),
-                                                        "scale",
-                                                        0,
-                                                        0.05
-                                                    )
+                                                            1
+                                                        )
+                                                        hunit.subCurLife(bigElf, game.rule.hz.wave)
+                                                        cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
+                                                        htextTag.style(
+                                                            htextTag.create2Unit(
+                                                                bigElf,
+                                                                "-" ..
+                                                                    game.rule.hz.wave ..
+                                                                        " " ..
+                                                                            game.bigElfTips[
+                                                                                cj.GetRandomInt(1, #game.bigElfTips)
+                                                                            ],
+                                                                10.00,
+                                                                "ff0000",
+                                                                1,
+                                                                1.1,
+                                                                50.00
+                                                            ),
+                                                            "scale",
+                                                            0,
+                                                            0.05
+                                                        )
+                                                    end
                                                 end
+                                                hunit.del(cj.GetTriggerUnit(), 0)
                                             else
                                                 cj.SetUnitUserData(cj.GetTriggerUnit(), uVal + 1)
                                                 heffect.bindUnit(
