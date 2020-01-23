@@ -227,7 +227,45 @@ onTowerAttack = function(evtData)
                         cj.DestroyGroup(g)
                     end
                 end
-                if (name == "震撼") then
+                if (name == "闻风丧胆") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        local x = cj.GetUnitX(u)
+                        local y = cj.GetUnitY(u)
+                        heffect.toXY("Abilities\\Spells\\Other\\HowlOfTerror\\HowlCaster.mdl", x, y, 0)
+                        local g =
+                            hgroup.createByUnit(
+                            u,
+                            895,
+                            function()
+                                return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                            end
+                        )
+                        cj.ForGroup(
+                            g,
+                            function()
+                                local eu = cj.GetEnumUnit()
+                                hattr.set(
+                                    eu,
+                                    val[3],
+                                    {
+                                        defend = "-" .. val[2]
+                                    }
+                                )
+                                heffect.bindUnit(
+                                    "Abilities\\Spells\\Other\\HowlOfTerror\\HowlTarget.mdl",
+                                    eu,
+                                    "overhead",
+                                    val[3]
+                                )
+                            end
+                        )
+                        cj.GroupClear(g)
+                        cj.DestroyGroup(g)
+                    end
+                end
+                if (name == "震撼" or name == "龙魂斩") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
@@ -236,15 +274,15 @@ onTowerAttack = function(evtData)
                         hskill.rangeSwim(
                             {
                                 range = 895,
-                                during = val[2],
+                                during = val[3],
                                 odds = 100,
-                                effect = "war3mapImported\\eff_dragon_cut.mdl",
+                                effect = val[4],
                                 x = x,
                                 y = y,
                                 filter = function()
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
-                                damage = 0
+                                damage = val[2] or 0
                             }
                         )
                     end
@@ -408,6 +446,37 @@ onTowerAttack = function(evtData)
                                 damageMovementRange = 225,
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.water}
+                            }
+                        )
+                    end
+                elseif (name == "毁灭之剑") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        local txy =
+                            math.polarProjection(
+                            cj.GetUnitX(u),
+                            cj.GetUnitY(u),
+                            1300,
+                            math.getDegBetweenUnit(u, targetUnit)
+                        )
+                        hskill.leap(
+                            {
+                                sourceUnit = u,
+                                x = txy.x,
+                                y = txy.y,
+                                speed = 17,
+                                acceleration = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = val[3],
+                                tokenArrowScale = 1.10,
+                                tokenArrowOpacity = 1,
+                                damageMovement = val[2],
+                                damageMovementRange = 320,
+                                damageKind = CONST_DAMAGE_KIND.special,
+                                damageType = {CONST_DAMAGE_TYPE.absolute, CONST_DAMAGE_TYPE.dark}
                             }
                         )
                     end
@@ -638,12 +707,14 @@ onTowerAttack = function(evtData)
                                 filter = function()
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
-                                tokenArrow = val[6],
-                                tokenArrowScale = 1.30,
+                                tokenArrow = val[3],
+                                tokenArrowScale = 0.25,
                                 tokenArrowOpacity = 1,
-                                damageMovement = val[3],
+                                damageMovement = val[2],
                                 damageMovementRange = 150,
                                 damageMovementRepeat = true,
+                                damageEnd = val[2] * 2,
+                                damageEndRange = 350,
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire},
                                 damageEffect = "war3mapImported\\eff_flame_flash2.mdl"
@@ -678,6 +749,31 @@ onTowerAttack = function(evtData)
                             }
                         )
                     end
+                elseif (name == "地狱火球") then
+                    local val = v.Val or {0}
+                    onTowerAttackTtg(u, name)
+                    hskill.leap(
+                        {
+                            sourceUnit = u,
+                            targetUnit = targetUnit,
+                            speed = 15,
+                            acceleration = 0,
+                            filter = function()
+                                return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                            end,
+                            tokenArrow = "war3mapImported\\eff_ShadowAssault.mdl",
+                            tokenArrowScale = 1.30,
+                            tokenArrowOpacity = 1,
+                            tokenArrowHeight = 100,
+                            damageMovement = 0,
+                            damageMovementRange = 0,
+                            damageEnd = val[1],
+                            damageEndRange = 0,
+                            effectEnd = "war3mapImported\\eff_FireStomp.mdl",
+                            damageKind = CONST_DAMAGE_KIND.skill,
+                            damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.dark}
+                        }
+                    )
                 elseif (name == "炫力炸弹") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
@@ -807,6 +903,35 @@ onTowerAttack = function(evtData)
                                 effectEnd = "Abilities\\Spells\\Undead\\FrostNova\\FrostNovaTarget.mdl",
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.ice}
+                            }
+                        )
+                    end
+                elseif (name == "幻彩星落") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        hskill.leapReflex(
+                            {
+                                qty = val[2],
+                                range = 600,
+                                sourceUnit = u,
+                                targetUnit = targetUnit,
+                                speed = 17,
+                                acceleration = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = "war3mapImported\\eff_FaerieFire_Impact.mdl",
+                                tokenArrowScale = 1.20,
+                                tokenArrowOpacity = 1,
+                                tokenArrowHeight = 100,
+                                damageMovement = 0,
+                                damageMovementRange = 0,
+                                damageEnd = val[3],
+                                damageEndRange = 0,
+                                effectEnd = "Abilities\\Spells\\NightElf\\Starfall\\StarfallTarget.mdl",
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.light}
                             }
                         )
                     end

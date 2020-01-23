@@ -19,10 +19,11 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {defend = "+" .. Val[1], resistance = "+" .. Val[2]})
                 elseif
                     (name == "远古身躯" or name == "牛头人" or name == "重拳出击" or name == "骑士精神" or name == "威武体魄" or
-                        name == "落难领袖")
+                        name == "落难领袖" or
+                        name == "汇聚")
                  then
                     hattr.set(u, 0, {str_green = "+" .. Val[1]})
-                elseif (name == "蛇皮" or name == "修仙之体" or name == "恶魔之躯") then
+                elseif (name == "蛇皮" or name == "修仙之体" or name == "恶魔之躯" or name == "魔爪") then
                     hattr.set(u, 0, {agi_green = "+" .. Val[1]})
                 elseif (name == "冥想" or name == "大智慧") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1]})
@@ -41,6 +42,8 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {aim = "+" .. Val[1]})
                 elseif (name == "激灵一箭") then
                     hattr.set(u, 0, {aim = "+" .. Val[1], attack_green = "+" .. Val[2]})
+                elseif (name == "鸦仇") then
+                    hattr.set(u, 0, {aim = "+" .. Val[1], attack_speed = "+" .. Val[2]})
                 elseif (name == "野生龙种" or name == "龙骑士") then
                     hattr.set(u, 0, {attack_damage_type = "+dragon"})
                 elseif (name == "树木之妖") then
@@ -61,6 +64,9 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_damage_type = "+ghost"})
                 elseif (name == "冰魂") then
                     hattr.set(u, 0, {attack_damage_type = "+ice"})
+                elseif (name == "绘画之妙") then
+                    hattr.set(u, 0, {attack_damage_type = "+light"})
+                    hattr.set(u, 0, {attack_damage_type = "+dark"})
                 elseif (name == "霹雳化身" or name == "电离之子") then
                     hattr.set(u, 0, {attack_damage_type = "+thunder", attack_speed = "+" .. Val[1]})
                 elseif (name == "噬日") then
@@ -135,10 +141,31 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {natural_dragon_oppose = "+" .. Val[1]})
                 elseif (name == "吞光") then
                     hattr.set(u, 0, {natural_dark_oppose = "+" .. Val[1]})
+                elseif (name == "反抗神命") then
+                    hattr.set(u, 0, {attack_damage_type = "+absolute", natural_god_oppose = "+" .. Val[1]})
                 elseif (name == "针刺外壳") then
                     hattr.set(u, 0, {damage_rebound = "+" .. Val[1]})
                 elseif (name == "机械之心") then
                     hattr.set(u, 0, {str_green = "+" .. Val[1], agi_green = "+" .. Val[2], defend = "+" .. Val[3]})
+                end
+                if (name == "深渊之刃") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            attack_damage_type = "+dark",
+                            attack_effect = {
+                                add = {
+                                    {
+                                        attr = "split",
+                                        odds = 100,
+                                        range = Val[1],
+                                        percent = Val[2]
+                                    }
+                                }
+                            }
+                        }
+                    )
                 end
                 if (name == "小牛粉碎" or name == "分裂大刀" or name == "分裂狂刀") then
                     hattr.set(
@@ -176,7 +203,7 @@ addTowerSkillsx = function(u)
                             }
                         }
                     )
-                elseif (name == "法术研究") then
+                elseif (name == "法术研究" or name == "图腾祭奠") then
                     hattr.set(
                         u,
                         0,
@@ -283,6 +310,7 @@ addTowerSkillsx = function(u)
                             "奇美拉毒液",
                             "蛙毒",
                             "三昧真火",
+                            "撕咬",
                             --toughness
                             "悲鸣",
                             --defend
@@ -296,7 +324,8 @@ addTowerSkillsx = function(u)
                     elseif
                         (name == "蛊毒" or name == "蛛毒" or name == "腐尸毒" or name == "燃油烧弹" or name == "奇美拉毒液" or
                             name == "蛙毒" or
-                            name == "三昧真火")
+                            name == "三昧真火" or
+                            name == "撕咬")
                      then
                         a = "life_back"
                     elseif (name == "悲鸣") then

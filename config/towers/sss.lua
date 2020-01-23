@@ -29,7 +29,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_Firebolt_Rough_Major.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        abilList = {towerSpxKV["屠龙勇士"], towerSpxKV["神剑一闪"]}
+        abilList = {towerSpxKV["屠龙勇士"], towerSpxKV["神剑七闪"]}
     },
     {
         Name = "人类·流浪人·风",
@@ -60,7 +60,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Dustshot.mdl",
         cool1 = 2.10,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["绘画之妙"], towerSpxKV["幻彩星落"]}
     },
     {
         Name = "血精灵·影刺客·瞬",
@@ -139,7 +140,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_BlackDragonMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["汇聚"], towerSpxKV["撕咬"]}
     },
     {
         Name = "恶魔·阿克蒙德",
@@ -202,7 +204,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Voidbolt_Rough_Medium.mdl",
         cool1 = 2.15,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["深渊之刃"], towerSpxKV["闻风丧胆"]}
     },
     {
         Name = "恶魔·地狱魔爪·维尔",
@@ -217,7 +220,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_DarknessBomb.mdl",
         cool1 = 2.10,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["魔爪"], towerSpxKV["地狱火球"]}
     },
     {
         Name = "恶魔·毁灭之神·撒旦",
@@ -232,11 +236,12 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Voidball_Major.mdl",
         cool1 = 1.50,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["反抗神命"], towerSpxKV["毁灭之剑"]}
     },
     {
         Name = "恶魔·鸟面人·伯迪",
-        Ubertip = "如果一枪敌人没有死，那就认真地再补一枪",
+        Ubertip = "不咕鸟~",
         unitSound = "GryphonRider",
         file = "war3mapImported\\unit_HeroVialHeart.mdl",
         Art = "war3mapImported\\icon_unit_VialHeart.blp",
@@ -247,7 +252,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_PoisonSpit.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["图腾祭奠"], towerSpxKV["鸦仇"]}
     },
     {
         Name = "神族·梵天之右·格朗",
@@ -358,7 +364,7 @@ towers_sss = {
     },
     {
         Name = "龙人·炼气大师·李",
-        Ubertip = "超级罕见的龙人族，通过将龙魂化作冰焰注入招式，施展奇特的攻击",
+        Ubertip = "超级罕见的龙人族，通过将龙魂注入招式，施展奇特的攻击",
         unitSound = "Owlbear",
         file = "war3mapImported\\unit_AzureDragonJudicator.mdl",
         Art = "ReplaceableTextures\\CommandButtons\\BTNBlackDragon.blp",
@@ -369,7 +375,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FrostWyrmMissile\\FrostWyrmMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["龙魂斩"]}
     },
     {
         Name = "地精·能面鬼·卜",

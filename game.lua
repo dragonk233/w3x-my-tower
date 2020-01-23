@@ -1,11 +1,3 @@
---调试
-console = require "jass.console"
-openDebug = true
-console.enable = openDebug
-
---加载h-lua
-require "h-lua"
-
 --加载本地图的global
 require "game.global"
 
