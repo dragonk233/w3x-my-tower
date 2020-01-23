@@ -91,7 +91,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Heart_of_the_Storm_Missile5.mdl",
         cool1 = 2.20,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["熊咆"], towerSpxKV["震撼"]}
     },
     {
         Name = "矮人·剑圣·极乐",
@@ -122,7 +123,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\unit_WolfHeadProjectile109.mdl",
         cool1 = 1.90,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["风风拳"], towerSpxKV["狼拳连打"]}
     },
     {
         Name = "兽人·狮王拳·布布鲁",

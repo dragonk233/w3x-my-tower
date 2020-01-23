@@ -7,7 +7,7 @@ addTowerSkillsx = function(u)
                 local name = v.Name
                 if (name == "突击匕首" or name == "月神强击" or name == "魔力之源" or name == "屠龙刀") then
                     hattr.set(u, 0, {attack_green = "+" .. Val[1]})
-                elseif (name == "巾帼" or name == "剑圣" or name == "气定神闲") then
+                elseif (name == "巾帼" or name == "剑圣" or name == "气定神闲" or name == "风风拳") then
                     hattr.set(u, 0, {attack_speed = "+" .. Val[1]})
                 elseif (name == "皮糙" or name == "肉厚") then
                     hattr.set(u, 0, {life = "+" .. Val[1]})

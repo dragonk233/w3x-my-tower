@@ -262,6 +262,14 @@ TOWER_ABLI_SPX = {
         Val = {55}
     },
     {
+        Name = "风风拳",
+        Ubertip = "+{val#1}%攻击速度",
+        Art = "war3mapImported\\icon_pas_Purple_Shadow_Scratch.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {48}
+    },
+    {
         Name = "六刃智慧",
         Ubertip = "+{val#1}智力|n+{val#2}攻击力",
         Art = "war3mapImported\\icon_pas_Gold_Six_Blades.blp",
@@ -994,6 +1002,17 @@ TOWER_ABLI_SPX = {
         }
     },
     {
+        Name = "震撼",
+        Ubertip = "{val#1}%几率撼动附近敌人使其眩晕{val#2}秒",
+        Art = "war3mapImported\\icon_pas_Stun.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            30,
+            4.5
+        }
+    },
+    {
         Name = "灼烧大地",
         Ubertip = "攻击时能灼烧附近的敌人，造成{val#1}点伤害",
         Art = "war3mapImported\\icon_pas_ImmolationOn.blp",
@@ -1051,6 +1070,20 @@ TOWER_ABLI_SPX = {
             120,
             2.5,
             "Abilities\\Spells\\Orc\\Shockwave\\ShockwaveMissile.mdl"
+        }
+    },
+    {
+        Name = "狼拳连打",
+        Ubertip = "{val#1}%几率发起{val#2}个狼风拳气对直线敌人造成{val#3}伤害，并眩晕{val#4}秒",
+        Art = "war3mapImported\\icon_pas_Creature_Disease_04.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            35,
+            4,
+            135,
+            0.25,
+            "war3mapImported\\unit_WolfHeadProjectile109.mdl"
         }
     },
     {
@@ -1253,6 +1286,20 @@ TOWER_ABLI_SPX = {
             5,
             "Abilities\\Spells\\NightElf\\BattleRoar\\RoarCaster.mdl",
             "attack_green"
+        }
+    },
+    {
+        Name = "熊咆",
+        Ubertip = "{val#1}%几率发起巨熊战咆，友军增加{val#2}%物理暴击几率{val#3}%物理暴击伤害，持续{val#4}秒",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBattleRoar.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {
+            18,
+            45,
+            35,
+            5,
+            "Abilities\\Spells\\NightElf\\BattleRoar\\RoarCaster.mdl"
         }
     },
     {
