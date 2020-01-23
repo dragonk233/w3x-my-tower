@@ -300,7 +300,7 @@ cj.TriggerAddAction(
                             local data = {}
                             hplayer.loop(
                                 function(p, pi)
-                                    data[pi] = math.floor(hplayer.getDamage(p) * 0.1)
+                                    data[pi] = math.floor(hplayer.getDamage(p) * 0.05)
                                 end
                             )
                             return data
@@ -447,7 +447,7 @@ cj.TriggerAddAction(
                             local data = {}
                             hplayer.loop(
                                 function(p, pi)
-                                    data[pi] = math.floor(hplayer.getDamage(p) * 0.1)
+                                    data[pi] = math.floor(hplayer.getDamage(p) * 0.05)
                                 end
                             )
                             return data

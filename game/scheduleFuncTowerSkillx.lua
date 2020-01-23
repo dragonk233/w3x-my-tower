@@ -7,7 +7,7 @@ addTowerSkillsx = function(u)
                 local name = v.Name
                 if (name == "突击匕首" or name == "月神强击" or name == "魔力之源" or name == "屠龙刀") then
                     hattr.set(u, 0, {attack_green = "+" .. Val[1]})
-                elseif (name == "巾帼" or name == "剑圣" or name == "气定神闲" or name == "风风拳") then
+                elseif (name == "巾帼" or name == "剑圣" or name == "气定神闲" or name == "风风拳" or name == "电激穴道") then
                     hattr.set(u, 0, {attack_speed = "+" .. Val[1]})
                 elseif (name == "皮糙" or name == "肉厚") then
                     hattr.set(u, 0, {life = "+" .. Val[1]})
@@ -65,8 +65,7 @@ addTowerSkillsx = function(u)
                 elseif (name == "冰魂") then
                     hattr.set(u, 0, {attack_damage_type = "+ice"})
                 elseif (name == "绘画之妙") then
-                    hattr.set(u, 0, {attack_damage_type = "+light"})
-                    hattr.set(u, 0, {attack_damage_type = "+dark"})
+                    hattr.set(u, 0, {attack_damage_type = "+light,dark"})
                 elseif (name == "霹雳化身" or name == "电离之子") then
                     hattr.set(u, 0, {attack_damage_type = "+thunder", attack_speed = "+" .. Val[1]})
                 elseif (name == "噬日") then
@@ -188,7 +187,8 @@ addTowerSkillsx = function(u)
                     )
                 elseif
                     (name == "熊掌战意" or name == "马索格爆锤" or name == "致命剑术" or name == "恩赐解脱" or name == "爆头" or
-                        name == "刺客信条")
+                        name == "刺客信条" or
+                        name == "醉拳")
                  then
                     hattr.set(
                         u,

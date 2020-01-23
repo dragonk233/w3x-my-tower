@@ -300,7 +300,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Other\\StrongDrink\\BrewmasterMissile.mdl",
         cool1 = 1.85,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["醉拳"], towerSpxKV["竹叶之道"]}
     },
     {
         Name = "熊猫·滚滚",
@@ -315,7 +316,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["山岭之灵"], towerSpxKV["滚滚石锤"]}
     },
     {
         Name = "熊猫·霹雳",
@@ -331,7 +333,7 @@ towers_sss = {
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 1.90,
         Primary = "INT",
-        abilList = {"Alit", towerSpxKV["霹雳化身"]}
+        abilList = {"Alit", towerSpxKV["霹雳化身"], towerSpxKV["电激穴道"]}
     },
     {
         Name = "熊猫·无双",
@@ -347,7 +349,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_Firebolt_Minor.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        abilList = {towerSpxKV["火之元素"]}
+        abilList = {towerSpxKV["分裂狂刀"], towerSpxKV["焰烬"]}
     },
     {
         Name = "龙人·青蓝巨兽·凯",

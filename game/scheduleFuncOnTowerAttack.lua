@@ -279,10 +279,11 @@ onTowerAttack = function(evtData)
                                 effect = val[4],
                                 x = x,
                                 y = y,
+                                damage = val[2] or 0,
+                                sourceUnit = u,
                                 filter = function()
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
-                                end,
-                                damage = val[2] or 0
+                                end
                             }
                         )
                     end
@@ -762,7 +763,7 @@ onTowerAttack = function(evtData)
                             filter = function()
                                 return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                             end,
-                            tokenArrow = "war3mapImported\\eff_ShadowAssault.mdl",
+                            tokenArrow = "war3mapImported\\eff_DarknessBomb.mdl",
                             tokenArrowScale = 1.30,
                             tokenArrowOpacity = 1,
                             tokenArrowHeight = 100,
@@ -770,7 +771,7 @@ onTowerAttack = function(evtData)
                             damageMovementRange = 0,
                             damageEnd = val[1],
                             damageEndRange = 0,
-                            effectEnd = "war3mapImported\\eff_FireStomp.mdl",
+                            effectEnd = "war3mapImported\\eff_ShadowAssault.mdl",
                             damageKind = CONST_DAMAGE_KIND.skill,
                             damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.dark}
                         }
@@ -876,6 +877,43 @@ onTowerAttack = function(evtData)
                                 effectEnd = "war3mapImported\\eff_ExplosionBig.mdl",
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.fire}
+                            }
+                        )
+                    end
+                elseif (name == "滚滚石锤") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        hskill.leapRange(
+                            {
+                                targetRange = 895,
+                                sourceUnit = u,
+                                targetUnit = targetUnit,
+                                speed = 13,
+                                acceleration = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
+                                tokenArrowScale = 1.60,
+                                tokenArrowOpacity = 1,
+                                tokenArrowHeight = 100,
+                                damageMovement = 0,
+                                damageMovementRange = 0,
+                                damageEnd = val[2],
+                                damageEndRange = 0,
+                                effectEnd = "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl",
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.soil},
+                                extraInfluence = function(eu)
+                                    hskill.swim(
+                                        {
+                                            odds = 100,
+                                            whichUnit = eu,
+                                            during = val[3]
+                                        }
+                                    )
+                                end
                             }
                         )
                     end

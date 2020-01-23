@@ -286,6 +286,14 @@ TOWER_ABLI_SPX = {
         Val = {48}
     },
     {
+        Name = "电激穴道",
+        Ubertip = "+{val#1}%攻击速度",
+        Art = "war3mapImported\\icon_pas_Electrostatic_field2.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {33}
+    },
+    {
         Name = "六刃智慧",
         Ubertip = "+{val#1}智力|n+{val#2}攻击力",
         Art = "war3mapImported\\icon_pas_Gold_Six_Blades.blp",
@@ -398,6 +406,14 @@ TOWER_ABLI_SPX = {
         Val = {35, 75}
     },
     {
+        Name = "醉拳",
+        Ubertip = "{val#1}%几率击出额外{val#2}%伤害的物理暴击",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDrunkenDodge.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {50, 65}
+    },
+    {
         Name = "法术研究",
         Ubertip = "{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
         Art = "war3mapImported\\icon_pas_WitchDoctorAdept.blp",
@@ -427,7 +443,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Fire_Burnout.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {100, 202, 3, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
+        Val = {100, 195, 3, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
     },
     {
         Name = "火焰之剑",
@@ -435,7 +451,15 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_SealOfValor.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {100, 266, 4, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
+        Val = {100, 245, 4, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
+    },
+    {
+        Name = "焰烬",
+        Ubertip = "+火攻击特性|n每秒灼烧扣血{val#2}点，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Spell_Fire_Burnout.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {100, 315, 5, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
     },
     {
         Name = "野生龙种",
@@ -619,7 +643,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_lighting_overload.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {40}
+        Val = {25}
     },
     {
         Name = "海洋之心",
@@ -1387,6 +1411,18 @@ TOWER_ABLI_SPX = {
         }
     },
     {
+        Name = "滚滚石锤",
+        Ubertip = "{val#1}%几率投射巨石砸向敌人，造成{val#2}点伤害，并眩晕{val#3}秒",
+        Art = "war3mapImported\\icon_pas_GolemStormBolt.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            50,
+            420,
+            2.5
+        }
+    },
+    {
         Name = "恐惧蝠群",
         Ubertip = "{val#1}%几率召唤大片蝙蝠对{val#2}范围敌人攻击，造成{val#3}点伤害，敌人永久降低{val#4}点护甲和{val#5}点移动",
         Art = "war3mapImported\\icon_pas_AuraOfDarkness.blp",
@@ -1574,6 +1610,15 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {600},
+        ODK = true
+    },
+    {
+        Name = "竹叶之道",
+        Ubertip = "+{val#1}生命",
+        Art = "war3mapImported\\icon_pas_Nature_HealingTouch.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {1000},
         ODK = true
     },
     {
