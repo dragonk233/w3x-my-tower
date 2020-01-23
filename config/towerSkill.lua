@@ -662,6 +662,14 @@ TOWER_ABLI_SPX = {
         Val = {9}
     },
     {
+        Name = "神启",
+        Ubertip = "+{val#1}%神攻击",
+        Art = "war3mapImported\\icon_pas_Holy_DivineIllumination.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {20}
+    },
+    {
         Name = "偷窃",
         Ubertip = "有{val#1}%几率获得{val#2}黄金",
         Art = "war3mapImported\\icon_pas_Holy_BlindingHeal.blp",
@@ -994,6 +1002,22 @@ TOWER_ABLI_SPX = {
             55,
             20,
             "war3mapImported\\eff_FireTornado.mdl",
+            "Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdl"
+        }
+    },
+    {
+        Name = "帝释天",
+        Ubertip = "{val#1}%几率召唤{val#2}范围空饷持续每{val#3}秒对敌人造成{val#4}神伤害{val#5}次",
+        Art = "war3mapImported\\icon_pas_Fire_PlayingWithFire.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            20,
+            275,
+            0.12,
+            100,
+            13,
+            "war3mapImported\\eff_weather_laser.mdl",
             "Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdl"
         }
     },
@@ -1388,6 +1412,20 @@ TOWER_ABLI_SPX = {
             30,
             5,
             "Abilities\\Spells\\NightElf\\Taunt\\TauntCaster.mdl",
+            "attack_speed"
+        }
+    },
+    {
+        Name = "大梵天",
+        Ubertip = "{val#1}%几率发起圣恩，友军增加{val#2}%攻速{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Holy_GreaterBlessingofSalvation.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            20,
+            40,
+            5,
+            "war3mapImported\\eff_Shining_Flare.mdl",
             "attack_speed"
         }
     },

@@ -133,6 +133,8 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {natural_dark = "+" .. Val[1]})
                 elseif (name == "大地种子") then
                     hattr.set(u, 0, {natural_wood = "+" .. Val[1]})
+                elseif (name == "神启") then
+                    hattr.set(u, 0, {natural_god = "+" .. Val[1]})
                 elseif (name == "海妖特质") then
                     hattr.set(u, 0, {natural_water_oppose = "+" .. Val[1]})
                 elseif (name == "巫术") then

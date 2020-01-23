@@ -381,7 +381,7 @@ onTowerAttack = function(evtData)
                         )
                         for q = 1, val[2], 1 do
                             htime.setTimeout(
-                                (q - 1) * 0.55,
+                                (q - 1) * 0.50,
                                 function(t, td)
                                     htime.delDialog(td)
                                     htime.delDialog(t)
@@ -505,6 +505,7 @@ onTowerAttack = function(evtData)
                                             tokenArrowOpacity = 1,
                                             damageMovement = val[3],
                                             damageMovementRange = 250,
+                                            effectEnd = "war3mapImported\\eff_Shiva's_Wrath.mdl",
                                             damageKind = CONST_DAMAGE_KIND.skill,
                                             damageType = {CONST_DAMAGE_TYPE.physical},
                                             extraInfluence = function(eu)
@@ -964,7 +965,7 @@ onTowerAttack = function(evtData)
                         )
                     end
                 end
-                if (name == "地狱战吼" or name == "邪鬼战吼") then
+                if (name == "地狱战吼" or name == "邪鬼战吼" or name == "大梵天") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)

@@ -256,8 +256,8 @@ towers_sss = {
         abilList = {towerSpxKV["图腾祭奠"], towerSpxKV["鸦仇"]}
     },
     {
-        Name = "神族·梵天之右·格朗",
-        Ubertip = "神的右护法，沉默寡言，手中杖燃烧着代表大地的紫色火焰",
+        Name = "神族·帝释天",
+        Ubertip = "沉默寡言，手中杖燃烧着代表大地的紫色火焰",
         unitSound = "",
         file = "war3mapImported\\unit_Aethas.mdl",
         Art = "war3mapImported\\icon_unit_Hunter_Harass.blp",
@@ -268,11 +268,12 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_violet_arrow.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["神启"], towerSpxKV["帝释天"]}
     },
     {
-        Name = "神族·梵天之左·罗明",
-        Ubertip = "神的左护法，沉默寡言，手中杖燃烧着代表天空的赤色火焰",
+        Name = "神族·大梵天",
+        Ubertip = "沉默寡言，手中杖燃烧着代表天空的赤色火焰",
         unitSound = "",
         file = "war3mapImported\\unit_Rhonin.mdl",
         Art = "war3mapImported\\icon_unit_Shadow_ShadowandFlame.blp",
@@ -283,7 +284,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Firebolt_Rough_Minor.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["神启"], towerSpxKV["大梵天"]}
     },
     {
         Name = "熊猫·酒仙",
