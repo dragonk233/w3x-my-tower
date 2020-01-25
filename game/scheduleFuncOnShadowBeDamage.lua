@@ -102,11 +102,11 @@ towerShadowBeDamage = function(evtData)
                         hskill.invulnerable(u, val[2], "Abilities\\Spells\\Demon\\ReviveDemon\\ReviveDemon.mdl")
                     end
                 end
-                if (Name == "回光返照") then
+                if (Name == "回光返照" or Name == "自然之力") then
                     local val = v.Val
                     if (hunit.getCurLifePercent(u) < 50) then
                         towerShadowTtg(u, Name)
-                        hattr.set(u, 4, {life_back = val[1]})
+                        hattr.set(u, val[2], {life_back = val[1]})
                     end
                 end
                 if (Name == "逃命" or Name == "着草") then

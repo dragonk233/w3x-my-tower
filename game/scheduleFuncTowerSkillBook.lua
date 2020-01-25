@@ -426,7 +426,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
     elseif (abliOps.Name == "疾风") then
         hattr.set(u, 0, {attack_damage_type = opt .. "wind", natural_wind = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "魔神之剑") then
-        hattr.set(u, 0, {damage_amplitude = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {damage_extent = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "胆颤心惊") then
         hattr.set(
             u,

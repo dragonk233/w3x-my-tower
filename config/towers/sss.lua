@@ -45,7 +45,7 @@ towers_sss = {
         Missileart = "Abilities\\Weapons\\IllidanMissile\\IllidanMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        abilList = {towerSpxKV["屠龙勇士"], towerSpxKV["气定神闲"]}
+        abilList = {towerSpxKV["追风"], towerSpxKV["气定神闲"]}
     },
     {
         Name = "人类·绘彩笔仙·素素",
@@ -157,7 +157,7 @@ towers_sss = {
         Missileart = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilMissile.mdl",
         cool1 = 2.10,
         Primary = "AGI",
-        abilList = {towerSpxKV["溅射攻击"], towerSpxKV["陨石星"]}
+        abilList = {towerSpxKV["溅射攻击"], towerSpxKV["陨石星P"]}
     },
     {
         Name = "恶魔·基尔加丹",
@@ -173,7 +173,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_DarkSoul.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        abilList = {towerSpxKV["溅射攻击"], towerSpxKV["陨石星"]}
+        abilList = {towerSpxKV["溅射攻击"], towerSpxKV["陨石星M"]}
     },
     {
         Name = "恶魔·究极猎手·尤迪安",
@@ -364,7 +364,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_forst_arrow.mdl",
         cool1 = 1.90,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["冰焰结晶"], towerSpxKV["气定神闲"]}
     },
     {
         Name = "龙人·炼气大师·李",
@@ -380,7 +381,7 @@ towers_sss = {
         Missileart = "Abilities\\Weapons\\FrostWyrmMissile\\FrostWyrmMissile.mdl",
         cool1 = 2.00,
         Primary = "AGI",
-        abilList = {towerSpxKV["龙魂斩"]}
+        abilList = {towerSpxKV["聚气"], towerSpxKV["龙魂斩"]}
     },
     {
         Name = "地精·能面鬼·卜",
@@ -395,7 +396,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_OrbOfCorruption.mdl",
         cool1 = 1.90,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["剃骨之刃"], towerSpxKV["黑网擒拿"]}
     },
     {
         Name = "暗夜精灵·丛林守卫者·小鹿",
@@ -410,7 +412,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_BlessingArrowMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["精灵守护"], towerSpxKV["自然之力"]}
     },
     {
         Name = "亡灵·死神·歹",
@@ -426,7 +429,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_swing_knife.mdl",
         cool1 = 2.20,
         Primary = "AGI",
-        abilList = {towerSpxKV[""], towerSpxKV["必死宣言"]}
+        abilList = {towerSpxKV["冥冥斩击"], towerSpxKV["必死宣言"]}
     },
     {
         Name = "亡灵·冥魂大帝·钢克",
@@ -441,7 +444,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_LifeWave.mdl",
         cool1 = 2.20,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["冥王之剑"], towerSpxKV["冥王极限斩"]}
     },
     {
         Name = "亡灵·黑狱游侠·鬼歌",
@@ -472,7 +476,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_FrostOrb.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["千年龙骨"], towerSpxKV["无念渗透"]}
     },
     {
         Name = "亡灵·墓坟孤王·嬴",

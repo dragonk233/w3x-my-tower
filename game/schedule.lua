@@ -719,7 +719,7 @@ cj.TriggerAddAction(
                                 local attack_white = math.floor(hattr.get(tower, "attack_white"))
                                 local attack_green = math.floor(hattr.get(tower, "attack_green"))
                                 local attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
-                                local damage_amplitude = math.round(hattr.get(tower, "damage_amplitude")) .. "%"
+                                local damage_extent = math.round(hattr.get(tower, "damage_extent")) .. "%"
                                 local tempData = {
                                     {value = cj.GetPlayerName(p), icon = nil},
                                     {value = hplayer.getPrestige(p), icon = nil},
@@ -730,7 +730,7 @@ cj.TriggerAddAction(
                                     {value = attack_white, icon = nil},
                                     {value = attack_green, icon = nil},
                                     {value = attack_speed, icon = nil},
-                                    {value = damage_amplitude, icon = nil}
+                                    {value = damage_extent, icon = nil}
                                 }
                                 if (game.rule.cur == "dk") then
                                     local defend = math.floor(hattr.get(tower, "defend"))

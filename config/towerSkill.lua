@@ -98,7 +98,7 @@ TOWER_ABLI_SPX = {
         Ubertip = "+{val#1}攻击力",
         Art = "war3mapImported\\icon_pas_Ability_Rogue_BladeTwisting.blp",
         Buttonpos1 = 0,
-        Buttonpos2 = 2,
+        Buttonpos2 = 1,
         Val = {175}
     },
     {
@@ -132,6 +132,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {0.04}
+    },
+    {
+        Name = "精灵守护",
+        Ubertip = "+{val#1}生命恢复",
+        Art = "war3mapImported\\icon_pas_Misc_Bag_SatchelofCenarius.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {0.08}
     },
     {
         Name = "远古身躯",
@@ -222,6 +230,14 @@ TOWER_ABLI_SPX = {
         Val = {169}
     },
     {
+        Name = "聚气",
+        Ubertip = "+{val#1}敏捷",
+        Art = "war3mapImported\\icon_pas_Spell_Holy_LayOnHands.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {155}
+    },
+    {
         Name = "冥想",
         Ubertip = "+{val#1}智力",
         Art = "war3mapImported\\icon_pas_Arcane_MindMastery.blp",
@@ -254,6 +270,14 @@ TOWER_ABLI_SPX = {
         Val = {7.7}
     },
     {
+        Name = "剃骨之刃",
+        Ubertip = "+{val#1}%伤害增幅",
+        Art = "war3mapImported\\icon_pas_Rogue_Disembowel.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {14.5}
+    },
+    {
         Name = "巾帼",
         Ubertip = "+{val#1}%攻击速度",
         Art = "war3mapImported\\icon_pas_Holy_Absolution.blp",
@@ -272,7 +296,7 @@ TOWER_ABLI_SPX = {
     {
         Name = "气定神闲",
         Ubertip = "+{val#1}%攻击速度",
-        Art = "war3mapImported\\icon_pas_Holy_BlessedRecovery.blp",
+        Art = "war3mapImported\\icon_pas_Hunter_ZenArchery.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {55}
@@ -598,6 +622,14 @@ TOWER_ABLI_SPX = {
         Val = {10, 5.5}
     },
     {
+        Name = "冰焰结晶",
+        Ubertip = "+冰攻击特性|n减少敌人护甲{val#1}点持续{val#2}秒",
+        Art = "war3mapImported\\icon_pas_Elemental_Crystal_Water.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {13, 6}
+    },
+    {
         Name = "冰魂",
         Ubertip = "+冰攻击特性",
         Art = "war3mapImported\\icon_pas_MageArmor.blp",
@@ -644,6 +676,22 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {25}
+    },
+    {
+        Name = "冥王之剑",
+        Ubertip = "+鬼攻击特性|n+暗攻击特性|n+金攻击特性",
+        Art = "war3mapImported\\icon_pas_Weapon_Halberd19.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {}
+    },
+    {
+        Name = "千年龙骨",
+        Ubertip = "+鬼攻击特性|n+龙攻击特性",
+        Art = "war3mapImported\\icon_pas_Spell_Frost_IceFloes.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {}
     },
     {
         Name = "海洋之心",
@@ -1157,7 +1205,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_ThrowingKnife_06.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {155}
+        Val = {175}
     },
     {
         Name = "觉醒幻刀",
@@ -1165,7 +1213,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_ThrowingKnife_06.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {275}
+        Val = {315}
     },
     {
         Name = "究极幻刀",
@@ -1173,7 +1221,15 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_ThrowingKnife_06.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {396}
+        Val = {435}
+    },
+    {
+        Name = "冥冥斩击",
+        Ubertip = "攻击时能斩击附近的敌人，造成{val#1}点攻击伤害",
+        Art = "war3mapImported\\icon_pas_UV_radiation.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {444}
     },
     {
         Name = "剑刃风暴",
@@ -1317,7 +1373,7 @@ TOWER_ABLI_SPX = {
         }
     },
     {
-        Name = "陨石星",
+        Name = "陨石星P",
         Ubertip = "{val#1}%几率发动陨石攻击敌人造成持续{val#2}点伤害",
         Art = "war3mapImported\\icon_pas_Arcane_TeleportSilvermoon.blp",
         Buttonpos1 = 0,
@@ -1326,6 +1382,30 @@ TOWER_ABLI_SPX = {
             50,
             115,
             "war3mapImported\\eff_fireball_impact_gun.mdl"
+        }
+    },
+    {
+        Name = "陨石星M",
+        Ubertip = "{val#1}%几率发动陨石攻击敌人造成持续{val#2}点伤害",
+        Art = "war3mapImported\\icon_pas_Arcane_TeleportDalaran.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            50,
+            115,
+            "war3mapImported\\eff_fireball_impact_gun.mdl"
+        }
+    },
+    {
+        Name = "冥王极限斩",
+        Ubertip = "{val#1}%几率发动陨石攻击敌人造成持续{val#2}点伤害",
+        Art = "war3mapImported\\icon_pas_Arcane_TeleportShattrath.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            50,
+            600,
+            "war3mapImported\\eff_Shot_II_Green.mdl"
         }
     },
     {
@@ -1385,6 +1465,18 @@ TOWER_ABLI_SPX = {
             30,
             1000,
             345
+        }
+    },
+    {
+        Name = "黑网擒拿",
+        Ubertip = "{val#1}%几率发起黑网对敌人爆炸，造成{val#2}点伤害并无法移动{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Web.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            25,
+            495,
+            3.5
         }
     },
     {
@@ -1857,11 +1949,20 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "回光返照",
-        Ubertip = "当被攻击时生命低于50%，增加{val#1}点生命恢复，持续4秒",
+        Ubertip = "当被攻击时生命低于50%，增加{val#1}点生命恢复，持续{val#2}秒",
         Art = "war3mapImported\\icon_pas_Holy_SummonChampion.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {20},
+        Val = {20, 4},
+        ODK = true
+    },
+    {
+        Name = "自然之力",
+        Ubertip = "当被攻击时生命低于50%，增加{val#1}点生命恢复，持续{val#2}秒",
+        Art = "war3mapImported\\icon_pas_Nature_HealingTouch.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {30, 5},
         ODK = true
     },
     {

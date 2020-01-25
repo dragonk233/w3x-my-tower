@@ -152,7 +152,7 @@ addTowerSkillsRace = function(u, slk)
             u,
             0,
             {
-                damage_amplitude = "+6.66",
+                damage_extent = "+6.66",
                 attack_speed = "+6.66",
                 natural_god_oppose = "-6.66"
             }
