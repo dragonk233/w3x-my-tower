@@ -82,6 +82,8 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_damage_type = "+ghost,ice"})
                 elseif (name == "神赐之力") then
                     hattr.set(u, 0, {attack_damage_type = "+god,light"})
+                elseif (name == "金睛火眼") then
+                    hattr.set(u, 0, {attack_damage_type = "+fire,metal"})
                 elseif (name == "霹雳化身" or name == "电离之子") then
                     hattr.set(u, 0, {attack_damage_type = "+thunder", attack_speed = "+" .. Val[1]})
                 elseif (name == "噬日") then
@@ -178,12 +180,34 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {natural_god = "+" .. Val[1]})
                 elseif (name == "海妖特质") then
                     hattr.set(u, 0, {natural_water_oppose = "+" .. Val[1]})
-                elseif (name == "巫术") then
+                elseif (name == "巫术" or name == "中和") then
                     hattr.set(u, 0, {natural_poison_oppose = "+" .. Val[1]})
                 elseif (name == "屠龙勇士") then
                     hattr.set(u, 0, {natural_dragon_oppose = "+" .. Val[1]})
                 elseif (name == "吞光") then
                     hattr.set(u, 0, {natural_dark_oppose = "+" .. Val[1]})
+                elseif (name == "诡秘空间") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            natural_fire_oppose = "+" .. Val[1],
+                            natural_soil_oppose = "+" .. Val[1],
+                            natural_water_oppose = "+" .. Val[1],
+                            natural_ice_oppose = "+" .. Val[1],
+                            natural_wind_oppose = "+" .. Val[1],
+                            natural_light_oppose = "+" .. Val[1],
+                            natural_dark_oppose = "+" .. Val[1],
+                            natural_wood_oppose = "+" .. Val[1],
+                            natural_thunder_oppose = "+" .. Val[1],
+                            natural_poison_oppose = "+" .. Val[1],
+                            natural_ghost_oppose = "+" .. Val[1],
+                            natural_metal_oppose = "+" .. Val[1],
+                            natural_dragon_oppose = "+" .. Val[1],
+                            natural_insect_oppose = "+" .. Val[1],
+                            natural_god_oppose = "+" .. Val[1]
+                        }
+                    )
                 elseif (name == "反抗神命") then
                     hattr.set(u, 0, {attack_damage_type = "+absolute", natural_god_oppose = "+" .. Val[1]})
                 elseif (name == "针刺外壳") then
@@ -376,6 +400,7 @@ addTowerSkillsx = function(u)
                     elseif
                         (name == "蛊毒" or name == "蛛毒" or name == "腐尸毒" or name == "燃油烧弹" or name == "奇美拉毒液" or
                             name == "蛙毒" or
+                            name == "外界毒虫" or
                             name == "剧毒虾皮细胞" or
                             name == "三昧真火" or
                             name == "撕咬" or
@@ -387,7 +412,7 @@ addTowerSkillsx = function(u)
                     elseif (name == "鬼歌") then
                         a = "defend"
                     end
-                    if (name == "蛙毒") then
+                    if (name == "蛙毒" or name == "外界毒虫") then
                         hattr.set(u, 0, {attack_damage_type = "+poison"})
                     end
                     if (a ~= nil) then

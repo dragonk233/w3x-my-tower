@@ -790,6 +790,14 @@ TOWER_ABLI_SPX = {
         Val = {}
     },
     {
+        Name = "金睛火眼",
+        Ubertip = "+火攻击特性|n+金攻击特性",
+        Art = "war3mapImported\\icon_pas_Ability_Creature_Cursed_01.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {}
+    },
+    {
         Name = "海洋之心",
         Ubertip = "+{val#1}%水攻击",
         Art = "war3mapImported\\icon_pas_Elemental_Mote_Water01.blp",
@@ -916,6 +924,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {80, 80, 3, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
+    },
+    {
+        Name = "外界毒虫",
+        Ubertip = "每秒中毒扣血{val#2}点，持续{val#3}秒|n+毒攻击特性",
+        Art = "war3mapImported\\icon_pas_PoisonElemental.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {100, 126, 5, "war3mapImported\\eff_HydraCorrosiveGroundEffectV054.mdl"}
     },
     {
         Name = "剧毒虾皮细胞",
@@ -1549,7 +1565,7 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             50,
-            115,
+            90,
             "war3mapImported\\eff_fireball_impact_gun.mdl"
         }
     },
@@ -1561,13 +1577,13 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             50,
-            115,
+            90,
             "war3mapImported\\eff_fireball_impact_gun.mdl"
         }
     },
     {
         Name = "冥王极限斩",
-        Ubertip = "{val#1}%几率发动陨石攻击敌人造成持续{val#2}点伤害",
+        Ubertip = "{val#1}%几率发动陨石攻击敌人造成{val#2}点伤害",
         Art = "war3mapImported\\icon_pas_Arcane_TeleportShattrath.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -1575,6 +1591,18 @@ TOWER_ABLI_SPX = {
             50,
             600,
             "war3mapImported\\eff_Shot_II_Green.mdl"
+        }
+    },
+    {
+        Name = "虚空漩涡",
+        Ubertip = "{val#1}%几率异度虚空攻击敌人造成持续{val#2}点伤害,同时降低敌人的移动力",
+        Art = "war3mapImported\\icon_pas_Arcane_PortalDalaran.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {
+            40,
+            50,
+            "war3mapImported\\eff_Void_Rift_II_Purple.mdl"
         }
     },
     {
@@ -1708,6 +1736,19 @@ TOWER_ABLI_SPX = {
             5,
             10,
             "Abilities\\Spells\\Undead\\CarrionSwarm\\CarrionSwarmMissile.mdl"
+        }
+    },
+    {
+        Name = "金箍棒",
+        Ubertip = "{val#1}%几率使用金箍棒挥舞打击{val#2}距离，造成{val#3}点伤害，敌人眩晕{val#4}秒",
+        Art = "war3mapImported\\icon_pas_Ability_Creature_Cursed_04.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            25,
+            900,
+            400,
+            2.5,
         }
     },
     {
@@ -2090,6 +2131,24 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {55},
+        ODK = true
+    },
+    {
+        Name = "中和",
+        Ubertip = "+{val#1}%毒抗性",
+        Art = "war3mapImported\\icon_pas_Rogue_DeadenedNerves.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {100},
+        ODK = true
+    },
+    {
+        Name = "诡秘空间",
+        Ubertip = "+{val#1}%所有抗性",
+        Art = "war3mapImported\\icon_pas_Arcane_TeleportMoonglade.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {20},
         ODK = true
     },
     {

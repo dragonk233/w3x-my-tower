@@ -327,7 +327,7 @@ onTowerAttack = function(evtData)
                         cut1 = "war3mapImported\\eff_light_speed_cutting.mdl"
                     elseif (name == "究极幻刀") then
                         cut1 = "war3mapImported\\eff_light_speed_cutting_green.mdl"
-                        damageType = {CONST_DAMAGE_TYPE.physical,CONST_DAMAGE_TYPE.dark}
+                        damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.dark}
                     elseif (name == "冥冥斩击") then
                         cut1 = "war3mapImported\\eff_round_dance2.mdl"
                         cut2 = "Objects\\Spawnmodels\\Critters\\Albatross\\CritterBloodAlbatross.mdl"
@@ -729,7 +729,7 @@ onTowerAttack = function(evtData)
                                 damageMovementRange = 160,
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.poison},
-                                damageEffect = "war3mapImported\\eff_Pillar_of_Flame_Green.mdl",
+                                damageEffect = "war3mapImported\\eff_Pillar_of_Flame_Green.mdl"
                             }
                         )
                     end
@@ -800,6 +800,50 @@ onTowerAttack = function(evtData)
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.fire},
                                 damageEffect = "war3mapImported\\eff_flame_flash2.mdl"
+                            }
+                        )
+                    end
+                elseif (name == "虚空漩涡") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        onTowerAttackTtg(u, name)
+                        local txy =
+                            math.polarProjection(
+                            cj.GetUnitX(u),
+                            cj.GetUnitY(u),
+                            1100,
+                            math.getDegBetweenUnit(u, targetUnit)
+                        )
+                        hskill.leap(
+                            {
+                                sourceUnit = u,
+                                x = txy.x,
+                                y = txy.y,
+                                speed = 4,
+                                acceleration = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                tokenArrow = val[3],
+                                tokenArrowScale = 1.2,
+                                tokenArrowOpacity = 1,
+                                damageMovement = val[2],
+                                damageMovementRange = 250,
+                                damageMovementRepeat = true,
+                                damageEnd = 0,
+                                damageEndRange = 0,
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.absolute, CONST_DAMAGE_TYPE.dark},
+                                damageEffect = "Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayTarget.mdl",
+                                extraInfluence = function(eu)
+                                    hattr.set(
+                                        eu,
+                                        4,
+                                        {
+                                            move = "-10"
+                                        }
+                                    )
+                                end
                             }
                         )
                     end
@@ -1095,6 +1139,11 @@ onTowerAttack = function(evtData)
                                 damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.light}
                             }
                         )
+                    end
+                elseif (name == "金箍棒") then
+                    local val = v.Val or {0}
+                    if (math.random(1, 100) <= val[1]) then
+                        
                     end
                 elseif (name == "蛇棒" or name == "骷髅兵" or name == "炎魔" or name == "灰熊") then
                     local val = v.Val or {0}

@@ -732,7 +732,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SpiritOfVengeanceMissile\\SpiritOfVengeanceMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["虚空漩涡"], towerSpxKV["诡秘空间"]}
     },
     {
         Name = "元素·异性毒虫",
@@ -747,7 +748,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["外界毒虫"], towerSpxKV["中和"]}
     },
     {
         Name = "异兽·猴王·悟空",
@@ -762,6 +764,7 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Culling_Cleave_Purple.mdl",
         cool1 = 1.90,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["金睛火眼"], towerSpxKV["金箍棒"]}
     }
 }
