@@ -109,7 +109,7 @@ towerShadowBeDamage = function(evtData)
                         hattr.set(u, val[2], {life_back = val[1]})
                     end
                 end
-                if (Name == "逃命" or Name == "着草") then
+                if (Name == "逃命" or Name == "着草" or Name == "加速") then
                     local val = v.Val
                     if (math.random(1, 100) <= val[1]) then
                         towerShadowTtg(u, Name)
@@ -120,6 +120,13 @@ towerShadowBeDamage = function(evtData)
                                 move = "+" .. val[2]
                             }
                         )
+                    end
+                end
+                if (Name == "潜行" or Name == "隐术") then
+                    local val = v.Val
+                    if (math.random(1, 100) <= val[1]) then
+                        towerShadowTtg(u, Name)
+                        hskill.invisible(u, val[2])
                     end
                 end
             end

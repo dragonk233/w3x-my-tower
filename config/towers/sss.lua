@@ -477,7 +477,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_FrostOrb.mdl",
         cool1 = 2.00,
         Primary = "INT",
-        abilList = {towerSpxKV["千年龙骨"], towerSpxKV["无念渗透"]}
+        abilList = {towerSpxKV["千年龙骨"], towerSpxKV["十月冰封"]}
     },
     {
         Name = "亡灵·墓坟孤王·嬴",
@@ -492,7 +492,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_NimbusBlade.mdl",
         cool1 = 2.00,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["魂丧双鬼"], towerSpxKV["古代帝王"]}
     },
     {
         Name = "亡灵·勾魂使者·戴泽",
@@ -508,7 +509,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_NewSoulArmor.mdl",
         cool1 = 2.10,
         Primary = "STR",
-        abilList = {towerSpxKV[""], towerSpxKV["必死宣言"]}
+        abilList = {towerSpxKV["无声的死亡旋律"], towerSpxKV["必死宣言"]}
     },
     {
         Name = "昆虫·皮皮虾·皮",
@@ -523,7 +524,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Piercing_Thrust_Purple.mdl",
         cool1 = 2.10,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["坚硬外皮"], towerSpxKV["剧毒虾皮细胞"]}
     },
     {
         Name = "娜迦·深红守卫·棘龙",
@@ -538,7 +540,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_FireBolt_Rough_Medium.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["短棘戟"], towerSpxKV["长棘戟"]}
     },
     {
         Name = "娜迦·绀青皇冠·赛壬",
@@ -554,7 +557,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_Spirit_Orb.mdl",
         cool1 = 2.00,
         Primary = "INT",
-        abilList = {towerSpxKV["深海之心"]}
+        abilList = {towerSpxKV["深海之心"], towerSpxKV["深情一吻"]}
     },
     {
         Name = "娜迦·曳蓝王冠·哈迪斯",
@@ -569,7 +572,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_WaterHands.mdl",
         cool1 = 1.80,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["海浪之形"], towerSpxKV["加速"]}
     },
     {
         Name = "娜迦·曳蓝王冠·波塞冬",
@@ -584,7 +588,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_FireBoltMissile.mdl",
         cool1 = 1.80,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["浪涛之力"], towerSpxKV["鱼人碎击"]}
     },
     {
         Name = "娜迦·驱逐者·潮汐巨人",
@@ -600,7 +605,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_fire_tail.mdl",
         cool1 = 1.90,
         Primary = "STR",
-        abilList = {towerSpxKV["深海之心"]}
+        abilList = {towerSpxKV["深海之心"], towerSpxKV["怒火碎击"]}
     },
     {
         Name = "昆虫·隐术蜘蛛·库莫",
@@ -615,7 +620,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_GaussGun.mdl",
         cool1 = 2.10,
-        Primary = "AGI"
+        Primary = "AGI",
+        abilList = {towerSpxKV["忍法擒拿"], towerSpxKV["隐术"]}
     },
     {
         Name = "巨魔·狂魂骑手·阿拉烈",
@@ -646,7 +652,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_Ember_Shield_II_FX_3.mdl",
         cool1 = 1.90,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["牙牙拳"], towerSpxKV["利爪"]}
     },
     {
         Name = "巨魔·剑圣·噬魂",
@@ -662,7 +669,7 @@ towers_sss = {
         Missileart = "war3mapImported\\eff_Culling_Cleave_Silver.mdl",
         cool1 = 1.90,
         Primary = "INT",
-        abilList = {towerSpxKV["剑圣"]}
+        abilList = {towerSpxKV["剑圣"], towerSpxKV["噬魂"]}
     },
     {
         Name = "牛头人·小牛·弹弹",

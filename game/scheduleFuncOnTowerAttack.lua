@@ -265,7 +265,7 @@ onTowerAttack = function(evtData)
                         cj.DestroyGroup(g)
                     end
                 end
-                if (name == "震撼" or name == "龙魂斩") then
+                if (name == "震撼" or name == "龙魂斩" or name == "鱼人碎击" or name == "怒火碎击") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
@@ -1025,7 +1025,7 @@ onTowerAttack = function(evtData)
                             }
                         )
                     end
-                elseif (name == "黑网擒拿") then
+                elseif (name == "黑网擒拿" or name == "忍法擒拿") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
