@@ -716,7 +716,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_DeathMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT"
+        Primary = "INT",
+        abilList = {towerSpxKV["幽鬼灯火"], towerSpxKV["三千年智慧"]}
     },
     {
         Name = "元素·虚空谜团",

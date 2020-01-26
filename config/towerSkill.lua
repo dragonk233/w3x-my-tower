@@ -267,7 +267,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Arcane_MindMastery.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {70}
+        Val = {80}
     },
     {
         Name = "大智慧",
@@ -275,7 +275,15 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_AbsorbMagic.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {120}
+        Val = {130}
+    },
+    {
+        Name = "三千年智慧",
+        Ubertip = "+{val#1}智力",
+        Art = "war3mapImported\\icon_pas_Spell_Shadow_ImprovedVampiricEmbrace.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {333}
     },
     {
         Name = "机械之心",
@@ -583,6 +591,14 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "魂鬼",
+        Ubertip = "+鬼攻击特性",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNShadeTrueSight.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {}
+    },
+    {
+        Name = "幽鬼灯火",
         Ubertip = "+鬼攻击特性",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNShadeTrueSight.blp",
         Buttonpos1 = 0,
