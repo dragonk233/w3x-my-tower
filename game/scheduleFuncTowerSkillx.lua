@@ -37,7 +37,7 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {int_green = "+" .. Val[1], attack_green = "+" .. Val[2]})
                 elseif (name == "古代帝王") then
                     hattr.set(u, 0, {str_green = "+" .. Val[1], agi_green = "+" .. Val[2], int_green = "+" .. Val[3]})
-                elseif (name == "塞壬之歌" or name == "甲虫之盔") then
+                elseif (name == "塞壬之歌" or name == "甲虫之盔" or name =="洁白无瑕") then
                     hattr.set(u, 0, {resistance = "+" .. Val[1]})
                 elseif (name == "石像化" or name == "腰马合一" or name == "折磨耐性") then
                     hattr.set(u, 0, {toughness = "+" .. Val[1]})
@@ -80,6 +80,8 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {attack_damage_type = "+ghost,dark,metal"})
                 elseif (name == "千年龙骨") then
                     hattr.set(u, 0, {attack_damage_type = "+ghost,ice"})
+                elseif (name == "神赐之力") then
+                    hattr.set(u, 0, {attack_damage_type = "+god,light"})
                 elseif (name == "霹雳化身" or name == "电离之子") then
                     hattr.set(u, 0, {attack_damage_type = "+thunder", attack_speed = "+" .. Val[1]})
                 elseif (name == "噬日") then

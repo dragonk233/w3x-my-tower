@@ -700,7 +700,8 @@ towers_sss = {
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_ice_cone_arrow.mdl",
         cool1 = 2.10,
-        Primary = "STR"
+        Primary = "STR",
+        abilList = {towerSpxKV["神赐之力"], towerSpxKV["洁白无瑕"]}
     },
     {
         Name = "元素·幽鬼灯妖",

@@ -614,7 +614,7 @@ onTowerAttack = function(evtData)
                             }
                         )
                     end
-                elseif (name == "剑气") then
+                elseif (name == "剑气" or name == "弹刃之剑") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)

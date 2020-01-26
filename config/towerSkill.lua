@@ -766,6 +766,14 @@ TOWER_ABLI_SPX = {
         Val = {}
     },
     {
+        Name = "神赐之力",
+        Ubertip = "+神攻击特性|n+光攻击特性",
+        Art = "war3mapImported\\icon_pas_Holy_PrayerOfMendingtga.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {}
+    },
+    {
         Name = "海洋之心",
         Ubertip = "+{val#1}%水攻击",
         Art = "war3mapImported\\icon_pas_Elemental_Mote_Water01.blp",
@@ -1110,14 +1118,6 @@ TOWER_ABLI_SPX = {
         Val = {50, 1, 700}
     },
     {
-        Name = "噬魂",
-        Ubertip = "攻击时有{val#1}%几率增加{val#2}攻击力，持续{val#3}秒",
-        Art = "war3mapImported\\icon_pas_Hunter_MasterTactitian.blp",
-        Buttonpos1 = 0,
-        Buttonpos2 = 2,
-        Val = {25, 55, 10, "war3mapImported\\eff_flame_burning.mdl"}
-    },
-    {
         Name = "狂战士之血",
         Ubertip = "攻击时有{val#1}%几率增加{val#2}%攻击速度，持续{val#3}秒",
         Art = "war3mapImported\\icon_pas_Berserker_Blood.blp",
@@ -1156,6 +1156,14 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {35, 50, 14, "war3mapImported\\eff_flame_burning.mdl"}
+    },
+    {
+        Name = "噬魂",
+        Ubertip = "攻击时有{val#1}%几率增加{val#2}攻击力，持续{val#3}秒",
+        Art = "war3mapImported\\icon_pas_Hunter_MasterTactitian.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {40, 55, 10, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "血性",
@@ -1485,6 +1493,21 @@ TOWER_ABLI_SPX = {
             7,
             6,
             "war3mapImported\\eff_bladewave.mdl"
+        }
+    },
+    {
+        Name = "弹刃之剑",
+        Ubertip = "攻击时发起{val#2}道剑气爪对直线敌人造成{val#3}伤害，并减少{val#4}点护甲{val#5}秒",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGnollCommandAura.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {
+            100,
+            2,
+            300,
+            4,
+            3,
+            "war3mapImported\\eff_RedBladeShockwave.mdl"
         }
     },
     {
@@ -1925,6 +1948,15 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {40},
+        ODK = true
+    },
+    {
+        Name = "洁白无瑕",
+        Ubertip = "+{val#1}%魔抗",
+        Art = "war3mapImported\\icon_pas_Helmet_69.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 2,
+        Val = {100},
         ODK = true
     },
     {
