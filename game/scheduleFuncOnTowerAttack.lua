@@ -723,10 +723,10 @@ onTowerAttack = function(evtData)
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
                                 tokenArrow = val[3],
-                                tokenArrowScale = 2.20,
+                                tokenArrowScale = 1.70,
                                 tokenArrowOpacity = 1,
                                 damageMovement = val[2],
-                                damageMovementRange = 160,
+                                damageMovementRange = 150,
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.poison},
                                 damageEffect = "war3mapImported\\eff_Pillar_of_Flame_Green.mdl"
@@ -825,10 +825,10 @@ onTowerAttack = function(evtData)
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
                                 tokenArrow = val[3],
-                                tokenArrowScale = 1.2,
+                                tokenArrowScale = 1.8,
                                 tokenArrowOpacity = 1,
                                 damageMovement = val[2],
-                                damageMovementRange = 250,
+                                damageMovementRange = 275,
                                 damageMovementRepeat = true,
                                 damageEnd = 0,
                                 damageEndRange = 0,
@@ -840,7 +840,7 @@ onTowerAttack = function(evtData)
                                         eu,
                                         4,
                                         {
-                                            move = "-10"
+                                            move = "-15"
                                         }
                                     )
                                 end
@@ -1143,7 +1143,42 @@ onTowerAttack = function(evtData)
                 elseif (name == "金箍棒") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
-                        
+                        onTowerAttackTtg(u, name)
+                        hskill.rectangleStrike(
+                            {
+                                damage = val[3],
+                                sourceUnit = u,
+                                x = cj.GetUnitX(u),
+                                y = cj.GetUnitY(u),
+                                deg = math.getDegBetweenXY(
+                                    cj.GetUnitX(u),
+                                    cj.GetUnitY(u),
+                                    cj.GetUnitX(targetUnit),
+                                    cj.GetUnitY(targetUnit)
+                                ),
+                                range = 250,
+                                distance = val[2],
+                                frequency = 0,
+                                filter = function()
+                                    return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
+                                end,
+                                effect = "war3mapImported\\eff_slash.mdl",
+                                effectScale = 3,
+                                damageKind = CONST_DAMAGE_KIND.skill,
+                                damageType = {CONST_DAMAGE_TYPE.physical},
+                                damageEffect = "war3mapImported\\eff_red_swing.mdl",
+                                oneHitOnly = true, --是否每个敌人只打击一次（可选,默认true）
+                                extraInfluence = function(eu)
+                                    hskill.swim(
+                                        {
+                                            odds = 100,
+                                            whichUnit = eu,
+                                            during = val[4]
+                                        }
+                                    )
+                                end
+                            }
+                        )
                     end
                 elseif (name == "蛇棒" or name == "骷髅兵" or name == "炎魔" or name == "灰熊") then
                     local val = v.Val or {0}
@@ -1181,20 +1216,22 @@ onTowerAttack = function(evtData)
                         heffect.toUnit(val[4], u, 0)
                         local playerIndex = hplayer.index(cj.GetOwningPlayer(u))
                         hattr.set(
-                            u,
+                            game.playerTower[playerIndex],
                             val[3],
                             {
                                 [val[5]] = "+" .. val[2]
                             }
                         )
                         for i = 1, 4, 1 do
-                            hattr.set(
-                                game.playerTowerLink[playerIndex][i].unit,
-                                val[3],
-                                {
-                                    [val[5]] = "+" .. val[2]
-                                }
-                            )
+                            if (his.locust(game.playerTowerLink[playerIndex][i].unit) == false) then
+                                hattr.set(
+                                    game.playerTowerLink[playerIndex][i].unit,
+                                    val[3],
+                                    {
+                                        [val[5]] = "+" .. val[2]
+                                    }
+                                )
+                            end
                         end
                     end
                 elseif (name == "熊咆") then
@@ -1204,22 +1241,38 @@ onTowerAttack = function(evtData)
                         heffect.toUnit(val[5], u, 0)
                         local playerIndex = hplayer.index(cj.GetOwningPlayer(u))
                         hattr.set(
-                            u,
+                            game.playerTower[playerIndex],
                             val[4],
                             {
-                                knocking_odds = "+" .. val[2],
-                                knocking = "+" .. val[3]
+                                attack_effect = {
+                                    add = {
+                                        {
+                                            attr = "knocking",
+                                            odds = val[2],
+                                            percent = val[3]
+                                        }
+                                    }
+                                }
                             }
                         )
                         for i = 1, 4, 1 do
-                            hattr.set(
-                                game.playerTowerLink[playerIndex][i].unit,
-                                val[4],
-                                {
-                                    knocking_odds = "+" .. val[2],
-                                    knocking = "+" .. val[3]
-                                }
-                            )
+                            if (his.locust(game.playerTowerLink[playerIndex][i].unit) == false) then
+                                hattr.set(
+                                    game.playerTowerLink[playerIndex][i].unit,
+                                    val[4],
+                                    {
+                                        attack_effect = {
+                                            add = {
+                                                {
+                                                    attr = "knocking",
+                                                    odds = val[2],
+                                                    percent = val[3]
+                                                }
+                                            }
+                                        }
+                                    }
+                                )
+                            end
                         end
                     end
                 end

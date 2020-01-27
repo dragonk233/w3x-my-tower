@@ -1171,7 +1171,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {25, 30, 10, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {25, 45, 10, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "狂魂狩猎",
@@ -1179,7 +1179,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {30, 40, 12, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {30, 60, 12, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "狂魂骑猎",
@@ -1187,7 +1187,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_FlamingArrows.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {35, 50, 14, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {35, 80, 14, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "噬魂",
@@ -1195,7 +1195,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Hunter_MasterTactitian.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {40, 55, 10, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {40, 90, 10, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "血性",
@@ -1203,7 +1203,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Shadow_LifeDrain.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {35, 75, 30, 3.0, "war3mapImported\\eff_flame_burning.mdl"}
+        Val = {40, 75, 30, 3.0, "war3mapImported\\eff_flame_burning.mdl"}
     },
     {
         Name = "烈焰风暴",
@@ -1316,7 +1316,7 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
-            30,
+            20,
             0,
             4.5,
             "war3mapImported\\eff_ringing.mdl"
@@ -1544,7 +1544,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "神剑七闪",
-        Ubertip = "{val#1}%几率发起{val#2}道剑气撕裂大地敌人造成持续{val#3}伤害，并减少{val#4}点移动{val#5}秒",
+        Ubertip = "{val#1}%几率发起{val#2}道剑气撕裂大地敌人造成持续{val#3}伤害，并减少移动{val#5}秒",
         Art = "war3mapImported\\icon_pas_Spell_Nature_UnleashedRage.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
@@ -1552,7 +1552,7 @@ TOWER_ABLI_SPX = {
             50,
             7,
             100,
-            50,
+            4,
             3,
             "war3mapImported\\eff_cracked_ground.mdl"
         }
@@ -1590,7 +1590,7 @@ TOWER_ABLI_SPX = {
         Val = {
             50,
             600,
-            "war3mapImported\\eff_Shot_II_Green.mdl"
+            "war3mapImported\\eff_LifeWave.mdl"
         }
     },
     {
@@ -1672,7 +1672,7 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             25,
-            495,
+            385,
             3.5
         }
     },
@@ -1748,7 +1748,7 @@ TOWER_ABLI_SPX = {
             25,
             900,
             400,
-            2.5,
+            2.5
         }
     },
     {
@@ -1800,10 +1800,10 @@ TOWER_ABLI_SPX = {
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {
-            18,
-            45,
-            35,
-            5,
+            40,
+            30,
+            40,
+            6.5,
             "Abilities\\Spells\\NightElf\\BattleRoar\\RoarCaster.mdl"
         }
     },

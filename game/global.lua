@@ -44,7 +44,7 @@ game = {
             waveEnd = 100,
             fresh = 2.5,
             mon = nil,
-            monLife = 25
+            monLife = 225
         },
         hz = {
             perWaveQty = 25,

@@ -22,7 +22,7 @@ bossGen = function(curWave)
                 0,
                 {
                     life = "=" .. (bossGenLife * curWave),
-                    move = "=110"
+                    move = "=125"
                 }
             )
             game.currentMon = game.currentMon + 1

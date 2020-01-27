@@ -89,7 +89,7 @@ addTowerSkillsx = function(u)
                 elseif (name == "噬日") then
                     hattr.set(u, 0, {attack_damage_type = "+dark", natural_dark = "+" .. Val[1]})
                 elseif (name == "魂丧双鬼") then
-                    hattr.set(u, 0, {attack_damage_type = "+ghostdark", attack_green = "+" .. Val[2]})
+                    hattr.set(u, 0, {attack_damage_type = "+ghost,dark", attack_green = "+" .. Val[1]})
                 elseif (name == "冰雪之殇") then
                     hattr.set(
                         u,

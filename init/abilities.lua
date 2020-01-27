@@ -24,7 +24,7 @@ LINK_ABILITY_STACK = {}
 local LINK_ABILITY = {
     {
         Name = "核心",
-        Ubertip = "这是一个核心兵塔，协助C位塔作战",
+        Ubertip = "这是一个核心兵塔，协助C位塔作战，失去了英雄的身份",
         Art = "war3mapImported\\icon_pas_Enchant_EssenceArcaneLarge.blp",
         BUTTON = { 1, 1 },
         TYPE = "desc",
@@ -53,7 +53,7 @@ local LINK_ABILITY = {
     },
     {
         Name = "技能说明",
-        Ubertip = "核心不能共享技能书的效果，但拥有完整的自身技能",
+        Ubertip = "核心不能共享技能书的效果，但拥有自身的技能|n英雄类技能同样会自动失效",
         Art = "war3mapImported\\icon_pas_Holy_PrayerOfMendingtga.blp",
         BUTTON = { 2, 2 },
         TYPE = "desc",
