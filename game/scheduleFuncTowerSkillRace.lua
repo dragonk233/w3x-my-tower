@@ -1,6 +1,34 @@
 addTowerSkillsRaceAbility = {}
 addTowerSkillsRaceAttr = {}
 addTowerSkillsRaceAttrPlayer = {}
+
+handleTowerSkillsRaceAttr = function(options, cale)
+    if (options == nil) then
+        return
+    end
+    local caleChar = "sub"
+    if (cale == "+") then
+        caleChar = "add"
+    end
+    local temp = {}
+    for k, v in pairs(options) do
+        if (k == "attack_damage_type") then
+            if (#v > 0) then
+                temp[k] = cale .. string.implode(",", v)
+            end
+        elseif (k == "attack_debuff" or k == "attack_effect") then
+            if (#v > 0) then
+                temp[k] = {[caleChar] = v}
+            end
+        else
+            if (v > 0) then
+                temp[k] = cale .. v
+            end
+        end
+    end
+    return temp
+end
+
 addTowerSkillsRace = function(u)
     local currentId = hunit.getId(u)
     local race = hslk_global.unitsKV[currentId].RACE
@@ -556,12 +584,22 @@ addTowerSkillsRace = function(u)
             hplayer.subExpRatio(hplayer.players[playerIndex], addTowerSkillsRaceAttrPlayer[playerIndex].exp_ratio, 0)
         end
     end
-    addTowerSkillsRaceAttr[playerIndex] = attr
-    addTowerSkillsRaceAttrPlayer[playerIndex] = attrPlayer
+    print("ssssstart--")
     print_r(attr)
     print_r(attrPlayer)
-    for k, v in pairs(attr) do
+    --整理旧属性
+    local oldAttrs, newAttrs
+    if (addTowerSkillsRaceAttr[playerIndex] ~= nil) then
+        oldAttrs = handleTowerSkillsRaceAttr(addTowerSkillsRaceAttr[playerIndex], "-")
     end
+    --整理新属性
+    newAttrs = handleTowerSkillsRaceAttr(attr, "+")
+    print("ending--")
+    print_r(oldAttrs)
+    print_r(newAttrs)
+    --新旧交替
+    addTowerSkillsRaceAttr[playerIndex] = attr
+    addTowerSkillsRaceAttrPlayer[playerIndex] = attrPlayer
     --玩家增加
     if (attrPlayer.gold_ratio > 0) then
         hplayer.addGoldRatio(hplayer.players[playerIndex], attrPlayer.gold_ratio, 0)
