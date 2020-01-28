@@ -5,9 +5,10 @@ towerRaces = {
         Text = "+3%力量|n+3%敏捷|n+3%智力",
         Art = "war3mapImported\\icon_race_human.blp",
         Link = {
+            {qty = 2, text = "+5护甲"},
             {qty = 3, text = "+10护甲"},
             {qty = 4, text = "+20护甲"},
-            {qty = 5, text = "+40护甲"}
+            {qty = 5, text = "+30护甲"}
         }
     },
     {
@@ -16,8 +17,8 @@ towerRaces = {
         Text = "+5%力量|n+5%敏捷|n+5%智力",
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
-            {qty = 1, text = "+25护甲"},
-            {qty = 2, text = "+150攻击力"}
+            {qty = 2, text = "+25护甲"},
+            {qty = 5, text = "+350攻击力"}
         }
     },
     {
@@ -26,8 +27,9 @@ towerRaces = {
         Text = "+35%命中",
         Art = "war3mapImported\\icon_race_dwraf.blp",
         Link = {
-            {qty = 2, text = "+75攻击力|n+25%命中"},
-            {qty = 3, text = "+10%经验获得率"}
+            {qty = 2, text = "+75攻击力;+25%命中"},
+            {qty = 3, text = "+5%经验获得率"},
+            {qty = 5, text = "+11%经验获得率"}
         }
     },
     {
@@ -36,8 +38,9 @@ towerRaces = {
         Text = "15%几率击出额外12%伤害的魔法暴击",
         Art = "war3mapImported\\icon_race_elf.blp",
         Link = {
-            {qty = 2, text = "25%几率击出额外25%伤害的魔法暴击"},
-            {qty = 4, text = "+火攻击特性"}
+            {qty = 3, text = "10%几率击出额外15%伤害的魔法暴击"},
+            {qty = 4, text = "14%几率击出额外18%伤害的魔法暴击"},
+            {qty = 5, text = "18%几率击出额外23%伤害的魔法暴击"}
         }
     },
     {
@@ -46,9 +49,9 @@ towerRaces = {
         Text = "+7.5%攻击力",
         Art = "war3mapImported\\icon_race_orc.blp",
         Link = {
-            {qty = 3, text = "+85攻击力"},
-            {qty = 4, text = "+100攻击力"},
-            {qty = 5, text = "+135攻击力"}
+            {qty = 3, text = "+125攻击力"},
+            {qty = 4, text = "+200攻击力"},
+            {qty = 5, text = "+火攻击特性"}
         }
     },
     {
@@ -57,8 +60,10 @@ towerRaces = {
         Text = "攻击时+5%攻击速度，持续6秒",
         Art = "war3mapImported\\icon_race_troll.blp",
         Link = {
-            {qty = 3, text = "+20%攻击速度"},
-            {qty = 4, text = "+125攻击力"}
+            {qty = 2, text = "+7.5%攻击速度"},
+            {qty = 3, text = "+10%攻击速度"},
+            {qty = 4, text = "+12%攻击速度"},
+            {qty = 5, text = "+15%攻击速度"}
         }
     },
     {
@@ -67,8 +72,9 @@ towerRaces = {
         Text = "10%几率击出额外18%伤害的物理暴击",
         Art = "war3mapImported\\icon_race_tauren.blp",
         Link = {
-            {qty = 2, text = "+15护甲"},
-            {qty = 4, text = "20%几率击出额外25%伤害的物理暴击"}
+            {qty = 2, text = "10%几率击出额外17%伤害的物理暴击"},
+            {qty = 3, text = "15%几率击出额外21%伤害的物理暴击"},
+            {qty = 5, text = "20%几率击出额外27%伤害的物理暴击"}
         }
     },
     {
@@ -77,8 +83,8 @@ towerRaces = {
         Text = "+暗攻击特性",
         Art = "war3mapImported\\icon_race_nightelf.blp",
         Link = {
-            {qty = 3, text = "+暗攻击特性"},
-            {qty = 5, text = "+20%暗攻击"}
+            {qty = 2, text = "+16%暗攻击"},
+            {qty = 3, text = "+暗攻击特性"}
         }
     },
     {
@@ -88,7 +94,7 @@ towerRaces = {
         Art = "war3mapImported\\icon_race_druid.blp",
         Link = {
             {qty = 2, text = "+15%攻击速度"},
-            {qty = 4, text = "+50%风抗性"}
+            {qty = 4, text = "+70%风抗性"}
         }
     },
     {
@@ -97,8 +103,8 @@ towerRaces = {
         Text = "攻击时，敌军减少35点移动速度，持续3秒",
         Art = "war3mapImported\\icon_race_undead.blp",
         Link = {
-            {qty = 2, text = "+冰攻击特性"},
-            {qty = 3, text = "攻击时，敌军减少15点移动速度，持续3秒"}
+            {qty = 3, text = "+冰攻击特性"},
+            {qty = 4, text = "攻击时，敌军减少7点移动速度，持续3秒"}
         }
     },
     {
@@ -107,8 +113,9 @@ towerRaces = {
         Text = "+水攻击特性",
         Art = "war3mapImported\\icon_race_naga.blp",
         Link = {
-            {qty = 3, text = "+水抗性40%"},
-            {qty = 5, text = "+水抗性40%"}
+            {qty = 1, text = "+水抗性5%"},
+            {qty = 3, text = "+水抗性20%"},
+            {qty = 5, text = "+水、冰抗性25%"}
         }
     },
     {
@@ -117,10 +124,9 @@ towerRaces = {
         Text = "+8%所有自然抗性",
         Art = "war3mapImported\\icon_race_elemental.blp",
         Link = {
-            {qty = 2, text = "+5%自然抗性"},
-            {qty = 3, text = "+10%自然抗性"},
-            {qty = 4, text = "+5%自然攻击"},
-            {qty = 5, text = "+10%自然攻击"}
+            {qty = 3, text = "+土、木攻击特性"},
+            {qty = 4, text = "+火、金攻击特性"},
+            {qty = 5, text = "+18%自然抗性"}
         }
     },
     {
@@ -129,7 +135,8 @@ towerRaces = {
         Text = "+6.66%伤害增幅|n+6.66%攻击速度|n-6.66%神抗性",
         Art = "war3mapImported\\icon_race_demon.blp",
         Link = {
-            {qty = 2, text = "+6.66%伤害增幅"},
+            {qty = 1, text = "+1.66%伤害增幅"},
+            {qty = 2, text = "+3.66%伤害增幅"},
             {qty = 3, text = "+6.66%伤害增幅"},
             {qty = 4, text = "+6.66%伤害增幅"},
             {qty = 5, text = "+6.66%伤害增幅"}
@@ -141,8 +148,9 @@ towerRaces = {
         Text = "+神攻击特性",
         Art = "war3mapImported\\icon_race_god.blp",
         Link = {
-            {qty = 1, text = "+25%攻击速度"},
-            {qty = 2, text = "+神攻击特性"}
+            {qty = 1, text = "+20%攻击速度"},
+            {qty = 2, text = "+15%神攻击"},
+            {qty = 3, text = "+神攻击特性"}
         }
     },
     {
@@ -181,8 +189,9 @@ towerRaces = {
         Text = "攻击时，10%几率眩晕0.3秒",
         Art = "war3mapImported\\icon_race_ogre.blp",
         Link = {
-            {qty = 2, text = "攻击时，10%几率眩晕0.3秒"},
-            {qty = 3, text = "+25%攻击速度"}
+            {qty = 2, text = "攻击时，8%几率眩晕0.3秒"},
+            {qty = 3, text = "+20%攻击速度"},
+            {qty = 5, text = "攻击时，13%几率眩晕0.5秒"}
         }
     },
     {
@@ -191,8 +200,9 @@ towerRaces = {
         Text = "+12%智力",
         Art = "war3mapImported\\icon_race_goblin.blp",
         Link = {
-            {qty = 2, text = "+10%黄金获得率"},
-            {qty = 3, text = "+10%黄金获得率"}
+            {qty = 1, text = "+5%黄金获得率"},
+            {qty = 2, text = "+8%黄金获得率"},
+            {qty = 3, text = "+11%黄金获得率"}
         }
     },
     {
@@ -201,7 +211,9 @@ towerRaces = {
         Text = "+龙攻击特性",
         Art = "war3mapImported\\icon_race_dragon.blp",
         Link = {
-            {qty = 2, text = "+雷攻击特性|n+风攻击特性"}
+            {qty = 1, text = "+30攻击力"},
+            {qty = 2, text = "+雷攻击特性"},
+            {qty = 3, text = "+风攻击特性"}
         }
     },
     {
@@ -210,9 +222,10 @@ towerRaces = {
         Text = "+0.05生命恢复|n+8%力量",
         Art = "war3mapImported\\icon_race_panda.blp",
         Link = {
+            {qty = 1, text = "+150生命"},
             {qty = 2, text = "+300生命"},
-            {qty = 3, text = "+400生命"},
-            {qty = 4, text = "+700生命"}
+            {qty = 3, text = "+350生命"},
+            {qty = 4, text = "+400生命"}
         }
     }
 }
