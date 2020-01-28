@@ -268,7 +268,7 @@ addTowerSkillsRace = function(u)
     for i = 1, 4 do
         if
             (game.playerTowerLink[playerIndex] ~= nil and game.playerTowerLink[playerIndex][i] ~= nil and
-                game.playerTowerLink[playerIndex][i].tower_level ~= -1)
+                game.playerTowerLink[playerIndex][i].tower_level ~= nil)
          then
             table.insert(towers, game.playerTowerLink[playerIndex][i].unit)
         end
@@ -318,7 +318,7 @@ addTowerSkillsRace = function(u)
         end
         qtys[r] = qtys[r] + 1
         races[v] = r
-        if (race == "人类") then
+        if (r == "人类") then
             if (qtys[r] == 2) then
                 attr.defend = attr.defend + 5
             elseif (qtys[r] == 3) then
@@ -328,13 +328,13 @@ addTowerSkillsRace = function(u)
             elseif (qtys[r] == 5) then
                 attr.defend = attr.defend + 30
             end
-        elseif (race == "人王") then
+        elseif (r == "人王") then
             if (qtys[r] == 2) then
                 attr.defend = attr.defend + 25
             elseif (qtys[r] == 5) then
                 attr.attack_green = attr.attack_green + 350
             end
-        elseif (race == "矮人") then
+        elseif (r == "矮人") then
             if (qtys[r] == 2) then
                 attr.aim = attr.aim + 25
                 attr.attack_green = attr.attack_green + 75
@@ -343,7 +343,7 @@ addTowerSkillsRace = function(u)
             elseif (qtys[r] == 5) then
                 attrPlayer.exp_ratio = attrPlayer.exp_ratio + 11
             end
-        elseif (race == "血精灵") then
+        elseif (r == "血精灵") then
             if (qtys[r] == 3) then
                 table.insert(
                     attr.attack_effect,
@@ -372,7 +372,7 @@ addTowerSkillsRace = function(u)
                     }
                 )
             end
-        elseif (race == "兽人") then
+        elseif (r == "兽人") then
             if (qtys[r] == 3) then
                 attr.attack_green = attr.attack_green + 125
             elseif (qtys[r] == 4) then
@@ -380,7 +380,7 @@ addTowerSkillsRace = function(u)
             elseif (qtys[r] == 5) then
                 table.insert(attr.attack_damage_type, "fire")
             end
-        elseif (race == "巨魔") then
+        elseif (r == "巨魔") then
             if (qtys[r] == 2) then
                 attr.attack_speed = attr.attack_speed + 7.5
             elseif (qtys[r] == 3) then
@@ -390,7 +390,7 @@ addTowerSkillsRace = function(u)
             elseif (qtys[r] == 5) then
                 attr.attack_speed = attr.attack_speed + 15
             end
-        elseif (race == "牛头人") then
+        elseif (r == "牛头人") then
             if (qtys[r] == 2) then
                 table.insert(
                     attr.attack_effect,
@@ -419,19 +419,19 @@ addTowerSkillsRace = function(u)
                     }
                 )
             end
-        elseif (race == "暗夜精灵") then
+        elseif (r == "暗夜精灵") then
             if (qtys[r] == 2) then
                 attr.natural_dark = attr.natural_dark + 16
             elseif (qtys[r] == 3) then
                 table.insert(attr.attack_damage_type, "dark")
             end
-        elseif (race == "德鲁伊") then
+        elseif (r == "德鲁伊") then
             if (qtys[r] == 2) then
                 attr.attack_speed = attr.attack_speed + 15
             elseif (qtys[r] == 4) then
                 attr.natural_wind_oppose = attr.natural_wind_oppose + 70
             end
-        elseif (race == "亡灵") then
+        elseif (r == "亡灵") then
             if (qtys[r] == 3) then
                 table.insert(attr.attack_damage_type, "ice")
             elseif (qtys[r] == 4) then
@@ -446,7 +446,7 @@ addTowerSkillsRace = function(u)
                     }
                 )
             end
-        elseif (race == "娜迦") then
+        elseif (r == "娜迦") then
             if (qtys[r] == 1) then
                 attr.natural_water_oppose = attr.natural_water_oppose + 5
             elseif (qtys[r] == 3) then
@@ -455,7 +455,7 @@ addTowerSkillsRace = function(u)
                 attr.natural_water_oppose = attr.natural_water_oppose + 25
                 attr.natural_ice_oppose = attr.natural_ice_oppose + 25
             end
-        elseif (race == "元素") then
+        elseif (r == "元素") then
             if (qtys[r] == 3) then
                 table.insert(attr.attack_damage_type, "soil")
                 table.insert(attr.attack_damage_type, "wood")
@@ -479,7 +479,7 @@ addTowerSkillsRace = function(u)
                 attr.natural_insect_oppose = attr.natural_insect_oppose + 18
                 attr.natural_god_oppose = attr.natural_god_oppose + 18
             end
-        elseif (race == "恶魔") then
+        elseif (r == "恶魔") then
             if (qtys[r] == 1) then
                 attr.damage_extent = attr.damage_extent + 1.66
             elseif (qtys[r] == 2) then
@@ -491,7 +491,7 @@ addTowerSkillsRace = function(u)
             elseif (qtys[r] == 5) then
                 attr.damage_extent = attr.damage_extent + 6.66
             end
-        elseif (race == "神族") then
+        elseif (r == "神族") then
             if (qtys[r] == 1) then
                 attr.attack_speed = attr.attack_speed + 20
             elseif (qtys[r] == 2) then
@@ -499,13 +499,13 @@ addTowerSkillsRace = function(u)
             elseif (qtys[r] == 3) then
                 table.insert(attr.attack_damage_type, "god")
             end
-        elseif (race == "昆虫") then
+        elseif (r == "昆虫") then
             if (qtys[r] == 2) then
                 attr.resistance = attr.resistance + 25
             elseif (qtys[r] == 3) then
                 attr.toughness = attr.toughness + 300
             end
-        elseif (race == "异兽") then
+        elseif (r == "异兽") then
             if (qtys[r] == 2) then
                 table.insert(
                     attr.attack_effect,
@@ -519,13 +519,13 @@ addTowerSkillsRace = function(u)
             elseif (qtys[r] == 3) then
                 attr.attack_green = attr.attack_green + 200
             end
-        elseif (race == "幽魂") then
+        elseif (r == "幽魂") then
             if (qtys[r] == 2) then
                 attr.avoid = attr.avoid + 20
             elseif (qtys[r] == 3) then
                 table.insert(attr.attack_damage_type, "ghost")
             end
-        elseif (race == "食人魔") then
+        elseif (r == "食人魔") then
             if (qtys[r] == 2) then
                 table.insert(
                     attr.attack_effect,
@@ -547,15 +547,15 @@ addTowerSkillsRace = function(u)
                     }
                 )
             end
-        elseif (race == "地精") then
+        elseif (r == "地精") then
             if (qtys[r] == 1) then
-                attrPlayer.gold_ratio = attr.gold_ratio + 5
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 5
             elseif (qtys[r] == 2) then
-                attrPlayer.gold_ratio = attr.gold_ratio + 8
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 8
             elseif (qtys[r] == 3) then
-                attrPlayer.gold_ratio = attr.gold_ratio + 11
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 11
             end
-        elseif (race == "龙人") then
+        elseif (r == "龙人") then
             if (qtys[r] == 1) then
                 attr.attack_green = attr.attack_green + 30
             elseif (qtys[r] == 2) then
@@ -563,7 +563,7 @@ addTowerSkillsRace = function(u)
             elseif (qtys[r] == 3) then
                 table.insert(attr.attack_damage_type, "wind")
             end
-        elseif (race == "熊猫") then
+        elseif (r == "熊猫") then
             if (qtys[r] == 1) then
                 attr.life = attr.life + 150
             elseif (qtys[r] == 2) then
@@ -575,6 +575,7 @@ addTowerSkillsRace = function(u)
             end
         end
     end
+    print_r(qtys)
     if (addTowerSkillsRaceAttr[playerIndex] == nil) then
         addTowerSkillsRaceAttr[playerIndex] = {}
         addTowerSkillsRaceAttrPlayer[playerIndex] = {}
@@ -614,9 +615,15 @@ addTowerSkillsRace = function(u)
         if (addTowerSkillsRaceAbility[v] ~= nil) then
             hskill.del(v, addTowerSkillsRaceAbility[v], 0)
         end
+        if (v ~= u and table.len(oldAttrs) > 0) then
+            hattr.set(v, 0, oldAttrs)
+        end
         local index = races[v] .. qtys[races[v]]
         local ab = game.thisUnitRaceAbilities[index].ABILITY_ID
         addTowerSkillsRaceAbility[v] = ab
         hskill.add(v, ab, 0)
+        if (table.len(newAttrs) > 0) then
+            hattr.set(v, 0, newAttrs)
+        end
     end
 end
