@@ -1,4 +1,5 @@
 --
+local traci = 0
 for i, v in ipairs(towerRaces) do
     for j=1,5 do
         local obj = slk.ability.Aamk:new("abilities_unit_race_" .. v.Name .. j)
@@ -30,11 +31,12 @@ for i, v in ipairs(towerRaces) do
             INDEX = v.Name .. j,
             ABILITY_ID = obj:get_id(),
         }
+        traci = traci + 1
         ?>
-        call SaveStr(hash_myslk, StringHash("abilities_unit_race"), <?=i?>, "<?=string.addslashes(json.stringify(ab))?>")
+        call SaveStr(hash_myslk, StringHash("abilities_unit_race"), <?=traci?>, "<?=string.addslashes(json.stringify(ab))?>")
         <?
     end
 end
 ?>
-call SaveInteger(hash_myslk, StringHash("abilities_unit_race"), -1, <?=#towerRaces?>)
+call SaveInteger(hash_myslk, StringHash("abilities_unit_race"), -1, <?=traci?>)
 <?
