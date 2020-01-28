@@ -178,8 +178,6 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
             --兵塔说明标志
             hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
-            --种族
-            addTowerSkillsRace(u, hslk_global.unitsKV[towerId])
             --兵塔技能
             addTowerSkillsx(u)
             --天赋等级
@@ -221,6 +219,8 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                         )
                 }
             )
+            --刷新种族
+            addTowerSkillsRace(u)
             --移动卡的bug
             cj.TriggerRegisterUnitEvent(game.TRIGGER_DEMOVE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         end
@@ -332,8 +332,6 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
         --兵塔说明标志
         hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
-        --种族
-        addTowerSkillsRace(u, hslk_global.unitsKV[towerId])
         --兵塔技能
         addTowerSkillsx(u)
         --天赋等级
@@ -350,6 +348,8 @@ createMyTower = function(playerIndex, towerId, towerLevel)
                 addTowerSkillByBook(u, k, v)
             end
         end
+        --刷新种族
+        addTowerSkillsRace(u)
         --移动卡的bug
         cj.TriggerRegisterUnitEvent(game.TRIGGER_DEMOVE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         return u

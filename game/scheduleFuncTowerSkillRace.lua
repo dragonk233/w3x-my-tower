@@ -1,6 +1,8 @@
-addTowerSkillsRace = function(u, slk)
-    local race = slk.RACE
-    hskill.add(u, game.thisUnitRaceAbilities[race].ABILITY_ID, 0)
+addTowerSkillsRaceAbility = {}
+addTowerSkillsRaceAttr = {}
+addTowerSkillsRace = function(u)
+    local currentId = hunit.getId(u)
+    local race = hslk_global.unitsKV[currentId].RACE
     if (race == "人类") then
         local val = 0.03
         hattr.set(
@@ -227,5 +229,36 @@ addTowerSkillsRace = function(u, slk)
                 str_green = "+" .. (0.08 * slk.STR)
             }
         )
+    end
+    --全体判定
+    local playerIndex = hplayer.index(cj.GetOwningPlayer(u))
+    local towers = {
+        game.playerTower[playerIndex],
+        game.playerTowerLink[playerIndex][4]
+    }
+    for i = 1, 4 do
+        if (game.playerTowerLink[playerIndex] ~= nil and game.playerTowerLink[playerIndex][i] ~= nil) then
+            table.insert(towers, game.playerTowerLink[playerIndex][i])
+        end
+    end
+    local qtys = {}
+    local races = {}
+    for k, v in pairs(towers) do
+        local cid = hunit.getId(v)
+        local r = hslk_global.unitsKV[cid].RACE
+        if (qtys[r] == nil) then
+            qtys[r] = 0
+        end
+        qtys[r] = qtys[r] + 1
+        races[v] = r
+    end
+    for k, v in pairs(towers) do
+        if (addTowerSkillsRaceAbility[v] ~= nil) then
+            hskill.del(v, addTowerSkillsRaceAbility[v], 0)
+        end
+        local index = races[v] .. qtys[races[v]]
+        local ab = game.thisUnitRaceAbilities[index].ABILITY_ID
+        addTowerSkillsRaceAbility[v] = ab
+        hskill.add(v, ab, 0)
     end
 end
