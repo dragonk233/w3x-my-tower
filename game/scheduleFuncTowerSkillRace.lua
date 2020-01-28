@@ -266,7 +266,10 @@ addTowerSkillsRace = function(u)
         game.playerTower[playerIndex]
     }
     for i = 1, 4 do
-        if (game.playerTowerLink[playerIndex] ~= nil and game.playerTowerLink[playerIndex][i] ~= nil) then
+        if
+            (game.playerTowerLink[playerIndex] ~= nil and game.playerTowerLink[playerIndex][i] ~= nil and
+                game.playerTowerLink[playerIndex][i].tower_level ~= -1)
+         then
             table.insert(towers, game.playerTowerLink[playerIndex][i].unit)
         end
     end
@@ -612,8 +615,6 @@ addTowerSkillsRace = function(u)
             hskill.del(v, addTowerSkillsRaceAbility[v], 0)
         end
         local index = races[v] .. qtys[races[v]]
-        print_mb(index)
-        print_mbr(game.thisUnitRaceAbilities)
         local ab = game.thisUnitRaceAbilities[index].ABILITY_ID
         addTowerSkillsRaceAbility[v] = ab
         hskill.add(v, ab, 0)

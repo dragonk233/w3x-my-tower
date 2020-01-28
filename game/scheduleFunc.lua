@@ -153,6 +153,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             }
         )
         game.playerTowerLink[playerIndex][linkIndex].unit = u
+        game.playerTowerLink[playerIndex][linkIndex].tower_level = -1
         hunit.setUserData(u, linkIndex)
         if (towerId ~= nil) then
             game.playerTowerLink[playerIndex][linkIndex].tower_id = towerId
