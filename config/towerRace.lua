@@ -17,19 +17,19 @@ towerRaces = {
         Text = "+5%力量|n+5%敏捷|n+5%智力",
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
-            {qty = 2, text = "+25护甲"},
-            {qty = 5, text = "+350攻击力"}
+            {qty = 1, text = "+35护甲"},
+            {qty = 5, text = "+300攻击力"}
         }
     },
     {
         Name = "矮人",
         Ubertip = "极具奇妙特色的种族",
-        Text = "+35%命中",
+        Text = "+40%命中",
         Art = "war3mapImported\\icon_race_dwraf.blp",
         Link = {
-            {qty = 2, text = "+75攻击力;+25%命中"},
-            {qty = 3, text = "+5%经验获得率"},
-            {qty = 5, text = "+11%经验获得率"}
+            {qty = 1, text = "+5%经验获得率"},
+            {qty = 2, text = "+7%经验获得率"},
+            {qty = 4, text = "+11%经验获得率"}
         }
     },
     {
@@ -38,9 +38,9 @@ towerRaces = {
         Text = "15%几率击出额外12%伤害的魔法暴击",
         Art = "war3mapImported\\icon_race_elf.blp",
         Link = {
-            {qty = 3, text = "10%几率击出额外15%伤害的魔法暴击"},
-            {qty = 4, text = "14%几率击出额外18%伤害的魔法暴击"},
-            {qty = 5, text = "18%几率击出额外23%伤害的魔法暴击"}
+            {qty = 2, text = "7%几率击出额外15%伤害的魔法暴击"},
+            {qty = 4, text = "10%几率击出额外18%伤害的魔法暴击"},
+            {qty = 5, text = "14%几率击出额外23%伤害的魔法暴击"}
         }
     },
     {
@@ -49,15 +49,16 @@ towerRaces = {
         Text = "+7.5%攻击力",
         Art = "war3mapImported\\icon_race_orc.blp",
         Link = {
-            {qty = 3, text = "+125攻击力"},
-            {qty = 4, text = "+200攻击力"},
+            {qty = 2, text = "+35攻击力"},
+            {qty = 3, text = "+85攻击力"},
+            {qty = 4, text = "+180攻击力"},
             {qty = 5, text = "+火攻击特性"}
         }
     },
     {
         Name = "巨魔",
         Ubertip = "和精灵曾经有过一场生死之战",
-        Text = "攻击时+5%攻击速度，持续6秒",
+        Text = "攻击时+7.5%攻击速度，持续5秒",
         Art = "war3mapImported\\icon_race_troll.blp",
         Link = {
             {qty = 2, text = "+7.5%攻击速度"},
@@ -72,9 +73,9 @@ towerRaces = {
         Text = "10%几率击出额外18%伤害的物理暴击",
         Art = "war3mapImported\\icon_race_tauren.blp",
         Link = {
-            {qty = 2, text = "10%几率击出额外17%伤害的物理暴击"},
-            {qty = 3, text = "15%几率击出额外21%伤害的物理暴击"},
-            {qty = 5, text = "20%几率击出额外27%伤害的物理暴击"}
+            {qty = 3, text = "9%几率击出额外17%伤害的物理暴击"},
+            {qty = 4, text = "13%几率击出额外21%伤害的物理暴击"},
+            {qty = 5, text = "20%几率击出额外33%伤害的物理暴击"}
         }
     },
     {
@@ -93,50 +94,52 @@ towerRaces = {
         Text = "+木攻击特性",
         Art = "war3mapImported\\icon_race_druid.blp",
         Link = {
-            {qty = 2, text = "+15%攻击速度"},
-            {qty = 4, text = "+70%风抗性"}
+            {qty = 2, text = "+25%攻击速度"},
+            {qty = 4, text = "+10%攻击速度;+70%风抗性"}
         }
     },
     {
         Name = "亡灵",
         Ubertip = "亡灵不会死亡，消失的亡灵实际上是被净化了",
-        Text = "攻击时，敌军减少35点移动速度，持续3秒",
+        Text = "+冰攻击特性|n攻击时，敌军减少30点移动速度，持续3秒",
         Art = "war3mapImported\\icon_race_undead.blp",
         Link = {
-            {qty = 3, text = "+冰攻击特性"},
-            {qty = 4, text = "攻击时，敌军减少7点移动速度，持续3秒"}
+            {qty = 2, text = "攻击时，敌军减少4点移动速度，持续2秒"},
+            {qty = 3, text = "攻击时，敌军减少5点移动速度，持续2.5秒"},
+            {qty = 4, text = "攻击时，敌军减少6点移动速度，持续3秒"}
         }
     },
     {
         Name = "娜迦",
         Ubertip = "一般都长得像条蛇，有的自称为龙",
-        Text = "+水攻击特性",
+        Text = "+水攻击特性|n+30%火抗性",
         Art = "war3mapImported\\icon_race_naga.blp",
         Link = {
-            {qty = 1, text = "+水抗性5%"},
-            {qty = 3, text = "+水抗性20%"},
-            {qty = 5, text = "+水、冰抗性25%"}
+            {qty = 1, text = "+水、冰抗性5%"},
+            {qty = 2, text = "+水、冰抗性10%"},
+            {qty = 3, text = "+水、冰抗性15%"}
         }
     },
     {
         Name = "元素",
         Ubertip = "自然界中的聚合物，形成了意识的神奇存在",
-        Text = "+8%所有自然抗性",
+        Text = "+10%所有自然抗性",
         Art = "war3mapImported\\icon_race_elemental.blp",
         Link = {
-            {qty = 3, text = "+土、木攻击特性"},
-            {qty = 4, text = "+火、金攻击特性"},
+            {qty = 2, text = "+6.5%自然抗性"},
+            {qty = 3, text = "+暗、光攻击特性"},
+            {qty = 4, text = "+火、土攻击特性"},
             {qty = 5, text = "+18%自然抗性"}
         }
     },
     {
         Name = "恶魔",
         Ubertip = "拥有超自然力量的邪恶存在代表",
-        Text = "+6.66%伤害增幅|n+6.66%攻击速度|n-6.66%神抗性",
+        Text = "+6.66%伤害增幅|n+6.66%攻击速度|n-66.66%神抗性",
         Art = "war3mapImported\\icon_race_demon.blp",
         Link = {
-            {qty = 1, text = "+1.66%伤害增幅"},
-            {qty = 2, text = "+3.66%伤害增幅"},
+            {qty = 1, text = "+6.66%伤害增幅"},
+            {qty = 2, text = "+6.66%伤害增幅"},
             {qty = 3, text = "+6.66%伤害增幅"},
             {qty = 4, text = "+6.66%伤害增幅"},
             {qty = 5, text = "+6.66%伤害增幅"}
@@ -149,7 +152,7 @@ towerRaces = {
         Art = "war3mapImported\\icon_race_god.blp",
         Link = {
             {qty = 1, text = "+20%攻击速度"},
-            {qty = 2, text = "+15%神攻击"},
+            {qty = 2, text = "+20%神攻击"},
             {qty = 3, text = "+神攻击特性"}
         }
     },
@@ -159,6 +162,7 @@ towerRaces = {
         Text = "+虫攻击特性",
         Art = "war3mapImported\\icon_race_insect2.blp",
         Link = {
+            {qty = 1, text = "+10%魔抗"},
             {qty = 2, text = "+25%魔抗"},
             {qty = 3, text = "+300减伤"}
         }
@@ -169,18 +173,20 @@ towerRaces = {
         Text = "+10%魔抗|n+100点减伤",
         Art = "war3mapImported\\icon_race_rareanimals.blp",
         Link = {
-            {qty = 2, text = "+20%分裂"},
-            {qty = 3, text = "+200攻击力"}
+            {qty = 2, text = "+350范围10%分裂"},
+            {qty = 3, text = "+400范围15%分裂"},
+            {qty = 4, text = "+500范围20%分裂"}
         }
     },
     {
         Name = "幽魂",
         Ubertip = "不肯承认自己已死去的灵魂",
-        Text = "+13%回避",
+        Text = "+鬼攻击特性",
         Art = "war3mapImported\\icon_race_ghost.blp",
         Link = {
+            {qty = 1, text = "+10%回避"},
             {qty = 2, text = "+20%回避"},
-            {qty = 3, text = "+鬼攻击特性"}
+            {qty = 3, text = "+25%回避"}
         }
     },
     {
@@ -189,9 +195,8 @@ towerRaces = {
         Text = "攻击时，10%几率眩晕0.3秒",
         Art = "war3mapImported\\icon_race_ogre.blp",
         Link = {
-            {qty = 2, text = "攻击时，8%几率眩晕0.3秒"},
-            {qty = 3, text = "+20%攻击速度"},
-            {qty = 5, text = "攻击时，13%几率眩晕0.5秒"}
+            {qty = 2, text = "攻击时，10%几率眩晕0.3秒"},
+            {qty = 4, text = "攻击时，20%几率眩晕1秒"}
         }
     },
     {
@@ -211,7 +216,7 @@ towerRaces = {
         Text = "+龙攻击特性",
         Art = "war3mapImported\\icon_race_dragon.blp",
         Link = {
-            {qty = 1, text = "+30攻击力"},
+            {qty = 1, text = "+40攻击力"},
             {qty = 2, text = "+雷攻击特性"},
             {qty = 3, text = "+风攻击特性"}
         }
@@ -223,9 +228,9 @@ towerRaces = {
         Art = "war3mapImported\\icon_race_panda.blp",
         Link = {
             {qty = 1, text = "+150生命"},
-            {qty = 2, text = "+300生命"},
-            {qty = 3, text = "+350生命"},
-            {qty = 4, text = "+400生命"}
+            {qty = 2, text = "+250生命"},
+            {qty = 3, text = "+300生命"},
+            {qty = 4, text = "+350生命"}
         }
     }
 }

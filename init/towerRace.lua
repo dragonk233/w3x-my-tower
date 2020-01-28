@@ -7,7 +7,7 @@ for i, v in ipairs(towerRaces) do
         local Tip = "种族 - [" .. hColor.green(v.Name) .. "]"
         local Ubertip = hColor.green("[个体效果]|n") .. hColor.yellow(v.Text)
         Ubertip = Ubertip .. hColor.sky("|n|n[队伍效果]")
-        for _,l in ipairs(v.Link)do
+        for _,l in ipairs(v.Link) do
             local lt = j .. "/".. l.qty .. ":" .. l.text
             if(j >= l.qty)then
                 Ubertip = Ubertip .. "|n" .. hColor.yellow(lt)
