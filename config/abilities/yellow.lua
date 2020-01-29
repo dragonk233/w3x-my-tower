@@ -48,40 +48,40 @@ abilitiesYellow = {
         Val = {6}
     },
     {
-        Name = "恶鬼呼声",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNShadeTrueSight.blp",
-        Ubertip = "+鬼攻击特性",
-        Val = {}
-    },
-    {
         Name = "光导使者",
         Art = "war3mapImported\\icon_pas_Ability_Paladin_BlessedMending.blp",
-        Ubertip = "+光攻击特性",
-        Val = {}
+        Ubertip = "+光攻击特性|n+{val#1}%光攻击",
+        Val = {4.3}
     },
     {
         Name = "暗夜对剑",
         Art = "war3mapImported\\icon_pas_Ability_Rogue_ShadowStrikes.blp",
-        Ubertip = "+暗攻击特性",
-        Val = {}
-    },
-    {
-        Name = "日食",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGenericSpellImmunity.blp",
         Ubertip = "+暗攻击特性|n+{val#1}%暗攻击",
+        Val = {4}
+    },
+    {
+        Name = "恶龙吞日",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGenericSpellImmunity.blp",
+        Ubertip = "+龙攻击特性|n+{val#1}%龙攻击",
         Val = {3}
     },
     {
-        Name = "邪神之手",
-        Art = "war3mapImported\\icon_pas_Offhand_Stratholme_A_02.blp",
+        Name = "恶鬼呼声",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNShadeTrueSight.blp",
         Ubertip = "+鬼攻击特性|n+{val#1}%鬼攻击",
-        Val = {3}
+        Val = {4.5}
+    },
+    {
+        Name = "折翅天使",
+        Art = "war3mapImported\\icon_pas_Holy_BlessedRecovery.blp",
+        Ubertip = "+神攻击特性|n+{val#1}%神攻击",
+        Val = {2.5}
     },
     {
         Name = "雷神之手",
         Art = "war3mapImported\\icon_pas_Electrostatic_field2.blp",
-        Ubertip = "+雷攻击特性",
-        Val = {}
+        Ubertip = "+雷攻击特性|n攻击时35%几率发起闪电链，最多打击3个目标，造成{val#1}点伤害",
+        Val = {120}
     },
     {
         Name = "千里冰封",
@@ -92,14 +92,14 @@ abilitiesYellow = {
     {
         Name = "冰心",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFrost.blp",
-        Ubertip = "+冰攻击特性",
-        Val = {}
+        Ubertip = "+冰攻击特性|n+{val#1}%冰攻击",
+        Val = {5}
     },
     {
         Name = "邪魅之虫",
         Art = "war3mapImported\\icon_pas_Shield_26.blp",
-        Ubertip = "+虫攻击特性",
-        Val = {}
+        Ubertip = "+虫攻击特性|n+{val#1}%虫攻击",
+        Val = {5.5}
     },
     {
         Name = "德鲁伊叶子",
@@ -152,7 +152,7 @@ abilitiesYellow = {
     {
         Name = "掠夺黄金",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPillage.blp",
-        Ubertip = "攻击时，有{val#1}%几率获得10黄金",
+        Ubertip = "攻击时，有{val#1}%几率获得20黄金",
         Val = {2.5}
     },
     {

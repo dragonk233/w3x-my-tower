@@ -87,25 +87,25 @@ abilitiesBlue = {
         Name = "勇气勋章",
         Art = "war3mapImported\\icon_pas_MedalionOfCourage.blp",
         Ubertip = "+{val#1}点力量|n+{val#1}点敏捷|n+{val#1}点智力",
-        Val = {6, 6, 6}
+        Val = {7, 7, 7}
     },
     {
         Name = "狂牛身躯",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNReincarnation.blp",
         Ubertip = "+{val#1}点力量",
-        Val = {25}
+        Val = {30}
     },
     {
         Name = "猎豹一族",
         Art = "war3mapImported\\icon_pas_Hunter_CatlikeReflexes.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {20}
+        Val = {25}
     },
     {
         Name = "甜甜圈法杖",
         Art = "war3mapImported\\icon_pas_AbsorbMagic.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {28}
+        Val = {34}
     },
     {
         Name = "鬼神头盔",
@@ -129,13 +129,13 @@ abilitiesBlue = {
         Name = "一发长枪",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNImpalingBolt.blp",
         Ubertip = "+{val#1}%命中",
-        Val = {15}
+        Val = {20}
     },
     {
         Name = "雷电之锤",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNStormHammer.blp",
         Ubertip = "攻击时30%几率发起闪电链，最多打击3个目标，造成{val#1}点伤害",
-        Val = {55}
+        Val = {60}
     },
     {
         Name = "专注护身",

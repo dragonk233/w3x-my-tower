@@ -321,24 +321,43 @@ setTowerSkillByBook = function(u, abliOps, opt)
                 }
             }
         )
-    elseif (abliOps.Name == "日食") then
-        hattr.set(u, 0, {attack_damage_type = opt .. "dark", natural_dark = opt .. (level * abliOps.Val[1])})
-    elseif (abliOps.Name == "邪神之手") then
-        hattr.set(u, 0, {attack_damage_type = opt .. "ghost", natural_ghost = opt .. (level * abliOps.Val[1])})
-    elseif (abliOps.Name == "恶鬼呼声") then
-        hattr.set(u, 0, {attack_damage_type = opt .. "ghost"})
-    elseif (abliOps.Name == "光导使者") then
-        hattr.set(u, 0, {attack_damage_type = opt .. "light"})
     elseif (abliOps.Name == "暗夜对剑") then
-        hattr.set(u, 0, {attack_damage_type = opt .. "dark"})
-    elseif (abliOps.Name == "雷神之手") then
-        hattr.set(u, 0, {attack_damage_type = opt .. "thunder"})
+        hattr.set(u, 0, {attack_damage_type = opt .. "dark", natural_dark = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "恶龙吞日") then
+        hattr.set(u, 0, {attack_damage_type = opt .. "dargon", natural_dargon = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "恶鬼呼声") then
+        hattr.set(u, 0, {attack_damage_type = opt .. "ghost", natural_ghost = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "折翅天使") then
+        hattr.set(u, 0, {attack_damage_type = opt .. "god", natural_god = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "光导使者") then
+        hattr.set(u, 0, {attack_damage_type = opt .. "light", natural_light = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "冰心") then
-        hattr.set(u, 0, {attack_damage_type = opt .. "ice"})
+        hattr.set(u, 0, {attack_damage_type = opt .. "ice", natural_ice = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "邪魅之虫") then
-        hattr.set(u, 0, {attack_damage_type = opt .. "insect"})
+        hattr.set(u, 0, {attack_damage_type = opt .. "insect", natural_insect = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "德鲁伊叶子") then
         hattr.set(u, 0, {attack_damage_type = opt .. "wood", life_back = opt .. (level * abliOps.Val[1])})
+    elseif (abliOps.Name == "雷神之手") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = opt .. "thunder",
+                attack_effect = {
+                    [optChar] = {
+                        {
+                            attr = "lightning_chain",
+                            odds = 35,
+                            qty = 3,
+                            range = 600,
+                            val = level * abliOps.Val[1],
+                            change = -0.25,
+                            effect = "Abilities\\Weapons\\Bolt\\BoltImpact.mdl"
+                        }
+                    }
+                }
+            }
+        )
     elseif (abliOps.Name == "重击") then
         hattr.set(
             u,

@@ -44,14 +44,16 @@ game = {
             waveEnd = 100,
             fresh = 2.5,
             mon = nil,
-            monLife = 50
+            monLife = 50,
+            monLifeInc = 8
         },
         hz = {
             perWaveQty = 25,
             wave = 1,
             fresh = 2.5,
             mon = nil,
-            monLife = 40
+            monLife = 40,
+            monLifeInc = 6
         },
         dk = {
             perWaveQty = 20,
@@ -62,11 +64,12 @@ game = {
             monLimit = {},
             monData = {},
             ai = false,
+            monLifeInc = 10,
             monLife = {
-                45,
-                45,
-                45,
-                45
+                55,
+                55,
+                55,
+                55
             }
         },
         cur = "yb"

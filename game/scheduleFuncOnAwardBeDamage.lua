@@ -7,7 +7,7 @@ awardBeDamage = function(evtData)
         u,
         5,
         {
-            move = "-15"
+            move = "-10"
         }
     )
     if (sourceUnit ~= nil) then
