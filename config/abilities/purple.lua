@@ -103,7 +103,7 @@ abilitiesPurple = {
         Name = "刺网",
         Art = "war3mapImported\\icon_pas_Ability_Rogue_Garrote.blp",
         Ubertip = "+{val#1}%反伤",
-        Val = {3},
+        Val = {0.5},
         ODK = true
     },
     {

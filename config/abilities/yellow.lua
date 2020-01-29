@@ -206,7 +206,7 @@ abilitiesYellow = {
         Name = "荆棘",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThorns.blp",
         Ubertip = "+{val#1}%反伤",
-        Val = {1},
+        Val = {0.2},
         ODK = true
     },
     {
