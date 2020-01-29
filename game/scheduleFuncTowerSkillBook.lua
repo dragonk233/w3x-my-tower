@@ -312,8 +312,8 @@ setTowerSkillByBook = function(u, abliOps, opt)
                     [optChar] = {
                         {
                             attr = "move",
-                            odds = 55,
-                            during = 4,
+                            odds = 35,
+                            during = 3,
                             val = level * abliOps.Val[1],
                             effect = "Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt.mdl"
                         }

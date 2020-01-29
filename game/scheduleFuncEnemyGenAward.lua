@@ -21,9 +21,9 @@ awardGenForOne = function(curWave, pi, awardMon)
         0,
         {
             life = "=999999",
-            move = "=160",
-            defend = "=" .. curWave * 2,
-            resistance = "=" .. curWave * 0.8
+            move = "=200",
+            defend = "=" .. curWave * 3,
+            resistance = "=" .. curWave * 1
         }
     )
     if (game.rule.cur == "dk") then

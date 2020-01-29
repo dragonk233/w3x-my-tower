@@ -304,7 +304,7 @@ cj.TriggerAddAction(
                             local data = {}
                             hplayer.loop(
                                 function(p, pi)
-                                    data[pi] = math.floor(hplayer.getDamage(p) * 0.05)
+                                    data[pi] = math.floor(0.3 * hplayer.getKill(p))
                                 end
                             )
                             return data
@@ -451,7 +451,7 @@ cj.TriggerAddAction(
                             local data = {}
                             hplayer.loop(
                                 function(p, pi)
-                                    data[pi] = math.floor(hplayer.getDamage(p) * 0.05)
+                                    data[pi] = math.floor(0.3 * hplayer.getKill(p))
                                 end
                             )
                             return data
@@ -629,6 +629,7 @@ cj.TriggerAddAction(
                 -- 基本兵塔
                 for k, v in pairs(game.towerPoint) do
                     createMyTower(k, game.towers["人类·农民_1"].UNIT_ID)
+                    addTowerSkillsRaceTeam(k)
                 end
                 -- 兵塔连接
                 for k, v in pairs(game.towerLinkOffset) do
@@ -719,7 +720,7 @@ cj.TriggerAddAction(
                             if (his.playing(p) or game.rule.dk.ai == true) then
                                 local tower = game.playerTower[pi]
                                 local avatar = hunit.getAvatar(tower)
-                                local name = "[" .. game.playerTowerPower[pi] .. "]" .. hunit.getName(tower)
+                                local name = hunit.getName(tower)
                                 local attack_white = math.floor(hattr.get(tower, "attack_white"))
                                 local attack_green = math.floor(hattr.get(tower, "attack_green"))
                                 local attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"

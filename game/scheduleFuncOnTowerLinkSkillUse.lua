@@ -14,6 +14,9 @@ onTowerLinkSkillUesd = function(evtData)
         createMyTower(playerIndex, linkTowerId, linkTowerLevel)
         --进核心
         createMyTowerLink(playerIndex, linkIndex, currentTowerId, currentTowerLevel)
+        --刷新种族队伍
+        addTowerSkillsRaceTeam(playerIndex)
+        --
         hmsg.echo00(p, hColor.yellow(hunit.getName(u)) .. "上场了！")
     end
 end

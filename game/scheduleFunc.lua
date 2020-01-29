@@ -174,7 +174,6 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             hevent.onAttack(u, onTowerAttack)
             hevent.onSkillHappen(u, onTowerLinkSkillUesd)
             --阶级标志
-            game.playerTowerPower[playerIndex] = hslk_global.unitsKV[towerId].TOWER_POWER
             hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
             --兵塔说明标志
             hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
@@ -219,8 +218,8 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                         )
                 }
             )
-            --刷新种族
-            addTowerSkillsRace(u)
+            --刷新种族个体
+            addTowerSkillsRaceSingleAttr(u)
             --移动卡的bug
             cj.TriggerRegisterUnitEvent(game.TRIGGER_DEMOVE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         end
@@ -348,8 +347,14 @@ createMyTower = function(playerIndex, towerId, towerLevel)
                 addTowerSkillByBook(u, k, v)
             end
         end
-        --刷新种族
-        addTowerSkillsRace(u)
+        --刷新种族个体
+        addTowerSkillsRaceSingleAttr(u)
+        --装扮
+        if (#game.playerTowerEffectModel > 0) then
+            for _, v in ipairs(game.playerTowerEffectModel) do
+                hskill.add(u, v, 0)
+            end
+        end
         --移动卡的bug
         cj.TriggerRegisterUnitEvent(game.TRIGGER_DEMOVE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         return u

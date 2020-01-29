@@ -47,18 +47,16 @@ addTowerLevel = function(playerIndex, lockLv)
         end
     end
     hskill.add(game.playerTower[playerIndex], game.thisUnitLevelAbilities[unitLv].ABILITY_ID, 0)
-    if (unitLv == 9) then
-        hsound.sound2Player(cg.gg_snd_jsws, hplayer.players[playerIndex])
-    end
     game.playerTowerLevel[playerIndex] = unitLv
-    if (unitLv == 9) then
-        hmsg.echo(
-            hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
-                "得到了" .. hColor.yellow(unitLv) .. "级天赋兵塔，大家祝贺TA！"
-        )
-    end
     if (lockLv == nil) then
         hmsg.echo00(hplayer.players[playerIndex], "新鉴定兵塔天赋是：" .. hColor.yellow(unitLv) .. "级")
+        if (unitLv == 9) then
+            hsound.sound2Player(cg.gg_snd_jsws, hplayer.players[playerIndex])
+            hmsg.echo(
+                hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
+                    "得到了" .. hColor.yellow(unitLv) .. "级天赋兵塔，大家祝贺TA！"
+            )
+        end
     end
     --计算
     if (unitLv > 0) then

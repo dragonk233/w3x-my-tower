@@ -109,11 +109,7 @@ onUnitItemsUesd = function(evtData)
                         hColor.sky(cj.GetPlayerName(p)) ..
                             "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
                     )
-                    if (#game.playerTowerEffectModel > 0) then
-                        for _, v in ipairs(game.playerTowerEffectModel) do
-                            hskill.add(u, v, 0)
-                        end
-                    end
+                    addTowerSkillsRaceTeam(playerIndex)
                 else
                     local u =
                         createMyTowerLink(
@@ -126,6 +122,7 @@ onUnitItemsUesd = function(evtData)
                         hColor.sky(cj.GetPlayerName(p)) ..
                             "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
                     )
+                    addTowerSkillsRaceTeam(playerIndex)
                 end
             end
         )

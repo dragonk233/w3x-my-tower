@@ -57,15 +57,20 @@ enemyGenYB = function(waiting)
                         end
                         htime.delDialog(td2)
                         htime.delTimer(t2)
-                        local gold = hplayer.qty_current * game.rule.yb.wave * 60
-                        haward.forPlayer(gold, 0)
-                        hmsg.echo("通过了|cffffff00第" .. game.rule.yb.wave .. "波|r，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
+                        local gold = game.rule.yb.wave * 60
                         hplayer.loop(
-                            function(p)
+                            function(p, pi)
                                 if (his.playing(p)) then
                                     hsound.sound2Player(cg.gg_snd_coin_1, p)
                                     hmsg.echo(hplayer.getSelection(p))
                                     dzSetLumber(p, game.rule.yb.wave)
+                                    hplayer.addGold(p, gold, game.playerTower[pi])
+                                    local tempGold = cj.R2I(gold * hplayer.getGoldRatio(p) / 100)
+                                    hmsg.echo00(
+                                        p,
+                                        "通过了|cffffff00第" ..
+                                            game.rule.yb.wave .. "波|r，你获得了|cffffff00" .. tempGold .. "金|r奖励"
+                                    )
                                 end
                             end
                         )
@@ -137,16 +142,21 @@ enemyGenHZ = function(waiting)
                         end
                         htime.delDialog(td2)
                         htime.delTimer(t2)
-                        local gold = hplayer.qty_current * game.rule.hz.wave * 50
-                        haward.forPlayer(gold, 0)
-                        hmsg.echo("通过了|cffffff00第" .. game.rule.hz.wave .. "波|r，所有玩家平分|cffffff00" .. gold .. "金|r奖励")
+                        local gold = game.rule.hz.wave * 50
                         game.rule.hz.wave = game.rule.hz.wave + 1
                         hplayer.loop(
-                            function(p)
+                            function(p, pi)
                                 if (his.playing(p)) then
                                     hsound.sound2Player(cg.gg_snd_coin_1, p)
                                     hmsg.echo(hplayer.getSelection(p))
                                     dzSetLumber(p, game.rule.hz.wave)
+                                    hplayer.addGold(p, gold, game.playerTower[pi])
+                                    local tempGold = cj.R2I(gold * hplayer.getGoldRatio(p) / 100)
+                                    hmsg.echo00(
+                                        p,
+                                        "通过了|cffffff00第" ..
+                                            game.rule.hz.wave .. "波|r，你获得了|cffffff00" .. tempGold .. "金|r奖励"
+                                    )
                                 end
                             end
                         )

@@ -1164,6 +1164,7 @@ onTowerAttack = function(evtData)
                                 end,
                                 effect = "war3mapImported\\eff_slash.mdl",
                                 effectScale = 3,
+                                effectOffset = -750,
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.physical},
                                 damageEffect = "war3mapImported\\eff_red_swing.mdl",

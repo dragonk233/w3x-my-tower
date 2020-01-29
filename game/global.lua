@@ -51,7 +51,7 @@ game = {
             wave = 1,
             fresh = 2.5,
             mon = nil,
-            monLife = 50
+            monLife = 40
         },
         dk = {
             perWaveQty = 20,
@@ -63,10 +63,10 @@ game = {
             monData = {},
             ai = false,
             monLife = {
-                50,
-                50,
-                50,
-                50
+                45,
+                45,
+                45,
+                45
             }
         },
         cur = "yb"

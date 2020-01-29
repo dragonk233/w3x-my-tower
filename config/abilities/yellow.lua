@@ -86,8 +86,8 @@ abilitiesYellow = {
     {
         Name = "千里冰封",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFreezingBreath.blp",
-        Ubertip = "攻击敌人55%几率减少它{val#1}点移动，持续4秒",
-        Val = {70}
+        Ubertip = "攻击敌人35%几率减少它{val#1}点移动，持续3秒",
+        Val = {40}
     },
     {
         Name = "冰心",

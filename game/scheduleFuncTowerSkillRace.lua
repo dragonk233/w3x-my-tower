@@ -2,34 +2,83 @@ addTowerSkillsRaceAbility = {}
 addTowerSkillsRaceAttr = {}
 addTowerSkillsRaceAttrPlayer = {}
 
-handleTowerSkillsRaceAttr = function(options, cale)
-    if (options == nil) then
+handleTowerSkillsRaceAttr = function(old, new)
+    if (new == nil) then
         return
     end
-    local caleChar = "sub"
-    if (cale == "+") then
-        caleChar = "add"
-    end
-    local temp = {}
-    for k, v in pairs(options) do
+    local tempDiff = {
+        add = {},
+        sub = {}
+    }
+    local tempNew = {}
+    for k, v in pairs(new) do
         if (k == "attack_damage_type") then
             if (#v > 0) then
-                temp[k] = cale .. string.implode(",", v)
+                tempNew[k] = "+" .. string.implode(",", v)
+                if (old ~= nil) then
+                    if (old[k] == nil or #old[k] == 0) then
+                        tempDiff.add[k] = "+" .. string.implode(",", v)
+                    elseif (old[k] ~= v) then
+                        tempDiff.sub[k] = "-" .. string.implode(",", old[k])
+                        tempDiff.add[k] = "+" .. string.implode(",", v)
+                    end
+                end
+            else
+                if (old ~= nil) then
+                    if (old[k] ~= nil and #old[k] > 0) then
+                        tempDiff.sub[k] = "-" .. string.implode(",", old[k])
+                    end
+                end
             end
         elseif (k == "attack_debuff" or k == "attack_effect") then
             if (#v > 0) then
-                temp[k] = {[caleChar] = v}
+                tempNew[k] = {add = v}
+                if (old ~= nil) then
+                    if (old[k] == nil or #old[k] == 0) then
+                        tempDiff.add[k] = {add = v}
+                    elseif (old[k] ~= v) then
+                        tempDiff.sub[k] = {sub = old[k]}
+                        tempDiff.add[k] = {add = v}
+                    end
+                end
+            else
+                if (old ~= nil) then
+                    if (old[k] ~= nil and #old[k] > 0) then
+                        tempDiff.sub[k] = {sub = old[k]}
+                    end
+                end
             end
         else
             if (v > 0) then
-                temp[k] = cale .. v
+                tempNew[k] = "+" .. v
+                if (old ~= nil) then
+                    if (old[k] == nil) then
+                        tempDiff.add[k] = "+" .. v
+                    elseif (old[k] ~= v) then
+                        v = v - old[k]
+                        if (v > 0) then
+                            tempDiff.add[k] = "+" .. v
+                        else
+                            tempDiff.sub[k] = "-" .. math.abs(v)
+                        end
+                    end
+                end
+            else
+                if (old ~= nil) then
+                    if (old[k] ~= nil and old[k] ~= 0) then
+                        tempDiff.sub[k] = "-" .. old[k]
+                    end
+                end
             end
         end
     end
-    return temp
+    return {
+        diff = tempDiff,
+        new = tempNew
+    }
 end
 
-addTowerSkillsRace = function(u)
+addTowerSkillsRaceSingleAttr = function(u)
     local currentId = hunit.getId(u)
     local slk = hslk_global.unitsKV[currentId]
     local race = slk.RACE
@@ -263,8 +312,11 @@ addTowerSkillsRace = function(u)
             }
         )
     end
-    --全体判定
-    local playerIndex = hplayer.index(cj.GetOwningPlayer(u))
+end
+
+--全体种族
+addTowerSkillsRaceTeamInit = {}
+addTowerSkillsRaceTeam = function(playerIndex)
     local towers = {
         game.playerTower[playerIndex]
     }
@@ -653,12 +705,7 @@ addTowerSkillsRace = function(u)
         end
     end
     --整理旧属性
-    local oldAttrs, newAttrs
-    if (addTowerSkillsRaceAttr[playerIndex] ~= nil) then
-        oldAttrs = handleTowerSkillsRaceAttr(addTowerSkillsRaceAttr[playerIndex], "-")
-    end
-    --整理新属性
-    newAttrs = handleTowerSkillsRaceAttr(attr, "+")
+    local mixAttrs = handleTowerSkillsRaceAttr(addTowerSkillsRaceAttr[playerIndex], attr)
     --新旧交替
     addTowerSkillsRaceAttr[playerIndex] = attr
     addTowerSkillsRaceAttrPlayer[playerIndex] = attrPlayer
@@ -673,15 +720,22 @@ addTowerSkillsRace = function(u)
         if (addTowerSkillsRaceAbility[v] ~= nil) then
             hskill.del(v, addTowerSkillsRaceAbility[v], 0)
         end
-        if (v ~= u and table.len(oldAttrs) > 0) then
-            hattr.set(v, 0, oldAttrs)
-        end
         local index = races[v] .. qtys[races[v]]
         local ab = game.thisUnitRaceAbilities[index].ABILITY_ID
         addTowerSkillsRaceAbility[v] = ab
         hskill.add(v, ab, 0)
-        if (table.len(newAttrs) > 0) then
-            hattr.set(v, 0, newAttrs)
+        if (addTowerSkillsRaceTeamInit[v] == nil) then
+            if (table.len(mixAttrs.new) > 0) then
+                hattr.set(v, 0, mixAttrs.new)
+            end
+            addTowerSkillsRaceTeamInit[v] = 1
+        else
+            if (table.len(mixAttrs.diff.add) > 0) then
+                hattr.set(v, 0, mixAttrs.diff.add)
+            end
+            if (table.len(mixAttrs.diff.sub) > 0) then
+                hattr.set(v, 0, mixAttrs.diff.sub)
+            end
         end
     end
 end
