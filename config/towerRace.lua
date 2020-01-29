@@ -164,13 +164,13 @@ towerRaces = {
         Link = {
             {qty = 1, text = "+10%魔抗"},
             {qty = 2, text = "+25%魔抗"},
-            {qty = 3, text = "+300减伤"}
+            {qty = 3, text = "+1000减伤"}
         }
     },
     {
         Name = "异兽",
         Ubertip = "特别的怪兽，来自未知的领域",
-        Text = "+10%魔抗|n+100点减伤",
+        Text = "+10%魔抗|n+300点减伤",
         Art = "war3mapImported\\icon_race_rareanimals.blp",
         Link = {
             {qty = 2, text = "+350范围10%分裂"},

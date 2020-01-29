@@ -263,7 +263,7 @@ addTowerSkillsRaceSingleAttr = function(u)
             0,
             {
                 resistance = "+10",
-                toughness = "+100"
+                toughness = "+300"
             }
         )
     elseif (race == "幽魂") then
@@ -602,7 +602,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
             elseif (qtys[r] == 2) then
                 attr.resistance = attr.resistance + 25
             elseif (qtys[r] == 3) then
-                attr.toughness = attr.toughness + 300
+                attr.toughness = attr.toughness + 1000
             end
         elseif (r == "异兽") then
             if (qtys[r] == 2) then

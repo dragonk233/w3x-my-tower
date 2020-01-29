@@ -178,7 +178,7 @@ abilitiesYellow = {
         Name = "亢奋战鼓",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDrum.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {30},
+        Val = {75},
         ODK = true
     },
     {

@@ -979,7 +979,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNShadeTrueSight.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {100, 20, 30, "Abilities\\Spells\\Undead\\ReplenishHealth\\ReplenishHealthCaster.mdl"}
+        Val = {200, 20, 30, "Abilities\\Spells\\Undead\\ReplenishHealth\\ReplenishHealthCaster.mdl"}
     },
     {
         Name = "鬼歌",
@@ -2022,7 +2022,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Rogue_DeadenedNerves.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {50},
+        Val = {250},
         ODK = true
     },
     {
@@ -2031,7 +2031,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ability_Druid_NaturalPerfection.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {100},
+        Val = {600},
         ODK = true
     },
     {
@@ -2040,7 +2040,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Shadow_ChillTouch.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {200},
+        Val = {900},
         ODK = true
     },
     {

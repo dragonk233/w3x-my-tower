@@ -96,7 +96,7 @@ abilitiesPurple = {
         Name = "刺痛极限",
         Art = "war3mapImported\\icon_pas_Fire_ElementAldecastation.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {125},
+        Val = {200},
         ODK = true
     },
     {
