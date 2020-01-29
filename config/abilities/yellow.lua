@@ -111,13 +111,13 @@ abilitiesYellow = {
         Name = "战熊咆哮",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBattleRoar.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
-        Val = {7.5, 16.5}
+        Val = {6.5, 16.5}
     },
     {
         Name = "魔导灵眼",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNMagicalSentry.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
-        Val = {7.5, 18.5}
+        Val = {6.5, 18.5}
     },
     {
         Name = "重击",
@@ -135,7 +135,7 @@ abilitiesYellow = {
         Name = "瞄准",
         Art = "war3mapImported\\icon_pas_Ability_Hunter_SniperShot.blp",
         Ubertip = "+{val#1}%命中|n+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
-        Val = {20, 6.0, 17.5}
+        Val = {20, 5.0, 17.5}
     },
     {
         Name = "分裂攻击",
@@ -185,7 +185,7 @@ abilitiesYellow = {
         Name = "离子雨",
         Art = "war3mapImported\\icon_pas_Ion_overload.blp",
         Ubertip = "+{val#1}%闪电链抵抗",
-        Val = {10},
+        Val = {11},
         ODK = true
     },
     {
@@ -206,21 +206,21 @@ abilitiesYellow = {
         Name = "荆棘",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThorns.blp",
         Ubertip = "+{val#1}%反伤",
-        Val = {0.2},
+        Val = {0.25},
         ODK = true
     },
     {
         Name = "恶心粘液",
         Art = "war3mapImported\\icon_pas_Creature_Poison_06.blp",
         Ubertip = "受到攻击时，降低攻击者{val#1}%攻击速度，持续5秒",
-        Val = {5},
+        Val = {6},
         ODK = true
     },
     {
         Name = "降智打击",
         Art = "war3mapImported\\icon_pas_Arcane_ManaTap.blp",
         Ubertip = "受到攻击时，降低攻击者{val#1}点智力，持续6秒",
-        Val = {3},
+        Val = {30},
         ODK = true
     }
 }

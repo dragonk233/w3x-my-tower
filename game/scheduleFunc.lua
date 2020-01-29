@@ -242,9 +242,12 @@ createMyTower = function(playerIndex, towerId, towerLevel)
             isFirst = true
         end
         -- 如果有上一个单位，把上一个兵塔暂时隐藏，后面复制技能，取它的物品
+        -- 还要计算生命百分比
         local prevHeroLevel = 1
+        local prevHeroLifePercent = 100
         if (isFirst == false) then
             prevHeroLevel = cj.GetHeroLevel(game.playerTower[playerIndex])
+            prevHeroLifePercent = hunit.getCurLifePercent(game.playerTower[playerIndex])
             cj.ShowUnit(game.playerTower[playerIndex], false)
         end
         local u =
@@ -258,6 +261,7 @@ createMyTower = function(playerIndex, towerId, towerLevel)
             }
         )
         hhero.setIsHero(u, true)
+        hunit.setCurLifePercent(u, prevHeroLifePercent)
         --属性
         local tpv = hslk_global.unitsKV[towerId].towerLevel
         local life = 400

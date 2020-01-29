@@ -33,13 +33,13 @@ abilitiesBlue = {
         Name = "致命一击",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCriticalStrike.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
-        Val = {7, 13.5}
+        Val = {8, 8.5}
     },
     {
         Name = "魔法回应",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFeedBack.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
-        Val = {8, 14}
+        Val = {8, 8.5}
     },
     {
         Name = "心灵之火",
@@ -155,14 +155,14 @@ abilitiesBlue = {
         Name = "致命抵抗",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldGuard.blp",
         Ubertip = "+{val#1}%致命抵抗，可抵抗物理及魔法暴击的几率与伤害",
-        Val = {11},
+        Val = {8},
         ODK = true
     },
     {
         Name = "反伤抵抗",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldReflection.blp",
         Ubertip = "+{val#1}%反伤抵抗",
-        Val = {13},
+        Val = {9},
         ODK = true
     }
 }

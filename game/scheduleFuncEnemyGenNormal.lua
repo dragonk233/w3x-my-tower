@@ -23,16 +23,16 @@ enemyGenYB = function(waiting)
                         return
                     end
                     if (count <= 0) then
-                        local nextWaitTime = 5
+                        local nextWaitTime = 3
                         --5波一个boss,7波一个奖励
                         if (math.fmod(game.rule.yb.wave, 5) == 0) then
                             bossGen(game.rule.yb.wave)
-                            nextWaitTime = 20
+                            nextWaitTime = 18
                             game.rule.yb.monLife = game.rule.yb.monLife + game.rule.yb.monLifeInc
                         end
                         if (game.rule.yb.wave > 2 and math.fmod((game.rule.yb.wave - 2), 5) == 0) then
                             awardGen(game.rule.yb.wave)
-                            nextWaitTime = 20
+                            nextWaitTime = 18
                         end
                         if (game.rule.yb.wave >= game.rule.yb.waveEnd) then
                             if (game.currentMon <= 0) then
@@ -129,16 +129,17 @@ enemyGenHZ = function(waiting)
                         return
                     end
                     if (count <= 0) then
-                        local nextWaitTime = 5
+                        local nextWaitTime = 3
                         --10波一个boss,13波一个奖励
                         if (math.fmod(game.rule.hz.wave, 10) == 0) then
                             bossGen(game.rule.hz.wave)
-                            nextWaitTime = 20
-                            game.rule.hz.monLife = game.rule.hz.monLife + game.rule.hz.monLifeInc
+                            nextWaitTime = 18
+                            game.rule.hz.monLife = game.rule.hz.monLife + 2 * game.rule.hz.monLifeInc
                         end
                         if (game.rule.hz.wave > 3 and math.fmod((game.rule.hz.wave - 3), 10) == 0) then
                             awardGen(game.rule.hz.wave)
-                            nextWaitTime = 20
+                            nextWaitTime = 18
+                            game.rule.hz.monLife = game.rule.hz.monLife + game.rule.hz.wave
                         end
                         htime.delDialog(td2)
                         htime.delTimer(t2)

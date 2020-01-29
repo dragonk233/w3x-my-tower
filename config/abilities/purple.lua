@@ -3,7 +3,7 @@ abilitiesPurple = {
         Name = "暗杀巅峰",
         Art = "war3mapImported\\icon_pas_Spell_Holy_EyeforanEye.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
-        Val = {12.5, 25}
+        Val = {11.5, 25}
     },
     {
         Name = "死亡同步",
@@ -51,7 +51,7 @@ abilitiesPurple = {
         Name = "胆颤心惊",
         Art = "war3mapImported\\icon_pas_Rogue_SurpriseAttack.blp",
         Ubertip = "攻击敌人减少它{val#1}点护甲并进入{val#2}出血状态，持续5秒",
-        Val = {4, 53}
+        Val = {4, 90}
     },
     {
         Name = "害怕",
