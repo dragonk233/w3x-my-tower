@@ -260,39 +260,39 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         hhero.setIsHero(u, true)
         --属性
         local tpv = hslk_global.unitsKV[towerId].towerLevel
-        local life = 100
+        local life = 400
         local mana = 100
         local manaBack = 1
         if (tpv == "E") then
-            life = 250
+            life = 400
             mana = 100
             manaBack = 2
         elseif (tpv == "D") then
-            life = 300
+            life = 600
             mana = 200
             manaBack = 3
         elseif (tpv == "C") then
-            life = 350
+            life = 800
             mana = 300
             manaBack = 4
         elseif (tpv == "B") then
-            life = 400
+            life = 1100
             mana = 400
             manaBack = 5
         elseif (tpv == "A") then
-            life = 500
+            life = 1500
             mana = 500
             manaBack = 6
         elseif (tpv == "S") then
-            life = 600
+            life = 2100
             mana = 750
             manaBack = 10
         elseif (tpv == "SS") then
-            life = 750
+            life = 2800
             mana = 1000
             manaBack = 15
         elseif (tpv == "SSS") then
-            life = 1000
+            life = 3600
             mana = 1500
             manaBack = 20
         end

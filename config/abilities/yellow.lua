@@ -3,19 +3,19 @@ abilitiesYellow = {
         Name = "擎天之柱",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSmash.blp",
         Ubertip = "+{val#1}点力量",
-        Val = {44}
+        Val = {74}
     },
     {
         Name = "鬼神荒芜",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNRegenerationAura.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {40}
+        Val = {70}
     },
     {
         Name = "艾露尼之优雅",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNElunesBlessing.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {48}
+        Val = {78}
     },
     {
         Name = "机关枪",

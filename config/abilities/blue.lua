@@ -93,37 +93,37 @@ abilitiesBlue = {
         Name = "狂牛身躯",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNReincarnation.blp",
         Ubertip = "+{val#1}点力量",
-        Val = {30}
+        Val = {32}
     },
     {
         Name = "猎豹一族",
         Art = "war3mapImported\\icon_pas_Hunter_CatlikeReflexes.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {25}
+        Val = {26}
     },
     {
         Name = "甜甜圈法杖",
         Art = "war3mapImported\\icon_pas_AbsorbMagic.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {34}
+        Val = {32}
     },
     {
         Name = "鬼神头盔",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNUnholyAura.blp",
         Ubertip = "+{val#1}点力量",
-        Val = {34}
+        Val = {40}
     },
     {
         Name = "蝙蝠獠牙",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNVampiricAura.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {26}
+        Val = {37}
     },
     {
         Name = "天师法剑",
         Art = "war3mapImported\\icon_pas_Holy_PersuitofJustice.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {38}
+        Val = {45}
     },
     {
         Name = "一发长枪",
