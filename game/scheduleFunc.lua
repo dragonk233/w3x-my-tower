@@ -41,19 +41,19 @@ updateMyTower = function(evtData)
     local race = slk.RACE
     local percent = 0
     if (tpv == "E") then
-        percent = 0.06
+        percent = 0.03
     elseif (tpv == "D") then
-        percent = 0.07
+        percent = 0.04
     elseif (tpv == "C") then
-        percent = 0.08
+        percent = 0.05
     elseif (tpv == "B") then
-        percent = 0.09
+        percent = 0.06
     elseif (tpv == "A") then
-        percent = 0.10
+        percent = 0.07
     elseif (tpv == "S") then
-        percent = 0.11
+        percent = 0.08
     elseif (tpv == "SS") then
-        percent = 0.13
+        percent = 0.10
     elseif (tpv == "SSS") then
         percent = 0.15
     end

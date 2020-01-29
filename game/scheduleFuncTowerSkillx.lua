@@ -31,7 +31,7 @@ addTowerSkillsx = function(u)
                     (name == "蛇皮" or name == "修仙之体" or name == "恶魔之躯" or name == "魔爪" or name == "聚气" or name == "海浪之形")
                  then
                     hattr.set(u, 0, {agi_green = "+" .. Val[1]})
-                elseif (name == "冥想" or name == "大智慧" or name == "三千年智慧") then
+                elseif (name == "冥想" or name == "大智慧" or name == "五百年智慧") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1]})
                 elseif (name == "六刃智慧") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1], attack_green = "+" .. Val[2]})

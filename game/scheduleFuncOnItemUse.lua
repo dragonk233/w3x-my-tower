@@ -87,7 +87,10 @@ onUnitItemsUesd = function(evtData)
                 }
             )
         end
-        local title = "兵塔石：" .. game.towers[itemSLK.INDEX].MARK .. "分" .. game.towers[itemSLK.INDEX].Name
+        local title =
+            "兵塔石：" ..
+            game.towers[itemSLK.INDEX].MARK ..
+                "分" .. game.towers[itemSLK.INDEX].TOWER_POWER .. "阶" .. game.towers[itemSLK.INDEX].Name
         hdialog.create(
             p,
             {
