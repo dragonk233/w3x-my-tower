@@ -63,7 +63,7 @@ abilitiesPurple = {
         Name = "炸裂践踏",
         Art = "war3mapImported\\icon_pas_Mount_Dreadsteed.blp",
         Ubertip = "攻击时，有20%几率，震伤害附近的敌人，造成{val#1}点伤害，持续{val#2}秒",
-        Val = {50, 1.3}
+        Val = {95, 1.3}
     },
     {
         Name = "冰花炸裂",

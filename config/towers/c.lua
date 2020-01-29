@@ -19,26 +19,7 @@ towers_c = {
         abilList = {towerSpxKV["铁壁"]}
     },
     {
-        Name = "人类·铁甲骑兵",
-        Ubertip = "升官的步兵，骑上了马",
-        unitSound = "Knight",
-        file = "units\\human\\Knight\\Knight",
-        Art = "ReplaceableTextures\\CommandButtons\\BTNKnight.blp",
-        modelScale = 1.70,
-        scale = 2.00,
-        movetp = "foot",
-        moveHeight = 0.00,
-        weapTp1 = "missile",
-        Missileart = "abilities\\weapons\\TuskarSpear\\TuskarSpear.mdl",
-        cool1 = 2.10,
-        Primary = "STR",
-        STR = 16,
-        AGI = 13,
-        INT = 7,
-        abilList = {towerSpxKV["铁壁"]}
-    },
-    {
-        Name = "人类·迫击炮小队",
+        Name = "矮人·迫击炮小队",
         Ubertip = "高级的炮兵小队",
         unitSound = "MortarTeam",
         file = "units\\human\\MortarTeam\\MortarTeam",

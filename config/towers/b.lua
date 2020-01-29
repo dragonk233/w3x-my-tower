@@ -1,6 +1,22 @@
 towers_b = {
     {
-        Name = "人类·飞机",
+        Name = "人类·铁甲骑兵",
+        Ubertip = "升官的步兵，骑上了马",
+        unitSound = "Knight",
+        file = "units\\human\\Knight\\Knight",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNKnight.blp",
+        modelScale = 1.70,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "abilities\\weapons\\TuskarSpear\\TuskarSpear.mdl",
+        cool1 = 2.10,
+        Primary = "STR",
+        abilList = {towerSpxKV["铁壁"]}
+    },
+    {
+        Name = "矮人·飞机",
         Ubertip = "无畏的飞机小队，嘟嘟嘟",
         unitSound = "Gyrocopter",
         file = "units\\human\\Gyrocopter\\Gyrocopter",
