@@ -45,7 +45,7 @@ game = {
             fresh = 2.2,
             mon = nil,
             monLife = 50,
-            monLifeInc = 8
+            monLifeInc = 9
         },
         hz = {
             perWaveQty = 25,
@@ -53,7 +53,7 @@ game = {
             fresh = 2.1,
             mon = nil,
             monLife = 40,
-            monLifeInc = 6
+            monLifeInc = 7
         },
         dk = {
             perWaveQty = 20,
@@ -64,7 +64,7 @@ game = {
             monLimit = {},
             monData = {},
             ai = false,
-            monLifeInc = 10,
+            monLifeInc = 11,
             monLife = {
                 55,
                 55,
