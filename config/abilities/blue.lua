@@ -27,19 +27,19 @@ abilitiesBlue = {
         Name = "强击之箭",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNTrueShot.blp",
         Ubertip = "+{val#1}攻击力|n+{val#2}攻击速度",
-        Val = {37, 7.5}
+        Val = {37, 4.5}
     },
     {
         Name = "致命一击",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCriticalStrike.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
-        Val = {7, 14.5}
+        Val = {7, 13.5}
     },
     {
         Name = "魔法回应",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFeedBack.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
-        Val = {8, 16}
+        Val = {8, 14}
     },
     {
         Name = "心灵之火",
@@ -51,37 +51,37 @@ abilitiesBlue = {
         Name = "星辰攻击",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNScatterRockets.blp",
         Ubertip = "+{val#1}%眩晕0.5秒",
-        Val = {8}
+        Val = {10}
     },
     {
         Name = "强烈炮弹",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNHumanArtilleryUpOne.blp",
         Ubertip = "+{val#1}%眩晕0.25秒",
-        Val = {12}
+        Val = {13.5}
     },
     {
         Name = "剧毒标枪",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNEnvenomedSpear.blp",
         Ubertip = "+{val#1}每秒中毒效果，持续4秒",
-        Val = {18}
+        Val = {25}
     },
     {
         Name = "蝎子之尾",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPoisonSting.blp",
         Ubertip = "+{val#1}每秒中毒效果，持续4秒",
-        Val = {23}
+        Val = {30}
     },
     {
         Name = "切割刀刃",
         Art = "war3mapImported\\icon_pas_Ability_Gouge.blp",
         Ubertip = "+{val#1}每秒出血效果，持续4.5秒",
-        Val = {20}
+        Val = {32}
     },
     {
         Name = "侵毒连击",
         Art = "war3mapImported\\icon_pas_Rogue_Disembowel.blp",
-        Ubertip = "攻击时有10%几率获得毒攻击特性，同时+{val#1}%攻击速度，持续5秒",
-        Val = {15}
+        Ubertip = "攻击时有15%几率获得毒攻击特性，同时+{val#1}%攻击速度，持续5秒",
+        Val = {10}
     },
     {
         Name = "勇气勋章",

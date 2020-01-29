@@ -27,7 +27,7 @@ onTowerAttack = function(evtData)
             level = level * 2 - 1
             if (name ~= nil) then
                 --ability
-                if (name == "侵毒连击" and math.random(1, 10) == 5) then
+                if (name == "侵毒连击" and math.random(1, 7) == 4) then
                     onTowerAttackTtg(u, name)
                     hattr.set(
                         u,
@@ -52,13 +52,13 @@ onTowerAttack = function(evtData)
                     onTowerAttackTtg(u, name)
                     haward.forPlayerGold(20)
                 end
-                if (name == "震晕践踏" and math.random(1, 10) == 5) then
+                if (name == "震晕践踏" and math.random(1, 7) == 5) then
                     onTowerAttackTtg(u, name)
                     hskill.rangeSwim(
                         {
                             range = 895,
                             odds = 100,
-                            during = 0.5 * level,
+                            during = 0.7 * level,
                             whichUnit = u,
                             filter = function()
                                 return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
@@ -66,13 +66,13 @@ onTowerAttack = function(evtData)
                         }
                     )
                 end
-                if (name == "炸裂践踏" and math.random(1, 10) == 5) then
+                if (name == "炸裂践踏" and math.random(1, 5) == 3) then
                     onTowerAttackTtg(u, name)
                     hskill.rangeSwim(
                         {
                             range = 895,
                             odds = 100,
-                            during = 1.2 * level,
+                            during = 1.3 * level,
                             damage = 50 * level,
                             whichUnit = u,
                             sourceUnit = u,
@@ -83,7 +83,7 @@ onTowerAttack = function(evtData)
                         }
                     )
                 end
-                if (name == "冰花炸裂" and math.random(1, 7) == 4) then
+                if (name == "冰花炸裂" and math.random(1, 5) == 4) then
                     onTowerAttackTtg(u, name)
                     local x = cj.GetUnitX(u)
                     local y = cj.GetUnitY(u)

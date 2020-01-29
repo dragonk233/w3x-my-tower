@@ -62,13 +62,13 @@ abilitiesPurple = {
     {
         Name = "炸裂践踏",
         Art = "war3mapImported\\icon_pas_Mount_Dreadsteed.blp",
-        Ubertip = "攻击时，有10%几率，震伤害附近的敌人，造成{val#1}点伤害，持续{val#2}秒",
-        Val = {50, 1.2}
+        Ubertip = "攻击时，有20%几率，震伤害附近的敌人，造成{val#1}点伤害，持续{val#2}秒",
+        Val = {50, 1.3}
     },
     {
         Name = "冰花炸裂",
         Art = "war3mapImported\\icon_pas_Ore_Cobalt.blp",
-        Ubertip = "攻击敌人有15%触发冰花炸裂，范围敌人在7.5秒内被冻伤，减少{val#1}点移动",
+        Ubertip = "攻击敌人有20%触发冰花炸裂，范围敌人在7.5秒内被冻伤，减少{val#1}点移动",
         Val = {45}
     },
     {

@@ -146,8 +146,8 @@ abilitiesYellow = {
     {
         Name = "震晕践踏",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNWarStomp.blp",
-        Ubertip = "攻击时，有10%几率，震晕附近的敌人，持续{val#1}秒",
-        Val = {0.5}
+        Ubertip = "攻击时，有15%几率，震晕附近的敌人，持续{val#1}秒",
+        Val = {0.7}
     },
     {
         Name = "掠夺黄金",
