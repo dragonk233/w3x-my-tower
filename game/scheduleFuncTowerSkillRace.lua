@@ -291,7 +291,7 @@ addTowerSkillsRaceSingleAttr = function(u)
             u,
             0,
             {
-                int_green = "+" .. (0.12 * slk.INT)
+                int_green = "+" .. (0.15 * slk.INT)
             }
         )
     elseif (race == "龙人") then
@@ -666,11 +666,13 @@ addTowerSkillsRaceTeam = function(playerIndex)
             end
         elseif (r == "地精") then
             if (qtys[r] == 1) then
-                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 5
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 7
             elseif (qtys[r] == 2) then
-                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 8
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 10
             elseif (qtys[r] == 3) then
-                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 11
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 13
+            elseif (qtys[r] == 4) then
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 15
             end
         elseif (r == "龙人") then
             if (qtys[r] == 1) then

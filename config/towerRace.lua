@@ -202,12 +202,13 @@ towerRaces = {
     {
         Name = "地精",
         Ubertip = "善于经商贸易的种族",
-        Text = "+12%智力",
+        Text = "+15%智力",
         Art = "war3mapImported\\icon_race_goblin.blp",
         Link = {
-            {qty = 1, text = "+5%黄金获得率"},
-            {qty = 2, text = "+8%黄金获得率"},
-            {qty = 3, text = "+11%黄金获得率"}
+            {qty = 1, text = "+7%黄金获得率"},
+            {qty = 2, text = "+10%黄金获得率"},
+            {qty = 3, text = "+13%黄金获得率"},
+            {qty = 4, text = "+15%黄金获得率"}
         }
     },
     {

@@ -141,7 +141,7 @@ abilitiesBlue = {
         Name = "专注护身",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDevotion.blp",
         Ubertip = "+{val#1}护甲",
-        Val = {4},
+        Val = {8},
         ODK = true
     },
     {

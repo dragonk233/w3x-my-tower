@@ -27,7 +27,7 @@ abilitiesYellow = {
         Name = "穿透之箭",
         Art = "war3mapImported\\icon_pas_TheBlackArrow.blp",
         Ubertip = "攻击敌人减少它{val#1}点护甲，持续3秒",
-        Val = {3}
+        Val = {4}
     },
     {
         Name = "凤凰烈焰",
@@ -153,7 +153,7 @@ abilitiesYellow = {
         Name = "掠夺黄金",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPillage.blp",
         Ubertip = "攻击时，有{val#1}%几率获得20黄金",
-        Val = {2.5}
+        Val = {3}
     },
     {
         Name = "五行之力",
@@ -171,7 +171,7 @@ abilitiesYellow = {
         Name = "赤血盾牌",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldMastery.blp",
         Ubertip = "+{val#1}生命|n+{val#2}护甲",
-        Val = {300, 6},
+        Val = {300, 9},
         ODK = true
     },
     {

@@ -82,7 +82,7 @@ abilitiesPurple = {
         Name = "圣封护盾",
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Ubertip = "+{val#1}点护甲，+{val#2}%魔抗",
-        Val = {15, 15},
+        Val = {21, 16},
         ODK = true
     },
     {
@@ -117,7 +117,7 @@ abilitiesPurple = {
         Name = "钢铁身躯",
         Art = "war3mapImported\\icon_pas_Aftershock2.blp",
         Ubertip = "被攻击时，+{val#1}点护甲，持续10秒",
-        Val = {2},
+        Val = {4},
         ODK = true
     },
     {

@@ -181,23 +181,23 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             addTowerSkillsx(u)
             --天赋等级
             if (unitLv == nil) then
-                if (math.random(1, 6) == 1) then
+                if (math.random(1, 7) == 1) then
                     unitLv = 0
-                elseif (math.random(1, 5) == 1) then
+                elseif (math.random(1, 6) == 1) then
                     unitLv = 1
-                elseif (math.random(1, 4) == 1) then
+                elseif (math.random(1, 5) == 1) then
                     unitLv = 2
-                elseif (math.random(1, 3) == 1) then
+                elseif (math.random(1, 4) == 1) then
                     unitLv = 3
-                elseif (math.random(1, 2) == 1) then
+                elseif (math.random(1, 3) == 1) then
                     unitLv = 4
                 elseif (math.random(1, 2) == 1) then
                     unitLv = 5
-                elseif (math.random(1, 2) == 1) then
+                elseif (math.random(1, 2) == 2) then
                     unitLv = 6
                 elseif (math.random(1, 2) == 1) then
                     unitLv = 7
-                elseif (math.random(1, 2) == 1) then
+                elseif (math.random(1, 2) == 2) then
                     unitLv = 8
                 else
                     unitLv = 9
