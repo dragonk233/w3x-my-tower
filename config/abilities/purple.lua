@@ -56,8 +56,8 @@ abilitiesPurple = {
     {
         Name = "害怕",
         Art = "war3mapImported\\icon_pas_Rogue_CheatDeath.blp",
-        Ubertip = "攻击敌人有{val#1}%使其无法移动，持续4秒",
-        Val = {25}
+        Ubertip = "攻击敌人有30%使其无法移动，持续{val#1}秒",
+        Val = {0.8}
     },
     {
         Name = "炸裂践踏",

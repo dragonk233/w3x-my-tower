@@ -688,6 +688,22 @@ towers_sss = {
         abilList = {towerSpxKV["牛头人"], towerSpxKV["弹刃之剑"]}
     },
     {
+        Name = "德鲁伊·先知·玛尔",
+        Ubertip = "德鲁伊族人，玛尔对时空法术有他独特的见解",
+        unitSound = "MalFurion",
+        file = "units\\nightelf\\MalFurion\\MalFurion",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNFurion.blp",
+        modelScale = 2.00,
+        scale = 2.50,
+        movetp = "horse",
+        moveHeight = 0,
+        weapTp1 = "missile",
+        Missileart = "war3mapImported\\eff_CrystalMissile.mdl",
+        cool1 = 2.20,
+        Primary = "INT",
+        abilList = {towerSpxKV["大智慧"], towerSpxKV["固化时空"]}
+    },
+    {
         Name = "食人魔·神侍奉·阿尔法",
         Ubertip = "神赐予了唯一的食人魔阿尔法洁白之衣",
         unitSound = "Dreanei",

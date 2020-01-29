@@ -22,7 +22,30 @@ bossGen = function(curWave)
                 0,
                 {
                     life = "=" .. (bossGenLife * curWave),
-                    move = "=140"
+                    move = "=140",
+                    defend = "=" .. curWave * 4,
+                    resistance = "=" .. curWave * 0.5,
+                    avoid = "=" .. curWave * 0.18,
+                    knocking_oppose = "=" .. curWave * 0.3,
+                    violence_oppose = "=" .. curWave * 0.3,
+                    swim_oppose = "=" .. curWave * 0.2,
+                    fetter_oppose = "=" .. curWave * 0.2,
+                    lightning_chain_oppose = "=" .. curWave * 0.1,
+                    natural_fire_oppose = "=" .. curWave * 0.06,
+                    natural_water_oppose = "=" .. curWave * 0.06,
+                    natural_ice_oppose = "=" .. curWave * 0.06,
+                    natural_wind_oppose = "=" .. curWave * 0.06,
+                    natural_light_oppose = "=" .. curWave * 0.05,
+                    natural_dark_oppose = "=" .. curWave * 0.05,
+                    natural_wood_oppose = "=" .. curWave * 0.05,
+                    natural_thunder_oppose = "=" .. curWave * 0.05,
+                    natural_soil_oppose = "=" .. curWave * 0.04,
+                    natural_poison_oppose = "=" .. curWave * 0.04,
+                    natural_ghost_oppose = "=" .. curWave * 0.04,
+                    natural_metal_oppose = "=" .. curWave * 0.04,
+                    natural_dragon_oppose = "=" .. curWave * 0.03,
+                    natural_insect_oppose = "=" .. curWave * 0.02,
+                    natural_god_oppose = "=" .. curWave * 0.01
                 }
             )
             game.currentMon = game.currentMon + 1
@@ -32,5 +55,5 @@ bossGen = function(curWave)
         end
     end
     hmark.create("war3mapImported\\mark_boss_coming.blp", 4.00)
-    bossGenLife = bossGenLife + 300
+    bossGenLife = bossGenLife + 250 + curWave * 3
 end

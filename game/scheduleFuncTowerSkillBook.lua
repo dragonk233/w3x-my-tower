@@ -480,8 +480,8 @@ setTowerSkillByBook = function(u, abliOps, opt)
                     [optChar] = {
                         {
                             attr = "fetter",
-                            odds = 45,
-                            during = 4,
+                            odds = 30,
+                            during = level * abliOps.Val[1],
                             effect = "Abilities\\Spells\\Items\\AIso\\AIsoTarget.mdl"
                         }
                     }

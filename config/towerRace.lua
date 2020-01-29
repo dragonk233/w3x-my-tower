@@ -7,8 +7,8 @@ towerRaces = {
         Link = {
             {qty = 2, text = "+5护甲"},
             {qty = 3, text = "+10护甲"},
-            {qty = 4, text = "+20护甲"},
-            {qty = 5, text = "+30护甲"}
+            {qty = 4, text = "+25护甲"},
+            {qty = 5, text = "+40护甲"}
         }
     },
     {
@@ -17,8 +17,8 @@ towerRaces = {
         Text = "+5%力量|n+5%敏捷|n+5%智力",
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
-            {qty = 1, text = "+35护甲"},
-            {qty = 5, text = "+300攻击力"}
+            {qty = 1, text = "+50护甲"},
+            {qty = 5, text = "+1000攻击力"}
         }
     },
     {
@@ -49,9 +49,9 @@ towerRaces = {
         Text = "+7.5%攻击力",
         Art = "war3mapImported\\icon_race_orc.blp",
         Link = {
-            {qty = 2, text = "+35攻击力"},
-            {qty = 3, text = "+85攻击力"},
-            {qty = 4, text = "+180攻击力"},
+            {qty = 2, text = "+40攻击力"},
+            {qty = 3, text = "+125攻击力"},
+            {qty = 4, text = "+250攻击力"},
             {qty = 5, text = "+火攻击特性"}
         }
     },
@@ -61,10 +61,10 @@ towerRaces = {
         Text = "攻击时+7.5%攻击速度，持续5秒",
         Art = "war3mapImported\\icon_race_troll.blp",
         Link = {
-            {qty = 2, text = "+7.5%攻击速度"},
-            {qty = 3, text = "+10%攻击速度"},
-            {qty = 4, text = "+12%攻击速度"},
-            {qty = 5, text = "+15%攻击速度"}
+            {qty = 2, text = "+10%攻击速度"},
+            {qty = 3, text = "+13%攻击速度"},
+            {qty = 4, text = "+16%攻击速度"},
+            {qty = 5, text = "+21%攻击速度"}
         }
     },
     {
@@ -94,8 +94,8 @@ towerRaces = {
         Text = "+木攻击特性",
         Art = "war3mapImported\\icon_race_druid.blp",
         Link = {
-            {qty = 2, text = "+25%攻击速度"},
-            {qty = 4, text = "+10%攻击速度;+70%风抗性"}
+            {qty = 2, text = "+45%攻击速度"},
+            {qty = 4, text = "+45%攻击速度;+80%风抗性"}
         }
     },
     {
@@ -104,9 +104,9 @@ towerRaces = {
         Text = "+冰攻击特性|n攻击时，敌军减少30点移动速度，持续3秒",
         Art = "war3mapImported\\icon_race_undead.blp",
         Link = {
-            {qty = 2, text = "攻击时，敌军减少4点移动速度，持续2秒"},
-            {qty = 3, text = "攻击时，敌军减少5点移动速度，持续2.5秒"},
-            {qty = 4, text = "攻击时，敌军减少6点移动速度，持续3秒"}
+            {qty = 2, text = "攻击时，敌军减少3点移动速度，持续2秒"},
+            {qty = 3, text = "攻击时，敌军减少4点移动速度，持续2.5秒"},
+            {qty = 4, text = "攻击时，敌军减少5点移动速度，持续3秒"}
         }
     },
     {
@@ -217,7 +217,7 @@ towerRaces = {
         Text = "+龙攻击特性",
         Art = "war3mapImported\\icon_race_dragon.blp",
         Link = {
-            {qty = 1, text = "+40攻击力"},
+            {qty = 1, text = "+200攻击力"},
             {qty = 2, text = "+雷攻击特性"},
             {qty = 3, text = "+风攻击特性"}
         }
@@ -229,9 +229,9 @@ towerRaces = {
         Art = "war3mapImported\\icon_race_panda.blp",
         Link = {
             {qty = 1, text = "+150生命"},
-            {qty = 2, text = "+250生命"},
-            {qty = 3, text = "+300生命"},
-            {qty = 4, text = "+350生命"}
+            {qty = 2, text = "+300生命"},
+            {qty = 3, text = "+400生命"},
+            {qty = 4, text = "+550生命"}
         }
     }
 }

@@ -253,22 +253,6 @@ towers_s = {
         abilList = {towerSpxKV["大地种子"], towerSpxKV["缠绕"]}
     },
     {
-        Name = "德鲁伊·旅人·法里奥",
-        Ubertip = "德鲁伊族人，法里奥对风系法术极其擅长",
-        unitSound = "Furion",
-        file = "units\\nightelf\\Furion\\Furion",
-        Art = "ReplaceableTextures\\CommandButtons\\BTNDruidOfTheTalon.blp",
-        modelScale = 2.00,
-        scale = 2.10,
-        movetp = "foot",
-        moveHeight = 0,
-        weapTp1 = "missile",
-        Missileart = "Abilities\\Weapons\\DemonHunterMissile\\DemonHunterMissile.mdl",
-        cool1 = 2.00,
-        Primary = "INT",
-        abilList = {towerSpxKV["大地种子"], towerSpxKV["随风"]}
-    },
-    {
         Name = "亡灵·死亡骑士·泽尔",
         Ubertip = "沐浴于亡灵的邪恶骑士，不畏惧任何的死亡",
         unitSound = "HeroDeathKnight",
@@ -283,22 +267,6 @@ towers_s = {
         cool1 = 2.10,
         Primary = "STR",
         abilList = {towerSpxKV["骷髅兵"], towerSpxKV["回光返照"]}
-    },
-    {
-        Name = "亡灵·恐惧魔王·巴纳泽尔",
-        Ubertip = "狡猾而又神秘，带来深深的恐惧，罗斯魔王",
-        unitSound = "Tichondrius",
-        file = "units\\undead\\Tichondrius\\Tichondrius",
-        Art = "ReplaceableTextures\\CommandButtons\\BTNHeroDreadLord.blp",
-        modelScale = 1.70,
-        scale = 2.30,
-        movetp = "foot",
-        moveHeight = 0.00,
-        weapTp1 = "missile",
-        Missileart = "Abilities\\Spells\\Undead\\CarrionSwarm\\CarrionSwarmMissile.mdl",
-        cool1 = 2.00,
-        Primary = "STR",
-        abilList = {towerSpxKV["恶魔之躯"], towerSpxKV["恐惧蝠群"]}
     },
     {
         Name = "亡灵·黑暗游侠·鬼歌",
@@ -331,22 +299,6 @@ towers_s = {
         cool1 = 2.00,
         Primary = "STR",
         abilList = {towerSpxKV["爆骨火弹"], towerSpxKV["重生"]}
-    },
-    {
-        Name = "亡灵·三昧真火·嘞扎",
-        Ubertip = "地狱看门人",
-        unitSound = "Skeleton",
-        file = "war3mapImported\\unit_InfernoKnight.mdl",
-        Art = "war3mapImported\\icon_unit_MagmaElemental.blp",
-        modelScale = 1.60,
-        scale = 2.00,
-        movetp = "foot",
-        moveHeight = 0,
-        weapTp1 = "missile",
-        Missileart = "war3mapImported\\eff_Fireball.mdl",
-        cool1 = 2.00,
-        Primary = "STR",
-        abilList = {towerSpxKV["恶魔之躯"], towerSpxKV["三昧真火"]}
     },
     {
         Name = "亡灵·半吊子·脚镣刹麽",
@@ -459,6 +411,22 @@ towers_s = {
         cool1 = 2.10,
         Primary = "STR",
         abilList = {towerSpxKV["恶魔之躯"], towerSpxKV["重拳出击"]}
+    },
+    {
+        Name = "恶魔·恐惧魔王·巴纳泽尔",
+        Ubertip = "狡猾而又神秘，带来深深的恐惧，罗斯魔王",
+        unitSound = "Tichondrius",
+        file = "units\\undead\\Tichondrius\\Tichondrius",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNHeroDreadLord.blp",
+        modelScale = 1.70,
+        scale = 2.30,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "Abilities\\Spells\\Undead\\CarrionSwarm\\CarrionSwarmMissile.mdl",
+        cool1 = 2.00,
+        Primary = "STR",
+        abilList = {towerSpxKV["恶魔之躯"], towerSpxKV["恐惧蝠群"]}
     },
     {
         Name = "恶魔·猎手·尤迪安",

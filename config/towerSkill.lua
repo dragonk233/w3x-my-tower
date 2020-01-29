@@ -275,7 +275,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_AbsorbMagic.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {1660}
+        Val = {2500}
     },
     {
         Name = "三千年智慧",
@@ -955,7 +955,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_SummerFest_FireSpirit.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {75, 333, 10, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
+        Val = {75, 666, 10, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
     },
     {
         Name = "撕咬",
@@ -1253,8 +1253,8 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             25,
-            50,
-            440,
+            400,
+            125,
             4,
             "move",
             "war3mapImported\\eff_EarthNova.mdl",

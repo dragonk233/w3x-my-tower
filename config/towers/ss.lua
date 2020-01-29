@@ -274,20 +274,20 @@ towers_ss = {
         abilList = {towerSpxKV["恩赐解脱"], towerSpxKV["九道镖"]}
     },
     {
-        Name = "德鲁伊·先知·玛尔",
-        Ubertip = "德鲁伊族人，玛尔对时空法术有他独特的见解",
-        unitSound = "MalFurion",
-        file = "units\\nightelf\\MalFurion\\MalFurion",
-        Art = "ReplaceableTextures\\CommandButtons\\BTNFurion.blp",
+        Name = "德鲁伊·旅人·法里奥",
+        Ubertip = "德鲁伊族人，法里奥对风系法术极其擅长",
+        unitSound = "Furion",
+        file = "units\\nightelf\\Furion\\Furion",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNDruidOfTheTalon.blp",
         modelScale = 2.00,
-        scale = 2.50,
-        movetp = "horse",
+        scale = 2.10,
+        movetp = "foot",
         moveHeight = 0,
         weapTp1 = "missile",
-        Missileart = "war3mapImported\\eff_CrystalMissile.mdl",
-        cool1 = 2.20,
+        Missileart = "Abilities\\Weapons\\DemonHunterMissile\\DemonHunterMissile.mdl",
+        cool1 = 2.00,
         Primary = "INT",
-        abilList = {towerSpxKV["大智慧"], towerSpxKV["固化时空"]}
+        abilList = {towerSpxKV["大地种子"], towerSpxKV["随风"]}
     },
     {
         Name = "亡灵·巫妖·奥丁",
@@ -384,6 +384,22 @@ towers_ss = {
         cool1 = 2.00,
         Primary = "AGI",
         abilList = {towerSpxKV["龙骑士"], towerSpxKV["大海浪涛"]}
+    },
+    {
+        Name = "恶魔·三昧真火·嘞扎",
+        Ubertip = "地狱看门人",
+        unitSound = "Skeleton",
+        file = "war3mapImported\\unit_InfernoKnight.mdl",
+        Art = "war3mapImported\\icon_unit_MagmaElemental.blp",
+        modelScale = 1.60,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0,
+        weapTp1 = "missile",
+        Missileart = "war3mapImported\\eff_Fireball.mdl",
+        cool1 = 2.00,
+        Primary = "STR",
+        abilList = {towerSpxKV["恶魔之躯"], towerSpxKV["三昧真火"]}
     },
     {
         Name = "恶魔·觉醒猎手·尤迪安",
