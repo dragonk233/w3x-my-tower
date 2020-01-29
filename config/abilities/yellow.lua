@@ -81,7 +81,7 @@ abilitiesYellow = {
         Name = "雷神之手",
         Art = "war3mapImported\\icon_pas_Electrostatic_field2.blp",
         Ubertip = "+雷攻击特性|n攻击时35%几率发起闪电链，最多打击3个目标，造成{val#1}点伤害",
-        Val = {120}
+        Val = {230}
     },
     {
         Name = "千里冰封",

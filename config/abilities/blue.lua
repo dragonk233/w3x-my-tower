@@ -135,7 +135,7 @@ abilitiesBlue = {
         Name = "雷电之锤",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNStormHammer.blp",
         Ubertip = "攻击时30%几率发起闪电链，最多打击3个目标，造成{val#1}点伤害",
-        Val = {60}
+        Val = {110}
     },
     {
         Name = "专注护身",
