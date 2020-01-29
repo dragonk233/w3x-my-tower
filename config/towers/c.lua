@@ -147,7 +147,7 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\NecromancerMissile\\NecromancerMissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        abilList = {towerSpxKV["悲鸣"]}
+        abilList = {towerSpxKV["冥想"]}
     },
     {
         Name = "亡灵·飞艇",

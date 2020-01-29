@@ -31,7 +31,7 @@ addTowerSkillsx = function(u)
                     (name == "蛇皮" or name == "修仙之体" or name == "恶魔之躯" or name == "魔爪" or name == "聚气" or name == "海浪之形")
                  then
                     hattr.set(u, 0, {agi_green = "+" .. Val[1]})
-                elseif (name == "冥想" or name == "大智慧" or name == "五百年智慧") then
+                elseif (name == "冥想" or name == "大智慧" or name == "三千年智慧") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1]})
                 elseif (name == "六刃智慧") then
                     hattr.set(u, 0, {int_green = "+" .. Val[1], attack_green = "+" .. Val[2]})
@@ -387,8 +387,6 @@ addTowerSkillsx = function(u)
                             "三昧真火",
                             "撕咬",
                             "无声的死亡旋律",
-                            --toughness
-                            "悲鸣",
                             --defend
                             "鬼歌"
                         }
@@ -407,8 +405,6 @@ addTowerSkillsx = function(u)
                             name == "无声的死亡旋律")
                      then
                         a = "life_back"
-                    elseif (name == "悲鸣") then
-                        a = "toughness"
                     elseif (name == "鬼歌") then
                         a = "defend"
                     end

@@ -1083,7 +1083,7 @@ onTowerAttack = function(evtData)
                                 filter = function()
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
-                                tokenArrow = "war3mapImported\\eff_OrbOfCorruption.mdl",
+                                tokenArrow = val[4],
                                 tokenArrowScale = 1.10,
                                 tokenArrowOpacity = 1,
                                 tokenArrowHeight = 100,
@@ -1095,7 +1095,7 @@ onTowerAttack = function(evtData)
                                 damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.dark},
                                 extraInfluence = function(eu)
                                     heffect.bindUnit(
-                                        "Abilities\\Spells\\Orc\\Ensnare\\ensnareTarget.mdl",
+                                        val[5],
                                         eu,
                                         "origin",
                                         val[3]

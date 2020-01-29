@@ -128,18 +128,18 @@ cj.TriggerAddAction(
         hattr.setThreeBuff(
             {
                 str = {
-                    life = 10,
-                    attack_white = 0.08,
-                    toughness = 0.05
+                    life = 7,
+                    attack_white = 0.06,
+                    toughness = 0.02
                 },
                 agi = {
-                    attack_white = 0.13,
-                    attack_speed = 0.03,
-                    avoid = 0.03
+                    attack_white = 0.10,
+                    attack_speed = 0.018,
+                    avoid = 0.02
                 },
                 int = {
-                    attack_white = 0.11,
-                    resistance = 0.03
+                    attack_white = 0.08,
+                    resistance = 0.02
                 }
             }
         )

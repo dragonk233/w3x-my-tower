@@ -41,21 +41,21 @@ updateMyTower = function(evtData)
     local race = slk.RACE
     local percent = 0
     if (tpv == "E") then
-        percent = 0.03
+        percent = 0.02
     elseif (tpv == "D") then
-        percent = 0.04
+        percent = 0.025
     elseif (tpv == "C") then
-        percent = 0.05
+        percent = 0.03
     elseif (tpv == "B") then
-        percent = 0.06
+        percent = 0.035
     elseif (tpv == "A") then
-        percent = 0.07
+        percent = 0.05
     elseif (tpv == "S") then
-        percent = 0.08
+        percent = 0.06
     elseif (tpv == "SS") then
-        percent = 0.10
+        percent = 0.08
     elseif (tpv == "SSS") then
-        percent = 0.15
+        percent = 0.10
     end
     attackWhite = diffLv * attackWhite * percent
     hattr.set(
@@ -213,7 +213,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 {
                     attack_white = "+" ..
                         math.floor(
-                            unitLv * 0.15 * hslk_global.unitsKV[towerId].ATTACK_WHITE +
+                            unitLv * 0.5 * hslk_global.unitsKV[towerId].ATTACK_WHITE +
                                 hslk_global.unitsKV[towerId].ATTACK_WHITE
                         )
                 }
