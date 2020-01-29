@@ -100,7 +100,7 @@ end
 enemyDeadYB = function(evtData)
     game.currentMon = game.currentMon - 1
     if (evtData.killer ~= nil) then
-        haward.forGroupExp(evtData.killer, 30 * game.rule.yb.wave)
+        haward.forGroupExp(evtData.killer, 27 * game.rule.yb.wave)
     end
     enemyDeadAward(evtData.triggerUnit, evtData.killer)
 end
@@ -109,7 +109,7 @@ end
 enemyDeadHZ = function(evtData)
     game.currentMon = game.currentMon - 1
     if (evtData.killer ~= nil) then
-        haward.forGroupExp(evtData.killer, 25 * game.rule.hz.wave)
+        haward.forGroupExp(evtData.killer, 23 * game.rule.hz.wave)
     end
     enemyDeadAward(evtData.triggerUnit, evtData.killer)
 end
@@ -120,8 +120,8 @@ enemyDeadDK = function(evtData)
     local u = evtData.killer
     if (u ~= nil) then
         local pi = hplayer.index(cj.GetOwningPlayer(u))
-        local exp = 25 * game.rule.dk.wave[pi]
-        local gold = 3 * game.rule.dk.wave[pi]
+        local exp = 20 * game.rule.dk.wave[pi]
+        local gold = 4 * game.rule.dk.wave[pi]
         haward.forGroup(u, exp, gold, 0)
         game.rule.dk.playerQty[pi] = game.rule.dk.playerQty[pi] + 1
         if (game.rule.dk.playerQty[pi] >= game.rule.dk.perWaveQty) then

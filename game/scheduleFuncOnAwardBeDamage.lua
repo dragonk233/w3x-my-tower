@@ -14,9 +14,9 @@ awardBeDamage = function(evtData)
         local name = hunit.getName(u)
         local damage = evtData.damage
         if (name == "[AWARD]大金币") then
-            haward.forUnitGold(sourceUnit, math.floor(damage * 0.16))
+            haward.forUnitGold(sourceUnit, math.floor(damage * 0.14))
         elseif (name == "[AWARD]大本书") then
-            haward.forGroupExp(sourceUnit, math.floor(damage * 0.35))
+            haward.forGroupExp(sourceUnit, math.floor(damage * 0.28))
         end
     end
 end

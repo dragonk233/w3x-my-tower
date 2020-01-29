@@ -27,7 +27,7 @@ abilitiesYellow = {
         Name = "穿透之箭",
         Art = "war3mapImported\\icon_pas_TheBlackArrow.blp",
         Ubertip = "攻击敌人减少它{val#1}点护甲，持续3秒",
-        Val = {4}
+        Val = {2}
     },
     {
         Name = "凤凰烈焰",

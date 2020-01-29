@@ -14,7 +14,7 @@ enemyBeDamage = function(evtData)
             u,
             2.50,
             {
-                move = "+" .. math.random(50, 100)
+                move = "+" .. math.random(60, 100)
             }
         )
     end
