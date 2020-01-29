@@ -41,21 +41,21 @@ updateMyTower = function(evtData)
     local race = slk.RACE
     local percent = 0
     if (tpv == "E") then
-        percent = 0.07
+        percent = 0.06
     elseif (tpv == "D") then
-        percent = 0.08
+        percent = 0.07
     elseif (tpv == "C") then
-        percent = 0.09
+        percent = 0.08
     elseif (tpv == "B") then
-        percent = 0.10
+        percent = 0.09
     elseif (tpv == "A") then
-        percent = 0.12
+        percent = 0.10
     elseif (tpv == "S") then
-        percent = 0.14
+        percent = 0.11
     elseif (tpv == "SS") then
-        percent = 0.17
+        percent = 0.13
     elseif (tpv == "SSS") then
-        percent = 0.20
+        percent = 0.15
     end
     attackWhite = diffLv * attackWhite * percent
     hattr.set(

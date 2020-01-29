@@ -82,11 +82,11 @@ onCourierSkillUesd = function(evtData)
             htextTag.style(htextTag.create2Unit(u, "找不到兵塔石~", 7, "ffff00", 1, 1.5, 50), "scale", 0, 0.05)
         end
     elseif (abilitiesSLK.Name == "呼唤技能书·蓝") then
-        if (hplayer.getGold(p) < 500) then
+        if (hplayer.getGold(p) < 750) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subGold(p, 500)
+            hplayer.subGold(p, 750)
             local tarBLv = getBookPowLevel(curWave)
             hitem.create(
                 {
@@ -96,11 +96,11 @@ onCourierSkillUesd = function(evtData)
             )
         end
     elseif (abilitiesSLK.Name == "呼唤技能书·黄") then
-        if (hplayer.getGold(p) < 750) then
+        if (hplayer.getGold(p) < 1250) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subGold(p, 750)
+            hplayer.subGold(p, 1250)
             local tarBLv = getBookPowLevel(curWave)
             hitem.create(
                 {
@@ -110,11 +110,11 @@ onCourierSkillUesd = function(evtData)
             )
         end
     elseif (abilitiesSLK.Name == "呼唤技能书·紫") then
-        if (hplayer.getGold(p) < 1000) then
+        if (hplayer.getGold(p) < 2500) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subGold(p, 1000)
+            hplayer.subGold(p, 2500)
             local tarBLv = getBookPowLevel(curWave)
             hitem.create(
                 {
@@ -124,11 +124,11 @@ onCourierSkillUesd = function(evtData)
             )
         end
     elseif (abilitiesSLK.Name == "召唤新兵塔") then
-        if (hplayer.getGold(p) < 400) then
+        if (hplayer.getGold(p) < 500) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subGold(p, 400)
+            hplayer.subGold(p, 500)
             local tarBLv = getTowerPowLevel(curWave)
             hitem.create(
                 {
@@ -142,11 +142,11 @@ onCourierSkillUesd = function(evtData)
             htextTag.style(htextTag.create2Unit(u, "最好的天赋哦，别错洗啦~", 7, "ccffcc", 1, 1.5, 50), "scale", 0, 0.05)
             return
         end
-        if (hplayer.getGold(p) < 250) then
+        if (hplayer.getGold(p) < 1000) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subGold(p, 250)
+            hplayer.subGold(p, 1000)
             subTowerLevel(playerIndex)
             addTowerLevel(playerIndex)
         end
@@ -164,11 +164,11 @@ onCourierSkillUesd = function(evtData)
                 gold = 88
                 label = "三等赏！"
                 color = "80ffff"
-            elseif (randg >= 55 and randg <= 80) then
+            elseif (randg >= 55 and randg < 84) then
                 gold = 388
                 label = "二等赏！！"
                 color = "ffffcc"
-            elseif (randg >= 80 and randg <= 90) then
+            elseif (randg >= 85 and randg <= 90) then
                 gold = 888
                 label = "一等赏！！！"
                 color = "ffcc00"
@@ -195,11 +195,11 @@ onCourierSkillUesd = function(evtData)
             end
         end
     elseif (abilitiesSLK.Name == "装备升华") then
-        if (hplayer.getGold(p) < 500) then
+        if (hplayer.getGold(p) < 3000) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subGold(p, 500)
+            hplayer.subGold(p, 3000)
         end
     end
 end

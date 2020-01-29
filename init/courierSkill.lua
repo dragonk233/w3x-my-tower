@@ -150,7 +150,7 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --技能书·蓝
 local obj = slk.ability.ANcl:new("couriers_sk_book_blue")
 local Name = "呼唤技能书·蓝"
-local Tip = "呼唤技能书·蓝("..hColor.greenLight("S")..") - "..hColor.yellow("500黄金")
+local Tip = "呼唤技能书·蓝("..hColor.greenLight("S")..") - "..hColor.yellow("750黄金")
 obj.Order = "acidbomb"
 obj.DataF1 = "acidbomb"
 obj.Name = Name
@@ -185,7 +185,7 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --技能书·黄
 local obj = slk.ability.ANcl:new("couriers_sk_book_yellow")
 local Name = "呼唤技能书·黄"
-local Tip = "呼唤技能书·黄("..hColor.greenLight("D")..") - "..hColor.yellow("750黄金")
+local Tip = "呼唤技能书·黄("..hColor.greenLight("D")..") - "..hColor.yellow("1250黄金")
 obj.Order = "acolyteharvest"
 obj.DataF1 = "acolyteharvest"
 obj.Name = Name
@@ -220,7 +220,7 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --技能书·紫
 local obj = slk.ability.ANcl:new("couriers_sk_book_purple")
 local Name = "呼唤技能书·紫"
-local Tip = "呼唤技能书·紫("..hColor.greenLight("F")..") - "..hColor.yellow("1000黄金")
+local Tip = "呼唤技能书·紫("..hColor.greenLight("F")..") - "..hColor.yellow("2500黄金")
 obj.Order = "antimagicshell"
 obj.DataF1 = "antimagicshell"
 obj.Name = Name
@@ -255,7 +255,7 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --召唤新兵塔
 local obj = slk.ability.ANcl:new("couriers_sk_new_tower")
 local Name = "召唤新兵塔"
-local Tip = "召唤新兵塔("..hColor.greenLight("Z")..") - "..hColor.yellow("400黄金")
+local Tip = "召唤新兵塔("..hColor.greenLight("Z")..") - "..hColor.yellow("500黄金")
 obj.Order = "ambush"
 obj.DataF1 = "ambush"
 obj.Name = Name
@@ -290,7 +290,7 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --洗天赋
 local obj = slk.ability.ANcl:new("couriers_sk_switch_gift")
 local Name = "洗天赋"
-local Tip = "洗天赋("..hColor.greenLight("X")..") - "..hColor.yellow("250黄金")
+local Tip = "洗天赋("..hColor.greenLight("X")..") - "..hColor.yellow("1000黄金")
 obj.Order = "ancestralspirit"
 obj.DataF1 = "ancestralspirit"
 obj.Name = Name
@@ -366,13 +366,13 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --装备合并升华
 local obj = slk.ability.ANcl:new("couriers_sk_item_mix")
 local Name = "装备升华"
-local Tip = "装备升华("..hColor.greenLight("V")..") - "..hColor.yellow("500黄金")
+local Tip = "装备升华("..hColor.greenLight("V")..") - "..hColor.yellow("3000黄金")
 obj.Order = "animatedead"
 obj.DataF1 = "animatedead"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "V"
-obj.Ubertip = "将信使身上所有的物品评分，随机升华为一个新的物品|n物品必须大于2件以上才可升华"..hColor.yellow("(包括同种类)")
+obj.Ubertip = "将信使身上物品按序抽取10件物品评定为1件新的物品|n物品必须大于10件以上才可升华|n升华不保证变强"..hColor.yellow("(包含同种类)")
 obj.Buttonpos1 = 3
 obj.Buttonpos2 = 2
 obj.hero = 0
