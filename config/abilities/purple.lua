@@ -1,5 +1,23 @@
 abilitiesPurple = {
     {
+        Name = "牛鬼蛇神",
+        Art = "war3mapImported\\icon_pas_Ability_Warlock_DemonicEmpowerment",
+        Ubertip = "+{val#1}点力量",
+        Val = {210}
+    },
+    {
+        Name = "荒诞",
+        Art = "war3mapImported\\icon_pas_Ability_Rogue_SinisterCalling.blp",
+        Ubertip = "+{val#1}点敏捷",
+        Val = {179}
+    },
+    {
+        Name = "极致点子",
+        Art = "war3mapImported\\icon_pas_Ability_Druid_EmpoweredTouch.blp",
+        Ubertip = "+{val#1}点智力",
+        Val = {195}
+    },
+    {
         Name = "暗杀巅峰",
         Art = "war3mapImported\\icon_pas_Spell_Holy_EyeforanEye.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
@@ -15,19 +33,19 @@ abilitiesPurple = {
         Name = "双修对剑",
         Art = "war3mapImported\\icon_pas_DualWield.blp",
         Ubertip = "+{val#1}点攻击力|n+{val#2}点力量|n+{val#3}点敏捷",
-        Val = {120, 50, 50}
+        Val = {140, 70, 70}
     },
     {
         Name = "武术至尊",
         Art = "war3mapImported\\icon_pas_Holy_WeaponMastery.blp",
         Ubertip = "+{val#1}点攻击力|n+{val#2}%攻击速度",
-        Val = {140, 17.5}
+        Val = {245, 17.5}
     },
     {
         Name = "法术天尊",
         Art = "war3mapImported\\icon_pas_Holy_HolyNova.blp",
         Ubertip = "+{val#1}点攻击力|n+{val#2}点智力",
-        Val = {138, 60}
+        Val = {200, 100}
     },
     {
         Name = "音速回击",
@@ -51,7 +69,7 @@ abilitiesPurple = {
         Name = "胆颤心惊",
         Art = "war3mapImported\\icon_pas_Rogue_SurpriseAttack.blp",
         Ubertip = "攻击敌人减少它{val#1}点护甲并进入{val#2}出血状态，持续5秒",
-        Val = {4, 90}
+        Val = {4, 160}
     },
     {
         Name = "害怕",
@@ -63,7 +81,7 @@ abilitiesPurple = {
         Name = "炸裂践踏",
         Art = "war3mapImported\\icon_pas_Mount_Dreadsteed.blp",
         Ubertip = "攻击时，有20%几率，震伤害附近的敌人，造成{val#1}点伤害，持续{val#2}秒",
-        Val = {95, 1.3}
+        Val = {135, 1.3}
     },
     {
         Name = "冰花炸裂",
@@ -75,14 +93,14 @@ abilitiesPurple = {
         Name = "天神加护",
         Art = "war3mapImported\\icon_pas_Holy_Fanaticism.blp",
         Ubertip = "+{val#1}点生命，+{val#2}生命恢复",
-        Val = {750, 0.2},
+        Val = {800, 0.25},
         ODK = true
     },
     {
         Name = "圣封护盾",
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Ubertip = "+{val#1}点护甲，+{val#2}%魔抗",
-        Val = {20, 12},
+        Val = {22, 12},
         ODK = true
     },
     {
@@ -96,7 +114,7 @@ abilitiesPurple = {
         Name = "刺痛极限",
         Art = "war3mapImported\\icon_pas_Fire_ElementAldecastation.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {200},
+        Val = {250},
         ODK = true
     },
     {

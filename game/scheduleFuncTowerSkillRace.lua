@@ -403,8 +403,8 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     attr.attack_effect,
                     {
                         attr = "violence",
-                        odds = 7,
-                        percent = 15
+                        odds = 15,
+                        percent = 18
                     }
                 )
             elseif (qtys[r] == 4) then
@@ -412,8 +412,8 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     attr.attack_effect,
                     {
                         attr = "violence",
-                        odds = 10,
-                        percent = 18
+                        odds = 20,
+                        percent = 25
                     }
                 )
             elseif (qtys[r] == 5) then
@@ -421,8 +421,8 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     attr.attack_effect,
                     {
                         attr = "violence",
-                        odds = 14,
-                        percent = 23
+                        odds = 20,
+                        percent = 40
                     }
                 )
             end
@@ -452,8 +452,8 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     attr.attack_effect,
                     {
                         attr = "knocking",
-                        odds = 9,
-                        percent = 17
+                        odds = 8,
+                        percent = 13
                     }
                 )
             elseif (qtys[r] == 3) then
@@ -461,8 +461,17 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     attr.attack_effect,
                     {
                         attr = "knocking",
-                        odds = 13,
-                        percent = 21
+                        odds = 11,
+                        percent = 16
+                    }
+                )
+            elseif (qtys[r] == 4) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "knocking",
+                        odds = 14,
+                        percent = 19
                     }
                 )
             elseif (qtys[r] == 5) then
@@ -470,8 +479,8 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     attr.attack_effect,
                     {
                         attr = "knocking",
-                        odds = 20,
-                        percent = 33
+                        odds = 25,
+                        percent = 25
                     }
                 )
             end

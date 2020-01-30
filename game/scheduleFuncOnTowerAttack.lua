@@ -50,7 +50,7 @@ onTowerAttack = function(evtData)
                 end
                 if (name == "掠夺黄金" and math.random(1, 100) <= level) then
                     onTowerAttackTtg(u, name)
-                    haward.forPlayerGold(20)
+                    haward.forPlayerGold(30)
                 end
                 if (name == "震晕践踏" and math.random(1, 7) == 5) then
                     onTowerAttackTtg(u, name)
@@ -73,7 +73,7 @@ onTowerAttack = function(evtData)
                             range = 895,
                             odds = 100,
                             during = 1.3 * level,
-                            damage = 95 * level,
+                            damage = 135 * level,
                             whichUnit = u,
                             sourceUnit = u,
                             effect = "war3mapImported\\eff_shock_explosion.mdl",

@@ -185,11 +185,11 @@ setTowerSkillByBook = function(u, abliOps, opt)
                 int_green = opt .. level * abliOps.Val[1]
             }
         )
-    elseif (abliOps.Name == "狂牛身躯" or abliOps.Name == "鬼神头盔" or abliOps.Name == "擎天之柱") then
+    elseif (abliOps.Name == "狂牛身躯" or abliOps.Name == "鬼神头盔" or abliOps.Name == "擎天之柱" or abliOps.Name == "牛鬼蛇神") then
         hattr.set(u, 0, {str_green = opt .. level * abliOps.Val[1]})
-    elseif (abliOps.Name == "猎豹一族" or abliOps.Name == "蝙蝠獠牙" or abliOps.Name == "鬼神荒芜") then
+    elseif (abliOps.Name == "猎豹一族" or abliOps.Name == "蝙蝠獠牙" or abliOps.Name == "鬼神荒芜" or abliOps.Name == "荒诞") then
         hattr.set(u, 0, {agi_green = opt .. level * abliOps.Val[1]})
-    elseif (abliOps.Name == "甜甜圈法杖" or abliOps.Name == "天师法剑" or abliOps.Name == "艾露尼之优雅") then
+    elseif (abliOps.Name == "甜甜圈法杖" or abliOps.Name == "天师法剑" or abliOps.Name == "艾露尼之优雅" or abliOps.Name == "极致点子") then
         hattr.set(u, 0, {int_green = opt .. level * abliOps.Val[1]})
     elseif (abliOps.Name == "一发长枪" or abliOps.Name == "打靶") then
         hattr.set(u, 0, {aim = opt .. level * abliOps.Val[1]})

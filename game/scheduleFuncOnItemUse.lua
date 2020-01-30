@@ -187,7 +187,7 @@ onUnitItemsUesd = function(evtData)
                 btns,
                 {
                     value = 512,
-                    label = "[ESC][" .. hColor.grey("废弃技能书") .. "]"
+                    label = "[ESC][" .. hColor.grey("卖掉技能书") .. "]"
                 }
             )
             hdialog.create(
@@ -198,7 +198,7 @@ onUnitItemsUesd = function(evtData)
                 },
                 function(btnIdx)
                     if (btnIdx == 512) then
-                        hmsg.echo00(p, "技能书被扔了")
+                        hplayer.addGold(playerIndex, 30, u)
                         return
                     end
                     hmsg.echo00(

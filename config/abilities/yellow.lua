@@ -3,19 +3,19 @@ abilitiesYellow = {
         Name = "擎天之柱",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSmash.blp",
         Ubertip = "+{val#1}点力量",
-        Val = {74}
+        Val = {94}
     },
     {
         Name = "鬼神荒芜",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNRegenerationAura.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {70}
+        Val = {90}
     },
     {
         Name = "艾露尼之优雅",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNElunesBlessing.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {78}
+        Val = {98}
     },
     {
         Name = "机关枪",
@@ -27,19 +27,19 @@ abilitiesYellow = {
         Name = "穿透之箭",
         Art = "war3mapImported\\icon_pas_TheBlackArrow.blp",
         Ubertip = "攻击敌人减少它{val#1}点护甲，持续3秒",
-        Val = {2}
+        Val = {3}
     },
     {
         Name = "凤凰烈焰",
         Art = "war3mapImported\\icon_pas_MarkOfFire.blp",
         Ubertip = "+火攻击特性|n+{val#1}每秒灼烧效果，持续5秒",
-        Val = {31.0}
+        Val = {76.0}
     },
     {
         Name = "剧毒液体",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCorrosiveBreath.blp",
         Ubertip = "+毒攻击特性|n+{val#1}每秒中毒效果，持续5秒",
-        Val = {27.0}
+        Val = {83.0}
     },
     {
         Name = "猛毒试剂",
@@ -75,13 +75,13 @@ abilitiesYellow = {
         Name = "折翅天使",
         Art = "war3mapImported\\icon_pas_Holy_BlessedRecovery.blp",
         Ubertip = "+神攻击特性|n+{val#1}%神攻击",
-        Val = {2.5}
+        Val = {3.5}
     },
     {
         Name = "雷神之手",
         Art = "war3mapImported\\icon_pas_Electrostatic_field2.blp",
         Ubertip = "+雷攻击特性|n攻击时35%几率发起闪电链，最多打击3个目标，造成{val#1}点伤害",
-        Val = {230}
+        Val = {330}
     },
     {
         Name = "千里冰封",
@@ -105,7 +105,7 @@ abilitiesYellow = {
         Name = "德鲁伊叶子",
         Art = "war3mapImported\\icon_pas_Nature_HealingTouch.blp",
         Ubertip = "+木攻击特性|n+{val#1}生命恢复",
-        Val = {0.05}
+        Val = {0.06}
     },
     {
         Name = "战熊咆哮",
@@ -152,33 +152,33 @@ abilitiesYellow = {
     {
         Name = "掠夺黄金",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPillage.blp",
-        Ubertip = "攻击时，有{val#1}%几率获得20黄金",
+        Ubertip = "攻击时，有{val#1}%几率获得30黄金",
         Val = {3}
     },
     {
         Name = "五行之力",
         Art = "war3mapImported\\icon_pas_Nature_ElementalPrecision_1.blp",
         Ubertip = "+{val#1}%金、木、水、火、土攻击",
-        Val = {10}
+        Val = {12.5}
     },
     {
         Name = "五行相克",
         Art = "war3mapImported\\icon_pas_Nature_ElementalPrecision_2.blp",
         Ubertip = "+{val#1}%金、木、水、火、土抵抗",
-        Val = {10}
+        Val = {12.5}
     },
     {
         Name = "赤血盾牌",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldMastery.blp",
         Ubertip = "+{val#1}生命|n+{val#2}护甲",
-        Val = {300, 9},
+        Val = {400, 9},
         ODK = true
     },
     {
         Name = "亢奋战鼓",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDrum.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {75},
+        Val = {115},
         ODK = true
     },
     {
@@ -220,7 +220,7 @@ abilitiesYellow = {
         Name = "降智打击",
         Art = "war3mapImported\\icon_pas_Arcane_ManaTap.blp",
         Ubertip = "受到攻击时，降低攻击者{val#1}点智力，持续6秒",
-        Val = {30},
+        Val = {36},
         ODK = true
     }
 }

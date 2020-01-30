@@ -63,19 +63,19 @@ abilitiesBlue = {
         Name = "剧毒标枪",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNEnvenomedSpear.blp",
         Ubertip = "+{val#1}每秒中毒效果，持续4秒",
-        Val = {25}
+        Val = {35}
     },
     {
         Name = "蝎子之尾",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPoisonSting.blp",
         Ubertip = "+{val#1}每秒中毒效果，持续4秒",
-        Val = {30}
+        Val = {45}
     },
     {
         Name = "切割刀刃",
         Art = "war3mapImported\\icon_pas_Ability_Gouge.blp",
         Ubertip = "+{val#1}每秒出血效果，持续4.5秒",
-        Val = {32}
+        Val = {50}
     },
     {
         Name = "侵毒连击",
@@ -87,43 +87,43 @@ abilitiesBlue = {
         Name = "勇气勋章",
         Art = "war3mapImported\\icon_pas_MedalionOfCourage.blp",
         Ubertip = "+{val#1}点力量|n+{val#1}点敏捷|n+{val#1}点智力",
-        Val = {7, 7, 7}
+        Val = {10, 10, 10}
     },
     {
         Name = "狂牛身躯",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNReincarnation.blp",
         Ubertip = "+{val#1}点力量",
-        Val = {32}
+        Val = {42}
     },
     {
         Name = "猎豹一族",
         Art = "war3mapImported\\icon_pas_Hunter_CatlikeReflexes.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {26}
+        Val = {36}
     },
     {
         Name = "甜甜圈法杖",
         Art = "war3mapImported\\icon_pas_AbsorbMagic.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {32}
+        Val = {42}
     },
     {
         Name = "鬼神头盔",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNUnholyAura.blp",
         Ubertip = "+{val#1}点力量",
-        Val = {40}
+        Val = {60}
     },
     {
         Name = "蝙蝠獠牙",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNVampiricAura.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {37}
+        Val = {57}
     },
     {
         Name = "天师法剑",
         Art = "war3mapImported\\icon_pas_Holy_PersuitofJustice.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {45}
+        Val = {65}
     },
     {
         Name = "一发长枪",
@@ -135,7 +135,7 @@ abilitiesBlue = {
         Name = "雷电之锤",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNStormHammer.blp",
         Ubertip = "攻击时30%几率发起闪电链，最多打击3个目标，造成{val#1}点伤害",
-        Val = {110}
+        Val = {130}
     },
     {
         Name = "专注护身",
@@ -148,7 +148,7 @@ abilitiesBlue = {
         Name = "噩梦移植",
         Art = "war3mapImported\\icon_pas_Rogue_DeadenedNerves.blp",
         Ubertip = "+{val#1}生命",
-        Val = {200},
+        Val = {300},
         ODK = true
     },
     {
