@@ -1,6 +1,6 @@
 require "game.scheduleFuncEnemyGenShadow"
 
-enemyDeadTowerDrop = 2
+enemyDeadTowerDrop = {}
 
 -- 死亡的触发奖励
 enemyDeadAward = function(triggerUnit, killer)
@@ -25,6 +25,10 @@ enemyDeadAward = function(triggerUnit, killer)
         )
     end
     hunit.del(triggerUnit, 10)
+    local playerIndex = 0
+    if (killer ~= nil) then
+        playerIndex = hplayer.index(cj.GetOwningPlayer(killer))
+    end
     --curWave
     local curWave = 1
     if (game.rule.cur == "yb") then
@@ -32,7 +36,7 @@ enemyDeadAward = function(triggerUnit, killer)
     elseif (game.rule.cur == "hz") then
         curWave = game.rule.hz.wave
     elseif (game.rule.cur == "dk" and killer ~= nil) then
-        curWave = game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(killer))]
+        curWave = game.rule.dk.wave[playerIndex]
     end
     --
     if (cj.GetRandomInt(1, 25) == 13 and curWave >= 2) then
@@ -81,23 +85,28 @@ enemyDeadAward = function(triggerUnit, killer)
         end
     end
     --
-    local mid = math.floor(enemyDeadTowerDrop / 2)
-    if (cj.GetRandomInt(1, enemyDeadTowerDrop) == mid) then
-        -- 掉落兵塔
-        local targetTPow = getTowerPowLevel(curWave)
-        if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
-            local rand = table.random(game.thisOptionTowerPowerItem[targetTPow])
-            hitem.create(
-                {
-                    itemId = rand.ITEM_ID,
-                    x = x,
-                    y = y,
-                    during = 120
-                }
-            )
+    if (playerIndex > 0) then
+        if (enemyDeadTowerDrop[playerIndex] == nil) then
+            enemyDeadTowerDrop[playerIndex] = 2
         end
-        if (enemyDeadTowerDrop < 25) then
-            enemyDeadTowerDrop = enemyDeadTowerDrop + 1
+        local mid = math.floor(enemyDeadTowerDrop[playerIndex] / 2)
+        if (cj.GetRandomInt(1, enemyDeadTowerDrop[playerIndex]) == mid) then
+            -- 掉落兵塔
+            local targetTPow = getTowerPowLevel(curWave)
+            if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
+                local rand = table.random(game.thisOptionTowerPowerItem[targetTPow])
+                hitem.create(
+                    {
+                        itemId = rand.ITEM_ID,
+                        x = x,
+                        y = y,
+                        during = 120
+                    }
+                )
+            end
+            if (enemyDeadTowerDrop[playerIndex] < 20) then
+                enemyDeadTowerDrop[playerIndex] = enemyDeadTowerDrop[playerIndex] + 1
+            end
         end
     end
 end
