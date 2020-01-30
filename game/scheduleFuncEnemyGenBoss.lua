@@ -22,8 +22,8 @@ bossGen = function(curWave)
                 0,
                 {
                     life = "=" .. (bossGenLife * curWave),
-                    move = "=140",
-                    defend = "=" .. curWave * 4,
+                    move = "=120",
+                    defend = "=" .. curWave * 2,
                     resistance = "=" .. curWave * 0.5,
                     avoid = "=" .. curWave * 0.18,
                     knocking_oppose = "=" .. curWave * 0.3,
@@ -55,5 +55,5 @@ bossGen = function(curWave)
         end
     end
     hmark.create("war3mapImported\\mark_boss_coming.blp", 4.00)
-    bossGenLife = bossGenLife + 250 + curWave * 3
+    bossGenLife = bossGenLife + 250 + curWave * 2
 end

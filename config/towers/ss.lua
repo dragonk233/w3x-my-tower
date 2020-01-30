@@ -108,7 +108,7 @@ towers_ss = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\MoonPriestessMissile\\MoonPriestessMissile.mdl",
         cool1 = 1.80,
-        Primary = "AGI",
+        Primary = "INT",
         abilList = {towerSpxKV["追风"], towerSpxKV["激灵一箭"]}
     },
     {

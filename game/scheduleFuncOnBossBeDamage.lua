@@ -14,7 +14,7 @@ bossBeDamage = function(evtData)
             u,
             1.50,
             {
-                move = "+" .. math.random(130, 160)
+                move = "+" .. math.random(110, 150)
             }
         )
     end

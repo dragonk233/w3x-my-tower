@@ -82,7 +82,7 @@ abilitiesPurple = {
         Name = "圣封护盾",
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Ubertip = "+{val#1}点护甲，+{val#2}%魔抗",
-        Val = {21, 16},
+        Val = {20, 12},
         ODK = true
     },
     {

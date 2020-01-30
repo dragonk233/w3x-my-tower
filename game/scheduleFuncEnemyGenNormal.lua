@@ -134,12 +134,12 @@ enemyGenHZ = function(waiting)
                         if (math.fmod(game.rule.hz.wave, 10) == 0) then
                             bossGen(game.rule.hz.wave)
                             nextWaitTime = 18
-                            game.rule.hz.monLife = game.rule.hz.monLife + 2 * game.rule.hz.monLifeInc
+                            game.rule.hz.monLife = game.rule.hz.monLife + game.rule.hz.monLifeInc
                         end
                         if (game.rule.hz.wave > 3 and math.fmod((game.rule.hz.wave - 3), 10) == 0) then
                             awardGen(game.rule.hz.wave)
                             nextWaitTime = 18
-                            game.rule.hz.monLife = game.rule.hz.monLife + game.rule.hz.wave
+                            game.rule.hz.monLife = game.rule.hz.monLife + math.floor(0.20 * game.rule.hz.wave)
                         end
                         htime.delDialog(td2)
                         htime.delTimer(t2)

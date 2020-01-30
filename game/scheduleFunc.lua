@@ -213,7 +213,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 {
                     attack_white = "+" ..
                         math.floor(
-                            unitLv * 0.5 * hslk_global.unitsKV[towerId].ATTACK_WHITE +
+                            unitLv * 0.4 * hslk_global.unitsKV[towerId].ATTACK_WHITE +
                                 hslk_global.unitsKV[towerId].ATTACK_WHITE
                         )
                 }

@@ -1,5 +1,7 @@
 require "game.scheduleFuncEnemyGenShadow"
 
+enemyDeadTowerDrop = 2
+
 -- 死亡的触发奖励
 enemyDeadAward = function(triggerUnit, killer)
     local x = cj.GetUnitX(triggerUnit)
@@ -79,7 +81,8 @@ enemyDeadAward = function(triggerUnit, killer)
         end
     end
     --
-    if (cj.GetRandomInt(1, 20) == 9) then
+    local mid = math.floor(enemyDeadTowerDrop / 2)
+    if (cj.GetRandomInt(1, enemyDeadTowerDrop) == mid) then
         -- 掉落兵塔
         local targetTPow = getTowerPowLevel(curWave)
         if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
@@ -92,6 +95,9 @@ enemyDeadAward = function(triggerUnit, killer)
                     during = 120
                 }
             )
+        end
+        if (enemyDeadTowerDrop < 25) then
+            enemyDeadTowerDrop = enemyDeadTowerDrop + 1
         end
     end
 end

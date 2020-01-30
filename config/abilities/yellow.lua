@@ -45,7 +45,7 @@ abilitiesYellow = {
         Name = "猛毒试剂",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSlowPoison.blp",
         Ubertip = "攻击敌人减少它{val#1}%魔抗，持续3秒",
-        Val = {6}
+        Val = {8}
     },
     {
         Name = "光导使者",
@@ -199,7 +199,7 @@ abilitiesYellow = {
         Name = "抗性神经",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNMagicImmunity.blp",
         Ubertip = "+{val#1}%魔抗",
-        Val = {10},
+        Val = {7},
         ODK = true
     },
     {

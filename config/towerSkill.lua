@@ -1680,8 +1680,8 @@ TOWER_ABLI_SPX = {
             20,
             1300,
             5.5,
-            "Abilities\\Spells\\Undead\\Web\\Webmissile.mdll",
-            "Abilities\\Spells\\Undead\\Web\\WebTarget.mdl"
+            "Abilities\\Spells\\Undead\\Web\\Webmissile.mdl",
+            "Abilities\\Spells\\Undead\\Web\\Web_AirTarget.mdl"
         }
     },
     {
@@ -1982,7 +1982,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Holy_Power.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {75, 75},
+        Val = {50, 50},
         ODK = true
     },
     {
@@ -1991,7 +1991,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_DivineHymn.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {25},
+        Val = {20},
         ODK = true
     },
     {
@@ -2000,7 +2000,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Elemental_Crystal_Shadow.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {50},
+        Val = {35},
         ODK = true
     },
     {
@@ -2095,7 +2095,7 @@ TOWER_ABLI_SPX = {
     },
     {
         Name = "影子替身",
-        Ubertip = "+{val#1}%回避",
+        Ubertip = "+{val#1}%回避|n+魔法攻击特性",
         Art = "war3mapImported\\icon_pas_Undercurrent_white_light.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,

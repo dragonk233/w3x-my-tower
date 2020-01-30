@@ -117,7 +117,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Arrow\\ArrowMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "INT",
     },
     {
         Name = "矮人·火枪手",
@@ -147,7 +147,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Arrow\\ArrowMissile.mdl",
         cool1 = 2.10,
-        Primary = "INT",
+        Primary = "AGI",
     },
     {
         Name = "暗夜精灵·角鹰弓箭手",

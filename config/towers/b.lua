@@ -61,7 +61,7 @@ towers_b = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\DragonHawkMissile\\DragonHawkMissile.mdl",
         cool1 = 1.90,
-        Primary = "AGI",
+        Primary = "INT",
         abilList = {towerSpxKV["震荡光弹"]}
     },
     {

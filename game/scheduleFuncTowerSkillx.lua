@@ -41,11 +41,17 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {resistance = "+" .. Val[1]})
                 elseif (name == "石像化" or name == "腰马合一" or name == "折磨耐性") then
                     hattr.set(u, 0, {toughness = "+" .. Val[1]})
-                elseif
-                    (name == "黑暗舞步" or name == "恶灵披风" or name == "猎影" or name == "虚幻" or name == "无欲无求" or
-                        name == "影子替身")
-                 then
+                elseif (name == "黑暗舞步" or name == "恶灵披风" or name == "猎影" or name == "虚幻" or name == "无欲无求") then
                     hattr.set(u, 0, {avoid = "+" .. Val[1]})
+                elseif (name == "影子替身") then
+                    hattr.set(
+                        u,
+                        0,
+                        {
+                            attack_damage_type = "+magic",
+                            avoid = "+" .. Val[1]
+                        }
+                    )
                 elseif (name == "猫头鹰怒视" or name == "捕猎者") then
                     hattr.set(u, 0, {aim = "+" .. Val[1]})
                 elseif (name == "激灵一箭") then
