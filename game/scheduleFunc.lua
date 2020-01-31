@@ -8,6 +8,7 @@ require "game.scheduleFuncOnTowerLinkSkillUse"
 require "game.scheduleFuncTowerSkillRace"
 require "game.scheduleFuncTowerSkillx"
 require "game.scheduleFuncEnemyGenNormal"
+require "game.scheduleAI"
 
 getNextRect = function(current)
     local next = -1
@@ -417,6 +418,8 @@ createMyCourier = function(playerIndex, courierId)
         if (hslk_global.unitsKV[courierId].Name == "冰戟剑灵") then
             heffect.bindUnit("war3mapImported\\eff_flying_sword_ice.mdl", u, "origin", -1)
         end
+        --如果是AI模式
+        MAYBE_AI.courier(playerIndex)
         return u
     end
 end

@@ -198,7 +198,7 @@ onUnitItemsUesd = function(evtData)
                 },
                 function(btnIdx)
                     if (btnIdx == 512) then
-                        hplayer.addGold(playerIndex, 30, u)
+                        hplayer.addGold(hplayer.players[playerIndex], 30, u)
                         return
                     end
                     hmsg.echo00(

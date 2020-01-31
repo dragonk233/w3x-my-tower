@@ -44,7 +44,8 @@ enemyDeadAward = function(triggerUnit, killer)
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["blue"][tarBLv] > 0) then
             local itId = table.random(game.thisOptionAbilityItem["blue"][tarBLv]).ITEM_ID
-            hitem.create(
+            local it =
+                hitem.create(
                 {
                     itemId = itId,
                     x = x,
@@ -52,6 +53,8 @@ enemyDeadAward = function(triggerUnit, killer)
                     during = 60
                 }
             )
+            --如果是AI模式
+            MAYBE_AI.item(playerIndex, it, "book")
         end
     end
     if (cj.GetRandomInt(1, 45) == 27 and curWave >= 7) then
@@ -59,7 +62,8 @@ enemyDeadAward = function(triggerUnit, killer)
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["yellow"][tarBLv] > 0) then
             local itId = table.random(game.thisOptionAbilityItem["yellow"][tarBLv]).ITEM_ID
-            hitem.create(
+            local it =
+                hitem.create(
                 {
                     itemId = itId,
                     x = x,
@@ -67,6 +71,8 @@ enemyDeadAward = function(triggerUnit, killer)
                     during = 60
                 }
             )
+            --如果是AI模式
+            MAYBE_AI.item(playerIndex, it, "book")
         end
     end
     if (cj.GetRandomInt(1, 90) == 46 and curWave >= 19) then
@@ -74,7 +80,8 @@ enemyDeadAward = function(triggerUnit, killer)
         local tarBLv = getBookPowLevel(curWave)
         if (#game.thisOptionAbilityItem["purple"][tarBLv] > 0) then
             local itId = table.random(game.thisOptionAbilityItem["purple"][tarBLv]).ITEM_ID
-            hitem.create(
+            local it =
+                hitem.create(
                 {
                     itemId = itId,
                     x = x,
@@ -82,6 +89,8 @@ enemyDeadAward = function(triggerUnit, killer)
                     during = 60
                 }
             )
+            --如果是AI模式
+            MAYBE_AI.item(playerIndex, it, "book")
         end
     end
     --
@@ -95,7 +104,8 @@ enemyDeadAward = function(triggerUnit, killer)
             local targetTPow = getTowerPowLevel(curWave)
             if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
                 local rand = table.random(game.thisOptionTowerPowerItem[targetTPow])
-                hitem.create(
+                local it =
+                    hitem.create(
                     {
                         itemId = rand.ITEM_ID,
                         x = x,
@@ -103,6 +113,8 @@ enemyDeadAward = function(triggerUnit, killer)
                         during = 120
                     }
                 )
+                --如果是AI模式
+                MAYBE_AI.item(playerIndex, it, "stone")
             end
             if (enemyDeadTowerDrop[playerIndex] < 20) then
                 enemyDeadTowerDrop[playerIndex] = enemyDeadTowerDrop[playerIndex] + 1

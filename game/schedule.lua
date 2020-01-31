@@ -458,7 +458,7 @@ cj.TriggerAddAction(
                     game.rule.cur = "dk"
                     if (btnIdx == "有趣对抗(AI模式)") then
                         game.rule.dk.ai = true
-                        hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局[AI模式]|r")
+                        hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局[AI不开挂]|r")
                     else
                         hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局|r")
                     end
@@ -466,7 +466,7 @@ cj.TriggerAddAction(
                     -- 构建出怪区域
                     for k, v in ipairs(game.pathPoint) do
                         for i, p in ipairs(v) do
-                            local r = hrect.create(p[1], p[2], 100, 100, "rect" .. k .. i)
+                            local r = hrect.create(p[1], p[2], 175, 175, "rect" .. k .. i)
                             local tg = cj.CreateTrigger()
                             bj.TriggerRegisterEnterRectSimple(tg, r)
                             cj.TriggerAddAction(
@@ -592,9 +592,9 @@ cj.TriggerAddAction(
                 for k, v in pairs(game.courierPoint) do
                     local u
                     if (game.rule.dk.ai == true and his.playing(hplayer.players[k]) == false) then
-                        u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
-                        cj.SetPlayerName(hplayer.players[k], "AI#" .. k)
                         hplayer.setStatus(hplayer.players[k], hplayer.player_status.gaming)
+                        cj.SetPlayerName(hplayer.players[k], "AI#" .. k)
+                        u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
                     else
                         u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
                         if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "phoenix") == true) then
