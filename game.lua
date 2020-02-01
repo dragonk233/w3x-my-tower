@@ -7,13 +7,8 @@ require "game.slk"
 --加载本地图的test
 require "game.test"
 
-local preload = {}
-for k, _ in pairs(hslk_global.unitsKV) do
-    table.insert(preload, k)
-end
-
 --预读
-for _, v in ipairs(preload) do
+for v, _ in pairs(hslk_global.unitsKV) do
     local u = cj.CreateUnit(hplayer.player_passive, string.char2id(v), 0, 0, 0)
     hattr.registerAll(u)
     hunit.del(u, 0.1)

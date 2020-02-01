@@ -1,19 +1,25 @@
 abilitiesYellow = {
     {
+        Name = "战争武斗",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGnollCommandAura.blp",
+        Ubertip = "+{val#1}攻击力",
+        Val = {165}
+    },
+    {
         Name = "擎天之柱",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSmash.blp",
         Ubertip = "+{val#1}点力量",
         Val = {94}
     },
     {
-        Name = "鬼神荒芜",
+        Name = "荒芜",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNRegenerationAura.blp",
         Ubertip = "+{val#1}点敏捷",
         Val = {90}
     },
     {
-        Name = "艾露尼之优雅",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNElunesBlessing.blp",
+        Name = "甜甜圈法杖",
+        Art = "war3mapImported\\icon_pas_AbsorbMagic.blp",
         Ubertip = "+{val#1}点智力",
         Val = {98}
     },
@@ -33,19 +39,19 @@ abilitiesYellow = {
         Name = "凤凰烈焰",
         Art = "war3mapImported\\icon_pas_MarkOfFire.blp",
         Ubertip = "+火攻击特性|n+{val#1}每秒灼烧效果，持续5秒",
-        Val = {76.0}
+        Val = {266.0}
     },
     {
         Name = "剧毒液体",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCorrosiveBreath.blp",
         Ubertip = "+毒攻击特性|n+{val#1}每秒中毒效果，持续5秒",
-        Val = {83.0}
+        Val = {300}
     },
     {
         Name = "猛毒试剂",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSlowPoison.blp",
         Ubertip = "攻击敌人减少它{val#1}%魔抗，持续3秒",
-        Val = {8}
+        Val = {9}
     },
     {
         Name = "光导使者",
@@ -57,31 +63,31 @@ abilitiesYellow = {
         Name = "暗夜对剑",
         Art = "war3mapImported\\icon_pas_Ability_Rogue_ShadowStrikes.blp",
         Ubertip = "+暗攻击特性|n+{val#1}%暗攻击",
-        Val = {4}
+        Val = {5.2}
     },
     {
         Name = "恶龙吞日",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNGenericSpellImmunity.blp",
         Ubertip = "+龙攻击特性|n+{val#1}%龙攻击",
-        Val = {3}
+        Val = {4}
     },
     {
         Name = "恶鬼呼声",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNShadeTrueSight.blp",
         Ubertip = "+鬼攻击特性|n+{val#1}%鬼攻击",
-        Val = {4.5}
+        Val = {5.3}
     },
     {
         Name = "折翅天使",
         Art = "war3mapImported\\icon_pas_Holy_BlessedRecovery.blp",
         Ubertip = "+神攻击特性|n+{val#1}%神攻击",
-        Val = {3.5}
+        Val = {3.6}
     },
     {
         Name = "雷神之手",
         Art = "war3mapImported\\icon_pas_Electrostatic_field2.blp",
         Ubertip = "+雷攻击特性|n攻击时35%几率发起闪电链，最多打击3个目标，造成{val#1}点伤害",
-        Val = {330}
+        Val = {1300}
     },
     {
         Name = "千里冰封",
@@ -111,25 +117,13 @@ abilitiesYellow = {
         Name = "战熊咆哮",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBattleRoar.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
-        Val = {6.5, 16.5}
+        Val = {8.5, 15.5}
     },
     {
         Name = "魔导灵眼",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNMagicalSentry.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
-        Val = {6.5, 18.5}
-    },
-    {
-        Name = "重击",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBash.blp",
-        Ubertip = "+{val#1}%眩晕1.0秒",
-        Val = {4.5}
-    },
-    {
-        Name = "打靶",
-        Art = "war3mapImported\\icon_pas_Marksmanship.blp",
-        Ubertip = "+{val#1}%命中",
-        Val = {30}
+        Val = {8.5, 15.5}
     },
     {
         Name = "瞄准",

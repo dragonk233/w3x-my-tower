@@ -12,8 +12,8 @@ abilitiesPurple = {
         Val = {179}
     },
     {
-        Name = "极致点子",
-        Art = "war3mapImported\\icon_pas_Ability_Druid_EmpoweredTouch.blp",
+        Name = "天师法剑",
+        Art = "war3mapImported\\icon_pas_Holy_PersuitofJustice.blp",
         Ubertip = "+{val#1}点智力",
         Val = {195}
     },
@@ -21,7 +21,13 @@ abilitiesPurple = {
         Name = "暗杀巅峰",
         Art = "war3mapImported\\icon_pas_Spell_Holy_EyeforanEye.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
-        Val = {11.5, 25}
+        Val = {11, 18}
+    },
+    {
+        Name = "法术天尊",
+        Art = "war3mapImported\\icon_pas_Holy_HolyNova.blp",
+        Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
+        Val = {11, 18}
     },
     {
         Name = "死亡同步",
@@ -30,22 +36,16 @@ abilitiesPurple = {
         Val = {0.5}
     },
     {
+        Name = "武术至尊",
+        Art = "war3mapImported\\icon_pas_Holy_WeaponMastery.blp",
+        Ubertip = "+{val#1}点攻击力",
+        Val = {835}
+    },
+    {
         Name = "双修对剑",
         Art = "war3mapImported\\icon_pas_DualWield.blp",
         Ubertip = "+{val#1}点攻击力|n+{val#2}点力量|n+{val#3}点敏捷",
-        Val = {140, 70, 70}
-    },
-    {
-        Name = "武术至尊",
-        Art = "war3mapImported\\icon_pas_Holy_WeaponMastery.blp",
-        Ubertip = "+{val#1}点攻击力|n+{val#2}%攻击速度",
-        Val = {245, 17.5}
-    },
-    {
-        Name = "法术天尊",
-        Art = "war3mapImported\\icon_pas_Holy_HolyNova.blp",
-        Ubertip = "+{val#1}点攻击力|n+{val#2}点智力",
-        Val = {200, 100}
+        Val = {180, 70, 70}
     },
     {
         Name = "音速回击",
@@ -81,7 +81,7 @@ abilitiesPurple = {
         Name = "炸裂践踏",
         Art = "war3mapImported\\icon_pas_Mount_Dreadsteed.blp",
         Ubertip = "攻击时，有20%几率，震伤害附近的敌人，造成{val#1}点伤害，持续{val#2}秒",
-        Val = {135, 1.3}
+        Val = {455, 1.3}
     },
     {
         Name = "冰花炸裂",

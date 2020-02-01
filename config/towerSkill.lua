@@ -888,7 +888,7 @@ TOWER_ABLI_SPX = {
     {
         Name = "蛊毒",
         Ubertip = "有{val#1}%几率中毒每秒扣血{val#2}点，持续{val#3}秒",
-        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSlowPoison.blp",
+        Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPoisonSting.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
         Val = {50, 40, 4, "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"}
