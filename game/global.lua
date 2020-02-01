@@ -59,17 +59,17 @@ game = {
             perWaveQty = 18,
             playerQty = {},
             wave = {},
-            fresh = 2.5,
+            fresh = 2.4,
             mon = {},
             monLimit = {},
             monData = {},
             ai = false,
-            monLifeInc = 12,
+            monLifeInc = 8,
             monLife = {
-                55,
-                55,
-                55,
-                55
+                50,
+                50,
+                50,
+                50
             }
         },
         cur = "yb"

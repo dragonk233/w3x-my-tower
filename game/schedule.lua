@@ -680,8 +680,7 @@ cj.TriggerAddAction(
                             {value = "兵塔", icon = "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp"},
                             {value = "等级", icon = "ReplaceableTextures\\CommandButtons\\BTNAltarOfKings.blp"},
                             {value = "天赋", icon = "ReplaceableTextures\\CommandButtons\\BTNDivineIntervention.blp"},
-                            {value = "物攻", icon = "ReplaceableTextures\\CommandButtons\\BTNThoriumMelee.blp"},
-                            {value = "魔攻", icon = "ReplaceableTextures\\CommandButtons\\BTNArcaniteMelee.blp"},
+                            {value = "攻击", icon = "ReplaceableTextures\\CommandButtons\\BTNThoriumMelee.blp"},
                             {
                                 value = "攻速",
                                 icon = "ReplaceableTextures\\CommandButtons\\BTNImprovedUnholyStrength.blp"
@@ -710,6 +709,15 @@ cj.TriggerAddAction(
                                 }
                             )
                         end
+                        if (game.rule.dk.ai == true) then
+                            titData =
+                                table.merge(
+                                titData,
+                                {
+                                    {value = "黄金", icon = "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp"}
+                                }
+                            )
+                        end
                         table.insert(data, titData)
                         --然后是form
                         for pi = 1, hplayer.qty_max, 1 do
@@ -718,8 +726,9 @@ cj.TriggerAddAction(
                                 local tower = game.playerTower[pi]
                                 local avatar = hunit.getAvatar(tower)
                                 local name = hunit.getName(tower)
-                                local attack_white = math.floor(hattr.get(tower, "attack_white"))
-                                local attack_green = math.floor(hattr.get(tower, "attack_green"))
+                                local attack =
+                                    math.floor(hattr.get(tower, "attack_white")) ..
+                                    "+" .. hColor.green(math.floor(hattr.get(tower, "attack_green")))
                                 local attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
                                 local damage_extent = math.round(hattr.get(tower, "damage_extent")) .. "%"
                                 local tempData = {
@@ -729,8 +738,7 @@ cj.TriggerAddAction(
                                     {value = name, icon = avatar},
                                     {value = "Lv." .. hhero.getCurLevel(tower), icon = nil},
                                     {value = game.playerTowerLevel[pi], icon = nil},
-                                    {value = attack_white, icon = nil},
-                                    {value = attack_green, icon = nil},
+                                    {value = attack, icon = nil},
                                     {value = attack_speed, icon = nil},
                                     {value = damage_extent, icon = nil}
                                 }
@@ -749,6 +757,16 @@ cj.TriggerAddAction(
                                             {value = resistance, icon = nil},
                                             {value = damage_rebound, icon = nil},
                                             {value = avoid, icon = nil}
+                                        }
+                                    )
+                                end
+                                if (game.rule.dk.ai == true) then
+                                    local gold = math.floor(hplayer.getGold(p))
+                                    tempData =
+                                        table.merge(
+                                        tempData,
+                                        {
+                                            {value = gold, icon = nil},
                                         }
                                     )
                                 end

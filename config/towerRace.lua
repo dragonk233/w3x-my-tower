@@ -18,7 +18,7 @@ towerRaces = {
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
             {qty = 1, text = "+50护甲"},
-            {qty = 5, text = "+1000攻击力"}
+            {qty = 5, text = "+300攻击力"}
         }
     },
     {
@@ -49,9 +49,9 @@ towerRaces = {
         Text = "+7.5%攻击力",
         Art = "war3mapImported\\icon_race_orc.blp",
         Link = {
-            {qty = 2, text = "+40攻击力"},
-            {qty = 3, text = "+125攻击力"},
-            {qty = 4, text = "+250攻击力"},
+            {qty = 2, text = "+35攻击力"},
+            {qty = 3, text = "+60攻击力"},
+            {qty = 4, text = "+105攻击力"},
             {qty = 5, text = "+火攻击特性"}
         }
     },
@@ -218,7 +218,7 @@ towerRaces = {
         Text = "+龙攻击特性",
         Art = "war3mapImported\\icon_race_dragon.blp",
         Link = {
-            {qty = 1, text = "+200攻击力"},
+            {qty = 1, text = "+100攻击力"},
             {qty = 2, text = "+雷攻击特性"},
             {qty = 3, text = "+风攻击特性"}
         }

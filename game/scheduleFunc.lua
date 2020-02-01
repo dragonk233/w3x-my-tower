@@ -273,27 +273,27 @@ createMyTower = function(playerIndex, towerId, towerLevel)
             mana = 100
             manaBack = 2
         elseif (tpv == "D") then
-            life = 600
+            life = 700
             mana = 200
             manaBack = 3
         elseif (tpv == "C") then
-            life = 800
+            life = 900
             mana = 300
             manaBack = 4
         elseif (tpv == "B") then
-            life = 1100
+            life = 1300
             mana = 400
             manaBack = 5
         elseif (tpv == "A") then
-            life = 1500
+            life = 1700
             mana = 500
             manaBack = 6
         elseif (tpv == "S") then
-            life = 2100
+            life = 2200
             mana = 750
             manaBack = 10
         elseif (tpv == "SS") then
-            life = 2800
+            life = 3000
             mana = 1000
             manaBack = 15
         elseif (tpv == "SSS") then

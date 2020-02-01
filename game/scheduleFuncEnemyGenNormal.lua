@@ -248,6 +248,7 @@ enemyGenDK = function(waiting)
                                 game.currentMon = game.currentMon + 1
                                 hevent.onBeDamage(u, enemyBeDamage)
                                 hevent.onDead(u, enemyDeadDK)
+                                cj.IssuePointOrderById(u, 851986, v[2][1], v[2][2])
                             end
                         end
                     end

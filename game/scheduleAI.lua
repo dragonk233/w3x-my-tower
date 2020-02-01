@@ -68,82 +68,78 @@ MAYBE_AI = {
                     )
                     addTowerSkillsRaceTeam(playerIndex)
                 else
-                    if (math.random(1, 4) <= 3) then
+                    local marks = {
+                        hunit.getSlk(game.playerTower[playerIndex]).MARK or 0,
+                        game.playerTowerLink[playerIndex][1].mark or 0,
+                        game.playerTowerLink[playerIndex][2].mark or 0,
+                        game.playerTowerLink[playerIndex][3].mark or 0,
+                        game.playerTowerLink[playerIndex][4].mark or 0
+                    }
+                    local min = game.towers[itemSLK.INDEX].MARK
+                    local mini = -1
+                    for k, v in ipairs(marks) do
+                        if (v < min) then
+                            min = v
+                            mini = k
+                            break
+                        end
+                    end
+                    if (mini >= 1 and mini <= 5) then
+                        mini = mini - 1
+                        if (mini == 0) then
+                            local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)
+                            hmsg.echo(
+                                hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
+                                    "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
+                            )
+                            addTowerSkillsRaceTeam(playerIndex)
+                        else
+                            local u =
+                                createMyTowerLink(
+                                playerIndex,
+                                mini,
+                                game.towers[itemSLK.INDEX].UNIT_ID,
+                                game.playerTowerLink[playerIndex][mini].tower_level
+                            )
+                            hmsg.echo(
+                                hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
+                                    "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
+                            )
+                            addTowerSkillsRaceTeam(playerIndex)
+                        end
+                    else
                         --吃石头升级
                         hhero.setCurLevel(
                             game.playerTower[playerIndex],
                             1 + hhero.getCurLevel(game.playerTower[playerIndex]),
                             false
                         )
-                    else
-                        local marks = {
-                            hunit.getSlk(game.playerTower[playerIndex]).MARK or 0,
-                            game.playerTowerLink[playerIndex][1].mark or 0,
-                            game.playerTowerLink[playerIndex][2].mark or 0,
-                            game.playerTowerLink[playerIndex][3].mark or 0,
-                            game.playerTowerLink[playerIndex][4].mark or 0
-                        }
-                        local min = 9999
-                        local mini = -1
-                        for k, v in pairs(marks) do
-                            if (v <= min) then
-                                min = v
-                                mini = k
-                            end
-                        end
-                        if (mini ~= -1) then
-                            if (mini == 0) then
-                                local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)
-                                hmsg.echo(
-                                    hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
-                                        "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
-                                )
-                                addTowerSkillsRaceTeam(playerIndex)
-                            else
-                                local u =
-                                    createMyTowerLink(
-                                    playerIndex,
-                                    mini,
-                                    game.towers[itemSLK.INDEX].UNIT_ID,
-                                    game.playerTowerLink[playerIndex][mini].tower_level
-                                )
-                                hmsg.echo(
-                                    hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
-                                        "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
-                                )
-                                addTowerSkillsRaceTeam(playerIndex)
-                            end
-                        else
-                            --吃石头升级
-                            hhero.setCurLevel(
-                                game.playerTower[playerIndex],
-                                1 + hhero.getCurLevel(game.playerTower[playerIndex]),
-                                false
-                            )
-                        end
                     end
                 end
             end
         end
     end,
-    --信使的挂
+    --信使的挂(不需要考虑计时器重复，因为AI不会换信使)
     courier = function(playerIndex)
         if (game.rule.dk.ai == true and his.playing(hplayer.players[playerIndex]) == false) then
             --装扮
             htime.setInterval(
-                180,
+                math.random(170, 210),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)
                         htime.delTimer(t)
                         return
                     end
+                    if (game.playerTowerEffectModel[playerIndex] == nil) then
+                        game.playerTowerEffectModel[playerIndex] = {}
+                    end
                     --清空之前的装扮
-                    if (#game.playerTowerEffectModel > 0) then
-                        for _, v in ipairs(game.playerTowerEffectModel) do
+                    if (#game.playerTowerEffectModel[playerIndex] > 0) then
+                        for _, v in ipairs(game.playerTowerEffectModel[playerIndex]) do
                             hskill.del(game.playerTower[playerIndex], v, 0)
                         end
-                        game.playerTowerEffectModel = {}
+                        game.playerTowerEffectModel[playerIndex] = {}
                     end
                     local models = {
                         "金碧辉煌套装",
@@ -157,53 +153,53 @@ MAYBE_AI = {
                     local btnIdx = models[math.random(1, #models)]
                     local tips
                     if (btnIdx == "金碧辉煌套装") then
-                        table.insert(game.playerTowerEffectModel, game.effectModel["金耀翅膀特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["金耀公正特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["金耀天堂特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["金耀精灵特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀翅膀特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀公正特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀天堂特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀精灵特效"].ABILITY_ID)
                         tips = "金耀翅膀、公正光辉、天堂圣音、金色精灵"
                         hplayer.addGoldRatio(hplayer.players[playerIndex], 40, 30)
                     elseif (btnIdx == "迷幻黑紫套装") then
-                        table.insert(game.playerTowerEffectModel, game.effectModel["幻黑翅膀特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["幻黑迷紫特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["幻黑迷阵特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑翅膀特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑迷紫特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑迷阵特效"].ABILITY_ID)
                         tips = "幻黑翅膀、迷紫幻象、迷惑雾阵"
                         hplayer.addGoldRatio(hplayer.players[playerIndex], 35, 30)
                     elseif (btnIdx == "血色炽热套装") then
-                        table.insert(game.playerTowerEffectModel, game.effectModel["血色翅膀特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["血色漩涡特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["血色符文特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色翅膀特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色漩涡特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色符文特效"].ABILITY_ID)
                         tips = "血色翅膀、赤红漩涡、祭奠符文"
                         hplayer.addGoldRatio(hplayer.players[playerIndex], 28, 30)
                     elseif (btnIdx == "青龙碧翼套装") then
-                        table.insert(game.playerTowerEffectModel, game.effectModel["青空之翼特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["游龙欢悦特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["青龙吐息特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["青空之翼特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["游龙欢悦特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["青龙吐息特效"].ABILITY_ID)
                         tips = "青空之翼、游龙欢悦、龙腾吐息"
                         hplayer.addGoldRatio(hplayer.players[playerIndex], 24, 30)
                     elseif (btnIdx == "邪鬼怨灵套装") then
-                        table.insert(game.playerTowerEffectModel, game.effectModel["邪鬼怨灵特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["邪鬼阵法特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["邪鬼符文特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["邪鬼之眼特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼怨灵特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼阵法特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼符文特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼之眼特效"].ABILITY_ID)
                         tips = "邪鬼怨灵、邪鬼阵法、超度符文、逗趣鬼眼"
                         hplayer.addGoldRatio(hplayer.players[playerIndex], 18, 30)
                     elseif (btnIdx == "炎炎焚烧套装") then
-                        table.insert(game.playerTowerEffectModel, game.effectModel["炎炎旋风特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["炎炎领域特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["炎炎燃烧特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["炎炎三球特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎旋风特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎领域特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎燃烧特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎三球特效"].ABILITY_ID)
                         tips = "炎炎旋风、烧灼圈圈、焚烧之火、鬼马火球"
                         hplayer.addGoldRatio(hplayer.players[playerIndex], 15, 30)
                     elseif (btnIdx == "出云剑仙套装") then
-                        table.insert(game.playerTowerEffectModel, game.effectModel["出云飞剑特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["出云气场特效"].ABILITY_ID)
-                        table.insert(game.playerTowerEffectModel, game.effectModel["出云飞龙特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云飞剑特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云气场特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云飞龙特效"].ABILITY_ID)
                         tips = "盘旋飞剑、灵剑气场、飞龙在天"
                         hplayer.addGoldRatio(hplayer.players[playerIndex], 10, 30)
                     end
-                    if (#game.playerTowerEffectModel > 0) then
-                        for _, v in ipairs(game.playerTowerEffectModel) do
+                    if (#game.playerTowerEffectModel[playerIndex] > 0) then
+                        for _, v in ipairs(game.playerTowerEffectModel[playerIndex]) do
                             hskill.add(game.playerTower[playerIndex], v, 0)
                         end
                         hmsg.echo(cj.GetPlayerName(hplayer.players[playerIndex]) .. "装扮了：" .. hColor.yellow(tips))
@@ -212,7 +208,7 @@ MAYBE_AI = {
             )
             --到处乱走
             htime.setInterval(
-                10,
+                math.random(5, 13),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)
@@ -239,20 +235,17 @@ MAYBE_AI = {
             )
             --技能
             htime.setInterval(
-                20,
+                math.random(17, 23),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)
                         htime.delTimer(t)
                         return
                     end
-                    if (math.random(1, 10) ~= 5) then
-                        return
-                    end
                     local gold = hplayer.getGold(hplayer.players[playerIndex])
-                    if (gold >= 1000) then
+                    if (gold >= 1000 and math.random(1, 6) == 4) then
                         cj.IssueImmediateOrder(game.playerCourier[playerIndex], "ancestralspirit")
-                    elseif (gold >= 500) then
+                    elseif (gold >= 500 and math.random(1, 2) == 1) then
                         local curWave = 1
                         if (game.rule.cur == "yb") then
                             curWave = game.rule.yb.wave
