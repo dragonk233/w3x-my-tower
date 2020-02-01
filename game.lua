@@ -16,10 +16,6 @@ end
 for _, v in ipairs(preload) do
     local u = cj.CreateUnit(hplayer.player_passive, string.char2id(v), 0, 0, 0)
     hattr.registerAll(u)
-    for k, _ in pairs(hslk_global.abilitiesKV) do
-        cj.UnitAddAbility(u, k)
-        cj.UnitRemoveAbility(u, k)
-    end
     hunit.del(u, 0.1)
 end
 

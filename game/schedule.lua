@@ -727,8 +727,7 @@ cj.TriggerAddAction(
                                 local avatar = hunit.getAvatar(tower)
                                 local name = hunit.getName(tower)
                                 local attack =
-                                    math.floor(hattr.get(tower, "attack_white")) ..
-                                    "+" .. hColor.green(math.floor(hattr.get(tower, "attack_green")))
+                                    math.floor(hattr.get(tower, "attack_white") + hattr.get(tower, "attack_green"))
                                 local attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
                                 local damage_extent = math.round(hattr.get(tower, "damage_extent")) .. "%"
                                 local tempData = {
@@ -766,7 +765,7 @@ cj.TriggerAddAction(
                                         table.merge(
                                         tempData,
                                         {
-                                            {value = gold, icon = nil},
+                                            {value = gold, icon = nil}
                                         }
                                     )
                                 end

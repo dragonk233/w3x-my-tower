@@ -111,7 +111,7 @@ MAYBE_AI = {
                         --吃石头升级
                         hhero.setCurLevel(
                             game.playerTower[playerIndex],
-                            1 + hhero.getCurLevel(game.playerTower[playerIndex]),
+                            2 + hhero.getCurLevel(game.playerTower[playerIndex]),
                             false
                         )
                     end

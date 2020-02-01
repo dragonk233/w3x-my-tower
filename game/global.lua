@@ -64,7 +64,6 @@ game = {
             monLimit = {},
             monData = {},
             ai = false,
-            monLifeInc = 8,
             monLife = {
                 50,
                 50,

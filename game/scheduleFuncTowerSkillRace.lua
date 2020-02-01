@@ -377,15 +377,15 @@ addTowerSkillsRaceTeam = function(playerIndex)
             if (qtys[r] == 2) then
                 attr.defend = attr.defend + 5
             elseif (qtys[r] == 3) then
-                attr.defend = attr.defend + 10
+                attr.defend = attr.defend + 20
             elseif (qtys[r] == 4) then
-                attr.defend = attr.defend + 25
-            elseif (qtys[r] == 5) then
                 attr.defend = attr.defend + 40
+            elseif (qtys[r] == 5) then
+                attr.defend = attr.defend + 60
             end
         elseif (r == "人王") then
             if (qtys[r] == 1) then
-                attr.defend = attr.defend + 50
+                attr.defend = attr.defend + 75
             elseif (qtys[r] == 5) then
                 attr.attack_green = attr.attack_green + 300
             end
@@ -607,9 +607,9 @@ addTowerSkillsRaceTeam = function(playerIndex)
             end
         elseif (r == "昆虫") then
             if (qtys[r] == 1) then
-                attr.resistance = attr.resistance + 10
+                attr.defend = attr.defend + 20
             elseif (qtys[r] == 2) then
-                attr.resistance = attr.resistance + 25
+                attr.resistance = attr.resistance + 30
             elseif (qtys[r] == 3) then
                 attr.toughness = attr.toughness + 1000
             end
@@ -685,7 +685,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
             end
         elseif (r == "龙人") then
             if (qtys[r] == 1) then
-                attr.attack_green = attr.attack_green + 100
+                attr.attack_green = attr.attack_green + 120
             elseif (qtys[r] == 2) then
                 table.insert(attr.attack_damage_type, "thunder")
             elseif (qtys[r] == 3) then
@@ -693,13 +693,13 @@ addTowerSkillsRaceTeam = function(playerIndex)
             end
         elseif (r == "熊猫") then
             if (qtys[r] == 1) then
-                attr.life = attr.life + 150
+                attr.life = attr.life + 200
             elseif (qtys[r] == 2) then
-                attr.life = attr.life + 300
+                attr.life = attr.life + 500
             elseif (qtys[r] == 3) then
-                attr.life = attr.life + 400
+                attr.life = attr.life + 1000
             elseif (qtys[r] == 4) then
-                attr.life = attr.life + 550
+                attr.life = attr.life + 3000
             end
         end
     end
@@ -736,17 +736,17 @@ addTowerSkillsRaceTeam = function(playerIndex)
         addTowerSkillsRaceAbility[v] = ab
         hskill.add(v, ab, 0)
         if (addTowerSkillsRaceTeamInit[v] == nil) then
-            if (table.len(mixAttrs.new) > 0) then
-                hattr.set(v, 0, mixAttrs.new)
-            end
+            -- if (table.len(mixAttrs.new) > 0) then
+            --     hattr.set(v, 0, mixAttrs.new)
+            -- end
             addTowerSkillsRaceTeamInit[v] = 1
         else
-            if (table.len(mixAttrs.diff.add) > 0) then
-                hattr.set(v, 0, mixAttrs.diff.add)
-            end
-            if (table.len(mixAttrs.diff.sub) > 0) then
-                hattr.set(v, 0, mixAttrs.diff.sub)
-            end
+            -- if (table.len(mixAttrs.diff.add) > 0) then
+            --     hattr.set(v, 0, mixAttrs.diff.add)
+            -- end
+            -- if (table.len(mixAttrs.diff.sub) > 0) then
+            --     hattr.set(v, 0, mixAttrs.diff.sub)
+            -- end
         end
     end
 end

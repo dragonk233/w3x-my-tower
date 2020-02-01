@@ -12,6 +12,7 @@ towerShadowGen = function(playerIndex)
             qty = 1,
             x = game.pathPoint[next][1][1],
             y = game.pathPoint[next][1][2],
+            modelScale = 2.1,
             facing = playerIndex * -90 + 180
         }
     )
@@ -22,7 +23,7 @@ towerShadowGen = function(playerIndex)
         u,
         0,
         {
-            move = "=150",
+            move = "=160",
             life = "=" .. hattr.get(tower, "life"),
             life_back = "=" .. hattr.get(tower, "life_back"),
             defend = "=" .. hattr.get(tower, "defend"),

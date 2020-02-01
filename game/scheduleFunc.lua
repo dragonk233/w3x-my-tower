@@ -269,35 +269,35 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         local mana = 100
         local manaBack = 1
         if (tpv == "E") then
-            life = 400
+            life = 500
             mana = 100
             manaBack = 2
         elseif (tpv == "D") then
-            life = 700
+            life = 800
             mana = 200
             manaBack = 3
         elseif (tpv == "C") then
-            life = 900
+            life = 1200
             mana = 300
             manaBack = 4
         elseif (tpv == "B") then
-            life = 1300
+            life = 1600
             mana = 400
             manaBack = 5
         elseif (tpv == "A") then
-            life = 1700
+            life = 2000
             mana = 500
             manaBack = 6
         elseif (tpv == "S") then
-            life = 2200
+            life = 2700
             mana = 750
             manaBack = 10
         elseif (tpv == "SS") then
-            life = 3000
+            life = 5000
             mana = 1000
             manaBack = 15
         elseif (tpv == "SSS") then
-            life = 3600
+            life = 8000
             mana = 1500
             manaBack = 20
         end
@@ -355,8 +355,8 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         --刷新种族个体
         addTowerSkillsRaceSingleAttr(u)
         --装扮
-        if (#game.playerTowerEffectModel > 0) then
-            for _, v in ipairs(game.playerTowerEffectModel) do
+        if (game.playerTowerEffectModel[playerIndex] ~= nil and #game.playerTowerEffectModel[playerIndex] > 0) then
+            for _, v in ipairs(game.playerTowerEffectModel[playerIndex]) do
                 hskill.add(u, v, 0)
             end
         end

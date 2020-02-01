@@ -6,9 +6,9 @@ towerRaces = {
         Art = "war3mapImported\\icon_race_human.blp",
         Link = {
             {qty = 2, text = "+5护甲"},
-            {qty = 3, text = "+10护甲"},
-            {qty = 4, text = "+25护甲"},
-            {qty = 5, text = "+40护甲"}
+            {qty = 3, text = "+20护甲"},
+            {qty = 4, text = "+40护甲"},
+            {qty = 5, text = "+60护甲"}
         }
     },
     {
@@ -17,7 +17,7 @@ towerRaces = {
         Text = "+5%力量|n+5%敏捷|n+5%智力",
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
-            {qty = 1, text = "+50护甲"},
+            {qty = 1, text = "+75护甲"},
             {qty = 5, text = "+300攻击力"}
         }
     },
@@ -163,8 +163,8 @@ towerRaces = {
         Text = "+虫攻击特性",
         Art = "war3mapImported\\icon_race_insect2.blp",
         Link = {
-            {qty = 1, text = "+10%魔抗"},
-            {qty = 2, text = "+25%魔抗"},
+            {qty = 1, text = "+20护甲"},
+            {qty = 2, text = "+30%魔抗"},
             {qty = 3, text = "+1000减伤"}
         }
     },
@@ -218,7 +218,7 @@ towerRaces = {
         Text = "+龙攻击特性",
         Art = "war3mapImported\\icon_race_dragon.blp",
         Link = {
-            {qty = 1, text = "+100攻击力"},
+            {qty = 1, text = "+120攻击力"},
             {qty = 2, text = "+雷攻击特性"},
             {qty = 3, text = "+风攻击特性"}
         }
@@ -229,10 +229,10 @@ towerRaces = {
         Text = "+0.05生命恢复|n+8%力量",
         Art = "war3mapImported\\icon_race_panda.blp",
         Link = {
-            {qty = 1, text = "+150生命"},
-            {qty = 2, text = "+300生命"},
-            {qty = 3, text = "+400生命"},
-            {qty = 4, text = "+550生命"}
+            {qty = 1, text = "+200生命"},
+            {qty = 2, text = "+500生命"},
+            {qty = 3, text = "+1000生命"},
+            {qty = 4, text = "+3000生命"}
         }
     }
 }
