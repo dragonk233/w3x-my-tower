@@ -189,13 +189,6 @@ abilitiesYellow = {
         ODK = true
     },
     {
-        Name = "血球",
-        Art = "war3mapImported\\icon_pas_Shadow_LifeDrain.blp",
-        Ubertip = "+{val#1}%吸血",
-        Val = {0.03},
-        ODK = true
-    },
-    {
         Name = "抗性神经",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNMagicImmunity.blp",
         Ubertip = "+{val#1}%魔抗",

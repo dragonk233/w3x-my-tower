@@ -405,8 +405,6 @@ setTowerSkillByBook = function(u, abliOps, opt)
         hattr.set(u, 0, {toughness = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "离子雨") then
         hattr.set(u, 0, {lightning_chain_oppose = opt .. (level * abliOps.Val[1])})
-    elseif (abliOps.Name == "血球") then
-        hattr.set(u, 0, {hemophagia = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "抗性神经") then
         hattr.set(u, 0, {resistance = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "荆棘") then
