@@ -16,7 +16,10 @@ addTowerSkillsx = function(u)
                     hattr.set(u, 0, {life = "+" .. Val[1]})
                 elseif (name == "治疗" or name == "精灵守护") then
                     hattr.set(u, 0, {life_back = "+" .. Val[1]})
-                elseif (name == "铁壁" or name == "矮人之盾" or name == "捍卫守护" or name == "铁石心肠" or name == "坚硬外皮") then
+                elseif
+                    (name == "铁壁" or name == "金甲" or name == "矮人之盾" or name == "捍卫守护" or name == "铁石心肠" or
+                        name == "坚硬外皮")
+                 then
                     hattr.set(u, 0, {defend = "+" .. Val[1]})
                 elseif (name == "国王") then
                     hattr.set(u, 0, {defend = "+" .. Val[1], resistance = "+" .. Val[2]})

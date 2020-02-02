@@ -27,7 +27,7 @@ abilitiesBlue = {
         Name = "魔法杖",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNBrilliance.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {66}
+        Val = {67}
     },
     {
         Name = "勇气勋章",
@@ -45,7 +45,7 @@ abilitiesBlue = {
         Name = "魔法回应",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFeedBack.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
-        Val = {6.5, 9}
+        Val = {7.5, 12}
     },
     {
         Name = "心灵之火",

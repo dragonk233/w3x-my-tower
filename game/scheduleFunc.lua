@@ -269,37 +269,21 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         local mana = 100
         local manaBack = 1
         if (tpv == "E") then
-            life = 500
-            mana = 100
-            manaBack = 2
+            life = 750
         elseif (tpv == "D") then
-            life = 800
-            mana = 200
-            manaBack = 3
+            life = 1000
         elseif (tpv == "C") then
-            life = 1200
-            mana = 300
-            manaBack = 4
+            life = 1500
         elseif (tpv == "B") then
-            life = 1600
-            mana = 400
-            manaBack = 5
+            life = 2500
         elseif (tpv == "A") then
-            life = 2000
-            mana = 500
-            manaBack = 6
+            life = 4000
         elseif (tpv == "S") then
-            life = 2700
-            mana = 750
-            manaBack = 10
+            life = 7000
         elseif (tpv == "SS") then
-            life = 5000
-            mana = 1000
-            manaBack = 15
+            life = 10000
         elseif (tpv == "SSS") then
-            life = 8000
-            mana = 1500
-            manaBack = 20
+            life = 20000
         end
         hattr.set(
             u,
@@ -307,8 +291,6 @@ createMyTower = function(playerIndex, towerId, towerLevel)
             {
                 move = "=0",
                 life = "=" .. life,
-                mana = "=" .. mana,
-                manaBack = "=" .. manaBack,
                 attack_white = "+" .. hslk_global.unitsKV[towerId].ATTACK_WHITE
             }
         )

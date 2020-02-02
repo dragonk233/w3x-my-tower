@@ -3,19 +3,19 @@ abilitiesPurple = {
         Name = "牛鬼蛇神",
         Art = "war3mapImported\\icon_pas_Ability_Warlock_DemonicEmpowerment",
         Ubertip = "+{val#1}点力量",
-        Val = {210}
+        Val = {280}
     },
     {
         Name = "荒诞",
         Art = "war3mapImported\\icon_pas_Ability_Rogue_SinisterCalling.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {179}
+        Val = {255}
     },
     {
         Name = "天师法剑",
         Art = "war3mapImported\\icon_pas_Holy_PersuitofJustice.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {195}
+        Val = {270}
     },
     {
         Name = "暗杀巅峰",
@@ -27,7 +27,7 @@ abilitiesPurple = {
         Name = "法术天尊",
         Art = "war3mapImported\\icon_pas_Holy_HolyNova.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
-        Val = {11, 18}
+        Val = {13, 23}
     },
     {
         Name = "死亡同步",

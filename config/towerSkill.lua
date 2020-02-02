@@ -1941,6 +1941,15 @@ TOWER_ABLI_SPX = {
         ODK = true
     },
     {
+        Name = "金甲",
+        Ubertip = "+{val#1}护甲",
+        Art = "war3mapImported\\icon_pas_Invulnerable.blp",
+        Buttonpos1 = 0,
+        Buttonpos2 = 1,
+        Val = {24},
+        ODK = true
+    },
+    {
         Name = "矮人之盾",
         Ubertip = "+{val#1}护甲",
         Art = "war3mapImported\\icon_pas_Holy_GreaterBlessingofWisdom.blp",

@@ -124,7 +124,7 @@ MAYBE_AI = {
         if (game.rule.dk.ai == true and his.playing(hplayer.players[playerIndex]) == false) then
             --装扮
             htime.setInterval(
-                math.random(170, 210),
+                math.random(150, 250),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)
@@ -208,7 +208,7 @@ MAYBE_AI = {
             )
             --到处乱走
             htime.setInterval(
-                math.random(5, 13),
+                math.random(4, 13),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)
@@ -235,7 +235,7 @@ MAYBE_AI = {
             )
             --技能
             htime.setInterval(
-                math.random(17, 23),
+                math.random(6, 9),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)

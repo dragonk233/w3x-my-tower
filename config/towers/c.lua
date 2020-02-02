@@ -1,21 +1,34 @@
 towers_c = {
     {
-        Name = "人类·铁甲剑士",
-        Ubertip = "升官的步兵，得到了佩剑",
-        unitSound = "HighElfSwordman",
-        file = "units\\human\\TheCaptain\\TheCaptain",
-        Art = "ReplaceableTextures\\CommandButtons\\BTNTheCaptain.blp",
+        Name = "人类·铁甲步兵",
+        Ubertip = "被迫从军的步兵，坚硬挺拔",
+        unitSound = "Footman",
+        file = "units\\human\\Footman\\Footman",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNFootman.blp",
         modelScale = 2.00,
         scale = 2.00,
         movetp = "foot",
         moveHeight = 0.00,
         weapTp1 = "missile",
         Missileart = "abilities\\weapons\\TuskarSpear\\TuskarSpear.mdl",
-        cool1 = 2.00,
+        cool1 = 2.20,
         Primary = "STR",
-        STR = 15,
-        AGI = 12,
-        INT = 9,
+        abilList = {towerSpxKV["铁壁"]}
+    },
+    {
+        Name = "人类·铁甲骑兵",
+        Ubertip = "升官的步兵，骑上了马",
+        unitSound = "Knight",
+        file = "units\\human\\Knight\\Knight",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNKnight.blp",
+        modelScale = 1.70,
+        scale = 2.00,
+        movetp = "foot",
+        moveHeight = 0.00,
+        weapTp1 = "missile",
+        Missileart = "abilities\\weapons\\TuskarSpear\\TuskarSpear.mdl",
+        cool1 = 2.10,
+        Primary = "STR",
         abilList = {towerSpxKV["铁壁"]}
     },
     {
@@ -33,9 +46,6 @@ towers_c = {
         Missilearc = 0.6,
         cool1 = 2.70,
         Primary = "STR",
-        STR = 30,
-        AGI = 4,
-        INT = 7,
         abilList = {towerSpxKV["溅射攻击"]}
     },
     {
@@ -52,9 +62,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 13,
-        AGI = 10,
-        INT = 15,
         abilList = {towerSpxKV["净化"]}
     },
     {
@@ -71,9 +78,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\WitchDoctorMissile\\WitchDoctorMissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        STR = 12,
-        AGI = 11,
-        INT = 17,
         abilList = {towerSpxKV["蛊毒"]}
     },
     {
@@ -90,9 +94,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\PriestMissile\\PriestMissile.mdl",
         cool1 = 2.10,
         Primary = "INT",
-        STR = 13,
-        AGI = 10,
-        INT = 22,
         abilList = {towerSpxKV["治疗"]}
     },
     {
@@ -109,9 +110,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\Dryadmissile\\Dryadmissile.mdl",
         cool1 = 2.20,
         Primary = "INT",
-        STR = 10,
-        AGI = 15,
-        INT = 18,
         abilList = {towerSpxKV["树木之妖"]}
     },
     {
@@ -128,9 +126,6 @@ towers_c = {
         Missileart = "Abilities\\Weapons\\CryptFiendMissile\\CryptFiendMissile.mdl",
         cool1 = 2.10,
         Primary = "AGI",
-        STR = 9,
-        AGI = 19,
-        INT = 17,
         abilList = {towerSpxKV["蛛毒"]}
     },
     {

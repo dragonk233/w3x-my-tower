@@ -50,6 +50,7 @@ onTowerAttack = function(evtData)
                 end
                 if (name == "掠夺黄金" and math.random(1, 100) <= level) then
                     onTowerAttackTtg(u, name)
+                    haward.forUnitGold(u, 30)
                     haward.forPlayerGold(30)
                 end
                 if (name == "震晕践踏" and math.random(1, 7) == 5) then
@@ -118,7 +119,7 @@ onTowerAttack = function(evtData)
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
-                        haward.forPlayerGold(val[2])
+                        haward.forUnitGold(u, val[2])
                         heffect.toUnit("Abilities\\Spells\\Other\\Transmute\\PileofGold.mdl", u, 0)
                     end
                 end
@@ -1094,12 +1095,7 @@ onTowerAttack = function(evtData)
                                 damageKind = CONST_DAMAGE_KIND.skill,
                                 damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.dark},
                                 extraInfluence = function(eu)
-                                    heffect.bindUnit(
-                                        val[5],
-                                        eu,
-                                        "origin",
-                                        val[3]
-                                    )
+                                    heffect.bindUnit(val[5], eu, "origin", val[3])
                                     hattr.set(
                                         eu,
                                         val[3],

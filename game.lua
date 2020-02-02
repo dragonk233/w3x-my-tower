@@ -7,12 +7,13 @@ require "game.slk"
 --加载本地图的test
 require "game.test"
 
---预读
-for v, _ in pairs(hslk_global.unitsKV) do
-    local u = cj.CreateUnit(hplayer.player_passive, string.char2id(v), 0, 0, 0)
-    hattr.registerAll(u)
-    hunit.del(u, 0.1)
+--预读 preread（为了有效您需要注意hRuntime.register.ability的初始化 abilitiesKV）
+local u = cj.CreateUnit(hplayer.player_passive, hslk_global.unit_token, 0, 0, 0)
+for id, _ in pairs(hslk_global.abilitiesKV) do
+    cj.UnitAddAbility(u, id)
+    cj.UnitRemoveAbility(u, id)
 end
+hunit.del(u, 0)
 
 -- 镜头模式
 hcamera.setModel("normal")

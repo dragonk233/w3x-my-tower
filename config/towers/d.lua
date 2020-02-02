@@ -1,24 +1,24 @@
 towers_d = {
     {
-        Name = "人类·铁甲步兵",
-        Ubertip = "被迫从军的步兵，坚硬挺拔",
-        unitSound = "Footman",
-        file = "units\\human\\Footman\\Footman",
-        Art = "ReplaceableTextures\\CommandButtons\\BTNFootman.blp",
+        Name = "人类·民兵",
+        Ubertip = "强迫上武装的农民，能力依然平凡",
+        unitSound = "Peasant",
+        file = "units\\human\\Militia\\Militia",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNMilitia.blp",
         modelScale = 2.00,
         scale = 2.00,
         movetp = "foot",
         moveHeight = 0.00,
         weapTp1 = "missile",
-        Missileart = "abilities\\weapons\\TuskarSpear\\TuskarSpear.mdl",
-        cool1 = 2.20,
-        Primary = "STR",
+        Missileart = "Abilities\\Weapons\\Banditmissile\\Banditmissile.mdl",
+        cool1 = 2.00,
+        Primary = "STR"
     },
     {
         Name = "人类·术士",
         Ubertip = "修炼法术的人",
         unitSound = "HumanMage",
-        file = "units\\creeps\\HumanMage\\HumanMage",
+        file = "units\\creeps\\BanditMage\\BanditMage",
         Art = "ReplaceableTextures\\CommandButtons\\BTNBanditMage.blp",
         modelScale = 2.00,
         scale = 2.00,
@@ -27,7 +27,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\PriestMissile\\PriestMissile.mdl",
         cool1 = 2.20,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "兽人·步兵",
@@ -42,7 +42,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.30,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "兽人·发狂步兵",
@@ -57,7 +57,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Axe\\AxeMissile.mdl",
         cool1 = 2.20,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "兽人·狼骑",
@@ -72,7 +72,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Orc\\Ensnare\\EnsnareMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "兽人·发狂狼骑",
@@ -87,7 +87,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Spells\\Orc\\Ensnare\\EnsnareMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "兽人·风骑士",
@@ -102,7 +102,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "abilities\\weapons\\WyvernSpear\\WyvernSpearMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "血精灵·弓箭手",
@@ -117,7 +117,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Arrow\\ArrowMissile.mdl",
         cool1 = 2.00,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "矮人·火枪手",
@@ -132,7 +132,7 @@ towers_d = {
         weapTp1 = "instant",
         Missileart = "Abilities\\Weapons\\Rifle\\RifleImpact.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "暗夜精灵·弓箭手",
@@ -147,7 +147,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Arrow\\ArrowMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "暗夜精灵·角鹰弓箭手",
@@ -162,7 +162,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\Arrow\\ArrowMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "亡灵·憎恶",
@@ -177,7 +177,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "SharedModels\\Bones1.mdl",
         cool1 = 2.40,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "亡灵·十胜石雕像",
@@ -192,7 +192,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\FarseerMissile\\FarseerMissile.mdl",
         cool1 = 2.40,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "亡灵·骷髅魔法师",
@@ -207,7 +207,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\SkeletalMageMissile\\SkeletalMageMissile.mdl",
         cool1 = 2.35,
-        Primary = "INT",
+        Primary = "INT"
     },
     {
         Name = "娜迦·穆格尔鱼战士",
@@ -222,7 +222,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "娜迦·龙龟",
@@ -237,7 +237,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.00,
-        Primary = "STR",
+        Primary = "STR"
     },
     {
         Name = "元素·水元素",
@@ -252,7 +252,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\WaterElementalMissile\\WaterElementalMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "元素·漆影之狼",
@@ -267,7 +267,7 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl",
         cool1 = 2.10,
-        Primary = "AGI",
+        Primary = "AGI"
     },
     {
         Name = "元素·树精",
@@ -282,6 +282,6 @@ towers_d = {
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl",
         cool1 = 2.10,
-        Primary = "STR",
+        Primary = "STR"
     }
 }

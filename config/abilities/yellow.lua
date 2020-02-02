@@ -9,19 +9,19 @@ abilitiesYellow = {
         Name = "擎天之柱",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSmash.blp",
         Ubertip = "+{val#1}点力量",
-        Val = {94}
+        Val = {108}
     },
     {
         Name = "荒芜",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNRegenerationAura.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {90}
+        Val = {91}
     },
     {
         Name = "甜甜圈法杖",
         Art = "war3mapImported\\icon_pas_AbsorbMagic.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {98}
+        Val = {104}
     },
     {
         Name = "机关枪",
@@ -123,13 +123,13 @@ abilitiesYellow = {
         Name = "魔导灵眼",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNMagicalSentry.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
-        Val = {8.5, 15.5}
+        Val = {10, 17.5}
     },
     {
         Name = "瞄准",
         Art = "war3mapImported\\icon_pas_Ability_Hunter_SniperShot.blp",
         Ubertip = "+{val#1}%命中|n+{val#1}%几率击出额外{val#2}%伤害的物理暴击",
-        Val = {20, 5.0, 17.5}
+        Val = {20, 10, 14.5}
     },
     {
         Name = "分裂攻击",
