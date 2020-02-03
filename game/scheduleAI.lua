@@ -235,7 +235,7 @@ MAYBE_AI = {
             )
             --技能
             htime.setInterval(
-                math.random(6, 9),
+                math.random(4, 7),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)
@@ -243,9 +243,12 @@ MAYBE_AI = {
                         return
                     end
                     local gold = hplayer.getGold(hplayer.players[playerIndex])
-                    if (gold >= 1000 and math.random(1, 6) == 4) then
-                        cj.IssueImmediateOrder(game.playerCourier[playerIndex], "ancestralspirit")
+                    if (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 6) == 4) then
+                        hplayer.subGold(hplayer.players[playerIndex], 1000)
+                        subTowerLevel(playerIndex)
+                        addTowerLevel(playerIndex)
                     elseif (gold >= 500 and math.random(1, 2) == 1) then
+                        hplayer.subGold(hplayer.players[playerIndex], 500)
                         local curWave = 1
                         if (game.rule.cur == "yb") then
                             curWave = game.rule.yb.wave

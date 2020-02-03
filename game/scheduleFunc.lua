@@ -158,7 +158,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
         if (towerId ~= nil) then
             game.playerTowerLink[playerIndex][linkIndex].tower_id = towerId
             --属性
-            local tpv = hslk_global.unitsKV[towerId].towerLevel
+            local tpv = hslk_global.unitsKV[towerId].TOWER_POWER
             local Primary = hslk_global.unitsKV[towerId].Primary
             local attack_damage_type = "physical"
             if (Primary == "INT") then
@@ -264,26 +264,24 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         hhero.setIsHero(u, true)
         hunit.setCurLifePercent(u, prevHeroLifePercent)
         --属性
-        local tpv = hslk_global.unitsKV[towerId].towerLevel
+        local tpv = hslk_global.unitsKV[towerId].TOWER_POWER
         local life = 400
-        local mana = 100
-        local manaBack = 1
         if (tpv == "E") then
             life = 1000
         elseif (tpv == "D") then
-            life = 1500
+            life = 2000
         elseif (tpv == "C") then
-            life = 2500
-        elseif (tpv == "B") then
             life = 4000
+        elseif (tpv == "B") then
+            life = 10000
         elseif (tpv == "A") then
-            life = 6000
+            life = 20000
         elseif (tpv == "S") then
-            life = 9000
-        elseif (tpv == "SS") then
-            life = 15000
-        elseif (tpv == "SSS") then
             life = 30000
+        elseif (tpv == "SS") then
+            life = 50000
+        elseif (tpv == "SSS") then
+            life = 100000
         end
         hattr.set(
             u,
