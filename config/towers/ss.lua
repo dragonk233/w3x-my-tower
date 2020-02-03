@@ -226,7 +226,7 @@ towers_ss = {
         abilList = {towerSpxKV["捕猎者"], towerSpxKV["狂魂狩猎"]}
     },
     {
-        Name = "巨魔·邪眼·沃尔京",
+        Name = "巨魔·邪眼·塔斯丁狗",
         Ubertip = "没什么东西能蒙骗沃尔京的邪眼",
         unitSound = "WitchDoctor",
         file = "war3mapImported\\unit_SenJin.mdl",

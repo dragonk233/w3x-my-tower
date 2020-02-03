@@ -25,6 +25,9 @@ dzSetLumber = function(p, curWave)
 end
 
 dzSetPrestige = function(p, iscs, isss)
+    if (htime.count < 300) then
+        return
+    end
     local cs = hdzapi.server.get.int(p, "prestigecs")
     local ss = hdzapi.server.get.int(p, "prestigess")
     if (iscs) then
@@ -458,9 +461,9 @@ cj.TriggerAddAction(
                     game.rule.cur = "dk"
                     if (btnIdx == "有趣对抗(AI模式)") then
                         game.rule.dk.ai = true
-                        hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局[AI不开挂]|r")
+                        hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时创建与兵塔相关的士兵顺时针攻击其他玩家，对抗不过的玩家会被扣血直至出局[AI不开挂]|r")
                     else
-                        hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时会在你的下家（顺时针方向）创建与兵塔相关的士兵攻击该玩家，对抗不过的玩家会被扣血直至出局|r")
+                        hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时创建与兵塔相关的士兵顺时针攻击其他玩家，对抗不过的玩家会被扣血直至出局|r")
                     end
                     hsound.bgm(cg.gg_snd_bgm_dk, nil)
                     -- 构建出怪区域
@@ -500,7 +503,7 @@ cj.TriggerAddAction(
                                                         (hplayer.getStatus(hplayer.players[k]) ==
                                                             hplayer.player_status.gaming)
                                                      then
-                                                        local hunt = game.rule.dk.wave[playerIndex]
+                                                        local hunt = 5 * game.rule.dk.wave[playerIndex]
                                                         if (hunt >= hunit.getCurLife(game.playerTower[k])) then
                                                             hunit.kill(game.playerTower[k], 0)
                                                             hmsg.echo(

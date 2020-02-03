@@ -269,21 +269,21 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         local mana = 100
         local manaBack = 1
         if (tpv == "E") then
-            life = 750
-        elseif (tpv == "D") then
             life = 1000
-        elseif (tpv == "C") then
+        elseif (tpv == "D") then
             life = 1500
-        elseif (tpv == "B") then
+        elseif (tpv == "C") then
             life = 2500
-        elseif (tpv == "A") then
+        elseif (tpv == "B") then
             life = 4000
+        elseif (tpv == "A") then
+            life = 6000
         elseif (tpv == "S") then
-            life = 7000
+            life = 9000
         elseif (tpv == "SS") then
-            life = 10000
+            life = 15000
         elseif (tpv == "SSS") then
-            life = 20000
+            life = 30000
         end
         hattr.set(
             u,

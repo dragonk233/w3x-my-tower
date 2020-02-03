@@ -576,7 +576,7 @@ towers_sss = {
         abilList = {towerSpxKV["海浪之形"], towerSpxKV["加速"]}
     },
     {
-        Name = "娜迦·曳蓝王冠·波塞冬",
+        Name = "娜迦·宗橘王冠·波塞冬",
         Ubertip = "娜迦族的第二王子，力量是海妖中最大的，喜爱妹妹赛壬",
         unitSound = "NagaRoyalGuard",
         file = "war3mapImported\\unit_NagaRoyalGuard_V2.mdl",

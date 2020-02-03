@@ -76,22 +76,22 @@ TOWER_ABLI_SPX = {
         Val = {4}
     },
     {
-        Name = "重生",
-        Ubertip = "进攻时死亡可以复活1次",
+        Name = "复命",
+        Ubertip = "受到攻击时，有{val#1}%几率恢复{val#2}生命",
         Art = "war3mapImported\\icon_pas_Ankh.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        ODK = true,
-        TYPE = "reborn"
+        Val = {20, 100},
+        ODK = true
     },
     {
         Name = "涅磐",
-        Ubertip = "进攻时死亡可以复活1次",
+        Ubertip = "受到攻击时，有{val#1}%几率恢复{val#2}生命",
         Art = "war3mapImported\\icon_pas_MarkOfFire.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        ODK = true,
-        TYPE = "reborn"
+        Val = {20, 250},
+        ODK = true
     },
     {
         Name = "突击匕首",

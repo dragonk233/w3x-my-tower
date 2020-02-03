@@ -129,6 +129,13 @@ towerShadowBeDamage = function(evtData)
                         hskill.invisible(u, val[2])
                     end
                 end
+                if (Name == "复命" or Name == "涅槃") then
+                    local val = v.Val
+                    if (math.random(1, 100) <= val[1]) then
+                        towerShadowTtg(u, Name)
+                        hunit.addCurLife(u, val[2])
+                    end
+                end
             end
         end
     end

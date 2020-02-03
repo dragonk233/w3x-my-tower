@@ -298,7 +298,7 @@ towers_s = {
         Missileart = "Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilMissile.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        abilList = {towerSpxKV["爆骨火弹"], towerSpxKV["重生"]}
+        abilList = {towerSpxKV["爆骨火弹"], towerSpxKV["复命"]}
     },
     {
         Name = "亡灵·半吊子·脚镣刹麽",

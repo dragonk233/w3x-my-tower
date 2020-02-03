@@ -28,7 +28,9 @@ towerShadowDead = function(evtData)
             local val = v.Val or {}
             if (Name ~= nil) then
                 if (Name == "复仇" and u ~= nil) then
-                    local killerName = cj.GetPlayerName(cj.GetOwningPlayer(u))
+                    local p = cj.GetOwningPlayer(u)
+                    local pindex = hplayer.index(p)
+                    local killerName = cj.GetPlayerName(p)
                     local blood = level * val[1]
                     if (shadowPName ~= nil and shadowName ~= nil) then
                         hmsg.echo(
@@ -38,7 +40,7 @@ towerShadowDead = function(evtData)
                                         "对" .. hColor.sky(killerName) .. "施展了复仇扣了" .. hColor.red(blood) .. "点血"
                         )
                     end
-                    hunit.subCurLife(u, blood)
+                    hunit.subCurLife(game.playerTower[pindex], blood)
                 end
             end
         end

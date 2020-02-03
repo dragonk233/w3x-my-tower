@@ -735,18 +735,18 @@ addTowerSkillsRaceTeam = function(playerIndex)
         local ab = game.thisUnitRaceAbilities[index].ABILITY_ID
         addTowerSkillsRaceAbility[v] = ab
         hskill.add(v, ab, 0)
-        if (addTowerSkillsRaceTeamInit[v] == nil) then
-            if (table.len(mixAttrs.new) > 0) then
-                hattr.set(v, 0, mixAttrs.new)
-            end
-            addTowerSkillsRaceTeamInit[v] = 1
-        else
-            if (table.len(mixAttrs.diff.add) > 0) then
-                hattr.set(v, 0, mixAttrs.diff.add)
-            end
-            if (table.len(mixAttrs.diff.sub) > 0) then
-                hattr.set(v, 0, mixAttrs.diff.sub)
-            end
-        end
+        -- if (addTowerSkillsRaceTeamInit[v] == nil) then
+        --     if (table.len(mixAttrs.new) > 0) then
+        --         hattr.set(v, 0, mixAttrs.new)
+        --     end
+        --     addTowerSkillsRaceTeamInit[v] = 1
+        -- else
+        --     if (table.len(mixAttrs.diff.add) > 0) then
+        --         hattr.set(v, 0, mixAttrs.diff.add)
+        --     end
+        --     if (table.len(mixAttrs.diff.sub) > 0) then
+        --         hattr.set(v, 0, mixAttrs.diff.sub)
+        --     end
+        -- end
     end
 end
