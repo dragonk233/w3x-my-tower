@@ -265,19 +265,19 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         if (tpv == "E") then
             life = 1000
         elseif (tpv == "D") then
-            life = 2000
+            life = 3000
         elseif (tpv == "C") then
-            life = 3300
+            life = 5000
         elseif (tpv == "B") then
-            life = 7500
+            life = 9000
         elseif (tpv == "A") then
-            life = 13000
-        elseif (tpv == "S") then
             life = 20000
+        elseif (tpv == "S") then
+            life = 40000
         elseif (tpv == "SS") then
-            life = 30000
+            life = 80000
         elseif (tpv == "SSS") then
-            life = 45000
+            life = 150000
         end
         hattr.set(
             u,

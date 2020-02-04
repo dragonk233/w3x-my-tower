@@ -114,7 +114,7 @@ abilitiesBlue = {
         Name = "反伤抵抗",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldReflection.blp",
         Ubertip = "+{val#1}%反伤抵抗",
-        Val = {10},
+        Val = {13},
         ODK = true
     }
 }

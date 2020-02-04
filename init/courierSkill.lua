@@ -255,7 +255,7 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --召唤新兵塔
 local obj = slk.ability.ANcl:new("couriers_sk_new_tower")
 local Name = "召唤新兵塔"
-local Tip = "召唤新兵塔("..hColor.greenLight("Z")..") - "..hColor.yellow("500黄金")
+local Tip = "召唤新兵塔("..hColor.greenLight("Z")..") - "..hColor.yellow("需要[波数x100]黄金")
 obj.Order = "ambush"
 obj.DataF1 = "ambush"
 obj.Name = Name

@@ -243,12 +243,25 @@ MAYBE_AI = {
                         return
                     end
                     local gold = hplayer.getGold(hplayer.players[playerIndex])
-                    if (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 6) == 4) then
+                    if (gold >= 50000 and math.random(1, 6) == 4) then
+                        hplayer.subGold(hplayer.players[playerIndex], 50000)
+                        hhero.setCurLevel(
+                            game.playerTower[playerIndex],
+                            105 + hhero.getCurLevel(game.playerTower[playerIndex]),
+                            false
+                        )
+                    elseif (gold >= 10000 and math.random(1, 6) == 4) then
+                        hplayer.subGold(hplayer.players[playerIndex], 10000)
+                        hhero.setCurLevel(
+                            game.playerTower[playerIndex],
+                            23 + hhero.getCurLevel(game.playerTower[playerIndex]),
+                            false
+                        )
+                    elseif (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 6) == 4) then
                         hplayer.subGold(hplayer.players[playerIndex], 1000)
                         subTowerLevel(playerIndex)
                         addTowerLevel(playerIndex)
-                    elseif (gold >= 500 and math.random(1, 2) == 1) then
-                        hplayer.subGold(hplayer.players[playerIndex], 500)
+                    elseif (math.random(1, 2) == 1) then
                         local curWave = 1
                         if (game.rule.cur == "yb") then
                             curWave = game.rule.yb.wave
@@ -257,18 +270,22 @@ MAYBE_AI = {
                         elseif (game.rule.cur == "dk") then
                             curWave = game.rule.dk.wave[playerIndex]
                         end
-                        local targetTPow = getTowerPowLevel(curWave)
-                        if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
-                            local rand = table.random(game.thisOptionTowerPowerItem[targetTPow])
-                            local it =
-                                hitem.create(
-                                {
-                                    itemId = rand.ITEM_ID,
-                                    x = cj.GetUnitX(game.playerCourier[playerIndex]),
-                                    y = cj.GetUnitY(game.playerCourier[playerIndex])
-                                }
-                            )
-                            MAYBE_AI.item(playerIndex, it, "stone")
+                        local need = 100 * curWave
+                        if (gold >= need) then
+                            hplayer.subGold(hplayer.players[playerIndex], need)
+                            local targetTPow = getTowerPowLevel(curWave)
+                            if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
+                                local rand = table.random(game.thisOptionTowerPowerItem[targetTPow])
+                                local it =
+                                    hitem.create(
+                                    {
+                                        itemId = rand.ITEM_ID,
+                                        x = cj.GetUnitX(game.playerCourier[playerIndex]),
+                                        y = cj.GetUnitY(game.playerCourier[playerIndex])
+                                    }
+                                )
+                                MAYBE_AI.item(playerIndex, it, "stone")
+                            end
                         end
                     end
                 end

@@ -124,11 +124,11 @@ onCourierSkillUesd = function(evtData)
             )
         end
     elseif (abilitiesSLK.Name == "召唤新兵塔") then
-        if (hplayer.getGold(p) < 500) then
+        if (hplayer.getGold(p) < (100 * curWave)) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subGold(p, 500)
+            hplayer.subGold(p, 100 * curWave)
             local tarBLv = getTowerPowLevel(curWave)
             hitem.create(
                 {
