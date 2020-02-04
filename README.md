@@ -41,3 +41,17 @@
 技能书可以覆盖，QWE的技能书是同一层的，使用物品时自己选择在QWE哪个位置，R是独立技能，只能拥有一个，特别强大。
 信使就是运输单位，没有其他的作用，可以使用所有物品，例如技能书
 
+DzData
+lumber 木头
+prestige 称号
+prestigecs 局数
+prestigess 胜场
+icemon 冰戟剑灵
+phoenix 涅磐火凤凰
+tzfire 炎炎焚烧套装
+tzgold 金碧辉煌套装
+tzboold 血色炽热套装
+tzdragon 青龙碧翼套装
+tzdark 迷幻黑紫套装
+tzghost 邪鬼怨灵套装
+tzsword 出云剑仙套装

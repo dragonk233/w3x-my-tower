@@ -25,9 +25,6 @@ dzSetLumber = function(p, curWave)
 end
 
 dzSetPrestige = function(p, iscs, isss)
-    if (htime.count < 300) then
-        return
-    end
     local cs = hdzapi.server.get.int(p, "prestigecs")
     local ss = hdzapi.server.get.int(p, "prestigess")
     if (iscs) then
@@ -35,7 +32,7 @@ dzSetPrestige = function(p, iscs, isss)
         hdzapi.server.set.int(p, "prestigecs", cs)
         hdzapi.setRoomStat(p, "prestigecs", cs)
     end
-    if (isss) then
+    if (isss and htime.count >= 300) then
         ss = ss + 1
         hdzapi.server.set.int(p, "prestigess", cs)
         hdzapi.setRoomStat(p, "prestigess", ss)

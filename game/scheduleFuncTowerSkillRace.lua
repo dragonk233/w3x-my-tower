@@ -81,248 +81,242 @@ handleTowerSkillsRaceAttr = function(old, new)
 end
 
 addTowerSkillsRaceSingleAttr = function(u)
-    htime.setTimeout(
-        2,
-        function(t)
-            htime.delTimer(t)
-            if (u == nil) then
-                return
-            end
-            local currentId = hunit.getId(u)
-            local slk = hslk_global.unitsKV[currentId]
-            local race = slk.RACE
-            if (race == "人类") then
-                local val = 0.03
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        str_green = "+" .. (val * slk.STR),
-                        agi_green = "+" .. (val * slk.AGI),
-                        int_green = "+" .. (val * slk.INT)
-                    }
-                )
-            elseif (race == "人王") then
-                local val = 0.05
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        str_green = "+" .. (val * slk.STR),
-                        agi_green = "+" .. (val * slk.AGI),
-                        int_green = "+" .. (val * slk.INT)
-                    }
-                )
-            elseif (race == "矮人") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        aim = "+40"
-                    }
-                )
-            elseif (race == "血精灵") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_effect = {
-                            add = {
-                                {
-                                    attr = "violence",
-                                    odds = 15,
-                                    percent = 12
-                                }
-                            }
+    local currentId = hunit.getId(u)
+    local slk = hslk_global.unitsKV[currentId]
+    if (slk == nil) then
+        return
+    end
+    local race = slk.RACE
+    if (race == "人类") then
+        local val = 0.03
+        hattr.set(
+            u,
+            0,
+            {
+                str_green = "+" .. (val * slk.STR),
+                agi_green = "+" .. (val * slk.AGI),
+                int_green = "+" .. (val * slk.INT)
+            }
+        )
+    elseif (race == "人王") then
+        local val = 0.05
+        hattr.set(
+            u,
+            0,
+            {
+                str_green = "+" .. (val * slk.STR),
+                agi_green = "+" .. (val * slk.AGI),
+                int_green = "+" .. (val * slk.INT)
+            }
+        )
+    elseif (race == "矮人") then
+        hattr.set(
+            u,
+            0,
+            {
+                aim = "+40"
+            }
+        )
+    elseif (race == "血精灵") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_effect = {
+                    add = {
+                        {
+                            attr = "violence",
+                            odds = 15,
+                            percent = 12
                         }
                     }
-                )
-            elseif (race == "兽人") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_white = "+" .. (0.075 * slk.ATTACK_WHITE)
+                }
+            }
+        )
+    elseif (race == "兽人") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_white = "+" .. (0.075 * slk.ATTACK_WHITE)
+            }
+        )
+    elseif (race == "巨魔") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_buff = {
+                    add = {
+                        {attr = "attack_speed", odds = 100, val = 7.5, during = 5}
                     }
-                )
-            elseif (race == "巨魔") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_buff = {
-                            add = {
-                                {attr = "attack_speed", odds = 100, val = 7.5, during = 5}
-                            }
+                }
+            }
+        )
+    elseif (race == "牛头人") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_effect = {
+                    add = {
+                        {
+                            attr = "knocking",
+                            odds = 10,
+                            percent = 25
                         }
                     }
-                )
-            elseif (race == "牛头人") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_effect = {
-                            add = {
-                                {
-                                    attr = "knocking",
-                                    odds = 10,
-                                    percent = 25
-                                }
-                            }
+                }
+            }
+        )
+    elseif (race == "暗夜精灵") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = "+dark"
+            }
+        )
+    elseif (race == "德鲁伊") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = "+wood"
+            }
+        )
+    elseif (race == "亡灵") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = "+ice",
+                attack_debuff = {
+                    add = {
+                        {
+                            attr = "move",
+                            odds = 100,
+                            val = 30,
+                            during = 3.0,
+                            effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
                         }
                     }
-                )
-            elseif (race == "暗夜精灵") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_damage_type = "+dark"
+                }
+            }
+        )
+    elseif (race == "娜迦") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = "+water",
+                natural_fire_oppose = "+30"
+            }
+        )
+    elseif (race == "元素") then
+        local vv = "+10"
+        hattr.set(
+            u,
+            0,
+            {
+                natural_fire_oppose = vv,
+                natural_soil_oppose = vv,
+                natural_water_oppose = vv,
+                natural_ice_oppose = vv,
+                natural_wind_oppose = vv,
+                natural_light_oppose = vv,
+                natural_dark_oppose = vv,
+                natural_wood_oppose = vv,
+                natural_thunder_oppose = vv,
+                natural_poison_oppose = vv,
+                natural_ghost_oppose = vv,
+                natural_metal_oppose = vv,
+                natural_dragon_oppose = vv,
+                natural_insect_oppose = vv,
+                natural_god_oppose = vv
+            }
+        )
+    elseif (race == "恶魔") then
+        hattr.set(
+            u,
+            0,
+            {
+                damage_extent = "+6.66",
+                attack_speed = "+6.66",
+                natural_god_oppose = "-66.66"
+            }
+        )
+    elseif (race == "神族") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = "+god"
+            }
+        )
+    elseif (race == "昆虫") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = "+insect"
+            }
+        )
+    elseif (race == "异兽") then
+        hattr.set(
+            u,
+            0,
+            {
+                resistance = "+10",
+                toughness = "+300"
+            }
+        )
+    elseif (race == "幽魂") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = "+ghost"
+            }
+        )
+    elseif (race == "食人魔") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_effect = {
+                    add = {
+                        {attr = "swim", odds = 10, val = 0, during = 0.3}
                     }
-                )
-            elseif (race == "德鲁伊") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_damage_type = "+wood"
-                    }
-                )
-            elseif (race == "亡灵") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_damage_type = "+ice",
-                        attack_debuff = {
-                            add = {
-                                {
-                                    attr = "move",
-                                    odds = 100,
-                                    val = 30,
-                                    during = 3.0,
-                                    effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
-                                }
-                            }
-                        }
-                    }
-                )
-            elseif (race == "娜迦") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_damage_type = "+water",
-                        natural_fire_oppose = "+30"
-                    }
-                )
-            elseif (race == "元素") then
-                local vv = "+10"
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        natural_fire_oppose = vv,
-                        natural_soil_oppose = vv,
-                        natural_water_oppose = vv,
-                        natural_ice_oppose = vv,
-                        natural_wind_oppose = vv,
-                        natural_light_oppose = vv,
-                        natural_dark_oppose = vv,
-                        natural_wood_oppose = vv,
-                        natural_thunder_oppose = vv,
-                        natural_poison_oppose = vv,
-                        natural_ghost_oppose = vv,
-                        natural_metal_oppose = vv,
-                        natural_dragon_oppose = vv,
-                        natural_insect_oppose = vv,
-                        natural_god_oppose = vv
-                    }
-                )
-            elseif (race == "恶魔") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        damage_extent = "+6.66",
-                        attack_speed = "+6.66",
-                        natural_god_oppose = "-66.66"
-                    }
-                )
-            elseif (race == "神族") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_damage_type = "+god"
-                    }
-                )
-            elseif (race == "昆虫") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_damage_type = "+insect"
-                    }
-                )
-            elseif (race == "异兽") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        resistance = "+10",
-                        toughness = "+300"
-                    }
-                )
-            elseif (race == "幽魂") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_damage_type = "+ghost"
-                    }
-                )
-            elseif (race == "食人魔") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_effect = {
-                            add = {
-                                {attr = "swim", odds = 10, val = 0, during = 0.3}
-                            }
-                        }
-                    }
-                )
-            elseif (race == "地精") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        int_green = "+" .. (0.15 * slk.INT)
-                    }
-                )
-            elseif (race == "龙人") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        attack_damage_type = "+dragon"
-                    }
-                )
-            elseif (race == "熊猫") then
-                hattr.set(
-                    u,
-                    0,
-                    {
-                        life_back = "+0.05",
-                        str_green = "+" .. (0.08 * slk.STR)
-                    }
-                )
-            end
-        end
-    )
+                }
+            }
+        )
+    elseif (race == "地精") then
+        hattr.set(
+            u,
+            0,
+            {
+                int_green = "+" .. (0.15 * slk.INT)
+            }
+        )
+    elseif (race == "龙人") then
+        hattr.set(
+            u,
+            0,
+            {
+                attack_damage_type = "+dragon"
+            }
+        )
+    elseif (race == "熊猫") then
+        hattr.set(
+            u,
+            0,
+            {
+                life_back = "+0.05",
+                str_green = "+" .. (0.08 * slk.STR)
+            }
+        )
+    end
 end
 
 --全体种族

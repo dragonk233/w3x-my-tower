@@ -3,7 +3,7 @@ addTowerSkillsx = function(u)
         1.2,
         function(t, td)
             htime.delTimer(t)
-            if (u == nil) then
+            if (his.alive(u)) then
                 return
             end
             for k, v in ipairs(game.towersOriginSkill) do
