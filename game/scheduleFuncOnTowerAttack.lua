@@ -5,7 +5,7 @@ onTowerAttackTtg = function(u, string)
         htextTag.create2Unit(u, string, 6.9 + onTowerAttackTtgCount * 0.1, "FFFF00", 2, 2, 10),
         "scale",
         0,
-        onTowerAttackTtgCount * 0.15
+        onTowerAttackTtgCount * 0.05
     )
     onTowerAttackTtgCount = onTowerAttackTtgCount + 1
     htime.setTimeout(

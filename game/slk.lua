@@ -18,10 +18,6 @@ for i = 1, game.towersLen, 1 do
         game.thisOptionTowerPowerItem[jv.TOWER_POWER] = {}
     end
     table.insert(game.thisOptionTowerPowerItem[jv.TOWER_POWER], jv)
-    --属性说明的那个技能
-    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiies_tower_origins"), i)
-    jv = json.parse(v)
-    game.towersOrigins[jv.INDEX] = jv
     --shadow
     v = cj.LoadStr(cg.hash_myslk, cj.StringHash("towers_shadow"), i)
     jv = json.parse(v)
@@ -132,25 +128,6 @@ for k = 1, game.thisEnemysAwardLen, 1 do
     local jv = json.parse(v)
     hRuntime.register.unit(jv)
     game.thisEnemysAward[k] = jv
-end
-
--- 阶级技能
-local thisPowerAbilitiesName = {
-    "SSS",
-    "SS",
-    "S",
-    "A",
-    "B",
-    "C",
-    "D",
-    "E"
-}
-game.thisUnitPowerAbilitiesLen = #thisPowerAbilitiesName
-for _, name in ipairs(thisPowerAbilitiesName) do
-    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities_unit_power"), cj.StringHash(name))
-    local jv = json.parse(v)
-    hRuntime.register.ability(jv)
-    game.thisUnitPowerAbilities[name] = jv
 end
 
 -- 等级技能

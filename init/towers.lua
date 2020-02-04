@@ -96,6 +96,8 @@ local createTowerShadowUnit = function(v,towersTi,tlv)
     elseif(#abl == 1)then
         table.insert( abl, towerSpxKV["封印枷锁之二"] )
     end
+    table.insert( abl, v.DESC_ABILITY_ID )
+    table.insert( abl, unitPowerMap[tlv] )
     sobj.abilList = string.implode(",",abl) .. "," .. string.implode(",",LINK_ABILITY_STACK)
     v.TOWER_ID = v.UNIT_ID
     v.TYPE = "tower_shadow"
@@ -127,7 +129,7 @@ for j=1,1,1 do
                 local UberDesc = v.Ubertip
                 local Ubertip = ""
                 local obj = slk.unit.Hpal:new("towers_" .. thisIndex)
-    
+
                 Primary = v.Primary or "STR"
                 v.STR = v.STR or 1
                 v.AGI = v.AGI or 1
@@ -213,6 +215,23 @@ for j=1,1,1 do
                 end
                 Ubertip = Ubertip .. "|n|cffcc99ff评定："..TowerMark.."分|r"
                 Ubertip = Ubertip .. "|n|n" .. hColor.grey(UberDesc)
+                --塔基的属性说明
+                local dobj = slk.ability.Aamk:new("towerOriginAbli_" .. thisIndex)
+                local Name = "[兵塔参数]" .. v.Name
+                local Tip = v.Name
+                dobj.Name = Name
+                dobj.Tip = Tip
+                dobj.Ubertip = Ubertip
+                dobj.Buttonpos1 = 0
+                dobj.Buttonpos2 = 0
+                dobj.hero = 0
+                dobj.levels = 1
+                dobj.DataA1 = 0
+                dobj.DataB1 = 0
+                dobj.DataC1 = 0
+                dobj.Art = v.Art
+                v.DESC_ABILITY_ID = dobj:get_id()
+                --
                 obj.Hotkey = ""
                 obj.tilesets = 1
                 obj.hostilePal = 0
@@ -246,7 +265,7 @@ for j=1,1,1 do
                 local targs1 = "vulnerable,ground,ward,structure,organic,mechanical,tree,debris,air" --攻击目标
                 obj.targs1 = targs1
                 obj.EditorSuffix = "#" .. tlv
-                obj.Propernames = tlv .. "级兵塔"
+                obj.Propernames = tlv .. "阶兵塔"
                 local abl = v.abilList
                 if(abl ~= nil)then
                     if(type(abl) == "string")then
@@ -264,6 +283,8 @@ for j=1,1,1 do
                     table.insert( abl, towerSpxKV["封印枷锁之二"] )
                 end
                 table.insert( abl, "AInv" )
+                table.insert( abl, v.DESC_ABILITY_ID )
+                table.insert( abl, unitPowerMap[tlv] )
                 obj.abilList = string.implode(",",abl)
                 obj.heroAbilList = ""
                 obj.nameCount = v.nameCount or 1
@@ -380,28 +401,6 @@ for j=1,1,1 do
                 ?>
                 call SaveStr(hash_myslk, StringHash("towers"), <?=towersTi?>, "<?=string.addslashes(json.stringify(v))?>")
                 call SaveStr(hash_myslk, StringHash("towersItems"), <?=towersTi?>, "<?=string.addslashes(json.stringify(hitem))?>")
-                <?
-                --塔基的属性说明
-                local obj = slk.ability.Aamk:new("towerOriginAbli_" .. thisIndex)
-                local Name = "[兵塔参数]" .. v.Name
-                local Tip = v.Name
-                obj.Name = Name
-                obj.Tip = Tip
-                obj.Ubertip = Ubertip
-                obj.Buttonpos1 = 0
-                obj.Buttonpos2 = 0
-                obj.hero = 0
-                obj.levels = 1
-                obj.DataA1 = 0
-                obj.DataB1 = 0
-                obj.DataC1 = 0
-                obj.Art = v.Art
-                local ab = {
-                    ABILITY_ID = obj:get_id(),
-                    INDEX = thisIndex,
-                }
-                ?>
-                call SaveStr(hash_myslk, StringHash("abilitiies_tower_origins"), <?=towersTi?>, "<?=string.addslashes(json.stringify(ab))?>")
                 <?
                 --shadow
                 createTowerShadowUnit(v,towersTi,tlv)

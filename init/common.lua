@@ -54,6 +54,7 @@ end
 local unitPower = {
     "SSS", "SS", "S", "A", "B", "C", "D", "E"
 }
+unitPowerMap = {}
 for _, v in ipairs(unitPower) do
     local obj = slk.ability.Aamk:new("abilities_unit_power_" .. v)
     local Name = "阶级 - [" .. hColor.yellow(v) .. "]"
@@ -69,13 +70,7 @@ for _, v in ipairs(unitPower) do
     obj.DataB1 = 0
     obj.DataC1 = 0
     obj.Art = "war3mapImported\\icon_pas_Letter_" .. v .. ".blp"
-    local ab = {
-        ABILITY_ID = obj:get_id(),
-        ABILITY_BTN = v,
-    }
-    ?>
-    call SaveStr(hash_myslk, StringHash("abilities_unit_power"), StringHash("<?=v?>"), "<?=string.addslashes(json.stringify(ab))?>")
-    <?
+    unitPowerMap[v] = obj:get_id()
 end
 
 --等级技能

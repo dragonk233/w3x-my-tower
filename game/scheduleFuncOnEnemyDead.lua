@@ -6,25 +6,20 @@ enemyDeadTowerDrop = {}
 enemyDeadAward = function(triggerUnit, killer)
     local x = cj.GetUnitX(triggerUnit)
     local y = cj.GetUnitY(triggerUnit)
+    hunit.del(triggerUnit, 2)
     -- 坟头草
     if (cj.GetRandomInt(1, 15) == 13) then
-        htime.setTimeout(
-            cj.GetRandomReal(8, 25),
-            function()
-                hunit.create(
-                    {
-                        whichPlayer = hplayer.player_passive,
-                        unitId = game.thisUnits["河草"].UNIT_ID,
-                        qty = 1,
-                        x = x,
-                        y = y,
-                        during = cj.GetRandomReal(20, 45)
-                    }
-                )
-            end
+        hunit.create(
+            {
+                whichPlayer = hplayer.player_passive,
+                unitId = game.thisUnits["河草"].UNIT_ID,
+                qty = 1,
+                x = x,
+                y = y,
+                during = cj.GetRandomReal(20, 45)
+            }
         )
     end
-    hunit.del(triggerUnit, 10)
     local playerIndex = 0
     if (killer ~= nil) then
         playerIndex = hplayer.index(cj.GetOwningPlayer(killer))
@@ -148,7 +143,7 @@ enemyDeadDK = function(evtData)
     if (u ~= nil) then
         local pi = hplayer.index(cj.GetOwningPlayer(u))
         local exp = 25 * game.rule.dk.wave[pi]
-        local gold = 5 * game.rule.dk.wave[pi]
+        local gold = 3 * game.rule.dk.wave[pi]
         haward.forGroup(u, exp, gold, 0)
         game.rule.dk.playerQty[pi] = game.rule.dk.playerQty[pi] + 1
         if (game.rule.dk.playerQty[pi] >= game.rule.dk.perWaveQty) then

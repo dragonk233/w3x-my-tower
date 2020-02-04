@@ -56,19 +56,19 @@ game = {
             monLifeInc = 11
         },
         dk = {
-            perWaveQty = 18,
+            perWaveQty = 10,
             playerQty = {},
             wave = {},
-            fresh = 2.4,
+            fresh = 2.5,
             mon = {},
             monLimit = {},
             monData = {},
             ai = false,
             monLife = {
-                50,
-                50,
-                50,
-                50
+                25,
+                25,
+                25,
+                25
             }
         },
         cur = "yb"
@@ -76,7 +76,6 @@ game = {
     currentMon = 0,
     playerOriginLumber = {},
     playerTower = {},
-    playerTowerPower = {},
     playerTowerLink = {},
     playerTowerLevel = {},
     playerTowerEffectModel = {},
@@ -88,7 +87,6 @@ game = {
     towersItemsKV = {},
     towersAbilities = {},
     towersSummon = {},
-    towersOrigins = {},
     towersOriginSkill = {},
     thisUnits = {},
     thisEnemys = {},

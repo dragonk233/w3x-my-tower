@@ -174,10 +174,6 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             )
             hevent.onAttack(u, onTowerAttack)
             hevent.onSkillHappen(u, onTowerLinkSkillUesd)
-            --阶级标志
-            hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
-            --兵塔说明标志
-            hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
             --兵塔技能
             addTowerSkillsx(u)
             --天赋等级
@@ -271,17 +267,17 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         elseif (tpv == "D") then
             life = 2000
         elseif (tpv == "C") then
-            life = 4000
+            life = 3300
         elseif (tpv == "B") then
-            life = 10000
+            life = 7500
         elseif (tpv == "A") then
-            life = 20000
+            life = 13000
         elseif (tpv == "S") then
-            life = 30000
+            life = 20000
         elseif (tpv == "SS") then
-            life = 50000
+            life = 30000
         elseif (tpv == "SSS") then
-            life = 100000
+            life = 45000
         end
         hattr.set(
             u,
@@ -311,11 +307,6 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         game.playerTower[playerIndex] = u
         cj.PingMinimapEx(game.towerPoint[playerIndex][1], game.towerPoint[playerIndex][2], 10, 255, 255, 255, true)
         hevent.onItemUsed(u, onUnitItemsUesd)
-        --阶级标志
-        game.playerTowerPower[playerIndex] = hslk_global.unitsKV[towerId].TOWER_POWER
-        hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[towerId].TOWER_POWER].ABILITY_ID, 0)
-        --兵塔说明标志
-        hskill.add(u, game.towersOrigins[hslk_global.unitsKV[towerId].INDEX].ABILITY_ID, 0)
         --兵塔技能
         addTowerSkillsx(u)
         --天赋等级
@@ -391,7 +382,6 @@ createMyCourier = function(playerIndex, courierId)
             hunit.del(game.playerCourier[playerIndex], 0)
         end
         --阶级标志
-        hskill.add(u, game.thisUnitPowerAbilities[hslk_global.unitsKV[courierId].COURIER_POWER].ABILITY_ID, 0)
         game.playerCourier[playerIndex] = u
         hcamera.toUnit(hplayer.players[playerIndex], 0.50, u)
         --如果是冰戟剑灵，添加特效

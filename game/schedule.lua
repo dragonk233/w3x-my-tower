@@ -130,12 +130,12 @@ cj.TriggerAddAction(
                 str = {
                     life = 7,
                     attack_white = 0.06,
-                    toughness = 0.02
+                    toughness = 0.03
                 },
                 agi = {
                     attack_white = 0.10,
                     attack_speed = 0.018,
-                    avoid = 0.02
+                    avoid = 0.015
                 },
                 int = {
                     attack_white = 0.08,
@@ -267,7 +267,10 @@ cj.TriggerAddAction(
                                                     2
                                                 )
                                                 local next = getNextRect(k)
-                                                if (next ~= -1) then
+                                                if (next == -1) then
+                                                    hunit.del(cj.GetTriggerUnit(), 0)
+                                                    return
+                                                else
                                                     cj.SetUnitPosition(
                                                         cj.GetTriggerUnit(),
                                                         game.pathPoint[next][1][1],
@@ -414,7 +417,10 @@ cj.TriggerAddAction(
                                                     2
                                                 )
                                                 local next = getNextRect(k)
-                                                if (next ~= -1) then
+                                                if (next == -1) then
+                                                    hunit.del(cj.GetTriggerUnit(), 0)
+                                                    return
+                                                else
                                                     cj.SetUnitPosition(
                                                         cj.GetTriggerUnit(),
                                                         game.pathPoint[next][1][1],
@@ -483,15 +489,15 @@ cj.TriggerAddAction(
                                             local type = slk.TYPE
                                             -- 最后一格,前往下一区域
                                             local next = getNextRect(k)
-                                            if (next ~= -1) then
+                                            if (next == -1) then
+                                                hunit.del(u)
+                                                return
+                                            else
                                                 if (type == "tower_shadow") then
+                                                    local wanbao = false
                                                     if (next == playerIndex) then
                                                         hunit.del(u, 2)
-                                                        hsound.sound(cg.gg_snd_wb)
-                                                        hmsg.echo(
-                                                            hColor.green(cj.GetPlayerName(hplayer.players[playerIndex])) ..
-                                                                hColor.yellow("实现了一轮完美进攻！！完爆其他玩家！！牛逼！！！")
-                                                        )
+                                                        wanbao = true
                                                     else
                                                         cj.SetUnitPosition(
                                                             u,
@@ -551,6 +557,13 @@ cj.TriggerAddAction(
                                                                 0.05
                                                             )
                                                         end
+                                                    end
+                                                    if (wanbao) then
+                                                        hsound.sound(cg.gg_snd_wb)
+                                                        hmsg.echo(
+                                                            hColor.green(cj.GetPlayerName(hplayer.players[playerIndex])) ..
+                                                                hColor.yellow("实现了一圈完美进攻！！完爆其余玩家！！真·牛逼！！！")
+                                                        )
                                                     end
                                                 else
                                                     cj.SetUnitPosition(
@@ -670,7 +683,7 @@ cj.TriggerAddAction(
                 --创建多面板
                 hmultiBoard.create(
                     "player",
-                    0.75,
+                    1.5,
                     function(mb, curPi)
                         --拼凑多面板数据，二维数组，行列模式
                         hmultiBoard.setTitle(mb, "玩家兵塔属性列表，地上怪物：" .. game.currentMon .. "只")

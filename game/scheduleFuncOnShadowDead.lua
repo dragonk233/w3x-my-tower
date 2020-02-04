@@ -1,16 +1,19 @@
 -- 死亡
 towerShadowDead = function(evtData)
     local shadow = evtData.triggerUnit
-    local u = evtData.killer
+    local killer = evtData.killer
     local shadowName = hunit.getName(shadow)
     local shadowPName = cj.GetPlayerName(hplayer.players[hunit.getUserData(shadow)])
-    if (u ~= nil) then
-        local killerName = cj.GetPlayerName(cj.GetOwningPlayer(u))
+    if (killer ~= nil) then
+        local killerPlayer = cj.GetOwningPlayer(killer)
+        local killerName = cj.GetPlayerName(killerPlayer)
         if (shadowPName ~= nil and shadowName ~= nil and killerName ~= nil) then
             hmsg.echo(
                 hColor.sky(shadowPName) .. "的" .. hColor.yellow(shadowName) .. "被" .. hColor.green(killerName) .. "干掉了~"
             )
         end
+        local gold = 50 * game.rule.dk.wave[hplayer.index(killerPlayer)]
+        hplayer.addGold(killerPlayer, gold, killer)
     else
         if (shadowPName ~= nil and shadowName ~= nil) then
             hmsg.echo(hColor.sky(shadowPName) .. "的" .. hColor.yellow(shadowName) .. "被干掉了~")
@@ -27,8 +30,8 @@ towerShadowDead = function(evtData)
             level = level * 2 - 1
             local val = v.Val or {}
             if (Name ~= nil) then
-                if (Name == "复仇" and u ~= nil) then
-                    local p = cj.GetOwningPlayer(u)
+                if (Name == "复仇" and killer ~= nil) then
+                    local p = cj.GetOwningPlayer(killer)
                     local pindex = hplayer.index(p)
                     local killerName = cj.GetPlayerName(p)
                     local blood = level * val[1]

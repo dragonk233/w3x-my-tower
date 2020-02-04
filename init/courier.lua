@@ -57,12 +57,13 @@ for i, v in ipairs(couriers) do
     obj.upgrades = ""
     obj.Builds = ""
     obj.fused = 0
+    local x = "Avul,AInv," .. unitPowerMap[(v.COURIER_POWER or "E")] .. ","
     if(v.Name == "涅磐火凤凰")then
-        obj.abilList = "Avul,AInv," .. string.implode(',',couriersSkillsPhoenix)
+        obj.abilList = x .. string.implode(',',couriersSkillsPhoenix)
     elseif(v.Name == "冰戟剑灵")then
-        obj.abilList = "Avul,AInv," .. string.implode(',',couriersSkillsIce)
+        obj.abilList = x .. string.implode(',',couriersSkillsIce)
     else
-        obj.abilList = "Avul,AInv," .. string.implode(',',couriersSkills)
+        obj.abilList = x .. string.implode(',',couriersSkills)
     end
     v.INDEX = v.Name
     v.UNIT_ID = obj:get_id()
@@ -98,7 +99,6 @@ for i, v in ipairs(couriers) do
         OVERLIE = 999,
         ITEM_ID = iobj:get_id(),
         UNIT_ID = v.unitID,
-        COURIER_POWER = v.COURIER_POWER or "E",
         }
     if(#couriersShopIds < 12)then
         table.insert(couriersShopIds,hitem.ITEM_ID)

@@ -13,7 +13,7 @@ for id, _ in pairs(hslk_global.abilitiesKV) do
     cj.UnitAddAbility(u, id)
     cj.UnitRemoveAbility(u, id)
 end
-hunit.del(u, 0)
+hunit.del(u)
 
 -- 镜头模式
 hcamera.setModel("normal")

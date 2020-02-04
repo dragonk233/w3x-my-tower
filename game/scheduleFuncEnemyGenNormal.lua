@@ -239,7 +239,7 @@ enemyGenDK = function(waiting)
                                     0,
                                     {
                                         life = "=" .. (game.rule.dk.monLife[k] * game.rule.dk.wave[k]),
-                                        move = "=200"
+                                        move = "=190"
                                     }
                                 )
                                 game.rule.dk.monData[u] = {

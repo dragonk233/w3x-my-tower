@@ -5,6 +5,9 @@ towerShadowGen = function(playerIndex)
     local tower = game.playerTower[playerIndex]
     local tid = hunit.getId(tower)
     local next = getNextRect(playerIndex)
+    if (next == -1) then
+        return
+    end
     local u =
         henemy.create(
         {
@@ -12,7 +15,7 @@ towerShadowGen = function(playerIndex)
             qty = 1,
             x = game.pathPoint[next][1][1],
             y = game.pathPoint[next][1][2],
-            modelScale = 2.1,
+            modelScale = 1.9,
             facing = playerIndex * -90 + 180
         }
     )
