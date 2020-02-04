@@ -1,6 +1,6 @@
 setTowerSkillByBook = function(u, abliOps, opt)
     htime.setTimeout(
-        2.2,
+        3,
         function(t)
             htime.delTimer(t)
             if (u == nil) then

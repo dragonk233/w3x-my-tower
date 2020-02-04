@@ -5,7 +5,7 @@ towerShadowTtg = function(u, string)
         htextTag.create2Unit(u, string, 6.9 + onTowerAttackTtgCount * 0.1, "FFFF00", 1, 2, 10),
         "scale",
         0,
-        towerShadowTtgCount * 0.15
+        towerShadowTtgCount * 0.05
     )
     towerShadowTtgCount = towerShadowTtgCount + 1
     htime.setTimeout(
@@ -29,7 +29,7 @@ towerShadowBeDamage = function(evtData)
             level = level * 2 - 1
             if (Name ~= nil) then
                 if (Name == "恶心粘液") then
-                    htextTag.style(htextTag.create2Unit(u, Name, 7, "FFFF00", 1, 1, 10), "scale", 0, 0.25)
+                    towerShadowTtg(u, Name)
                     hattr.set(
                         sourceUnit,
                         5,

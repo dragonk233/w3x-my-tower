@@ -1,5 +1,7 @@
 addTowerSkillsRaceAbility = {}
 addTowerSkillsRaceAttr = {}
+addTowerSkillsRaceAttrStack = 0
+addTowerSkillsRaceAttrClock = 0.8
 addTowerSkillsRaceAttrPlayer = {}
 
 handleTowerSkillsRaceAttr = function(old, new)
@@ -80,7 +82,7 @@ end
 
 addTowerSkillsRaceSingleAttr = function(u)
     htime.setTimeout(
-        1.6,
+        2,
         function(t)
             htime.delTimer(t)
             if (u == nil) then
@@ -324,465 +326,475 @@ addTowerSkillsRaceSingleAttr = function(u)
 end
 
 --全体种族
-addTowerSkillsRaceTeamInit = {}
 addTowerSkillsRaceTeam = function(playerIndex)
-    htime.setTimeout(
-        5,
-        function(t)
-            htime.delTimer(t)
-            local towers = {
-                game.playerTower[playerIndex]
-            }
-            for i = 1, 4 do
-                if
-                    (game.playerTowerLink[playerIndex] ~= nil and game.playerTowerLink[playerIndex][i] ~= nil and
-                        game.playerTowerLink[playerIndex][i].tower_level ~= nil)
-                 then
-                    table.insert(towers, game.playerTowerLink[playerIndex][i].unit)
-                end
-            end
-            local qtys = {}
-            local races = {}
-            local attr = {
-                life = 0,
-                attack_green = 0,
-                attack_speed = 0,
-                aim = 0,
-                defend = 0,
-                resistance = 0,
-                toughness = 0,
-                avoid = 0,
-                damage_extent = 0,
-                natural_dark = 0,
-                natural_god = 0,
-                natural_fire_oppose = 0,
-                natural_soil_oppose = 0,
-                natural_water_oppose = 0,
-                natural_ice_oppose = 0,
-                natural_wind_oppose = 0,
-                natural_light_oppose = 0,
-                natural_dark_oppose = 0,
-                natural_wood_oppose = 0,
-                natural_thunder_oppose = 0,
-                natural_poison_oppose = 0,
-                natural_ghost_oppose = 0,
-                natural_metal_oppose = 0,
-                natural_dragon_oppose = 0,
-                natural_insect_oppose = 0,
-                natural_god_oppose = 0,
-                attack_damage_type = {},
-                attack_debuff = {},
-                attack_effect = {}
-            }
-            local attrPlayer = {
-                gold_ratio = 0,
-                exp_ratio = 0
-            }
-            for k, v in pairs(towers) do
-                local cid = hunit.getId(v)
-                local r = hslk_global.unitsKV[cid].RACE
-                if (qtys[r] == nil) then
-                    qtys[r] = 0
-                end
-                qtys[r] = qtys[r] + 1
-                races[v] = r
-                if (r == "人类") then
-                    if (qtys[r] == 2) then
-                        attr.defend = attr.defend + 5
-                    elseif (qtys[r] == 3) then
-                        attr.defend = attr.defend + 20
-                    elseif (qtys[r] == 4) then
-                        attr.defend = attr.defend + 40
-                    elseif (qtys[r] == 5) then
-                        attr.defend = attr.defend + 60
-                    end
-                elseif (r == "人王") then
-                    if (qtys[r] == 1) then
-                        attr.defend = attr.defend + 75
-                    elseif (qtys[r] == 5) then
-                        attr.attack_green = attr.attack_green + 300
-                    end
-                elseif (r == "矮人") then
-                    if (qtys[r] == 1) then
-                        attrPlayer.exp_ratio = attrPlayer.exp_ratio + 5
-                    elseif (qtys[r] == 2) then
-                        attrPlayer.exp_ratio = attrPlayer.exp_ratio + 7
-                    elseif (qtys[r] == 4) then
-                        attrPlayer.exp_ratio = attrPlayer.exp_ratio + 11
-                    end
-                elseif (r == "血精灵") then
-                    if (qtys[r] == 2) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "violence",
-                                odds = 15,
-                                percent = 18
-                            }
-                        )
-                    elseif (qtys[r] == 4) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "violence",
-                                odds = 20,
-                                percent = 25
-                            }
-                        )
-                    elseif (qtys[r] == 5) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "violence",
-                                odds = 20,
-                                percent = 40
-                            }
-                        )
-                    end
-                elseif (r == "兽人") then
-                    if (qtys[r] == 2) then
-                        attr.attack_green = attr.attack_green + 35
-                    elseif (qtys[r] == 3) then
-                        attr.attack_green = attr.attack_green + 60
-                    elseif (qtys[r] == 4) then
-                        attr.attack_green = attr.attack_green + 105
-                    elseif (qtys[r] == 5) then
-                        table.insert(attr.attack_damage_type, "fire")
-                    end
-                elseif (r == "巨魔") then
-                    if (qtys[r] == 2) then
-                        attr.attack_speed = attr.attack_speed + 10
-                    elseif (qtys[r] == 3) then
-                        attr.attack_speed = attr.attack_speed + 13
-                    elseif (qtys[r] == 4) then
-                        attr.attack_speed = attr.attack_speed + 16
-                    elseif (qtys[r] == 5) then
-                        attr.attack_speed = attr.attack_speed + 21
-                    end
-                elseif (r == "牛头人") then
-                    if (qtys[r] == 2) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "knocking",
-                                odds = 8,
-                                percent = 13
-                            }
-                        )
-                    elseif (qtys[r] == 3) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "knocking",
-                                odds = 11,
-                                percent = 16
-                            }
-                        )
-                    elseif (qtys[r] == 4) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "knocking",
-                                odds = 14,
-                                percent = 19
-                            }
-                        )
-                    elseif (qtys[r] == 5) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "knocking",
-                                odds = 25,
-                                percent = 25
-                            }
-                        )
-                    end
-                elseif (r == "暗夜精灵") then
-                    if (qtys[r] == 2) then
-                        attr.natural_dark = attr.natural_dark + 16
-                    elseif (qtys[r] == 3) then
-                        table.insert(attr.attack_damage_type, "dark")
-                    end
-                elseif (r == "德鲁伊") then
-                    if (qtys[r] == 2) then
-                        attr.attack_speed = attr.attack_speed + 45
-                    elseif (qtys[r] == 4) then
-                        attr.attack_speed = attr.attack_speed + 45
-                        attr.natural_wind_oppose = attr.natural_wind_oppose + 80
-                    end
-                elseif (r == "亡灵") then
-                    if (qtys[r] == 2) then
-                        table.insert(
-                            attr.attack_debuff,
-                            {
-                                attr = "move",
-                                odds = 100,
-                                val = 3,
-                                during = 2.5,
-                                effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
-                            }
-                        )
-                    elseif (qtys[r] == 3) then
-                        table.insert(
-                            attr.attack_debuff,
-                            {
-                                attr = "move",
-                                odds = 100,
-                                val = 4,
-                                during = 3,
-                                effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
-                            }
-                        )
-                    elseif (qtys[r] == 4) then
-                        table.insert(
-                            attr.attack_debuff,
-                            {
-                                attr = "move",
-                                odds = 100,
-                                val = 5,
-                                during = 3.5,
-                                effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
-                            }
-                        )
-                    end
-                elseif (r == "娜迦") then
-                    if (qtys[r] == 1) then
-                        attr.natural_water_oppose = attr.natural_water_oppose + 5
-                        attr.natural_ice_oppose = attr.natural_ice_oppose + 5
-                    elseif (qtys[r] == 3) then
-                        attr.natural_water_oppose = attr.natural_water_oppose + 10
-                        attr.natural_ice_oppose = attr.natural_ice_oppose + 10
-                    elseif (qtys[r] == 4) then
-                        attr.natural_water_oppose = attr.natural_water_oppose + 15
-                        attr.natural_ice_oppose = attr.natural_ice_oppose + 15
-                    end
-                elseif (r == "元素") then
-                    if (qtys[r] == 5) then
-                        local vv = 6.5
-                        attr.natural_fire_oppose = attr.natural_fire_oppose + vv
-                        attr.natural_soil_oppose = attr.natural_soil_oppose + vv
-                        attr.natural_water_oppose = attr.natural_water_oppose + vv
-                        attr.natural_ice_oppose = attr.natural_ice_oppose + vv
-                        attr.natural_wind_oppose = attr.natural_wind_oppose + vv
-                        attr.natural_light_oppose = attr.natural_light_oppose + vv
-                        attr.natural_dark_oppose = attr.natural_dark_oppose + vv
-                        attr.natural_wood_oppose = attr.natural_wood_oppose + vv
-                        attr.natural_thunder_oppose = attr.natural_thunder_oppose + vv
-                        attr.natural_poison_oppose = attr.natural_poison_oppose + vv
-                        attr.natural_ghost_oppose = attr.natural_ghost_oppose + vv
-                        attr.natural_metal_oppose = attr.natural_metal_oppose + vv
-                        attr.natural_dragon_oppose = attr.natural_dragon_oppose + vv
-                        attr.natural_insect_oppose = attr.natural_insect_oppose + vv
-                        attr.natural_god_oppose = attr.natural_god_oppose + vv
-                    elseif (qtys[r] == 3) then
-                        table.insert(attr.attack_damage_type, "dark")
-                        table.insert(attr.attack_damage_type, "light")
-                    elseif (qtys[r] == 4) then
-                        table.insert(attr.attack_damage_type, "fire")
-                        table.insert(attr.attack_damage_type, "soil")
-                    elseif (qtys[r] == 5) then
-                        local vv = 18
-                        attr.natural_fire_oppose = attr.natural_fire_oppose + vv
-                        attr.natural_soil_oppose = attr.natural_soil_oppose + vv
-                        attr.natural_water_oppose = attr.natural_water_oppose + vv
-                        attr.natural_ice_oppose = attr.natural_ice_oppose + vv
-                        attr.natural_wind_oppose = attr.natural_wind_oppose + vv
-                        attr.natural_light_oppose = attr.natural_light_oppose + vv
-                        attr.natural_dark_oppose = attr.natural_dark_oppose + vv
-                        attr.natural_wood_oppose = attr.natural_wood_oppose + vv
-                        attr.natural_thunder_oppose = attr.natural_thunder_oppose + vv
-                        attr.natural_poison_oppose = attr.natural_poison_oppose + vv
-                        attr.natural_ghost_oppose = attr.natural_ghost_oppose + vv
-                        attr.natural_metal_oppose = attr.natural_metal_oppose + vv
-                        attr.natural_dragon_oppose = attr.natural_dragon_oppose + vv
-                        attr.natural_insect_oppose = attr.natural_insect_oppose + vv
-                        attr.natural_god_oppose = attr.natural_god_oppose + vv
-                    end
-                elseif (r == "恶魔") then
-                    if (qtys[r] == 1) then
-                        attr.damage_extent = attr.damage_extent + 6.66
-                    elseif (qtys[r] == 2) then
-                        attr.damage_extent = attr.damage_extent + 6.66
-                    elseif (qtys[r] == 3) then
-                        attr.damage_extent = attr.damage_extent + 6.66
-                    elseif (qtys[r] == 4) then
-                        attr.damage_extent = attr.damage_extent + 6.66
-                    elseif (qtys[r] == 5) then
-                        attr.damage_extent = attr.damage_extent + 6.66
-                    end
-                elseif (r == "神族") then
-                    if (qtys[r] == 1) then
-                        attr.attack_speed = attr.attack_speed + 20
-                    elseif (qtys[r] == 2) then
-                        attr.natural_god = attr.natural_god + 20
-                    elseif (qtys[r] == 3) then
-                        table.insert(attr.attack_damage_type, "god")
-                    end
-                elseif (r == "昆虫") then
-                    if (qtys[r] == 1) then
-                        attr.defend = attr.defend + 20
-                    elseif (qtys[r] == 2) then
-                        attr.resistance = attr.resistance + 30
-                    elseif (qtys[r] == 3) then
-                        attr.toughness = attr.toughness + 1000
-                    end
-                elseif (r == "异兽") then
-                    if (qtys[r] == 2) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "split",
-                                odds = 100,
-                                range = 350,
-                                percent = 10
-                            }
-                        )
-                    elseif (qtys[r] == 3) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "split",
-                                odds = 100,
-                                range = 400,
-                                percent = 15
-                            }
-                        )
-                    elseif (qtys[r] == 4) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "split",
-                                odds = 100,
-                                range = 500,
-                                percent = 20
-                            }
-                        )
-                    end
-                elseif (r == "幽魂") then
-                    if (qtys[r] == 2) then
-                        attr.avoid = attr.avoid + 10
-                    elseif (qtys[r] == 2) then
-                        attr.avoid = attr.avoid + 20
-                    elseif (qtys[r] == 3) then
-                        attr.avoid = attr.avoid + 25
-                    end
-                elseif (r == "食人魔") then
-                    if (qtys[r] == 2) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "swim",
-                                odds = 10,
-                                during = 0.3
-                            }
-                        )
-                    elseif (qtys[r] == 5) then
-                        table.insert(
-                            attr.attack_effect,
-                            {
-                                attr = "swim",
-                                odds = 20,
-                                during = 1.0
-                            }
-                        )
-                    end
-                elseif (r == "地精") then
-                    if (qtys[r] == 1) then
-                        attrPlayer.gold_ratio = attrPlayer.gold_ratio + 7
-                    elseif (qtys[r] == 2) then
-                        attrPlayer.gold_ratio = attrPlayer.gold_ratio + 10
-                    elseif (qtys[r] == 3) then
-                        attrPlayer.gold_ratio = attrPlayer.gold_ratio + 13
-                    elseif (qtys[r] == 4) then
-                        attrPlayer.gold_ratio = attrPlayer.gold_ratio + 15
-                    end
-                elseif (r == "龙人") then
-                    if (qtys[r] == 1) then
-                        attr.attack_green = attr.attack_green + 120
-                    elseif (qtys[r] == 2) then
-                        table.insert(attr.attack_damage_type, "thunder")
-                    elseif (qtys[r] == 3) then
-                        table.insert(attr.attack_damage_type, "wind")
-                    end
-                elseif (r == "熊猫") then
-                    if (qtys[r] == 1) then
-                        attr.life = attr.life + 200
-                    elseif (qtys[r] == 2) then
-                        attr.life = attr.life + 500
-                    elseif (qtys[r] == 3) then
-                        attr.life = attr.life + 1000
-                    elseif (qtys[r] == 4) then
-                        attr.life = attr.life + 3000
-                    end
-                end
-            end
-            if (addTowerSkillsRaceAttr[playerIndex] == nil) then
-                addTowerSkillsRaceAttr[playerIndex] = {}
-                addTowerSkillsRaceAttrPlayer[playerIndex] = {}
-            else
-                --玩家扣除
-                if (addTowerSkillsRaceAttrPlayer[playerIndex].gold_ratio > 0) then
-                    hplayer.subGoldRatio(
-                        hplayer.players[playerIndex],
-                        addTowerSkillsRaceAttrPlayer[playerIndex].gold_ratio,
-                        0
-                    )
-                end
-                if (addTowerSkillsRaceAttrPlayer[playerIndex].exp_ratio > 0) then
-                    hplayer.subExpRatio(
-                        hplayer.players[playerIndex],
-                        addTowerSkillsRaceAttrPlayer[playerIndex].exp_ratio,
-                        0
-                    )
-                end
-            end
-            --整理旧属性
-            local mixAttrs = handleTowerSkillsRaceAttr(addTowerSkillsRaceAttr[playerIndex], attr)
-            --新旧交替
-            addTowerSkillsRaceAttr[playerIndex] = attr
-            addTowerSkillsRaceAttrPlayer[playerIndex] = attrPlayer
-            attr = nil
-            attrPlayer = nil
-            --玩家增加
-            if (addTowerSkillsRaceAttrPlayer[playerIndex].gold_ratio > 0) then
-                hplayer.addGoldRatio(
-                    hplayer.players[playerIndex],
-                    addTowerSkillsRaceAttrPlayer[playerIndex].gold_ratio,
-                    0
-                )
-            end
-            if (addTowerSkillsRaceAttrPlayer[playerIndex].exp_ratio > 0) then
-                hplayer.addExpRatio(
-                    hplayer.players[playerIndex],
-                    addTowerSkillsRaceAttrPlayer[playerIndex].exp_ratio,
-                    0
-                )
-            end
-            if (addTowerSkillsRaceAbility[playerIndex] == nil) then
-                addTowerSkillsRaceAbility[playerIndex] = {}
-            end
-            for k, v in pairs(towers) do
-                if (addTowerSkillsRaceAbility[playerIndex][k] ~= nil) then
-                    hskill.del(v, addTowerSkillsRaceAbility[playerIndex][k], 0)
-                end
-                local index = races[v] .. qtys[races[v]]
-                addTowerSkillsRaceAbility[playerIndex][k] = game.thisUnitRaceAbilities[index].ABILITY_ID
-                hskill.add(v, addTowerSkillsRaceAbility[playerIndex][k], 0)
-                if (addTowerSkillsRaceTeamInit[v] == nil) then
-                    if (table.len(mixAttrs.new) > 0) then
-                        hattr.set(v, 0, mixAttrs.new)
-                    end
-                    addTowerSkillsRaceTeamInit[v] = 1
-                else
-                    if (table.len(mixAttrs.diff.add) > 0) then
-                        hattr.set(v, 0, mixAttrs.diff.add)
-                    end
-                    if (table.len(mixAttrs.diff.sub) > 0) then
-                        hattr.set(v, 0, mixAttrs.diff.sub)
-                    end
-                end
-            end
-            races = nil
+    local towers = {
+        game.playerTower[playerIndex]
+    }
+    for i = 1, 4 do
+        if
+            (game.playerTowerLink[playerIndex] ~= nil and game.playerTowerLink[playerIndex][i] ~= nil and
+                game.playerTowerLink[playerIndex][i].tower_level ~= nil)
+         then
+            table.insert(towers, game.playerTowerLink[playerIndex][i].unit)
         end
-    )
+    end
+    local qtys = {}
+    local races = {}
+    local attr = {
+        life = 0,
+        attack_green = 0,
+        attack_speed = 0,
+        aim = 0,
+        defend = 0,
+        resistance = 0,
+        toughness = 0,
+        avoid = 0,
+        damage_extent = 0,
+        natural_dark = 0,
+        natural_god = 0,
+        natural_fire_oppose = 0,
+        natural_soil_oppose = 0,
+        natural_water_oppose = 0,
+        natural_ice_oppose = 0,
+        natural_wind_oppose = 0,
+        natural_light_oppose = 0,
+        natural_dark_oppose = 0,
+        natural_wood_oppose = 0,
+        natural_thunder_oppose = 0,
+        natural_poison_oppose = 0,
+        natural_ghost_oppose = 0,
+        natural_metal_oppose = 0,
+        natural_dragon_oppose = 0,
+        natural_insect_oppose = 0,
+        natural_god_oppose = 0,
+        attack_damage_type = {},
+        attack_debuff = {},
+        attack_effect = {}
+    }
+    local attrPlayer = {
+        gold_ratio = 0,
+        exp_ratio = 0
+    }
+    for k, v in pairs(towers) do
+        local cid = hunit.getId(v)
+        local r = hslk_global.unitsKV[cid].RACE
+        if (qtys[r] == nil) then
+            qtys[r] = 0
+        end
+        qtys[r] = qtys[r] + 1
+        races[v] = r
+        if (r == "人类") then
+            if (qtys[r] == 2) then
+                attr.defend = attr.defend + 5
+            elseif (qtys[r] == 3) then
+                attr.defend = attr.defend + 20
+            elseif (qtys[r] == 4) then
+                attr.defend = attr.defend + 40
+            elseif (qtys[r] == 5) then
+                attr.defend = attr.defend + 60
+            end
+        elseif (r == "人王") then
+            if (qtys[r] == 1) then
+                attr.defend = attr.defend + 75
+            elseif (qtys[r] == 5) then
+                attr.attack_green = attr.attack_green + 300
+            end
+        elseif (r == "矮人") then
+            if (qtys[r] == 1) then
+                attrPlayer.exp_ratio = attrPlayer.exp_ratio + 5
+            elseif (qtys[r] == 2) then
+                attrPlayer.exp_ratio = attrPlayer.exp_ratio + 7
+            elseif (qtys[r] == 4) then
+                attrPlayer.exp_ratio = attrPlayer.exp_ratio + 11
+            end
+        elseif (r == "血精灵") then
+            if (qtys[r] == 2) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "violence",
+                        odds = 15,
+                        percent = 18
+                    }
+                )
+            elseif (qtys[r] == 4) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "violence",
+                        odds = 20,
+                        percent = 25
+                    }
+                )
+            elseif (qtys[r] == 5) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "violence",
+                        odds = 20,
+                        percent = 40
+                    }
+                )
+            end
+        elseif (r == "兽人") then
+            if (qtys[r] == 2) then
+                attr.attack_green = attr.attack_green + 35
+            elseif (qtys[r] == 3) then
+                attr.attack_green = attr.attack_green + 60
+            elseif (qtys[r] == 4) then
+                attr.attack_green = attr.attack_green + 105
+            elseif (qtys[r] == 5) then
+                table.insert(attr.attack_damage_type, "fire")
+            end
+        elseif (r == "巨魔") then
+            if (qtys[r] == 2) then
+                attr.attack_speed = attr.attack_speed + 10
+            elseif (qtys[r] == 3) then
+                attr.attack_speed = attr.attack_speed + 13
+            elseif (qtys[r] == 4) then
+                attr.attack_speed = attr.attack_speed + 16
+            elseif (qtys[r] == 5) then
+                attr.attack_speed = attr.attack_speed + 21
+            end
+        elseif (r == "牛头人") then
+            if (qtys[r] == 2) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "knocking",
+                        odds = 8,
+                        percent = 13
+                    }
+                )
+            elseif (qtys[r] == 3) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "knocking",
+                        odds = 11,
+                        percent = 16
+                    }
+                )
+            elseif (qtys[r] == 4) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "knocking",
+                        odds = 14,
+                        percent = 19
+                    }
+                )
+            elseif (qtys[r] == 5) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "knocking",
+                        odds = 25,
+                        percent = 25
+                    }
+                )
+            end
+        elseif (r == "暗夜精灵") then
+            if (qtys[r] == 2) then
+                attr.natural_dark = attr.natural_dark + 16
+            elseif (qtys[r] == 3) then
+                table.insert(attr.attack_damage_type, "dark")
+            end
+        elseif (r == "德鲁伊") then
+            if (qtys[r] == 2) then
+                attr.attack_speed = attr.attack_speed + 45
+            elseif (qtys[r] == 4) then
+                attr.attack_speed = attr.attack_speed + 45
+                attr.natural_wind_oppose = attr.natural_wind_oppose + 80
+            end
+        elseif (r == "亡灵") then
+            if (qtys[r] == 2) then
+                table.insert(
+                    attr.attack_debuff,
+                    {
+                        attr = "move",
+                        odds = 100,
+                        val = 3,
+                        during = 2.5,
+                        effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
+                    }
+                )
+            elseif (qtys[r] == 3) then
+                table.insert(
+                    attr.attack_debuff,
+                    {
+                        attr = "move",
+                        odds = 100,
+                        val = 4,
+                        during = 3,
+                        effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
+                    }
+                )
+            elseif (qtys[r] == 4) then
+                table.insert(
+                    attr.attack_debuff,
+                    {
+                        attr = "move",
+                        odds = 100,
+                        val = 5,
+                        during = 3.5,
+                        effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
+                    }
+                )
+            end
+        elseif (r == "娜迦") then
+            if (qtys[r] == 1) then
+                attr.natural_water_oppose = attr.natural_water_oppose + 5
+                attr.natural_ice_oppose = attr.natural_ice_oppose + 5
+            elseif (qtys[r] == 3) then
+                attr.natural_water_oppose = attr.natural_water_oppose + 10
+                attr.natural_ice_oppose = attr.natural_ice_oppose + 10
+            elseif (qtys[r] == 4) then
+                attr.natural_water_oppose = attr.natural_water_oppose + 15
+                attr.natural_ice_oppose = attr.natural_ice_oppose + 15
+            end
+        elseif (r == "元素") then
+            if (qtys[r] == 5) then
+                local vv = 6.5
+                attr.natural_fire_oppose = attr.natural_fire_oppose + vv
+                attr.natural_soil_oppose = attr.natural_soil_oppose + vv
+                attr.natural_water_oppose = attr.natural_water_oppose + vv
+                attr.natural_ice_oppose = attr.natural_ice_oppose + vv
+                attr.natural_wind_oppose = attr.natural_wind_oppose + vv
+                attr.natural_light_oppose = attr.natural_light_oppose + vv
+                attr.natural_dark_oppose = attr.natural_dark_oppose + vv
+                attr.natural_wood_oppose = attr.natural_wood_oppose + vv
+                attr.natural_thunder_oppose = attr.natural_thunder_oppose + vv
+                attr.natural_poison_oppose = attr.natural_poison_oppose + vv
+                attr.natural_ghost_oppose = attr.natural_ghost_oppose + vv
+                attr.natural_metal_oppose = attr.natural_metal_oppose + vv
+                attr.natural_dragon_oppose = attr.natural_dragon_oppose + vv
+                attr.natural_insect_oppose = attr.natural_insect_oppose + vv
+                attr.natural_god_oppose = attr.natural_god_oppose + vv
+            elseif (qtys[r] == 3) then
+                table.insert(attr.attack_damage_type, "dark")
+                table.insert(attr.attack_damage_type, "light")
+            elseif (qtys[r] == 4) then
+                table.insert(attr.attack_damage_type, "fire")
+                table.insert(attr.attack_damage_type, "soil")
+            elseif (qtys[r] == 5) then
+                local vv = 18
+                attr.natural_fire_oppose = attr.natural_fire_oppose + vv
+                attr.natural_soil_oppose = attr.natural_soil_oppose + vv
+                attr.natural_water_oppose = attr.natural_water_oppose + vv
+                attr.natural_ice_oppose = attr.natural_ice_oppose + vv
+                attr.natural_wind_oppose = attr.natural_wind_oppose + vv
+                attr.natural_light_oppose = attr.natural_light_oppose + vv
+                attr.natural_dark_oppose = attr.natural_dark_oppose + vv
+                attr.natural_wood_oppose = attr.natural_wood_oppose + vv
+                attr.natural_thunder_oppose = attr.natural_thunder_oppose + vv
+                attr.natural_poison_oppose = attr.natural_poison_oppose + vv
+                attr.natural_ghost_oppose = attr.natural_ghost_oppose + vv
+                attr.natural_metal_oppose = attr.natural_metal_oppose + vv
+                attr.natural_dragon_oppose = attr.natural_dragon_oppose + vv
+                attr.natural_insect_oppose = attr.natural_insect_oppose + vv
+                attr.natural_god_oppose = attr.natural_god_oppose + vv
+            end
+        elseif (r == "恶魔") then
+            if (qtys[r] == 1) then
+                attr.damage_extent = attr.damage_extent + 6.66
+            elseif (qtys[r] == 2) then
+                attr.damage_extent = attr.damage_extent + 6.66
+            elseif (qtys[r] == 3) then
+                attr.damage_extent = attr.damage_extent + 6.66
+            elseif (qtys[r] == 4) then
+                attr.damage_extent = attr.damage_extent + 6.66
+            elseif (qtys[r] == 5) then
+                attr.damage_extent = attr.damage_extent + 6.66
+            end
+        elseif (r == "神族") then
+            if (qtys[r] == 1) then
+                attr.attack_speed = attr.attack_speed + 20
+            elseif (qtys[r] == 2) then
+                attr.natural_god = attr.natural_god + 20
+            elseif (qtys[r] == 3) then
+                table.insert(attr.attack_damage_type, "god")
+            end
+        elseif (r == "昆虫") then
+            if (qtys[r] == 1) then
+                attr.defend = attr.defend + 20
+            elseif (qtys[r] == 2) then
+                attr.resistance = attr.resistance + 30
+            elseif (qtys[r] == 3) then
+                attr.toughness = attr.toughness + 1000
+            end
+        elseif (r == "异兽") then
+            if (qtys[r] == 2) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "split",
+                        odds = 100,
+                        range = 350,
+                        percent = 10
+                    }
+                )
+            elseif (qtys[r] == 3) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "split",
+                        odds = 100,
+                        range = 400,
+                        percent = 15
+                    }
+                )
+            elseif (qtys[r] == 4) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "split",
+                        odds = 100,
+                        range = 500,
+                        percent = 20
+                    }
+                )
+            end
+        elseif (r == "幽魂") then
+            if (qtys[r] == 2) then
+                attr.avoid = attr.avoid + 10
+            elseif (qtys[r] == 2) then
+                attr.avoid = attr.avoid + 20
+            elseif (qtys[r] == 3) then
+                attr.avoid = attr.avoid + 25
+            end
+        elseif (r == "食人魔") then
+            if (qtys[r] == 2) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "swim",
+                        odds = 10,
+                        during = 0.3
+                    }
+                )
+            elseif (qtys[r] == 5) then
+                table.insert(
+                    attr.attack_effect,
+                    {
+                        attr = "swim",
+                        odds = 20,
+                        during = 1.0
+                    }
+                )
+            end
+        elseif (r == "地精") then
+            if (qtys[r] == 1) then
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 7
+            elseif (qtys[r] == 2) then
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 10
+            elseif (qtys[r] == 3) then
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 13
+            elseif (qtys[r] == 4) then
+                attrPlayer.gold_ratio = attrPlayer.gold_ratio + 15
+            end
+        elseif (r == "龙人") then
+            if (qtys[r] == 1) then
+                attr.attack_green = attr.attack_green + 120
+            elseif (qtys[r] == 2) then
+                table.insert(attr.attack_damage_type, "thunder")
+            elseif (qtys[r] == 3) then
+                table.insert(attr.attack_damage_type, "wind")
+            end
+        elseif (r == "熊猫") then
+            if (qtys[r] == 1) then
+                attr.life = attr.life + 200
+            elseif (qtys[r] == 2) then
+                attr.life = attr.life + 500
+            elseif (qtys[r] == 3) then
+                attr.life = attr.life + 1000
+            elseif (qtys[r] == 4) then
+                attr.life = attr.life + 3000
+            end
+        end
+    end
+    if (addTowerSkillsRaceAttr[playerIndex] == nil) then
+        addTowerSkillsRaceAttr[playerIndex] = {}
+        addTowerSkillsRaceAttrPlayer[playerIndex] = {}
+    else
+        --玩家扣除
+        if (addTowerSkillsRaceAttrPlayer[playerIndex].gold_ratio > 0) then
+            hplayer.subGoldRatio(hplayer.players[playerIndex], addTowerSkillsRaceAttrPlayer[playerIndex].gold_ratio, 0)
+        end
+        if (addTowerSkillsRaceAttrPlayer[playerIndex].exp_ratio > 0) then
+            hplayer.subExpRatio(hplayer.players[playerIndex], addTowerSkillsRaceAttrPlayer[playerIndex].exp_ratio, 0)
+        end
+    end
+    --整理旧属性
+    local mixAttrs = handleTowerSkillsRaceAttr(addTowerSkillsRaceAttr[playerIndex], attr)
+    --新旧交替
+    addTowerSkillsRaceAttr[playerIndex] = attr
+    addTowerSkillsRaceAttrPlayer[playerIndex] = attrPlayer
+    attr = nil
+    attrPlayer = nil
+    --玩家增加
+    if (addTowerSkillsRaceAttrPlayer[playerIndex].gold_ratio > 0) then
+        hplayer.addGoldRatio(hplayer.players[playerIndex], addTowerSkillsRaceAttrPlayer[playerIndex].gold_ratio, 0)
+    end
+    if (addTowerSkillsRaceAttrPlayer[playerIndex].exp_ratio > 0) then
+        hplayer.addExpRatio(hplayer.players[playerIndex], addTowerSkillsRaceAttrPlayer[playerIndex].exp_ratio, 0)
+    end
+    if (addTowerSkillsRaceAbility[playerIndex] == nil) then
+        addTowerSkillsRaceAbility[playerIndex] = {}
+    end
+    for k, v in pairs(towers) do
+        if (addTowerSkillsRaceAbility[playerIndex][k] ~= nil) then
+            hskill.del(v, addTowerSkillsRaceAbility[playerIndex][k], 0)
+        end
+        local index = races[v] .. qtys[races[v]]
+        addTowerSkillsRaceAbility[playerIndex][k] = game.thisUnitRaceAbilities[index].ABILITY_ID
+        hskill.add(v, addTowerSkillsRaceAbility[playerIndex][k], 0)
+        if (hRuntime.unit[v] == nil) then
+            hRuntime.unit[v] = {}
+        end
+        if (hRuntime.unit[v]["raceTeamInit"] == nil) then
+            hRuntime.unit[v]["raceTeamInit"] = 1
+            if (table.len(mixAttrs.new) > 0) then
+                addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack + addTowerSkillsRaceAttrClock
+                htime.setTimeout(
+                    addTowerSkillsRaceAttrStack,
+                    function(t)
+                        htime.delTimer(t)
+                        addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack - addTowerSkillsRaceAttrClock
+                        if (his.alive(v)) then
+                            hattr.set(v, 0, mixAttrs.new)
+                        end
+                    end
+                )
+            end
+        else
+            if (table.len(mixAttrs.diff.add) > 0) then
+                addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack + addTowerSkillsRaceAttrClock
+                htime.setTimeout(
+                    addTowerSkillsRaceAttrStack,
+                    function(t)
+                        htime.delTimer(t)
+                        addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack - addTowerSkillsRaceAttrClock
+                        if (his.alive(v)) then
+                            hattr.set(v, 0, mixAttrs.diff.add)
+                        end
+                    end
+                )
+            end
+            if (table.len(mixAttrs.diff.sub) > 0) then
+                addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack + addTowerSkillsRaceAttrClock + 0.05
+                htime.setTimeout(
+                    addTowerSkillsRaceAttrStack,
+                    function(t)
+                        htime.delTimer(t)
+                        addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack - addTowerSkillsRaceAttrClock + 0.05
+                        if (his.alive(v)) then
+                            hattr.set(v, 0, mixAttrs.diff.sub)
+                        end
+                    end
+                )
+            end
+        end
+    end
+    races = nil
 end
