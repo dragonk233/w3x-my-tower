@@ -50,7 +50,7 @@ for _, item in ipairs(items) do
             abilList = cd
             usable = 1
         end
-        local lv = math.floor(v.goldcost / 1000)
+        local lv = v.lv or math.floor(v.goldcost / 1000)
         local obj = slk.item.rat9:new("items_" .. v.Name)
         obj.Name = v.Name
         obj.Description = slkHelper.itemDesc(v)

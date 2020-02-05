@@ -66,7 +66,7 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+300",
+            attack_green = "+250",
             attack_effect = {
                 {
                     attr = "knocking",
@@ -88,7 +88,7 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+ice",
-            attack_green = "+850",
+            attack_green = "+600",
             attack_effect = {
                 {
                     attr = "knocking",
@@ -110,11 +110,11 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+fire",
-            attack_green = "+1350",
+            attack_green = "+950",
             attack_effect = {
                 {
                     attr = "knocking",
-                    odds = 20,
+                    odds = 21,
                     percent = 30
                 }
             }
@@ -132,6 +132,7 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_speed = "-10",
+            attack_green = "+1200",
             attack_effect = {
                 {
                     attr = "knocking",
@@ -152,8 +153,8 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+800",
-            int_green = "+400"
+            attack_green = "+600",
+            int_green = "+500"
         }
     },
     {
@@ -168,8 +169,8 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+magic",
-            attack_green = "+1400",
-            int_green = "+760"
+            attack_green = "+1000",
+            int_green = "+860"
         }
     },
     {
@@ -184,13 +185,13 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+magic",
-            attack_green = "+3000",
-            int_green = "+1200",
+            attack_green = "+1600",
+            int_green = "+1500",
             attack_effect = {
                 {
                     attr = "violence",
-                    odds = 15,
-                    percent = 20
+                    odds = 18,
+                    percent = 23
                 }
             }
         }
@@ -207,13 +208,13 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+magic,poison",
-            attack_green = "+5000",
+            attack_green = "+2600",
             int_green = "+2000",
             attack_effect = {
                 {
                     attr = "violence",
-                    odds = 20,
-                    percent = 25
+                    odds = 23,
+                    percent = 27
                 }
             }
         }
