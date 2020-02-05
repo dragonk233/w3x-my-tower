@@ -648,35 +648,17 @@ cj.TriggerAddAction(
                     end
                 end
                 -- 商店
-                for _, v in pairs(game.medicineShopPoint) do
+                for _, sp in pairs(game.shopsConfig) do
                     hunit.create(
                         {
                             whichPlayer = game.ALLY_PLAYER,
-                            unitId = game.shops["药商"].UNIT_ID,
+                            unitId = game.shops[sp[1]].UNIT_ID,
                             qty = 1,
-                            x = v[1],
-                            y = v[2]
+                            x = sp[2][1],
+                            y = sp[2][2]
                         }
                     )
                 end
-                hunit.create(
-                    {
-                        whichPlayer = game.ALLY_PLAYER,
-                        unitId = game.shops["猎人之店"].UNIT_ID,
-                        qty = 1,
-                        x = -256,
-                        y = 256
-                    }
-                )
-                hunit.create(
-                    {
-                        whichPlayer = game.ALLY_PLAYER,
-                        unitId = game.shops["信使之笼"].UNIT_ID,
-                        qty = 1,
-                        x = 256,
-                        y = 256
-                    }
-                )
                 --创建多面板
                 hmultiBoard.create(
                     "player",

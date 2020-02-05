@@ -32,14 +32,13 @@ for k, v in ipairs(shops) do
     obj.pathTex = v.pathTex
     obj.abilList = v.abilList or ""
     obj.file = v.file
-    obj.Art = v.Art
     obj.modelScale = v.modelScale or 1.00
     obj.scale = v.scale or 1.00
-    obj.HP = v.HP
-    obj.sight = v.sight
-    obj.nsight = v.nsight
+    obj.HP = 99999
+    obj.sight = 1000
+    obj.nsight = 1000
     obj.unitSound = v.unitSound or ""
-    obj.Sellitems = v.Sellitems or ""
+    obj.Sellitems = v.Sellitems or string.implode(",", itemsShop[v.Name])
     obj.UberSplat = ""
     v.UNIT_ID = obj:get_id()
     ?>
