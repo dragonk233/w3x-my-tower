@@ -50,14 +50,15 @@ for _, item in ipairs(items) do
             abilList = cd
             usable = 1
         end
+        local lv = math.floor(v.goldcost / 1000)
         local obj = slk.item.rat9:new("items_" .. v.Name)
         obj.Name = v.Name
         obj.Description = slkHelper.itemDesc(v)
         obj.Ubertip = slkHelper.itemUbertip(v)
         obj.goldcost = v.goldcost or 1000000
         obj.lumbercost = v.lumbercost or 1000000
-        obj.Level = math.floor(v.goldcost / 1000)
-        obj.oldLevel = math.floor(v.goldcost / 1000)
+        obj.Level = lv
+        obj.oldLevel = lv
         obj.Art = v.Art
         obj.file = v.file or "Objects\\InventoryItems\\TreasureChest\\treasurechest.mdl"
         obj.stockStart = v.stockStart or 0
@@ -85,6 +86,7 @@ for _, item in ipairs(items) do
         else
             obj.Tip = "获得" .. v.Name
         end
+        v.LEVEL = lv
         v.itemID = obj:get_id()
         table.insert(itemsShop[shopName], v.itemID)
         ?>
