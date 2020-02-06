@@ -1,5 +1,6 @@
 -- items
 
+itemsIndex = 0
 itemsShop = {}
 
 local items = {
@@ -20,11 +21,11 @@ local items = {
         items_defend1,
     },
     {
-        "铁墙之间",
+        "铁箱子",
         items_defend2,
     },
     {
-        "奇异猎屋",
+        "奇异屋",
         items_defend3,
     },
     {
@@ -87,10 +88,15 @@ for _, item in ipairs(items) do
             obj.Tip = "获得" .. v.Name
         end
         v.LEVEL = lv
-        v.itemID = obj:get_id()
-        table.insert(itemsShop[shopName], v.itemID)
+        v.ITEM_ID = obj:get_id()
+        table.insert(itemsShop[shopName], v.ITEM_ID)
+        itemsIndex = itemsIndex + 1
         ?>
-        call SaveStr(hash_myslk, StringHash("items"), StringHash("<?=v.Name?>"), "<?=string.addslashes(json.stringify(v))?>")
+        call SaveStr(hash_myslk, StringHash("items"), <?=itemsIndex?>, "<?=string.addslashes(json.stringify(v))?>")
         <?
     end
 end
+
+?>
+call SaveInteger(hash_myslk, StringHash("items"), -1, <?=itemsIndex?>)
+<?

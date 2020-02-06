@@ -34,7 +34,7 @@ shops = {
         scale = 3.60
     },
     {
-        Name = "铁墙之间",
+        Name = "铁箱子",
         pathTex = "PathTextures\\8x8SimpleSolid.tga",
         abilList = "Aneu,Avul,Apit",
         file = "buildings\\human\\HumanBarracks\\HumanBarracks",
@@ -42,7 +42,7 @@ shops = {
         scale = 3.60
     },
     {
-        Name = "奇异猎屋",
+        Name = "奇异屋",
         pathTex = "PathTextures\\8x8SimpleSolid.tga",
         abilList = "Aneu,Avul,Apit",
         file = "buildings\\nightelf\\HuntersHall\\HuntersHall.mdl",

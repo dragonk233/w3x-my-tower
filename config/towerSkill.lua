@@ -2216,7 +2216,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Helmet_73.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {100},
+        Val = {300},
         ODK = true
     },
     {

@@ -174,9 +174,9 @@ for i = 1, len, 1 do
 end
 
 -- 技能/技能书
-local abilities_qty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilities_qty"), 0)
-local abilities_item_qty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilities_item_qty"), 0)
-for i = 1, abilities_qty, 1 do
+local abilitiesQty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilities_qty"), 0)
+local abilitiesItemQty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("abilities_item_qty"), 0)
+for i = 1, abilitiesQty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilities"), i)
     local jv = json.parse(v)
     hRuntime.register.ability(jv)
@@ -185,7 +185,7 @@ for i = 1, abilities_qty, 1 do
     end
     game.thisOptionAbility[jv.INDEX][jv.ABILITY_BTN] = jv
 end
-for i = 1, abilities_item_qty, 1 do
+for i = 1, abilitiesItemQty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("abilitiesItems"), i)
     local jv = json.parse(v)
     jv.I_TYPE = "ability"
@@ -197,4 +197,12 @@ for i = 1, abilities_item_qty, 1 do
         game.thisOptionAbilityItem[jv.ABILITY_COLOR][jv.ABILITY_LEVEL] = {}
     end
     table.insert(game.thisOptionAbilityItem[jv.ABILITY_COLOR][jv.ABILITY_LEVEL], jv)
+end
+
+--物品
+local itemQty = cj.LoadInteger(cg.hash_myslk, cj.StringHash("items"), -1)
+for i = 1, itemQty, 1 do
+    local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("items"), i)
+    local jv = json.parse(v)
+    hRuntime.register.item(jv)
 end

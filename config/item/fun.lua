@@ -9,8 +9,8 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令其他玩家的主兵塔眩晕5秒",
-        cooldown = 120
+        ACTIVE = "令其他玩家的所有塔眩晕5秒",
+        cooldown = 80
     },
     {
         Name = "呼啸的风暴狮角",
@@ -23,6 +23,6 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令其他玩家的所有塔眩晕10秒",
-        cooldown = 150
+        cooldown = 100
     },
 }

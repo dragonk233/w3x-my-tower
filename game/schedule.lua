@@ -101,6 +101,7 @@ cj.TriggerAddAction(
             hplayer.setLumber(hplayer.players[i], l)
             hmsg.echo00(hplayer.players[i], " *** 根据你的地图等级和游玩次数，你得到了" .. hColor.green(l) .. "个木头")
             dzSetPrestige(hplayer.players[i], true, false)
+            hplayer.addGold(hplayer.players[i], 1000000)
         end
         htime.setInterval(
             5,
@@ -506,7 +507,9 @@ cj.TriggerAddAction(
                                                         (hplayer.getStatus(hplayer.players[k]) ==
                                                             hplayer.player_status.gaming)
                                                      then
-                                                        local hunt = 5 * game.rule.dk.wave[playerIndex]
+                                                        local hunt =
+                                                            10 * game.rule.dk.wave[playerIndex] +
+                                                            hhero.getCurLevel(game.playerTower[playerIndex])
                                                         if (hunt >= hunit.getCurLife(game.playerTower[k])) then
                                                             hunit.kill(game.playerTower[k], 0)
                                                             hmsg.echo(
