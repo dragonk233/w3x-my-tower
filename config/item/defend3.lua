@@ -4,7 +4,7 @@ items_defend3 = {
         Description = "月亮光光照落地堂",
         goldcost = 40000,
         lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNHornOfDoom.blp",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNMoonStone.blp",
         powerup = 0,
         sellable = 1,
         pawnable = 1,
@@ -88,7 +88,7 @@ items_defend3 = {
         Description = "红色代表热情与专注",
         goldcost = 150000,
         lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNGem.blp",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNPhilosophersStone.blp",
         powerup = 0,
         sellable = 1,
         pawnable = 1,
@@ -145,6 +145,24 @@ items_defend3 = {
         }
     },
     {
+        Name = "海神法杖",
+        Description = "大海之主用来定海的法杖，宁静而庄严",
+        goldcost = 300000,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNPriestAdept.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            attack_damage_type = "+god,water",
+            natural_water = "+45",
+            natural_water_oppose = "+60",
+            natural_wind_oppose = "+30",
+            natural_ice_oppose = "+20"
+        }
+    },
+    {
         Name = "乱神权杖",
         Description = "半神使用的法杖，引起世界的纷争",
         goldcost = 480000,
@@ -158,8 +176,28 @@ items_defend3 = {
             attack_damage_type = "+god,light,magic",
             natural_god = "+35",
             natural_god_oppose = "+35",
-            str_green = "1000",
-            int_green = "1000"
+            str_green = "1500",
+            int_green = "1500"
+        }
+    },
+    {
+        Name = "鬼神骨灰瓮",
+        Description = "传说无论是神还是鬼，被杀死后灵魂都会收纳进此骨灰瓮，当然也像是假的",
+        goldcost = 555555,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNUrnOfKelThuzad.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            attack_damage_type = "+ghost",
+            natural_ghost = "+50",
+            natural_ghost_oppose = "+90",
+            luck = "88",
+            str_green = "+888",
+            agi_green = "+888",
+            int_green = "+888"
         }
     },
     {
@@ -173,8 +211,9 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_speed = "+66",
-            damage_extent = "+66"
+            attack_damage_type = "+absolute",
+            attack_speed = "+66.6",
+            damage_extent = "+66.6"
         }
     }
 }
