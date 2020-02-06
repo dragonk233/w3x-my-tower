@@ -68,7 +68,7 @@ for _, item in ipairs(items) do
             v.goldcost = lv * 100
             v.lumbercost = 0
         end
-        local obj = slk.item.rat9:new("items_" .. v.Name)
+        local obj = slk.item.rat9:new("items_x" .. itemsIndex)
         obj.Name = v.Name
         obj.Description = slkHelper.itemDesc(v)
         obj.Ubertip = slkHelper.itemUbertip(v)
