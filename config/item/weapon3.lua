@@ -163,7 +163,7 @@ items_weapon3 = {
     {
         Name = "铁戟",
         Description = "铁制的长戟",
-        goldcost = 150000,
+        goldcost = 181818,
         lumbercost = 0,
         Art = "ReplaceableTextures\\CommandButtons\\BTNStrengthOfTheMoon.blp",
         powerup = 0,
@@ -178,7 +178,7 @@ items_weapon3 = {
     {
         Name = "凉月戟",
         Description = "月之高冷",
-        goldcost = 200000,
+        goldcost = 222222,
         lumbercost = 0,
         Art = "ReplaceableTextures\\CommandButtons\\BTNImprovedStrengthOfTheMoon.blp",
         powerup = 0,
@@ -193,7 +193,7 @@ items_weapon3 = {
     {
         Name = "月神戟",
         Description = "月之力量",
-        goldcost = 250000,
+        goldcost = 333333,
         lumbercost = 0,
         Art = "ReplaceableTextures\\CommandButtons\\BTNAdvancedStrengthOfTheMoon.blp",
         powerup = 0,
