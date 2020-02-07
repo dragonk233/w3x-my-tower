@@ -51,19 +51,18 @@ for _, item in ipairs(items) do
         local cd = slkHelper.itemCooldownID(v)
         local abilList = ""
         local usable = 0
-        local perishable = v.perishable
         if (cd ~= "AIat") then
             abilList = cd
             usable = 1
-            if(perishable == nil)then
-                perishable = 1
+            if(v.perishable == nil)then
+                v.perishable = 1
             end
         else
-            if(perishable == nil)then
-                perishable = 0
+            if(v.perishable == nil)then
+                v.perishable = 0
             end
         end
-        local lv = v.lv or math.floor(v.goldcost / 7000)
+        local lv = v.lv or math.floor(v.goldcost / 2000)
         if(shopName == "combo")then
             v.goldcost = lv * 500
             v.lumbercost = 0
@@ -88,7 +87,7 @@ for _, item in ipairs(items) do
         obj.abilList = abilList
         obj.ignoreCD = v.ignoreCD or 0
         obj.drop = v.drop or 0
-        obj.perishable = perishable
+        obj.perishable = v.perishable
         obj.usable = usable
         obj.powerup = v.powerup or 0
         obj.sellable = v.sellable or 1
@@ -106,10 +105,11 @@ for _, item in ipairs(items) do
         else
             obj.Tip = "获得" .. v.Name
         end
+        v.INDEX = v.Name
         v.LEVEL = lv
         v.ITEM_ID = obj:get_id()
         if(shopName ~= "combo")then
-            v.I_TYPE = "equip"
+            v.I_TYPE = v.I_TYPE or "equip"
             table.insert(itemsShop[shopName], v.ITEM_ID)
         else
             v.I_TYPE = "combo"

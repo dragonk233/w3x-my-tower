@@ -335,5 +335,12 @@ onUnitItemsUesd = function(evtData)
                 end
             end
         )
+    elseif (itemSLK.I_TYPE == "strategy") then
+        --战略物品
+        local playerIndex = hplayer.index(p)
+        if (itemSLK.INDEX == "起死回生药水") then
+            heffect.toUnit("war3mapImported\\eff_holy_light2.mdl", game.playerTower[playerIndex])
+            hunit.setCurLifePercent(game.playerTower[playerIndex], 100)
+        end
     end
 end

@@ -10,7 +10,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔队伍获得神攻击特性并且攻击力提升25%|n持续30秒",
-        cooldown = 15
+        cooldown = 15,
+        I_TYPE = "strategy"
     },
     {
         Name = "武神切符",
@@ -23,7 +24,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔队伍获得攻击速度提升75%|n持续30秒",
-        cooldown = 15
+        cooldown = 15,
+        I_TYPE = "strategy"
     },
     {
         Name = "变异切符",
@@ -36,7 +38,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔队伍获得两种攻击特性并其20%的增益|n持续30秒",
-        cooldown = 15
+        cooldown = 15,
+        I_TYPE = "strategy"
     },
     {
         Name = "恶魔切符",
@@ -49,7 +52,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔队伍伤害增幅提升33%，但护甲减少100点|n持续30秒",
-        cooldown = 15
+        cooldown = 15,
+        I_TYPE = "strategy"
     },
     {
         Name = "恶灵切符",
@@ -62,7 +66,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔队伍获得鬼特性并提升150%鬼攻击|n持续30秒",
-        cooldown = 20
+        cooldown = 20,
+        I_TYPE = "strategy"
     },
     {
         Name = "圣杯切符",
@@ -75,7 +80,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔经验率提升30%|n持续30秒",
-        cooldown = 20
+        cooldown = 20,
+        I_TYPE = "strategy"
     },
     {
         Name = "陋室切符",
@@ -88,7 +94,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔经验率提升30%|n持续30秒",
-        cooldown = 20
+        cooldown = 20,
+        I_TYPE = "strategy"
     },
     {
         Name = "王室切符",
@@ -101,7 +108,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您黄金获得率提升10%，并且售卖时可以获得100%回本|n持续120秒",
-        cooldown = 20
+        cooldown = 20,
+        I_TYPE = "strategy"
     },
     {
         Name = "锤敕令",
@@ -114,7 +122,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令其他玩家的所有塔眩晕10秒",
-        cooldown = 150
+        cooldown = 15,
+        I_TYPE = "strategy"
     },
     {
         Name = "盾敕令",
@@ -127,7 +136,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令其他玩家的所有塔攻速减少50%持续10秒",
-        cooldown = 150
+        cooldown = 15,
+        I_TYPE = "strategy"
     },
     {
         Name = "剑敕令",
@@ -140,7 +150,8 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令其他玩家的信使眩晕10秒",
-        cooldown = 150
+        cooldown = 15,
+        I_TYPE = "strategy"
     },
     {
         Name = "斧敕令",
@@ -153,6 +164,7 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令其他玩家的主兵塔生命瞬间减少20%",
-        cooldown = 150
+        cooldown = 15,
+        I_TYPE = "strategy"
     }
 }

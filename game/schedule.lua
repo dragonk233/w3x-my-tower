@@ -650,18 +650,6 @@ cj.TriggerAddAction(
                         createMyTowerLink(k, i)
                     end
                 end
-                -- 商店
-                for _, sp in pairs(game.shopsConfig) do
-                    hunit.create(
-                        {
-                            whichPlayer = game.ALLY_PLAYER,
-                            unitId = game.shops[sp[1]].UNIT_ID,
-                            qty = 1,
-                            x = sp[2][1],
-                            y = sp[2][2]
-                        }
-                    )
-                end
                 --创建多面板
                 hmultiBoard.create(
                     "player",

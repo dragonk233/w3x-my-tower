@@ -100,6 +100,19 @@ hquest.create(
     }
 )
 
+-- 商店
+for _, sp in ipairs(game.shopsConfig) do
+    hunit.create(
+        {
+            whichPlayer = game.ALLY_PLAYER,
+            unitId = game.shops[sp[1]].UNIT_ID,
+            qty = 1,
+            x = sp[2][1],
+            y = sp[2][2]
+        }
+    )
+end
+
 -- game start(这里需要用时间事件延时N秒，不然很多动作会在初始化失效)
 --加载本地图的test
 require "game.schedule"

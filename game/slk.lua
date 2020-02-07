@@ -205,7 +205,7 @@ for i = 1, itemQty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("items"), i)
     local jv = json.parse(v)
     hRuntime.register.item(jv)
-    if (jv.TYPE == "combo") then
+    if (jv.I_TYPE == "combo") then
         if (game.thisComboItem[jv.LEVEL] == nil) then
             game.thisComboItem[jv.LEVEL] = {}
         end

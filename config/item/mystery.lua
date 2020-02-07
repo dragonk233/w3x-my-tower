@@ -10,7 +10,8 @@ items_mystery = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令主兵塔恢复所有生命！",
-        cooldown = 0
+        cooldown = 0,
+        I_TYPE = "strategy"
     },
     {
         Name = "法术大师手套",

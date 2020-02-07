@@ -201,13 +201,11 @@ onCourierSkillUesd = function(evtData)
         for si = 0, 5, 1 do
             local tempIt = cj.UnitItemInSlot(u, si)
             if (tempIt ~= nil) then
-                itemSlkCache[tempIt] = hitem.getSlk(tempIt)
-                if
-                    (itemSlkCache[tempIt] ~= nil and
-                        (itemSlkCache[tempIt].I_TYPE == "combo" or itemSlkCache[tempIt].I_TYPE == "equip"))
-                 then
+                local tslk = hitem.getSlk(tempIt)
+                if (tslk ~= nil and (tslk.I_TYPE == "combo" or tslk.I_TYPE == "equip")) then
                     itemQty = itemQty + hitem.getCharges(tempIt)
-                    itemLv = itemLv + itemSlkCache[tempIt].LEVEL
+                    itemLv = itemLv + tslk.LEVEL
+                    itemSlkCache[tempIt] = tslk
                 end
             end
             tempIt = nil
@@ -216,8 +214,6 @@ onCourierSkillUesd = function(evtData)
             htextTag.style(htextTag.create2Unit(u, "至少要2件装备", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         end
-        print("itemQty=" .. itemQty)
-        print("itemLv=" .. itemLv)
         local need = 500 * itemQty
         if (hplayer.getGold(p) < need) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
@@ -228,12 +224,16 @@ onCourierSkillUesd = function(evtData)
                 hitem.del(tempIt, 0)
             end
             itemSlkCache = nil
-            local downLv = math.floor(itemLv / itemQty * 0.5)
+            local downLv = math.floor(itemLv * 0.8)
             if (downLv < 1) then
                 downLv = 1
+            elseif (downLv > 120) then
+                downLv = 120
             end
+            print("itemQty=" .. itemQty)
+            print("downLv=" .. downLv)
+            print("itemLv=" .. itemLv)
             local comboIt = {}
-            print_r(game.thisComboItem, print_mb)
             for cbi = downLv, itemLv, 1 do
                 if (game.thisComboItem[cbi] ~= nil) then
                     for _, civ in pairs(game.thisComboItem[cbi]) do
@@ -241,7 +241,6 @@ onCourierSkillUesd = function(evtData)
                     end
                 end
             end
-            print_r(comboIt, print_mb)
             if (#comboIt <= 0) then
                 htextTag.style(htextTag.create2Unit(u, "升华失败了,恨啊!", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
                 return
@@ -257,7 +256,7 @@ onCourierSkillUesd = function(evtData)
             )
             hmsg.echo(
                 hColor.sky(cj.GetPlayerName(p)) ..
-                    "利用" .. hColor.yellow(itemQty) .. "件装备升华出了[" .. hColor.green(randIt.Name) .. "]！"
+                    "利用" .. hColor.yellow(itemQty) .. "件装备升华出了" .. hColor.green(randIt.Name) .. "！"
             )
             randIt = nil
         end

@@ -1,5 +1,108 @@
 items_combo = {}
 items_combo_pre = "升华"
+
+table.insert(
+    items_combo,
+    {
+        Name = items_combo_pre .. "绿之石",
+        Description = "green",
+        Art = "war3mapImported\\icon_item_Jewelcrafting_Gem_01.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        lv = 110,
+        ATTR = {
+            natural_poison = "+100",
+            natural_poison_oppose = "+100"
+        }
+    }
+)
+table.insert(
+    items_combo,
+    {
+        Name = items_combo_pre .. "橘之石",
+        Description = "orange",
+        Art = "war3mapImported\\icon_item_Jewelcrafting_Gem_02.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        lv = 110,
+        ATTR = {
+            natural_insect = "+100",
+            natural_insect_oppose = "+100"
+        }
+    }
+)
+table.insert(
+    items_combo,
+    {
+        Name = items_combo_pre .. "黄之石",
+        Description = "yellow",
+        Art = "war3mapImported\\icon_item_Jewelcrafting_Gem_03.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        lv = 110,
+        ATTR = {
+            natural_dragon = "+100",
+            natural_dragon_oppose = "+100"
+        }
+    }
+)
+table.insert(
+    items_combo,
+    {
+        Name = items_combo_pre .. "红之石",
+        Description = "red",
+        Art = "war3mapImported\\icon_item_Jewelcrafting_Gem_04.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        lv = 110,
+        ATTR = {
+            natural_fire = "+100",
+            natural_fire_oppose = "+100"
+        }
+    }
+)
+table.insert(
+    items_combo,
+    {
+        Name = items_combo_pre .. "蓝之石",
+        Description = "red",
+        Art = "war3mapImported\\icon_item_Jewelcrafting_Gem_05.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        lv = 110,
+        ATTR = {
+            natural_dark = "+100",
+            natural_dark_oppose = "+100"
+        }
+    }
+)
+table.insert(
+    items_combo,
+    {
+        Name = items_combo_pre .. "紫之石",
+        Description = "red",
+        Art = "war3mapImported\\icon_item_Jewelcrafting_Gem_06.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        lv = 110,
+        ATTR = {
+            natural_ghost = "+100",
+            natural_ghost_oppose = "+100"
+        }
+    }
+)
 for ilv = 1, 9 do
     local clv = ilv * 3 - 2
     table.insert(
@@ -30,7 +133,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 1 + clv,
             ATTR = {
-                defend = "+" .. (7 * ilv)
+                defend = "+" .. (10 * ilv)
             }
         }
     )
@@ -62,7 +165,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 3 + clv,
             ATTR = {
-                life = "+" .. (220 * ilv)
+                life = "+" .. (300 * ilv)
             }
         }
     )
@@ -78,7 +181,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 4 + clv,
             ATTR = {
-                aim = "+" .. (11 * ilv)
+                aim = "+" .. (12 * ilv)
             }
         }
     )
@@ -94,8 +197,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 5 + clv,
             ATTR = {
-                attack_green = "+" .. (30 * ilv),
-                toughness = "+" .. (10 * ilv)
+                attack_green = "+" .. (100 * ilv),
+                toughness = "+" .. (45 * ilv)
             }
         }
     )
@@ -111,7 +214,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 6 + clv,
             ATTR = {
-                avoid = "+" .. (5 * ilv)
+                avoid = "+" .. (8 * ilv)
             }
         }
     )
@@ -127,7 +230,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 7 + clv,
             ATTR = {
-                resistance = "+" .. (3 * ilv)
+                resistance = "+" .. (10 * ilv)
             }
         }
     )
@@ -143,8 +246,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 8 + clv,
             ATTR = {
-                agi_green = "+" .. (26 * ilv),
-                int_green = "+" .. (31 * ilv)
+                agi_green = "+" .. (180 * ilv),
+                int_green = "+" .. (180 * ilv)
             }
         }
     )
@@ -272,6 +375,40 @@ for ilv = 1, 9 do
     table.insert(
         items_combo,
         {
+            Name = items_combo_pre .. "匕首[提炼" .. ilv .. "次]",
+            Description = "朴实无华的小刀",
+            Art = "war3mapImported\\icon_item_ThrowingKnife_02.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 16 + clv,
+            ATTR = {
+                attack_green = "+" .. (177 * ilv),
+                agi_green = "+" .. (8 * ilv)
+            }
+        }
+    )
+    table.insert(
+        items_combo,
+        {
+            Name = items_combo_pre .. "钢甲[提炼" .. ilv .. "次]",
+            Description = "精钢制成的强硬盔甲，很稳当",
+            Art = "war3mapImported\\icon_item_Chest_Plate04.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 17 + clv,
+            ATTR = {
+                defend = "+" .. (21 * ilv),
+                swim_oppose = "+" .. (10 * ilv)
+            }
+        }
+    )
+    table.insert(
+        items_combo,
+        {
             Name = items_combo_pre .. "冰冻碎片[提炼" .. ilv .. "次]",
             Description = "冰冻幽灵被冰冻而死的裂痕",
             Art = "ReplaceableTextures\\CommandButtons\\BTNIceShard.blp",
@@ -308,6 +445,23 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_green = "+" .. (129 * ilv),
                 int_green = "+" .. (88 * ilv)
+            }
+        }
+    )
+    table.insert(
+        items_combo,
+        {
+            Name = items_combo_pre .. "刺甲[提炼" .. ilv .. "次]",
+            Description = "用刺布满盔甲，可伤害敌人",
+            Art = "war3mapImported\\icon_item_Chest_Chain_14.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 21 + clv,
+            ATTR = {
+                defend = "+" .. (14 * ilv),
+                damage_rebound = "+" .. (0.02 * ilv)
             }
         }
     )
@@ -398,6 +552,24 @@ for ilv = 1, 9 do
                 natural_poison = "+" .. (5 * ilv),
                 life = "+" .. (200 * ilv),
                 life_back = "+" .. (0.02 * ilv)
+            }
+        }
+    )
+    table.insert(
+        items_combo,
+        {
+            Name = items_combo_pre .. "刃甲[提炼" .. ilv .. "次]",
+            Description = "用刀片布满盔甲，可防御敌人的反伤，又可反伤敌人",
+            Art = "war3mapImported\\icon_item_Chest_Plate06.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 28 + clv,
+            ATTR = {
+                defend = "+" .. (11 * ilv),
+                damage_rebound = "+" .. (0.02 * ilv),
+                damage_rebound_oppose = "+" .. (9 * ilv)
             }
         }
     )
@@ -760,6 +932,32 @@ for ilv = 1, 9 do
     table.insert(
         items_combo,
         {
+            Name = items_combo_pre .. "银色子弹[提炼" .. ilv .. "次]",
+            Description = "狼头银色的强烈爆量",
+            Art = "war3mapImported\\icon_item_Shoulder_33.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 91 + clv,
+            ATTR = {
+                attack_damage_type = "+thunder",
+                natural_thunder = "+" .. (15 * ilv),
+                attack_effect = {
+                    {
+                        attr = "lightning_chain",
+                        odds = 40,
+                        qty = 3,
+                        val = 3000 + (750 * ilv),
+                        effect = "Abilities\\Spells\\Human\\ManaFlare\\ManaFlareBoltImpact.mdl"
+                    }
+                }
+            }
+        }
+    )
+    table.insert(
+        items_combo,
+        {
             Name = items_combo_pre .. "魔神双头战刃[提炼" .. ilv .. "次]",
             Description = "我说左，你说右，死",
             Art = "war3mapImported\\icon_item_Axe_84.blp",
@@ -777,7 +975,80 @@ for ilv = 1, 9 do
     table.insert(
         items_combo,
         {
-            Name = items_combo_pre .. "激爆狂狮斧[提炼" .. ilv .. "次]",
+            Name = items_combo_pre .. "小小霹雳棒[提炼" .. ilv .. "次]",
+            Description = "滋滋滋滋滋~",
+            Art = "war3mapImported\\icon_item_Battery_01.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 110 + clv,
+            ATTR = {
+                attack_damage_type = "+thunder",
+                attack_green = "+" .. (555 * ilv),
+                attack_speed = "+20",
+                attack_effect = {
+                    {
+                        attr = "lightning_chain",
+                        odds = 45,
+                        qty = 3,
+                        val = 5000 + (1000 * ilv),
+                        effect = "Abilities\\Spells\\Human\\ManaFlare\\ManaFlareBoltImpact.mdl"
+                    }
+                }
+            }
+        }
+    )
+    table.insert(
+        items_combo,
+        {
+            Name = items_combo_pre .. "大大霹雳棒[提炼" .. ilv .. "次]",
+            Description = "滋滋滋滋滋~滋滋滋滋滋~滋滋滋滋滋~",
+            Art = "war3mapImported\\icon_item_Battery_02.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 120 + clv,
+            ATTR = {
+                attack_damage_type = "+thunder",
+                attack_green = "+" .. (777 * ilv),
+                attack_speed = "+20",
+                attack_effect = {
+                    {
+                        attr = "lightning_chain",
+                        odds = 50,
+                        qty = 3,
+                        val = 7000 + (1500 * ilv),
+                        effect = "Abilities\\Spells\\Human\\ManaFlare\\ManaFlareBoltImpact.mdl"
+                    }
+                }
+            }
+        }
+    )
+    table.insert(
+        items_combo,
+        {
+            Name = items_combo_pre .. "雄狮斩火刀[提炼" .. ilv .. "次]",
+            Description = "劈天裂地，火中取命",
+            Art = "war3mapImported\\icon_item_Weapon_Shortblade_89.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 130 + clv,
+            ATTR = {
+                attack_damage_type = "+fire,physical",
+                natural_fire = "+" .. (22.5 * ilv),
+                attack_green = "+" .. (866 * ilv),
+                aim = "+30"
+            }
+        }
+    )
+    table.insert(
+        items_combo,
+        {
+            Name = items_combo_pre .. "激爆猛虎[提炼" .. ilv .. "次]",
             Description = "力拔山河气盖世",
             Art = "war3mapImported\\icon_item_Axe_1H_BlackSmithing_03.blp",
             powerup = 0,
@@ -795,6 +1066,24 @@ for ilv = 1, 9 do
                         percent = 30 + ilv
                     }
                 }
+            }
+        }
+    )
+    table.insert(
+        items_combo,
+        {
+            Name = items_combo_pre .. "神木之杖[提炼" .. ilv .. "次]",
+            Description = "充满生机的灵木",
+            Art = "war3mapImported\\icon_item_Weapon_Shortblade_42.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 160 + clv,
+            ATTR = {
+                attack_damage_type = "+wood",
+                natural_wood = "+" .. (20 * ilv),
+                life = "+" .. (3000 * ilv)
             }
         }
     )
