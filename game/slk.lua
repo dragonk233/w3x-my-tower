@@ -205,4 +205,10 @@ for i = 1, itemQty, 1 do
     local v = cj.LoadStr(cg.hash_myslk, cj.StringHash("items"), i)
     local jv = json.parse(v)
     hRuntime.register.item(jv)
+    if (jv.TYPE == "COMBO") then
+        if (game.thisComboItem[jv.lv] == nil) then
+            game.thisComboItem[jv.lv] = {}
+        end
+        table.insert(game.thisComboItem[jv.lv], jv)
+    end
 end

@@ -124,11 +124,11 @@ onCourierSkillUesd = function(evtData)
             )
         end
     elseif (abilitiesSLK.Name == "召唤新兵塔") then
-        if (hplayer.getGold(p) < (100 * curWave)) then
+        if (hplayer.getGold(p) < (50 * curWave)) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subGold(p, 100 * curWave)
+            hplayer.subGold(p, 50 * curWave)
             local tarBLv = getTowerPowLevel(curWave)
             hitem.create(
                 {
@@ -195,11 +195,55 @@ onCourierSkillUesd = function(evtData)
             end
         end
     elseif (abilitiesSLK.Name == "装备升华") then
-        if (hplayer.getGold(p) < 3000) then
+        local itemQty = 0
+        local itemLv = 0
+        local itemSlkCache = {}
+        for si = 0, 5, 1 do
+            local tempIt = cj.UnitItemInSlot(u, si)
+            itemSlkCache[tempIt] = hitem.getSlk()
+            if (tempIt ~= nil and itemSlkCache[tempIt].type == "COMBO") then
+                itemQty = itemQty + hitem.getCharges(tempIt)
+                itemLv = itemLv + itemSlkCache[tempIt].lv
+            end
+            tempIt = nil
+        end
+        if (itemQty < 2) then
+            htextTag.style(htextTag.create2Unit(u, "物品至少要2件", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
+            return
+        end
+        print("itemQty=" .. itemQty)
+        print("itemLv=" .. itemLv)
+        local need = 500 * itemQty
+        if (hplayer.getGold(p) < need) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         else
-            hplayer.subGold(p, 3000)
+            hplayer.subGold(p, need)
+            htextTag.style(htextTag.create2Unit(u, itemQty .. "件物品被升华了", 7, "ffcc00", 1, 1.5, 50), "scale", 0, 0.05)
+            for tempIt, v in pairs(itemSlkCache) do
+                hitem.del(tempIt, 0)
+            end
+            itemSlkCache = nil
+            itemLv = math.floor(itemLv * 0.9)
+            local lv = math.random(itemLv - 3, itemLv + 2)
+            if (lv < 1) then
+                lv = 1
+            end
+            print("lv=" .. lv)
+            if (game.thisComboItem[lv] == nil) then
+                htextTag.style(htextTag.create2Unit(u, "升华失败了,恨啊!", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
+                return
+            end
+            local randIt = table.random(game.thisComboItem[lv])
+            hitem.create(
+                {
+                    itemId = randIt.ITEM_ID,
+                    charges = 1,
+                    whichUnit = u
+                }
+            )
+            randIt = nil
+            hmsg.echo(hColor.sky(cj.GetPlayerName(p)) .. "升华出了[" .. hColor.green(randIt.Name) .. "]！")
         end
     end
 end

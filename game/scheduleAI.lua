@@ -271,7 +271,7 @@ MAYBE_AI = {
                             curWave = game.rule.dk.wave[playerIndex]
                         end
                         if (curWave ~= nil) then
-                            local need = 100 * curWave
+                            local need = 50 * curWave
                             if (gold >= need) then
                                 hplayer.subGold(hplayer.players[playerIndex], need)
                                 local targetTPow = getTowerPowLevel(curWave)

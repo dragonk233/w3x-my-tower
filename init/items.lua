@@ -65,7 +65,7 @@ for _, item in ipairs(items) do
         end
         local lv = v.lv or math.floor(v.goldcost / 1000)
         if(shopName == "combo")then
-            v.goldcost = lv * 100
+            v.goldcost = lv * 250
             v.lumbercost = 0
         end
         local obj = slk.item.rat9:new("items_x" .. itemsIndex)
@@ -104,6 +104,7 @@ for _, item in ipairs(items) do
             obj.Tip = "获得" .. v.Name
         end
         v.LEVEL = lv
+        v.TYPE = "COMBO"
         v.ITEM_ID = obj:get_id()
         if(shopName ~= "combo")then
             table.insert(itemsShop[shopName], v.ITEM_ID)

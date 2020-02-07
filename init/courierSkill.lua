@@ -255,7 +255,7 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --召唤新兵塔
 local obj = slk.ability.ANcl:new("couriers_sk_new_tower")
 local Name = "召唤新兵塔"
-local Tip = "召唤新兵塔("..hColor.greenLight("Z")..") - "..hColor.yellow("需要[波数x100]黄金")
+local Tip = "召唤新兵塔("..hColor.greenLight("Z")..") - "..hColor.yellow("[当前波数x50]黄金")
 obj.Order = "ambush"
 obj.DataF1 = "ambush"
 obj.Name = Name
@@ -366,13 +366,13 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --装备合并升华
 local obj = slk.ability.ANcl:new("couriers_sk_item_mix")
 local Name = "装备升华"
-local Tip = "装备升华("..hColor.greenLight("V")..") - "..hColor.yellow("3000黄金")
+local Tip = "装备升华("..hColor.greenLight("V")..") - "..hColor.yellow("[物件数x500]黄金")
 obj.Order = "animatedead"
 obj.DataF1 = "animatedead"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "V"
-obj.Ubertip = "将信使身上物品按序抽取10件物品评定为1件新的物品|n物品必须大于10件以上才可升华|n升华不保证变强"..hColor.yellow("(包含同种类)")
+obj.Ubertip = "将信使身上物品评级合并为1件新的物品|n物品必须大于等于2件以上才可合并(包含同种类)|n"..hColor.yellow("合并的物品在商店不可能售卖|n合并的物品不太值钱|n合并不等同于变强")
 obj.Buttonpos1 = 3
 obj.Buttonpos2 = 2
 obj.hero = 0
