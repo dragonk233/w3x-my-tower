@@ -97,7 +97,7 @@ cj.TriggerAddAction(
             if (l == nil) then
                 l = 0
             end
-            game.playerOriginLumber[i] = l
+            game.playerOriginLumber[i] = l + 99999
             hplayer.setLumber(hplayer.players[i], l)
             hmsg.echo00(hplayer.players[i], " *** 根据你的地图等级和游玩次数，你得到了" .. hColor.green(l) .. "个木头")
             dzSetPrestige(hplayer.players[i], true, false)
