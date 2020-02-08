@@ -10,7 +10,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            defend = "+75"
+            defend = "+60"
         }
     },
     {
@@ -24,7 +24,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            resistance = "+36"
+            resistance = "+25"
         }
     },
     {

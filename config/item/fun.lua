@@ -9,7 +9,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您的兵塔队伍获得神攻击特性并且攻击力提升25%|n持续30秒",
+        ACTIVE = "令您的兵塔队伍获得神攻击特性并且攻击力提升500|n持续30秒",
         cooldown = 15,
         I_TYPE = "strategy"
     },
@@ -37,7 +37,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您的兵塔队伍获得两种攻击特性并其20%的增益|n持续30秒",
+        ACTIVE = "令您的兵塔队伍获得火、水、冰、风、雷、土6种攻击特性|n持续30秒",
         cooldown = 15,
         I_TYPE = "strategy"
     },
@@ -65,7 +65,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您的兵塔队伍获得鬼特性并提升150%鬼攻击|n持续30秒",
+        ACTIVE = "令您的兵塔队伍提升50%鬼攻击|n持续30秒",
         cooldown = 20,
         I_TYPE = "strategy"
     },
@@ -79,7 +79,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您的兵塔经验率提升30%|n持续30秒",
+        ACTIVE = "令您的黄金获得率提升15%|n持续90秒",
         cooldown = 20,
         I_TYPE = "strategy"
     },
@@ -93,7 +93,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您的兵塔经验率提升30%|n持续30秒",
+        ACTIVE = "令您的兵塔经验率提升20%|n持续90秒",
         cooldown = 20,
         I_TYPE = "strategy"
     },
@@ -107,7 +107,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您黄金获得率提升10%，并且售卖时可以获得100%回本|n持续120秒",
+        ACTIVE = "令您黄金获得率提升10%，并且售卖时提升25%回本|n持续90秒",
         cooldown = 20,
         I_TYPE = "strategy"
     },
@@ -163,7 +163,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令其他玩家的主兵塔生命瞬间减少20%",
+        ACTIVE = "令其他玩家的主兵塔生命瞬间减少当前的20%",
         cooldown = 15,
         I_TYPE = "strategy"
     }

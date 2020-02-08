@@ -227,8 +227,8 @@ onCourierSkillUesd = function(evtData)
             local downLv = math.floor(itemLv * 0.8)
             if (downLv < 1) then
                 downLv = 1
-            elseif (downLv > 120) then
-                downLv = 120
+            elseif (downLv > 200) then
+                downLv = 200
             end
             print("itemQty=" .. itemQty)
             print("downLv=" .. downLv)

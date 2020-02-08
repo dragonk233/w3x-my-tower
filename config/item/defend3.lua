@@ -25,8 +25,8 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            life = "+1000",
-            resistance = "+75"
+            life = "+2000",
+            resistance = "+50"
         }
     },
     {

@@ -338,9 +338,164 @@ onUnitItemsUesd = function(evtData)
     elseif (itemSLK.I_TYPE == "strategy") then
         --战略物品
         local playerIndex = hplayer.index(p)
-        if (itemSLK.INDEX == "起死回生药水") then
+        local ii = itemSLK.INDEX
+        if (ii == "起死回生药水") then
             heffect.toUnit("war3mapImported\\eff_holy_light2.mdl", game.playerTower[playerIndex])
             hunit.setCurLifePercent(game.playerTower[playerIndex], 100)
+        elseif (ii == "天剑切符" or ii == "武神切符" or ii == "变异切符" or ii == "恶魔切符" or ii == "恶灵切符") then
+            local ts = {game.playerTower[playerIndex]}
+            for i = 1, 4, 1 do
+                if (game.playerTowerLink[playerIndex][i] ~= nil) then
+                    table.insert(ts, game.playerTowerLink[playerIndex][i].unit)
+                end
+            end
+            heffect.toUnit("war3mapImported\\eff_s_EvilWave_Effect.mdl", game.playerTower[playerIndex])
+            if (ii == "天剑切符") then
+                for _, u in pairs(ts) do
+                    hattr.set(
+                        u,
+                        30,
+                        {
+                            attack_damage_type = "+god",
+                            attack_green = "+500"
+                        }
+                    )
+                end
+            elseif (ii == "武神切符") then
+                for _, u in pairs(ts) do
+                    hattr.set(
+                        u,
+                        30,
+                        {
+                            attack_speed = "+75"
+                        }
+                    )
+                end
+            elseif (ii == "变异切符") then
+                for _, u in pairs(ts) do
+                    hattr.set(
+                        u,
+                        30,
+                        {
+                            attack_damage_type = "+fire,water,ice,wind,thunder,soil"
+                        }
+                    )
+                end
+            elseif (ii == "恶魔切符") then
+                for _, u in pairs(ts) do
+                    hattr.set(
+                        u,
+                        30,
+                        {
+                            damage_extent = "+33",
+                            defend = "-100"
+                        }
+                    )
+                end
+            elseif (ii == "恶灵切符") then
+                for _, u in pairs(ts) do
+                    hattr.set(
+                        u,
+                        30,
+                        {
+                            natural_ghost = "+50"
+                        }
+                    )
+                end
+            end
+            ts = nil
+        elseif (ii == "圣杯切符") then
+            hplayer.addGoldRatio(p, 15, 90)
+            heffect.bindUnit("war3mapImported\\eff_Retribution.mdl", game.playerTower[playerIndex], "origin", 90)
+        elseif (ii == "陋室切符") then
+            hplayer.addExpRatio(p, 20, 90)
+            heffect.bindUnit(
+                "war3mapImported\\eff_MysticVeil_Portrait.mdl",
+                game.playerTower[playerIndex],
+                "origin",
+                90
+            )
+        elseif (ii == "王室切符") then
+            hplayer.addGoldRatio(p, 10, 90)
+            hplayer.addSellRatio(p, 25, 90)
+            heffect.bindUnit(
+                "war3mapImported\\eff_Aura_Runica_Con_Fuego.mdl",
+                game.playerTower[playerIndex],
+                "origin",
+                90
+            )
+        elseif (ii == "锤敕令" or ii == "盾敕令" or ii == "剑敕令" or ii == "斧敕令") then
+            local ts = {}
+            if (ii == "锤敕令") then
+                for pi = 1, 4, 1 do
+                    if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                        table.insert(ts, game.playerTower[pi])
+                        for i = 1, 4, 1 do
+                            if (game.playerTowerLink[pi][i] ~= nil) then
+                                table.insert(ts, game.playerTowerLink[pi][i].unit)
+                            end
+                        end
+                    end
+                end
+                for _, u in pairs(ts) do
+                    hskill.swim(
+                        {
+                            whichUnit = u,
+                            during = 10,
+                            odds = 999,
+                            effect = "war3mapImported\\eff_EarthDetonation.mdl"
+                        }
+                    )
+                end
+            elseif (ii == "盾敕令") then
+                for pi = 1, 4, 1 do
+                    if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                        table.insert(ts, game.playerTower[pi])
+                        for i = 1, 4, 1 do
+                            if (game.playerTowerLink[pi][i] ~= nil) then
+                                table.insert(ts, game.playerTowerLink[pi][i].unit)
+                            end
+                        end
+                    end
+                end
+                for _, u in pairs(ts) do
+                    hskill.swim(
+                        {
+                            whichUnit = u,
+                            during = 10,
+                            odds = 100,
+                            effect = "war3mapImported\\eff_Arcane_Nova.mdl"
+                        }
+                    )
+                end
+            elseif (ii == "剑敕令") then
+                for pi = 1, 4, 1 do
+                    if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                        table.insert(ts, game.playerCourier[pi])
+                    end
+                end
+                for _, u in pairs(ts) do
+                    hskill.swim(
+                        {
+                            whichUnit = u,
+                            during = 10,
+                            odds = 999,
+                            effect = "war3mapImported\\eff_flame_Great_Sword_Falls.mdl"
+                        }
+                    )
+                end
+            elseif (ii == "斧敕令") then
+                for pi = 1, 4, 1 do
+                    if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                        table.insert(ts, game.playerTower[pi])
+                    end
+                end
+                for _, u in pairs(ts) do
+                    hunit.setCurLife(u, hunit.getCurLife(u) * 0.8)
+                    heffect.toUnit("war3mapImported\\eff_black_chain_flash.mdl", u, 0)
+                end
+            end
+            ts = nil
         end
     end
 end

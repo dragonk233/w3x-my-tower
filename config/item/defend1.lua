@@ -73,7 +73,7 @@ items_defend1 = {
         OVERLIE = 3,
         ATTR = {
             avoid = "+4",
-            resistance = "+8"
+            resistance = "+6"
         }
     },
     {
@@ -146,7 +146,7 @@ items_defend1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            resistance = "+15",
+            resistance = "+9",
             toughness = "+160",
             int_green = "+180"
         }
