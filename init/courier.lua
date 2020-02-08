@@ -28,7 +28,8 @@ for i, v in ipairs(couriers) do
     obj.sides1 = 5 --骰子面
     obj.dice1 = 1 --骰子数量
     obj.regenMana = 0.00
-    obj.regenHP = 0.00
+    obj.HP = 99999
+    obj.regenHP = 99999
     obj.stockStart = 0
     obj.stockRegen = 0
     obj.stockMax = 1
@@ -57,7 +58,7 @@ for i, v in ipairs(couriers) do
     obj.upgrades = ""
     obj.Builds = ""
     obj.fused = 0
-    local x = "Avul,AInv," .. unitPowerMap[(v.COURIER_POWER or "E")] .. ","
+    local x = "AInv," .. unitPowerMap[(v.COURIER_POWER or "E")] .. ","
     if(v.Name == "涅磐火凤凰")then
         obj.abilList = x .. string.implode(',',couriersSkillsPhoenix)
     elseif(v.Name == "冰戟剑灵")then

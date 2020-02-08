@@ -149,7 +149,6 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 y = game.towerPoint[playerIndex][2] + game.towerLinkOffset[linkIndex][2],
                 opacity = 0.4,
                 modelScale = 1.0,
-                isInvulnerable = true,
                 isUnSelectable = isUnSelectable
             }
         )
@@ -169,7 +168,8 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 0,
                 {
                     attack_damage_type = "=" .. attack_damage_type,
-                    move = "=0"
+                    move = "=0",
+                    damage_rebound_oppose = "=9999"
                 }
             )
             hevent.onAttack(u, onTowerAttack)
@@ -371,7 +371,7 @@ createMyCourier = function(playerIndex, courierId)
             u,
             0,
             {
-                weight = "=100"
+                weight = "=1000"
             }
         )
         hevent.onItemUsed(u, onUnitItemsUesd)

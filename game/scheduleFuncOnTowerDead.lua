@@ -29,7 +29,7 @@ onTowerDead = function(evtData)
         hmark.create("war3mapImported\\mark_win.blp", 4.00, winner)
         hplayer.setStatus(winner, "胜利")
         htime.setTimeout(
-            5.00,
+            10.00,
             function(t, td)
                 htime.delDialog(td)
                 htime.delTimer(t)

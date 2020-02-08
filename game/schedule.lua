@@ -36,6 +36,8 @@ dzSetPrestige = function(p, iscs, isss)
         ss = ss + 1
         hdzapi.server.set.int(p, "prestigess", cs)
         hdzapi.setRoomStat(p, "prestigess", ss)
+        local playerIndex = hplayer.index(p)
+        dzSetLumber(p, 100 + game.rule.dk.wave[playerIndex])
     end
     local prestige
     if (cs >= 500 and ss >= 100) then
@@ -101,7 +103,6 @@ cj.TriggerAddAction(
             hplayer.setLumber(hplayer.players[i], l)
             hmsg.echo00(hplayer.players[i], " *** 根据你的地图等级和游玩次数，你得到了" .. hColor.green(l) .. "个木头")
             dzSetPrestige(hplayer.players[i], true, false)
-            hplayer.addGold(hplayer.players[i], 1000000)
         end
         htime.setInterval(
             5,
@@ -613,7 +614,6 @@ cj.TriggerAddAction(
                         u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
                     else
                         u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
-                        hskill.add(u, "A002")
                         if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "phoenix") == true) then
                             hitem.create(
                                 {

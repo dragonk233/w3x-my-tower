@@ -77,6 +77,28 @@ items_weapon3 = {
         }
     },
     {
+        Name = "硬弓",
+        Description = "弯弓射大雕",
+        goldcost = 12500,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNImprovedBows.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            attack_green = "+850",
+            attack_buff = {
+                {
+                    attr = "attack_speed",
+                    odds = 15,
+                    val = 18,
+                    during = 3
+                }
+            }
+        }
+    },
+    {
         Name = "钢枪",
         Description = "长长的钢枪",
         goldcost = 20000,
@@ -88,7 +110,7 @@ items_weapon3 = {
         droppable = 1,
         ATTR = {
             attack_green = "+800",
-            aim = "+15"
+            aim = "+5"
         }
     },
     {
@@ -103,7 +125,7 @@ items_weapon3 = {
         droppable = 1,
         ATTR = {
             attack_green = "+1300",
-            aim = "+20",
+            aim = "+10",
             attack_debuff = {
                 {
                     attr = "defend",
@@ -126,8 +148,8 @@ items_weapon3 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+fire",
-            attack_green = "+2800",
-            aim = "+30",
+            attack_green = "+2400",
+            aim = "+15",
             attack_debuff = {
                 {
                     attr = "defend",
@@ -139,8 +161,8 @@ items_weapon3 = {
         }
     },
     {
-        Name = "硬弓",
-        Description = "弯弓射大雕",
+        Name = "黄金弓",
+        Description = "黄金铸造的弓，很重",
         goldcost = 200000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Weapon_Bow_06.blp",
@@ -149,12 +171,13 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+3200",
+            aim = "+40",
+            attack_green = "+2300",
             attack_buff = {
                 {
                     attr = "attack_speed",
                     odds = 17,
-                    val = 20,
+                    val = 25,
                     during = 3
                 }
             }

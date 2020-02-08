@@ -1,7 +1,6 @@
 couriers = {
     {
         Name = "呆萌的青蛙",
-        abilList = "Avul,AInv",
         unitSound = "Frog",
         file = "units\\critters\\Frog\\Frog",
         Art = "ReplaceableTextures\\CommandButtons\\BTNHex.blp",
@@ -17,7 +16,6 @@ couriers = {
     },
     {
         Name = "V5的螃蟹",
-        abilList = "Avul,AInv",
         unitSound = "Frog",
         file = "units\\critters\\SpiderCrab\\SpiderCrab",
         Art = "ReplaceableTextures\\CommandButtons\\BTNSpiderCrab.blp",
@@ -33,7 +31,6 @@ couriers = {
     },
     {
         Name = "友爱的海豹",
-        abilList = "Avul,AInv",
         unitSound = "Seal",
         file = "units\\critters\\Seal\\Seal",
         Art = "ReplaceableTextures\\CommandButtons\\BTNSeal.blp",
@@ -49,7 +46,6 @@ couriers = {
     },
     {
         Name = "狡猾的浣熊",
-        abilList = "Avul,AInv",
         unitSound = "Raccoon",
         file = "units\\critters\\Raccoon\\Raccoon",
         Art = "ReplaceableTextures\\CommandButtons\\BTNRacoon.blp",
@@ -65,7 +61,6 @@ couriers = {
     },
     {
         Name = "冷静的绵羊",
-        abilList = "Avul,AInv",
         unitSound = "Sheep",
         file = "units\\critters\\Sheep\\Sheep",
         Art = "ReplaceableTextures\\CommandButtons\\BTNSheep.blp",
@@ -81,7 +76,6 @@ couriers = {
     },
     {
         Name = "卡呐诺企鹅",
-        abilList = "Avul,AInv",
         unitSound = "Penguin",
         file = "units\\critters\\Penguin\\Penguin",
         Art = "ReplaceableTextures\\CommandButtons\\BTNPenguin.blp",
@@ -97,7 +91,6 @@ couriers = {
     },
     {
         Name = "兔子兔子",
-        abilList = "Avul,AInv",
         unitSound = "Rabbit",
         file = "units\\critters\\EasterRabbit\\EasterRabbit",
         Art = "ReplaceableTextures\\CommandButtons\\BTNCritterRabbit.blp",
@@ -113,7 +106,6 @@ couriers = {
     },
     {
         Name = "小饥鸡",
-        abilList = "Avul,AInv",
         unitSound = "Chicken",
         file = "units\\critters\\EasterChicken\\EasterChicken",
         Art = "ReplaceableTextures\\CommandButtons\\BTNCritterChicken.blp",
@@ -129,7 +121,6 @@ couriers = {
     },
     {
         Name = "宁静麋鹿",
-        abilList = "Avul,AInv",
         unitSound = "",
         file = "units\\critters\\BlackStagMale\\BlackStagMale",
         Art = "ReplaceableTextures\\CommandButtons\\BTNStag.blp",
@@ -145,7 +136,6 @@ couriers = {
     },
     {
         Name = "依诺吸吸",
-        abilList = "Avul,AInv",
         unitSound = "QuillBeast",
         file = "units\\critters\\Felboar\\Felboar",
         Art = "ReplaceableTextures\\CommandButtons\\BTNFelBoar.blp",
@@ -161,7 +151,6 @@ couriers = {
     },
     {
         Name = "灵动的雪鹰",
-        abilList = "Avul,AInv",
         unitSound = "SnowOwl",
         file = "units\\critters\\SnowOwl\\SnowOwl",
         Art = "ReplaceableTextures\\CommandButtons\\BTNSnowOwl.blp",
@@ -177,7 +166,6 @@ couriers = {
     },
     {
         Name = "信天！翁",
-        abilList = "Avul,AInv",
         unitSound = "Albatross",
         file = "units\\critters\\Albatross\\Albatross",
         Art = "ReplaceableTextures\\CommandButtons\\BTNAlbatross.blp",
@@ -193,7 +181,6 @@ couriers = {
     },
     {
         Name = "涅磐火凤凰",
-        abilList = "Avul,AInv",
         unitSound = "Phoenix",
         file = "units\\human\\phoenix\\phoenix",
         Art = "war3mapImported\\icon_unit_Phoenix.blp",
@@ -209,7 +196,6 @@ couriers = {
     },
     {
         Name = "冰戟剑灵",
-        abilList = "Avul,AInv",
         unitSound = "Gargoyle",
         file = "war3mapImported\\unit_Frost_Fury_v1.1.mdl",
         Art = "war3mapImported\\icon_unit_Hunter_Pet_Moth.blp",
