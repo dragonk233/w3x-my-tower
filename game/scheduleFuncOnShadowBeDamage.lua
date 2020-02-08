@@ -26,6 +26,7 @@ towerShadowBeDamage = function(evtData)
         if (hskill.has(shadow, ABILITY_ID)) then
             local Name = v.Name
             local level = v.ABILITY_LEVEL or 1
+            local val = v.Val
             level = level * 2 - 1
             if (Name ~= nil) then
                 if (Name == "恶心粘液") then
@@ -34,7 +35,7 @@ towerShadowBeDamage = function(evtData)
                         sourceUnit,
                         5,
                         {
-                            attack_speed = "-" .. 5 * level
+                            attack_speed = "-" .. val[1] * level
                         }
                     )
                 end
@@ -44,7 +45,7 @@ towerShadowBeDamage = function(evtData)
                         sourceUnit,
                         6,
                         {
-                            int_green = "-" .. 3 * level
+                            int_green = "-" .. val[1] * level
                         }
                     )
                 end
@@ -54,7 +55,7 @@ towerShadowBeDamage = function(evtData)
                         u,
                         4,
                         {
-                            move = "+" .. 30 * level
+                            move = "+" .. val[1] * level
                         }
                     )
                 end
@@ -62,9 +63,9 @@ towerShadowBeDamage = function(evtData)
                     towerShadowTtg(u, Name)
                     hattr.set(
                         u,
-                        8,
+                        6,
                         {
-                            defend = "+" .. 2 * level
+                            defend = "+" .. val[1] * level
                         }
                     )
                 end
@@ -74,7 +75,7 @@ towerShadowBeDamage = function(evtData)
                         {
                             odds = 100,
                             whichUnit = sourceUnit,
-                            during = level * 1.2
+                            during = level * val[1]
                         }
                     )
                 end
@@ -84,33 +85,29 @@ towerShadowBeDamage = function(evtData)
                         {
                             odds = 100,
                             whichUnit = sourceUnit,
-                            during = level * 3.5
+                            during = level * val[1]
                         }
                     )
                 end
                 if (Name == "巫术") then
-                    local val = v.Val
                     if (math.random(1, 100) <= val[2]) then
                         towerShadowTtg(u, Name)
                         hskill.invulnerable(u, val[3], "Abilities\\Spells\\Orc\\Voodoo\\VoodooAura.mdl")
                     end
                 end
                 if (Name == "不朽传说") then
-                    local val = v.Val
                     if (math.random(1, 100) <= val[1]) then
                         towerShadowTtg(u, Name)
                         hskill.invulnerable(u, val[2], "Abilities\\Spells\\Demon\\ReviveDemon\\ReviveDemon.mdl")
                     end
                 end
                 if (Name == "回光返照" or Name == "自然之力") then
-                    local val = v.Val
                     if (hunit.getCurLifePercent(u) < 50) then
                         towerShadowTtg(u, Name)
                         hattr.set(u, val[2], {life_back = val[1]})
                     end
                 end
                 if (Name == "逃命" or Name == "着草" or Name == "加速") then
-                    local val = v.Val
                     if (math.random(1, 100) <= val[1]) then
                         towerShadowTtg(u, Name)
                         hattr.set(
@@ -123,14 +120,12 @@ towerShadowBeDamage = function(evtData)
                     end
                 end
                 if (Name == "潜行" or Name == "隐术") then
-                    local val = v.Val
                     if (math.random(1, 100) <= val[1]) then
                         towerShadowTtg(u, Name)
                         hskill.invisible(u, val[2])
                     end
                 end
                 if (Name == "复命" or Name == "涅槃") then
-                    local val = v.Val
                     if (math.random(1, 100) <= val[1]) then
                         towerShadowTtg(u, Name)
                         hunit.addCurLife(u, val[2])

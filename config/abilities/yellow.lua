@@ -111,7 +111,7 @@ abilitiesYellow = {
         Name = "德鲁伊叶子",
         Art = "war3mapImported\\icon_pas_Nature_HealingTouch.blp",
         Ubertip = "+木攻击特性|n+{val#1}生命恢复",
-        Val = {0.06}
+        Val = {0.2}
     },
     {
         Name = "战熊咆哮",
@@ -146,8 +146,8 @@ abilitiesYellow = {
     {
         Name = "掠夺黄金",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPillage.blp",
-        Ubertip = "攻击时，有{val#1}%几率获得30黄金",
-        Val = {3}
+        Ubertip = "攻击时，有{val#1}%几率获得{val#2}黄金",
+        Val = {3, 50}
     },
     {
         Name = "五行之力",
@@ -207,7 +207,7 @@ abilitiesYellow = {
         Name = "降智打击",
         Art = "war3mapImported\\icon_pas_Arcane_ManaTap.blp",
         Ubertip = "受到攻击时，降低攻击者{val#1}点智力，持续6秒",
-        Val = {36},
+        Val = {23},
         ODK = true
     }
 }

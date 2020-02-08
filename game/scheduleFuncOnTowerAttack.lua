@@ -50,8 +50,7 @@ onTowerAttack = function(evtData)
                 end
                 if (name == "掠夺黄金" and math.random(1, 100) <= level) then
                     onTowerAttackTtg(u, name)
-                    haward.forUnitGold(u, 30)
-                    haward.forPlayerGold(30)
+                    haward.forUnitGold(u, 50 * level)
                 end
                 if (name == "震晕践踏" and math.random(1, 7) == 5) then
                     onTowerAttackTtg(u, name)

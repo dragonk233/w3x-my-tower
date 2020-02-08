@@ -226,13 +226,13 @@ towerRaces = {
     {
         Name = "熊猫",
         Ubertip = "悠久国度的神秘生物",
-        Text = "+0.05生命恢复|n+8%力量",
+        Text = "+0.5生命恢复|n+8%力量",
         Art = "war3mapImported\\icon_race_panda.blp",
         Link = {
-            {qty = 1, text = "+200生命"},
-            {qty = 2, text = "+500生命"},
-            {qty = 3, text = "+1000生命"},
-            {qty = 4, text = "+3000生命"}
+            {qty = 1, text = "+1000生命"},
+            {qty = 2, text = "+2000生命"},
+            {qty = 3, text = "+3000生命"},
+            {qty = 4, text = "+5000生命"}
         }
     }
 }

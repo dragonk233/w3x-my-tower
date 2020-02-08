@@ -1,6 +1,6 @@
 game = {
     ALLY_PLAYER = nil,
-    TRIGGER_DEMOVE = nil,
+    TRIGGER_DE_POINT = nil,
     bigElfTips = {
         "给点力撒~",
         "哎哟好痛~",
@@ -42,7 +42,7 @@ game = {
             perWaveQty = 18,
             wave = 1,
             waveEnd = 100,
-            fresh = 2.2,
+            fresh = 2.0,
             mon = nil,
             monLife = 50,
             monLifeInc = 10
@@ -50,7 +50,7 @@ game = {
         hz = {
             perWaveQty = 18,
             wave = 1,
-            fresh = 2.0,
+            fresh = 1.9,
             mon = nil,
             monLife = 50,
             monLifeInc = 11

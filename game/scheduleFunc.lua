@@ -218,7 +218,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             --刷新种族个体
             addTowerSkillsRaceSingleAttr(u)
             --移动卡的bug
-            cj.TriggerRegisterUnitEvent(game.TRIGGER_DEMOVE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
+            cj.TriggerRegisterUnitEvent(game.TRIGGER_DE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         end
         return u
     end
@@ -332,7 +332,7 @@ createMyTower = function(playerIndex, towerId, towerLevel)
             end
         end
         --移动卡的bug
-        cj.TriggerRegisterUnitEvent(game.TRIGGER_DEMOVE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
+        cj.TriggerRegisterUnitEvent(game.TRIGGER_DE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         return u
     end
 end

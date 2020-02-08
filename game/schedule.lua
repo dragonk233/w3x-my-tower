@@ -1,8 +1,8 @@
 require "game.scheduleFunc"
 
-game.TRIGGER_DEMOVE = cj.CreateTrigger()
+game.TRIGGER_DE = cj.CreateTrigger()
 cj.TriggerAddAction(
-    game.TRIGGER_DEMOVE,
+    game.TRIGGER_DE,
     function()
         if (cj.GetIssuedOrderId() == 851971 or cj.GetIssuedOrderId() == 851986) then
             local index = hplayer.index(cj.GetOwningPlayer(cj.GetTriggerUnit()))
@@ -129,16 +129,17 @@ cj.TriggerAddAction(
                 str = {
                     life = 7,
                     attack_white = 0.06,
-                    toughness = 0.03
+                    toughness = 0.02,
+                    aim = 0.003
                 },
                 agi = {
                     attack_white = 0.10,
-                    attack_speed = 0.018,
-                    avoid = 0.015
+                    attack_speed = 0.015,
+                    avoid = 0.005
                 },
                 int = {
                     attack_white = 0.08,
-                    resistance = 0.02
+                    resistance = 0.005
                 }
             }
         )
@@ -274,6 +275,12 @@ cj.TriggerAddAction(
                                                         cj.GetTriggerUnit(),
                                                         game.pathPoint[next][1][1],
                                                         game.pathPoint[next][1][2]
+                                                    )
+                                                    cj.IssuePointOrderById(
+                                                        cj.GetTriggerUnit(),
+                                                        851986,
+                                                        game.pathPoint[next][2][1],
+                                                        game.pathPoint[next][2][2]
                                                     )
                                                 end
                                             end
@@ -425,6 +432,12 @@ cj.TriggerAddAction(
                                                         game.pathPoint[next][1][1],
                                                         game.pathPoint[next][1][2]
                                                     )
+                                                    cj.IssuePointOrderById(
+                                                        cj.GetTriggerUnit(),
+                                                        851986,
+                                                        game.pathPoint[next][2][1],
+                                                        game.pathPoint[next][2][2]
+                                                    )
                                                 end
                                             end
                                         else
@@ -503,6 +516,12 @@ cj.TriggerAddAction(
                                                             game.pathPoint[next][1][1],
                                                             game.pathPoint[next][1][2]
                                                         )
+                                                        cj.IssuePointOrderById(
+                                                            u,
+                                                            851986,
+                                                            game.pathPoint[next][2][1],
+                                                            game.pathPoint[next][2][2]
+                                                        )
                                                     end
                                                     if
                                                         (hplayer.getStatus(hplayer.players[k]) ==
@@ -571,6 +590,12 @@ cj.TriggerAddAction(
                                                         u,
                                                         game.pathPoint[next][1][1],
                                                         game.pathPoint[next][1][2]
+                                                    )
+                                                    cj.IssuePointOrderById(
+                                                        u,
+                                                        851986,
+                                                        game.pathPoint[next][2][1],
+                                                        game.pathPoint[next][2][2]
                                                     )
                                                 end
                                             end

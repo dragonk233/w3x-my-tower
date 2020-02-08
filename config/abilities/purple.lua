@@ -93,7 +93,7 @@ abilitiesPurple = {
         Name = "天神加护",
         Art = "war3mapImported\\icon_pas_Holy_Fanaticism.blp",
         Ubertip = "+{val#1}点生命，+{val#2}生命恢复",
-        Val = {800, 0.25},
+        Val = {800, 0.45},
         ODK = true
     },
     {
@@ -128,14 +128,14 @@ abilitiesPurple = {
         Name = "变相移动",
         Art = "war3mapImported\\icon_pas_Rogue_FleetFooted.blp",
         Ubertip = "被攻击时，+{val#1}点移动力，持续4秒",
-        Val = {30},
+        Val = {15},
         ODK = true
     },
     {
         Name = "钢铁身躯",
         Art = "war3mapImported\\icon_pas_Aftershock2.blp",
-        Ubertip = "被攻击时，+{val#1}点护甲，持续10秒",
-        Val = {4},
+        Ubertip = "被攻击时，+{val#1}点护甲，持续6秒",
+        Val = {3},
         ODK = true
     },
     {

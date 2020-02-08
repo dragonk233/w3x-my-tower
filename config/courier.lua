@@ -191,7 +191,7 @@ couriers = {
         spd = 500,
         targType = "air",
         armor = "Ethereal",
-        lumbercost = 999,
+        lumbercost = 0,
         COURIER_POWER = "SS"
     },
     {
@@ -206,7 +206,7 @@ couriers = {
         spd = 522,
         targType = "air",
         armor = "Ethereal",
-        lumbercost = 9999,
+        lumbercost = 0,
         COURIER_POWER = "SSS"
     }
 }

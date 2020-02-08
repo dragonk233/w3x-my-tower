@@ -2,7 +2,7 @@ items_fun = {
     {
         Name = "天剑切符",
         Description = "呼唤奇剑降临！",
-        goldcost = 15000,
+        goldcost = 5000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_TarotGreatness.blp",
         powerup = 0,
@@ -16,7 +16,7 @@ items_fun = {
     {
         Name = "武神切符",
         Description = "呼唤神勇降临！",
-        goldcost = 15000,
+        goldcost = 5000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_TarotBerserker.blp",
         powerup = 0,
@@ -30,7 +30,7 @@ items_fun = {
     {
         Name = "变异切符",
         Description = "进化在于变异",
-        goldcost = 15000,
+        goldcost = 5000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_TarotChaos.blp",
         powerup = 0,
@@ -44,7 +44,7 @@ items_fun = {
     {
         Name = "恶魔切符",
         Description = "呼唤恶魔！来吧！",
-        goldcost = 15000,
+        goldcost = 5000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_TarotDeath.blp",
         powerup = 0,
@@ -58,7 +58,7 @@ items_fun = {
     {
         Name = "恶灵切符",
         Description = "呼唤恶鬼降临！",
-        goldcost = 30000,
+        goldcost = 5000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_TarotUndeath.blp",
         powerup = 0,
@@ -72,7 +72,7 @@ items_fun = {
     {
         Name = "圣杯切符",
         Description = "这里没有圣剑~",
-        goldcost = 30000,
+        goldcost = 5000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_TarotIllusion.blp",
         powerup = 0,
@@ -86,7 +86,7 @@ items_fun = {
     {
         Name = "陋室切符",
         Description = "斯是陋室，惟吾德馨",
-        goldcost = 30000,
+        goldcost = 5000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_TarotPrism.blp",
         powerup = 0,
@@ -100,7 +100,7 @@ items_fun = {
     {
         Name = "王室切符",
         Description = "Ready to work~",
-        goldcost = 30000,
+        goldcost = 5000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_TarotLords.blp",
         powerup = 0,
@@ -114,7 +114,7 @@ items_fun = {
     {
         Name = "锤敕令",
         Description = "号召巨锤袭击",
-        goldcost = 100000,
+        goldcost = 30000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll01",
         powerup = 0,
@@ -128,7 +128,7 @@ items_fun = {
     {
         Name = "盾敕令",
         Description = "号召大剑袭击",
-        goldcost = 100000,
+        goldcost = 30000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_ArmorScroll02.blp",
         powerup = 0,
@@ -142,7 +142,7 @@ items_fun = {
     {
         Name = "剑敕令",
         Description = "号召大剑袭击",
-        goldcost = 100000,
+        goldcost = 30000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll03.blp",
         powerup = 0,
@@ -156,7 +156,7 @@ items_fun = {
     {
         Name = "斧敕令",
         Description = "号召猛斧袭击",
-        goldcost = 100000,
+        goldcost = 30000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll02.blp",
         powerup = 0,

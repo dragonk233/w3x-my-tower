@@ -4,14 +4,7 @@ onTowerDead = function(evtData)
     local index = hplayer.index(cj.GetOwningPlayer(u))
     hmark.create("war3mapImported\\mark_defeat.blp", 4.00, hplayer.players[index])
     hplayer.setStatus(hplayer.players[index], "战败")
-    htime.setTimeout(
-        5.00,
-        function(t, td)
-            htime.delDialog(td)
-            htime.delTimer(t)
-            hplayer.defeat(hplayer.players[index], "战败~")
-        end
-    )
+    hplayer.clearUnit(hplayer.players[index])
     --检查是否胜利
     local isWin = 0
     local winner
@@ -33,7 +26,13 @@ onTowerDead = function(evtData)
             function(t, td)
                 htime.delDialog(td)
                 htime.delTimer(t)
-                hplayer.victory(winner)
+                for i = 1, hplayer.qty_max, 1 do
+                    if (hplayer.players[i] == winner) then
+                        hplayer.victory(winner)
+                    else
+                        hplayer.defeat(hplayer.players[index], "战败~")
+                    end
+                end
             end
         )
     end

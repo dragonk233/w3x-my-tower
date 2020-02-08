@@ -431,7 +431,10 @@ onUnitItemsUesd = function(evtData)
                     if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
                         table.insert(ts, game.playerTower[pi])
                         for i = 1, 4, 1 do
-                            if (game.playerTowerLink[pi][i] ~= nil) then
+                            if
+                                (game.playerTowerLink[pi][i] ~= nil and
+                                    his.locust(game.playerTowerLink[pi][i].unit) == false)
+                             then
                                 table.insert(ts, game.playerTowerLink[pi][i].unit)
                             end
                         end
@@ -452,7 +455,10 @@ onUnitItemsUesd = function(evtData)
                     if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
                         table.insert(ts, game.playerTower[pi])
                         for i = 1, 4, 1 do
-                            if (game.playerTowerLink[pi][i] ~= nil) then
+                            if
+                                (game.playerTowerLink[pi][i] ~= nil and
+                                    his.locust(game.playerTowerLink[pi][i].unit) == false)
+                             then
                                 table.insert(ts, game.playerTowerLink[pi][i].unit)
                             end
                         end

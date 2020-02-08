@@ -139,7 +139,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Heal.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {0.05}
+        Val = {0.25}
     },
     {
         Name = "精灵守护",
@@ -147,7 +147,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Misc_Bag_SatchelofCenarius.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {0.14}
+        Val = {0.5}
     },
     {
         Name = "远古身躯",

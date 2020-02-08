@@ -1,7 +1,7 @@
 addTowerSkillsRaceAbility = {}
 addTowerSkillsRaceAttr = {}
 addTowerSkillsRaceAttrStack = 0
-addTowerSkillsRaceAttrClock = 0.8
+addTowerSkillsRaceAttrClock = 0.5
 addTowerSkillsRaceAttrPlayer = {}
 
 handleTowerSkillsRaceAttr = function(old, new)
@@ -312,7 +312,7 @@ addTowerSkillsRaceSingleAttr = function(u)
             u,
             0,
             {
-                life_back = "+0.05",
+                life_back = "+0.5",
                 str_green = "+" .. (0.08 * slk.STR)
             }
         )
@@ -697,13 +697,13 @@ addTowerSkillsRaceTeam = function(playerIndex)
             end
         elseif (r == "熊猫") then
             if (qtys[r] == 1) then
-                attr.life = attr.life + 200
-            elseif (qtys[r] == 2) then
-                attr.life = attr.life + 500
-            elseif (qtys[r] == 3) then
                 attr.life = attr.life + 1000
-            elseif (qtys[r] == 4) then
+            elseif (qtys[r] == 2) then
+                attr.life = attr.life + 2000
+            elseif (qtys[r] == 3) then
                 attr.life = attr.life + 3000
+            elseif (qtys[r] == 4) then
+                attr.life = attr.life + 5000
             end
         end
     end

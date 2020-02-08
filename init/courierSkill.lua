@@ -255,7 +255,7 @@ call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=strin
 --召唤新兵塔
 local obj = slk.ability.ANcl:new("couriers_sk_new_tower")
 local Name = "召唤新兵塔"
-local Tip = "召唤新兵塔("..hColor.greenLight("Z")..") - "..hColor.yellow("[当前波数x50]黄金")
+local Tip = "召唤新兵塔("..hColor.greenLight("Z")..") - "..hColor.yellow("750黄金")
 obj.Order = "ambush"
 obj.DataF1 = "ambush"
 obj.Name = Name
@@ -296,7 +296,7 @@ obj.DataF1 = "ancestralspirit"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "X"
-obj.Ubertip = "可随机洗出Lv0~9级的天赋|n注意：有可能比当前还差的天赋"
+obj.Ubertip = "可随机洗出Lv0~9级的天赋|n天赋影响基础攻击和三围的数值|n * 有可能比当前还差的天赋"
 obj.Buttonpos1 = 1
 obj.Buttonpos2 = 2
 obj.hero = 0
@@ -333,12 +333,12 @@ obj.Tip = Tip
 obj.Hotkey = "C"
 obj.Ubertip = "花费30木头即可来一次开心抽金箱子哦~"
     .. "|n"..hColor.green("木头免费的哟：每局玩都累计：地图等级+过关数")
-    .. "|n"..hColor.green("对战模式胜利者更有额外100木头")
+    .. "|n"..hColor.green("对战模式胜利者更有额外100木头(AI也有哦~)")
     .. "|n"..hColor.redLight("特等赏：黄金1888")
     .. "|n"..hColor.yellow("一等赏：黄金888")
     .. "|n"..hColor.yellowLight("二等赏：黄金388")
     .. "|n"..hColor.greenLight("三等赏：黄金88")
-    .. "|n"..hColor.skyLight("安慰奖：谢谢惠顾")
+    .. "|n"..hColor.skyLight("安慰奖：谢谢惠顾 ^_^")
 obj.Buttonpos1 = 2
 obj.Buttonpos2 = 2
 obj.hero = 0

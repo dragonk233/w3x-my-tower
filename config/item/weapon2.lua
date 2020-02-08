@@ -1,19 +1,5 @@
 items_weapon2 = {
     {
-        Name = "加速手套",
-        Description = "由于增加了摩擦力，可以提速",
-        goldcost = 6000,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNGlove.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            attack_speed = "+20"
-        }
-    },
-    {
         Name = "巨人力量腰带",
         Description = "大个子食人鬼的腰带",
         goldcost = 2300,
@@ -53,6 +39,20 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             int_green = "+200"
+        }
+    },
+    {
+        Name = "加速手套",
+        Description = "由于增加了摩擦力，可以提速",
+        goldcost = 7500,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNGlove.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            attack_speed = "+20"
         }
     },
     {
