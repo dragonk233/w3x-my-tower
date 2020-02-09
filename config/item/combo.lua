@@ -197,7 +197,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 5 + clv,
             ATTR = {
-                attack_green = "+" .. (350 * ilv),
+                attack_green = "+" .. (330 * ilv),
                 toughness = "+" .. (100 * ilv)
             }
         }
@@ -298,7 +298,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 11 + clv,
             ATTR = {
-                attack_green = "+" .. (550 * ilv),
+                attack_green = "+" .. (520 * ilv),
                 attack_speed = "+" .. (7 * ilv)
             }
         }
@@ -444,7 +444,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 20 + clv,
             ATTR = {
-                attack_green = "+" .. (1000 * ilv),
+                attack_green = "+" .. (900 * ilv),
                 int_green = "+" .. (330 * ilv)
             }
         }
@@ -695,7 +695,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 46 + clv,
             ATTR = {
-                attack_green = "+" .. (1400 * ilv),
+                attack_green = "+" .. (1300 * ilv),
                 int_green = "+" .. (1000 * ilv),
                 attack_debuff = {
                     {
@@ -908,7 +908,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 77 + clv,
             ATTR = {
-                attack_green = "+" .. (3700 * ilv),
+                attack_green = "+" .. (3500 * ilv),
                 attack_speed = "+200",
                 natural_wind = "+" .. (15 * ilv)
             }
@@ -968,7 +968,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 100 + clv,
             ATTR = {
-                attack_green = "+" .. (4666 * ilv),
+                attack_green = "+" .. (4444 * ilv),
                 damage_extent = "+" .. (16.66 * ilv)
             }
         }
@@ -987,7 +987,7 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_damage_type = "+thunder",
                 natural_thunder = "+" .. (19 + ilv),
-                attack_green = "+" .. (2800 * ilv),
+                attack_green = "+" .. (2500 * ilv),
                 attack_speed = "+" .. (23 + ilv),
                 attack_effect = {
                     {
@@ -1015,7 +1015,7 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_damage_type = "+thunder",
                 natural_thunder = "+" .. (34 + ilv),
-                attack_green = "+" .. (4000 * ilv),
+                attack_green = "+" .. (3500 * ilv),
                 attack_speed = "+" .. (43 + ilv),
                 attack_effect = {
                     {

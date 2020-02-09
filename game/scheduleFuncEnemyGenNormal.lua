@@ -10,7 +10,7 @@ enemyGenYB = function(waiting)
         function(t, td)
             htime.delDialog(td)
             htime.delTimer(t)
-            hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
+            hsound.sound(cg.gg_snd_effect_0004)
             local count = game.rule.yb.perWaveQty
             game.rule.yb.mon = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
             htime.setInterval(
@@ -57,7 +57,7 @@ enemyGenYB = function(waiting)
                         end
                         htime.delDialog(td2)
                         htime.delTimer(t2)
-                        local gold = game.rule.yb.wave * 60
+                        local gold = game.rule.yb.wave * 75
                         hplayer.loop(
                             function(p, pi)
                                 if (his.playing(p)) then
@@ -116,7 +116,7 @@ enemyGenHZ = function(waiting)
         function(t, td)
             htime.delDialog(td)
             htime.delTimer(t)
-            hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
+            hsound.sound(cg.gg_snd_effect_0004)
             local count = game.rule.hz.perWaveQty
             game.rule.hz.mon = game.thisEnemys[cj.GetRandomInt(1, game.thisEnemysLen)].UNIT_ID
             htime.setInterval(
@@ -143,7 +143,10 @@ enemyGenHZ = function(waiting)
                         end
                         htime.delDialog(td2)
                         htime.delTimer(t2)
-                        local gold = game.rule.hz.wave * 50
+                        local gold = game.rule.hz.wave * 100
+                        if (gold > 100000) then
+                            gold = 100000
+                        end
                         game.rule.hz.wave = game.rule.hz.wave + 1
                         hplayer.loop(
                             function(p, pi)
@@ -202,7 +205,7 @@ enemyGenDK = function(waiting)
         function(t, td)
             htime.delDialog(td)
             htime.delTimer(t)
-            hsound.sound2Unit(cg.gg_snd_effect_0004, 100, whichUnit)
+            hsound.sound(cg.gg_snd_effect_0004)
             for i = 1, hplayer.qty_max, 1 do
                 if (hplayer.getStatus(hplayer.players[i]) == hplayer.player_status.gaming) then
                     game.rule.dk.playerQty[i] = 0

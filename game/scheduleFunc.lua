@@ -134,10 +134,6 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
         if (towerId ~= nil) then
             linkId = game.towersShadow[towerId].UNIT_ID
         end
-        -- 如果有上一个单位，把上一个删除
-        if (game.playerTowerLink[playerIndex][linkIndex] ~= nil) then
-            hunit.del(game.playerTowerLink[playerIndex][linkIndex].unit, 0)
-        end
         local isUnSelectable = (linkId == game.thisUnits["空位"].UNIT_ID)
         local u =
             hunit.create(
@@ -152,8 +148,15 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 isUnSelectable = isUnSelectable
             }
         )
-        game.playerTowerLink[playerIndex][linkIndex].unit = u
         hunit.setUserData(u, linkIndex)
+        -- 如果有上一个单位，把上一个的物品给予新的，并删除它
+        if (game.playerTowerLink[playerIndex][linkIndex] ~= nil) then
+            hitem.copy(game.playerTowerLink[playerIndex][linkIndex].unit, u)
+            hunit.del(game.playerTowerLink[playerIndex][linkIndex].unit, 0)
+        else
+            hunit.del(game.playerTowerLink[playerIndex][linkIndex].unit, 0)
+        end
+        game.playerTowerLink[playerIndex][linkIndex].unit = u
         if (towerId ~= nil) then
             game.playerTowerLink[playerIndex][linkIndex].tower_id = towerId
             --属性
@@ -174,6 +177,8 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             )
             hevent.onAttack(u, onTowerAttack)
             hevent.onSkillHappen(u, onTowerLinkSkillUesd)
+            --物品栏
+            hskill.add(u, hitem.DEFAULT_SKILL_ITEM_SLOT, 0)
             --兵塔技能
             addTowerSkillsx(u)
             --天赋等级

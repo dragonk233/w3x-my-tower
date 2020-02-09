@@ -89,7 +89,7 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+physical,ice",
-            attack_green = "+1300",
+            attack_green = "+1100",
             attack_effect = {
                 {
                     attr = "knocking",
@@ -111,7 +111,7 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+physical,fire",
-            attack_green = "+2500",
+            attack_green = "+2000",
             attack_effect = {
                 {
                     attr = "knocking",
@@ -133,7 +133,7 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_speed = "-20",
-            attack_green = "+4000",
+            attack_green = "+3600",
             attack_effect = {
                 {
                     attr = "swim",
@@ -155,8 +155,8 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+1200",
-            int_green = "+800"
+            attack_green = "+700",
+            int_green = "+900"
         }
     },
     {
@@ -171,7 +171,7 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+magic",
-            attack_green = "+2000",
+            attack_green = "+1300",
             int_green = "+1500"
         }
     },
@@ -187,8 +187,8 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+magic",
-            attack_green = "+3200",
-            int_green = "+2000",
+            attack_green = "+2200",
+            int_green = "+2600",
             attack_effect = {
                 {
                     attr = "violence",
@@ -210,8 +210,8 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+magic,poison",
-            attack_green = "+6000",
-            int_green = "+2500",
+            attack_green = "+2900",
+            int_green = "+3200",
             attack_effect = {
                 {
                     attr = "violence",

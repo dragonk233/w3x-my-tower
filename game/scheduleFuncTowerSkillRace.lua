@@ -1,7 +1,7 @@
 addTowerSkillsRaceAbility = {}
 addTowerSkillsRaceAttr = {}
 addTowerSkillsRaceAttrStack = 0
-addTowerSkillsRaceAttrClock = 0.5
+addTowerSkillsRaceAttrClock = 0.2
 addTowerSkillsRaceAttrPlayer = {}
 
 handleTowerSkillsRaceAttr = function(old, new)
@@ -508,7 +508,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     {
                         attr = "move",
                         odds = 100,
-                        val = 3,
+                        val = 4,
                         during = 2.5,
                         effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
                     }
@@ -519,22 +519,13 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     {
                         attr = "move",
                         odds = 100,
-                        val = 4,
+                        val = 5,
                         during = 3,
                         effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
                     }
                 )
             elseif (qtys[r] == 4) then
-                table.insert(
-                    attr.attack_debuff,
-                    {
-                        attr = "move",
-                        odds = 100,
-                        val = 5,
-                        during = 3.5,
-                        effect = "Abilities\\Spells\\Other\\FrostDamage\\FrostDamage.mdl"
-                    }
-                )
+                table.insert(attr.attack_damage_type, "wind")
             end
         elseif (r == "娜迦") then
             if (qtys[r] == 1) then

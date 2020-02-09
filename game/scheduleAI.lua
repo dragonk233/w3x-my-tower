@@ -234,26 +234,27 @@ MAYBE_AI = {
                         htime.delTimer(t)
                         return
                     end
+                    local stone = 750
                     local gold = hplayer.getGold(hplayer.players[playerIndex])
                     if (gold >= 50000 and math.random(1, 6) == 4) then
                         hplayer.subGold(hplayer.players[playerIndex], 50000)
                         hhero.setCurLevel(
                             game.playerTower[playerIndex],
-                            105 + hhero.getCurLevel(game.playerTower[playerIndex]),
+                            math.floor(50000 / stone) + 5 + hhero.getCurLevel(game.playerTower[playerIndex]),
                             false
                         )
                     elseif (gold >= 10000 and math.random(1, 6) == 4) then
                         hplayer.subGold(hplayer.players[playerIndex], 10000)
                         hhero.setCurLevel(
                             game.playerTower[playerIndex],
-                            23 + hhero.getCurLevel(game.playerTower[playerIndex]),
+                            math.floor(10000 / stone) + 2 + hhero.getCurLevel(game.playerTower[playerIndex]),
                             false
                         )
                     elseif (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 6) == 4) then
                         hplayer.subGold(hplayer.players[playerIndex], 1000)
                         subTowerLevel(playerIndex)
                         addTowerLevel(playerIndex)
-                    elseif (gold >= 750 and math.random(1, 2) == 1) then
+                    elseif (gold >= stone and math.random(1, 2) == 1) then
                         local curWave
                         if (game.rule.cur == "yb") then
                             curWave = game.rule.yb.wave
@@ -263,22 +264,19 @@ MAYBE_AI = {
                             curWave = game.rule.dk.wave[playerIndex]
                         end
                         if (curWave ~= nil) then
-                            local need = 750
-                            if (gold >= need) then
-                                hplayer.subGold(hplayer.players[playerIndex], need)
-                                local targetTPow = getTowerPowLevel(curWave)
-                                if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
-                                    local rand = table.random(game.thisOptionTowerPowerItem[targetTPow])
-                                    local it =
-                                        hitem.create(
-                                        {
-                                            itemId = rand.ITEM_ID,
-                                            x = cj.GetUnitX(game.playerCourier[playerIndex]),
-                                            y = cj.GetUnitY(game.playerCourier[playerIndex])
-                                        }
-                                    )
-                                    MAYBE_AI.item(playerIndex, it, "stone")
-                                end
+                            hplayer.subGold(hplayer.players[playerIndex], stone)
+                            local targetTPow = getTowerPowLevel(curWave)
+                            if (game.thisOptionTowerPowerItem[targetTPow] ~= nil) then
+                                local rand = table.random(game.thisOptionTowerPowerItem[targetTPow])
+                                local it =
+                                    hitem.create(
+                                    {
+                                        itemId = rand.ITEM_ID,
+                                        x = cj.GetUnitX(game.playerCourier[playerIndex]),
+                                        y = cj.GetUnitY(game.playerCourier[playerIndex])
+                                    }
+                                )
+                                MAYBE_AI.item(playerIndex, it, "stone")
                             end
                         end
                     end

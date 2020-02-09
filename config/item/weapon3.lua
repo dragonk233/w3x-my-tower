@@ -65,7 +65,7 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+2777",
+            attack_green = "+1777",
             attack_effect = {
                 {
                     attr = "split",
@@ -88,7 +88,7 @@ items_weapon3 = {
         droppable = 1,
         ATTR = {
             aim = "+20",
-            attack_green = "+1100",
+            attack_green = "+800",
             attack_buff = {
                 {
                     attr = "attack_speed",
@@ -110,8 +110,16 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+2000",
-            aim = "+5"
+            attack_green = "+1600",
+            aim = "+5",
+            attack_debuff = {
+                {
+                    attr = "defend",
+                    odds = 30,
+                    val = 3,
+                    during = 3
+                }
+            }
         }
     },
     {
@@ -125,13 +133,13 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+6300",
+            attack_green = "+3500",
             aim = "+10",
             attack_debuff = {
                 {
                     attr = "defend",
                     odds = 30,
-                    val = 4,
+                    val = 5,
                     during = 3
                 }
             }
@@ -149,13 +157,13 @@ items_weapon3 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+fire",
-            attack_green = "+9000",
+            attack_green = "+6100",
             aim = "+15",
             attack_debuff = {
                 {
                     attr = "defend",
                     odds = 40,
-                    val = 6,
+                    val = 7,
                     during = 4
                 }
             }
@@ -173,7 +181,7 @@ items_weapon3 = {
         droppable = 1,
         ATTR = {
             aim = "+50",
-            attack_green = "+6500",
+            attack_green = "+6400",
             attack_buff = {
                 {
                     attr = "attack_speed",
@@ -195,7 +203,7 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+11000",
+            attack_green = "+6666",
             damage_extent = "+28"
         }
     },
@@ -210,7 +218,7 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+17500",
+            attack_green = "+7777",
             damage_extent = "+37"
         }
     },
@@ -225,7 +233,7 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+23000",
+            attack_green = "+8888",
             damage_extent = "+46"
         }
     }

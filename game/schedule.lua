@@ -16,6 +16,26 @@ cj.TriggerAddAction(
     end
 )
 
+htime.setInterval(
+    19,
+    function()
+        hplayer.loop(
+            function(p, pi)
+                if (game.playerTower[pi] ~= nil) then
+                    cj.SetUnitPosition(game.playerTower[pi], game.towerPoint[pi][1], game.towerPoint[pi][2])
+                end
+                for i = 1, 4, 1 do
+                    if (game.playerTowerLink[pi][i] ~= nil) then
+                        local x = game.towerPoint[pi][1] + game.towerLinkOffset[i][1]
+                        local y = game.towerPoint[pi][2] + game.towerLinkOffset[i][2]
+                        cj.SetUnitPosition(game.playerTowerLink[pi][i].unit, x, y)
+                    end
+                end
+            end
+        )
+    end
+)
+
 dzSetLumber = function(p, curWave)
     local lv = hdzapi.mapLv(p)
     if (lv == nil or lv < 1) then
@@ -182,17 +202,18 @@ cj.TriggerAddAction(
                         function()
                             game.runing = false
                             hmsg.echo("不！“大精灵”GG了，结束啦~我们的守护")
-                            htime.setTimeout(
-                                5.00,
-                                function(t, td)
-                                    htime.delDialog(td)
-                                    htime.delTimer(t)
-                                    for i = 1, hplayer.qty_max, 1 do
+                            for i = 1, hplayer.qty_max, 1 do
+                                hmark.create("war3mapImported\\mark_defeat.blp", 4.00, hplayer.players[i])
+                                htime.setTimeout(
+                                    10.00,
+                                    function(t, td)
+                                        htime.delDialog(td)
+                                        htime.delTimer(t)
                                         hplayer.defeat(hplayer.players[i], "再见~")
-                                    end
-                                end,
-                                "退出倒计时"
-                            )
+                                    end,
+                                    "准备退出"
+                                )
+                            end
                         end
                     )
                     cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)
@@ -338,17 +359,18 @@ cj.TriggerAddAction(
                         function()
                             game.runing = false
                             hmsg.echo("不！“光辉城主”GG了，还没死机就结束啦~我们的守护")
-                            htime.setTimeout(
-                                5,
-                                function(t, td)
-                                    htime.delDialog(td)
-                                    htime.delTimer(t)
-                                    for i = 1, hplayer.qty_max, 1 do
+                            for i = 1, hplayer.qty_max, 1 do
+                                hmark.create("war3mapImported\\mark_defeat.blp", 4.00, hplayer.players[i])
+                                htime.setTimeout(
+                                    10.00,
+                                    function(t, td)
+                                        htime.delDialog(td)
+                                        htime.delTimer(t)
                                         hplayer.defeat(hplayer.players[i], "再见~")
-                                    end
-                                end,
-                                "退出倒计时"
-                            )
+                                    end,
+                                    "准备退出"
+                                )
+                            end
                         end
                     )
                     cj.PingMinimapEx(x, y, 10, 255, 0, 0, false)

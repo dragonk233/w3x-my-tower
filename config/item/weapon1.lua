@@ -115,7 +115,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+1000"
+            attack_green = "+800"
         }
     },
     {
@@ -129,7 +129,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+1900"
+            attack_green = "+1400"
         }
     },
     {
@@ -143,7 +143,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+2200"
+            attack_green = "+1750"
         }
     },
     {
@@ -157,7 +157,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+3300"
+            attack_green = "+2100"
         }
     },
     {
@@ -172,7 +172,7 @@ items_weapon1 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+fire",
-            attack_green = "+4700"
+            attack_green = "+3300"
         }
     }
 }
