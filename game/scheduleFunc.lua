@@ -331,13 +331,6 @@ createMyTower = function(playerIndex, towerId, towerLevel)
                 hskill.add(u, v, 0)
             end
         end
-        hskill.unarm(
-            {
-                whichUnit = u,
-                during = 60,
-                odds = 100 --几率，可选
-            }
-        )
         --移动卡的bug
         cj.TriggerRegisterUnitEvent(game.TRIGGER_DE, u, EVENT_UNIT_ISSUED_POINT_ORDER)
         return u
@@ -397,13 +390,6 @@ createMyCourier = function(playerIndex, courierId)
         end
         --如果是AI模式
         MAYBE_AI.courier(playerIndex)
-        hskill.silent(
-            {
-                whichUnit = u,
-                during = 60,
-                odds = 100 --几率，可选
-            }
-        )
         return u
     end
 end

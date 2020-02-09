@@ -4,6 +4,9 @@ onCourierSkillUesdTTG = function(u, text)
 end
 onCourierSkillUesd = function(evtData)
     local u = evtData.triggerUnit
+    if (his.silent(u) == true) then
+        return
+    end
     local skillid = evtData.triggerSkill
     local abilitiesSLK = hslk_global.abilitiesKV[skillid]
     local p = cj.GetOwningPlayer(u)
