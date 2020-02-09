@@ -13,7 +13,7 @@ towers_b = {
         Missileart = "abilities\\weapons\\TuskarSpear\\TuskarSpear.mdl",
         cool1 = 2.00,
         Primary = "STR",
-        abilList = {towerSpxKV["铁壁"]}
+        abilList = {towerSpxKV["金甲"]}
     },
     {
         Name = "矮人·飞机",
