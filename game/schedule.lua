@@ -530,7 +530,7 @@ cj.TriggerAddAction(
                                                 if (type == "tower_shadow") then
                                                     local wanbao = false
                                                     if (next == playerIndex) then
-                                                        hunit.del(u, 2)
+                                                        hunit.del(u, 0)
                                                         wanbao = true
                                                     else
                                                         cj.SetUnitPosition(

@@ -1103,7 +1103,7 @@ for ilv = 1, 9 do
             lv = 300 + clv,
             ATTR = {
                 resistance = "+" .. (13 * ilv),
-                toughness = "+" .. (6000 * ilv)
+                toughness = "+" .. (3000 * ilv)
             }
         }
     )

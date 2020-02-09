@@ -148,8 +148,8 @@ items_defend1 = {
         droppable = 1,
         ATTR = {
             resistance = "+11",
-            toughness = "+500",
-            int_green = "+1500"
+            toughness = "+400",
+            int_green = "+1300"
         }
     },
     {

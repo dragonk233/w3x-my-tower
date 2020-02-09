@@ -43,7 +43,7 @@ towers_ss = {
         moveHeight = 0.00,
         weapTp1 = "missile",
         Missileart = "war3mapImported\\eff_freezingsplinter.mdl",
-        cool1 = 2.60,
+        cool1 = 2.80,
         Primary = "INT",
         abilList = {towerSpxKV["冰雪之殇"], towerSpxKV["冰矢"]}
     },

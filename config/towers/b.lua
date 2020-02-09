@@ -172,7 +172,7 @@ towers_b = {
         moveHeight = 0.00,
         weapTp1 = "mbounce",
         Missileart = "Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdl",
-        cool1 = 2.30,
+        cool1 = 2.80,
         Primary = "AGI",
         abilList = {towerSpxKV["月刃弹射"]}
     },

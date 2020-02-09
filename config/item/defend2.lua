@@ -128,7 +128,7 @@ items_defend2 = {
         ATTR = {
             life = "+3000",
             agi_green = "+1200",
-            toughness = "+2000"
+            toughness = "+700"
         }
     },
     {
@@ -144,7 +144,7 @@ items_defend2 = {
         ATTR = {
             life = "+5000",
             str_green = "+1800",
-            toughness = "+2500"
+            toughness = "+850"
         }
     },
     {

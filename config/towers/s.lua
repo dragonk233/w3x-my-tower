@@ -520,7 +520,7 @@ towers_s = {
         moveHeight = 0,
         weapTp1 = "missile",
         Missileart = "Abilities\\Weapons\\NagaArrowMissile\\NagaArrowMissile.mdl",
-        cool1 = 2.50,
+        cool1 = 2.70,
         Primary = "AGI",
         abilList = {towerSpxKV["石化凝视"], towerSpxKV["海之牙"]}
     }

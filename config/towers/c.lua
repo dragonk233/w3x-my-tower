@@ -44,7 +44,7 @@ towers_c = {
         weapTp1 = "msplash",
         Missileart = "Abilities\\Weapons\\Mortar\\MortarMissile.mdl",
         Missilearc = 0.6,
-        cool1 = 2.70,
+        cool1 = 2.6,
         Primary = "STR",
         abilList = {towerSpxKV["溅射攻击"]}
     },

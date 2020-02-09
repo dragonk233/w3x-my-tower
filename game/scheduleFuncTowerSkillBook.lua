@@ -279,7 +279,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
     elseif (abliOps.Name == "暗夜对剑") then
         hattr.set(u, 0, {attack_damage_type = opt .. "dark", natural_dark = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "恶龙吞日") then
-        hattr.set(u, 0, {attack_damage_type = opt .. "dargon", natural_dargon = opt .. (level * abliOps.Val[1])})
+        hattr.set(u, 0, {attack_damage_type = opt .. "dragon", natural_dragon = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "恶鬼呼声") then
         hattr.set(u, 0, {attack_damage_type = opt .. "ghost", natural_ghost = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "折翅天使") then
