@@ -17,7 +17,7 @@ cj.TriggerAddAction(
 )
 
 htime.setInterval(
-    19,
+    60,
     function()
         hplayer.loop(
             function(p, pi)
@@ -25,7 +25,7 @@ htime.setInterval(
                     cj.SetUnitPosition(game.playerTower[pi], game.towerPoint[pi][1], game.towerPoint[pi][2])
                 end
                 for i = 1, 4, 1 do
-                    if (game.playerTowerLink[pi][i] ~= nil) then
+                    if (game.playerTowerLink[pi] ~= nil and game.playerTowerLink[pi][i] ~= nil) then
                         local x = game.towerPoint[pi][1] + game.towerLinkOffset[i][1]
                         local y = game.towerPoint[pi][2] + game.towerLinkOffset[i][2]
                         cj.SetUnitPosition(game.playerTowerLink[pi][i].unit, x, y)

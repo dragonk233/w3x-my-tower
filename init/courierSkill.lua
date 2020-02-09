@@ -340,10 +340,10 @@ obj.Hotkey = "C"
 obj.Ubertip = "花费30木头即可来一次开心抽金箱子哦~"
     .. "|n"..hColor.green("木头免费的哟：每局玩都累计：地图等级+过关数")
     .. "|n"..hColor.green("对战模式胜利者更有额外100木头(AI也有哦~)")
-    .. "|n"..hColor.redLight("特等赏：黄金1888")
-    .. "|n"..hColor.yellow("一等赏：黄金888")
-    .. "|n"..hColor.yellowLight("二等赏：黄金388")
-    .. "|n"..hColor.greenLight("三等赏：黄金88")
+    .. "|n"..hColor.redLight("特等赏：黄金8888")
+    .. "|n"..hColor.yellow("一等赏：黄金1888")
+    .. "|n"..hColor.yellowLight("二等赏：黄金888")
+    .. "|n"..hColor.greenLight("三等赏：黄金388")
     .. "|n"..hColor.skyLight("安慰奖：谢谢惠顾 ^_^")
 obj.Buttonpos1 = 2
 obj.Buttonpos2 = 2
