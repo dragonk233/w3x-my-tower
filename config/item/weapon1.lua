@@ -11,10 +11,10 @@ items_weapon1 = {
         droppable = 1,
         OVERLIE = 9,
         ATTR = {
-            attack_green = "+20",
-            str_green = "+3",
-            agi_green = "+3",
-            int_green = "+3"
+            attack_green = "+30",
+            str_green = "+10",
+            agi_green = "+10",
+            int_green = "+10"
         }
     },
     {
@@ -29,7 +29,7 @@ items_weapon1 = {
         droppable = 1,
         OVERLIE = 9,
         ATTR = {
-            str_green = "+10"
+            str_green = "+80"
         }
     },
     {
@@ -44,7 +44,7 @@ items_weapon1 = {
         droppable = 1,
         OVERLIE = 9,
         ATTR = {
-            agi_green = "+10"
+            agi_green = "+80"
         }
     },
     {
@@ -59,7 +59,7 @@ items_weapon1 = {
         droppable = 1,
         OVERLIE = 9,
         ATTR = {
-            int_green = "+10"
+            int_green = "+80"
         }
     },
     {
@@ -73,13 +73,13 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+100"
+            attack_green = "+150"
         }
     },
     {
         Name = "攻击之爪",
         Description = "铁制的爪子",
-        goldcost = 2000,
+        goldcost = 1800,
         lumbercost = 0,
         Art = "ReplaceableTextures\\CommandButtons\\BTNClawsOfAttack.blp",
         powerup = 0,
@@ -87,7 +87,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+170"
+            attack_green = "+300"
         }
     },
     {
@@ -101,7 +101,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+310"
+            attack_green = "+570"
         }
     },
     {
@@ -115,7 +115,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+550"
+            attack_green = "+1000"
         }
     },
     {
@@ -129,7 +129,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+800"
+            attack_green = "+1900"
         }
     },
     {
@@ -143,7 +143,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+1100"
+            attack_green = "+2200"
         }
     },
     {
@@ -157,7 +157,7 @@ items_weapon1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+1300"
+            attack_green = "+3300"
         }
     },
     {
@@ -172,7 +172,7 @@ items_weapon1 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+fire",
-            attack_green = "+1500"
+            attack_green = "+4700"
         }
     }
 }

@@ -62,10 +62,15 @@ for _, item in ipairs(items) do
                 v.perishable = 0
             end
         end
-        local lv = v.lv or math.floor(v.goldcost / 2000)
+        local lv = 1
         if(shopName == "combo")then
+            lv = v.lv
             v.goldcost = lv * 500
             v.lumbercost = 0
+        else
+            v.goldcost = v.goldcost or 0
+            v.lumbercost = v.lumbercost or 0
+            lv = math.floor(v.goldcost/2000+v.lumbercost/10)
         end
         if(lv < 1)then
             lv = 1

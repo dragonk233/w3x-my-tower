@@ -10,7 +10,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            defend = "+60"
+            defend = "+130"
         }
     },
     {
@@ -24,7 +24,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            resistance = "+25"
+            resistance = "+35"
         }
     },
     {
@@ -38,7 +38,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            avoid = "+10"
+            avoid = "+20"
         }
     },
     {
@@ -52,7 +52,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            avoid = "+18"
+            avoid = "+31"
         }
     },
     {
@@ -66,7 +66,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            defend = "+50",
+            defend = "+460",
             natural_ice_oppose = "+40"
         }
     },
@@ -81,7 +81,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            defend = "+50",
+            defend = "+460",
             natural_fire_oppose = "+40"
         }
     },
@@ -96,7 +96,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            defend = "+50",
+            defend = "+460",
             natural_thunder_oppose = "+40"
         }
     },
@@ -111,7 +111,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            defend = "+50",
+            defend = "+460",
             natural_wind_oppose = "+40"
         }
     },
@@ -126,9 +126,9 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            life = "+500",
-            agi_green = "+300",
-            toughness = "+1000"
+            life = "+3000",
+            agi_green = "+1200",
+            toughness = "+2000"
         }
     },
     {
@@ -142,9 +142,9 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            life = "+700",
-            str_green = "+500",
-            toughness = "+1500"
+            life = "+5000",
+            str_green = "+1800",
+            toughness = "+2500"
         }
     },
     {
@@ -158,7 +158,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            life = "+2500"
+            life = "+10000"
         }
     },
     {
@@ -172,7 +172,7 @@ items_defend2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            life = "+4000"
+            life = "+15000"
         }
     }
 }

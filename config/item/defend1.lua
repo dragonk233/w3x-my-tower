@@ -11,9 +11,9 @@ items_defend1 = {
         droppable = 1,
         OVERLIE = 9,
         ATTR = {
-            defend = "+3",
-            resistance = "+2.5",
-            toughness = "+25"
+            defend = "+10",
+            resistance = "+3.5",
+            toughness = "+30"
         }
     },
     {
@@ -28,7 +28,7 @@ items_defend1 = {
         droppable = 1,
         OVERLIE = 3,
         ATTR = {
-            toughness = "+75"
+            toughness = "+100"
         }
     },
     {
@@ -57,7 +57,7 @@ items_defend1 = {
         droppable = 1,
         OVERLIE = 3,
         ATTR = {
-            defend = "+20"
+            defend = "+35"
         }
     },
     {
@@ -87,7 +87,8 @@ items_defend1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_damage_type = "+insect"
+            attack_damage_type = "+insect",
+            natural_insect = "+3"
         }
     },
     {
@@ -102,7 +103,7 @@ items_defend1 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+insect",
-            natural_insect = "+3.5"
+            natural_insect = "+6"
         }
     },
     {
@@ -117,7 +118,7 @@ items_defend1 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+soil",
-            natural_soil = "+4"
+            natural_soil = "+6.5"
         }
     },
     {
@@ -131,8 +132,8 @@ items_defend1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            life = "+350",
-            str_green = "+75"
+            life = "+1000",
+            str_green = "+1300"
         }
     },
     {
@@ -146,15 +147,15 @@ items_defend1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            resistance = "+9",
-            toughness = "+160",
-            int_green = "+180"
+            resistance = "+11",
+            toughness = "+500",
+            int_green = "+1500"
         }
     },
     {
         Name = "恢复戒指",
         Description = "恢复得很慢的戒指",
-        goldcost = 23333,
+        goldcost = 21000,
         lumbercost = 0,
         Art = "ReplaceableTextures\\CommandButtons\\BTNRingSkull.blp",
         powerup = 0,
@@ -162,7 +163,7 @@ items_defend1 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            life_back = "+0.05"
+            life_back = "+0.4"
         }
     },
     {
@@ -177,7 +178,7 @@ items_defend1 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+fire",
-            natural_fire = "+8"
+            natural_fire = "+30"
         }
     }
 }

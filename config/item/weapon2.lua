@@ -10,7 +10,7 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            str_green = "+200"
+            str_green = "+400"
         }
     },
     {
@@ -24,7 +24,7 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            agi_green = "+200"
+            agi_green = "+400"
         }
     },
     {
@@ -38,7 +38,7 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            int_green = "+200"
+            int_green = "+400"
         }
     },
     {
@@ -52,7 +52,7 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_speed = "+20"
+            attack_speed = "+22"
         }
     },
     {
@@ -67,12 +67,12 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+physical",
-            attack_green = "+250",
+            attack_green = "+700",
             attack_effect = {
                 {
                     attr = "knocking",
-                    odds = 10,
-                    percent = 13
+                    odds = 13,
+                    percent = 16
                 }
             }
         }
@@ -89,12 +89,12 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+physical,ice",
-            attack_green = "+600",
+            attack_green = "+1300",
             attack_effect = {
                 {
                     attr = "knocking",
-                    odds = 15,
-                    percent = 18
+                    odds = 17,
+                    percent = 21
                 }
             }
         }
@@ -111,7 +111,7 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+physical,fire",
-            attack_green = "+950",
+            attack_green = "+2500",
             attack_effect = {
                 {
                     attr = "knocking",
@@ -132,14 +132,14 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_speed = "-10",
-            attack_green = "+1200",
+            attack_speed = "-20",
+            attack_green = "+4000",
             attack_effect = {
                 {
                     attr = "swim",
                     odds = 25,
-                    during = 1.2,
-                    val = 750
+                    during = 2.2,
+                    val = 1000
                 }
             }
         }
@@ -155,14 +155,14 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+600",
-            int_green = "+500"
+            attack_green = "+1200",
+            int_green = "+800"
         }
     },
     {
         Name = "专家魔法书",
         Description = "中级魔法师进阶用的魔法书",
-        goldcost = 34000,
+        goldcost = 46000,
         lumbercost = 0,
         Art = "ReplaceableTextures\\CommandButtons\\BTNSorceressAdept.blp",
         powerup = 0,
@@ -171,8 +171,8 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+magic",
-            attack_green = "+1000",
-            int_green = "+860"
+            attack_green = "+2000",
+            int_green = "+1500"
         }
     },
     {
@@ -187,13 +187,13 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+magic",
-            attack_green = "+1600",
-            int_green = "+1500",
+            attack_green = "+3200",
+            int_green = "+2000",
             attack_effect = {
                 {
                     attr = "violence",
-                    odds = 18,
-                    percent = 23
+                    odds = 20,
+                    percent = 26
                 }
             }
         }
@@ -210,13 +210,13 @@ items_weapon2 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+magic,poison",
-            attack_green = "+2600",
-            int_green = "+2000",
+            attack_green = "+6000",
+            int_green = "+2500",
             attack_effect = {
                 {
                     attr = "violence",
-                    odds = 23,
-                    percent = 27
+                    odds = 30,
+                    percent = 30
                 }
             }
         }

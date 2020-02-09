@@ -133,7 +133,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 1 + clv,
             ATTR = {
-                defend = "+" .. (10 * ilv)
+                defend = "+" .. (15 * ilv)
             }
         }
     )
@@ -165,7 +165,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 3 + clv,
             ATTR = {
-                life = "+" .. (250 * ilv)
+                life = "+" .. (500 * ilv)
             }
         }
     )
@@ -197,8 +197,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 5 + clv,
             ATTR = {
-                attack_green = "+" .. (200 * ilv),
-                toughness = "+" .. (45 * ilv)
+                attack_green = "+" .. (350 * ilv),
+                toughness = "+" .. (100 * ilv)
             }
         }
     )
@@ -246,8 +246,9 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 8 + clv,
             ATTR = {
-                agi_green = "+" .. (150 * ilv),
-                int_green = "+" .. (150 * ilv)
+                str_green = "+" .. (180 * ilv),
+                agi_green = "+" .. (180 * ilv),
+                int_green = "+" .. (180 * ilv)
             }
         }
     )
@@ -263,7 +264,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 9 + clv,
             ATTR = {
-                defend = "+" .. (20 * ilv),
+                defend = "+" .. (30 * ilv),
                 resistance = "+" .. (5.5 * ilv)
             }
         }
@@ -280,8 +281,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 10 + clv,
             ATTR = {
-                life = "+" .. (500 * ilv),
-                str_green = "+" .. (160 * ilv)
+                life = "+" .. (1000 * ilv),
+                str_green = "+" .. (220 * ilv)
             }
         }
     )
@@ -297,8 +298,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 11 + clv,
             ATTR = {
-                attack_green = "+" .. (425 * ilv),
-                attack_speed = "+" .. (6 * ilv)
+                attack_green = "+" .. (550 * ilv),
+                attack_speed = "+" .. (7 * ilv)
             }
         }
     )
@@ -384,8 +385,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 16 + clv,
             ATTR = {
-                attack_green = "+" .. (535 * ilv),
-                agi_green = "+" .. (155 * ilv)
+                attack_green = "+" .. (777 * ilv),
+                agi_green = "+" .. (235 * ilv)
             }
         }
     )
@@ -401,7 +402,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 17 + clv,
             ATTR = {
-                defend = "+" .. (30 * ilv),
+                defend = "+" .. (50 * ilv),
                 swim_oppose = "+" .. (10 * ilv)
             }
         }
@@ -443,8 +444,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 20 + clv,
             ATTR = {
-                attack_green = "+" .. (500 * ilv),
-                int_green = "+" .. (225 * ilv)
+                attack_green = "+" .. (1000 * ilv),
+                int_green = "+" .. (330 * ilv)
             }
         }
     )
@@ -460,7 +461,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 21 + clv,
             ATTR = {
-                defend = "+" .. (27 * ilv),
+                defend = "+" .. (55 * ilv),
                 damage_rebound = "+" .. (0.02 * ilv)
             }
         }
@@ -479,8 +480,8 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_damage_type = "+light",
                 aim = "+" .. (10 * ilv),
-                str_green = "+" .. (195 * ilv),
-                int_green = "+" .. (205 * ilv)
+                str_green = "+" .. (360 * ilv),
+                int_green = "+" .. (380 * ilv)
             }
         }
     )
@@ -550,8 +551,8 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_damage_type = "+magic,poison",
                 natural_poison = "+" .. (5 * ilv),
-                life = "+" .. (600 * ilv),
-                life_back = "+" .. (0.02 * ilv)
+                life = "+" .. (1800 * ilv),
+                life_back = "+" .. (0.04 * ilv)
             }
         }
     )
@@ -567,7 +568,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 28 + clv,
             ATTR = {
-                defend = "+" .. (40 * ilv),
+                defend = "+" .. (75 * ilv),
                 damage_rebound = "+" .. (0.02 * ilv),
                 damage_rebound_oppose = "+" .. (9 * ilv)
             }
@@ -588,7 +589,7 @@ for ilv = 1, 9 do
                 attack_damage_type = "+soil",
                 natural_soil = "+" .. (6 * ilv),
                 natural_soil_oppose = "+" .. (8.5 * ilv),
-                defend = "+" .. (20 * ilv)
+                defend = "+" .. (60 * ilv)
             }
         }
     )
@@ -605,9 +606,9 @@ for ilv = 1, 9 do
             lv = 31 + clv,
             ATTR = {
                 attack_damage_type = "+dark,wind",
-                natural_dark_oppose = "+" .. (9 * ilv),
-                natural_wind_oppose = "+" .. (9 * ilv),
-                toughness = "+" .. (130 * ilv)
+                natural_dark_oppose = "+" .. (8 * ilv),
+                natural_wind_oppose = "+" .. (8 * ilv),
+                toughness = "+" .. (230 * ilv)
             }
         }
     )
@@ -623,8 +624,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 33 + clv,
             ATTR = {
-                defend = "+" .. (50 * ilv),
-                toughness = "+" .. (200 * ilv),
+                defend = "+" .. (110 * ilv),
+                toughness = "+" .. (300 * ilv),
                 resistance = "+" .. (5 * ilv)
             }
         }
@@ -641,7 +642,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 36 + clv,
             ATTR = {
-                life = "+" .. (1500 * ilv),
+                life = "+" .. (4000 * ilv),
                 life_back = "+" .. (0.03 * ilv)
             }
         }
@@ -658,9 +659,9 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 40 + clv,
             ATTR = {
-                attack_green = "+" .. (900 * ilv),
-                agi_green = "+" .. (255 * ilv),
-                avoid = "+" .. (3 * ilv)
+                attack_green = "+" .. (1550 * ilv),
+                agi_green = "+" .. (405 * ilv),
+                avoid = "+" .. (4 * ilv)
             }
         }
     )
@@ -678,7 +679,7 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_damage_type = "+magic",
                 resistance = "+" .. (8 * ilv),
-                toughness = "+" .. (400 * ilv)
+                toughness = "+" .. (500 * ilv)
             }
         }
     )
@@ -694,8 +695,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 46 + clv,
             ATTR = {
-                attack_green = "+" .. (400 * ilv),
-                int_green = "+" .. (360 * ilv),
+                attack_green = "+" .. (1400 * ilv),
+                int_green = "+" .. (1000 * ilv),
                 attack_debuff = {
                     {
                         attr = "defend",
@@ -728,7 +729,7 @@ for ilv = 1, 9 do
                 attack_damage_type = "+water",
                 natural_water = "+" .. (10 * ilv),
                 natural_water_oppose = "+" .. (7.5 * ilv),
-                int_green = "+" .. (420 * ilv)
+                int_green = "+" .. (880 * ilv)
             }
         }
     )
@@ -744,7 +745,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 52 + clv,
             ATTR = {
-                int_green = "+" .. (440 * ilv),
+                int_green = "+" .. (1100 * ilv),
                 resistance = "+" .. (12 * ilv)
             }
         }
@@ -797,7 +798,7 @@ for ilv = 1, 9 do
                 attack_damage_type = "+light",
                 natural_light = "+" .. (16 * ilv),
                 natural_light_oppose = "+" .. (8 * ilv),
-                str_green = "+" .. (300 * ilv)
+                str_green = "+" .. (750 * ilv)
             }
         }
     )
@@ -838,9 +839,9 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 68 + clv,
             ATTR = {
-                str_green = "+" .. (333 * ilv),
-                agi_green = "+" .. (333 * ilv),
-                int_green = "+" .. (333 * ilv)
+                str_green = "+" .. (999 * ilv),
+                agi_green = "+" .. (999 * ilv),
+                int_green = "+" .. (999 * ilv)
             }
         }
     )
@@ -856,7 +857,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 71 + clv,
             ATTR = {
-                attack_green = "+" .. (2000 * ilv)
+                attack_green = "+" .. (3000 * ilv)
             }
         }
     )
@@ -873,7 +874,7 @@ for ilv = 1, 9 do
             lv = 73 + clv,
             ATTR = {
                 aim = "+" .. (7 * ilv),
-                defend = "+" .. (75 * ilv)
+                defend = "+" .. (230 * ilv)
             }
         }
     )
@@ -891,7 +892,7 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_damage_type = "+metal",
                 aim = "+" .. (8 * ilv),
-                defend = "+" .. (85 * ilv)
+                defend = "+" .. (255 * ilv)
             }
         }
     )
@@ -907,7 +908,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 77 + clv,
             ATTR = {
-                attack_green = "+" .. (1300 * ilv),
+                attack_green = "+" .. (3700 * ilv),
                 attack_speed = "+200",
                 natural_wind = "+" .. (15 * ilv)
             }
@@ -967,7 +968,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 100 + clv,
             ATTR = {
-                attack_green = "+" .. (1666 * ilv),
+                attack_green = "+" .. (4666 * ilv),
                 damage_extent = "+" .. (16.66 * ilv)
             }
         }
@@ -986,7 +987,7 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_damage_type = "+thunder",
                 natural_thunder = "+" .. (19 + ilv),
-                attack_green = "+" .. (777 * ilv),
+                attack_green = "+" .. (2800 * ilv),
                 attack_speed = "+" .. (23 + ilv),
                 attack_effect = {
                     {
@@ -1014,7 +1015,7 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_damage_type = "+thunder",
                 natural_thunder = "+" .. (34 + ilv),
-                attack_green = "+" .. (999 * ilv),
+                attack_green = "+" .. (4000 * ilv),
                 attack_speed = "+" .. (43 + ilv),
                 attack_effect = {
                     {
@@ -1042,7 +1043,7 @@ for ilv = 1, 9 do
             ATTR = {
                 attack_damage_type = "+fire,physical",
                 natural_fire = "+" .. (22.5 * ilv),
-                attack_green = "+" .. (1266 * ilv),
+                attack_green = "+" .. (5266 * ilv),
                 aim = "+100"
             }
         }
@@ -1059,7 +1060,7 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 210 + clv,
             ATTR = {
-                attack_green = "+" .. (1666 * ilv),
+                attack_green = "+" .. (6101 * ilv),
                 attack_effect = {
                     {
                         attr = "split",
@@ -1084,8 +1085,8 @@ for ilv = 1, 9 do
             lv = 240 + clv,
             ATTR = {
                 attack_damage_type = "+wood",
-                natural_wood = "+" .. (20 * ilv),
-                life = "+" .. (4000 * ilv)
+                natural_wood = "+" .. (25 * ilv),
+                life = "+" .. (30000 * ilv)
             }
         }
     )
@@ -1101,8 +1102,8 @@ for ilv = 1, 9 do
             droppable = 1,
             lv = 300 + clv,
             ATTR = {
-                resistance = "+" .. (10 * ilv),
-                toughness = "+" .. (2000 * ilv)
+                resistance = "+" .. (13 * ilv),
+                toughness = "+" .. (6000 * ilv)
             }
         }
     )

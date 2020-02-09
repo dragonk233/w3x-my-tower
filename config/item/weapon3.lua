@@ -10,7 +10,7 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            aim = "+35"
+            aim = "+40"
         }
     },
     {
@@ -25,9 +25,9 @@ items_weapon3 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+light",
-            str_green = "+450",
-            agi_green = "+450",
-            int_green = "+450"
+            str_green = "+555",
+            agi_green = "+555",
+            int_green = "+555"
         }
     },
     {
@@ -42,13 +42,13 @@ items_weapon3 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+thunder",
-            attack_speed = "+35",
+            attack_speed = "+30",
             attack_effect = {
                 {
                     attr = "lightning_chain",
                     odds = 40,
                     qty = 3,
-                    val = 3400,
+                    val = 3300,
                     effect = "Abilities\\Spells\\Human\\ManaFlare\\ManaFlareBoltImpact.mdl"
                 }
             }
@@ -65,7 +65,7 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+777",
+            attack_green = "+2777",
             attack_effect = {
                 {
                     attr = "split",
@@ -87,7 +87,8 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+850",
+            aim = "+20",
+            attack_green = "+1100",
             attack_buff = {
                 {
                     attr = "attack_speed",
@@ -109,7 +110,7 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+800",
+            attack_green = "+2000",
             aim = "+5"
         }
     },
@@ -124,13 +125,13 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+1300",
+            attack_green = "+6300",
             aim = "+10",
             attack_debuff = {
                 {
                     attr = "defend",
                     odds = 30,
-                    val = 3,
+                    val = 4,
                     during = 3
                 }
             }
@@ -148,14 +149,14 @@ items_weapon3 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+fire",
-            attack_green = "+2400",
+            attack_green = "+9000",
             aim = "+15",
             attack_debuff = {
                 {
                     attr = "defend",
                     odds = 40,
-                    val = 5,
-                    during = 3
+                    val = 6,
+                    during = 4
                 }
             }
         }
@@ -171,13 +172,13 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            aim = "+40",
-            attack_green = "+2300",
+            aim = "+50",
+            attack_green = "+6500",
             attack_buff = {
                 {
                     attr = "attack_speed",
-                    odds = 17,
-                    val = 25,
+                    odds = 20,
+                    val = 28,
                     during = 3
                 }
             }
@@ -194,8 +195,8 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+2555",
-            damage_extent = "+18"
+            attack_green = "+11000",
+            damage_extent = "+28"
         }
     },
     {
@@ -209,8 +210,8 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+3666",
-            damage_extent = "+27"
+            attack_green = "+17500",
+            damage_extent = "+37"
         }
     },
     {
@@ -224,8 +225,8 @@ items_weapon3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+5555",
-            damage_extent = "+36"
+            attack_green = "+23000",
+            damage_extent = "+46"
         }
     }
 }

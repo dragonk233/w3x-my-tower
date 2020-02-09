@@ -10,6 +10,7 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
+            toughness = "+1600",
             natural_dark_oppose = "+50",
             natural_light_oppose = "+50"
         }
@@ -25,7 +26,7 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            life = "+2000",
+            life = "+14000",
             resistance = "+50"
         }
     },
@@ -40,6 +41,7 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
+            toughness = "+2000",
             knocking_oppose = "+50",
             violence_oppose = "+50",
             swim_oppose = "+50",
@@ -58,13 +60,13 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            defend = "+144",
+            defend = "+567",
             resistance = "+23",
-            toughness = "+1255",
-            fetter_oppose = "+21",
-            avoid = "+7",
-            natural_ghost_oppose = "+21",
-            natural_god_oppose = "+13"
+            toughness = "+3456",
+            fetter_oppose = "+23",
+            avoid = "+12",
+            natural_ghost_oppose = "+56",
+            natural_god_oppose = "+34"
         }
     },
     {
@@ -78,9 +80,10 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            avoid = "+22",
+            avoid = "+30",
+            toughness = "+4000",
             natural_poison_oppose = "+60",
-            natural_thunder_oppose = "+20"
+            natural_thunder_oppose = "+30"
         }
     },
     {
@@ -94,9 +97,9 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            aim = "+50",
+            aim = "+75",
             attack_damage_type = "+fire",
-            natural_fire = "+17.5",
+            natural_fire = "+57.5",
             natural_fire_oppose = "+80"
         }
     },
@@ -111,9 +114,9 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            defend = "+110",
+            defend = "+800",
             attack_damage_type = "+metal",
-            natural_metal = "+20",
+            natural_metal = "+25",
             natural_metal_oppose = "+50"
         }
     },
@@ -128,18 +131,18 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            aim = "+40",
+            aim = "+50",
             attack_damage_type = "+physical,magic",
             attack_effect = {
                 {
                     attr = "knocking",
-                    odds = 35,
-                    percent = 62.5
+                    odds = 60,
+                    percent = 72.5
                 },
                 {
                     attr = "violence",
-                    odds = 35,
-                    percent = 62.5
+                    odds = 60,
+                    percent = 72.5
                 }
             }
         }
@@ -155,11 +158,12 @@ items_defend3 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_damage_type = "+god,water",
+            attack_damage_type = "+god,water,wind",
             natural_water = "+45",
-            natural_water_oppose = "+60",
-            natural_wind_oppose = "+30",
-            natural_ice_oppose = "+20"
+            natural_wind = "+35",
+            natural_water_oppose = "+70",
+            natural_wind_oppose = "+35",
+            natural_ice_oppose = "+25"
         }
     },
     {
@@ -174,10 +178,10 @@ items_defend3 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+god,light,magic",
-            natural_god = "+35",
-            natural_god_oppose = "+35",
-            str_green = "1500",
-            int_green = "1500"
+            natural_god = "+49",
+            natural_god_oppose = "+49",
+            str_green = "+4949",
+            int_green = "+4949"
         }
     },
     {
@@ -193,11 +197,10 @@ items_defend3 = {
         ATTR = {
             attack_damage_type = "+ghost",
             natural_ghost = "+50",
-            natural_ghost_oppose = "+90",
-            luck = "88",
-            str_green = "+888",
-            agi_green = "+888",
-            int_green = "+888"
+            natural_ghost_oppose = "+75",
+            str_green = "+5555",
+            agi_green = "+5555",
+            int_green = "+5555"
         }
     },
     {
@@ -212,6 +215,7 @@ items_defend3 = {
         droppable = 1,
         ATTR = {
             attack_damage_type = "+absolute",
+            natural_god_oppose = "+16.66",
             attack_speed = "+66.6",
             damage_extent = "+66.6"
         }
