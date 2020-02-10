@@ -324,7 +324,7 @@ cj.TriggerAddAction(
                             )
                         end
                     end
-                    enemyGenYB(10)
+                    enemyGenYB(15)
                     hleaderBoard.create(
                         "yb",
                         1,
@@ -481,7 +481,7 @@ cj.TriggerAddAction(
                             )
                         end
                     end
-                    enemyGenHZ(10)
+                    enemyGenHZ(15)
                     hleaderBoard.create(
                         "hz",
                         1,
