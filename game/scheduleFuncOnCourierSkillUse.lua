@@ -233,9 +233,6 @@ onCourierSkillUesd = function(evtData)
             elseif (downLv > 200) then
                 downLv = 200
             end
-            print("itemQty=" .. itemQty)
-            print("downLv=" .. downLv)
-            print("itemLv=" .. itemLv)
             local comboIt = {}
             for cbi = downLv, itemLv, 1 do
                 if (game.thisComboItem[cbi] ~= nil) then

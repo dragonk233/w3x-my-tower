@@ -268,7 +268,7 @@ addTowerSkillsRaceSingleAttr = function(u)
             0,
             {
                 resistance = "+10",
-                toughness = "+300"
+                toughness = "+600"
             }
         )
     elseif (race == "幽魂") then

@@ -891,7 +891,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPoisonSting.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {50, 40, 4, "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"}
+        Val = {50, 70, 4, "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"}
     },
     {
         Name = "蛛毒",
@@ -899,7 +899,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Creature_Poison_06.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {100, 55, 4, "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"}
+        Val = {100, 90, 4, "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"}
     },
     {
         Name = "腐尸毒",
@@ -907,7 +907,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNPlagueCloud.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {60, 75, 4, "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"}
+        Val = {60, 150, 4, "Abilities\\Weapons\\PoisonSting\\PoisonStingTarget.mdl"}
     },
     {
         Name = "奇美拉毒液",
@@ -915,7 +915,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCorrosiveBreath.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {75, 136, 3, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
+        Val = {75, 190, 3, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
     },
     {
         Name = "蛙毒",
@@ -923,7 +923,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Forg.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {80, 517, 3, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
+        Val = {80, 717, 3, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
     },
     {
         Name = "外界毒虫",
@@ -931,7 +931,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_PoisonElemental.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {100, 1111, 5, "war3mapImported\\eff_HydraCorrosiveGroundEffectV054.mdl"}
+        Val = {100, 1411, 7, "war3mapImported\\eff_HydraCorrosiveGroundEffectV054.mdl"}
     },
     {
         Name = "剧毒虾皮细胞",
@@ -939,7 +939,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Gizmo_FelIronBomb.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {100, 997, 7, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
+        Val = {100, 1297, 9, "Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl"}
     },
     {
         Name = "燃油烧弹",
@@ -947,7 +947,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNLiquidFire.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {75, 95, 3, "Abilities\\Spells\\Orc\\LiquidFire\\Liquidfire.mdl"}
+        Val = {75, 125, 3, "Abilities\\Spells\\Orc\\LiquidFire\\Liquidfire.mdl"}
     },
     {
         Name = "三昧真火",
@@ -955,7 +955,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_SummerFest_FireSpirit.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {75, 666, 10, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
+        Val = {75, 888, 10, "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"}
     },
     {
         Name = "撕咬",
@@ -963,7 +963,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Druid_PrimalTenacity.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {80, 1245, 4, "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"}
+        Val = {80, 2467, 2, "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"}
     },
     {
         Name = "无声的死亡旋律",
@@ -971,7 +971,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_CorpseExplode.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {100, 1325, 3, "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"}
+        Val = {100, 1625, 3, "Objects\\Spawnmodels\\Human\\HumanBlood\\BloodElfSpellThiefBlood.mdl"}
     },
     {
         Name = "鬼歌",
