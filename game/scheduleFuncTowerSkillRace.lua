@@ -1,7 +1,7 @@
 addTowerSkillsRaceAbility = {}
 addTowerSkillsRaceAttr = {}
 addTowerSkillsRaceAttrStack = 0
-addTowerSkillsRaceAttrClock = 0.2
+addTowerSkillsRaceAttrClock = 0.3
 addTowerSkillsRaceAttrPlayer = {}
 
 handleTowerSkillsRaceAttr = function(old, new)

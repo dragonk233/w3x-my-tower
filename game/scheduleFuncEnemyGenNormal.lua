@@ -23,7 +23,7 @@ enemyGenYB = function(waiting)
                         return
                     end
                     if (count <= 0) then
-                        local nextWaitTime = 3
+                        local nextWaitTime = game.rule.yb.waitTime
                         --5波一个boss,7波一个奖励
                         if (math.fmod(game.rule.yb.wave, 5) == 0) then
                             bossGen(game.rule.yb.wave)
@@ -129,7 +129,7 @@ enemyGenHZ = function(waiting)
                         return
                     end
                     if (count <= 0) then
-                        local nextWaitTime = 3
+                        local nextWaitTime = game.rule.hz.waitTime
                         --10波一个boss,13波一个奖励
                         if (math.fmod(game.rule.hz.wave, 10) == 0) then
                             bossGen(game.rule.hz.wave)
@@ -144,8 +144,8 @@ enemyGenHZ = function(waiting)
                         htime.delDialog(td2)
                         htime.delTimer(t2)
                         local gold = game.rule.hz.wave * 100
-                        if (gold > 100000) then
-                            gold = 100000
+                        if (gold > 50000) then
+                            gold = 50000
                         end
                         game.rule.hz.wave = game.rule.hz.wave + 1
                         hplayer.loop(

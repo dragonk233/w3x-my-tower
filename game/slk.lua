@@ -212,3 +212,6 @@ for i = 1, itemQty, 1 do
         table.insert(game.thisComboItem[jv.LEVEL], jv)
     end
 end
+
+--战败小兵
+game.couriers_defeat = cj.LoadInteger(cg.hash_myslk, cj.StringHash("couriers_defeat"), 0)

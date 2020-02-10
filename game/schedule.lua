@@ -54,7 +54,7 @@ dzSetPrestige = function(p, iscs, isss)
     end
     if (isss and htime.count >= 300) then
         ss = ss + 1
-        hdzapi.server.set.int(p, "prestigess", cs)
+        hdzapi.server.set.int(p, "prestigess", ss)
         hdzapi.setRoomStat(p, "prestigess", ss)
         local playerIndex = hplayer.index(p)
         dzSetLumber(p, 100 + game.rule.dk.wave[playerIndex])
@@ -115,6 +115,7 @@ cj.TriggerAddAction(
         hsound.bgmStop(nil)
         --
         for i = 1, hplayer.qty_max, 1 do
+            hdzapi.server.set.int(hplayer.players[i], "prestigess", 0)
             local l = hdzapi.server.get.int(hplayer.players[i], "lumber")
             if (l == nil) then
                 l = 0
@@ -757,30 +758,47 @@ cj.TriggerAddAction(
                         for pi = 1, hplayer.qty_max, 1 do
                             local p = hplayer.players[pi]
                             if (his.playing(p) or game.rule.dk.ai == true) then
-                                local tower = game.playerTower[pi]
-                                local avatar = hunit.getAvatar(tower)
-                                local name = hunit.getName(tower)
-                                local attack =
-                                    math.floor(hattr.get(tower, "attack_white") + hattr.get(tower, "attack_green"))
-                                local attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
-                                local damage_extent = math.round(hattr.get(tower, "damage_extent")) .. "%"
+                                local tower = "-"
+                                local avatar = "-"
+                                local name = "-"
+                                local attack = "-"
+                                local attack_speed = "-"
+                                local damage_extent = "-"
+                                local tlv = "-"
+                                if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                                    tower = game.playerTower[pi]
+                                    avatar = hunit.getAvatar(tower)
+                                    name = hunit.getName(tower)
+                                    attack =
+                                        math.floor(hattr.get(tower, "attack_white") + hattr.get(tower, "attack_green"))
+                                    attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
+                                    damage_extent = math.round(hattr.get(tower, "damage_extent")) .. "%"
+                                    tlv = "Lv." .. hhero.getCurLevel(tower)
+                                end
                                 local tempData = {
                                     {value = cj.GetPlayerName(p), icon = nil},
                                     {value = hplayer.getPrestige(p), icon = nil},
                                     {value = hplayer.getStatus(p), icon = nil},
                                     {value = name, icon = avatar},
-                                    {value = "Lv." .. hhero.getCurLevel(tower), icon = nil},
+                                    {value = tlv, icon = nil},
                                     {value = game.playerTowerLevel[pi], icon = nil},
                                     {value = attack, icon = nil},
                                     {value = attack_speed, icon = nil},
                                     {value = damage_extent, icon = nil}
                                 }
                                 if (game.rule.cur == "dk") then
-                                    local defend = math.floor(hattr.get(tower, "defend"))
-                                    local toughness = math.round(hattr.get(tower, "toughness"))
-                                    local resistance = math.round(hattr.get(tower, "resistance")) .. "%"
-                                    local damage_rebound = math.round(hattr.get(tower, "damage_rebound")) .. "%"
-                                    local avoid = math.round(hattr.get(tower, "avoid")) .. "%"
+                                    local defend = "-"
+                                    local toughness = "-"
+                                    local resistance = "-"
+                                    local damage_rebound = "-"
+                                    local avoid = "-"
+                                    if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                                        defend = math.floor(hattr.get(tower, "defend"))
+                                        toughness = math.round(hattr.get(tower, "toughness"))
+                                        resistance = math.round(hattr.get(tower, "resistance")) .. "%"
+                                        damage_rebound = math.round(hattr.get(tower, "damage_rebound")) .. "%"
+                                        avoid = math.round(hattr.get(tower, "avoid")) .. "%"
+                                    end
                                     tempData =
                                         table.merge(
                                         tempData,
@@ -794,12 +812,11 @@ cj.TriggerAddAction(
                                     )
                                 end
                                 if (game.rule.dk.ai == true) then
-                                    local gold = math.floor(hplayer.getGold(p))
                                     tempData =
                                         table.merge(
                                         tempData,
                                         {
-                                            {value = gold, icon = nil}
+                                            {value = math.floor(hplayer.getGold(p)), icon = nil}
                                         }
                                     )
                                 end

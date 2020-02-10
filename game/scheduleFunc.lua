@@ -181,6 +181,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 }
             )
             hevent.onAttack(u, onTowerAttack)
+            hevent.onItemUsed(u, onUnitItemsUesd)
             hevent.onSkillHappen(u, onTowerLinkSkillUesd)
             --兵塔技能
             addTowerSkillsx(u)

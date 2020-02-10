@@ -5,6 +5,14 @@ onTowerDead = function(evtData)
     hmark.create("war3mapImported\\mark_defeat.blp", 4.00, hplayer.players[index])
     hplayer.setStatus(hplayer.players[index], "战败")
     hplayer.clearUnit(hplayer.players[index])
+    hunit.create(
+        {
+            whichPlayer = cj.GetOwningPlayer(u),
+            unitId = game.couriers_defeat,
+            x = game.towerPoint[index][1],
+            y = game.towerPoint[index][2]
+        }
+    )
     --检查是否胜利
     local isWin = 0
     local winner
