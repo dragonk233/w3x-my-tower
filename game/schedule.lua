@@ -759,7 +759,7 @@ cj.TriggerAddAction(
                             local p = hplayer.players[pi]
                             if (his.playing(p) or game.rule.dk.ai == true) then
                                 local tower = "-"
-                                local avatar = "-"
+                                local avatar = nil
                                 local name = "-"
                                 local attack = "-"
                                 local attack_speed = "-"

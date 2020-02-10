@@ -38,7 +38,7 @@ onTowerDead = function(evtData)
                     if (hplayer.players[i] == winner) then
                         hplayer.victory(winner)
                     else
-                        hplayer.defeat(hplayer.players[index], "战败~")
+                        hplayer.defeat(hplayer.players[i], "战败~")
                     end
                 end
             end

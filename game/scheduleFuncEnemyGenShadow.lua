@@ -8,6 +8,9 @@ towerShadowGen = function(playerIndex)
     if (next == -1) then
         return
     end
+    if (game.towersShadow[tid] == nil) then
+        return
+    end
     local u =
         henemy.create(
         {
