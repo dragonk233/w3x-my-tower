@@ -114,13 +114,7 @@ onUnitItemsUesd = function(evtData)
                     )
                     addTowerSkillsRaceTeam(playerIndex)
                 else
-                    local u =
-                        createMyTowerLink(
-                        playerIndex,
-                        btnIdx,
-                        game.towers[itemSLK.INDEX].UNIT_ID,
-                        game.playerTowerLink[playerIndex][btnIdx].tower_level
-                    )
+                    local u = createMyTowerLink(playerIndex, btnIdx, game.towers[itemSLK.INDEX].UNIT_ID)
                     hmsg.echo(
                         hColor.sky(cj.GetPlayerName(p)) ..
                             "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"

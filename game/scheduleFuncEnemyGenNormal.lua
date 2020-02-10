@@ -34,29 +34,34 @@ enemyGenYB = function(waiting)
                             awardGen(game.rule.yb.wave)
                             nextWaitTime = 18
                         end
-                        if (game.rule.yb.wave >= game.rule.yb.waveEnd) then
-                            if (game.currentMon <= 0) then
-                                htime.delDialog(td2)
-                                htime.delTimer(t2)
-                                hmsg.echo("通过了" .. game.rule.yb.waveEnd .. "波!|cffffff00恭喜！快乐！|r，10秒后会结束游戏")
-                                htime.setTimeout(
-                                    10,
-                                    function(t, td)
-                                        htime.delDialog(td)
-                                        htime.delTimer(t)
-                                        hplayer.loop(
-                                            function(p)
-                                                hplayer.victory(p)
-                                            end
-                                        )
-                                    end,
-                                    "祝贺你~准备离开~"
-                                )
-                            end
-                            return
-                        end
                         htime.delDialog(td2)
                         htime.delTimer(t2)
+                        if (game.rule.yb.wave >= game.rule.yb.waveEnd) then
+                            htime.setInterval(
+                                1,
+                                function(t3)
+                                    if (game.currentMon <= 0) then
+                                        htime.delTimer(t3)
+                                        hmark.create("war3mapImported\\mark_win.blp", 4.00)
+                                        hmsg.echo("通过了" .. game.rule.yb.waveEnd .. "波!|cffffff00恭喜！欢乐！|r，10秒后会退出游戏")
+                                        htime.setTimeout(
+                                            10,
+                                            function(t, td)
+                                                htime.delDialog(td)
+                                                htime.delTimer(t)
+                                                hplayer.loop(
+                                                    function(p)
+                                                        hplayer.victory(p)
+                                                    end
+                                                )
+                                            end,
+                                            "祝贺你~准备离开~"
+                                        )
+                                    end
+                                end
+                            )
+                            return
+                        end
                         local gold = game.rule.yb.wave * 75
                         hplayer.loop(
                             function(p, pi)
@@ -102,6 +107,7 @@ enemyGenYB = function(waiting)
                             game.currentMon = game.currentMon + 1
                             hevent.onBeDamage(u, enemyBeDamage)
                             hevent.onDead(u, enemyDeadYB)
+                            cj.IssuePointOrderById(u, 851986, v[2][1], v[2][2])
                         end
                     end
                 end
@@ -191,6 +197,7 @@ enemyGenHZ = function(waiting)
                             game.currentMon = game.currentMon + 1
                             hevent.onBeDamage(u, enemyBeDamage)
                             hevent.onDead(u, enemyDeadHZ)
+                            cj.IssuePointOrderById(u, 851986, v[2][1], v[2][2])
                         end
                     end
                 end

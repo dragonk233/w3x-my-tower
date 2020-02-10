@@ -164,14 +164,18 @@ cj.TriggerAddAction(
                 }
             }
         )
+        local TITLE_YB = "轻松百波（新手推荐）"
+        local TITLE_HZ = "无尽挑战（刷木推荐）"
+        local TITLE_DK = "欢乐对抗（基友推荐）"
+        local TITLE_DKAI = "欢乐对抗（AI模式）"
         local btns = {
-            "轻松" .. game.rule.yb.waveEnd .. "波",
-            "死机挑战"
+            TITLE_YB,
+            TITLE_HZ
         }
         if (hplayer.qty_current <= 1) then
-            table.insert(btns, "有趣对抗(AI模式)")
+            table.insert(btns, TITLE_DKAI)
         else
-            table.insert(btns, "有趣对抗")
+            table.insert(btns, TITLE_DK)
         end
         -- 第一玩家选择模式
         hmsg.echo("第一个玩家正在选择（游戏模式）", 10)
@@ -183,7 +187,7 @@ cj.TriggerAddAction(
             },
             function(btnIdx)
                 hmsg.echo("选择了" .. btnIdx)
-                if (btnIdx == "轻松" .. game.rule.yb.waveEnd .. "波") then
+                if (btnIdx == TITLE_YB) then
                     game.rule.cur = "yb"
                     hmsg.echo("|cffffff00各玩家合力打怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“大精灵”的生命，坚持100波胜利|r")
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)
@@ -341,7 +345,7 @@ cj.TriggerAddAction(
                             return data
                         end
                     )
-                elseif (btnIdx == "死机挑战") then
+                elseif (btnIdx == TITLE_HZ) then
                     game.rule.cur = "hz"
                     hmsg.echo("|cffffff00各玩家合力打怪，打不过的会流到下一位玩家继续攻击，所有玩家都打不过就会扣除“光辉城主”的生命，玩到死机为止！|r")
                     hsound.bgm(cg.gg_snd_bgm_hz, nil)
@@ -498,9 +502,9 @@ cj.TriggerAddAction(
                             return data
                         end
                     )
-                elseif (btnIdx == "有趣对抗" or "有趣对抗(AI模式)") then
+                elseif (btnIdx == TITLE_DK or TITLE_DKAI) then
                     game.rule.cur = "dk"
-                    if (btnIdx == "有趣对抗(AI模式)") then
+                    if (btnIdx == TITLE_DKAI) then
                         game.rule.dk.ai = true
                         hmsg.echo("|cffffff00各玩家独立出怪升级，阶段升级时创建与兵塔相关的士兵顺时针攻击其他玩家，对抗不过的玩家会被扣血直至出局[AI不开挂]|r")
                     else

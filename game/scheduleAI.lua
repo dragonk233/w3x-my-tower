@@ -55,13 +55,7 @@ MAYBE_AI = {
                 end
                 if (linkSite ~= nil) then
                     --补充空位
-                    local u =
-                        createMyTowerLink(
-                        playerIndex,
-                        linkSite,
-                        game.towers[itemSLK.INDEX].UNIT_ID,
-                        game.playerTowerLink[playerIndex][linkSite].tower_level
-                    )
+                    local u = createMyTowerLink(playerIndex, linkSite, game.towers[itemSLK.INDEX].UNIT_ID)
                     hmsg.echo(
                         hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
                             "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
@@ -94,13 +88,7 @@ MAYBE_AI = {
                             )
                             addTowerSkillsRaceTeam(playerIndex)
                         else
-                            local u =
-                                createMyTowerLink(
-                                playerIndex,
-                                mini,
-                                game.towers[itemSLK.INDEX].UNIT_ID,
-                                game.playerTowerLink[playerIndex][mini].tower_level
-                            )
+                            local u = createMyTowerLink(playerIndex, mini, game.towers[itemSLK.INDEX].UNIT_ID)
                             hmsg.echo(
                                 hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
                                     "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
