@@ -46,7 +46,7 @@ game = {
             waitTime = 8,
             mon = nil,
             monLife = 60,
-            monLifeInc = 12
+            monLifeInc = 11
         },
         hz = {
             perWaveQty = 18,

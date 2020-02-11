@@ -28,7 +28,7 @@ enemyGenYB = function(waiting)
                         if (math.fmod(game.rule.yb.wave, 5) == 0) then
                             bossGen(game.rule.yb.wave)
                             nextWaitTime = 18
-                            game.rule.yb.monLife = game.rule.yb.monLife + game.rule.yb.monLifeInc
+                            game.rule.yb.monLife = game.rule.yb.monLife + game.rule.yb.monLifeInc + hplayer.qty_current
                         end
                         if (game.rule.yb.wave > 2 and math.fmod((game.rule.yb.wave - 2), 5) == 0) then
                             awardGen(game.rule.yb.wave)
@@ -140,7 +140,7 @@ enemyGenHZ = function(waiting)
                         if (math.fmod(game.rule.hz.wave, 10) == 0) then
                             bossGen(game.rule.hz.wave)
                             nextWaitTime = 18
-                            game.rule.hz.monLife = game.rule.hz.monLife + game.rule.hz.monLifeInc
+                            game.rule.hz.monLife = game.rule.hz.monLife + game.rule.hz.monLifeInc + hplayer.qty_current
                         end
                         if (game.rule.hz.wave > 3 and math.fmod((game.rule.hz.wave - 3), 10) == 0) then
                             awardGen(game.rule.hz.wave)
