@@ -45,8 +45,8 @@ game = {
             fresh = 1.2,
             waitTime = 8,
             mon = nil,
-            monLife = 50,
-            monLifeInc = 10
+            monLife = 60,
+            monLifeInc = 11
         },
         hz = {
             perWaveQty = 18,
@@ -54,7 +54,7 @@ game = {
             fresh = 0.9,
             waitTime = 10,
             mon = nil,
-            monLife = 50,
+            monLife = 60,
             monLifeInc = 11
         },
         dk = {
