@@ -115,7 +115,6 @@ cj.TriggerAddAction(
         hsound.bgmStop(nil)
         --
         for i = 1, hplayer.qty_max, 1 do
-            hdzapi.server.set.int(hplayer.players[i], "prestigess", 0)
             local l = hdzapi.server.get.int(hplayer.players[i], "lumber")
             if (l == nil) then
                 l = 0
@@ -284,6 +283,7 @@ cj.TriggerAddAction(
                                                     end
                                                 end
                                                 hunit.del(cj.GetTriggerUnit(), 0)
+                                                game.currentMon = game.currentMon - 1
                                             else
                                                 cj.SetUnitUserData(cj.GetTriggerUnit(), uVal + 1)
                                                 heffect.bindUnit(
@@ -295,6 +295,7 @@ cj.TriggerAddAction(
                                                 local next = getNextRect(k)
                                                 if (next == -1) then
                                                     hunit.del(cj.GetTriggerUnit(), 0)
+                                                    game.currentMon = game.currentMon - 1
                                                     return
                                                 else
                                                     cj.SetUnitPosition(
@@ -441,6 +442,7 @@ cj.TriggerAddAction(
                                                     end
                                                 end
                                                 hunit.del(cj.GetTriggerUnit(), 0)
+                                                game.currentMon = game.currentMon - 1
                                             else
                                                 cj.SetUnitUserData(cj.GetTriggerUnit(), uVal + 1)
                                                 heffect.bindUnit(
@@ -452,6 +454,7 @@ cj.TriggerAddAction(
                                                 local next = getNextRect(k)
                                                 if (next == -1) then
                                                     hunit.del(cj.GetTriggerUnit(), 0)
+                                                    game.currentMon = game.currentMon - 1
                                                     return
                                                 else
                                                     cj.SetUnitPosition(
@@ -530,12 +533,14 @@ cj.TriggerAddAction(
                                             local next = getNextRect(k)
                                             if (next == -1) then
                                                 hunit.del(u)
+                                                game.currentMon = game.currentMon - 1
                                                 return
                                             else
                                                 if (type == "tower_shadow") then
                                                     local wanbao = false
                                                     if (next == playerIndex) then
                                                         hunit.del(u, 0)
+                                                        game.currentMon = game.currentMon - 1
                                                         wanbao = true
                                                     else
                                                         cj.SetUnitPosition(

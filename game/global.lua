@@ -55,22 +55,22 @@ game = {
             waitTime = 10,
             mon = nil,
             monLife = 60,
-            monLifeInc = 12
+            monLifeInc = 11
         },
         dk = {
             perWaveQty = 10,
             playerQty = {},
             wave = {},
-            fresh = 2.5,
+            fresh = 2.3,
             mon = {},
             monLimit = {},
             monData = {},
             ai = false,
             monLife = {
-                25,
-                25,
-                25,
-                25
+                30,
+                30,
+                30,
+                30
             }
         },
         cur = "yb"

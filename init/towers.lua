@@ -1,7 +1,7 @@
 -- towers
 --兵塔变敌军单位
 local createTowerShadowUnit = function(v,towersTi,tlv)
-    local sobj = slk.unit.ogru:new("this_tower_shadow_" .. v.Name)
+    local sobj = slk.unit.ogru:new("this_tower_shadow_" .. v.INDEX)
     sobj.Name = "["..tlv.."阶]" .. v.Name
     sobj.upgrades = ""
     sobj.file = v.file
@@ -80,15 +80,15 @@ local createTowerShadowUnit = function(v,towersTi,tlv)
     sobj.regenHP = 0
     sobj.regenType = ""
     sobj.def = 0
-    local abl = v.abilList
-    if(abl ~= nil)then
-        if(type(abl) == "string")then
-            abl = string.explode(',', abl)
-        elseif(type(abl) ~= "table")then
-            abl = {}
+    local abl = {}
+    if(type(v.abilList) == "string")then
+        abl = string.explode(',', abl)
+    elseif(type(v.abilList) == "table")then
+        for _,t in pairs(v.abilList) do
+            table.insert( abl, t )
         end
     end
-    if(abl == nil or #abl ==0)then
+    if(#abl ==0)then
         abl = {
             towerSpxKV["封印枷锁之一"],
             towerSpxKV["封印枷锁之二"]
@@ -266,15 +266,15 @@ for j=1,2,1 do
                 obj.targs1 = targs1
                 obj.EditorSuffix = "#" .. tlv
                 obj.Propernames = tlv .. "阶兵塔"
-                local abl = v.abilList
-                if(abl ~= nil)then
-                    if(type(abl) == "string")then
-                        abl = string.explode(',', abl)
-                    elseif(type(abl) ~= "table")then
-                        abl = {}
+                local abl = {}
+                if(type(v.abilList) == "string")then
+                    abl = string.explode(',', abl)
+                elseif(type(v.abilList) == "table")then
+                    for _,t in pairs(v.abilList) do
+                        table.insert( abl, t )
                     end
                 end
-                if(abl == nil or #abl ==0)then
+                if(#abl ==0)then
                     abl = {
                         towerSpxKV["封印枷锁之一"],
                         towerSpxKV["封印枷锁之二"]
