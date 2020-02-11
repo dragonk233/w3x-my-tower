@@ -77,6 +77,17 @@ updateMyTower = function(evtData)
                 int_green = "+" .. (val * slk.INT * diffLv)
             }
         )
+    elseif (race == "人杰") then
+        local val = 0.04
+        hattr.set(
+            u,
+            0,
+            {
+                str_green = "+" .. (val * slk.STR * diffLv),
+                agi_green = "+" .. (val * slk.AGI * diffLv),
+                int_green = "+" .. (val * slk.INT * diffLv)
+            }
+        )
     elseif (race == "人王") then
         local val = 0.05
         hattr.set(

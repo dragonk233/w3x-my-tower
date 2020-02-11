@@ -98,6 +98,17 @@ addTowerSkillsRaceSingleAttr = function(u)
                 int_green = "+" .. (val * slk.INT)
             }
         )
+    elseif (race == "人杰") then
+        local val = 0.04
+        hattr.set(
+            u,
+            0,
+            {
+                str_green = "+" .. (val * slk.STR),
+                agi_green = "+" .. (val * slk.AGI),
+                int_green = "+" .. (val * slk.INT)
+            }
+        )
     elseif (race == "人王") then
         local val = 0.05
         hattr.set(
@@ -376,22 +387,43 @@ addTowerSkillsRaceTeam = function(playerIndex)
             qtys[r] = 0
         end
         qtys[r] = qtys[r] + 1
+        --继承型种族的特殊阶级
+        if (r == "人杰") then
+            if (qtys["人类"] == nil) then
+                qtys["人类"] = 0
+            end
+            qtys["人类"] = qtys["人类"] + 1
+        elseif (r == "人王") then
+            if (qtys["人类"] == nil) then
+                qtys["人类"] = 0
+            end
+            if (qtys["人杰"] == nil) then
+                qtys["人杰"] = 0
+            end
+            qtys["人类"] = qtys["人类"] + 1
+            qtys["人杰"] = qtys["人杰"] + 1
+        end
         races[v] = r
         if (r == "人类") then
             if (qtys[r] == 2) then
                 attr.defend = attr.defend + 5
             elseif (qtys[r] == 3) then
-                attr.defend = attr.defend + 20
+                attr.defend = attr.defend + 25
             elseif (qtys[r] == 4) then
                 attr.defend = attr.defend + 40
             elseif (qtys[r] == 5) then
-                attr.defend = attr.defend + 60
+                attr.defend = attr.defend + 75
+            end
+        elseif (r == "人杰") then
+            if (qtys[r] == 2) then
+                attr.defend = attr.defend + 80
+            elseif (qtys[r] == 4) then
+                attr.attack_green = attr.attack_green + 300
             end
         elseif (r == "人王") then
             if (qtys[r] == 1) then
-                attr.defend = attr.defend + 75
-            elseif (qtys[r] == 5) then
-                attr.attack_green = attr.attack_green + 300
+                attr.defend = attr.defend + 200
+                attr.attack_green = attr.attack_green + 400
             end
         elseif (r == "矮人") then
             if (qtys[r] == 1) then

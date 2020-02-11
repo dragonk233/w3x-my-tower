@@ -1937,7 +1937,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThickFur.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {11},
+        Val = {16},
         ODK = true
     },
     {
@@ -1946,7 +1946,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Invulnerable.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {24},
+        Val = {34},
         ODK = true
     },
     {
@@ -1955,7 +1955,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_GreaterBlessingofWisdom.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {40},
+        Val = {45},
         ODK = true
     },
     {
@@ -1964,7 +1964,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {43},
+        Val = {63},
         ODK = true
     },
     {
@@ -1973,7 +1973,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ability_Rogue_NervesOfSteel.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {65},
+        Val = {80},
         ODK = true
     },
     {
@@ -1982,7 +1982,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Elemental_Crystal_Shadow.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {110},
+        Val = {130},
         ODK = true
     },
     {
@@ -1991,7 +1991,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Holy_Power.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {50, 50},
+        Val = {100, 50},
         ODK = true
     },
     {

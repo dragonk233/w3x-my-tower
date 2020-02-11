@@ -1,24 +1,33 @@
 towerRaces = {
     {
         Name = "人类",
-        Ubertip = "平凡而多彩的种族",
+        Ubertip = "平凡而多彩的种族，有着杰出的也有称王的人",
         Text = "+3%力量|n+3%敏捷|n+3%智力",
         Art = "war3mapImported\\icon_race_human.blp",
         Link = {
             {qty = 2, text = "+5护甲"},
-            {qty = 3, text = "+20护甲"},
+            {qty = 3, text = "+25护甲"},
             {qty = 4, text = "+40护甲"},
-            {qty = 5, text = "+60护甲"}
+            {qty = 5, text = "+75护甲"}
+        }
+    },
+    {
+        Name = "人杰",
+        Ubertip = "杰出成果的人类",
+        Text = "+4%力量|n+4%敏捷|n+4%智力",
+        Art = "war3mapImported\\icon_race_human2.blp",
+        Link = {
+            {qty = 2, text = "+80护甲"},
+            {qty = 4, text = "+300攻击力"}
         }
     },
     {
         Name = "人王",
-        Ubertip = "成就巅峰的人们",
+        Ubertip = "成就巅峰的人类",
         Text = "+5%力量|n+5%敏捷|n+5%智力",
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
-            {qty = 1, text = "+75护甲"},
-            {qty = 5, text = "+300攻击力"}
+            {qty = 1, text = "+200护甲;+400攻击力"}
         }
     },
     {
