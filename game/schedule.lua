@@ -654,13 +654,30 @@ cj.TriggerAddAction(
                             local data = {}
                             hplayer.loop(
                                 function(p, pi)
-                                    data[pi] = game.rule.dk.wave[pi] or 0
+                                    local mark = (game.rule.dk.wave[pi] or 0) * 31
+                                    mark = mark + hhero.getCurLevel(game.playerTower[pi])
+                                    data[pi] = mark
                                 end
                             )
                             return data
                         end
                     )
-                    hleaderBoard.setTitle(bldk, "有趣对抗战绩榜")
+                    hleaderBoard.setTitle(bldk, "欢乐对抗战绩榜")
+                    htime.setInterval(
+                        120,
+                        function()
+                            local top = hleaderBoard.top(bldk)
+                            local bottom = hleaderBoard.bottom(bldk)
+                            if (top ~= nil) then
+                                local gold = hColor.yellow(game.rule.dk.wave[hplayer.index(top)] * 50)
+                                hmsg.echo(hColor.green(hplayer.getName(top)) .. "勇夺第一，获得" .. gold .. "黄金奖励")
+                            end
+                            if (bottom ~= nil) then
+                                local gold = hColor.yellow(game.rule.dk.wave[hplayer.index(bottom)] * 200)
+                                hmsg.echo(hColor.sky(hplayer.getName(bottom)) .. "不幸倒数，获得" .. gold .. "黄金补贴")
+                            end
+                        end
+                    )
                 end
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do

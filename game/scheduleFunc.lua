@@ -160,11 +160,11 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 y = game.towerPoint[playerIndex][2] + game.towerLinkOffset[linkIndex][2],
                 opacity = 0.4,
                 modelScale = 1.0,
-                isUnSelectable = isUnSelectable
+                isUnSelectable = isUnSelectable,
+                isOpenSolt = true
             }
         )
         hunit.setUserData(u, linkIndex)
-        hskill.add(u, hitem.DEFAULT_SKILL_ITEM_SLOT, 0)
         -- 如果有上一个单位，把上一个的物品给予新的，并删除它
         if (game.playerTowerLink[playerIndex][linkIndex] ~= nil) then
             hitem.copy(game.playerTowerLink[playerIndex][linkIndex].unit, u)
