@@ -20,9 +20,10 @@ awardGenForOne = function(curWave, pi, awardMon)
         u,
         0,
         {
-            life = "=999999",
-            move = "=180",
+            life = "=99999",
+            move = "=200",
             defend = "=" .. curWave * 3,
+            toughness = "=" .. curWave * 30,
             resistance = "=" .. curWave * 1,
             avoid = "=" .. curWave * 0.25,
             swim_oppose = "=" .. curWave * 0.2,

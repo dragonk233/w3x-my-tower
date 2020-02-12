@@ -102,7 +102,7 @@ towerShadowBeDamage = function(evtData)
                     end
                 end
                 if (Name == "回光返照" or Name == "自然之力") then
-                    if (hunit.getCurLifePercent(u) < 50) then
+                    if (hunit.getCurLifePercent(u) < 75) then
                         towerShadowTtg(u, Name)
                         hattr.set(u, val[2], {life_back = val[1]})
                     end

@@ -10,7 +10,7 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔队伍获得神攻击特性并且攻击力提升500|n持续30秒",
-        cooldown = 15,
+        cooldown = 25,
         I_TYPE = "strategy"
     },
     {
@@ -24,7 +24,7 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔队伍获得攻击速度提升75%|n持续30秒",
-        cooldown = 15,
+        cooldown = 25,
         I_TYPE = "strategy"
     },
     {
@@ -38,7 +38,7 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔队伍获得火、水、冰、风、雷、土6种攻击特性|n持续30秒",
-        cooldown = 15,
+        cooldown = 25,
         I_TYPE = "strategy"
     },
     {
@@ -52,7 +52,7 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令您的兵塔队伍伤害增幅提升33%，但护甲减少100点|n持续30秒",
-        cooldown = 15,
+        cooldown = 25,
         I_TYPE = "strategy"
     },
     {
@@ -114,7 +114,7 @@ items_fun = {
     {
         Name = "锤敕令",
         Description = "号召巨锤袭击",
-        goldcost = 30000,
+        goldcost = 80000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll01",
         powerup = 0,
@@ -122,27 +122,27 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令其他玩家的所有塔眩晕10秒",
-        cooldown = 15,
+        cooldown = 25,
         I_TYPE = "strategy"
     },
     {
         Name = "盾敕令",
         Description = "号召大剑袭击",
-        goldcost = 30000,
+        goldcost = 80000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_ArmorScroll02.blp",
         powerup = 0,
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令其他玩家的所有塔攻速减少50%持续10秒",
-        cooldown = 15,
+        ACTIVE = "令其他玩家的所有塔攻速减少100%持续10秒",
+        cooldown = 25,
         I_TYPE = "strategy"
     },
     {
         Name = "剑敕令",
         Description = "号召大剑袭击",
-        goldcost = 30000,
+        goldcost = 80000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll03.blp",
         powerup = 0,
@@ -150,13 +150,13 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令其他玩家的信使眩晕10秒",
-        cooldown = 15,
+        cooldown = 25,
         I_TYPE = "strategy"
     },
     {
         Name = "斧敕令",
         Description = "号召猛斧袭击",
-        goldcost = 30000,
+        goldcost = 80000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll02.blp",
         powerup = 0,
@@ -164,7 +164,7 @@ items_fun = {
         pawnable = 1,
         droppable = 1,
         ACTIVE = "令其他玩家的主兵塔生命瞬间减少当前的20%",
-        cooldown = 15,
+        cooldown = 25,
         I_TYPE = "strategy"
     }
 }

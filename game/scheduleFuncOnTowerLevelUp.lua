@@ -53,7 +53,7 @@ addTowerLevel = function(playerIndex, lockLv)
         if (unitLv == 9) then
             hsound.sound2Player(cg.gg_snd_jsws, hplayer.players[playerIndex])
             hmsg.echo(
-                hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
+                hColor.sky("(>▽<)" .. cj.GetPlayerName(hplayer.players[playerIndex])) ..
                     "得到了" .. hColor.yellow(unitLv) .. "级天赋兵塔，大家祝贺TA！"
             )
         end

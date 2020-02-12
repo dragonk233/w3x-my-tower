@@ -459,12 +459,11 @@ onUnitItemsUesd = function(evtData)
                     end
                 end
                 for _, u in pairs(ts) do
-                    hskill.swim(
+                    hattr.set(
+                        u,
+                        10,
                         {
-                            whichUnit = u,
-                            during = 10,
-                            odds = 100,
-                            effect = "war3mapImported\\eff_Arcane_Nova.mdl"
+                            attack_speed = "-100"
                         }
                     )
                 end

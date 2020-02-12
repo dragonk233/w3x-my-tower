@@ -36,6 +36,8 @@ henemy.setPlayer(hplayer.players[8])
 henemy.setPlayer(hplayer.players[9])
 henemy.setPlayer(hplayer.players[10])
 henemy.setPlayer(hplayer.players[11])
+cj.SetPlayerColor(hplayer.players[2], CONST_PLAYER_COLOR.AQUA)
+cj.SetPlayerColor(hplayer.players[4], CONST_PLAYER_COLOR.YELLOW)
 
 -- 写点任务提醒玩家
 hquest.create(
@@ -94,7 +96,7 @@ hquest.create(
             " - 天赋抽到9之后，同一个塔不会洗掉",
             " - 有些技能只有对战有用，注意看物品说明",
             " - 种族的“队伍”效果根据情况你的能力会延时生效",
-            " - 辅助塔的天赋比主塔好用",
+            " - 辅助塔的天赋比主塔好用"
         },
         icon = "ReplaceableTextures\\CommandButtons\\BTNTomeBrown.blp"
     }

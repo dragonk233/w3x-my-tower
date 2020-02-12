@@ -111,7 +111,7 @@ abilitiesYellow = {
         Name = "德鲁伊叶子",
         Art = "war3mapImported\\icon_pas_Nature_HealingTouch.blp",
         Ubertip = "+木攻击特性|n+{val#1}生命恢复",
-        Val = {0.2}
+        Val = {0.3}
     },
     {
         Name = "战熊咆哮",
@@ -165,35 +165,35 @@ abilitiesYellow = {
         Name = "赤血盾牌",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldMastery.blp",
         Ubertip = "+{val#1}生命|n+{val#2}护甲",
-        Val = {400, 9},
+        Val = {4000, 30},
         ODK = true
     },
     {
         Name = "亢奋战鼓",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDrum.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {115},
+        Val = {300},
         ODK = true
     },
     {
         Name = "离子雨",
         Art = "war3mapImported\\icon_pas_Ion_overload.blp",
         Ubertip = "+{val#1}%闪电链抵抗",
-        Val = {11},
+        Val = {15},
         ODK = true
     },
     {
         Name = "抗性神经",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNMagicImmunity.blp",
         Ubertip = "+{val#1}%魔抗",
-        Val = {7},
+        Val = {10},
         ODK = true
     },
     {
         Name = "荆棘",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThorns.blp",
         Ubertip = "+{val#1}%反伤",
-        Val = {0.25},
+        Val = {0.3},
         ODK = true
     },
     {

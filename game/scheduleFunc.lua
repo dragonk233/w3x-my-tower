@@ -44,19 +44,19 @@ updateMyTower = function(evtData)
     if (tpv == "E") then
         percent = 0.02
     elseif (tpv == "D") then
-        percent = 0.025
+        percent = 0.024
     elseif (tpv == "C") then
-        percent = 0.03
+        percent = 0.028
     elseif (tpv == "B") then
-        percent = 0.035
+        percent = 0.033
     elseif (tpv == "A") then
-        percent = 0.05
+        percent = 0.042
     elseif (tpv == "S") then
-        percent = 0.06
+        percent = 0.053
     elseif (tpv == "SS") then
-        percent = 0.08
+        percent = 0.067
     elseif (tpv == "SSS") then
-        percent = 0.10
+        percent = 0.081
     end
     attackWhite = diffLv * attackWhite * percent
     hattr.set(
@@ -285,19 +285,19 @@ createMyTower = function(playerIndex, towerId, towerLevel)
         if (tpv == "E") then
             life = 1000
         elseif (tpv == "D") then
-            life = 3000
+            life = 4000
         elseif (tpv == "C") then
-            life = 5000
+            life = 7500
         elseif (tpv == "B") then
-            life = 9000
+            life = 15000
         elseif (tpv == "A") then
-            life = 20000
+            life = 30000
         elseif (tpv == "S") then
-            life = 40000
+            life = 75000
         elseif (tpv == "SS") then
-            life = 80000
-        elseif (tpv == "SSS") then
             life = 150000
+        elseif (tpv == "SSS") then
+            life = 300000
         end
         hattr.set(
             u,

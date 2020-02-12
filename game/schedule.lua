@@ -560,8 +560,8 @@ cj.TriggerAddAction(
                                                             hplayer.player_status.gaming)
                                                      then
                                                         local hunt =
-                                                            10 * game.rule.dk.wave[playerIndex] +
-                                                            hhero.getCurLevel(game.playerTower[playerIndex])
+                                                            15 * game.rule.dk.wave[playerIndex] +
+                                                            2 * hhero.getCurLevel(game.playerTower[playerIndex])
                                                         if (hunt >= hunit.getCurLife(game.playerTower[k])) then
                                                             hunit.kill(game.playerTower[k], 0)
                                                             hmsg.echo(
@@ -654,8 +654,9 @@ cj.TriggerAddAction(
                             local data = {}
                             hplayer.loop(
                                 function(p, pi)
-                                    local mark = (game.rule.dk.wave[pi] or 0) * 31
-                                    mark = mark + hhero.getCurLevel(game.playerTower[pi])
+                                    local mark = ((game.rule.dk.wave[pi] or 1) - 1) * 31
+                                    mark = mark + hhero.getCurLevel(game.playerTower[pi]) - 1
+                                    mark = mark + (game.rule.dk.monLimit[pi] or 0)
                                     data[pi] = mark
                                 end
                             )
@@ -663,21 +664,6 @@ cj.TriggerAddAction(
                         end
                     )
                     hleaderBoard.setTitle(bldk, "欢乐对抗战绩榜")
-                    htime.setInterval(
-                        120,
-                        function()
-                            local top = hleaderBoard.top(bldk)
-                            local bottom = hleaderBoard.bottom(bldk)
-                            if (top ~= nil) then
-                                local gold = hColor.yellow(game.rule.dk.wave[hplayer.index(top)] * 50)
-                                hmsg.echo(hColor.green(hplayer.getName(top)) .. "勇夺第一，获得" .. gold .. "黄金奖励")
-                            end
-                            if (bottom ~= nil) then
-                                local gold = hColor.yellow(game.rule.dk.wave[hplayer.index(bottom)] * 200)
-                                hmsg.echo(hColor.sky(hplayer.getName(bottom)) .. "不幸倒数，获得" .. gold .. "黄金补贴")
-                            end
-                        end
-                    )
                 end
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do

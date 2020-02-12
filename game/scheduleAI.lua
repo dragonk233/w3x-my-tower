@@ -112,7 +112,7 @@ MAYBE_AI = {
         if (game.rule.dk.ai == true and his.playing(hplayer.players[playerIndex]) == false) then
             --装扮
             htime.setTimeout(
-                math.random(4, 10),
+                math.random(4, 20),
                 function(t, td)
                     htime.delDialog(td)
                     htime.delTimer(t)
@@ -228,17 +228,17 @@ MAYBE_AI = {
                         hplayer.subGold(hplayer.players[playerIndex], 50000)
                         hhero.setCurLevel(
                             game.playerTower[playerIndex],
-                            math.floor(50000 / stone) + 5 + hhero.getCurLevel(game.playerTower[playerIndex]),
+                            math.floor(50000 / stone) + 7 + hhero.getCurLevel(game.playerTower[playerIndex]),
                             false
                         )
                     elseif (gold >= 10000 and math.random(1, 7) == 4) then
                         hplayer.subGold(hplayer.players[playerIndex], 10000)
                         hhero.setCurLevel(
                             game.playerTower[playerIndex],
-                            math.floor(10000 / stone) + 2 + hhero.getCurLevel(game.playerTower[playerIndex]),
+                            math.floor(10000 / stone) + 4 + hhero.getCurLevel(game.playerTower[playerIndex]),
                             false
                         )
-                    elseif (gold >= stone and math.random(1, 4) == 2) then
+                    elseif (gold >= stone and math.random(1, 3) == 2) then
                         local curWave
                         if (game.rule.cur == "yb") then
                             curWave = game.rule.yb.wave
@@ -263,7 +263,7 @@ MAYBE_AI = {
                                 MAYBE_AI.item(playerIndex, it, "stone")
                             end
                         end
-                    elseif (gold >= 6000 and math.random(1, 2) == 1) then
+                    elseif (gold >= 10000 and math.random(1, 6) == 4) then
                         --物品
                         local tarTower
                         if (hitem.getEmptySlot(game.playerTower[playerIndex]) > 0) then
@@ -286,7 +286,7 @@ MAYBE_AI = {
                                 end
                             end
                         end
-                        if (#comboIt <= 0) then
+                        if (tarTower == nil or #comboIt <= 0) then
                             return
                         end
                         local randIt = table.random(comboIt)
@@ -299,11 +299,11 @@ MAYBE_AI = {
                                 whichUnit = tarTower
                             }
                         )
-                        hplayer.subGold(hplayer.players[playerIndex], tarLv * 2000)
+                        hplayer.subGold(hplayer.players[playerIndex], tarLv * 1500)
                         tarTower = nil
                     elseif (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 5) == 3) then
                         --天赋
-                        hplayer.subGold(hplayer.players[playerIndex], 1000)
+                        hplayer.subGold(hplayer.players[playerIndex], 900)
                         subTowerLevel(playerIndex)
                         addTowerLevel(playerIndex)
                     end
@@ -321,7 +321,7 @@ MAYBE_AI = {
                     hplayer.loop(
                         function(p, pi)
                             if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
-                                table.ps(pi)
+                                table.insert(ps, pi)
                             end
                         end
                     )

@@ -22,8 +22,9 @@ bossGen = function(curWave)
                 0,
                 {
                     life = "=" .. (bossGenLife * curWave),
-                    move = "=120",
+                    move = "=130",
                     defend = "=" .. curWave * 2,
+                    toughness = "=" .. curWave * 20,
                     resistance = "=" .. curWave * 0.5,
                     avoid = "=" .. curWave * 0.18,
                     knocking_oppose = "=" .. curWave * 0.3,

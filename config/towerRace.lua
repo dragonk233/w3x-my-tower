@@ -1,7 +1,7 @@
 towerRaces = {
     {
         Name = "人类",
-        Ubertip = "平凡而多彩的种族，有着杰出的也有称王的人",
+        Ubertip = "平凡而团结的种族，有着杰出的也有称王的人",
         Text = "+3%力量|n+3%敏捷|n+3%智力",
         Art = "war3mapImported\\icon_race_human.blp",
         Link = {
@@ -61,7 +61,7 @@ towerRaces = {
             {qty = 2, text = "+35攻击力"},
             {qty = 3, text = "+60攻击力"},
             {qty = 4, text = "+105攻击力"},
-            {qty = 5, text = "+火攻击特性"}
+            {qty = 5, text = "+175攻击力;+火攻击特性"}
         }
     },
     {
@@ -125,9 +125,9 @@ towerRaces = {
         Text = "+水攻击特性|n+30%火抗性",
         Art = "war3mapImported\\icon_race_naga.blp",
         Link = {
-            {qty = 1, text = "+水、冰抗性5%"},
-            {qty = 2, text = "+水、冰抗性10%"},
-            {qty = 3, text = "+水、冰抗性15%"}
+            {qty = 1, text = "+水、冰抗性7%"},
+            {qty = 2, text = "+水、冰抗性13%"},
+            {qty = 3, text = "+水、冰抗性25%"}
         }
     },
     {
@@ -136,10 +136,10 @@ towerRaces = {
         Text = "+10%所有自然抗性",
         Art = "war3mapImported\\icon_race_elemental.blp",
         Link = {
-            {qty = 2, text = "+6.5%自然抗性"},
+            {qty = 2, text = "+10%自然抗性"},
             {qty = 3, text = "+暗、光攻击特性"},
             {qty = 4, text = "+火、土攻击特性"},
-            {qty = 5, text = "+18%自然抗性"}
+            {qty = 5, text = "+28%自然抗性"}
         }
     },
     {
@@ -161,8 +161,8 @@ towerRaces = {
         Text = "+神攻击特性",
         Art = "war3mapImported\\icon_race_god.blp",
         Link = {
-            {qty = 1, text = "+20%攻击速度"},
-            {qty = 2, text = "+20%神攻击"},
+            {qty = 1, text = "+30%攻击速度"},
+            {qty = 2, text = "+30%神攻击"},
             {qty = 3, text = "+神攻击特性"}
         }
     },
@@ -172,20 +172,20 @@ towerRaces = {
         Text = "+虫攻击特性",
         Art = "war3mapImported\\icon_race_insect2.blp",
         Link = {
-            {qty = 1, text = "+20护甲"},
+            {qty = 1, text = "+50护甲"},
             {qty = 2, text = "+30%魔抗"},
-            {qty = 3, text = "+1000减伤"}
+            {qty = 3, text = "+4000减伤"}
         }
     },
     {
         Name = "异兽",
         Ubertip = "特别的怪兽，来自未知的领域",
-        Text = "+10%魔抗|n+600点减伤",
+        Text = "+15%魔抗|n+1000点减伤",
         Art = "war3mapImported\\icon_race_rareanimals.blp",
         Link = {
-            {qty = 2, text = "+350范围10%分裂"},
-            {qty = 3, text = "+400范围15%分裂"},
-            {qty = 4, text = "+500范围20%分裂"}
+            {qty = 2, text = "+1000减伤"},
+            {qty = 3, text = "+400范围10%分裂"},
+            {qty = 4, text = "+500范围15%分裂"}
         }
     },
     {
@@ -205,8 +205,8 @@ towerRaces = {
         Text = "攻击时，10%几率眩晕0.3秒",
         Art = "war3mapImported\\icon_race_ogre.blp",
         Link = {
-            {qty = 2, text = "攻击时，10%几率眩晕0.3秒"},
-            {qty = 4, text = "攻击时，20%几率眩晕1秒"}
+            {qty = 2, text = "攻击时，10%几率眩晕0.75秒"},
+            {qty = 4, text = "攻击时，20%几率眩晕1.25秒"}
         }
     },
     {
@@ -227,7 +227,7 @@ towerRaces = {
         Text = "+龙攻击特性",
         Art = "war3mapImported\\icon_race_dragon.blp",
         Link = {
-            {qty = 1, text = "+120攻击力"},
+            {qty = 1, text = "+1000攻击力"},
             {qty = 2, text = "+雷攻击特性"},
             {qty = 3, text = "+风攻击特性"}
         }
@@ -238,10 +238,10 @@ towerRaces = {
         Text = "+0.5生命恢复|n+8%力量",
         Art = "war3mapImported\\icon_race_panda.blp",
         Link = {
-            {qty = 1, text = "+1000生命"},
-            {qty = 2, text = "+2000生命"},
-            {qty = 3, text = "+3000生命"},
-            {qty = 4, text = "+5000生命"}
+            {qty = 1, text = "+2500生命"},
+            {qty = 2, text = "+5000生命"},
+            {qty = 3, text = "+15000生命"},
+            {qty = 4, text = "+30000生命"}
         }
     }
 }

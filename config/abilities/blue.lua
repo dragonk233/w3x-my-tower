@@ -81,7 +81,7 @@ abilitiesBlue = {
         Name = "打靶",
         Art = "war3mapImported\\icon_pas_Marksmanship.blp",
         Ubertip = "+{val#1}%命中",
-        Val = {25}
+        Val = {20}
     },
     {
         Name = "雷电之锤",
@@ -93,28 +93,28 @@ abilitiesBlue = {
         Name = "专注护身",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDevotion.blp",
         Ubertip = "+{val#1}护甲",
-        Val = {12},
+        Val = {25},
         ODK = true
     },
     {
         Name = "噩梦移植",
         Art = "war3mapImported\\icon_pas_Rogue_DeadenedNerves.blp",
         Ubertip = "+{val#1}生命",
-        Val = {400},
+        Val = {1000},
         ODK = true
     },
     {
         Name = "致命抵抗",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldGuard.blp",
         Ubertip = "+{val#1}%致命抵抗，可抵抗物理及魔法暴击的几率与伤害",
-        Val = {10},
+        Val = {18},
         ODK = true
     },
     {
         Name = "反伤抵抗",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldReflection.blp",
         Ubertip = "+{val#1}%反伤抵抗",
-        Val = {13},
+        Val = {15},
         ODK = true
     }
 }

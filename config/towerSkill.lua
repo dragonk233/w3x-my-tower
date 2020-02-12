@@ -1901,7 +1901,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDrum.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {300},
+        Val = {1000},
         ODK = true
     },
     {
@@ -1910,7 +1910,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDrum.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {400},
+        Val = {2200},
         ODK = true
     },
     {
@@ -1919,7 +1919,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {1000},
+        Val = {13000},
         ODK = true
     },
     {
@@ -1928,7 +1928,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Nature_HealingTouch.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {3000},
+        Val = {50000},
         ODK = true
     },
     {
@@ -1937,7 +1937,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThickFur.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {16},
+        Val = {20},
         ODK = true
     },
     {
@@ -1946,7 +1946,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Invulnerable.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {34},
+        Val = {44},
         ODK = true
     },
     {
@@ -1955,7 +1955,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_GreaterBlessingofWisdom.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {45},
+        Val = {75},
         ODK = true
     },
     {
@@ -1964,7 +1964,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {63},
+        Val = {70},
         ODK = true
     },
     {
@@ -1973,7 +1973,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ability_Rogue_NervesOfSteel.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {80},
+        Val = {150},
         ODK = true
     },
     {
@@ -1982,7 +1982,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Elemental_Crystal_Shadow.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {130},
+        Val = {290},
         ODK = true
     },
     {
@@ -1991,7 +1991,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Holy_Power.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {100, 50},
+        Val = {200, 60},
         ODK = true
     },
     {
@@ -2000,7 +2000,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Holy_DivineHymn.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {20},
+        Val = {22},
         ODK = true
     },
     {
@@ -2009,7 +2009,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Elemental_Crystal_Shadow.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {35},
+        Val = {45},
         ODK = true
     },
     {
@@ -2018,7 +2018,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Helmet_69.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {100},
+        Val = {101},
         ODK = true
     },
     {
@@ -2027,7 +2027,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Rogue_DeadenedNerves.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {250},
+        Val = {275},
         ODK = true
     },
     {
@@ -2036,7 +2036,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ability_Druid_NaturalPerfection.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {750},
+        Val = {1300},
         ODK = true
     },
     {
@@ -2045,7 +2045,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Shadow_ChillTouch.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {1233},
+        Val = {2550},
         ODK = true
     },
     {
@@ -2054,7 +2054,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNThornShield.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {2},
+        Val = {2.1},
         ODK = true
     },
     {
@@ -2063,7 +2063,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Shadow_Riki.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {20},
+        Val = {23},
         ODK = true
     },
     {
@@ -2072,7 +2072,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Shame.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {31},
+        Val = {33},
         ODK = true
     },
     {
@@ -2081,7 +2081,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNEvasion.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {36},
+        Val = {37},
         ODK = true
     },
     {
@@ -2090,7 +2090,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Inextricable.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {34},
+        Val = {40},
         ODK = true
     },
     {
@@ -2099,7 +2099,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Nature_NatureBlessing.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {35},
+        Val = {45},
         ODK = true
     },
     {
@@ -2108,7 +2108,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Undercurrent_white_light.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {47},
+        Val = {58},
         ODK = true
     },
     {
@@ -2117,7 +2117,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Frost_FrozenCore.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {35},
+        Val = {50},
         ODK = true
     },
     {
@@ -2126,7 +2126,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_UpgradeRegenerationAura.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {80},
+        Val = {90},
         ODK = true
     },
     {
@@ -2135,7 +2135,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Arcane_Arcane04.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {55},
+        Val = {65},
         ODK = true
     },
     {
@@ -2153,7 +2153,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Arcane_TeleportMoonglade.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {21},
+        Val = {33},
         ODK = true
     },
     {
@@ -2162,7 +2162,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Spell_Shadow_ImprovedVampiricEmbrace.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {20, 10, 2.5},
+        Val = {25, 10, 2.5},
         ODK = true
     },
     {
@@ -2207,7 +2207,7 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Mace_40.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {40, 80, 3.0},
+        Val = {40, 85, 3.0},
         ODK = true
     },
     {
@@ -2216,25 +2216,25 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Helmet_73.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {300},
+        Val = {777},
         ODK = true
     },
     {
         Name = "回光返照",
-        Ubertip = "当被攻击时生命低于50%，增加{val#1}点生命恢复，持续{val#2}秒",
+        Ubertip = "当被攻击时生命低于75%，增加{val#1}点生命恢复，持续{val#2}秒",
         Art = "war3mapImported\\icon_pas_Holy_SummonChampion.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {20, 8},
+        Val = {20, 30},
         ODK = true
     },
     {
         Name = "自然之力",
-        Ubertip = "当被攻击时生命低于50%，增加{val#1}点生命恢复，持续{val#2}秒",
+        Ubertip = "当被攻击时生命低于75%，增加{val#1}点生命恢复，持续{val#2}秒",
         Art = "war3mapImported\\icon_pas_Nature_HealingTouch.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {30, 13},
+        Val = {30, 50},
         ODK = true
     },
     {

@@ -3,19 +3,19 @@ abilitiesPurple = {
         Name = "牛鬼蛇神",
         Art = "war3mapImported\\icon_pas_Ability_Warlock_DemonicEmpowerment",
         Ubertip = "+{val#1}点力量",
-        Val = {280}
+        Val = {420}
     },
     {
         Name = "荒诞",
         Art = "war3mapImported\\icon_pas_Ability_Rogue_SinisterCalling.blp",
         Ubertip = "+{val#1}点敏捷",
-        Val = {255}
+        Val = {385}
     },
     {
         Name = "天师法剑",
         Art = "war3mapImported\\icon_pas_Holy_PersuitofJustice.blp",
         Ubertip = "+{val#1}点智力",
-        Val = {270}
+        Val = {400}
     },
     {
         Name = "暗杀巅峰",
@@ -93,28 +93,28 @@ abilitiesPurple = {
         Name = "天神加护",
         Art = "war3mapImported\\icon_pas_Holy_Fanaticism.blp",
         Ubertip = "+{val#1}点生命，+{val#2}生命恢复",
-        Val = {800, 0.45},
+        Val = {10000, 0.45},
         ODK = true
     },
     {
         Name = "圣封护盾",
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Ubertip = "+{val#1}点护甲，+{val#2}%魔抗",
-        Val = {22, 12},
+        Val = {75, 13.5},
         ODK = true
     },
     {
         Name = "极速闪避",
         Art = "war3mapImported\\icon_pas_Ability_Rogue_Shadowstep.blp",
         Ubertip = "+{val#1}%回避",
-        Val = {15},
+        Val = {16},
         ODK = true
     },
     {
         Name = "刺痛极限",
         Art = "war3mapImported\\icon_pas_Fire_ElementAldecastation.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {250},
+        Val = {800},
         ODK = true
     },
     {
@@ -128,28 +128,28 @@ abilitiesPurple = {
         Name = "变相移动",
         Art = "war3mapImported\\icon_pas_Rogue_FleetFooted.blp",
         Ubertip = "被攻击时，+{val#1}点移动力，持续4秒",
-        Val = {15},
+        Val = {14},
         ODK = true
     },
     {
         Name = "钢铁身躯",
         Art = "war3mapImported\\icon_pas_Aftershock2.blp",
         Ubertip = "被攻击时，+{val#1}点护甲，持续6秒",
-        Val = {3},
+        Val = {4},
         ODK = true
     },
     {
         Name = "回音击",
         Art = "war3mapImported\\icon_pas_aftershock.blp",
         Ubertip = "被攻击时，有20%几率令攻击者眩晕{val#1}秒",
-        Val = {1.2},
+        Val = {0.75},
         ODK = true
     },
     {
         Name = "寂静督视",
         Art = "war3mapImported\\icon_pas_Ability_Creature_Cursed_05.blp",
         Ubertip = "被攻击时，有20%几率令攻击者缴械{val#1}秒",
-        Val = {3.5},
+        Val = {0.8},
         ODK = true
     }
 }

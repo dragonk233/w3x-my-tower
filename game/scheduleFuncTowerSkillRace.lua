@@ -278,8 +278,8 @@ addTowerSkillsRaceSingleAttr = function(u)
             u,
             0,
             {
-                resistance = "+10",
-                toughness = "+600"
+                resistance = "+15",
+                toughness = "+1000"
             }
         )
     elseif (race == "幽魂") then
@@ -470,6 +470,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
             elseif (qtys[r] == 4) then
                 attr.attack_green = attr.attack_green + 105
             elseif (qtys[r] == 5) then
+                attr.attack_green = attr.attack_green + 175
                 table.insert(attr.attack_damage_type, "fire")
             end
         elseif (r == "巨魔") then
@@ -561,18 +562,18 @@ addTowerSkillsRaceTeam = function(playerIndex)
             end
         elseif (r == "娜迦") then
             if (qtys[r] == 1) then
-                attr.natural_water_oppose = attr.natural_water_oppose + 5
-                attr.natural_ice_oppose = attr.natural_ice_oppose + 5
+                attr.natural_water_oppose = attr.natural_water_oppose + 7
+                attr.natural_ice_oppose = attr.natural_ice_oppose + 7
             elseif (qtys[r] == 3) then
-                attr.natural_water_oppose = attr.natural_water_oppose + 10
-                attr.natural_ice_oppose = attr.natural_ice_oppose + 10
+                attr.natural_water_oppose = attr.natural_water_oppose + 13
+                attr.natural_ice_oppose = attr.natural_ice_oppose + 13
             elseif (qtys[r] == 4) then
-                attr.natural_water_oppose = attr.natural_water_oppose + 15
-                attr.natural_ice_oppose = attr.natural_ice_oppose + 15
+                attr.natural_water_oppose = attr.natural_water_oppose + 25
+                attr.natural_ice_oppose = attr.natural_ice_oppose + 25
             end
         elseif (r == "元素") then
             if (qtys[r] == 5) then
-                local vv = 6.5
+                local vv = 10
                 attr.natural_fire_oppose = attr.natural_fire_oppose + vv
                 attr.natural_soil_oppose = attr.natural_soil_oppose + vv
                 attr.natural_water_oppose = attr.natural_water_oppose + vv
@@ -595,7 +596,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
                 table.insert(attr.attack_damage_type, "fire")
                 table.insert(attr.attack_damage_type, "soil")
             elseif (qtys[r] == 5) then
-                local vv = 18
+                local vv = 28
                 attr.natural_fire_oppose = attr.natural_fire_oppose + vv
                 attr.natural_soil_oppose = attr.natural_soil_oppose + vv
                 attr.natural_water_oppose = attr.natural_water_oppose + vv
@@ -626,31 +627,23 @@ addTowerSkillsRaceTeam = function(playerIndex)
             end
         elseif (r == "神族") then
             if (qtys[r] == 1) then
-                attr.attack_speed = attr.attack_speed + 20
+                attr.attack_speed = attr.attack_speed + 30
             elseif (qtys[r] == 2) then
-                attr.natural_god = attr.natural_god + 20
+                attr.natural_god = attr.natural_god + 30
             elseif (qtys[r] == 3) then
                 table.insert(attr.attack_damage_type, "god")
             end
         elseif (r == "昆虫") then
             if (qtys[r] == 1) then
-                attr.defend = attr.defend + 20
+                attr.defend = attr.defend + 50
             elseif (qtys[r] == 2) then
                 attr.resistance = attr.resistance + 30
             elseif (qtys[r] == 3) then
-                attr.toughness = attr.toughness + 1000
+                attr.toughness = attr.toughness + 4000
             end
         elseif (r == "异兽") then
             if (qtys[r] == 2) then
-                table.insert(
-                    attr.attack_effect,
-                    {
-                        attr = "split",
-                        odds = 100,
-                        range = 350,
-                        percent = 10
-                    }
-                )
+                toughness = "+1000"
             elseif (qtys[r] == 3) then
                 table.insert(
                     attr.attack_effect,
@@ -658,7 +651,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
                         attr = "split",
                         odds = 100,
                         range = 400,
-                        percent = 15
+                        percent = 10
                     }
                 )
             elseif (qtys[r] == 4) then
@@ -668,7 +661,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
                         attr = "split",
                         odds = 100,
                         range = 500,
-                        percent = 20
+                        percent = 15
                     }
                 )
             end
@@ -687,7 +680,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     {
                         attr = "swim",
                         odds = 10,
-                        during = 0.3
+                        during = 0.75
                     }
                 )
             elseif (qtys[r] == 5) then
@@ -696,7 +689,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     {
                         attr = "swim",
                         odds = 20,
-                        during = 1.0
+                        during = 1.25
                     }
                 )
             end
@@ -712,7 +705,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
             end
         elseif (r == "龙人") then
             if (qtys[r] == 1) then
-                attr.attack_green = attr.attack_green + 120
+                attr.attack_green = attr.attack_green + 1000
             elseif (qtys[r] == 2) then
                 table.insert(attr.attack_damage_type, "thunder")
             elseif (qtys[r] == 3) then
@@ -720,13 +713,13 @@ addTowerSkillsRaceTeam = function(playerIndex)
             end
         elseif (r == "熊猫") then
             if (qtys[r] == 1) then
-                attr.life = attr.life + 1000
+                attr.life = attr.life + 2500
             elseif (qtys[r] == 2) then
-                attr.life = attr.life + 2000
-            elseif (qtys[r] == 3) then
-                attr.life = attr.life + 3000
-            elseif (qtys[r] == 4) then
                 attr.life = attr.life + 5000
+            elseif (qtys[r] == 3) then
+                attr.life = attr.life + 15000
+            elseif (qtys[r] == 4) then
+                attr.life = attr.life + 30000
             end
         end
     end
