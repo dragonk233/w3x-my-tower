@@ -95,7 +95,6 @@ hquest.create(
             " - 有些技能只有对战有用，注意看物品说明",
             " - 种族的“队伍”效果根据情况你的能力会延时生效",
             " - 辅助塔的天赋比主塔好用",
-            " - 即使是同一种兵塔也有可能能力不一样哦"
         },
         icon = "ReplaceableTextures\\CommandButtons\\BTNTomeBrown.blp"
     }
@@ -105,6 +104,7 @@ hquest.create(
 for _, sp in ipairs(game.shopsConfig) do
     hunit.create(
         {
+            register = false,
             whichPlayer = game.ALLY_PLAYER,
             unitId = game.shops[sp[1]].UNIT_ID,
             qty = 1,

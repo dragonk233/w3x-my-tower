@@ -224,25 +224,21 @@ MAYBE_AI = {
                     end
                     local stone = 750
                     local gold = hplayer.getGold(hplayer.players[playerIndex])
-                    if (gold >= 50000 and math.random(1, 6) == 4) then
+                    if (gold >= 50000 and math.random(1, 8) == 4) then
                         hplayer.subGold(hplayer.players[playerIndex], 50000)
                         hhero.setCurLevel(
                             game.playerTower[playerIndex],
                             math.floor(50000 / stone) + 5 + hhero.getCurLevel(game.playerTower[playerIndex]),
                             false
                         )
-                    elseif (gold >= 10000 and math.random(1, 6) == 4) then
+                    elseif (gold >= 10000 and math.random(1, 7) == 4) then
                         hplayer.subGold(hplayer.players[playerIndex], 10000)
                         hhero.setCurLevel(
                             game.playerTower[playerIndex],
                             math.floor(10000 / stone) + 2 + hhero.getCurLevel(game.playerTower[playerIndex]),
                             false
                         )
-                    elseif (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 6) == 4) then
-                        hplayer.subGold(hplayer.players[playerIndex], 1000)
-                        subTowerLevel(playerIndex)
-                        addTowerLevel(playerIndex)
-                    elseif (gold >= stone and math.random(1, 2) == 1) then
+                    elseif (gold >= stone and math.random(1, 4) == 2) then
                         local curWave
                         if (game.rule.cur == "yb") then
                             curWave = game.rule.yb.wave
@@ -267,7 +263,75 @@ MAYBE_AI = {
                                 MAYBE_AI.item(playerIndex, it, "stone")
                             end
                         end
+                    elseif (gold >= 6000 and math.random(1, 2) == 1) then
+                        --物品
+                        local tarTower
+                        if (hitem.getEmptySlot(game.playerTower[playerIndex]) > 0) then
+                            tarTower = game.playerTower[playerIndex]
+                        else
+                            for li = 1, 4 do
+                                if (hitem.getEmptySlot(game.playerTowerLink[playerIndex][li].unit) > 0) then
+                                    tarTower = game.playerTowerLink[playerIndex][li].unit
+                                    break
+                                end
+                            end
+                        end
+                        local lvT = math.floor(gold / 2000)
+                        local lvB = 3
+                        local comboIt = {}
+                        for cbi = lvB, lvT, 1 do
+                            if (game.thisEquipItem[cbi] ~= nil) then
+                                for _, civ in pairs(game.thisEquipItem[cbi]) do
+                                    table.insert(comboIt, civ)
+                                end
+                            end
+                        end
+                        if (#comboIt <= 0) then
+                            return
+                        end
+                        local randIt = table.random(comboIt)
+                        local tarLv = randIt.LEVEL
+                        comboIt = nil
+                        hitem.create(
+                            {
+                                itemId = randIt.ITEM_ID,
+                                charges = 1,
+                                whichUnit = tarTower
+                            }
+                        )
+                        hplayer.subGold(hplayer.players[playerIndex], tarLv * 2000)
+                        tarTower = nil
+                    elseif (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 5) == 3) then
+                        --天赋
+                        hplayer.subGold(hplayer.players[playerIndex], 1000)
+                        subTowerLevel(playerIndex)
+                        addTowerLevel(playerIndex)
                     end
+                end
+            )
+        end
+    end,
+    --锤子兵
+    hammer = function(czb)
+        if (game.rule.dk.ai == true) then
+            htime.setInterval(
+                math.random(16, 21),
+                function(t)
+                    local ps = {}
+                    hplayer.loop(
+                        function(p, pi)
+                            if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                                table.ps(pi)
+                            end
+                        end
+                    )
+                    local psi = table.random(ps)
+                    if (math.random(1, 2) == 1) then
+                        cj.IssueTargetOrder(czb, "thunderbolt", game.playerTower[psi])
+                    else
+                        cj.IssueTargetOrder(czb, "thunderbolt", game.playerCourier[psi])
+                    end
+                    ps = nil
                 end
             )
         end

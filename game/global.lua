@@ -61,7 +61,7 @@ game = {
             perWaveQty = 10,
             playerQty = {},
             wave = {},
-            fresh = 2.3,
+            fresh = 1.5,
             mon = {},
             monLimit = {},
             monData = {},
@@ -116,6 +116,7 @@ game = {
     thisOptionAbilityItem = {},
     thisOptionItem2Abli = {},
     thisOptionTowerPowerItem = {},
+    thisEquipItem = {},
     thisComboItem = {},
     -- 左上第一顺时针设定的
     towerPoint = {

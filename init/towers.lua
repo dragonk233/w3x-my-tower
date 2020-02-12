@@ -119,7 +119,7 @@ towers = {
     SSS = towers_sss
 }
 local towersTi = 0
-for j=1,2,1 do
+for j=1,1,1 do
     for tlv, tow in pairs(towers) do
         if tow ~= nil then
             for i, v in pairs(tow) do

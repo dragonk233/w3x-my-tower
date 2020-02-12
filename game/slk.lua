@@ -210,8 +210,16 @@ for i = 1, itemQty, 1 do
             game.thisComboItem[jv.LEVEL] = {}
         end
         table.insert(game.thisComboItem[jv.LEVEL], jv)
+    elseif (jv.I_TYPE == "equip") then
+        if (game.thisEquipItem[jv.LEVEL] == nil) then
+            game.thisEquipItem[jv.LEVEL] = {}
+        end
+        table.insert(game.thisEquipItem[jv.LEVEL], jv)
     end
 end
 
 --战败小兵
 game.couriers_defeat = cj.LoadInteger(cg.hash_myslk, cj.StringHash("couriers_defeat"), 0)
+
+--
+cj.FlushParentHashtable(cg.hash_myslk)

@@ -3,16 +3,21 @@ onTowerDead = function(evtData)
     local u = evtData.triggerUnit
     local index = hplayer.index(cj.GetOwningPlayer(u))
     hmark.create("war3mapImported\\mark_defeat.blp", 4.00, hplayer.players[index])
+    hsound.sound(cg.gg_snd_tluo)
     hplayer.setStatus(hplayer.players[index], "战败")
     hplayer.clearUnit(hplayer.players[index])
-    hunit.create(
+    local czb =
+        hunit.create(
         {
+            register = false,
             whichPlayer = cj.GetOwningPlayer(u),
             unitId = game.couriers_defeat,
             x = game.towerPoint[index][1],
             y = game.towerPoint[index][2]
         }
     )
+    --锤子兵AI
+    MAYBE_AI.hammer(czb)
     --检查是否胜利
     local isWin = 0
     local winner

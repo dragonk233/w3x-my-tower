@@ -121,7 +121,7 @@ cj.TriggerAddAction(
             end
             game.playerOriginLumber[i] = l
             hplayer.setLumber(hplayer.players[i], l)
-            hmsg.echo00(hplayer.players[i], " *** 根据你的地图等级和游玩次数，你得到了" .. hColor.green(l) .. "个木头")
+            hmsg.echo00(hplayer.players[i], "^_^ 根据你的地图等级和游玩次数，你得到了" .. hColor.green(l) .. "个木头")
             dzSetPrestige(hplayer.players[i], true, false)
         end
         htime.setInterval(

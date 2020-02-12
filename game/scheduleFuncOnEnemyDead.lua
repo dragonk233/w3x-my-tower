@@ -11,6 +11,7 @@ enemyDeadAward = function(triggerUnit, killer)
     if (cj.GetRandomInt(1, 15) == 13) then
         hunit.create(
             {
+                register = false,
                 whichPlayer = hplayer.player_passive,
                 unitId = game.thisUnits["河草"].UNIT_ID,
                 qty = 1,
@@ -155,7 +156,9 @@ enemyDeadDK = function(evtData)
                 awardGenForOne(game.rule.dk.wave[pi], pi)
             end
             --我的兵塔，进攻！
-            towerShadowGen(pi)
+            if (math.fmod(game.rule.dk.wave[pi], 2) == 0) then
+                towerShadowGen(pi)
+            end
         end
     end
     local ui = game.rule.dk.monData[cj.GetTriggerUnit()].pathIndex
