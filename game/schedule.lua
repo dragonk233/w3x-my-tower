@@ -1,5 +1,38 @@
 require "game.scheduleFunc"
 
+--玩家离开
+hevent.onPlayerLeave(
+    function(evtData)
+        --evtData.triggerPlayer
+        --检查是否胜利
+        local isWin = 0
+        local winner
+        hplayer.loop(
+            function(p, pi)
+                if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                    isWin = isWin + 1
+                    winner = p
+                end
+            end
+        )
+        if (isWin == 1) then
+            game.runing = false
+            dzSetPrestige(winner, false, true)
+            hmark.create("war3mapImported\\mark_win.blp", 4.00, winner)
+            hplayer.setStatus(winner, "胜利")
+            htime.setTimeout(
+                10.00,
+                function(t, td)
+                    htime.delDialog(td)
+                    htime.delTimer(t)
+                    hplayer.victory(winner)
+                end
+            )
+        end
+    end
+)
+
+--兵塔命令控制
 game.TRIGGER_DE = cj.CreateTrigger()
 cj.TriggerAddAction(
     game.TRIGGER_DE,
@@ -16,6 +49,7 @@ cj.TriggerAddAction(
     end
 )
 
+--兵塔位置控制
 htime.setInterval(
     60,
     function()
@@ -52,12 +86,16 @@ dzSetPrestige = function(p, iscs, isss)
         hdzapi.server.set.int(p, "prestigecs", cs)
         hdzapi.setRoomStat(p, "prestigecs", cs)
     end
-    if (isss and htime.count >= 300) then
-        ss = ss + 1
-        hdzapi.server.set.int(p, "prestigess", ss)
-        hdzapi.setRoomStat(p, "prestigess", ss)
-        local playerIndex = hplayer.index(p)
-        dzSetLumber(p, 100 + game.rule.dk.wave[playerIndex])
+    if (isss) then
+        if (htime.count >= 300) then
+            ss = ss + 1
+            hdzapi.server.set.int(p, "prestigess", ss)
+            hdzapi.setRoomStat(p, "prestigess", ss)
+            local playerIndex = hplayer.index(p)
+            dzSetLumber(p, 100 + game.rule.dk.wave[playerIndex])
+        else
+            hmsg.echo00(p, hColor.green("温馨提示：由于本局游戏时间过短，本局的胜负不会被记录"))
+        end
     end
     local prestige
     if (cs >= 500 and ss >= 100) then
