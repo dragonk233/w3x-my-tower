@@ -83,7 +83,7 @@ onTowerAttack = function(evtData)
                         }
                     )
                 end
-                if (name == "冰花炸裂" and math.random(1, 5) == 4) then
+                if (name == "冰花炸裂" and math.random(1, 4) == 3) then
                     onTowerAttackTtg(u, name)
                     local x = cj.GetUnitX(u)
                     local y = cj.GetUnitY(u)
@@ -100,7 +100,14 @@ onTowerAttack = function(evtData)
                         g,
                         function()
                             local eu = cj.GetEnumUnit()
-                            hattr.set(eu, 7.5, {move = "-" .. 45 * level})
+                            hattr.set(
+                                eu,
+                                7.5,
+                                {
+                                    move = "-" .. 45 * level,
+                                    life_back = "-" .. 100 * level
+                                }
+                            )
                             heffect.toUnit("war3mapImported\\eff_frost_burst.mdl", eu, 0)
                             heffect.bindUnit("war3mapImported\\eff_icing.mdl", eu, "foot", 7.5)
                         end

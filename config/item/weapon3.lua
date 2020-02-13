@@ -71,7 +71,7 @@ items_weapon3 = {
                     attr = "split",
                     odds = 100,
                     range = 600,
-                    percent = 35
+                    percent = 20
                 }
             }
         }

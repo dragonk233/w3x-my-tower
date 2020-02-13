@@ -379,7 +379,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNSmash.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {500, 20}
+        Val = {500, 16}
     },
     {
         Name = "分裂大刀",
@@ -387,7 +387,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCleavingAttack.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {500, 25}
+        Val = {500, 19}
     },
     {
         Name = "分裂狂刀",
@@ -395,7 +395,7 @@ TOWER_ABLI_SPX = {
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCleavingAttack.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 1,
-        Val = {600, 25}
+        Val = {600, 23}
     },
     {
         Name = "猫头鹰怒视",

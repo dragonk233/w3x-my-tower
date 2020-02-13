@@ -639,11 +639,11 @@ addTowerSkillsRaceTeam = function(playerIndex)
             elseif (qtys[r] == 2) then
                 attr.resistance = attr.resistance + 30
             elseif (qtys[r] == 3) then
-                attr.toughness = attr.toughness + 4000
+                attr.toughness = attr.toughness + 3000
             end
         elseif (r == "异兽") then
             if (qtys[r] == 2) then
-                toughness = "+1000"
+                attr.toughness = "+1000"
             elseif (qtys[r] == 3) then
                 table.insert(
                     attr.attack_effect,

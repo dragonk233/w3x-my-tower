@@ -174,7 +174,7 @@ towerRaces = {
         Link = {
             {qty = 1, text = "+50护甲"},
             {qty = 2, text = "+30%魔抗"},
-            {qty = 3, text = "+4000减伤"}
+            {qty = 3, text = "+3000减伤"}
         }
     },
     {

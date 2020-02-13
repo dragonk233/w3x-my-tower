@@ -135,7 +135,7 @@ abilitiesYellow = {
         Name = "分裂攻击",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCleavingAttack.blp",
         Ubertip = "500范围分裂{val#1}%",
-        Val = {10}
+        Val = {7}
     },
     {
         Name = "震晕践踏",
@@ -165,14 +165,14 @@ abilitiesYellow = {
         Name = "赤血盾牌",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldMastery.blp",
         Ubertip = "+{val#1}生命|n+{val#2}护甲",
-        Val = {3500, 25},
+        Val = {2500, 25},
         ODK = true
     },
     {
         Name = "亢奋战鼓",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDrum.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {275},
+        Val = {200},
         ODK = true
     },
     {
@@ -200,14 +200,14 @@ abilitiesYellow = {
         Name = "恶心粘液",
         Art = "war3mapImported\\icon_pas_Creature_Poison_06.blp",
         Ubertip = "受到攻击时，降低攻击者{val#1}%攻击速度，持续5秒",
-        Val = {6},
+        Val = {4},
         ODK = true
     },
     {
-        Name = "降智打击",
+        Name = "降格打击",
         Art = "war3mapImported\\icon_pas_Arcane_ManaTap.blp",
-        Ubertip = "受到攻击时，降低攻击者{val#1}点智力，持续6秒",
-        Val = {23},
+        Ubertip = "受到攻击时，降低攻击者{val#1}点力量、敏捷、智力，持续6秒",
+        Val = {16},
         ODK = true
     }
 }

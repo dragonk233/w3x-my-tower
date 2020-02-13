@@ -86,21 +86,21 @@ abilitiesPurple = {
     {
         Name = "冰花炸裂",
         Art = "war3mapImported\\icon_pas_Ore_Cobalt.blp",
-        Ubertip = "攻击敌人有20%触发冰花炸裂，范围敌人在7.5秒内被冻伤，减少{val#1}点移动",
-        Val = {45}
+        Ubertip = "攻击敌人有25%触发冰花炸裂，范围敌人在7.5秒内被冻伤持续扣血并减少{val#1}点移动",
+        Val = {40}
     },
     {
         Name = "天神加护",
         Art = "war3mapImported\\icon_pas_Holy_Fanaticism.blp",
         Ubertip = "+{val#1}点生命，+{val#2}生命恢复",
-        Val = {7500, 0.45},
+        Val = {7000, 0.4},
         ODK = true
     },
     {
         Name = "圣封护盾",
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Ubertip = "+{val#1}点护甲，+{val#2}%魔抗",
-        Val = {70, 13.5},
+        Val = {60, 13.5},
         ODK = true
     },
     {
@@ -114,7 +114,7 @@ abilitiesPurple = {
         Name = "刺痛极限",
         Art = "war3mapImported\\icon_pas_Fire_ElementAldecastation.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {600},
+        Val = {500},
         ODK = true
     },
     {

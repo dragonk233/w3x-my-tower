@@ -39,12 +39,14 @@ towerShadowBeDamage = function(evtData)
                         }
                     )
                 end
-                if (Name == "降智打击") then
+                if (Name == "降格打击") then
                     towerShadowTtg(u, Name)
                     hattr.set(
                         sourceUnit,
                         6,
                         {
+                            str_green = "-" .. val[1] * level,
+                            agi_green = "-" .. val[1] * level,
                             int_green = "-" .. val[1] * level
                         }
                     )
