@@ -22,6 +22,7 @@ towerShadowGen = function(playerIndex)
             facing = playerIndex * -90 + 180
         }
     )
+    cj.IssuePointOrderById(u, 851986, game.pathPoint[next][2][1], game.pathPoint[next][2][2])
     cj.SetUnitPathing(u, false)
     hskill.add(u, game.effectModel["影子兵塔特效"].ABILITY_ID, 0)
     hunit.setColor(u, playerIndex)
@@ -75,5 +76,6 @@ towerShadowGen = function(playerIndex)
             "达到了|cffffff00第" ..
                 game.rule.dk.wave[playerIndex] .. "级|r，TA的兵塔" .. hColor.red(towerName) .. "开始进攻！其他人注意防守！"
     )
+    game.currentMon = game.currentMon + 1
     dzSetLumber(hplayer.players[playerIndex], game.rule.dk.wave[playerIndex])
 end

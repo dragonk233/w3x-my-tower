@@ -1,10 +1,8 @@
--- 测试的3秒 代码
--- htime.setInterval(
---     5.00,
---     function()
---         print("-a" .. table.len(hRuntime.attribute))
---         print("-" .. table.len(hRuntime.attributeDiff))
---         print("-" .. table.len(hRuntime.unit))
---         print("-e" .. table.len(hRuntime.event))
---     end
--- )
+htime.setInterval(
+    5.00,
+    function()
+        for k, v in ipairs(hRuntime.attributeGroup.life_back) do
+            print(k, hunit.getName(v), his.alive(v))
+        end
+    end
+)

@@ -43,7 +43,7 @@ game = {
             wave = 1,
             waveEnd = 100,
             fresh = 1.2,
-            waitTime = 8,
+            waitTime = 7,
             mon = nil,
             monLife = 60,
             monLifeInc = 11
@@ -52,7 +52,7 @@ game = {
             perWaveQty = 18,
             wave = 1,
             fresh = 0.9,
-            waitTime = 10,
+            waitTime = 6,
             mon = nil,
             monLife = 60,
             monLifeInc = 11
@@ -66,6 +66,12 @@ game = {
             monLimit = {},
             monData = {},
             ai = false,
+            shadowMod = {
+                5,
+                5,
+                5,
+                5
+            },
             monLife = {
                 30,
                 30,

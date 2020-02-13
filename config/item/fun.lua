@@ -113,7 +113,7 @@ items_fun = {
     },
     {
         Name = "锤敕令",
-        Description = "号召巨锤袭击",
+        Description = "号召巨锤黑雷袭击",
         goldcost = 80000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll01",
@@ -121,7 +121,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令其他玩家的所有塔眩晕10秒",
+        ACTIVE = "令所有玩家在一段时间内主塔收到随机伤害[300~900]的黑色闪电打击10秒",
         cooldown = 25,
         I_TYPE = "strategy"
     },
@@ -149,7 +149,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令其他玩家的信使眩晕10秒",
+        ACTIVE = "令其他玩家的所有塔和信使眩晕7秒",
         cooldown = 25,
         I_TYPE = "strategy"
     },

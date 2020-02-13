@@ -305,6 +305,7 @@ createMyTower = function(playerIndex, towerId, towerLevel)
             {
                 move = "=0",
                 life = "=" .. life,
+                life_back = "=1",
                 attack_white = "+" .. hslk_global.unitsKV[towerId].ATTACK_WHITE
             }
         )

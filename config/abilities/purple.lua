@@ -93,14 +93,14 @@ abilitiesPurple = {
         Name = "天神加护",
         Art = "war3mapImported\\icon_pas_Holy_Fanaticism.blp",
         Ubertip = "+{val#1}点生命，+{val#2}生命恢复",
-        Val = {10000, 0.45},
+        Val = {7500, 0.45},
         ODK = true
     },
     {
         Name = "圣封护盾",
         Art = "war3mapImported\\icon_pas_Holy_AvengersShield.blp",
         Ubertip = "+{val#1}点护甲，+{val#2}%魔抗",
-        Val = {75, 13.5},
+        Val = {70, 13.5},
         ODK = true
     },
     {
@@ -114,7 +114,7 @@ abilitiesPurple = {
         Name = "刺痛极限",
         Art = "war3mapImported\\icon_pas_Fire_ElementAldecastation.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {800},
+        Val = {600},
         ODK = true
     },
     {
@@ -128,7 +128,7 @@ abilitiesPurple = {
         Name = "变相移动",
         Art = "war3mapImported\\icon_pas_Rogue_FleetFooted.blp",
         Ubertip = "被攻击时，+{val#1}点移动力，持续4秒",
-        Val = {14},
+        Val = {15},
         ODK = true
     },
     {

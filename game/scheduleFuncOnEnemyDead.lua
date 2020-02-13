@@ -156,8 +156,13 @@ enemyDeadDK = function(evtData)
                 awardGenForOne(game.rule.dk.wave[pi], pi)
             end
             --我的兵塔，进攻！
-            if (math.fmod(game.rule.dk.wave[pi], 2) == 0) then
+            if (math.fmod(game.rule.dk.wave[pi], game.rule.dk.shadowMod[pi]) == 0) then
                 towerShadowGen(pi)
+                if (game.rule.dk.shadowMod[pi] > 1) then
+                    game.rule.dk.shadowMod[pi] = game.rule.dk.shadowMod[pi] - 1
+                elseif (game.rule.dk.shadowMod[pi] == 1) then
+                    game.rule.dk.shadowMod[pi] = 4
+                end
             end
         end
     end

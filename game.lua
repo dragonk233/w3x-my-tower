@@ -36,8 +36,8 @@ henemy.setPlayer(hplayer.players[8])
 henemy.setPlayer(hplayer.players[9])
 henemy.setPlayer(hplayer.players[10])
 henemy.setPlayer(hplayer.players[11])
-cj.SetPlayerColor(hplayer.players[2], CONST_PLAYER_COLOR.AQUA)
-cj.SetPlayerColor(hplayer.players[4], CONST_PLAYER_COLOR.YELLOW)
+cj.SetPlayerColor(hplayer.players[2], CONST_PLAYER_COLOR.YELLOW)
+cj.SetPlayerColor(hplayer.players[4], CONST_PLAYER_COLOR.GREEN)
 
 -- 写点任务提醒玩家
 hquest.create(

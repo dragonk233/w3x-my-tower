@@ -123,15 +123,17 @@ MAYBE_AI = {
                         game.playerTowerEffectModel[playerIndex] = {}
                     end
                     local models = {
+                        "青龙碧翼套装",
+                        "炎炎焚烧套装",
+                        "邪鬼怨灵套装",
                         "金碧辉煌套装",
                         "迷幻黑紫套装",
                         "血色炽热套装",
-                        "青龙碧翼套装",
-                        "邪鬼怨灵套装",
-                        "炎炎焚烧套装",
                         "出云剑仙套装"
                     }
-                    local btnIdx = models[math.random(1, #models)]
+                    local turn = math.random(1, #models)
+                    hplayer.addGoldRatio(hplayer.players[playerIndex], (8 - turn) * 7, 0)
+                    local btnIdx = models[turn]
                     local tips
                     if (btnIdx == "金碧辉煌套装") then
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀翅膀特效"].ABILITY_ID)
@@ -139,39 +141,33 @@ MAYBE_AI = {
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀天堂特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀精灵特效"].ABILITY_ID)
                         tips = "金耀翅膀、公正光辉、天堂圣音、金色精灵"
-                        hplayer.addGoldRatio(hplayer.players[playerIndex], 5, 0)
                     elseif (btnIdx == "迷幻黑紫套装") then
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑翅膀特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑迷紫特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑迷阵特效"].ABILITY_ID)
                         tips = "幻黑翅膀、迷紫幻象、迷惑雾阵"
-                        hplayer.addGoldRatio(hplayer.players[playerIndex], 2, 0)
                     elseif (btnIdx == "血色炽热套装") then
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色翅膀特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色漩涡特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色符文特效"].ABILITY_ID)
                         tips = "血色翅膀、赤红漩涡、祭奠符文"
-                        hplayer.addGoldRatio(hplayer.players[playerIndex], 4, 0)
                     elseif (btnIdx == "青龙碧翼套装") then
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["青空之翼特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["游龙欢悦特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["青龙吐息特效"].ABILITY_ID)
                         tips = "青空之翼、游龙欢悦、龙腾吐息"
-                        hplayer.addGoldRatio(hplayer.players[playerIndex], 3, 0)
                     elseif (btnIdx == "邪鬼怨灵套装") then
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼怨灵特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼阵法特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼符文特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼之眼特效"].ABILITY_ID)
                         tips = "邪鬼怨灵、邪鬼阵法、超度符文、逗趣鬼眼"
-                        hplayer.addGoldRatio(hplayer.players[playerIndex], 5, 0)
                     elseif (btnIdx == "炎炎焚烧套装") then
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎旋风特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎领域特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎燃烧特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎三球特效"].ABILITY_ID)
                         tips = "炎炎旋风、烧灼圈圈、焚烧之火、鬼马火球"
-                        hplayer.addGoldRatio(hplayer.players[playerIndex], 6, 0)
                     elseif (btnIdx == "出云剑仙套装") then
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云飞剑特效"].ABILITY_ID)
                         table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云气场特效"].ABILITY_ID)
@@ -215,7 +211,7 @@ MAYBE_AI = {
             )
             --技能
             htime.setInterval(
-                math.random(4, 7),
+                math.random(5, 8),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)
@@ -263,7 +259,7 @@ MAYBE_AI = {
                                 MAYBE_AI.item(playerIndex, it, "stone")
                             end
                         end
-                    elseif (gold >= 10000 and math.random(1, 6) == 4) then
+                    elseif (gold >= 7500 and math.random(1, 6) == 4) then
                         --物品
                         local tarTower
                         if (hitem.getEmptySlot(game.playerTower[playerIndex]) > 0) then
@@ -315,8 +311,12 @@ MAYBE_AI = {
     hammer = function(czb)
         if (game.rule.dk.ai == true) then
             htime.setInterval(
-                math.random(16, 21),
+                math.random(15, 20),
                 function(t)
+                    if (game.runing == false) then
+                        htime.delTimer(t)
+                        return
+                    end
                     local ps = {}
                     hplayer.loop(
                         function(p, pi)

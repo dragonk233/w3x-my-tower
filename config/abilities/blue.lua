@@ -100,7 +100,7 @@ abilitiesBlue = {
         Name = "噩梦移植",
         Art = "war3mapImported\\icon_pas_Rogue_DeadenedNerves.blp",
         Ubertip = "+{val#1}生命",
-        Val = {1000},
+        Val = {900},
         ODK = true
     },
     {

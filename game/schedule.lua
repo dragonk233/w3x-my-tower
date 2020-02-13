@@ -664,6 +664,16 @@ cj.TriggerAddAction(
                         end
                     )
                     hleaderBoard.setTitle(bldk, "欢乐对抗战绩榜")
+                    htime.setInterval(
+                        120,
+                        function()
+                            local bottom = hleaderBoard.bottom(bldk)
+                            if (bottom ~= nil) then
+                                local gold = hColor.yellow(game.rule.dk.wave[hplayer.index(bottom)] * 100)
+                                hmsg.echo(hColor.sky("(；′⌒`)" .. hplayer.getName(bottom)) .. "不幸倒数，获得" .. gold .. "黄金补贴")
+                            end
+                        end
+                    )
                 end
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do

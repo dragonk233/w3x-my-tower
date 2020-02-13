@@ -421,29 +421,28 @@ onUnitItemsUesd = function(evtData)
         elseif (ii == "锤敕令" or ii == "盾敕令" or ii == "剑敕令" or ii == "斧敕令") then
             local ts = {}
             if (ii == "锤敕令") then
-                for pi = 1, 4, 1 do
-                    if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
-                        table.insert(ts, game.playerTower[pi])
-                        for i = 1, 4, 1 do
-                            if
-                                (game.playerTowerLink[pi][i] ~= nil and
-                                    his.locust(game.playerTowerLink[pi][i].unit) == false)
-                             then
-                                table.insert(ts, game.playerTowerLink[pi][i].unit)
+                local hummarDur = 10 / 0.75
+                htime.setInterval(
+                    0.75,
+                    function(t)
+                        hummarDur = hummarDur - 1
+                        if (hummarDur < 0) then
+                            htime.delTimer(t)
+                            return
+                        end
+                        for pi = 1, 4, 1 do
+                            if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                                local dmg = math.random(300, 900)
+                                hunit.subCurLife(game.playerTower[pi], dmg)
+                                hmsg.echo(
+                                    hColor.sky(cj.GetPlayerName(hplayer.players[pi])) ..
+                                        "被黑色悍马雷劈掉了" .. hColor.black(dmg) .. "血"
+                                )
+                                heffect.toUnit("war3mapImported\\eff_lighting_black.mdl", game.playerTower[pi], 0)
                             end
                         end
                     end
-                end
-                for _, u in pairs(ts) do
-                    hskill.swim(
-                        {
-                            whichUnit = u,
-                            during = 10,
-                            odds = 999,
-                            effect = "war3mapImported\\eff_EarthDetonation.mdl"
-                        }
-                    )
-                end
+                )
             elseif (ii == "盾敕令") then
                 for pi = 1, 4, 1 do
                     if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
@@ -470,7 +469,15 @@ onUnitItemsUesd = function(evtData)
             elseif (ii == "剑敕令") then
                 for pi = 1, 4, 1 do
                     if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
-                        table.insert(ts, game.playerCourier[pi])
+                        table.insert(ts, game.playerTower[pi])
+                        for i = 1, 4, 1 do
+                            if (his.alive(game.playerTowerLink[pi][i]) == true) then
+                                table.insert(ts, game.playerTowerLink[pi][i].unit)
+                            end
+                            if (his.alive(game.playerCourier[pi]) == true) then
+                                table.insert(ts, game.playerCourier[pi])
+                            end
+                        end
                     end
                 end
                 for _, u in pairs(ts) do

@@ -165,14 +165,14 @@ abilitiesYellow = {
         Name = "赤血盾牌",
         Art = "war3mapImported\\icon_pas_Ability_Warrior_ShieldMastery.blp",
         Ubertip = "+{val#1}生命|n+{val#2}护甲",
-        Val = {4000, 30},
+        Val = {3500, 25},
         ODK = true
     },
     {
         Name = "亢奋战鼓",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNDrum.blp",
         Ubertip = "+{val#1}点减伤",
-        Val = {300},
+        Val = {275},
         ODK = true
     },
     {
