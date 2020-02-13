@@ -239,25 +239,25 @@ onUnitItemsUesd = function(evtData)
         local playerIndex = hplayer.index(p)
         --选择套装
         local tz = {}
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzfire") == true) then
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZFIRE") == true) then
             table.insert(tz, "炎炎焚烧套装")
         end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzgold") == true) then
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZGOLD") == true) then
             table.insert(tz, "金碧辉煌套装")
         end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzboold") == true) then
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZBLOOD") == true) then
             table.insert(tz, "血色炽热套装")
         end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzdragon") == true) then
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZDRAGON") == true) then
             table.insert(tz, "青龙碧翼套装")
         end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzdark") == true) then
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZDARK") == true) then
             table.insert(tz, "迷幻黑紫套装")
         end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzghost") == true) then
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZGHOST") == true) then
             table.insert(tz, "邪鬼怨灵套装")
         end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "tzsword") == true) then
+        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZSWORD") == true) then
             table.insert(tz, "出云剑仙套装")
         end
         if (#tz <= 0) then

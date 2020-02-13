@@ -4,30 +4,32 @@ require "game.scheduleFunc"
 hevent.onPlayerLeave(
     function(evtData)
         --evtData.triggerPlayer
-        --检查是否胜利
-        local isWin = 0
-        local winner
-        hplayer.loop(
-            function(p, pi)
-                if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
-                    isWin = isWin + 1
-                    winner = p
-                end
-            end
-        )
-        if (isWin == 1) then
-            game.runing = false
-            dzSetPrestige(winner, false, true)
-            hmark.create("war3mapImported\\mark_win.blp", 4.00, winner)
-            hplayer.setStatus(winner, "胜利")
-            htime.setTimeout(
-                10.00,
-                function(t, td)
-                    htime.delDialog(td)
-                    htime.delTimer(t)
-                    hplayer.victory(winner)
+        --对战的话，检查是否胜利
+        if (game.rule.cur == "dk") then
+            local isWin = 0
+            local winner
+            hplayer.loop(
+                function(p, pi)
+                    if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                        isWin = isWin + 1
+                        winner = p
+                    end
                 end
             )
+            if (isWin == 1) then
+                game.runing = false
+                dzSetPrestige(winner, false, true)
+                hmark.create("war3mapImported\\mark_win.blp", 4.00, winner)
+                hplayer.setStatus(winner, "胜利")
+                htime.setTimeout(
+                    10.00,
+                    function(t, td)
+                        htime.delDialog(td)
+                        htime.delTimer(t)
+                        hplayer.victory(winner)
+                    end
+                )
+            end
         end
     end
 )
@@ -726,7 +728,7 @@ cj.TriggerAddAction(
                         u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
                     else
                         u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
-                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "phoenix") == true) then
+                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "PHOENIX") == true) then
                             hitem.create(
                                 {
                                     itemId = game.courierItem["涅磐火凤凰"].ITEM_ID,
@@ -734,7 +736,7 @@ cj.TriggerAddAction(
                                 }
                             )
                         end
-                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "icemon") == true) then
+                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "ICEMON") == true) then
                             hitem.create(
                                 {
                                     itemId = game.courierItem["冰戟剑灵"].ITEM_ID,
