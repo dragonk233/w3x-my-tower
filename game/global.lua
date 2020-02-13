@@ -49,12 +49,12 @@ game = {
             monLifeInc = 11
         },
         hz = {
-            perWaveQty = 18,
+            perWaveQty = 16,
             wave = 1,
             fresh = 0.9,
             waitTime = 6,
             mon = nil,
-            monLife = 60,
+            monLife = 65,
             monLifeInc = 11
         },
         dk = {

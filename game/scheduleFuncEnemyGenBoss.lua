@@ -56,5 +56,5 @@ bossGen = function(curWave)
         end
     end
     hmark.create("war3mapImported\\mark_boss_coming.blp", 4.00)
-    bossGenLife = bossGenLife + 275 + curWave * 2
+    bossGenLife = bossGenLife + 285 + curWave * 3
 end

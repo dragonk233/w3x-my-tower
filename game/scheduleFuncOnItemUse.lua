@@ -431,7 +431,7 @@ onUnitItemsUesd = function(evtData)
                             return
                         end
                         for pi = 1, 4, 1 do
-                            if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                            if (hplayer.getStatus(hplayer.players[pi]) == hplayer.player_status.gaming) then
                                 local dmg = math.random(500, 1500)
                                 hunit.subCurLife(game.playerTower[pi], dmg)
                                 hmsg.echo(
