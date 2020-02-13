@@ -5,7 +5,7 @@ require "game.global"
 require "game.slk"
 
 --加载本地图的test
-require "game.test"
+-- require "game.test"
 
 --预读 preread（为了有效您需要注意hRuntime.register.ability的初始化 abilitiesKV）
 local u = cj.CreateUnit(hplayer.player_passive, hslk_global.unit_token, 0, 0, 0)
