@@ -1,15 +1,15 @@
 items_mystery = {
     {
         Name = "起死回生药水",
-        Description = "致命魔术师专用手套一个",
+        Description = "从魂之秘泉获得的妙灵神药",
         goldcost = 0,
-        lumbercost = 50,
+        lumbercost = 200,
         Art = "war3mapImported\\icon_item_Potion_24.blp",
         powerup = 0,
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令主兵塔恢复所有生命！",
+        ACTIVE = "令您的主兵塔恢复所有生命！",
         cooldown = 0,
         I_TYPE = "strategy"
     },

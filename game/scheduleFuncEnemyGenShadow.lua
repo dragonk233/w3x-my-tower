@@ -30,7 +30,7 @@ towerShadowGen = function(playerIndex)
         u,
         0,
         {
-            move = "=180",
+            move = "=" .. (180 + 2 * htime.min),
             life = "=" .. hattr.get(tower, "life"),
             life_back = "=" .. hattr.get(tower, "life_back"),
             defend = "=" .. hattr.get(tower, "defend"),

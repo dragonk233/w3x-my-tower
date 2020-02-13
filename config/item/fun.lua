@@ -114,21 +114,21 @@ items_fun = {
     {
         Name = "锤敕令",
         Description = "号召巨锤黑雷袭击",
-        goldcost = 80000,
+        goldcost = 50000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll01",
         powerup = 0,
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令所有玩家在一段时间内主塔收到随机伤害[300~900]的黑色闪电打击10秒",
+        ACTIVE = "令所有玩家在一段时间内主塔收到随机伤害[500~1500]的黑色闪电打击10秒",
         cooldown = 25,
         I_TYPE = "strategy"
     },
     {
         Name = "盾敕令",
         Description = "号召大剑袭击",
-        goldcost = 80000,
+        goldcost = 50000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_ArmorScroll02.blp",
         powerup = 0,
@@ -142,7 +142,7 @@ items_fun = {
     {
         Name = "剑敕令",
         Description = "号召大剑袭击",
-        goldcost = 80000,
+        goldcost = 50000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll03.blp",
         powerup = 0,
@@ -156,7 +156,7 @@ items_fun = {
     {
         Name = "斧敕令",
         Description = "号召猛斧袭击",
-        goldcost = 80000,
+        goldcost = 50000,
         lumbercost = 0,
         Art = "war3mapImported\\icon_item_Inscription_WeaponScroll02.blp",
         powerup = 0,

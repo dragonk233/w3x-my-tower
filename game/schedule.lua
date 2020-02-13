@@ -665,12 +665,16 @@ cj.TriggerAddAction(
                     )
                     hleaderBoard.setTitle(bldk, "欢乐对抗战绩榜")
                     htime.setInterval(
-                        120,
+                        60,
                         function()
-                            local bottom = hleaderBoard.bottom(bldk)
-                            if (bottom ~= nil) then
-                                local gold = hColor.yellow(game.rule.dk.wave[hplayer.index(bottom)] * 100)
-                                hmsg.echo(hColor.sky("(；′⌒`)" .. hplayer.getName(bottom)) .. "不幸倒数，获得" .. gold .. "黄金补贴")
+                            local top = hleaderBoard.top(bldk)
+                            if (top ~= nil) then
+                                local gold = game.rule.dk.wave[hplayer.index(top)] * 30
+                                hplayer.addGold(top, gold)
+                                hmsg.echo(
+                                    hColor.yellow("(。・∀・)ノ" .. hplayer.getName(top)) ..
+                                        "勇夺第一，获得" .. hColor.yellow(gold) .. "黄金奖励"
+                                )
                             end
                         end
                     )

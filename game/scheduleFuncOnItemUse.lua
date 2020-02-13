@@ -431,12 +431,12 @@ onUnitItemsUesd = function(evtData)
                             return
                         end
                         for pi = 1, 4, 1 do
-                            if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
-                                local dmg = math.random(300, 900)
+                            if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                                local dmg = math.random(500, 1500)
                                 hunit.subCurLife(game.playerTower[pi], dmg)
                                 hmsg.echo(
                                     hColor.sky(cj.GetPlayerName(hplayer.players[pi])) ..
-                                        "被黑色悍马雷劈掉了" .. hColor.black(dmg) .. "血"
+                                        "被黑色悍马雷劈掉了" .. hColor.redLight(dmg) .. "血"
                                 )
                                 heffect.toUnit("war3mapImported\\eff_lighting_black.mdl", game.playerTower[pi], 0)
                             end

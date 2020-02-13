@@ -161,7 +161,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 opacity = 0.4,
                 modelScale = 1.0,
                 isUnSelectable = isUnSelectable,
-                isOpenSolt = true
+                isOpenSlot = true
             }
         )
         hunit.setUserData(u, linkIndex)
