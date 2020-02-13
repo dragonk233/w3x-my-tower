@@ -1,8 +1,7 @@
-htime.setInterval(
-    5.00,
-    function()
-        for k, v in ipairs(hRuntime.attributeGroup.life_back) do
-            print(k, hunit.getName(v), his.alive(v))
-        end
-    end
-)
+-- htime.setInterval(
+--     5.00,
+--     function()
+--         print_r(hRuntime.attributeDamaging, nil, false)
+--         print_r(hRuntime.attributeGroup, nil, false)
+--     end
+-- )

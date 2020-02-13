@@ -101,7 +101,7 @@ enemyGenYB = function(waiting)
                                 0,
                                 {
                                     life = "=" .. (game.rule.yb.monLife * game.rule.yb.wave),
-                                    move = "=180"
+                                    move = "=180",
                                 }
                             )
                             game.currentMon = game.currentMon + 1
