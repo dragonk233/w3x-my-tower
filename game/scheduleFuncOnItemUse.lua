@@ -426,7 +426,7 @@ onUnitItemsUesd = function(evtData)
                     0.75,
                     function(t)
                         hummarDur = hummarDur - 1
-                        if (hummarDur < 0) then
+                        if (hummarDur < 0 or game.runing == false) then
                             htime.delTimer(t)
                             return
                         end
