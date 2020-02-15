@@ -648,6 +648,22 @@ cj.TriggerAddAction(
                                                                 0,
                                                                 0.05
                                                             )
+                                                            cj.IssuePointOrderById(
+                                                                game.playerTower[k],
+                                                                851983,
+                                                                cj.GetUnitX(game.playerTower[k]),
+                                                                cj.GetUnitY(game.playerTower[k])
+                                                            )
+                                                            for li = 1, 4, 1 do
+                                                                if (game.playerTowerLink[k][li] ~= nil) then
+                                                                    cj.IssuePointOrderById(
+                                                                        game.playerTowerLink[k][li].unit,
+                                                                        851983,
+                                                                        cj.GetUnitX(game.playerTowerLink[k][li].unit),
+                                                                        cj.GetUnitY(game.playerTowerLink[k][li].unit)
+                                                                    )
+                                                                end
+                                                            end
                                                         end
                                                     end
                                                     if (wanbao) then
@@ -831,6 +847,7 @@ cj.TriggerAddAction(
                                 local attack_speed = "-"
                                 local damage_extent = "-"
                                 local tlv = "-"
+                                local plv = "-"
                                 if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
                                     tower = game.playerTower[pi]
                                     avatar = hunit.getAvatar(tower)
@@ -840,6 +857,7 @@ cj.TriggerAddAction(
                                     attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
                                     damage_extent = math.round(hattr.get(tower, "damage_extent")) .. "%"
                                     tlv = "Lv." .. hhero.getCurLevel(tower)
+                                    plv = game.playerTowerLevel[pi]
                                 end
                                 local tempData = {
                                     {value = cj.GetPlayerName(p), icon = nil},
@@ -847,7 +865,7 @@ cj.TriggerAddAction(
                                     {value = hplayer.getStatus(p), icon = nil},
                                     {value = name, icon = avatar},
                                     {value = tlv, icon = nil},
-                                    {value = game.playerTowerLevel[pi], icon = nil},
+                                    {value = plv, icon = nil},
                                     {value = attack, icon = nil},
                                     {value = attack_speed, icon = nil},
                                     {value = damage_extent, icon = nil}

@@ -96,10 +96,9 @@ onTowerAttack = function(evtData)
                             return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                         end
                     )
-                    cj.ForGroup(
+                    hgroup.loop(
                         g,
-                        function()
-                            local eu = cj.GetEnumUnit()
+                        function(eu)
                             hattr.set(
                                 eu,
                                 7.5,
@@ -110,10 +109,9 @@ onTowerAttack = function(evtData)
                             )
                             heffect.toUnit("war3mapImported\\eff_frost_burst.mdl", eu, 0)
                             heffect.bindUnit("war3mapImported\\eff_icing.mdl", eu, "foot", 7.5)
-                        end
+                        end,
+                        true
                     )
-                    cj.GroupClear(g)
-                    cj.DestroyGroup(g)
                 end
                 if (name == "死亡同步" and math.random(1, 200) <= level and his.alive(targetUnit)) then
                     onTowerAttackTtg(u, name)
@@ -180,10 +178,9 @@ onTowerAttack = function(evtData)
                         elseif (name == "缠绕") then
                             damageType = {CONST_DAMAGE_TYPE.physical, CONST_DAMAGE_TYPE.wood}
                         end
-                        cj.ForGroup(
+                        hgroup.loop(
                             g,
-                            function()
-                                local eu = cj.GetEnumUnit()
+                            function(eu)
                                 hattr.set(eu, val[4], {[val[5]] = "-" .. val[3]})
                                 heffect.bindUnit(val[7], eu, "origin", val[4])
                                 hskill.damage(
@@ -195,10 +192,9 @@ onTowerAttack = function(evtData)
                                         damageType = damageType
                                     }
                                 )
-                            end
+                            end,
+                            true
                         )
-                        cj.GroupClear(g)
-                        cj.DestroyGroup(g)
                     end
                 end
                 if (name == "石化凝视") then
@@ -216,10 +212,9 @@ onTowerAttack = function(evtData)
                                 return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                             end
                         )
-                        cj.ForGroup(
+                        hgroup.loop(
                             g,
-                            function()
-                                local eu = cj.GetEnumUnit()
+                            function(eu)
                                 hattr.set(
                                     eu,
                                     val[3],
@@ -228,10 +223,9 @@ onTowerAttack = function(evtData)
                                         defend = "-" .. val[2]
                                     }
                                 )
-                            end
+                            end,
+                            true
                         )
-                        cj.GroupClear(g)
-                        cj.DestroyGroup(g)
                     end
                 end
                 if (name == "闻风丧胆") then
@@ -249,10 +243,9 @@ onTowerAttack = function(evtData)
                                 return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                             end
                         )
-                        cj.ForGroup(
+                        hgroup.loop(
                             g,
-                            function()
-                                local eu = cj.GetEnumUnit()
+                            function(eu)
                                 hattr.set(
                                     eu,
                                     val[3],
@@ -266,10 +259,9 @@ onTowerAttack = function(evtData)
                                     "overhead",
                                     val[3]
                                 )
-                            end
+                            end,
+                            true
                         )
-                        cj.GroupClear(g)
-                        cj.DestroyGroup(g)
                     end
                 end
                 if (name == "震撼" or name == "龙魂斩" or name == "鱼人碎击" or name == "怒火碎击") then
@@ -306,10 +298,9 @@ onTowerAttack = function(evtData)
                             return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                         end
                     )
-                    cj.ForGroup(
+                    hgroup.loop(
                         g,
-                        function()
-                            local eu = cj.GetEnumUnit()
+                        function(eu)
                             hskill.damage(
                                 {
                                     sourceUnit = u,
@@ -319,10 +310,9 @@ onTowerAttack = function(evtData)
                                     damageType = {CONST_DAMAGE_TYPE.fire}
                                 }
                             )
-                        end
+                        end,
+                        true
                     )
-                    cj.GroupClear(g)
-                    cj.DestroyGroup(g)
                 end
                 if (name == "猎手幻刀" or name == "觉醒幻刀" or name == "究极幻刀" or name == "冥冥斩击") then
                     onTowerAttackTtg(u, name)
@@ -349,10 +339,9 @@ onTowerAttack = function(evtData)
                             return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                         end
                     )
-                    cj.ForGroup(
+                    hgroup.loop(
                         g,
-                        function()
-                            local eu = cj.GetEnumUnit()
+                        function(eu)
                             hskill.damage(
                                 {
                                     sourceUnit = u,
@@ -363,10 +352,9 @@ onTowerAttack = function(evtData)
                                     effect = cut2
                                 }
                             )
-                        end
+                        end,
+                        true
                     )
-                    cj.GroupClear(g)
-                    cj.DestroyGroup(g)
                 end
                 if (name == "剑刃风暴" and his.get(u, "isWhirlwind") == false) then
                     local val = v.Val or {0}

@@ -471,7 +471,7 @@ onUnitItemsUesd = function(evtData)
                     if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
                         table.insert(ts, game.playerTower[pi])
                         for i = 1, 4, 1 do
-                            if (his.alive(game.playerTowerLink[pi][i]) == true) then
+                            if (his.alive(game.playerTowerLink[pi][i].unit) == true) then
                                 table.insert(ts, game.playerTowerLink[pi][i].unit)
                             end
                             if (his.alive(game.playerCourier[pi]) == true) then

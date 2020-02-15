@@ -150,6 +150,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             cj.ShowUnit(game.playerTowerLink[playerIndex][linkIndex].unit, false)
         end
         local isUnSelectable = (linkId == game.thisUnits["空位"].UNIT_ID)
+        local isOpenSlot = (linkId ~= game.thisUnits["空位"].UNIT_ID)
         local u =
             hunit.create(
             {
@@ -161,7 +162,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 opacity = 0.4,
                 modelScale = 1.0,
                 isUnSelectable = isUnSelectable,
-                isOpenSlot = true
+                isOpenSlot = isOpenSlot
             }
         )
         hunit.setUserData(u, linkIndex)
@@ -186,6 +187,8 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                 u,
                 0,
                 {
+                    life = "=1000",
+                    life_back = "=1000",
                     attack_damage_type = "=" .. attack_damage_type,
                     move = "=0",
                     damage_rebound_oppose = "=9999"

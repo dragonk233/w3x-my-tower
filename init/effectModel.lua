@@ -22,7 +22,7 @@ local abEffects = {
         TargetArt = "Abilities\\Spells\\NightElf\\FaerieFire\\FaerieFireTarget.mdl",
         Targetattach="weapon",
     },
-    ------------------------------------------------------------------
+    -- 分割线
     {
         Name = "幻黑翅膀特效", 
         TargetArt = "war3mapImported\\eff_Void_Wings.mdl",--_Borderless
@@ -36,7 +36,7 @@ local abEffects = {
         Name = "幻黑迷阵特效", 
         TargetArt = "war3mapImported\\eff_Cosmic_Insperation.mdl",
     },
-    ------------------------------------------------------------------
+    -- 分割线
     {
         Name = "血色翅膀特效", 
         TargetArt = "war3mapImported\\eff_Chaos_Wings.mdl",
@@ -50,7 +50,7 @@ local abEffects = {
         Name = "血色符文特效", 
         TargetArt = "war3mapImported\\eff_BloodSigil.mdl",
     },
-    ------------------------------------------------------------------
+    -- 分割线
     {
         Name = "青空之翼特效", 
         TargetArt = "war3mapImported\\eff_Nature_Wings.mdl",
@@ -64,7 +64,7 @@ local abEffects = {
         Name = "青龙吐息特效", 
         TargetArt = "war3mapImported\\eff_mirage.mdl",
     },
-    ------------------------------------------------------------------
+    -- 分割线
     {
         Name = "邪鬼怨灵特效", 
         TargetArt = "war3mapImported\\eff_wraith.mdl",
@@ -82,7 +82,7 @@ local abEffects = {
         TargetArt = "war3mapImported\\eff_RageBuff.mdl",
         Targetattach="head",
     },
-    ------------------------------------------------------------------
+    -- 分割线
     {
         Name = "炎炎旋风特效", 
         TargetArt = "war3mapImported\\eff_demonfire.mdl",
@@ -99,7 +99,7 @@ local abEffects = {
         Name = "炎炎三球特效", 
         TargetArt = "war3mapImported\\eff_three_fireballs.mdl",
     },
-    ------------------------------------------------------------------
+    -- 分割线
     {
         Name = "出云飞剑特效", 
         TargetArt = "war3mapImported\\eff_flying_sword_light.mdl",

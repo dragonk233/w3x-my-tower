@@ -132,7 +132,7 @@ MAYBE_AI = {
                         "出云剑仙套装"
                     }
                     local turn = math.random(1, #models)
-                    hplayer.addGoldRatio(hplayer.players[playerIndex], (8 - turn) * 7, 0)
+                    hplayer.addGoldRatio(hplayer.players[playerIndex], (8 - turn) * 10, 0)
                     local btnIdx = models[turn]
                     local tips
                     if (btnIdx == "金碧辉煌套装") then
@@ -309,9 +309,10 @@ MAYBE_AI = {
     end,
     --锤子兵
     hammer = function(czb)
-        if (game.rule.dk.ai == true) then
+        local czbPlayer = cj.GetOwningPlayer(czb)
+        if (game.rule.dk.ai == true and his.playing(czbPlayer) == false) then
             htime.setInterval(
-                math.random(15, 20),
+                math.random(14, 18),
                 function(t)
                     if (game.runing == false) then
                         htime.delTimer(t)

@@ -1,13 +1,28 @@
---加载本地图的global
+-- hot模式只适合本地调试，可以使用package打包为dist上线（参考example）
+-- 下面是注册你的本机路径，识别lua目录的加载
+package.path = package.path .. ";Z:\\war3\\hunzsig-warcraft3\\h-lua\\?.lua"
+package.path = package.path .. ";Z:\\war3\\hunzsig-warcraft3\\w3x-my-tower\\?.lua"
+
+-- 调试
+HLUA_DEBUG = true --这句会在打包是变为false，当然变量名要与HLUA_DEBUG一致
+if (HLUA_DEBUG) then
+    console = require "jass.console"
+    console.enable = true
+end
+
+-- 加载h-lua
+require "h-lua"
+
+-- 加载本地图的global
 require "game.global"
 
---加载本地图的SLK系统
+-- 加载本地图的SLK系统
 require "game.slk"
 
---加载本地图的test
+-- 加载本地图的test
 -- require "game.test"
 
---预读 preread（为了有效您需要注意hRuntime.register.ability的初始化 abilitiesKV）
+-- 预读 preread（为了有效您需要注意hRuntime.register.ability的初始化 abilitiesKV）
 local u = cj.CreateUnit(hplayer.player_passive, hslk_global.unit_token, 0, 0, 0)
 for id, _ in pairs(hslk_global.abilitiesKV) do
     cj.UnitAddAbility(u, id)
@@ -117,5 +132,4 @@ for _, sp in ipairs(game.shopsConfig) do
 end
 
 -- game start(这里需要用时间事件延时N秒，不然很多动作会在初始化失效)
---加载本地图的test
 require "game.schedule"
