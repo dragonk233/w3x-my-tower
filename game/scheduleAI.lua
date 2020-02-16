@@ -58,7 +58,7 @@ MAYBE_AI = {
                     local u = createMyTowerLink(playerIndex, linkSite, game.towers[itemSLK.INDEX].UNIT_ID)
                     hmsg.echo(
                         hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
-                            "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
+                            "召唤了辅塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
                     )
                     addTowerSkillsRaceTeam(playerIndex)
                 else
@@ -84,14 +84,14 @@ MAYBE_AI = {
                             local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)
                             hmsg.echo(
                                 hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
-                                    "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
+                                    "召唤了主塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
                             )
                             addTowerSkillsRaceTeam(playerIndex)
                         else
                             local u = createMyTowerLink(playerIndex, mini, game.towers[itemSLK.INDEX].UNIT_ID)
                             hmsg.echo(
                                 hColor.sky(cj.GetPlayerName(hplayer.players[playerIndex])) ..
-                                    "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
+                                    "召唤了辅塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
                             )
                             addTowerSkillsRaceTeam(playerIndex)
                         end
@@ -132,7 +132,7 @@ MAYBE_AI = {
                         "出云剑仙套装"
                     }
                     local turn = math.random(1, #models)
-                    hplayer.addGoldRatio(hplayer.players[playerIndex], (8 - turn) * 10, 0)
+                    hplayer.addGoldRatio(hplayer.players[playerIndex], (8 - turn) * 7, 0)
                     local btnIdx = models[turn]
                     local tips
                     if (btnIdx == "金碧辉煌套装") then

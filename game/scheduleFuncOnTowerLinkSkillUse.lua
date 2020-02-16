@@ -13,9 +13,9 @@ onTowerLinkSkillUesd = function(evtData)
         local linkTowerLevel = game.playerTowerLink[playerIndex][linkIndex].tower_level
         local currentTowerId = hunit.getId(game.playerTower[playerIndex])
         local currentTowerLevel = game.playerTowerLevel[playerIndex]
-        --换兵塔
+        --换主塔
         createMyTower(playerIndex, linkTowerId, linkTowerLevel)
-        --进核心
+        --换辅塔
         createMyTowerLink(playerIndex, linkIndex, currentTowerId, currentTowerLevel)
         --刷新种族队伍
         addTowerSkillsRaceTeam(playerIndex)

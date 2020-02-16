@@ -22,7 +22,7 @@ onUnitItemsUesd = function(evtData)
             hunit.getSlk(game.playerTower[playerIndex]).MARK or 0
         }
         local names = {
-            "[主兵]" .. hunit.getName(game.playerTower[playerIndex])
+            "[主塔]" .. hunit.getName(game.playerTower[playerIndex])
         }
         local dots = {
             string.findCount(names[1], "·")
@@ -42,7 +42,7 @@ onUnitItemsUesd = function(evtData)
             if (names[i + 1] == "空位") then
                 names[i + 1] = "[N阶]空位"
             end
-            names[i + 1] = "[辅兵]" .. names[i + 1]
+            names[i + 1] = "[辅塔]" .. names[i + 1]
             dots[i + 1] = string.findCount(names[i + 1], "·")
             nls[i + 1] = string.mb_len(names[i + 1]) - dots[i + 1]
             if (nls[i + 1] > bigNameLen) then
@@ -110,14 +110,14 @@ onUnitItemsUesd = function(evtData)
                     local u = createMyTower(playerIndex, game.towers[itemSLK.INDEX].UNIT_ID)
                     hmsg.echo(
                         hColor.sky(cj.GetPlayerName(p)) ..
-                            "召唤了兵塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
+                            "召唤了主塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
                     )
                     addTowerSkillsRaceTeam(playerIndex)
                 else
                     local u = createMyTowerLink(playerIndex, btnIdx, game.towers[itemSLK.INDEX].UNIT_ID)
                     hmsg.echo(
                         hColor.sky(cj.GetPlayerName(p)) ..
-                            "设置了核心：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
+                            "召唤了辅塔：[" .. hColor.yellow(game.towers[itemSLK.INDEX].Name) .. "]"
                     )
                     addTowerSkillsRaceTeam(playerIndex)
                 end

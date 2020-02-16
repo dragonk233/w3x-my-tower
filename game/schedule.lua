@@ -728,7 +728,7 @@ cj.TriggerAddAction(
                                 local gold = game.rule.dk.wave[hplayer.index(top)] * 30
                                 hplayer.addGold(top, gold)
                                 hmsg.echo(
-                                    hColor.yellow("(。・∀・)ノ" .. hplayer.getName(top)) ..
+                                    hColor.yellow("（*＾-＾*）" .. hplayer.getName(top)) ..
                                         "勇夺第一，获得" .. hColor.yellow(gold) .. "黄金奖励"
                                 )
                             end
