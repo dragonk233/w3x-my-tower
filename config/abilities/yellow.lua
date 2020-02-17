@@ -135,7 +135,7 @@ abilitiesYellow = {
         Name = "分裂攻击",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCleavingAttack.blp",
         Ubertip = "500范围分裂{val#1}%",
-        Val = {7}
+        Val = {5}
     },
     {
         Name = "震晕践踏",

@@ -9,7 +9,6 @@ items_weapon1 = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        OVERLIE = 9,
         ATTR = {
             attack_green = "+30",
             str_green = "+10",
@@ -27,7 +26,6 @@ items_weapon1 = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        OVERLIE = 9,
         ATTR = {
             str_green = "+80"
         }
@@ -42,7 +40,6 @@ items_weapon1 = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        OVERLIE = 9,
         ATTR = {
             agi_green = "+80"
         }
@@ -57,7 +54,6 @@ items_weapon1 = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        OVERLIE = 9,
         ATTR = {
             int_green = "+80"
         }

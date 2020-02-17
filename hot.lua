@@ -118,8 +118,10 @@ hquest.create(
 )
 
 -- 商店
-for _, sp in ipairs(game.shopsConfig) do
-    hunit.create(
+THIS_SHOPS = {}
+for spi, sp in ipairs(game.shopsConfig) do
+    THIS_SHOPS[spi] =
+        hunit.create(
         {
             register = false,
             whichPlayer = game.ALLY_PLAYER,

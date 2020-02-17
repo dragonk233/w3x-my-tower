@@ -72,6 +72,26 @@ htime.setInterval(
     end
 )
 
+--兵塔攻击debug
+towerAttackDebug = function(k)
+    cj.IssuePointOrderById(
+        game.playerTower[k],
+        851983,
+        cj.GetUnitX(game.playerTower[k]),
+        cj.GetUnitY(game.playerTower[k])
+    )
+    for li = 1, 4, 1 do
+        if (game.playerTowerLink[k][li] ~= nil) then
+            cj.IssuePointOrderById(
+                game.playerTowerLink[k][li].unit,
+                851983,
+                cj.GetUnitX(game.playerTowerLink[k][li].unit),
+                cj.GetUnitY(game.playerTowerLink[k][li].unit)
+            )
+        end
+    end
+end
+
 dzSetLumber = function(p, curWave)
     local lv = hdzapi.mapLv(p)
     if (lv == nil or lv < 1) then
@@ -349,6 +369,7 @@ cj.TriggerAddAction(
                                                         game.pathPoint[next][2][1],
                                                         game.pathPoint[next][2][2]
                                                     )
+                                                    towerAttackDebug(k)
                                                 end
                                             end
                                         else
@@ -508,6 +529,7 @@ cj.TriggerAddAction(
                                                         game.pathPoint[next][2][1],
                                                         game.pathPoint[next][2][2]
                                                     )
+                                                    towerAttackDebug(k)
                                                 end
                                             end
                                         else
@@ -648,22 +670,7 @@ cj.TriggerAddAction(
                                                                 0,
                                                                 0.05
                                                             )
-                                                            cj.IssuePointOrderById(
-                                                                game.playerTower[k],
-                                                                851983,
-                                                                cj.GetUnitX(game.playerTower[k]),
-                                                                cj.GetUnitY(game.playerTower[k])
-                                                            )
-                                                            for li = 1, 4, 1 do
-                                                                if (game.playerTowerLink[k][li] ~= nil) then
-                                                                    cj.IssuePointOrderById(
-                                                                        game.playerTowerLink[k][li].unit,
-                                                                        851983,
-                                                                        cj.GetUnitX(game.playerTowerLink[k][li].unit),
-                                                                        cj.GetUnitY(game.playerTowerLink[k][li].unit)
-                                                                    )
-                                                                end
-                                                            end
+                                                            towerAttackDebug(k)
                                                         end
                                                     end
                                                     if (wanbao) then
@@ -735,6 +742,12 @@ cj.TriggerAddAction(
                         end
                     )
                 end
+                --删除多余的防御商店
+                if (game.rule.cur ~= "dk") then
+                    hunit.del(THIS_SHOPS[10])
+                    hunit.del(THIS_SHOPS[11])
+                    hunit.del(THIS_SHOPS[12])
+                end
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do
                     local u
@@ -761,18 +774,36 @@ cj.TriggerAddAction(
                             )
                         end
                         if (u ~= nil) then
-                            hitem.create(
-                                {
-                                    itemId = game.effectModelItem["超次元套装礼包"].ITEM_ID,
-                                    whichUnit = u
-                                }
-                            )
+                            local flag = false
+                            if (hdzapi.hasMallItem(hplayer.players[k], "TZFIRE") == true) then
+                                flag = true
+                            elseif (hdzapi.hasMallItem(hplayer.players[k], "TZGOLD") == true) then
+                                flag = true
+                            elseif (hdzapi.hasMallItem(hplayer.players[k], "TZBLOOD") == true) then
+                                flag = true
+                            elseif (hdzapi.hasMallItem(hplayer.players[k], "TZDRAGON") == true) then
+                                flag = true
+                            elseif (hdzapi.hasMallItem(hplayer.players[k], "TZDARK") == true) then
+                                flag = true
+                            elseif (hdzapi.hasMallItem(hplayer.players[k], "TZGHOST") == true) then
+                                flag = true
+                            elseif (hdzapi.hasMallItem(hplayer.players[k], "TZSWORD") == true) then
+                                flag = true
+                            end
+                            if (flag == true) then
+                                hitem.create(
+                                    {
+                                        itemId = game.effectModelItem["超次元套装礼包"].ITEM_ID,
+                                        whichUnit = u
+                                    }
+                                )
+                            end
                         end
                     end
                 end
                 -- 基本兵塔
                 for k, v in pairs(game.towerPoint) do
-                    createMyTower(k, game.towers["人类·农民_1"].UNIT_ID)
+                    createMyTower(k, game.towers["人类·农民"].UNIT_ID)
                     addTowerSkillsRaceTeam(k)
                 end
                 -- 兵塔连接

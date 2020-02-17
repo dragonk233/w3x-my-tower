@@ -2,7 +2,7 @@
 couriersShopIds = {}
 for i, v in ipairs(couriers) do
     -- 处理信使数据
-    local Ubertip = "召唤：" .. v.Name .. "|n信使阶级："..hColor.greenLight(v.COURIER_POWER) .. "|n移动速度：" .. hColor.skyLight(v.spd)
+    local Ubertip = "召唤：" .. v.Name
     local obj = slk.unit.ogru:new("couriers_" .. v.Name)
     obj.type = "Peon"
     obj.upgrades = ""
@@ -33,7 +33,7 @@ for i, v in ipairs(couriers) do
     obj.stockStart = 0
     obj.stockRegen = 0
     obj.stockMax = 1
-    obj.collision = 16 --接触体积
+    obj.collision = 0 --接触体积
     obj.def = v.def or 0.00 -- 护甲
     obj.sight = v.sight or 1000 -- 白天视野
     obj.nsight = v.nsight or 1000 -- 夜晚视野
@@ -49,16 +49,16 @@ for i, v in ipairs(couriers) do
     obj.file = v.file --模型
     obj.Art = v.Art --头像
     obj.scale = v.scale --选择圈
-    obj.movetp = v.movetp --移动类型
+    obj.movetp = v.movetp or "" --移动类型
     obj.moveHeight = v.moveHeight --移动高度
     obj.moveFloor = v.moveHeight * 0.25 --最低高度
-    obj.spd = v.spd
+    obj.spd = 522
     obj.armor = v.armor -- 被击声音
     obj.targType = v.targType --作为目标类型
     obj.upgrades = ""
     obj.Builds = ""
     obj.fused = 0
-    local x = "AInv," .. unitPowerMap[(v.COURIER_POWER or "E")] .. ","
+    local x = "AInv,"
     if(v.Name == "涅磐火凤凰")then
         obj.abilList = x .. string.implode(',',couriersSkillsPhoenix)
     elseif(v.Name == "冰戟剑灵")then

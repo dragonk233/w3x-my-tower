@@ -57,7 +57,7 @@ items_weapon3 = {
     {
         Name = "分裂狂刀",
         Description = "光辉的权杖",
-        goldcost = 70000,
+        goldcost = 75000,
         lumbercost = 0,
         Art = "ReplaceableTextures\\CommandButtons\\BTNSpiritWalkerMasterTraining.blp",
         powerup = 0,
@@ -71,7 +71,7 @@ items_weapon3 = {
                     attr = "split",
                     odds = 100,
                     range = 600,
-                    percent = 20
+                    percent = 10
                 }
             }
         }

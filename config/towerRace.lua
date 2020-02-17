@@ -5,7 +5,7 @@ towerRaces = {
         Text = "+3%力量|n+3%敏捷|n+3%智力",
         Art = "war3mapImported\\icon_race_human.blp",
         Link = {
-            {qty = 2, text = "+5护甲"},
+            {qty = 2, text = "+10护甲"},
             {qty = 3, text = "+25护甲"},
             {qty = 4, text = "+40护甲"},
             {qty = 5, text = "+75护甲"}
@@ -18,7 +18,7 @@ towerRaces = {
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
             {qty = 2, text = "+80护甲"},
-            {qty = 4, text = "+300攻击力"}
+            {qty = 4, text = "+500攻击力"}
         }
     },
     {
@@ -27,7 +27,7 @@ towerRaces = {
         Text = "+5%力量|n+5%敏捷|n+5%智力",
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
-            {qty = 1, text = "+200护甲;+400攻击力"}
+            {qty = 2, text = "+250护甲;+1000攻击力"}
         }
     },
     {
@@ -58,10 +58,10 @@ towerRaces = {
         Text = "+7.5%攻击力",
         Art = "war3mapImported\\icon_race_orc.blp",
         Link = {
-            {qty = 2, text = "+35攻击力"},
-            {qty = 3, text = "+60攻击力"},
-            {qty = 4, text = "+105攻击力"},
-            {qty = 5, text = "+175攻击力;+火攻击特性"}
+            {qty = 2, text = "+40攻击力"},
+            {qty = 3, text = "+65攻击力"},
+            {qty = 4, text = "+125攻击力"},
+            {qty = 5, text = "+200攻击力;+火攻击特性"}
         }
     },
     {
@@ -104,8 +104,8 @@ towerRaces = {
         Text = "+木攻击特性",
         Art = "war3mapImported\\icon_race_druid.blp",
         Link = {
-            {qty = 2, text = "+45%攻击速度"},
-            {qty = 4, text = "+45%攻击速度;+80%风抗性"}
+            {qty = 2, text = "+25%攻击速度"},
+            {qty = 4, text = "+40%攻击速度;+50%风抗性"}
         }
     },
     {
@@ -185,7 +185,7 @@ towerRaces = {
         Link = {
             {qty = 2, text = "+1000减伤"},
             {qty = 3, text = "+400范围10%分裂"},
-            {qty = 4, text = "+500范围15%分裂"}
+            {qty = 4, text = "+500范围10%分裂"}
         }
     },
     {

@@ -224,7 +224,10 @@ for _, v in ipairs(abilities) do
                 end
             end
         end
-        if(v.ODK ~= nil and v.ODK == true)then
+        if(v.ODK == nil)then
+            v.ODK = false
+        end
+        if(v.ODK == true)then
             Ubertip = Ubertip .. hColor.red("|n！此技能仅在对抗有明显效果")
         end
         for _, s in ipairs(ABILITY_COLOR) do
@@ -305,6 +308,7 @@ for _, v in ipairs(abilities) do
                 WEIGHT = 0,
                 OVERLIE = 999,
                 TRIGGER_CALL = v.TRIGGER_CALL or nil,
+                ODK = v.ODK,
             }
             ?>
         call SaveStr(hash_myslk, StringHash("abilitiesItems"), <?=ab_item_index?>, "<?=string.addslashes(json.stringify(hitem))?>")

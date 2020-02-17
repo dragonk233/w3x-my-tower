@@ -173,7 +173,7 @@ towers_a = {
         moveHeight = 0.00,
         weapTp1 = "mbounce",
         Missileart = "Abilities\\Weapons\\GlaiveMissile\\GlaiveMissile.mdl",
-        cool1 = 2.7,
+        cool1 = 3.0,
         Primary = "AGI",
         abilList = {towerSpxKV["投刃弹射"]}
     },

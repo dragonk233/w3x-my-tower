@@ -257,7 +257,10 @@ onUnitItemsUesd = function(evtData)
         if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZGHOST") == true) then
             table.insert(tz, "邪鬼怨灵套装")
         end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZSWORD") == true) then
+        if
+            (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZSWORD") == true or
+                hdzapi.mapLv(hplayer.players[playerIndex]) >= 10)
+         then
             table.insert(tz, "出云剑仙套装")
         end
         if (#tz <= 0) then

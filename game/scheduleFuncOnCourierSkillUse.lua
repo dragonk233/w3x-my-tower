@@ -24,14 +24,16 @@ onCourierSkillUesd = function(evtData)
         curWave = game.rule.dk.wave[hplayer.index(cj.GetOwningPlayer(u))]
     end
     --
-    if (abilitiesSLK.Name == "火焰吐息") then
+    if (abilitiesSLK.Name == "拾取") then
+        hitem.pickRect(u, cj.GetUnitX(u), cj.GetUnitY(u), 2000, 2000)
+    elseif (abilitiesSLK.Name == "火焰吐息") then
         onCourierSkillUesdTTG(game.playerTower[playerIndex], abilitiesSLK.Name)
         hattr.set(
             game.playerTower[playerIndex],
             45,
             {
                 attack_damage_type = "+fire",
-                natural_fire = "+2.5"
+                natural_fire = "+10"
             }
         )
         heffect.bindUnit(
@@ -47,7 +49,7 @@ onCourierSkillUesd = function(evtData)
             45,
             {
                 attack_damage_type = "+ice",
-                natural_ice = "+3.5",
+                natural_ice = "+10",
                 attack_debuff = {
                     add = {
                         {
@@ -91,9 +93,15 @@ onCourierSkillUesd = function(evtData)
         else
             hplayer.subGold(p, 750)
             local tarBLv = getBookPowLevel(curWave)
+            local bookID
+            if (game.rule.cur == "dk") then
+                bookID = table.random(game.thisOptionAbilityItem["blue"][tarBLv]).ITEM_ID
+            else
+                bookID = table.random(game.thisOptionAbilityItemNODK["blue"][tarBLv]).ITEM_ID
+            end
             hitem.create(
                 {
-                    itemId = table.random(game.thisOptionAbilityItem["blue"][tarBLv]).ITEM_ID,
+                    itemId = bookID,
                     whichUnit = u
                 }
             )
@@ -105,9 +113,15 @@ onCourierSkillUesd = function(evtData)
         else
             hplayer.subGold(p, 1250)
             local tarBLv = getBookPowLevel(curWave)
+            local bookID
+            if (game.rule.cur == "dk") then
+                bookID = table.random(game.thisOptionAbilityItem["yellow"][tarBLv]).ITEM_ID
+            else
+                bookID = table.random(game.thisOptionAbilityItemNODK["yellow"][tarBLv]).ITEM_ID
+            end
             hitem.create(
                 {
-                    itemId = table.random(game.thisOptionAbilityItem["yellow"][tarBLv]).ITEM_ID,
+                    itemId = bookID,
                     whichUnit = u
                 }
             )
@@ -119,9 +133,15 @@ onCourierSkillUesd = function(evtData)
         else
             hplayer.subGold(p, 2500)
             local tarBLv = getBookPowLevel(curWave)
+            local bookID
+            if (game.rule.cur == "dk") then
+                bookID = table.random(game.thisOptionAbilityItem["purple"][tarBLv]).ITEM_ID
+            else
+                bookID = table.random(game.thisOptionAbilityItemNODK["purple"][tarBLv]).ITEM_ID
+            end
             hitem.create(
                 {
-                    itemId = table.random(game.thisOptionAbilityItem["purple"][tarBLv]).ITEM_ID,
+                    itemId = bookID,
                     whichUnit = u
                 }
             )

@@ -5,6 +5,61 @@ local couriersSkillsIce = {}
 
 local couriers_abi = 0
 
+--一般闪烁
+local obj = slk.ability.AEbl:new("couriers_sk_blink_all")
+local Name = "闪烁"
+local Tip = "闪烁("..hColor.greenLight("Q")..")"
+obj.Name = Name
+obj.Tip = Tip
+obj.Hotkey = "Q"
+obj.Ubertip = "可以闪烁到地图的任何地方"
+obj.Buttonpos1 = 0
+obj.Buttonpos2 = 0
+obj.hero = 0
+obj.levels = 1
+obj.DataA1 = 99999
+obj.DataB1 = 0
+obj.Cool1 = 3
+obj.Cost1 = 0
+obj.Art = "ReplaceableTextures\\CommandButtons\\BTNBlink.blp"
+obj.SpecialArt = "Abilities\\Spells\\NightElf\\Blink\\BlinkCaster.mdl"
+obj.Areaeffectart = "Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl"
+table.insert(couriersSkills,obj:get_id())
+--一键拾取
+local obj = slk.ability.ANcl:new("couriers_sk_pick_all")
+local Name = "拾取"
+local Tip = "拾取("..hColor.greenLight("R")..")"
+obj.Order = "manaburn"
+obj.DataF1 = "manaburn"
+obj.Name = Name
+obj.Tip = Tip
+obj.Hotkey = "R"
+obj.Ubertip = "将附近地上的物品拾取到身上"
+obj.Buttonpos1 = 3
+obj.Buttonpos2 = 0
+obj.hero = 0
+obj.levels = 1
+obj.DataA1 = 0
+obj.DataB1 = 0
+obj.DataC1 = 1
+obj.DataD1 = 0.01
+obj.Cool1 = 1
+obj.Cost1 = 0
+obj.Art = "ReplaceableTextures\\CommandButtons\\BTNPickUpItem.blp"
+obj.CasterArt = ""
+obj.EffectArt = ""
+obj.TargetArt = ""
+local temp = {
+    Name = Name,
+    ABILITY_ID = obj:get_id(),
+}
+table.insert(couriersSkills,temp.ABILITY_ID)
+table.insert(couriersSkillsPhoenix,temp.ABILITY_ID)
+table.insert(couriersSkillsIce,temp.ABILITY_ID)
+couriers_abi = couriers_abi + 1
+?>
+call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
+<?
 --火凤凰闪烁
 local obj = slk.ability.AEbl:new("couriers_sk_blink_phoenix")
 local Name = "展翅"
@@ -19,7 +74,7 @@ obj.hero = 0
 obj.levels = 1
 obj.DataA1 = 99999
 obj.DataB1 = 0
-obj.Cool1 = 8
+obj.Cool1 = 2
 obj.Cost1 = 0
 obj.Art = "war3mapImported\\icon_ability_FireResistanceTotem_01.blp"
 obj.SpecialArt = "war3mapImported\\eff_different_liftoff.mdl"
@@ -72,7 +127,7 @@ obj.hero = 0
 obj.levels = 1
 obj.DataA1 = 99999
 obj.DataB1 = 0
-obj.Cool1 = 3
+obj.Cool1 = 1
 obj.Cost1 = 0
 obj.Art = "war3mapImported\\icon_ability_Atmospheric_shock.blp"
 obj.SpecialArt = "war3mapImported\\eff_different_liftoff.mdl"

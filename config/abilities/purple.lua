@@ -51,7 +51,7 @@ abilitiesPurple = {
         Name = "音速回击",
         Art = "war3mapImported\\icon_pas_Warrior_WeaponMastery.blp",
         Ubertip = "+{val#1}%攻击速度",
-        Val = {27.5}
+        Val = {25.5}
     },
     {
         Name = "疾风",
@@ -87,7 +87,7 @@ abilitiesPurple = {
         Name = "冰花炸裂",
         Art = "war3mapImported\\icon_pas_Ore_Cobalt.blp",
         Ubertip = "攻击敌人有25%触发冰花炸裂，范围敌人在7.5秒内被冻伤持续扣血并减少{val#1}点移动",
-        Val = {40}
+        Val = {30}
     },
     {
         Name = "天神加护",

@@ -1,7 +1,7 @@
 require "game.scheduleFuncOnBossBeDamage"
 require "game.scheduleFuncOnBossDead"
 -- 出兵(boss)
-bossGenLife = 800
+bossGenLife = 600
 bossGen = function(curWave)
     local boss = game.thisEnemysBoss[cj.GetRandomInt(1, game.thisEnemysBossLen)].UNIT_ID
     for k, v in pairs(game.pathPoint) do
@@ -24,7 +24,7 @@ bossGen = function(curWave)
                     life = "=" .. (bossGenLife * curWave),
                     move = "=130",
                     defend = "=" .. curWave * 2,
-                    toughness = "=" .. curWave * 20,
+                    toughness = "=" .. curWave * 15,
                     resistance = "=" .. curWave * 0.5,
                     avoid = "=" .. curWave * 0.18,
                     knocking_oppose = "=" .. curWave * 0.3,
@@ -56,5 +56,9 @@ bossGen = function(curWave)
         end
     end
     hmark.create("war3mapImported\\mark_boss_coming.blp", 4.00)
-    bossGenLife = bossGenLife + 285 + curWave * 3
+    if (game.rule.cur == "yb") then
+        bossGenLife = bossGenLife + 240
+    elseif (game.rule.cur == "hz") then
+        bossGenLife = bossGenLife + 300 + curWave * 3
+    end
 end

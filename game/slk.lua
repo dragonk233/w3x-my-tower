@@ -196,7 +196,16 @@ for i = 1, abilitiesItemQty, 1 do
     if (game.thisOptionAbilityItem[jv.ABILITY_COLOR][jv.ABILITY_LEVEL] == nil) then
         game.thisOptionAbilityItem[jv.ABILITY_COLOR][jv.ABILITY_LEVEL] = {}
     end
+    if (game.thisOptionAbilityItemNODK[jv.ABILITY_COLOR] == nil) then
+        game.thisOptionAbilityItemNODK[jv.ABILITY_COLOR] = {}
+    end
+    if (game.thisOptionAbilityItemNODK[jv.ABILITY_COLOR][jv.ABILITY_LEVEL] == nil) then
+        game.thisOptionAbilityItemNODK[jv.ABILITY_COLOR][jv.ABILITY_LEVEL] = {}
+    end
     table.insert(game.thisOptionAbilityItem[jv.ABILITY_COLOR][jv.ABILITY_LEVEL], jv)
+    if (jv.ODK ~= true) then
+        table.insert(game.thisOptionAbilityItemNODK[jv.ABILITY_COLOR][jv.ABILITY_LEVEL], jv)
+    end
 end
 
 --物品

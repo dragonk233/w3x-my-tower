@@ -6,13 +6,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNHex.blp",
         modelScale = 1.50,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 270,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 1,
-        COURIER_POWER = "E"
+        lumbercost = 1
     },
     {
         Name = "V5的螃蟹",
@@ -21,13 +18,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNSpiderCrab.blp",
         modelScale = 1.40,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 275,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 5,
-        COURIER_POWER = "E"
+        lumbercost = 5
     },
     {
         Name = "友爱的海豹",
@@ -36,13 +30,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNSeal.blp",
         modelScale = 1.30,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 275,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 5,
-        COURIER_POWER = "E"
+        lumbercost = 5
     },
     {
         Name = "狡猾的浣熊",
@@ -51,13 +42,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNRacoon.blp",
         modelScale = 1.30,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 300,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 10,
-        COURIER_POWER = "E"
+        lumbercost = 10
     },
     {
         Name = "冷静的绵羊",
@@ -66,13 +54,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNSheep.blp",
         modelScale = 1.50,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 350,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 15,
-        COURIER_POWER = "D"
+        lumbercost = 15
     },
     {
         Name = "卡呐诺企鹅",
@@ -81,13 +66,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNPenguin.blp",
         modelScale = 1.50,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 350,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 15,
-        COURIER_POWER = "D"
+        lumbercost = 15
     },
     {
         Name = "兔子兔子",
@@ -96,13 +78,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNCritterRabbit.blp",
         modelScale = 1.50,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 375,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 20,
-        COURIER_POWER = "C"
+        lumbercost = 20
     },
     {
         Name = "小饥鸡",
@@ -111,13 +90,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNCritterChicken.blp",
         modelScale = 1.40,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 375,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 20,
-        COURIER_POWER = "C"
+        lumbercost = 20
     },
     {
         Name = "宁静麋鹿",
@@ -126,13 +102,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNStag.blp",
         modelScale = 1.50,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 400,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 25,
-        COURIER_POWER = "B"
+        lumbercost = 25
     },
     {
         Name = "依诺吸吸",
@@ -141,13 +114,10 @@ couriers = {
         Art = "ReplaceableTextures\\CommandButtons\\BTNFelBoar.blp",
         modelScale = 1.40,
         scale = 1.20,
-        movetp = "foot",
         moveHeight = 0,
-        spd = 400,
         targType = "ground",
         armor = "Flesh",
-        lumbercost = 25,
-        COURIER_POWER = "B"
+        lumbercost = 25
     },
     {
         Name = "灵动的雪鹰",
@@ -161,8 +131,7 @@ couriers = {
         spd = 450,
         targType = "air",
         armor = "Flesh",
-        lumbercost = 30,
-        COURIER_POWER = "A"
+        lumbercost = 30
     },
     {
         Name = "信天！翁",
@@ -176,8 +145,7 @@ couriers = {
         spd = 475,
         targType = "air",
         armor = "Flesh",
-        lumbercost = 40,
-        COURIER_POWER = "S"
+        lumbercost = 40
     },
     {
         Name = "涅磐火凤凰",
@@ -191,8 +159,7 @@ couriers = {
         spd = 500,
         targType = "air",
         armor = "Ethereal",
-        lumbercost = 0,
-        COURIER_POWER = "SS"
+        lumbercost = 0
     },
     {
         Name = "冰戟剑灵",
@@ -206,7 +173,6 @@ couriers = {
         spd = 522,
         targType = "air",
         armor = "Ethereal",
-        lumbercost = 0,
-        COURIER_POWER = "SSS"
+        lumbercost = 0
     }
 }
