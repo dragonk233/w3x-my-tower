@@ -9,7 +9,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您的兵塔队伍获得神攻击特性并且攻击力提升500|n持续30秒",
+        ACTIVE = "令您的兵塔队伍获得神攻击特性并且攻击力提升500，命中率提升100%|n持续30秒",
         cooldown = 25,
         I_TYPE = "strategy"
     },
@@ -121,7 +121,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令所有玩家在一段时间内主塔收到随机伤害[500~1500]的黑色闪电打击10秒",
+        ACTIVE = "令所有玩家在一段时间内主塔收到随机伤害[500~1500]的黑色闪电打击10秒|n召唤的玩家受到伤害减半",
         cooldown = 25,
         I_TYPE = "strategy"
     },

@@ -183,6 +183,7 @@ cj.TriggerAddAction(
             hplayer.setLumber(hplayer.players[i], l)
             hmsg.echo00(hplayer.players[i], "^_^ 根据你的地图等级和游玩次数，你得到了" .. hColor.green(l) .. "个木头")
             dzSetPrestige(hplayer.players[i], true, false)
+            hplayer.setAllowCameraDistance(hplayer.players[i], true)
         end
         htime.setInterval(
             5,
@@ -369,9 +370,9 @@ cj.TriggerAddAction(
                                                         game.pathPoint[next][2][1],
                                                         game.pathPoint[next][2][2]
                                                     )
-                                                    towerAttackDebug(k)
                                                 end
                                             end
+                                            towerAttackDebug(k)
                                         else
                                             -- 前段路途
                                             cj.IssuePointOrderById(
@@ -529,9 +530,9 @@ cj.TriggerAddAction(
                                                         game.pathPoint[next][2][1],
                                                         game.pathPoint[next][2][2]
                                                     )
-                                                    towerAttackDebug(k)
                                                 end
                                             end
+                                            towerAttackDebug(k)
                                         else
                                             -- 前段路途
                                             cj.IssuePointOrderById(
@@ -744,9 +745,9 @@ cj.TriggerAddAction(
                 end
                 --删除多余的防御商店
                 if (game.rule.cur ~= "dk") then
-                    hunit.del(THIS_SHOPS[10])
-                    hunit.del(THIS_SHOPS[11])
-                    hunit.del(THIS_SHOPS[12])
+                    hunit.del(THIS_SHOPS[1])
+                    hunit.del(THIS_SHOPS[2])
+                    hunit.del(THIS_SHOPS[3])
                 end
                 -- 基本信使
                 for k, v in pairs(game.courierPoint) do
@@ -757,23 +758,13 @@ cj.TriggerAddAction(
                         u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
                     else
                         u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
-                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "PHOENIX") == true) then
-                            hitem.create(
-                                {
-                                    itemId = game.courierItem["涅磐火凤凰"].ITEM_ID,
-                                    whichUnit = u
-                                }
-                            )
-                        end
-                        if (u ~= nil and hdzapi.hasMallItem(hplayer.players[k], "ICEMON") == true) then
-                            hitem.create(
-                                {
-                                    itemId = game.courierItem["冰戟剑灵"].ITEM_ID,
-                                    whichUnit = u
-                                }
-                            )
-                        end
                         if (u ~= nil) then
+                            hitem.create(
+                                {
+                                    itemId = game.effectModelItem["超次元信使召唤符"].ITEM_ID,
+                                    whichUnit = u
+                                }
+                            )
                             local flag = false
                             if (hdzapi.hasMallItem(hplayer.players[k], "TZFIRE") == true) then
                                 flag = true
@@ -787,7 +778,10 @@ cj.TriggerAddAction(
                                 flag = true
                             elseif (hdzapi.hasMallItem(hplayer.players[k], "TZGHOST") == true) then
                                 flag = true
-                            elseif (hdzapi.hasMallItem(hplayer.players[k], "TZSWORD") == true) then
+                            elseif
+                                (hdzapi.hasMallItem(hplayer.players[k], "TZSWORD") == true or
+                                    hdzapi.mapLv(hplayer.players[k]) >= 10)
+                             then
                                 flag = true
                             end
                             if (flag == true) then

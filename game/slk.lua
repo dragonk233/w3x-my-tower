@@ -57,12 +57,6 @@ for i = 1, game.courierLen, 1 do
     local jv = json.parse(v)
     hRuntime.register.unit(jv)
     game.courier[jv.INDEX] = jv
-    --
-    v = cj.LoadStr(cg.hash_myslk, cj.StringHash("couriersItems"), i)
-    jv = json.parse(v)
-    jv.I_TYPE = "courier"
-    hRuntime.register.item(jv)
-    game.courierItem[jv.INDEX] = jv
 end
 --信使技能
 local len = cj.LoadInteger(cg.hash_myslk, cj.StringHash("couriers_ab"), -1)
@@ -218,7 +212,13 @@ for i = 1, itemQty, 1 do
         if (game.thisComboItem[jv.LEVEL] == nil) then
             game.thisComboItem[jv.LEVEL] = {}
         end
+        if (game.thisComboItemNODK[jv.LEVEL] == nil) then
+            game.thisComboItemNODK[jv.LEVEL] = {}
+        end
         table.insert(game.thisComboItem[jv.LEVEL], jv)
+        if (jv.ODK ~= true) then
+            table.insert(game.thisComboItemNODK[jv.LEVEL], jv)
+        end
     elseif (jv.I_TYPE == "equip") then
         if (game.thisEquipItem[jv.LEVEL] == nil) then
             game.thisEquipItem[jv.LEVEL] = {}

@@ -15,7 +15,8 @@ table.insert(
         ATTR = {
             natural_poison = "+150",
             natural_poison_oppose = "+150"
-        }
+        },
+        ODK = true
     }
 )
 table.insert(
@@ -32,7 +33,8 @@ table.insert(
         ATTR = {
             natural_insect = "+150",
             natural_insect_oppose = "+150"
-        }
+        },
+        ODK = true
     }
 )
 table.insert(
@@ -49,7 +51,8 @@ table.insert(
         ATTR = {
             natural_dragon = "+150",
             natural_dragon_oppose = "+150"
-        }
+        },
+        ODK = true
     }
 )
 table.insert(
@@ -66,7 +69,8 @@ table.insert(
         ATTR = {
             natural_fire = "+150",
             natural_fire_oppose = "+150"
-        }
+        },
+        ODK = true
     }
 )
 table.insert(
@@ -83,7 +87,8 @@ table.insert(
         ATTR = {
             natural_dark = "+150",
             natural_dark_oppose = "+150"
-        }
+        },
+        ODK = true
     }
 )
 table.insert(
@@ -100,7 +105,8 @@ table.insert(
         ATTR = {
             natural_ghost = "+150",
             natural_ghost_oppose = "+150"
-        }
+        },
+        ODK = true
     }
 )
 for ilv = 1, 9 do
@@ -118,7 +124,8 @@ for ilv = 1, 9 do
             lv = clv,
             ATTR = {
                 luck = "+" .. ilv
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -134,7 +141,8 @@ for ilv = 1, 9 do
             lv = 1 + clv,
             ATTR = {
                 defend = "+" .. (15 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -150,7 +158,8 @@ for ilv = 1, 9 do
             lv = 2 + clv,
             ATTR = {
                 invincible = "+" .. (0.05 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -166,6 +175,24 @@ for ilv = 1, 9 do
             lv = 3 + clv,
             ATTR = {
                 life = "+" .. (500 * ilv)
+            },
+            ODK = true
+        }
+    )
+    table.insert(
+        items_combo,
+        {
+            Name = items_combo_pre .. "匕首[提炼" .. ilv .. "次]",
+            Description = "朴实无华的小刀",
+            Art = "war3mapImported\\icon_item_ThrowingKnife_02.blp",
+            powerup = 0,
+            sellable = 1,
+            pawnable = 1,
+            droppable = 1,
+            lv = 4 + clv,
+            ATTR = {
+                attack_green = "+" .. (444 * ilv),
+                agi_green = "+" .. (105 * ilv)
             }
         }
     )
@@ -215,7 +242,8 @@ for ilv = 1, 9 do
             lv = 6 + clv,
             ATTR = {
                 avoid = "+" .. (8 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -231,7 +259,8 @@ for ilv = 1, 9 do
             lv = 7 + clv,
             ATTR = {
                 resistance = "+" .. (10 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -266,7 +295,8 @@ for ilv = 1, 9 do
             ATTR = {
                 defend = "+" .. (30 * ilv),
                 resistance = "+" .. (5.5 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -283,7 +313,8 @@ for ilv = 1, 9 do
             ATTR = {
                 life = "+" .. (1000 * ilv),
                 str_green = "+" .. (220 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -317,7 +348,8 @@ for ilv = 1, 9 do
             PASSIVE = "被攻击时有10%几率隐身3秒",
             ATTR = {
                 avoid = "+" .. (8.5 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -376,9 +408,9 @@ for ilv = 1, 9 do
     table.insert(
         items_combo,
         {
-            Name = items_combo_pre .. "匕首[提炼" .. ilv .. "次]",
-            Description = "朴实无华的小刀",
-            Art = "war3mapImported\\icon_item_ThrowingKnife_02.blp",
+            Name = items_combo_pre .. "闪光匕首[提炼" .. ilv .. "次]",
+            Description = "发光的小刀",
+            Art = "war3mapImported\\icon_item_ThrowingKnife_03.blp",
             powerup = 0,
             sellable = 1,
             pawnable = 1,
@@ -404,7 +436,8 @@ for ilv = 1, 9 do
             ATTR = {
                 defend = "+" .. (50 * ilv),
                 swim_oppose = "+" .. (10 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -463,7 +496,8 @@ for ilv = 1, 9 do
             ATTR = {
                 defend = "+" .. (55 * ilv),
                 damage_rebound = "+" .. (0.02 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -571,7 +605,8 @@ for ilv = 1, 9 do
                 defend = "+" .. (75 * ilv),
                 damage_rebound = "+" .. (0.02 * ilv),
                 damage_rebound_oppose = "+" .. (9 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -627,7 +662,8 @@ for ilv = 1, 9 do
                 defend = "+" .. (110 * ilv),
                 toughness = "+" .. (300 * ilv),
                 resistance = "+" .. (5 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -644,7 +680,8 @@ for ilv = 1, 9 do
             ATTR = {
                 life = "+" .. (4000 * ilv),
                 life_back = "+" .. (0.03 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -875,7 +912,8 @@ for ilv = 1, 9 do
             ATTR = {
                 aim = "+" .. (7 * ilv),
                 defend = "+" .. (230 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -893,7 +931,8 @@ for ilv = 1, 9 do
                 attack_damage_type = "+metal",
                 aim = "+" .. (8 * ilv),
                 defend = "+" .. (255 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -1087,7 +1126,8 @@ for ilv = 1, 9 do
                 attack_damage_type = "+wood",
                 natural_wood = "+" .. (25 * ilv),
                 life = "+" .. (30000 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(
@@ -1104,7 +1144,8 @@ for ilv = 1, 9 do
             ATTR = {
                 resistance = "+" .. (13 * ilv),
                 toughness = "+" .. (3000 * ilv)
-            }
+            },
+            ODK = true
         }
     )
     table.insert(

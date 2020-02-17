@@ -64,14 +64,5 @@ shops = {
         file = "buildings\\human\\ArcaneVault\\ArcaneVault",
         modelScale = 0.80,
         scale = 2.70
-    },
-    {
-        Name = "信使之笼",
-        pathTex = "PathTextures\\8x8SimpleSolid.tga",
-        abilList = "Aneu,Avul,Apit",
-        file = "buildings\\human\\GryphonAviary\\GryphonAviary",
-        modelScale = 0.80,
-        scale = 3.60,
-        Sellitems = string.implode(",", couriersShopIds)
     }
 }

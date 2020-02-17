@@ -132,7 +132,7 @@ MAYBE_AI = {
                         "出云剑仙套装"
                     }
                     local turn = math.random(1, #models)
-                    hplayer.addGoldRatio(hplayer.players[playerIndex], (8 - turn) * 7, 0)
+                    hplayer.addGoldRatio(hplayer.players[playerIndex], (8 - turn) * 8, 0)
                     local btnIdx = models[turn]
                     local tips
                     if (btnIdx == "金碧辉煌套装") then
@@ -178,13 +178,12 @@ MAYBE_AI = {
                         for _, v in ipairs(game.playerTowerEffectModel[playerIndex]) do
                             hskill.add(game.playerTower[playerIndex], v, 0)
                         end
-                        hmsg.echo(cj.GetPlayerName(hplayer.players[playerIndex]) .. "装扮了：" .. hColor.yellow(tips))
                     end
                 end
             )
             --到处乱走
             htime.setInterval(
-                math.random(4, 13),
+                math.random(6, 13),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)
@@ -211,7 +210,7 @@ MAYBE_AI = {
             )
             --技能
             htime.setInterval(
-                math.random(5, 8),
+                math.random(4, 7),
                 function(t, td)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         htime.delDialog(td)
@@ -259,7 +258,7 @@ MAYBE_AI = {
                                 MAYBE_AI.item(playerIndex, it, "stone")
                             end
                         end
-                    elseif (gold >= 7500 and math.random(1, 6) == 4) then
+                    elseif (gold >= 8000 and math.random(1, 6) == 4) then
                         --物品
                         local tarTower
                         if (hitem.getEmptySlot(game.playerTower[playerIndex]) > 0) then
@@ -297,7 +296,7 @@ MAYBE_AI = {
                         )
                         hplayer.subGold(hplayer.players[playerIndex], tarLv * 1500)
                         tarTower = nil
-                    elseif (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 5) == 3) then
+                    elseif (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 10) == 3) then
                         --天赋
                         hplayer.subGold(hplayer.players[playerIndex], 900)
                         subTowerLevel(playerIndex)

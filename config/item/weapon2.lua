@@ -52,7 +52,7 @@ items_weapon2 = {
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_speed = "+22"
+            attack_speed = "+17.5"
         }
     },
     {

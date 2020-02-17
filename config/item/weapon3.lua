@@ -93,7 +93,7 @@ items_weapon3 = {
                 {
                     attr = "attack_speed",
                     odds = 15,
-                    val = 18,
+                    val = 13,
                     during = 3
                 }
             }
@@ -186,7 +186,7 @@ items_weapon3 = {
                 {
                     attr = "attack_speed",
                     odds = 20,
-                    val = 28,
+                    val = 18,
                     during = 3
                 }
             }

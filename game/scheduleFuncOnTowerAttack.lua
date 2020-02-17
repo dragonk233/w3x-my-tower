@@ -855,8 +855,8 @@ onTowerAttack = function(evtData)
                                 filter = function()
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end,
-                                tokenArrow = "war3mapImported\\eff_Firebolt_Major.mdl",
-                                tokenArrowScale = 1.00,
+                                tokenArrow = "Abilities\\Weapons\\FireBallMissile\\FireBallMissile.mdl",
+                                tokenArrowScale = 1.50,
                                 tokenArrowOpacity = 1,
                                 tokenArrowHeight = 100,
                                 damageMovement = 0,

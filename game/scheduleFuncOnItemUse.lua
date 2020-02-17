@@ -123,17 +123,6 @@ onUnitItemsUesd = function(evtData)
                 end
             end
         )
-    elseif (itemSLK.I_TYPE == "courier") then
-        --信使
-        local playerIndex = hplayer.index(p)
-        local u = createMyCourier(playerIndex, game.courier[itemSLK.INDEX].UNIT_ID)
-        hmsg.echo(
-            hColor.sky(cj.GetPlayerName(p)) .. "召唤了信使：[" .. hColor.yellow(game.courier[itemSLK.INDEX].Name) .. "]"
-        )
-        if (u ~= nil and cj.GetLocalPlayer() == p) then
-            cj.ClearSelection()
-            cj.SelectUnit(u, true)
-        end
     elseif (itemSLK.I_TYPE == "ability") then
         local abils = game.thisOptionAbility[itemSLK.INDEX]
         if (abils == nil or table.len(abils) <= 0) then
@@ -235,103 +224,136 @@ onUnitItemsUesd = function(evtData)
                 heffect.toUnit("war3mapImported\\eff_burst_round_purple.mdl", game.playerTower[playerIndex], 0)
             end
         end
-    elseif (itemSLK.I_TYPE == "effect_model" and itemSLK.INDEX == "超次元套装礼包") then
+    elseif (itemSLK.I_TYPE == "effect_model") then
         local playerIndex = hplayer.index(p)
-        --选择套装
-        local tz = {}
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZFIRE") == true) then
-            table.insert(tz, "炎炎焚烧套装")
-        end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZGOLD") == true) then
-            table.insert(tz, "金碧辉煌套装")
-        end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZBLOOD") == true) then
-            table.insert(tz, "血色炽热套装")
-        end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZDRAGON") == true) then
-            table.insert(tz, "青龙碧翼套装")
-        end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZDARK") == true) then
-            table.insert(tz, "迷幻黑紫套装")
-        end
-        if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZGHOST") == true) then
-            table.insert(tz, "邪鬼怨灵套装")
-        end
-        if
-            (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZSWORD") == true or
-                hdzapi.mapLv(hplayer.players[playerIndex]) >= 10)
-         then
-            table.insert(tz, "出云剑仙套装")
-        end
-        if (#tz <= 0) then
-            hmsg.echo00(hplayer.players[playerIndex], "您尚未拥有任何套装~")
-            return
-        end
-        hdialog.create(
-            hplayer.players[playerIndex],
-            {
-                title = "选择专属套装",
-                buttons = tz
-            },
-            function(btnIdx)
-                --清空之前的装扮
-                if (game.playerTowerEffectModel[playerIndex] == nil) then
-                    game.playerTowerEffectModel[playerIndex] = {}
-                end
-                if (#game.playerTowerEffectModel[playerIndex] > 0) then
-                    for _, v in ipairs(game.playerTowerEffectModel[playerIndex]) do
-                        hskill.del(game.playerTower[playerIndex], v, 0)
-                    end
-                    game.playerTowerEffectModel[playerIndex] = {}
-                end
-                local tips
-                if (btnIdx == "金碧辉煌套装") then
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀翅膀特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀公正特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀天堂特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀精灵特效"].ABILITY_ID)
-                    tips = "金耀翅膀、公正光辉、天堂圣音、金色精灵"
-                elseif (btnIdx == "迷幻黑紫套装") then
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑翅膀特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑迷紫特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑迷阵特效"].ABILITY_ID)
-                    tips = "幻黑翅膀、迷紫幻象、迷惑雾阵"
-                elseif (btnIdx == "血色炽热套装") then
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色翅膀特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色漩涡特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色符文特效"].ABILITY_ID)
-                    tips = "血色翅膀、赤红漩涡、祭奠符文"
-                elseif (btnIdx == "青龙碧翼套装") then
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["青空之翼特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["游龙欢悦特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["青龙吐息特效"].ABILITY_ID)
-                    tips = "青空之翼、游龙欢悦、龙腾吐息"
-                elseif (btnIdx == "邪鬼怨灵套装") then
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼怨灵特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼阵法特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼符文特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼之眼特效"].ABILITY_ID)
-                    tips = "邪鬼怨灵、邪鬼阵法、超度符文、逗趣鬼眼"
-                elseif (btnIdx == "炎炎焚烧套装") then
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎旋风特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎领域特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎燃烧特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎三球特效"].ABILITY_ID)
-                    tips = "炎炎旋风、烧灼圈圈、焚烧之火、鬼马火球"
-                elseif (btnIdx == "出云剑仙套装") then
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云飞剑特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云气场特效"].ABILITY_ID)
-                    table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云飞龙特效"].ABILITY_ID)
-                    tips = "盘旋飞剑、灵剑气场、飞龙在天"
-                end
-                if (#game.playerTowerEffectModel[playerIndex] > 0) then
-                    for _, v in ipairs(game.playerTowerEffectModel[playerIndex]) do
-                        hskill.add(game.playerTower[playerIndex], v, 0)
-                    end
-                    hmsg.echo00(hplayer.players[playerIndex], "成功装扮了：" .. hColor.yellow(tips))
-                end
+        if (itemSLK.INDEX == "超次元信使召唤符") then
+            --选择信使
+            local xs = {}
+            if (u ~= nil and hdzapi.hasMallItem(hplayer.players[playerIndex], "ICEMON") == true) then
+                table.insert(xs, "冰戟剑灵")
             end
-        )
+            if (u ~= nil and hdzapi.hasMallItem(hplayer.players[playerIndex], "PHOENIX") == true) then
+                table.insert(xs, "涅磐火凤凰")
+            end
+            table.insert(xs, "呆萌的青蛙")
+            table.insert(xs, "冷静的绵羊")
+            table.insert(xs, "小饥鸡")
+            table.insert(xs, "依诺吸吸")
+            table.insert(xs, "灵动的雪鹰")
+            hdialog.create(
+                hplayer.players[playerIndex],
+                {
+                    title = "选择你的信使",
+                    buttons = xs
+                },
+                function(btnIdx)
+                    local u = createMyCourier(playerIndex, game.courier[btnIdx].UNIT_ID)
+                    hmsg.echo(
+                        hColor.sky(cj.GetPlayerName(p)) .. "召唤了信使：[" .. hColor.yellow(game.courier[btnIdx].Name) .. "]"
+                    )
+                    if (u ~= nil and cj.GetLocalPlayer() == p) then
+                        cj.ClearSelection()
+                        cj.SelectUnit(u, true)
+                    end
+                end
+            )
+        elseif (itemSLK.INDEX == "超次元套装礼包") then
+            --选择套装
+            local tz = {}
+            if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZFIRE") == true) then
+                table.insert(tz, "炎炎焚烧套装")
+            end
+            if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZGOLD") == true) then
+                table.insert(tz, "金碧辉煌套装")
+            end
+            if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZBLOOD") == true) then
+                table.insert(tz, "血色炽热套装")
+            end
+            if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZDRAGON") == true) then
+                table.insert(tz, "青龙碧翼套装")
+            end
+            if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZDARK") == true) then
+                table.insert(tz, "迷幻黑紫套装")
+            end
+            if (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZGHOST") == true) then
+                table.insert(tz, "邪鬼怨灵套装")
+            end
+            if
+                (hdzapi.hasMallItem(hplayer.players[playerIndex], "TZSWORD") == true or
+                    hdzapi.mapLv(hplayer.players[playerIndex]) >= 10)
+             then
+                table.insert(tz, "出云剑仙套装")
+            end
+            if (#tz <= 0) then
+                hmsg.echo00(hplayer.players[playerIndex], "您尚未拥有任何套装~")
+                return
+            end
+            hdialog.create(
+                hplayer.players[playerIndex],
+                {
+                    title = "选择专属套装",
+                    buttons = tz
+                },
+                function(btnIdx)
+                    --清空之前的装扮
+                    if (game.playerTowerEffectModel[playerIndex] == nil) then
+                        game.playerTowerEffectModel[playerIndex] = {}
+                    end
+                    if (#game.playerTowerEffectModel[playerIndex] > 0) then
+                        for _, v in ipairs(game.playerTowerEffectModel[playerIndex]) do
+                            hskill.del(game.playerTower[playerIndex], v, 0)
+                        end
+                        game.playerTowerEffectModel[playerIndex] = {}
+                    end
+                    local tips
+                    if (btnIdx == "金碧辉煌套装") then
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀翅膀特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀公正特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀天堂特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["金耀精灵特效"].ABILITY_ID)
+                        tips = "金耀翅膀、公正光辉、天堂圣音、金色精灵"
+                    elseif (btnIdx == "迷幻黑紫套装") then
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑翅膀特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑迷紫特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["幻黑迷阵特效"].ABILITY_ID)
+                        tips = "幻黑翅膀、迷紫幻象、迷惑雾阵"
+                    elseif (btnIdx == "血色炽热套装") then
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色翅膀特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色漩涡特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["血色符文特效"].ABILITY_ID)
+                        tips = "血色翅膀、赤红漩涡、祭奠符文"
+                    elseif (btnIdx == "青龙碧翼套装") then
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["青空之翼特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["游龙欢悦特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["青龙吐息特效"].ABILITY_ID)
+                        tips = "青空之翼、游龙欢悦、龙腾吐息"
+                    elseif (btnIdx == "邪鬼怨灵套装") then
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼怨灵特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼阵法特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼符文特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["邪鬼之眼特效"].ABILITY_ID)
+                        tips = "邪鬼怨灵、邪鬼阵法、超度符文、逗趣鬼眼"
+                    elseif (btnIdx == "炎炎焚烧套装") then
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎旋风特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎领域特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎燃烧特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["炎炎三球特效"].ABILITY_ID)
+                        tips = "炎炎旋风、烧灼圈圈、焚烧之火、鬼马火球"
+                    elseif (btnIdx == "出云剑仙套装") then
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云飞剑特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云气场特效"].ABILITY_ID)
+                        table.insert(game.playerTowerEffectModel[playerIndex], game.effectModel["出云飞龙特效"].ABILITY_ID)
+                        tips = "盘旋飞剑、灵剑气场、飞龙在天"
+                    end
+                    if (#game.playerTowerEffectModel[playerIndex] > 0) then
+                        for _, v in ipairs(game.playerTowerEffectModel[playerIndex]) do
+                            hskill.add(game.playerTower[playerIndex], v, 0)
+                        end
+                        hmsg.echo00(hplayer.players[playerIndex], "成功装扮了：" .. hColor.yellow(tips))
+                    end
+                end
+            )
+        end
     elseif (itemSLK.I_TYPE == "strategy") then
         --战略物品
         local playerIndex = hplayer.index(p)
@@ -435,11 +457,16 @@ onUnitItemsUesd = function(evtData)
                         end
                         for pi = 1, 4, 1 do
                             if (hplayer.getStatus(hplayer.players[pi]) == hplayer.player_status.gaming) then
-                                local dmg = math.random(500, 1500)
+                                local dmg = 0
+                                if (playerIndex == pi) then
+                                    dmg = math.random(250, 750)
+                                else
+                                    dmg = math.random(500, 1500)
+                                end
                                 hunit.subCurLife(game.playerTower[pi], dmg)
                                 hmsg.echo(
                                     hColor.sky(cj.GetPlayerName(hplayer.players[pi])) ..
-                                        "被黑色悍马雷劈掉了" .. hColor.redLight(dmg) .. "血"
+                                        "被黑色悍马雷劈掉了" .. hColor.red(dmg) .. "血"
                                 )
                                 heffect.toUnit("war3mapImported\\eff_lighting_black.mdl", game.playerTower[pi], 0)
                             end

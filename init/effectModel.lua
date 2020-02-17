@@ -118,7 +118,15 @@ local abEffects = {
 local abEffectsItem = {
     {
         Name = "超次元套装礼包", 
-        Art = "war3mapImported\\icon_item_Holiday_Christmas_Present_01",
+        Art = "war3mapImported\\icon_item_Holiday_Christmas_Present_01.blp",
+        Tips = "打开[超次元套装礼包]选择套装",
+        UberTip = "打开["..hColor.yellow("超次元套装礼包").."]选择特效套装|n礼包可重复使用，同时只有1套套装特效生效"
+    },
+    {
+        Name = "超次元信使召唤符", 
+        Art = "war3mapImported\\icon_item_Fabric_Moonshroud.blp",
+        Tips = "打开[超次元信使召唤符]召唤信使",
+        UberTip = "打开["..hColor.yellow("超次元信使召唤符").."]选择信使|n召唤符可重复使用，同时只有1只信使生效"
     },
 }
 
@@ -146,10 +154,10 @@ end
 
 for k,v in pairs(abEffectsItem) do
     local iobj = slk.item.gold:new("tse_items_" .. v.Name)
-    iobj.Name = "[礼包][" .. v.Name .. "]"
-    iobj.Tip = "打开礼包[" .. v.Name .. "]选择特效套装"
-    iobj.UberTip = "打开礼包["..hColor.yellow(v.Name).."]选择特效套装|n礼包可重复使用，同时只有1套套装特效生效"
-    iobj.Description = "打开礼包["..hColor.yellow(v.Name).."]选择特效套装|n礼包可重复使用，同时只有1套套装特效生效"
+    iobj.Name = v.Name
+    iobj.Tip = v.Tips
+    iobj.UberTip = v.UberTip
+    iobj.Description = v.UberTip
     iobj.Art = v.Art
     iobj.scale = 1.10
     iobj.selSize = 80

@@ -68,45 +68,8 @@ for i, v in ipairs(couriers) do
     end
     v.INDEX = v.Name
     v.UNIT_ID = obj:get_id()
-    -- 信使物品
-    local iobj = slk.item.gold:new("couriers_items_" .. v.Name)
-    iobj.Name = "[信使][" .. v.Name .. "]"
-    iobj.Tip = "购买信使：[" .. v.Name .. "]"
-    iobj.UberTip = Ubertip
-    iobj.Description = Ubertip
-    iobj.Art = v.Art
-    iobj.scale = 1.10
-    iobj.selSize = 80
-    iobj.goldcost = 0
-    iobj.lumbercost = v.lumbercost or 0
-    iobj.sellable = 1
-    iobj.cooldownID = UsedID.Courier
-    iobj.stockRegen = 120
-    iobj.file = "war3mapImported\\item_ScrollCyan.mdl"
-    iobj.abilList = UsedID.Courier
-    iobj.perishable = 1
-    iobj.powerup = 0
-    iobj.stockMax = 1
-    iobj.stockRegen = 10
-    local hitem = {
-        INDEX = v.Name,
-        Name = v.Name,
-        Art = v.Art,
-        goldcost = 0,
-        lumbercost = 0,
-        perishable = 1,
-        powerup = 0,
-        WEIGHT = 0,
-        OVERLIE = 999,
-        ITEM_ID = iobj:get_id(),
-        UNIT_ID = v.unitID,
-        }
-    if(#couriersShopIds < 12)then
-        table.insert(couriersShopIds,hitem.ITEM_ID)
-    end
     ?>
     call SaveStr(hash_myslk, StringHash("couriers"), <?=i?>, "<?=string.addslashes(json.stringify(v))?>")
-    call SaveStr(hash_myslk, StringHash("couriersItems"), <?=i?>, "<?=string.addslashes(json.stringify(hitem))?>")
     <?
 end
 ?>

@@ -69,7 +69,7 @@ abilitiesPurple = {
         Name = "胆颤心惊",
         Art = "war3mapImported\\icon_pas_Rogue_SurpriseAttack.blp",
         Ubertip = "攻击敌人减少它{val#1}点护甲并进入{val#2}出血状态，持续5秒",
-        Val = {4, 160}
+        Val = {4, 220}
     },
     {
         Name = "害怕",

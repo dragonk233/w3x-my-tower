@@ -237,6 +237,33 @@ onCourierSkillUesd = function(evtData)
             htextTag.style(htextTag.create2Unit(u, "至少要2件装备", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
             return
         end
+        local downLv = math.floor(itemLv * 0.8)
+        if (downLv < 1) then
+            downLv = 1
+        elseif (downLv > 200) then
+            downLv = 200
+        end
+        local comboIt = {}
+        for cbi = downLv, itemLv, 1 do
+            if (game.rule.cur == "dk") then
+                if (game.thisComboItem[cbi] ~= nil) then
+                    for _, civ in pairs(game.thisComboItem[cbi]) do
+                        table.insert(comboIt, civ)
+                    end
+                end
+            else
+                if (game.thisComboItemNODK[cbi] ~= nil) then
+                    for _, civ in pairs(game.thisComboItemNODK[cbi]) do
+                        table.insert(comboIt, civ)
+                    end
+                end
+            end
+        end
+        if (#comboIt <= 0) then
+            htextTag.style(htextTag.create2Unit(u, "升华失败了", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
+            itemSlkCache = nil
+            return
+        end
         local need = 500 * itemQty
         if (hplayer.getGold(p) < need) then
             htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
@@ -247,24 +274,6 @@ onCourierSkillUesd = function(evtData)
                 hitem.del(tempIt, 0)
             end
             itemSlkCache = nil
-            local downLv = math.floor(itemLv * 0.8)
-            if (downLv < 1) then
-                downLv = 1
-            elseif (downLv > 200) then
-                downLv = 200
-            end
-            local comboIt = {}
-            for cbi = downLv, itemLv, 1 do
-                if (game.thisComboItem[cbi] ~= nil) then
-                    for _, civ in pairs(game.thisComboItem[cbi]) do
-                        table.insert(comboIt, civ)
-                    end
-                end
-            end
-            if (#comboIt <= 0) then
-                htextTag.style(htextTag.create2Unit(u, "升华失败了,恨啊!", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
-                return
-            end
             local randIt = table.random(comboIt)
             comboIt = nil
             hitem.create(

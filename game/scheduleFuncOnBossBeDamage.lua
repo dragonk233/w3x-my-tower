@@ -10,12 +10,22 @@ bossBeDamage = function(evtData)
         )
         heffect.bindUnit("Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl", u, "head", 2.50)
         heffect.bindUnit("Abilities\\Weapons\\AvengerMissile\\AvengerMissile.mdl", u, "origin", 2.50)
-        hattr.set(
-            u,
-            1.50,
-            {
-                move = "+" .. math.random(110, 150)
-            }
-        )
+        if (game.rule.cur == "yb") then
+            hattr.set(
+                u,
+                1.50,
+                {
+                    move = "+" .. math.random(60, 90)
+                }
+            )
+        elseif (game.rule.cur == "hz") then
+            hattr.set(
+                u,
+                1.50,
+                {
+                    move = "+" .. math.random(120, 150)
+                }
+            )
+        end
     end
 end

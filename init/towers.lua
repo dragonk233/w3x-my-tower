@@ -176,7 +176,7 @@ for tlv, tow in pairs(towers) do
                 v.INT = math.floor(tempPower * 0.06 * math.random(8,11))
                 tempAttack = tempAttack + 20 * math.random()
             end
-            tempAttack = tempAttack * ((v.cool1 or 2.00) / (1.30+math.random()))
+            tempAttack = tempAttack * 1.4
             if(tempAttack < 0)then
                 tempAttack = 0
             end

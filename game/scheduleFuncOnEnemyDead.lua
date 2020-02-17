@@ -173,6 +173,7 @@ end
 enemyDeadYB = function(evtData)
     game.currentMon = game.currentMon - 1
     if (evtData.killer ~= nil) then
+        haward.forUnitGold(evtData.killer, 1)
         haward.forGroupExp(evtData.killer, 27 * game.rule.yb.wave)
     end
     enemyDeadAward(evtData.triggerUnit, evtData.killer)
@@ -182,6 +183,7 @@ end
 enemyDeadHZ = function(evtData)
     game.currentMon = game.currentMon - 1
     if (evtData.killer ~= nil) then
+        haward.forUnitGold(evtData.killer, 1)
         haward.forGroupExp(evtData.killer, 23 * game.rule.hz.wave)
     end
     enemyDeadAward(evtData.triggerUnit, evtData.killer)

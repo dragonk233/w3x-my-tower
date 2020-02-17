@@ -113,6 +113,7 @@ for _, item in ipairs(items) do
         v.INDEX = v.Name
         v.LEVEL = lv
         v.ITEM_ID = obj:get_id()
+        v.OVERLIE = 3
         if(shopName ~= "combo")then
             v.I_TYPE = v.I_TYPE or "equip"
             table.insert(itemsShop[shopName], v.ITEM_ID)
