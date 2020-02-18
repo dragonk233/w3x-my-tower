@@ -753,7 +753,7 @@ cj.TriggerAddAction(
                 for k, v in pairs(game.courierPoint) do
                     -- 给予科技
                     if (game.rule.cur == "dk") then
-                        cj.SetPlayerTechResearched(hplayer.players[k], string.char2id(game.odkTecId), 1)
+                        cj.SetPlayerTechResearched(hplayer.players[k], game.odkTecId, 1)
                     end
                     -- 基本信使
                     local u
