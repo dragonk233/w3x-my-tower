@@ -11,7 +11,8 @@ items_mystery = {
         droppable = 1,
         ACTIVE = "令您的主兵塔恢复所有生命！",
         cooldown = 0,
-        I_TYPE = "strategy"
+        I_TYPE = "strategy",
+        ODK = true
     },
     {
         Name = "法术大师手套",

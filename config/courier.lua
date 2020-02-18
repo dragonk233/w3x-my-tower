@@ -62,7 +62,7 @@ couriers = {
         lumbercost = 30
     },
     {
-        Name = "涅磐火凤凰",
+        Name = "涅槃火凤凰",
         unitSound = "Phoenix",
         file = "units\\human\\phoenix\\phoenix",
         Art = "war3mapImported\\icon_unit_Phoenix.blp",

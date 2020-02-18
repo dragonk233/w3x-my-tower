@@ -135,10 +135,22 @@ onTowerAttack = function(evtData)
                         hunit.kill(targetUnit, 0)
                     end
                 end
-                if (name == "烈焰风暴") then
+                if (name == "烈焰风暴" or name == "帝释天") then
                     local val = v.Val or {0}
                     if (math.random(1, 100) <= val[1]) then
                         onTowerAttackTtg(u, name)
+                        local damageType = {CONST_DAMAGE_TYPE.magic}
+                        if (name == "烈焰风暴") then
+                            damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.fire}
+                        elseif (name == "帝释天") then
+                            damageType = {
+                                CONST_DAMAGE_TYPE.magic,
+                                CONST_DAMAGE_TYPE.physical,
+                                CONST_DAMAGE_TYPE.real,
+                                CONST_DAMAGE_TYPE.light,
+                                CONST_DAMAGE_TYPE.god
+                            }
+                        end
                         hskill.damageRange(
                             {
                                 sourceUnit = u,
@@ -149,7 +161,7 @@ onTowerAttack = function(evtData)
                                 times = v.Val[5],
                                 effect = v.Val[6],
                                 effectSingle = v.Val[7],
-                                damageType = {CONST_DAMAGE_TYPE.magic, CONST_DAMAGE_TYPE.fire},
+                                damageType = damageType,
                                 filter = function()
                                     return his.alive(cj.GetFilterUnit()) and his.enemy(cj.GetFilterUnit(), u)
                                 end
@@ -835,7 +847,7 @@ onTowerAttack = function(evtData)
                                         eu,
                                         4,
                                         {
-                                            move = "-15"
+                                            move = "-3"
                                         }
                                     )
                                 end

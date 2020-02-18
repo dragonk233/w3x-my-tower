@@ -81,16 +81,16 @@ TOWER_ABLI_SPX = {
         Art = "war3mapImported\\icon_pas_Ankh.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {20, 100},
+        Val = {30, 500},
         ODK = true
     },
     {
-        Name = "涅磐",
+        Name = "涅槃",
         Ubertip = "受到攻击时，有{val#1}%几率恢复{val#2}生命",
         Art = "war3mapImported\\icon_pas_MarkOfFire.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
-        Val = {20, 250},
+        Val = {35, 1000},
         ODK = true
     },
     {
@@ -1557,7 +1557,7 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             50,
-            500,
+            750,
             "war3mapImported\\eff_fireball_impact_gun.mdl"
         }
     },
@@ -1569,7 +1569,7 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             50,
-            500,
+            800,
             "war3mapImported\\eff_fireball_impact_gun.mdl"
         }
     },
@@ -1832,7 +1832,7 @@ TOWER_ABLI_SPX = {
     {
         Name = "炎魔",
         Ubertip = "{val#1}%几率召唤不可控的{val#2}协助作战{val#3}秒，攻击力相当于本体的{val#4}%",
-        Art = "war3mapImported\\icon_pas_WandSkull.blp",
+        Art = "war3mapImported\\icon_pas_Burning_Hell.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {

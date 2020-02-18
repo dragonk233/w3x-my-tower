@@ -296,11 +296,6 @@ MAYBE_AI = {
                         )
                         hplayer.subGold(hplayer.players[playerIndex], tarLv * 1500)
                         tarTower = nil
-                    elseif (gold >= 1000 and game.playerTowerLevel[playerIndex] < 9 and math.random(1, 10) == 3) then
-                        --天赋
-                        hplayer.subGold(hplayer.players[playerIndex], 900)
-                        subTowerLevel(playerIndex)
-                        addTowerLevel(playerIndex)
                     end
                 end
             )

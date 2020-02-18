@@ -233,7 +233,7 @@ onUnitItemsUesd = function(evtData)
                 table.insert(xs, "冰戟剑灵")
             end
             if (u ~= nil and hdzapi.hasMallItem(hplayer.players[playerIndex], "PHOENIX") == true) then
-                table.insert(xs, "涅磐火凤凰")
+                table.insert(xs, "涅槃火凤凰")
             end
             table.insert(xs, "呆萌的青蛙")
             table.insert(xs, "冷静的绵羊")
@@ -417,17 +417,17 @@ onUnitItemsUesd = function(evtData)
                         u,
                         30,
                         {
-                            natural_ghost = "+50"
+                            natural_ghost = "+100"
                         }
                     )
                 end
             end
             ts = nil
         elseif (ii == "圣杯切符") then
-            hplayer.addGoldRatio(p, 15, 90)
+            hplayer.addGoldRatio(p, 30, 90)
             heffect.bindUnit("war3mapImported\\eff_Retribution.mdl", game.playerTower[playerIndex], "origin", 90)
         elseif (ii == "陋室切符") then
-            hplayer.addExpRatio(p, 20, 90)
+            hplayer.addExpRatio(p, 35, 90)
             heffect.bindUnit(
                 "war3mapImported\\eff_MysticVeil_Portrait.mdl",
                 game.playerTower[playerIndex],
@@ -435,7 +435,7 @@ onUnitItemsUesd = function(evtData)
                 90
             )
         elseif (ii == "王室切符") then
-            hplayer.addGoldRatio(p, 10, 90)
+            hplayer.addGoldRatio(p, 25, 90)
             hplayer.addSellRatio(p, 25, 90)
             heffect.bindUnit(
                 "war3mapImported\\eff_Aura_Runica_Con_Fuego.mdl",

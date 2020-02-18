@@ -59,7 +59,7 @@ for i, v in ipairs(couriers) do
     obj.Builds = ""
     obj.fused = 0
     local x = "AInv,"
-    if(v.Name == "涅磐火凤凰")then
+    if(v.Name == "涅槃火凤凰")then
         obj.abilList = x .. string.implode(',',couriersSkillsPhoenix)
     elseif(v.Name == "冰戟剑灵")then
         obj.abilList = x .. string.implode(',',couriersSkillsIce)

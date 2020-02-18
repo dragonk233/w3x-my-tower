@@ -11,7 +11,7 @@ onTowerDead = function(evtData)
         {
             register = false,
             whichPlayer = cj.GetOwningPlayer(u),
-            unitId = game.couriers_defeat,
+            unitId = game.couriersDefeat,
             x = game.towerPoint[index][1],
             y = game.towerPoint[index][2]
         }

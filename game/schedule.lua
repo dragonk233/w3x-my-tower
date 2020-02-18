@@ -53,7 +53,7 @@ cj.TriggerAddAction(
 
 --兵塔位置控制
 htime.setInterval(
-    60,
+    40,
     function()
         hplayer.loop(
             function(p, pi)
@@ -65,6 +65,12 @@ htime.setInterval(
                         local x = game.towerPoint[pi][1] + game.towerLinkOffset[i][1]
                         local y = game.towerPoint[pi][2] + game.towerLinkOffset[i][2]
                         cj.SetUnitPosition(game.playerTowerLink[pi][i].unit, x, y)
+                    end
+                    if
+                        (game.playerTowerLink[pi] == nil or game.playerTowerLink[pi][i] == nil or
+                            his.alive(game.playerTowerLink[pi][i].unit) == false)
+                     then
+                        createMyTowerLink(pi, i)
                     end
                 end
             end
@@ -743,19 +749,18 @@ cj.TriggerAddAction(
                         end
                     )
                 end
-                --删除多余的防御商店
-                if (game.rule.cur ~= "dk") then
-                    hunit.del(THIS_SHOPS[1])
-                    hunit.del(THIS_SHOPS[2])
-                    hunit.del(THIS_SHOPS[3])
-                end
-                -- 基本信使
+                --
                 for k, v in pairs(game.courierPoint) do
+                    -- 给予科技
+                    if (game.rule.cur == "dk") then
+                        cj.SetPlayerTechResearched(hplayer.players[k], string.char2id(game.odkTecId), 1)
+                    end
+                    -- 基本信使
                     local u
                     if (game.rule.dk.ai == true and his.playing(hplayer.players[k]) == false) then
                         hplayer.setStatus(hplayer.players[k], hplayer.player_status.gaming)
                         cj.SetPlayerName(hplayer.players[k], "AI#" .. k)
-                        u = createMyCourier(k, game.courier["涅磐火凤凰"].UNIT_ID)
+                        u = createMyCourier(k, game.courier["涅槃火凤凰"].UNIT_ID)
                     else
                         u = createMyCourier(k, game.courier["呆萌的青蛙"].UNIT_ID)
                         if (u ~= nil) then
@@ -827,6 +832,7 @@ cj.TriggerAddAction(
                                 value = "攻速",
                                 icon = "ReplaceableTextures\\CommandButtons\\BTNImprovedUnholyStrength.blp"
                             },
+                            {value = "命中", icon = "ReplaceableTextures\\CommandButtons\\BTNSteelRanged.blp"},
                             {value = "增幅", icon = "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp"}
                         }
                         if (game.rule.cur == "dk") then
@@ -871,6 +877,7 @@ cj.TriggerAddAction(
                                 local attack = "-"
                                 local attack_speed = "-"
                                 local damage_extent = "-"
+                                local aim = "-"
                                 local tlv = "-"
                                 local plv = "-"
                                 if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
@@ -881,6 +888,7 @@ cj.TriggerAddAction(
                                         math.floor(hattr.get(tower, "attack_white") + hattr.get(tower, "attack_green"))
                                     attack_speed = math.round(hattr.get(tower, "attack_speed")) .. "%"
                                     damage_extent = math.round(hattr.get(tower, "damage_extent")) .. "%"
+                                    aim = math.round(hattr.get(tower, "aim")) .. "%"
                                     tlv = "Lv." .. hhero.getCurLevel(tower)
                                     plv = game.playerTowerLevel[pi]
                                 end
@@ -893,6 +901,7 @@ cj.TriggerAddAction(
                                     {value = plv, icon = nil},
                                     {value = attack, icon = nil},
                                     {value = attack_speed, icon = nil},
+                                    {value = aim, icon = nil},
                                     {value = damage_extent, icon = nil}
                                 }
                                 if (game.rule.cur == "dk") then

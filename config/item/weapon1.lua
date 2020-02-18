@@ -59,6 +59,62 @@ items_weapon1 = {
         }
     },
     {
+        Name = "巨人力量腰带",
+        Description = "大个子食人鬼的腰带",
+        goldcost = 2300,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNBelt.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            str_green = "+400"
+        }
+    },
+    {
+        Name = "奎尔萨拉斯之靴",
+        Description = "奎尔萨拉斯的鞋子",
+        goldcost = 2300,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNBoots.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            agi_green = "+400"
+        }
+    },
+    {
+        Name = "法师长袍",
+        Description = "中级魔法师的斗篷",
+        goldcost = 2300,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNRobeOfTheMagi.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            int_green = "+400"
+        }
+    },
+    {
+        Name = "加速手套",
+        Description = "由于增加了摩擦力，可以提速",
+        goldcost = 7500,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNGlove.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            attack_speed = "+17.5"
+        }
+    },
+    {
         Name = "生锈的攻击之爪",
         Description = "铁制的爪子，锈迹斑斑",
         goldcost = 1000,
@@ -112,63 +168,6 @@ items_weapon1 = {
         droppable = 1,
         ATTR = {
             attack_green = "+800"
-        }
-    },
-    {
-        Name = "破旧的短剑",
-        Description = "陈旧的铁制短剑，沉重且不太锋利",
-        goldcost = 16000,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNSteelMelee.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            attack_green = "+1400"
-        }
-    },
-    {
-        Name = "短剑",
-        Description = "铁制短剑，沉重但尚算锋利",
-        goldcost = 20000,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNSteelMelee.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            attack_green = "+1750"
-        }
-    },
-    {
-        Name = "寒铁短剑",
-        Description = "寒铁打造的短剑，较轻但依然锋利",
-        goldcost = 32000,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNThoriumMelee.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            attack_green = "+2100"
-        }
-    },
-    {
-        Name = "赤铁短剑",
-        Description = "赤铜打造的剑，称手并如火般犀利",
-        goldcost = 60000,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNArcaniteMelee.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            attack_damage_type = "+fire",
-            attack_green = "+3300"
         }
     }
 }

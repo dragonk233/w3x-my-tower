@@ -11,7 +11,8 @@ items_defend2 = {
         droppable = 1,
         ATTR = {
             defend = "+130"
-        }
+        },
+        ODK = true
     },
     {
         Name = "封魔指环",
@@ -25,7 +26,8 @@ items_defend2 = {
         droppable = 1,
         ATTR = {
             resistance = "+35"
-        }
+        },
+        ODK = true
     },
     {
         Name = "失去光芒的闪避护符",
@@ -39,7 +41,8 @@ items_defend2 = {
         droppable = 1,
         ATTR = {
             avoid = "+20"
-        }
+        },
+        ODK = true
     },
     {
         Name = "闪避护符",
@@ -53,7 +56,8 @@ items_defend2 = {
         droppable = 1,
         ATTR = {
             avoid = "+31"
-        }
+        },
+        ODK = true
     },
     {
         Name = "冰原护盾",
@@ -68,7 +72,8 @@ items_defend2 = {
         ATTR = {
             defend = "+460",
             natural_ice_oppose = "+40"
-        }
+        },
+        ODK = true
     },
     {
         Name = "救火护盾",
@@ -83,7 +88,8 @@ items_defend2 = {
         ATTR = {
             defend = "+460",
             natural_fire_oppose = "+40"
-        }
+        },
+        ODK = true
     },
     {
         Name = "绝缘护盾",
@@ -98,7 +104,8 @@ items_defend2 = {
         ATTR = {
             defend = "+460",
             natural_thunder_oppose = "+40"
-        }
+        },
+        ODK = true
     },
     {
         Name = "收风布袋",
@@ -113,7 +120,8 @@ items_defend2 = {
         ATTR = {
             defend = "+460",
             natural_wind_oppose = "+40"
-        }
+        },
+        ODK = true
     },
     {
         Name = "古之忍耐姜歌",
@@ -129,7 +137,8 @@ items_defend2 = {
             life = "+3000",
             agi_green = "+1200",
             toughness = "+700"
-        }
+        },
+        ODK = true
     },
     {
         Name = "振奋战鼓",
@@ -145,7 +154,8 @@ items_defend2 = {
             life = "+5000",
             str_green = "+1800",
             toughness = "+850"
-        }
+        },
+        ODK = true
     },
     {
         Name = "护身符",
@@ -159,7 +169,8 @@ items_defend2 = {
         droppable = 1,
         ATTR = {
             life = "+10000"
-        }
+        },
+        ODK = true
     },
     {
         Name = "珍宝护身符",
@@ -173,6 +184,7 @@ items_defend2 = {
         droppable = 1,
         ATTR = {
             life = "+15000"
-        }
+        },
+        ODK = true
     }
 }

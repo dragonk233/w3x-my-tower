@@ -67,7 +67,7 @@ towerRaces = {
     {
         Name = "巨魔",
         Ubertip = "和精灵曾经有过一场生死之战",
-        Text = "攻击时+7.5%攻击速度，持续5秒",
+        Text = "+10%攻击速度",
         Art = "war3mapImported\\icon_race_troll.blp",
         Link = {
             {qty = 2, text = "+10%攻击速度"},

@@ -530,7 +530,7 @@ towers_ss = {
     },
     {
         Name = "异兽·朱雀",
-        Ubertip = "涅磐重生的东方神兽，诞生于熊熊烈焰之中",
+        Ubertip = "涅槃重生的东方神兽，诞生于熊熊烈焰之中",
         unitSound = "Phoenix",
         file = "units\\human\\phoenix\\phoenix",
         Art = "war3mapImported\\icon_unit_Phoenix.blp",
@@ -543,7 +543,7 @@ towers_ss = {
         weapTp1 = "msplash",
         cool1 = 2.00,
         Primary = "STR",
-        abilList = {towerSpxKV["溅射攻击"], towerSpxKV["涅磐"]}
+        abilList = {towerSpxKV["溅射攻击"], towerSpxKV["涅槃"]}
     },
     {
         Name = "地精·炼金术士·卡奈",

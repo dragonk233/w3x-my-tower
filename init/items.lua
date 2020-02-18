@@ -1,20 +1,39 @@
 -- items
 
+--ODK科技
+local obj = slk.upgrade.Rhde:new("tec_odk")
+obj.EditorSuffix = "#h-lua"
+obj.Name = "对战模式"
+obj.Hotkey = ""
+obj.Tip = ""
+obj.Ubertip = ""
+obj.Buttonpos1 = 0
+obj.Buttonpos2 = 0
+obj.Art = "ReplaceableTextures\\CommandButtons\\BTNControlMagic.blp"
+local odk_tec_id = obj:get_id()
+?>
+call SaveInteger(hash_myslk, StringHash("odk_tec_id"), -1, '<?=odk_tec_id?>')
+<?
+
 itemsIndex = 0
 itemsShop = {}
 
 local items = {
     {
-        "冷兵器磨坊",
+        "巫毒商店",
         items_weapon1,
     },
     {
-        "火器铁铺",
+        "冷兵器磨坊",
         items_weapon2,
     },
     {
-        "科技车间",
+        "火器铁铺",
         items_weapon3,
+    },
+    {
+        "科技车间",
+        items_weapon4,
     },
     {
         "营地",
@@ -100,6 +119,9 @@ for _, item in ipairs(items) do
         obj.droppable = v.dropable or 1
         obj.pickRandom = 1
         obj.uses = 1
+        if(v.ODK == true)then
+            obj.Requires = odk_tec_id
+        end
         local len = #itemsShop[shopName]
         if (shopName ~= "combo" and len < 12) then
             len = len + 1

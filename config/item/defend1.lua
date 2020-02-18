@@ -13,7 +13,8 @@ items_defend1 = {
             defend = "+10",
             resistance = "+3.5",
             toughness = "+30"
-        }
+        },
+        ODK = true
     },
     {
         Name = "圆盾",
@@ -27,7 +28,8 @@ items_defend1 = {
         droppable = 1,
         ATTR = {
             toughness = "+100"
-        }
+        },
+        ODK = true
     },
     {
         Name = "丑丑玩偶",
@@ -41,7 +43,8 @@ items_defend1 = {
         droppable = 1,
         ATTR = {
             exp_ratio = "+10"
-        }
+        },
+        ODK = true
     },
     {
         Name = "贵族圆环",
@@ -55,7 +58,8 @@ items_defend1 = {
         droppable = 1,
         ATTR = {
             defend = "+35"
-        }
+        },
+        ODK = true
     },
     {
         Name = "灵巧头巾",
@@ -70,7 +74,8 @@ items_defend1 = {
         ATTR = {
             avoid = "+4",
             resistance = "+6"
-        }
+        },
+        ODK = true
     },
     {
         Name = "蜘蛛戒指",
@@ -85,7 +90,8 @@ items_defend1 = {
         ATTR = {
             attack_damage_type = "+insect",
             natural_insect = "+3"
-        }
+        },
+        ODK = true
     },
     {
         Name = "蜘蛛丝饰针",
@@ -100,7 +106,8 @@ items_defend1 = {
         ATTR = {
             attack_damage_type = "+insect",
             natural_insect = "+6"
-        }
+        },
+        ODK = true
     },
     {
         Name = "古怪雕像",
@@ -115,7 +122,8 @@ items_defend1 = {
         ATTR = {
             attack_damage_type = "+soil",
             natural_soil = "+6.5"
-        }
+        },
+        ODK = true
     },
     {
         Name = "雄狮之戒",
@@ -130,7 +138,8 @@ items_defend1 = {
         ATTR = {
             life = "+1000",
             str_green = "+1300"
-        }
+        },
+        ODK = true
     },
     {
         Name = "大法师戒指",
@@ -146,7 +155,8 @@ items_defend1 = {
             resistance = "+11",
             toughness = "+400",
             int_green = "+1300"
-        }
+        },
+        ODK = true
     },
     {
         Name = "恢复戒指",
@@ -160,7 +170,8 @@ items_defend1 = {
         droppable = 1,
         ATTR = {
             life_back = "+0.4"
-        }
+        },
+        ODK = true
     },
     {
         Name = "火焰风衣",
@@ -175,6 +186,7 @@ items_defend1 = {
         ATTR = {
             attack_damage_type = "+fire",
             natural_fire = "+30"
-        }
+        },
+        ODK = true
     }
 }

@@ -167,6 +167,7 @@ couriers_abi = couriers_abi + 1
 call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
 --其他例牌技能
+
 --吞兵塔石
 local obj = slk.ability.ANcl:new("couriers_sk_eat")
 local Name = "兵塔石吞噬"
@@ -203,16 +204,16 @@ couriers_abi = couriers_abi + 1
 ?>
 call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
---技能书·蓝
-local obj = slk.ability.ANcl:new("couriers_sk_book_blue")
-local Name = "呼唤技能书·蓝"
-local Tip = "呼唤技能书·蓝("..hColor.greenLight("S")..") - "..hColor.yellow("750黄金")
-obj.Order = "acidbomb"
-obj.DataF1 = "acidbomb"
+--技能吞噬
+local obj = slk.ability.ANcl:new("couriers_sk_switch_gift")
+local Name = "技能吞噬"
+local Tip = "技能吞噬("..hColor.greenLight("S")..") - "..hColor.sky("免费")
+obj.Order = "ancestralspirit"
+obj.DataF1 = "ancestralspirit"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "S"
-obj.Ubertip = "可随机获得一本蓝色的技能书"
+obj.Ubertip = "吞噬技能书得到提升天赋的可能|n吞噬的技能书越多，成功的几率越大|n如果主兵塔已经9级天赋则会自动洗辅助塔的天赋"
 obj.Buttonpos1 = 1
 obj.Buttonpos2 = 1
 obj.hero = 0
@@ -224,8 +225,8 @@ obj.DataD1 = 0.01
 obj.DataE1 = 0
 obj.Cool1 = 0
 obj.Cost1 = 0
-obj.Art = "war3mapImported\\icon_item_Relics_LibramofGrace.blp"
-obj.CasterArt = "Abilities\\Spells\\Items\\AIma\\AImaTarget.mdl"
+obj.Art = "war3mapImported\\icon_ability_Elder_Seal.blp"
+obj.CasterArt = "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl"
 obj.EffectArt = ""
 obj.TargetArt = ""
 local temp = {
@@ -239,16 +240,23 @@ couriers_abi = couriers_abi + 1
 ?>
 call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
---技能书·黄
-local obj = slk.ability.ANcl:new("couriers_sk_book_yellow")
-local Name = "呼唤技能书·黄"
-local Tip = "呼唤技能书·黄("..hColor.greenLight("D")..") - "..hColor.yellow("1250黄金")
-obj.Order = "acolyteharvest"
-obj.DataF1 = "acolyteharvest"
+--木换金
+local obj = slk.ability.ANcl:new("couriers_sk_l2g")
+local Name = "开心金箱子"
+local Tip = "开心金箱子("..hColor.greenLight("D")..") - "..hColor.green("30木头")
+obj.Order = "ancestralspirittarget"
+obj.DataF1 = "ancestralspirittarget"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "D"
-obj.Ubertip = "可随机获得一本黄色的技能书"
+obj.Ubertip = "花费30木头即可来一次开心抽金箱子哦~"
+    .. "|n"..hColor.green("木头免费的哟：每局玩都累计：地图等级+过关数")
+    .. "|n"..hColor.green("对战模式胜利者更有额外100木头(AI也有哦~)")
+    .. "|n"..hColor.redLight("特等赏：黄金8888")
+    .. "|n"..hColor.yellow("一等赏：黄金1888")
+    .. "|n"..hColor.yellowLight("二等赏：黄金888")
+    .. "|n"..hColor.greenLight("三等赏：黄金388")
+    .. "|n"..hColor.skyLight("安慰奖：谢谢惠顾 ^_^")
 obj.Buttonpos1 = 2
 obj.Buttonpos2 = 1
 obj.hero = 0
@@ -260,8 +268,8 @@ obj.DataD1 = 0.01
 obj.DataE1 = 0
 obj.Cool1 = 0
 obj.Cost1 = 0
-obj.Art = "war3mapImported\\icon_item_Relics_LibramofHope.blp"
-obj.CasterArt = "Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl"
+obj.Art = "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp"
+obj.CasterArt = "Abilities\\Spells\\Items\\ResourceItems\\ResourceEffectTarget.mdl"
 obj.EffectArt = ""
 obj.TargetArt = ""
 local temp = {
@@ -275,16 +283,16 @@ couriers_abi = couriers_abi + 1
 ?>
 call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
---技能书·紫
-local obj = slk.ability.ANcl:new("couriers_sk_book_purple")
-local Name = "呼唤技能书·紫"
-local Tip = "呼唤技能书·紫("..hColor.greenLight("F")..") - "..hColor.yellow("2500黄金")
-obj.Order = "antimagicshell"
-obj.DataF1 = "antimagicshell"
+--装备合并升华
+local obj = slk.ability.ANcl:new("couriers_sk_item_mix")
+local Name = "装备升华"
+local Tip = "装备升华("..hColor.greenLight("F")..") - "..hColor.yellow("[物件数x500]黄金")
+obj.Order = "animatedead"
+obj.DataF1 = "animatedead"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "F"
-obj.Ubertip = "可随机获得一本紫色的技能书"
+obj.Ubertip = "将信使身上物品评级合并为1件新的物品|n物品必须大于等于2件以上才可合并(包含同种类)|n"..hColor.yellow("合并的物品在商店不可能售卖|n合并的物品不太值钱|n合并不等同于变强")
 obj.Buttonpos1 = 3
 obj.Buttonpos2 = 1
 obj.hero = 0
@@ -296,8 +304,8 @@ obj.DataD1 = 0.01
 obj.DataE1 = 0
 obj.Cool1 = 0
 obj.Cost1 = 0
-obj.Art = "war3mapImported\\icon_item_Relics_LibramofTruth.blp"
-obj.CasterArt = "Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl"
+obj.Art = "war3mapImported\\icon_item_Jewelry_Necklace_27.blp"
+obj.CasterArt = "war3mapImported\\eff_thunder_power_generation2.mdl"
 obj.EffectArt = ""
 obj.TargetArt = ""
 local temp = {
@@ -311,6 +319,7 @@ couriers_abi = couriers_abi + 1
 ?>
 call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
+
 --召唤新兵塔
 local obj = slk.ability.ANcl:new("couriers_sk_new_tower")
 local Name = "召唤新兵塔"
@@ -347,16 +356,16 @@ couriers_abi = couriers_abi + 1
 ?>
 call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
---洗天赋
-local obj = slk.ability.ANcl:new("couriers_sk_switch_gift")
-local Name = "洗天赋"
-local Tip = "洗天赋("..hColor.greenLight("X")..") - "..hColor.yellow("1000黄金")
-obj.Order = "ancestralspirit"
-obj.DataF1 = "ancestralspirit"
+--技能书·蓝
+local obj = slk.ability.ANcl:new("couriers_sk_book_blue")
+local Name = "呼唤技能书·蓝"
+local Tip = "呼唤技能书·蓝("..hColor.greenLight("X")..") - "..hColor.yellow("750黄金")
+obj.Order = "acidbomb"
+obj.DataF1 = "acidbomb"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "X"
-obj.Ubertip = "可随机洗出Lv0~9级的天赋|n天赋影响基础攻击和三围的数值|n * 有可能比当前还差的天赋"
+obj.Ubertip = "可随机获得一本蓝色的技能书"
 obj.Buttonpos1 = 1
 obj.Buttonpos2 = 2
 obj.hero = 0
@@ -368,8 +377,8 @@ obj.DataD1 = 0.01
 obj.DataE1 = 0
 obj.Cool1 = 0
 obj.Cost1 = 0
-obj.Art = "war3mapImported\\icon_ability_Elder_Seal.blp"
-obj.CasterArt = "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl"
+obj.Art = "war3mapImported\\icon_item_Relics_LibramofGrace.blp"
+obj.CasterArt = "Abilities\\Spells\\Items\\AIma\\AImaTarget.mdl"
 obj.EffectArt = ""
 obj.TargetArt = ""
 local temp = {
@@ -383,23 +392,16 @@ couriers_abi = couriers_abi + 1
 ?>
 call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
---木换金
-local obj = slk.ability.ANcl:new("couriers_sk_l2g")
-local Name = "开心金箱子"
-local Tip = "开心金箱子("..hColor.greenLight("C")..") - "..hColor.green("30木头")
-obj.Order = "ancestralspirittarget"
-obj.DataF1 = "ancestralspirittarget"
+--技能书·黄
+local obj = slk.ability.ANcl:new("couriers_sk_book_yellow")
+local Name = "呼唤技能书·黄"
+local Tip = "呼唤技能书·黄("..hColor.greenLight("C")..") - "..hColor.yellow("1250黄金")
+obj.Order = "acolyteharvest"
+obj.DataF1 = "acolyteharvest"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "C"
-obj.Ubertip = "花费30木头即可来一次开心抽金箱子哦~"
-    .. "|n"..hColor.green("木头免费的哟：每局玩都累计：地图等级+过关数")
-    .. "|n"..hColor.green("对战模式胜利者更有额外100木头(AI也有哦~)")
-    .. "|n"..hColor.redLight("特等赏：黄金8888")
-    .. "|n"..hColor.yellow("一等赏：黄金1888")
-    .. "|n"..hColor.yellowLight("二等赏：黄金888")
-    .. "|n"..hColor.greenLight("三等赏：黄金388")
-    .. "|n"..hColor.skyLight("安慰奖：谢谢惠顾 ^_^")
+obj.Ubertip = "可随机获得一本黄色的技能书"
 obj.Buttonpos1 = 2
 obj.Buttonpos2 = 2
 obj.hero = 0
@@ -411,8 +413,8 @@ obj.DataD1 = 0.01
 obj.DataE1 = 0
 obj.Cool1 = 0
 obj.Cost1 = 0
-obj.Art = "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp"
-obj.CasterArt = "Abilities\\Spells\\Items\\ResourceItems\\ResourceEffectTarget.mdl"
+obj.Art = "war3mapImported\\icon_item_Relics_LibramofHope.blp"
+obj.CasterArt = "Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl"
 obj.EffectArt = ""
 obj.TargetArt = ""
 local temp = {
@@ -426,16 +428,16 @@ couriers_abi = couriers_abi + 1
 ?>
 call SaveStr(hash_myslk, StringHash("couriers_ab"), <?=couriers_abi?>, "<?=string.addslashes(json.stringify(temp))?>")
 <?
---装备合并升华
-local obj = slk.ability.ANcl:new("couriers_sk_item_mix")
-local Name = "装备升华"
-local Tip = "装备升华("..hColor.greenLight("V")..") - "..hColor.yellow("[物件数x500]黄金")
-obj.Order = "animatedead"
-obj.DataF1 = "animatedead"
+--技能书·紫
+local obj = slk.ability.ANcl:new("couriers_sk_book_purple")
+local Name = "呼唤技能书·紫"
+local Tip = "呼唤技能书·紫("..hColor.greenLight("V")..") - "..hColor.yellow("2500黄金")
+obj.Order = "antimagicshell"
+obj.DataF1 = "antimagicshell"
 obj.Name = Name
 obj.Tip = Tip
 obj.Hotkey = "V"
-obj.Ubertip = "将信使身上物品评级合并为1件新的物品|n物品必须大于等于2件以上才可合并(包含同种类)|n"..hColor.yellow("合并的物品在商店不可能售卖|n合并的物品不太值钱|n合并不等同于变强")
+obj.Ubertip = "可随机获得一本紫色的技能书"
 obj.Buttonpos1 = 3
 obj.Buttonpos2 = 2
 obj.hero = 0
@@ -447,8 +449,8 @@ obj.DataD1 = 0.01
 obj.DataE1 = 0
 obj.Cool1 = 0
 obj.Cost1 = 0
-obj.Art = "war3mapImported\\icon_item_Jewelry_Necklace_27.blp"
-obj.CasterArt = "war3mapImported\\eff_thunder_power_generation2.mdl"
+obj.Art = "war3mapImported\\icon_item_Relics_LibramofTruth.blp"
+obj.CasterArt = "Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl"
 obj.EffectArt = ""
 obj.TargetArt = ""
 local temp = {

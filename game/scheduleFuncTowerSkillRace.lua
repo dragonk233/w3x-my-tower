@@ -157,11 +157,7 @@ addTowerSkillsRaceSingleAttr = function(u)
             u,
             0,
             {
-                attack_buff = {
-                    add = {
-                        {attr = "attack_speed", odds = 100, val = 7.5, during = 5}
-                    }
-                }
+                attack_speed = "+10"
             }
         )
     elseif (race == "牛头人") then
@@ -797,7 +793,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
                     addTowerSkillsRaceAttrStack,
                     function(t)
                         htime.delTimer(t)
-                        addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack - addTowerSkillsRaceAttrClock + 0.05
+                        addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack - addTowerSkillsRaceAttrClock - 0.05
                         if (his.alive(v)) then
                             hattr.set(v, 0, mixAttrs.diff.sub)
                         end

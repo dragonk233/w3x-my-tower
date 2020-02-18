@@ -160,18 +160,84 @@ onCourierSkillUesd = function(evtData)
                 }
             )
         end
-    elseif (abilitiesSLK.Name == "洗天赋") then
-        if (game.playerTowerLevel[playerIndex] >= 9) then
-            htextTag.style(htextTag.create2Unit(u, "最好的天赋哦，别错洗啦~", 7, "ccffcc", 1, 1.5, 50), "scale", 0, 0.05)
-            return
+    elseif (abilitiesSLK.Name == "技能吞噬") then
+        local lvUpQty = 0
+        for ti = 0, 5, 1 do
+            local it = cj.UnitItemInSlot(u, ti)
+            if (it ~= nil) then
+                local itemSLK = hslk_global.itemsKV[hitem.getId(it)]
+                if (itemSLK.I_TYPE == "ability") then
+                    lvUpQty = lvUpQty + hitem.getCharges(it)
+                    hitem.del(it, 0)
+                end
+            end
         end
-        if (hplayer.getGold(p) < 1000) then
-            htextTag.style(htextTag.create2Unit(u, "不够金币呢~", 7, "ff3939", 1, 1.5, 50), "scale", 0, 0.05)
-            return
+        if (lvUpQty > 0) then
+            local full9 = true
+            local target
+            local targetLi = 0
+            if (game.playerTowerLevel[playerIndex] < 9) then
+                full9 = false
+                target = game.playerTower[playerIndex]
+            end
+            if (target == nil) then
+                for li = 1, 4, 1 do
+                    local linkUnit = game.playerTowerLink[playerIndex][li].unit
+                    if
+                        (linkUnit ~= nil and his.locust(linkUnit) == false and
+                            game.playerTowerLink[playerIndex][li].tower_level < 9)
+                     then
+                        full9 = false
+                        target = game.playerTowerLink[playerIndex][li].unit
+                        targetLi = li
+                        break
+                    end
+                end
+            end
+            if (full9 == true) then
+                htextTag.style(htextTag.create2Unit(u, "全队已满9级天赋，技能书已被售卖~", 7, "ccffcc", 1, 1.5, 50), "scale", 0, 0.05)
+                hplayer.addGold(p, 30 * lvUpQty)
+            else
+                local lockLv = 0
+                for vi = 1, lvUpQty, 1 do
+                    local l = 0
+                    if (math.random(1, 6) == 1) then
+                        l = 0
+                    elseif (math.random(1, 5) == 1) then
+                        l = 1
+                    elseif (math.random(1, 4) == 1) then
+                        l = 2
+                    elseif (math.random(1, 3) == 1) then
+                        l = 3
+                    elseif (math.random(1, 3) == 1) then
+                        l = 4
+                    elseif (math.random(1, 3) == 1) then
+                        l = 5
+                    elseif (math.random(1, 2) == 1) then
+                        l = 6
+                    elseif (math.random(1, 2) == 1) then
+                        l = 7
+                    elseif (math.random(1, 2) == 1) then
+                        l = 8
+                    else
+                        l = 9
+                    end
+                    if (l > lockLv) then
+                        lockLv = l
+                    end
+                end
+                if (target == game.playerTower[playerIndex]) then
+                    --主塔
+                    subTowerLevel(playerIndex)
+                    addTowerLevel(playerIndex, lockLv)
+                else
+                    --link
+                    subTowerLinkLevel(playerIndex, targetLi)
+                    addTowerLinkLevel(playerIndex, targetLi, lockLv)
+                end
+            end
         else
-            hplayer.subGold(p, 1000)
-            subTowerLevel(playerIndex)
-            addTowerLevel(playerIndex)
+            htextTag.style(htextTag.create2Unit(u, "找不到技能书~", 7, "ffff00", 1, 1.5, 50), "scale", 0, 0.05)
         end
     elseif (abilitiesSLK.Name == "开心金箱子") then
         if (hplayer.getLumber(p) < 30) then

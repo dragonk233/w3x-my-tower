@@ -164,17 +164,17 @@ for tlv, tow in pairs(towers) do
                 v.STR = math.floor(tempPower * 0.06 * math.random(7,11))
                 v.AGI = math.floor(tempPower * 0.025 * math.random(5,8))
                 v.INT = math.floor(tempPower * 0.025 * math.random(5,9))
-                tempAttack = tempAttack + 25 * math.random()
+                tempAttack = tempAttack + 19 * math.random()
             elseif(Primary == "AGI")then
                 v.STR = math.floor(tempPower * 0.035 * math.random(5,8))
                 v.AGI = math.floor(tempPower * 0.06 * math.random(6,10))
                 v.INT = math.floor(tempPower * 0.025 * math.random(3,8))
-                tempAttack = tempAttack + 20 * math.random()
+                tempAttack = tempAttack + 25 * math.random()
             elseif(Primary == "INT")then
                 v.STR = math.floor(tempPower * 0.03 * math.random(7,9))
                 v.AGI = math.floor(tempPower * 0.02 * math.random(5,8))
                 v.INT = math.floor(tempPower * 0.06 * math.random(8,11))
-                tempAttack = tempAttack + 20 * math.random()
+                tempAttack = tempAttack + 21 * math.random()
             end
             tempAttack = tempAttack * 1.4
             if(tempAttack < 0)then

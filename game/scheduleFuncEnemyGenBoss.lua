@@ -59,6 +59,6 @@ bossGen = function(curWave)
     if (game.rule.cur == "yb") then
         bossGenLife = bossGenLife + 200
     elseif (game.rule.cur == "hz") then
-        bossGenLife = bossGenLife + 275 + curWave * 3
+        bossGenLife = bossGenLife + 300 + curWave * 3
     end
 end

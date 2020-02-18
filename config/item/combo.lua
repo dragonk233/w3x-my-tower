@@ -842,9 +842,9 @@ for ilv = 1, 9 do
     table.insert(
         items_combo,
         {
-            Name = items_combo_pre .. "爆裂手套[提炼" .. ilv .. "次]",
+            Name = items_combo_pre .. "爆裂匕首[提炼" .. ilv .. "次]",
             Description = "承载着烈焰的力量",
-            Art = "ReplaceableTextures\\CommandButtons\\BTNAdvancedUnholyStrength.blp",
+            Art = "war3mapImported\\icon_item_ThrowingKnife_01.blp",
             powerup = 0,
             sellable = 1,
             pawnable = 1,

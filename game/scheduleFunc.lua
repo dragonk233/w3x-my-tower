@@ -146,7 +146,9 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             linkId = game.towersShadow[towerId].UNIT_ID
         end
         -- 如果有上一个单位
+        local isFirst = true
         if (game.playerTowerLink[playerIndex][linkIndex] ~= nil) then
+            isFirst = false
             cj.ShowUnit(game.playerTowerLink[playerIndex][linkIndex].unit, false)
         end
         local isUnSelectable = (linkId == game.thisUnits["空位"].UNIT_ID)
@@ -167,7 +169,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
         )
         hunit.setUserData(u, linkIndex)
         -- 如果有上一个单位，把上一个的物品给予新的，并删除它
-        if (game.playerTowerLink[playerIndex][linkIndex] ~= nil) then
+        if (isFirst == false) then
             hitem.copy(game.playerTowerLink[playerIndex][linkIndex].unit, u)
             hunit.del(game.playerTowerLink[playerIndex][linkIndex].unit, 0)
         else
@@ -190,6 +192,7 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
                     life = "=1000",
                     life_back = "=1000",
                     attack_damage_type = "=" .. attack_damage_type,
+                    attack_white = "+" .. hslk_global.unitsKV[towerId].ATTACK_WHITE,
                     move = "=0",
                     damage_rebound_oppose = "=9999"
                 }
@@ -199,45 +202,14 @@ createMyTowerLink = function(playerIndex, linkIndex, towerId, unitLv)
             hevent.onSkillHappen(u, onTowerLinkSkillUesd)
             --兵塔技能
             addTowerSkillsx(u)
-            --天赋等级
-            if (unitLv == nil) then
-                if (math.random(1, 7) == 1) then
-                    unitLv = 0
-                elseif (math.random(1, 6) == 1) then
-                    unitLv = 1
-                elseif (math.random(1, 5) == 1) then
-                    unitLv = 2
-                elseif (math.random(1, 4) == 1) then
-                    unitLv = 3
-                elseif (math.random(1, 3) == 1) then
-                    unitLv = 4
-                elseif (math.random(1, 2) == 1) then
-                    unitLv = 5
-                elseif (math.random(1, 2) == 2) then
-                    unitLv = 6
-                elseif (math.random(1, 2) == 1) then
-                    unitLv = 7
-                elseif (math.random(1, 2) == 2) then
-                    unitLv = 8
-                else
-                    unitLv = 9
-                end
-            end
             game.playerTowerLink[playerIndex][linkIndex].tower_level = unitLv
             game.playerTowerLink[playerIndex][linkIndex].mark = hslk_global.unitsKV[towerId].MARK
-            hskill.add(u, game.thisUnitLevelAbilities[unitLv].ABILITY_ID, 0)
-            --计算
-            hattr.set(
-                u,
-                0,
-                {
-                    attack_white = "+" ..
-                        math.floor(
-                            unitLv * 0.4 * hslk_global.unitsKV[towerId].ATTACK_WHITE +
-                                hslk_global.unitsKV[towerId].ATTACK_WHITE
-                        )
-                }
-            )
+            --天赋等级
+            if (isFirst) then
+                addTowerLinkLevel(playerIndex, linkIndex, 0)
+            else
+                addTowerLinkLevel(playerIndex, linkIndex, unitLv)
+            end
             --刷新种族个体
             addTowerSkillsRaceSingleAttr(u)
             --移动卡的bug

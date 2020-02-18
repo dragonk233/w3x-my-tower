@@ -150,8 +150,8 @@ enemyGenHZ = function(waiting)
                         htime.delDialog(td2)
                         htime.delTimer(t2)
                         local gold = game.rule.hz.wave * 100
-                        if (gold > 50000) then
-                            gold = 50000
+                        if (gold > 25000) then
+                            gold = 25000
                         end
                         game.rule.hz.wave = game.rule.hz.wave + 1
                         hplayer.loop(

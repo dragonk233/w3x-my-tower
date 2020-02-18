@@ -1,79 +1,69 @@
 items_weapon3 = {
     {
-        Name = "破折之戟",
-        Description = "由于极其突出，所以命中非凡",
-        goldcost = 5000,
+        Name = "小鬼手",
+        Description = "食尸鬼的腐烂手爪",
+        goldcost = 6500,
         lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNWandOfNeutralization.blp",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNUnholyStrength.blp",
         powerup = 0,
         sellable = 1,
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            aim = "+40"
+            attack_damage_type = "+ghost",
+            attack_green = "+450",
+            str_green = "+300"
         }
     },
     {
-        Name = "统治权杖",
-        Description = "光辉的权杖",
-        goldcost = 15800,
+        Name = "大鬼手",
+        Description = "食尸鬼之手",
+        goldcost = 27500,
         lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNScepterOfMastery.blp",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNImprovedUnholyStrength.blp",
         powerup = 0,
         sellable = 1,
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_damage_type = "+light",
-            str_green = "+555",
-            agi_green = "+555",
-            int_green = "+555"
+            attack_damage_type = "+ghost",
+            attack_green = "+1100",
+            str_green = "+500",
+            natural_ghost = "+10"
         }
     },
     {
-        Name = "雷电之锤",
-        Description = "由于增加了摩擦力，可以提速",
-        goldcost = 34000,
+        Name = "爆裂鬼手",
+        Description = "高级邪恶力量",
+        goldcost = 55000,
         lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNStormHammer.blp",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNAdvancedUnholyStrength.blp",
         powerup = 0,
         sellable = 1,
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_damage_type = "+thunder",
-            attack_speed = "+30",
-            attack_effect = {
-                {
-                    attr = "lightning_chain",
-                    odds = 40,
-                    qty = 3,
-                    val = 3300,
-                    effect = "Abilities\\Spells\\Human\\ManaFlare\\ManaFlareBoltImpact.mdl"
-                }
-            }
+            attack_damage_type = "+ghost,fire",
+            attack_green = "+1700",
+            str_green = "+1000",
+            natural_ghost = "+13",
+            natural_fire = "+13"
         }
     },
     {
-        Name = "分裂狂刀",
-        Description = "光辉的权杖",
-        goldcost = 75000,
+        Name = "绿溟黄泉骨",
+        Description = "骨质增强的秘方",
+        goldcost = 90000,
         lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNSpiritWalkerMasterTraining.blp",
+        Art = "ReplaceableTextures\\CommandButtons\\BTNSkeletalLongevity.blp",
         powerup = 0,
         sellable = 1,
         pawnable = 1,
         droppable = 1,
         ATTR = {
-            attack_green = "+1777",
-            attack_effect = {
-                {
-                    attr = "split",
-                    odds = 100,
-                    range = 600,
-                    percent = 10
-                }
-            }
+            attack_green = "+2000",
+            str_green = "+2000",
+            agi_green = "+2000"
         }
     },
     {

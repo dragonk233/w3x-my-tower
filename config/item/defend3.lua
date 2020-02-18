@@ -1,8 +1,86 @@
 items_defend3 = {
     {
+        Name = "冰霜巨龙头骨护盾",
+        Description = "一件强大的不死族宝物",
+        goldcost = 13000,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNGrimWard.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            defend = "+250"
+        },
+        ODK = true
+    },
+    {
+        Name = "生铁护盾",
+        Description = "不怕寒冰的护盾",
+        goldcost = 18000,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNHumanArmorUpTwo.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            natural_ice_oppose = "+30",
+            defend = "+320"
+        },
+        ODK = true
+    },
+    {
+        Name = "赤炎护盾",
+        Description = "不怕火焰的护盾",
+        goldcost = 18000,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNHumanArmorUpThree.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            natural_fire_oppose = "+30",
+            defend = "+320"
+        },
+        ODK = true
+    },
+    {
+        Name = "镶皮甲",
+        Description = "强韧的皮甲",
+        goldcost = 27500,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNLeatherUpgradeOne.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            toughness = "+450"
+        },
+        ODK = true
+    },
+    {
+        Name = "龙甲",
+        Description = "由龙甲制成的护甲",
+        goldcost = 35000,
+        lumbercost = 0,
+        Art = "ReplaceableTextures\\CommandButtons\\BTNLeatherUpgradeThree.blp",
+        powerup = 0,
+        sellable = 1,
+        pawnable = 1,
+        droppable = 1,
+        ATTR = {
+            toughness = "+550",
+            natural_dragon_oppose = "+25"
+        },
+        ODK = true
+    },
+    {
         Name = "月亮石",
         Description = "月亮光光照落地堂",
-        goldcost = 40000,
+        goldcost = 45000,
         lumbercost = 0,
         Art = "ReplaceableTextures\\CommandButtons\\BTNMoonStone.blp",
         powerup = 0,
@@ -13,7 +91,8 @@ items_defend3 = {
             toughness = "+600",
             natural_dark_oppose = "+50",
             natural_light_oppose = "+50"
-        }
+        },
+        ODK = true
     },
     {
         Name = "魔法超能盾",
@@ -28,7 +107,8 @@ items_defend3 = {
         ATTR = {
             life = "+14000",
             resistance = "+50"
-        }
+        },
+        ODK = true
     },
     {
         Name = "埃苏尼之心",
@@ -47,7 +127,8 @@ items_defend3 = {
             swim_oppose = "+50",
             broken_oppose = "+50",
             fetter_oppose = "+50"
-        }
+        },
+        ODK = true
     },
     {
         Name = "鬼五马六吊坠",
@@ -67,7 +148,8 @@ items_defend3 = {
             avoid = "+12",
             natural_ghost_oppose = "+56",
             natural_god_oppose = "+34"
-        }
+        },
+        ODK = true
     },
     {
         Name = "绿宝石",
@@ -84,7 +166,8 @@ items_defend3 = {
             toughness = "+2000",
             natural_poison_oppose = "+60",
             natural_thunder_oppose = "+30"
-        }
+        },
+        ODK = true
     },
     {
         Name = "红宝石",
@@ -101,7 +184,8 @@ items_defend3 = {
             attack_damage_type = "+fire",
             natural_fire = "+57.5",
             natural_fire_oppose = "+80"
-        }
+        },
+        ODK = true
     },
     {
         Name = "金刚石",
@@ -118,106 +202,7 @@ items_defend3 = {
             attack_damage_type = "+metal",
             natural_metal = "+25",
             natural_metal_oppose = "+50"
-        }
-    },
-    {
-        Name = "异体赛瑞石",
-        Description = "一种奇妙的宇宙灵石，同时拥有物理及魔法两种力",
-        goldcost = 200200,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNHeartOfSearinox.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            aim = "+50",
-            attack_damage_type = "+physical,magic",
-            attack_effect = {
-                {
-                    attr = "knocking",
-                    odds = 60,
-                    percent = 72.5
-                },
-                {
-                    attr = "violence",
-                    odds = 60,
-                    percent = 72.5
-                }
-            }
-        }
-    },
-    {
-        Name = "海神法杖",
-        Description = "大海之主用来定海的法杖，宁静而庄严",
-        goldcost = 300000,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNPriestAdept.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            attack_damage_type = "+god,water,wind",
-            natural_water = "+45",
-            natural_wind = "+35",
-            natural_water_oppose = "+70",
-            natural_wind_oppose = "+35",
-            natural_ice_oppose = "+25"
-        }
-    },
-    {
-        Name = "乱神权杖",
-        Description = "半神使用的法杖，引起世界的纷争",
-        goldcost = 480000,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNStaffOfSilence.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            attack_damage_type = "+god,light,magic",
-            natural_god = "+49",
-            natural_god_oppose = "+49",
-            str_green = "+4949",
-            int_green = "+4949"
-        }
-    },
-    {
-        Name = "鬼神骨灰瓮",
-        Description = "传说无论是神还是鬼，被杀死后灵魂都会收纳进此骨灰瓮，当然也像是假的",
-        goldcost = 555555,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNUrnOfKelThuzad.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            attack_damage_type = "+ghost",
-            natural_ghost = "+50",
-            natural_ghost_oppose = "+75",
-            str_green = "+5555",
-            agi_green = "+5555",
-            int_green = "+5555"
-        }
-    },
-    {
-        Name = "毁灭之角",
-        Description = "据说可以毁灭世界（当然是假的）",
-        goldcost = 666666,
-        lumbercost = 0,
-        Art = "ReplaceableTextures\\CommandButtons\\BTNHornOfDoom.blp",
-        powerup = 0,
-        sellable = 1,
-        pawnable = 1,
-        droppable = 1,
-        ATTR = {
-            attack_damage_type = "+absolute",
-            natural_god_oppose = "+16.66",
-            attack_speed = "+66.6",
-            damage_extent = "+66.6"
-        }
+        },
+        ODK = true
     }
 }

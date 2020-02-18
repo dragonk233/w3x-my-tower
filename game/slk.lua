@@ -228,7 +228,10 @@ for i = 1, itemQty, 1 do
 end
 
 --战败小兵
-game.couriers_defeat = cj.LoadInteger(cg.hash_myslk, cj.StringHash("couriers_defeat"), 0)
+game.couriersDefeat = cj.LoadInteger(cg.hash_myslk, cj.StringHash("couriers_defeat"), 0)
+
+--ODK科技
+game.odkTecId = cj.LoadInteger(cg.hash_myslk, cj.StringHash("odk_tec_id"), -1)
 
 --
 cj.FlushParentHashtable(cg.hash_myslk)

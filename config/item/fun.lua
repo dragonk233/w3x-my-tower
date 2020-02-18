@@ -65,7 +65,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您的兵塔队伍提升50%鬼攻击|n持续30秒",
+        ACTIVE = "令您的兵塔队伍提升100%鬼攻击|n持续30秒",
         cooldown = 20,
         I_TYPE = "strategy"
     },
@@ -79,7 +79,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您的黄金获得率提升15%|n持续90秒",
+        ACTIVE = "令您的黄金获得率提升30%|n持续90秒",
         cooldown = 20,
         I_TYPE = "strategy"
     },
@@ -93,7 +93,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您的兵塔经验率提升20%|n持续90秒",
+        ACTIVE = "令您的兵塔经验率提升35%|n持续90秒",
         cooldown = 20,
         I_TYPE = "strategy"
     },
@@ -107,7 +107,7 @@ items_fun = {
         sellable = 1,
         pawnable = 1,
         droppable = 1,
-        ACTIVE = "令您黄金获得率提升10%，并且售卖时提升25%回本|n持续90秒",
+        ACTIVE = "令您黄金获得率提升25%，并且售卖时提升25%回本|n持续90秒",
         cooldown = 20,
         I_TYPE = "strategy"
     },
@@ -123,7 +123,8 @@ items_fun = {
         droppable = 1,
         ACTIVE = "令所有玩家在一段时间内主塔收到随机伤害[500~1500]的黑色闪电打击10秒|n召唤的玩家受到伤害减半",
         cooldown = 25,
-        I_TYPE = "strategy"
+        I_TYPE = "strategy",
+        ODK = true
     },
     {
         Name = "盾敕令",
@@ -137,7 +138,8 @@ items_fun = {
         droppable = 1,
         ACTIVE = "令其他玩家的所有塔攻速减少100%持续10秒",
         cooldown = 25,
-        I_TYPE = "strategy"
+        I_TYPE = "strategy",
+        ODK = true
     },
     {
         Name = "剑敕令",
@@ -151,7 +153,8 @@ items_fun = {
         droppable = 1,
         ACTIVE = "令其他玩家的所有塔和信使眩晕7秒",
         cooldown = 25,
-        I_TYPE = "strategy"
+        I_TYPE = "strategy",
+        ODK = true
     },
     {
         Name = "斧敕令",
@@ -165,6 +168,7 @@ items_fun = {
         droppable = 1,
         ACTIVE = "令其他玩家的主兵塔生命瞬间减少当前的20%",
         cooldown = 25,
-        I_TYPE = "strategy"
+        I_TYPE = "strategy",
+        ODK = true
     }
 }
