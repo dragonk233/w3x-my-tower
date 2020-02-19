@@ -48,11 +48,11 @@ addTowerLevel = function(playerIndex, lockLv)
             )
         end
         game.playerTowerLevel[playerIndex] = unitLv
-        hskill.add(game.playerTower[playerIndex], game.thisUnitLevelAbilities[unitLv].ABILITY_ID, 0)
     else
+        unitLv = oldLv
         hmsg.echo00(hplayer.players[playerIndex], "主塔天赋没有得到提升")
-        hskill.add(game.playerTower[playerIndex], game.thisUnitLevelAbilities[oldLv].ABILITY_ID, 0)
     end
+    hskill.add(game.playerTower[playerIndex], game.thisUnitLevelAbilities[unitLv].ABILITY_ID, 0)
     --计算
     if (unitLv > 0) then
         local towerId = hunit.getId(game.playerTower[playerIndex])
@@ -120,11 +120,11 @@ addTowerLinkLevel = function(playerIndex, targetLi, lockLv)
             )
         end
         game.playerTowerLink[playerIndex][targetLi].tower_level = unitLv
-        hskill.add(game.playerTowerLink[playerIndex][targetLi].unit, game.thisUnitLevelAbilities[unitLv].ABILITY_ID, 0)
     else
+        unitLv = oldLv
         hmsg.echo00(hplayer.players[playerIndex], "辅塔天赋没有得到提升")
-        hskill.add(game.playerTowerLink[playerIndex][targetLi].unit, game.thisUnitLevelAbilities[oldLv].ABILITY_ID, 0)
     end
+    hskill.add(game.playerTowerLink[playerIndex][targetLi].unit, game.thisUnitLevelAbilities[unitLv].ABILITY_ID, 0)
     --计算
     if (unitLv > 0) then
         local towerId = hunit.getId(game.playerTowerLink[playerIndex][targetLi].unit)

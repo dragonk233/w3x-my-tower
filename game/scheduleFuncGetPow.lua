@@ -9,11 +9,11 @@ getBookPowLevel = function(curWave)
         bpow = {10, 6, 1, 0}
     elseif (curWave <= 45) then
         bpow = {5, 10, 1, 0}
-    elseif (curWave <= 75) then
+    elseif (curWave <= 80) then
         bpow = {3, 10, 2, 0}
-    elseif (curWave <= 130) then
+    elseif (curWave <= 160) then
         bpow = {0, 8, 1, 0}
-    elseif (curWave <= 175) then
+    elseif (curWave <= 250) then
         bpow = {0, 10, 5, 1}
     else
         bpow = {0, 0, 7, 1}
@@ -48,14 +48,16 @@ getTowerPowLevel = function(curWave)
         tpow = {C = 10, B = 10, A = 1}
     elseif (curWave <= 85) then
         tpow = {C = 8, B = 27, A = 3}
-    elseif (curWave <= 95) then
+    elseif (curWave <= 100) then
         tpow = {B = 25, A = 15, S = 1}
-    elseif (curWave <= 110) then
+    elseif (curWave <= 130) then
         tpow = {B = 10, A = 25, S = 1}
-    elseif (curWave <= 150) then
+    elseif (curWave <= 180) then
         tpow = {A = 30, S = 20, SS = 5}
-    elseif (curWave <= 200) then
-        tpow = {A = 5, S = 35, SS = 5, SSS = 1}
+    elseif (curWave <= 230) then
+        tpow = {A = 5, S = 30, SS = 10}
+    elseif (curWave <= 275) then
+        tpow = {S = 30, SS = 10, SSS = 1}
     else
         tpow = {S = 20, SS = 5, SSS = 1}
     end
