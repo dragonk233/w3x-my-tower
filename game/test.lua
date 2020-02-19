@@ -1,7 +1,0 @@
--- htime.setInterval(
---     5.00,
---     function()
---         print_r(hRuntime.attributeDamaging, nil, false)
---         print_r(hRuntime.attributeGroup, nil, false)
---     end
--- )

@@ -36,8 +36,7 @@ onTowerDead = function(evtData)
         hplayer.setStatus(winner, "胜利")
         htime.setTimeout(
             10.00,
-            function(t, td)
-                htime.delDialog(td)
+            function(t)
                 htime.delTimer(t)
                 for i = 1, hplayer.qty_max, 1 do
                     if (hplayer.players[i] == winner) then

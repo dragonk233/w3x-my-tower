@@ -23,9 +23,8 @@ hevent.onPlayerLeave(
                 hplayer.setStatus(winner, "胜利")
                 htime.setTimeout(
                     10.00,
-                    function(t, td)
-                        htime.delDialog(td)
-                        htime.delTimer(t)
+                    function(t)
+                            htime.delTimer(t)
                         hplayer.victory(winner)
                     end
                 )
@@ -276,14 +275,12 @@ cj.TriggerAddAction(
                             hmark.create("war3mapImported\\mark_defeat.blp", 4.00)
                             htime.setTimeout(
                                 10.00,
-                                function(t, td)
-                                    htime.delDialog(td)
-                                    htime.delTimer(t)
+                                function(t)
+                                                    htime.delTimer(t)
                                     for i = 1, hplayer.qty_max, 1 do
                                         hplayer.defeat(hplayer.players[i], "再见~")
                                     end
-                                end,
-                                "准备退出"
+                                end
                             )
                         end
                     )
@@ -393,7 +390,7 @@ cj.TriggerAddAction(
                             )
                         end
                     end
-                    enemyGenYB(15)
+                    enemyGenYB(10)
                     hleaderBoard.create(
                         "yb",
                         1,
@@ -436,14 +433,12 @@ cj.TriggerAddAction(
                             hmark.create("war3mapImported\\mark_defeat.blp", 4.00)
                             htime.setTimeout(
                                 10.00,
-                                function(t, td)
-                                    htime.delDialog(td)
-                                    htime.delTimer(t)
+                                function(t)
+                                                    htime.delTimer(t)
                                     for i = 1, hplayer.qty_max, 1 do
                                         hplayer.defeat(hplayer.players[i], "再见~")
                                     end
-                                end,
-                                "准备退出"
+                                end
                             )
                         end
                     )
@@ -553,7 +548,7 @@ cj.TriggerAddAction(
                             )
                         end
                     end
-                    enemyGenHZ(15)
+                    enemyGenHZ(10)
                     hleaderBoard.create(
                         "hz",
                         1,
@@ -715,7 +710,7 @@ cj.TriggerAddAction(
                             )
                         end
                     end
-                    enemyGenDK(30)
+                    enemyGenDK(10)
                     local bldk =
                         hleaderBoard.create(
                         "dk",

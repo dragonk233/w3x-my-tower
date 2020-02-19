@@ -7,8 +7,7 @@ require "game.scheduleFuncEnemyGenAward"
 enemyGenYB = function(waiting)
     htime.setTimeout(
         waiting,
-        function(t, td)
-            htime.delDialog(td)
+        function(t)
             htime.delTimer(t)
             hsound.sound(cg.gg_snd_effect_0004)
             local count = game.rule.yb.perWaveQty
@@ -18,7 +17,6 @@ enemyGenYB = function(waiting)
                 function(t2, td2)
                     count = count - 1
                     if (game.runing == false) then
-                        htime.delDialog(td2)
                         htime.delTimer(t2)
                         return
                     end
@@ -34,7 +32,6 @@ enemyGenYB = function(waiting)
                             awardGen(game.rule.yb.wave)
                             nextWaitTime = 18
                         end
-                        htime.delDialog(td2)
                         htime.delTimer(t2)
                         if (game.rule.yb.wave >= game.rule.yb.waveEnd) then
                             htime.setInterval(
@@ -46,16 +43,14 @@ enemyGenYB = function(waiting)
                                         hmsg.echo("通过了" .. game.rule.yb.waveEnd .. "波!|cffffff00恭喜！欢乐！|r，10秒后会退出游戏")
                                         htime.setTimeout(
                                             10,
-                                            function(t, td)
-                                                htime.delDialog(td)
-                                                htime.delTimer(t)
+                                            function(t)
+                                                                            htime.delTimer(t)
                                                 hplayer.loop(
                                                     function(p)
                                                         hplayer.victory(p)
                                                     end
                                                 )
-                                            end,
-                                            "祝贺你~准备离开~"
+                                            end
                                         )
                                     end
                                 end
@@ -101,7 +96,7 @@ enemyGenYB = function(waiting)
                                 0,
                                 {
                                     life = "=" .. (game.rule.yb.monLife * game.rule.yb.wave),
-                                    move = "=180",
+                                    move = "=180"
                                 }
                             )
                             game.currentMon = game.currentMon + 1
@@ -112,15 +107,13 @@ enemyGenYB = function(waiting)
                     end
                 end
             )
-        end,
-        "第" .. game.rule.yb.wave .. "波"
+        end
     )
 end
 enemyGenHZ = function(waiting)
     htime.setTimeout(
         waiting,
-        function(t, td)
-            htime.delDialog(td)
+        function(t)
             htime.delTimer(t)
             hsound.sound(cg.gg_snd_effect_0004)
             local count = game.rule.hz.perWaveQty
@@ -130,7 +123,6 @@ enemyGenHZ = function(waiting)
                 function(t2, td2)
                     count = count - 1
                     if (game.runing == false) then
-                        htime.delDialog(td2)
                         htime.delTimer(t2)
                         return
                     end
@@ -147,7 +139,6 @@ enemyGenHZ = function(waiting)
                             nextWaitTime = 18
                             game.rule.hz.monLife = game.rule.hz.monLife + math.floor(0.20 * game.rule.hz.wave)
                         end
-                        htime.delDialog(td2)
                         htime.delTimer(t2)
                         local gold = game.rule.hz.wave * 100
                         if (gold > 25000) then
@@ -202,15 +193,13 @@ enemyGenHZ = function(waiting)
                     end
                 end
             )
-        end,
-        "第" .. game.rule.hz.wave .. "波"
+        end
     )
 end
 enemyGenDK = function(waiting)
     htime.setTimeout(
         waiting,
-        function(t, td)
-            htime.delDialog(td)
+        function(t)
             htime.delTimer(t)
             hsound.sound(cg.gg_snd_effect_0004)
             for i = 1, hplayer.qty_max, 1 do
@@ -225,7 +214,6 @@ enemyGenDK = function(waiting)
                 game.rule.dk.fresh,
                 function(t2, td2)
                     if (game.runing == false) then
-                        htime.delDialog(td2)
                         htime.delTimer(t2)
                         return
                     end
@@ -264,7 +252,6 @@ enemyGenDK = function(waiting)
                     end
                 end
             )
-        end,
-        "请准备好欢乐对抗"
+        end
     )
 end

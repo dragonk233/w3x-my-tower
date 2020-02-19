@@ -113,8 +113,7 @@ MAYBE_AI = {
             --装扮
             htime.setTimeout(
                 math.random(4, 20),
-                function(t, td)
-                    htime.delDialog(td)
+                function(t)
                     htime.delTimer(t)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
                         return
@@ -184,10 +183,9 @@ MAYBE_AI = {
             --到处乱走
             htime.setInterval(
                 math.random(6, 13),
-                function(t, td)
+                function(t)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
-                        htime.delDialog(td)
-                        htime.delTimer(t)
+                            htime.delTimer(t)
                         return
                     end
                     local dist =
@@ -211,10 +209,9 @@ MAYBE_AI = {
             --技能
             htime.setInterval(
                 math.random(4, 7),
-                function(t, td)
+                function(t)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
-                        htime.delDialog(td)
-                        htime.delTimer(t)
+                            htime.delTimer(t)
                         return
                     end
                     local stone = 750

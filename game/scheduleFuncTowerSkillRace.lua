@@ -1,7 +1,5 @@
 addTowerSkillsRaceAbility = {}
 addTowerSkillsRaceAttr = {}
-addTowerSkillsRaceAttrStack = 0
-addTowerSkillsRaceAttrClock = 0.3
 addTowerSkillsRaceAttrPlayer = {}
 
 handleTowerSkillsRaceAttr = function(old, new)
@@ -761,44 +759,20 @@ addTowerSkillsRaceTeam = function(playerIndex)
         if (hRuntime.unit[v]["raceTeamInit"] == nil) then
             hRuntime.unit[v]["raceTeamInit"] = 1
             if (table.len(mixAttrs.new) > 0) then
-                addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack + addTowerSkillsRaceAttrClock
-                htime.setTimeout(
-                    addTowerSkillsRaceAttrStack,
-                    function(t)
-                        htime.delTimer(t)
-                        addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack - addTowerSkillsRaceAttrClock
-                        if (his.alive(v)) then
-                            hattr.set(v, 0, mixAttrs.new)
-                        end
-                    end
-                )
+                if (his.alive(v)) then
+                    hattr.set(v, 0, mixAttrs.new)
+                end
             end
         else
             if (table.len(mixAttrs.diff.add) > 0) then
-                addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack + addTowerSkillsRaceAttrClock
-                htime.setTimeout(
-                    addTowerSkillsRaceAttrStack,
-                    function(t)
-                        htime.delTimer(t)
-                        addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack - addTowerSkillsRaceAttrClock
-                        if (his.alive(v)) then
-                            hattr.set(v, 0, mixAttrs.diff.add)
-                        end
-                    end
-                )
+                if (his.alive(v)) then
+                    hattr.set(v, 0, mixAttrs.diff.add)
+                end
             end
             if (table.len(mixAttrs.diff.sub) > 0) then
-                addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack + addTowerSkillsRaceAttrClock + 0.05
-                htime.setTimeout(
-                    addTowerSkillsRaceAttrStack,
-                    function(t)
-                        htime.delTimer(t)
-                        addTowerSkillsRaceAttrStack = addTowerSkillsRaceAttrStack - addTowerSkillsRaceAttrClock - 0.05
-                        if (his.alive(v)) then
-                            hattr.set(v, 0, mixAttrs.diff.sub)
-                        end
-                    end
-                )
+                if (his.alive(v)) then
+                    hattr.set(v, 0, mixAttrs.diff.sub)
+                end
             end
         end
     end

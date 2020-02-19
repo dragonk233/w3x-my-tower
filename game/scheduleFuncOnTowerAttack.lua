@@ -10,8 +10,7 @@ onTowerAttackTtg = function(u, string)
     onTowerAttackTtgCount = onTowerAttackTtgCount + 1
     htime.setTimeout(
         2,
-        function(t, td)
-            htime.delDialog(td)
+        function(t)
             htime.delTimer(t)
             onTowerAttackTtgCount = onTowerAttackTtgCount - 1
         end
@@ -403,9 +402,8 @@ onTowerAttack = function(evtData)
                         for q = 1, val[2], 1 do
                             htime.setTimeout(
                                 (q - 1) * 0.50,
-                                function(t, td)
-                                    htime.delDialog(td)
-                                    htime.delDialog(t)
+                                function(t)
+                                    htime.delTimer(t)
                                     hskill.leap(
                                         {
                                             sourceUnit = u,
@@ -508,9 +506,8 @@ onTowerAttack = function(evtData)
                         for q = 1, val[2], 1 do
                             htime.setTimeout(
                                 (q - 1) * 0.55,
-                                function(t, td)
-                                    htime.delDialog(td)
-                                    htime.delDialog(t)
+                                function(t)
+                                    htime.delTimer(t)
                                     hskill.leap(
                                         {
                                             sourceUnit = u,

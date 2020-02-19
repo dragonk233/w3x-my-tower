@@ -10,8 +10,7 @@ towerShadowTtg = function(u, string)
     towerShadowTtgCount = towerShadowTtgCount + 1
     htime.setTimeout(
         2,
-        function(t, td)
-            htime.delDialog(td)
+        function(t)
             htime.delTimer(t)
             towerShadowTtgCount = towerShadowTtgCount - 1
         end

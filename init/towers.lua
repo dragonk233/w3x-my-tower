@@ -1,7 +1,7 @@
 -- towers
 --兵塔变敌军单位
 local createTowerShadowUnit = function(v,towersTi,tlv)
-    local sobj = slk.unit.ogru:new("this_tower_shadow_" .. v.INDEX .. towersTi)
+    local sobj = slk.unit.ogru:new("this_tower_shadow_" .. v.INDEX .."_".. towersTi)
     sobj.Name = "["..tlv.."阶]" .. v.Name
     sobj.upgrades = ""
     sobj.file = v.file
@@ -127,7 +127,7 @@ for tlv, tow in pairs(towers) do
             -- 处理塔基数据
             local UberDesc = v.Ubertip
             local Ubertip = ""
-            local obj = slk.unit.Hpal:new("towers_" .. thisIndex .. towersTi)
+            local obj = slk.unit.Hpal:new("towers_" .. thisIndex .."_".. towersTi)
 
             Primary = v.Primary or "STR"
             v.STR = v.STR or 1
@@ -215,7 +215,7 @@ for tlv, tow in pairs(towers) do
             Ubertip = Ubertip .. "|n|cffcc99ff评定："..TowerMark.."分|r"
             Ubertip = Ubertip .. "|n|n" .. hColor.grey(UberDesc)
             --塔基的属性说明
-            local dobj = slk.ability.Aamk:new("towerOriginAbli_" .. thisIndex .. towersTi)
+            local dobj = slk.ability.Aamk:new("towerOriginAbli_" .. thisIndex .."_".. towersTi)
             local Name = "[兵塔参数]" .. v.Name
             local Tip = v.Name
             dobj.Name = Name
@@ -367,7 +367,7 @@ for tlv, tow in pairs(towers) do
             v.TOWER_POWER = tlv
             v.UNIT_ID = obj:get_id()
             -- 塔基物品
-            local iobj = slk.item.gold:new("towers_items_" .. thisIndex .. towersTi)
+            local iobj = slk.item.gold:new("towers_items_" .. thisIndex .."_".. towersTi)
             iobj.Name = "[" .. tlv .. "][" .. v.Name .. "]"
             iobj.Tip = "点击召唤兵塔：[" .. v.Name .. "]"
             iobj.UberTip = Ubertip
