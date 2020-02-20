@@ -819,7 +819,6 @@ cj.TriggerAddAction(
                             {value = "状态", icon = "ReplaceableTextures\\CommandButtons\\BTNWellSpring.blp"},
                             {value = "兵塔", icon = "ReplaceableTextures\\CommandButtons\\BTNHumanBarracks.blp"},
                             {value = "等级", icon = "ReplaceableTextures\\CommandButtons\\BTNAltarOfKings.blp"},
-                            {value = "天赋", icon = "ReplaceableTextures\\CommandButtons\\BTNDivineIntervention.blp"},
                             {value = "攻击", icon = "ReplaceableTextures\\CommandButtons\\BTNThoriumMelee.blp"},
                             {
                                 value = "攻速",
@@ -872,7 +871,6 @@ cj.TriggerAddAction(
                                 local damage_extent = "-"
                                 local aim = "-"
                                 local tlv = "-"
-                                local plv = "-"
                                 if (hplayer.getStatus(p) == hplayer.player_status.gaming) then
                                     tower = game.playerTower[pi]
                                     avatar = hunit.getAvatar(tower)
@@ -883,7 +881,6 @@ cj.TriggerAddAction(
                                     damage_extent = math.round(hattr.get(tower, "damage_extent")) .. "%"
                                     aim = math.round(hattr.get(tower, "aim")) .. "%"
                                     tlv = "Lv." .. hhero.getCurLevel(tower)
-                                    plv = game.playerTowerLevel[pi]
                                 end
                                 local tempData = {
                                     {value = cj.GetPlayerName(p), icon = nil},
@@ -891,7 +888,6 @@ cj.TriggerAddAction(
                                     {value = hplayer.getStatus(p), icon = nil},
                                     {value = name, icon = avatar},
                                     {value = tlv, icon = nil},
-                                    {value = plv, icon = nil},
                                     {value = attack, icon = nil},
                                     {value = attack_speed, icon = nil},
                                     {value = aim, icon = nil},
