@@ -223,6 +223,81 @@ MAYBE_AI = {
                             math.floor(50000 / stone) + 7 + hhero.getCurLevel(game.playerTower[playerIndex]),
                             false
                         )
+                    elseif (gold >= 50000 and math.random(1, 30) == 15) then
+                        local ts = {}
+                        if (math.random(1, 2) == 1) then
+                            hmsg.echo(hplayer.getName(hplayer.players[playerIndex]) .. "发动了" .. hColor.red("剑敕令!"))
+                            for pi = 1, 4, 1 do
+                                if
+                                    (playerIndex ~= pi and
+                                        hplayer.getStatus(hplayer.players[pi]) == hplayer.player_status.gaming)
+                                 then
+                                    table.insert(ts, game.playerTower[pi])
+                                    for i = 1, 4, 1 do
+                                        if (his.alive(game.playerTowerLink[pi][i].unit) == true) then
+                                            table.insert(ts, game.playerTowerLink[pi][i].unit)
+                                        end
+                                        if (his.alive(game.playerCourier[pi]) == true) then
+                                            table.insert(ts, game.playerCourier[pi])
+                                        end
+                                    end
+                                end
+                            end
+                            for _, u in pairs(ts) do
+                                hskill.swim(
+                                    {
+                                        whichUnit = u,
+                                        during = 10,
+                                        odds = 999,
+                                        effect = "war3mapImported\\eff_flame_Great_Sword_Falls.mdl"
+                                    }
+                                )
+                            end
+                        else
+                            hmsg.echo(hplayer.getName(hplayer.players[playerIndex]) .. "发动了" .. hColor.red("斧敕令!"))
+                            for pi = 1, 4, 1 do
+                                if
+                                    (playerIndex ~= pi and
+                                        hplayer.getStatus(hplayer.players[pi]) == hplayer.player_status.gaming)
+                                 then
+                                    table.insert(ts, game.playerTower[pi])
+                                end
+                            end
+                            for _, u in pairs(ts) do
+                                hunit.setCurLife(u, hunit.getCurLife(u) * 0.8)
+                                heffect.toUnit("war3mapImported\\eff_black_chain_flash.mdl", u, 0)
+                            end
+                        end
+                    elseif (gold >= 30000 and math.random(1, 6) == 4) then
+                        --物品叠加
+                        local tarTower
+                        if (hitem.getEmptySlot(game.playerTower[playerIndex]) <= 5) then
+                            for i = 0, 5, 1 do
+                                local it = cj.UnitItemInSlot(game.playerTower[playerIndex], i)
+                                if (it ~= nil and hitem.getCharges(it) < 3) then
+                                    local itid = hitem.getId(it)
+                                    hitem.setCharges(it, 1 + hitem.getCharges(it))
+                                    hitem.addAttribute(game.playerTower[playerIndex], itid, 1)
+                                    hplayer.subGold(hplayer.players[playerIndex], 5 * hitem.getGoldCost(itid))
+                                    break
+                                end
+                            end
+                        else
+                            for li = 1, 4 do
+                                if (hitem.getEmptySlot(game.playerTowerLink[playerIndex][li].unit) <= 5) then
+                                    for i = 0, 5, 1 do
+                                        local it = cj.UnitItemInSlot(game.playerTowerLink[playerIndex][li].unit, i)
+                                        if (it ~= nil and hitem.getCharges(it) < 3) then
+                                            local itid = hitem.getId(it)
+                                            hitem.setCharges(it, 1 + hitem.getCharges(it))
+                                            hitem.addAttribute(game.playerTowerLink[playerIndex][li].unit, itid, 1)
+                                            hplayer.subGold(hplayer.players[playerIndex], 5 * hitem.getGoldCost(itid))
+                                            break
+                                        end
+                                    end
+                                end
+                            end
+                        end
                     elseif (gold >= 10000 and math.random(1, 7) == 4) then
                         hplayer.subGold(hplayer.players[playerIndex], 10000)
                         hhero.setCurLevel(
@@ -314,38 +389,6 @@ MAYBE_AI = {
                         )
                         hplayer.subGold(hplayer.players[playerIndex], tarLv * 1500)
                         tarTower = nil
-                    elseif (gold >= 5000 and math.random(1, 6) == 4) then
-                        --物品叠加
-                        local tarTower
-                        if (hitem.getEmptySlot(game.playerTower[playerIndex]) <= 5) then
-                            for i = 0, 5, 1 do
-                                local it = cj.UnitItemInSlot(game.playerTower[playerIndex], i)
-                                if (it ~= nil and hitem.getCharges(it) < 3) then
-                                    hitem.setCharges(it, 1 + hitem.getCharges(it))
-                                    hitem.addAttribute(game.playerTower[playerIndex], hitem.getId(it), 1)
-                                    hplayer.subGold(hplayer.players[playerIndex], 5000)
-                                    break
-                                end
-                            end
-                        else
-                            for li = 1, 4 do
-                                if (hitem.getEmptySlot(game.playerTowerLink[playerIndex][li].unit) <= 5) then
-                                    for i = 0, 5, 1 do
-                                        local it = cj.UnitItemInSlot(game.playerTowerLink[playerIndex][li].unit, i)
-                                        if (it ~= nil and hitem.getCharges(it) < 3) then
-                                            hitem.setCharges(it, 1 + hitem.getCharges(it))
-                                            hitem.addAttribute(
-                                                game.playerTowerLink[playerIndex][li].unit,
-                                                hitem.getId(it),
-                                                1
-                                            )
-                                            hplayer.subGold(hplayer.players[playerIndex], 5000)
-                                            break
-                                        end
-                                    end
-                                end
-                            end
-                        end
                     end
                 end
             )

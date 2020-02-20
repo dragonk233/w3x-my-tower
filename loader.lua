@@ -80,10 +80,10 @@ hquest.create(
         content = {
             " - 极速捡东西",
             " - 智能判断兵塔石能力替换塔位",
-            " - 自动学技能",
-            " - 信使会抽兵塔石和刷天赋",
+            " - 自动学技能、不抽书",
+            " - 信使会抽兵塔石、买装备和升华",
             " - 最终的最终只会同种族战略",
-            " - 禁止抽书"
+            " - 兵塔会使用剑、斧敕令"
         },
         icon = "ReplaceableTextures\\CommandButtons\\BTNGlyph.blp"
     }

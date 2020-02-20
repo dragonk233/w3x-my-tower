@@ -475,7 +475,7 @@ onUnitItemsUesd = function(evtData)
                 )
             elseif (ii == "盾敕令") then
                 for pi = 1, 4, 1 do
-                    if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                    if (playerIndex ~= pi and hplayer.getStatus(hplayer.players[pi]) == hplayer.player_status.gaming) then
                         table.insert(ts, game.playerTower[pi])
                         for i = 1, 4, 1 do
                             if
@@ -498,7 +498,7 @@ onUnitItemsUesd = function(evtData)
                 end
             elseif (ii == "剑敕令") then
                 for pi = 1, 4, 1 do
-                    if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                    if (playerIndex ~= pi and hplayer.getStatus(hplayer.players[pi]) == hplayer.player_status.gaming) then
                         table.insert(ts, game.playerTower[pi])
                         for i = 1, 4, 1 do
                             if (his.alive(game.playerTowerLink[pi][i].unit) == true) then
@@ -522,7 +522,7 @@ onUnitItemsUesd = function(evtData)
                 end
             elseif (ii == "斧敕令") then
                 for pi = 1, 4, 1 do
-                    if (playerIndex ~= pi and hplayer.getStatus(p) == hplayer.player_status.gaming) then
+                    if (playerIndex ~= pi and hplayer.getStatus(hplayer.players[pi]) == hplayer.player_status.gaming) then
                         table.insert(ts, game.playerTower[pi])
                     end
                 end

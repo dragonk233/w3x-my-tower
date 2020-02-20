@@ -1207,7 +1207,7 @@ TOWER_ABLI_SPX = {
             20,
             350,
             0.25,
-            400,
+            350,
             20,
             "war3mapImported\\eff_FireTornado.mdl",
             "Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdl"
@@ -1221,9 +1221,9 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             20,
-            500,
+            400,
             0.12,
-            900,
+            1200,
             13,
             "war3mapImported\\eff_weather_laser.mdl",
             "Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdl"

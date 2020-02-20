@@ -24,7 +24,7 @@ hevent.onPlayerLeave(
                 htime.setTimeout(
                     10.00,
                     function(t)
-                            htime.delTimer(t)
+                        htime.delTimer(t)
                         hplayer.victory(winner)
                     end
                 )
@@ -276,7 +276,7 @@ cj.TriggerAddAction(
                             htime.setTimeout(
                                 10.00,
                                 function(t)
-                                                    htime.delTimer(t)
+                                    htime.delTimer(t)
                                     for i = 1, hplayer.qty_max, 1 do
                                         hplayer.defeat(hplayer.players[i], "再见~")
                                     end
@@ -434,7 +434,7 @@ cj.TriggerAddAction(
                             htime.setTimeout(
                                 10.00,
                                 function(t)
-                                                    htime.delTimer(t)
+                                    htime.delTimer(t)
                                     for i = 1, hplayer.qty_max, 1 do
                                         hplayer.defeat(hplayer.players[i], "再见~")
                                     end
@@ -743,13 +743,11 @@ cj.TriggerAddAction(
                             end
                         end
                     )
+                    --科技
+                    cj.AddPlayerTechResearched(game.ALLY_PLAYER, game.odkTecId, 1)
                 end
                 --
                 for k, v in pairs(game.courierPoint) do
-                    -- 给予科技
-                    if (game.rule.cur == "dk") then
-                        cj.SetPlayerTechResearched(hplayer.players[k], game.odkTecId, 1)
-                    end
                     -- 基本信使
                     local u
                     if (game.rule.dk.ai == true and his.playing(hplayer.players[k]) == false) then
