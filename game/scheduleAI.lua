@@ -185,7 +185,7 @@ MAYBE_AI = {
                 math.random(6, 13),
                 function(t)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
-                            htime.delTimer(t)
+                        htime.delTimer(t)
                         return
                     end
                     local dist =
@@ -211,7 +211,7 @@ MAYBE_AI = {
                 math.random(4, 7),
                 function(t)
                     if (hplayer.getStatus(hplayer.players[playerIndex]) ~= hplayer.player_status.gaming) then
-                            htime.delTimer(t)
+                        htime.delTimer(t)
                         return
                     end
                     local stone = 750
@@ -268,17 +268,38 @@ MAYBE_AI = {
                                 end
                             end
                         end
+                        if (tarTower == nil) then
+                            return
+                        end
                         local lvT = math.floor(gold / 2000)
                         local lvB = 3
                         local comboIt = {}
                         for cbi = lvB, lvT, 1 do
-                            if (game.thisEquipItem[cbi] ~= nil) then
-                                for _, civ in pairs(game.thisEquipItem[cbi]) do
-                                    table.insert(comboIt, civ)
+                            if (tarTower == game.playerTower[playerIndex]) then
+                                if (game.thisEquipItem[cbi] ~= nil) then
+                                    for _, civ in pairs(game.thisEquipItem[cbi]) do
+                                        table.insert(comboIt, civ)
+                                    end
+                                end
+                                if (game.thisComboItem[cbi] ~= nil) then
+                                    for _, civ in pairs(game.thisComboItem[cbi]) do
+                                        table.insert(comboIt, civ)
+                                    end
+                                end
+                            else
+                                if (game.thisEquipItemNODK[cbi] ~= nil) then
+                                    for _, civ in pairs(game.thisEquipItemNODK[cbi]) do
+                                        table.insert(comboIt, civ)
+                                    end
+                                end
+                                if (game.thisComboItemNODK[cbi] ~= nil) then
+                                    for _, civ in pairs(game.thisComboItemNODK[cbi]) do
+                                        table.insert(comboIt, civ)
+                                    end
                                 end
                             end
                         end
-                        if (tarTower == nil or #comboIt <= 0) then
+                        if (#comboIt <= 0) then
                             return
                         end
                         local randIt = table.random(comboIt)
@@ -293,6 +314,38 @@ MAYBE_AI = {
                         )
                         hplayer.subGold(hplayer.players[playerIndex], tarLv * 1500)
                         tarTower = nil
+                    elseif (gold >= 5000 and math.random(1, 6) == 4) then
+                        --物品叠加
+                        local tarTower
+                        if (hitem.getEmptySlot(game.playerTower[playerIndex]) <= 5) then
+                            for i = 0, 5, 1 do
+                                local it = cj.UnitItemInSlot(game.playerTower[playerIndex], i)
+                                if (it ~= nil and hitem.getCharges(it) < 3) then
+                                    hitem.setCharges(it, 1 + hitem.getCharges(it))
+                                    hitem.addAttribute(game.playerTower[playerIndex], hitem.getId(it), 1)
+                                    hplayer.subGold(hplayer.players[playerIndex], 5000)
+                                    break
+                                end
+                            end
+                        else
+                            for li = 1, 4 do
+                                if (hitem.getEmptySlot(game.playerTowerLink[playerIndex][li].unit) <= 5) then
+                                    for i = 0, 5, 1 do
+                                        local it = cj.UnitItemInSlot(game.playerTowerLink[playerIndex][li].unit, i)
+                                        if (it ~= nil and hitem.getCharges(it) < 3) then
+                                            hitem.setCharges(it, 1 + hitem.getCharges(it))
+                                            hitem.addAttribute(
+                                                game.playerTowerLink[playerIndex][li].unit,
+                                                hitem.getId(it),
+                                                1
+                                            )
+                                            hplayer.subGold(hplayer.players[playerIndex], 5000)
+                                            break
+                                        end
+                                    end
+                                end
+                            end
+                        end
                     end
                 end
             )

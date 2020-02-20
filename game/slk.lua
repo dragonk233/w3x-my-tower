@@ -223,7 +223,13 @@ for i = 1, itemQty, 1 do
         if (game.thisEquipItem[jv.LEVEL] == nil) then
             game.thisEquipItem[jv.LEVEL] = {}
         end
+        if (game.thisEquipItemNODK[jv.LEVEL] == nil) then
+            game.thisEquipItemNODK[jv.LEVEL] = {}
+        end
         table.insert(game.thisEquipItem[jv.LEVEL], jv)
+        if (jv.ODK ~= true) then
+            table.insert(game.thisEquipItemNODK[jv.LEVEL], jv)
+        end
     end
 end
 

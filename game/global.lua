@@ -124,6 +124,7 @@ game = {
     thisOptionItem2Abli = {},
     thisOptionTowerPowerItem = {},
     thisEquipItem = {},
+    thisEquipItemNODK = {},
     thisComboItem = {},
     thisComboItemNODK = {},
     -- 左上第一顺时针设定的
