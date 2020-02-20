@@ -45,7 +45,7 @@ abilitiesBlue = {
         Name = "魔法回应",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNFeedBack.blp",
         Ubertip = "+{val#1}%几率击出额外{val#2}%伤害的魔法暴击",
-        Val = {7.5, 12}
+        Val = {7.5, 13}
     },
     {
         Name = "心灵之火",

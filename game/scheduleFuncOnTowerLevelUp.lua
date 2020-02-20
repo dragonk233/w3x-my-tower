@@ -8,10 +8,10 @@ subTowerLevel = function(playerIndex)
                 game.playerTower[playerIndex],
                 0,
                 {
-                    str_white = "-" .. math.floor(oldLevel * 0.25 * hslk_global.unitsKV[towerId].STR),
-                    agi_white = "-" .. math.floor(oldLevel * 0.25 * hslk_global.unitsKV[towerId].AGI),
-                    int_white = "-" .. math.floor(oldLevel * 0.25 * hslk_global.unitsKV[towerId].INT),
-                    attack_white = "-" .. math.floor(oldLevel * 0.3 * hslk_global.unitsKV[towerId].ATTACK_WHITE)
+                    str_white = "-" .. math.floor(oldLevel * 0.28 * hslk_global.unitsKV[towerId].STR),
+                    agi_white = "-" .. math.floor(oldLevel * 0.28 * hslk_global.unitsKV[towerId].AGI),
+                    int_white = "-" .. math.floor(oldLevel * 0.28 * hslk_global.unitsKV[towerId].INT),
+                    attack_white = "-" .. math.floor(oldLevel * 0.35 * hslk_global.unitsKV[towerId].ATTACK_WHITE)
                 }
             )
         end
@@ -60,10 +60,10 @@ addTowerLevel = function(playerIndex, lockLv)
             game.playerTower[playerIndex],
             0,
             {
-                str_white = "+" .. math.floor(unitLv * 0.25 * hslk_global.unitsKV[towerId].STR),
-                agi_white = "+" .. math.floor(unitLv * 0.25 * hslk_global.unitsKV[towerId].AGI),
-                int_white = "+" .. math.floor(unitLv * 0.25 * hslk_global.unitsKV[towerId].INT),
-                attack_white = "+" .. math.floor(unitLv * 0.3 * hslk_global.unitsKV[towerId].ATTACK_WHITE)
+                str_white = "+" .. math.floor(unitLv * 0.28 * hslk_global.unitsKV[towerId].STR),
+                agi_white = "+" .. math.floor(unitLv * 0.28 * hslk_global.unitsKV[towerId].AGI),
+                int_white = "+" .. math.floor(unitLv * 0.28 * hslk_global.unitsKV[towerId].INT),
+                attack_white = "+" .. math.floor(unitLv * 0.35 * hslk_global.unitsKV[towerId].ATTACK_WHITE)
             }
         )
     end

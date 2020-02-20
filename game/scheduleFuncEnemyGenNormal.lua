@@ -44,7 +44,7 @@ enemyGenYB = function(waiting)
                                         htime.setTimeout(
                                             10,
                                             function(t)
-                                                                            htime.delTimer(t)
+                                                htime.delTimer(t)
                                                 hplayer.loop(
                                                     function(p)
                                                         hplayer.victory(p)
@@ -141,8 +141,8 @@ enemyGenHZ = function(waiting)
                         end
                         htime.delTimer(t2)
                         local gold = game.rule.hz.wave * 100
-                        if (gold > 25000) then
-                            gold = 25000
+                        if (gold > 20000) then
+                            gold = 20000
                         end
                         game.rule.hz.wave = game.rule.hz.wave + 1
                         hplayer.loop(

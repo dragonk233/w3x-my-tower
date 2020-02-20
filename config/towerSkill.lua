@@ -1207,7 +1207,7 @@ TOWER_ABLI_SPX = {
             20,
             350,
             0.25,
-            300,
+            400,
             20,
             "war3mapImported\\eff_FireTornado.mdl",
             "Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdl"
@@ -1216,14 +1216,14 @@ TOWER_ABLI_SPX = {
     {
         Name = "帝释天",
         Ubertip = "{val#1}%几率召唤{val#2}范围空饷持续每{val#3}秒对敌人造成{val#4}神伤害{val#5}次",
-        Art = "war3mapImported\\icon_pas_Fire_PlayingWithFire.blp",
+        Art = "war3mapImported\\icon_pas_Arcane_Arcane03.blp",
         Buttonpos1 = 0,
         Buttonpos2 = 2,
         Val = {
             20,
-            475,
-            0.12,
             500,
+            0.12,
+            900,
             13,
             "war3mapImported\\eff_weather_laser.mdl",
             "Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdl"
@@ -1456,7 +1456,7 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             15,
-            9999,
+            19999,
             "war3mapImported\\eff_black_flame_sword.mdl"
         }
     },
@@ -1543,7 +1543,7 @@ TOWER_ABLI_SPX = {
         Val = {
             50,
             7,
-            7777,
+            5000,
             4,
             3,
             "war3mapImported\\eff_cracked_ground.mdl"
@@ -1557,7 +1557,7 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             50,
-            750,
+            1000,
             "war3mapImported\\eff_fireball_impact_gun.mdl"
         }
     },
@@ -1569,7 +1569,7 @@ TOWER_ABLI_SPX = {
         Buttonpos2 = 2,
         Val = {
             50,
-            800,
+            1200,
             "war3mapImported\\eff_fireball_impact_gun.mdl"
         }
     },

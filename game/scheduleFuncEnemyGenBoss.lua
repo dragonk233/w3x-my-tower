@@ -4,6 +4,13 @@ require "game.scheduleFuncOnBossDead"
 bossGenLife = 500
 bossGen = function(curWave)
     local boss = game.thisEnemysBoss[cj.GetRandomInt(1, game.thisEnemysBossLen)].UNIT_ID
+    local move = 120
+    if (game.rule.cur == "hz") then
+        move = move + curWave
+        if (move > 180) then
+            move = 180
+        end
+    end
     for k, v in pairs(game.pathPoint) do
         if (his.playing(hplayer.players[k])) then
             local u =
@@ -22,7 +29,7 @@ bossGen = function(curWave)
                 0,
                 {
                     life = "=" .. (bossGenLife * curWave),
-                    move = "=120",
+                    move = "=" .. move,
                     defend = "=" .. curWave * 2,
                     toughness = "=" .. curWave * 15,
                     resistance = "=" .. curWave * 0.5,
@@ -59,6 +66,6 @@ bossGen = function(curWave)
     if (game.rule.cur == "yb") then
         bossGenLife = bossGenLife + 200
     elseif (game.rule.cur == "hz") then
-        bossGenLife = bossGenLife + 300 + curWave * 3
+        bossGenLife = bossGenLife + 300 + curWave * 4
     end
 end
