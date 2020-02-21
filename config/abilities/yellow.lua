@@ -33,19 +33,19 @@ abilitiesYellow = {
         Name = "穿透之箭",
         Art = "war3mapImported\\icon_pas_TheBlackArrow.blp",
         Ubertip = "攻击敌人减少它{val#1}点护甲，持续3秒",
-        Val = {3}
+        Val = {5}
     },
     {
         Name = "凤凰烈焰",
         Art = "war3mapImported\\icon_pas_MarkOfFire.blp",
-        Ubertip = "+火攻击特性|n+{val#1}每秒灼烧效果，持续5秒",
-        Val = {266.0}
+        Ubertip = "+火攻击特性|n+{val#1}每秒灼烧效果，持续6秒",
+        Val = {288.0}
     },
     {
         Name = "剧毒液体",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNCorrosiveBreath.blp",
-        Ubertip = "+毒攻击特性|n+{val#1}每秒中毒效果，持续5秒",
-        Val = {300}
+        Ubertip = "+毒攻击特性|n+{val#1}每秒中毒效果，持续4秒",
+        Val = {350}
     },
     {
         Name = "猛毒试剂",
@@ -178,8 +178,8 @@ abilitiesYellow = {
     {
         Name = "离子雨",
         Art = "war3mapImported\\icon_pas_Ion_overload.blp",
-        Ubertip = "+{val#1}%闪电链抵抗",
-        Val = {15},
+        Ubertip = "+{val#1}%闪电链抵抗|n+{val#2}%雷抗性",
+        Val = {15, 7},
         ODK = true
     },
     {

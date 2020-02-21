@@ -62,14 +62,14 @@ abilitiesBlue = {
     {
         Name = "剧毒标枪",
         Art = "ReplaceableTextures\\PassiveButtons\\PASBTNEnvenomedSpear.blp",
-        Ubertip = "+{val#1}每秒中毒效果，持续4秒",
-        Val = {90}
+        Ubertip = "+毒特性攻击|n+{val#1}每秒中毒效果，持续4秒",
+        Val = {100}
     },
     {
         Name = "切割刀刃",
         Art = "war3mapImported\\icon_pas_Ability_Gouge.blp",
         Ubertip = "+{val#1}每秒出血效果，持续4.5秒",
-        Val = {115}
+        Val = {155}
     },
     {
         Name = "侵毒连击",

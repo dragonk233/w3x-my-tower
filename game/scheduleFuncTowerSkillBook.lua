@@ -115,6 +115,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
             u,
             0,
             {
+                attack_damage_type = opt .. "poison",
                 attack_debuff = {
                     [optChar] = {
                         {
@@ -213,7 +214,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                         {
                             attr = "life_back",
                             odds = 100,
-                            during = 5.00,
+                            during = 6,
                             val = level * abliOps.Val[1],
                             effect = "Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl"
                         }
@@ -232,7 +233,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
                         {
                             attr = "life_back",
                             odds = 100,
-                            during = 5.00,
+                            during = 4,
                             val = level * abliOps.Val[1],
                             effect = "Abilities\\Spells\\Other\\AcidBomb\\BottleImpact.mdl"
                         }
@@ -342,7 +343,14 @@ setTowerSkillByBook = function(u, abliOps, opt)
     elseif (abliOps.Name == "亢奋战鼓") then
         hattr.set(u, 0, {toughness = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "离子雨") then
-        hattr.set(u, 0, {lightning_chain_oppose = opt .. (level * abliOps.Val[1])})
+        hattr.set(
+            u,
+            0,
+            {
+                lightning_chain_oppose = opt .. (level * abliOps.Val[1]),
+                natural_thunder_oppose = opt .. (level * abliOps.Val[2])
+            }
+        )
     elseif (abliOps.Name == "抗性神经") then
         hattr.set(u, 0, {resistance = opt .. (level * abliOps.Val[1])})
     elseif (abliOps.Name == "荆棘") then
@@ -369,6 +377,7 @@ setTowerSkillByBook = function(u, abliOps, opt)
             u,
             0,
             {
+                attack_damage_type = opt .. "absolute",
                 attack_debuff = {
                     [optChar] = {
                         {

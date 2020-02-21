@@ -17,8 +17,8 @@ towerRaces = {
         Text = "+4%力量|n+4%敏捷|n+4%智力",
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
-            {qty = 2, text = "+80护甲"},
-            {qty = 4, text = "+500攻击力"}
+            {qty = 2, text = "+100护甲"},
+            {qty = 4, text = "+1000攻击力"}
         }
     },
     {
@@ -27,7 +27,7 @@ towerRaces = {
         Text = "+5%力量|n+5%敏捷|n+5%智力",
         Art = "war3mapImported\\icon_race_human2.blp",
         Link = {
-            {qty = 2, text = "+250护甲;+1000攻击力"}
+            {qty = 2, text = "+250护甲;+2500攻击力"}
         }
     },
     {
@@ -61,7 +61,7 @@ towerRaces = {
             {qty = 2, text = "+40攻击力"},
             {qty = 3, text = "+65攻击力"},
             {qty = 4, text = "+125攻击力"},
-            {qty = 5, text = "+200攻击力;+火攻击特性"}
+            {qty = 5, text = "+325攻击力;+火攻击特性"}
         }
     },
     {
@@ -227,7 +227,7 @@ towerRaces = {
         Text = "+龙攻击特性",
         Art = "war3mapImported\\icon_race_dragon.blp",
         Link = {
-            {qty = 1, text = "+1000攻击力"},
+            {qty = 1, text = "+1200攻击力"},
             {qty = 2, text = "+雷攻击特性"},
             {qty = 3, text = "+风攻击特性"}
         }

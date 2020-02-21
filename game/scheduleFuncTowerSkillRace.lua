@@ -411,14 +411,14 @@ addTowerSkillsRaceTeam = function(playerIndex)
                 end
             elseif (r == "人杰") then
                 if (qtys[r] == 2) then
-                    attr.defend = attr.defend + 80
+                    attr.defend = attr.defend + 100
                 elseif (qtys[r] == 4) then
-                    attr.attack_green = attr.attack_green + 500
+                    attr.attack_green = attr.attack_green + 1000
                 end
             elseif (r == "人王") then
                 if (qtys[r] == 2) then
                     attr.defend = attr.defend + 250
-                    attr.attack_green = attr.attack_green + 1000
+                    attr.attack_green = attr.attack_green + 2500
                 end
             elseif (r == "矮人") then
                 if (qtys[r] == 1) then
@@ -465,7 +465,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
                 elseif (qtys[r] == 4) then
                     attr.attack_green = attr.attack_green + 125
                 elseif (qtys[r] == 5) then
-                    attr.attack_green = attr.attack_green + 200
+                    attr.attack_green = attr.attack_green + 325
                     table.insert(attr.attack_damage_type, "fire")
                 end
             elseif (r == "巨魔") then
@@ -700,7 +700,7 @@ addTowerSkillsRaceTeam = function(playerIndex)
                 end
             elseif (r == "龙人") then
                 if (qtys[r] == 1) then
-                    attr.attack_green = attr.attack_green + 1000
+                    attr.attack_green = attr.attack_green + 1200
                 elseif (qtys[r] == 2) then
                     table.insert(attr.attack_damage_type, "thunder")
                 elseif (qtys[r] == 3) then
